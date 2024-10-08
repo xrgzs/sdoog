@@ -1,11 +1,11 @@
 {
-    "version": "1.0.0",
+    "version": "1.5.0.2",
     "description": "一款适用于班级多媒体屏幕的课表的信息显示工具，可以一目了然地显示各种信息。",
     "homepage": "https://github.com/ClassIsland/ClassIsland",
     "license": "MIT",
     "bin": "ClassIsland.exe",
-    "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v4.9.4/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
-    "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
+    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.5.0.2/ClassIsland.zip",
+    "hash": "305a7d29b46e14dfd09f48dd241f42f20f501432b43f3de62b2633dfe9c89ce9",
     "shortcuts": [
         [
             "ClassIsland.exe",
