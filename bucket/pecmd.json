@@ -1,0 +1,42 @@
+{
+    "version": "201201.88.5.86",
+    "description": "WinPE Commander，功能强大的 WinPE 命令解释工具！",
+    "homepage": "https://pecmd.net/thread-15.htm",
+    "license": "",
+    "architecture": {
+        "64bit": {
+            "bin": [
+                "x64\\PECMD.exe",
+                "x64\\PECMDEDIT.exe"
+            ],
+            "shortcuts": [
+                [
+                    "x64\\PECMD.exe",
+                    "PECMD"
+                ],
+                [
+                    "x64\\PECMDEDIT.exe",
+                    "PECMDEDIT"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": [
+                "PECMD.exe",
+                "PECMDEDIT.exe"
+            ],
+            "shortcuts": [
+                [
+                    "PECMD.exe",
+                    "PECMD"
+                ],
+                [
+                    "PECMDEDIT.exe",
+                    "PECMDEDIT"
+                ]
+            ]
+        }
+    },
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iqOq603it39i&type=down",
+    "hash": "123"
+}
