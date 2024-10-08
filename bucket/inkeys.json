@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "description": "Windows screen annotation tool with efficient annotation and rich features, Make screen demonstrations simpler, teaching more efficient, suitable for touch devices and computers.",
+    "homepage": "https://github.com/Alan-CRL/Inkeys",
+    "license": "GPL-3.0 license",
+    "bin": "智绘教$version.exe",
+    "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v4.9.4/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
+    "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
+    "shortcuts": [
+        [
+            "智绘教$version.exe",
+            "智绘教"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Alan-CRL/Inkeys/releases/download/v$version/IDT$version.zip",
+        "bin": "智绘教$version.exe",
+        "shortcuts": [
+            [
+                "智绘教$version.exe",
+                "智绘教"
+            ]
+        ]
+    }
+}

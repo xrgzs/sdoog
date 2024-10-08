@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "description": "用于白板一体机的桌面部件，有小黑板（布置作业）、启动台、课程表",
+    "homepage": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker",
+    "license": "GPL-3.0 license",
+    "bin": "ZongziTEK_Blackboard_Sticker.exe",
+    "url": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/releases/download/v$version/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
+    "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
+    "shortcuts": [
+        [
+            "ZongziTEK_Blackboard_Sticker.exe",
+            "ZongziTEK Blackboard Sticker"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/releases/download/v$version/ZongziTEK_Blackboard_Sticker.zip"
+    }
+}
