@@ -1,11 +1,11 @@
 {
-    "version": "1.0.0",
+    "version": "1.1.6.5",
     "description": "Class Widgets 是一款能够显示当前课程的桌面组件应用程序。其提供了易用课程表编辑和美观的桌面组件。",
     "homepage": "https://github.com/RinLit-233-shiroko/Class-Widgets",
     "license": "GPL-3.0 license",
     "bin": "ClassWidgets.exe",
-    "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v4.9.4/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
-    "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
+    "url": "https://github.com/RinLit-233-shiroko/Class-Widgets/releases/download/v1.1.6.5/v1.1.6.5_Class_Widgets.zip",
+    "hash": "362799c51c0a614ee2c395d83627f8068e2c5e6b3fd1f5e75719881cbfe359be",
     "shortcuts": [
         [
             "ClassWidgets.exe",
