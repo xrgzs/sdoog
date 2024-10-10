@@ -1,6 +1,6 @@
 {
     "version": "5.1.0",
-    "description": "代替explorer.exe的外壳程序",
+    "description": "a portable shell program(desktop, startmenu, quick launch, taskbar, notifyarea, clock), whitch can run in Windows XP, 2003(need rebuild), Windows 7, 8, 8.1, 10, 11, Windows Server 2008, 2012, 2016, 2019, 2022 and the Windows Preinstallation Environment(WinPE), and both x86, x64 environment.",
     "homepage": "http://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=371541",
     "license": "",
     "architecture": {
