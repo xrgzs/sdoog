@@ -18,7 +18,9 @@
             "hash": "246f947f70fd504d52ea65491d1cf65c3a8f48ee5011d283e846f860ffc4e074"
         }
     },
-    "hash": "",
+    "persist": [
+        "Settings.json"
+    ],
     "shortcuts": [
         [
             "Ink Canvas.exe",

@@ -12,6 +12,9 @@
             "Ink Canvas Artistry"
         ]
     ],
+    "persist": [
+        "Settings.json"
+    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v$version/Ink.Canvas.Artistry.V$version.Portable.zip"
