@@ -21,13 +21,24 @@
     ],
     "installer": {
         "script": [
-            "$configpath = \"$env:APPDATA\\lx-music-desktop\\LxDatas\"",
+            "$configpath = \"$env:APPDATA\\lx-music-desktop\"",
             "if (!(Test-Path \"$configpath\")) {",
-            "    New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null; Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$configpath\\user_api.json\"",
+            "   New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null",
+            "   New-Item -Path \"$persist_dir\\userdata\\LxDatas\" -Type Directory -Force | Out-Null",
+            "   New-Item \"$env:APPDATA\\lx-music-desktop\\LxDatas\" -ItemType Junction -Target \"$persist_dir\\userdata\\LxDatas\" | Out-Null",
+            "   New-Item -Path \"$persist_dir\\userdata\\databases\" -Type Directory -Force | Out-Null",
+            "   New-Item \"$env:APPDATA\\lx-music-desktop\\databases\" -ItemType Junction -Target \"$persist_dir\\userdata\\databases\" | Out-Null",
             "}",
-            "ensure \"$persist_dir\\userdata\" | Out-Null",
-            "New-Item \"$env:APPDATA\\lx-music-desktop\\LxDatas\" -ItemType Junction -Target \"$persist_dir\\userdata\\LxDatas\" | Out-Null",
-            "New-Item \"$env:APPDATA\\lx-music-desktop\\databases\" -ItemType Junction -Target \"$persist_dir\\userdata\\databases\" | Out-Null"
+
+            "if (!(Test-Path \"$persist_dir\\userdata\\LxDatas\\user_api.json\")) {",
+            "    Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$persist_dir\\userdata\\LxDatas\\user_api.json\"",
+            "}"
+        ]
+    },
+    "uninstaller":{
+        "script":[
+            "$configpath = \"$env:APPDATA\\lx-music-desktop\"",
+            "remove-Item -Recurse -Force -Path \"$configpath\""
         ]
     },
     "persist": [
