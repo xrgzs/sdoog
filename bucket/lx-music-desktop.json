@@ -1,6 +1,6 @@
 {
     "version": "2.9.0",
-    "description": "Music player",
+    "description": "一个基于 Electron + Vue 开发的音乐软件。",
     "homepage": "https://github.com/lyswhut/lx-music-desktop",
     "license": "Apache-2.0",
     "architecture": {
@@ -15,24 +15,23 @@
     },
     "shortcuts": [
         [
-            "lx-music-desktop.bat",
-            "LX Music"
+            "lx-music-desktop.exe",
+            "洛雪音乐助手"
         ]
     ],
     "installer": {
         "script": [
             "$configpath = \"$env:APPDATA\\lx-music-desktop\\LxDatas\"",
             "if (!(Test-Path \"$configpath\")) {",
-            "    New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null",
+            "    New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null; Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$configpath\\user_api.json\"",
             "}",
-            "Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$configpath\\LxDatas\\user_api.json\"",
-            "# handle runtime cache",
-            "ensure \"$persist_dir\\appdata\" | Out-Null",
-            "New-Item \"$env:APPDATA\\lx-music-desktop\" -ItemType Junction -Target \"$persist_dir\\appdata\" | Out-Null"
+            "ensure \"$persist_dir\\userdata\" | Out-Null",
+            "New-Item \"$env:APPDATA\\lx-music-desktop\\LxDatas\" -ItemType Junction -Target \"$persist_dir\\userdata\\LxDatas\" | Out-Null",
+            "New-Item \"$env:APPDATA\\lx-music-desktop\\databases\" -ItemType Junction -Target \"$persist_dir\\userdata\\databases\" | Out-Null"
         ]
     },
     "persist": [
-        "appdata"
+        "userdata"
     ],
     "checkver": "github",
     "autoupdate": {
