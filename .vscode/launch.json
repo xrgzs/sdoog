@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Scoop: Check manifest for a newer version.",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkver.ps1",
+            "args": [
+                "-App",
+                "${fileBasenameNoExtension}",
+                "-Update"
+            ],
+            "cwd": "${workspaceFolder}",
+        }
+    ]
+}
