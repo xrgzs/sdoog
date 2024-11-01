@@ -1,20 +1,23 @@
 {
-    "version": "1.0.0",
+    "version": "20240719a",
     "description": "Windows screen annotation tool with efficient annotation and rich features, Make screen demonstrations simpler, teaching more efficient, suitable for touch devices and computers.",
     "homepage": "https://github.com/Alan-CRL/Inkeys",
     "license": "GPL-3.0 license",
-    "bin": "智绘教$version.exe",
-    "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v4.9.4/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
-    "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
+    "bin": "智绘教20240719a.exe",
+    "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20240719a/IDT20240719a.zip",
+    "hash": "5f8b26874aec6b57e47e9327e7d913de1a1bb13444d6a1c8d11d3507c7540290",
     "shortcuts": [
         [
-            "智绘教$version.exe",
+            "智绘教20240719a.exe",
             "智绘教"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://github.com/Alan-CRL/Inkeys/releases",
+        "regex": "/Alan-CRL/Inkeys/releases/tag/([\\d\\w]+)"
+    },
     "autoupdate": {
-        "url": "https://github.com/Alan-CRL/Inkeys/releases/download/v$version/IDT$version.zip",
+        "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/IDT$version.zip",
         "bin": "智绘教$version.exe",
         "shortcuts": [
             [
