@@ -1,0 +1,47 @@
+{
+    "version": "2.9.0",
+    "description": "一个基于 Electron + Vue 开发的音乐软件。",
+    "homepage": "https://github.com/lyswhut/lx-music-desktop",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.9.0/lx-music-desktop-v2.9.0-win_x64-green.7z",
+            "hash": "6f84474fe0829092bf8669da294d5f42843800d88af8119c19cd3df262cd9033"
+        },
+        "32bit": {
+            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.9.0/lx-music-desktop-v2.9.0-win7_x86-green.7z",
+            "hash": "9e2594a6dab86c19e4e0d33bcde8b9764e57d1788473f3ccb3f423377b65f30e"
+        }
+    },
+    "shortcuts": [
+        [
+            "lx-music-desktop.exe",
+            "洛雪音乐助手"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "$configpath = \"$env:APPDATA\\lx-music-desktop\\LxDatas\"",
+            "if (!(Test-Path \"$configpath\")) {",
+            "    New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null; Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$configpath\\user_api.json\"",
+            "}",
+            "ensure \"$persist_dir\\userdata\" | Out-Null",
+            "New-Item \"$env:APPDATA\\lx-music-desktop\\LxDatas\" -ItemType Junction -Target \"$persist_dir\\userdata\\LxDatas\" | Out-Null",
+            "New-Item \"$env:APPDATA\\lx-music-desktop\\databases\" -ItemType Junction -Target \"$persist_dir\\userdata\\databases\" | Out-Null"
+        ]
+    },
+    "persist": [
+        "userdata"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v$version/lx-music-desktop-v$version-win_x64-green.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v$version/lx-music-desktop-v$version-win7_x86-green.7z"
+            }
+        }
+    }
+}
