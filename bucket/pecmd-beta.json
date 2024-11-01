@@ -41,20 +41,8 @@
     "hash": "c281ad4520e9b12d9ff2b41d270913107fdce831e7ad32146a053155f3bd5144",
     "checkver": {
         "script": [
-            "$webcontent = Invoke-RestMethod -Uri \"https://www.lanzoui.com/b279972\" -UseBasicParsing",
-            "$ajaxm = [regex]::Match($webcontent, '\\/filemoreajax\\.php\\?file=\\d+').Value",
-            "$body = @()",
-            "$body += \"lx=2\"",
-            "$body += \"fid=$([regex]::Match($webcontent, \"'fid':(\\w+)\").Groups[1].Value)\"",
-            "$body += \"uid=$([regex]::Match($webcontent, \"'uid':(\\w+)\").Groups[1].Value)\"",
-            "$body += \"pg=1\"",
-            "$body += \"rep=0\"",
-            "$body += \"t=$([regex]::Match($webcontent, \"var $($([regex]::Match($webcontent, \"'t':(\\w+)\").Groups[1].Value)) = '(\\w+)'\").Groups[1].Value)\"",
-            "$body += \"k=$([regex]::Match($webcontent, \"var $($([regex]::Match($webcontent, \"'k':(\\w+)\").Groups[1].Value)) = '(\\w+)'\").Groups[1].Value)\"",
-            "$body += \"up=1\"",
-            "$body = $body -join \"&\"",
-            "$list = Invoke-RestMethod -Uri \"https://www.lanzoui.com$ajaxm\" -Method Post -Body $body",
-            "$f = $list.text | Where-Object { $_.name_all -like \"PECMD2012*测试.7z\" } | Select-Object -First 1",
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$f = Get-LanzouList \"https://www.lanzoui.com/b279972\" | Where-Object { $_.name_all -like \"PECMD2012*测试.7z\" } | Select-Object -First 1",
             "$n = $f.name_all -replace 'Stable', ''",
             "$n + '=====' + $f.id"
         ],
