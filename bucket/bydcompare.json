@@ -18,8 +18,7 @@
         "New-PersistFile \"$persist_dir\\BCSessions.xml\"",
         "New-PersistFile \"$persist_dir\\BCSessions.xml.bak\"",
         "New-PersistFile \"$persist_dir\\BCState.xml\"",
-        "New-PersistFile \"$persist_dir\\BCState.xml.bak\"",
-        "Expand-InnoArchive -Path \"$dir\\$fname\" -Switches \"-a\" -Removal"
+        "New-PersistFile \"$persist_dir\\BCState.xml.bak\""
     ],
     "architecture": {
         "64bit": {
