@@ -1,0 +1,44 @@
+{
+    "description": "让人人都成电脑系统装机大师",
+    "version": "6.24.11.2",
+    "homepage": "https://www.xrgzs.top/xrok",
+    "license": "Freeware",
+    "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z",
+    "hash": "0577102626cd8c3a9c419724d4cdc7ae2826b6f0391e5f530b061525dd446e25",
+    "bin": [
+        [
+            "UjyQii.exe",
+            "XROK"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "UjyQii.exe",
+            "潇然一键装机助理",
+            "",
+            "Xiaoran.ico"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\HPM.config\" -Force",
+            "Remove-Item \"$dir\\HPM.key\" -Force",
+            "Remove-Item \"$dir\\HPM.WCE.Dense\" -Force",
+            "Remove-Item \"$dir\\HPM_Next.WCE\" -Force"
+        ]
+    },
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\潇然一键装机助理.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "post_uninstall": [
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "checkver": {
+        "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z"
+    }
+}
