@@ -8,17 +8,28 @@
 [![Target Windows 10](https://img.shields.io/badge/Target-Windows%2010-0067B8.svg?style=flat-square)](https://www.microsoft.com/en-us/windows)
 [![Repo size](https://img.shields.io/github/repo-size/xrgzs/sdoog.svg?style=flat-square)](https://github.com/WuwuZiQWQ/March7th)
 
-UNDER CONSTRUCTION...
+对现有仓库的补充，不求数量，长期更新
 
 </div>
 
 
+## 使用说明
+
+### 添加本仓库：
+
 ```powershell
-scoop bucket add sdoog https://github.com/xrgzs/sdoog
+scoop bucket add sdoog https://github.com/xrgzs/sdoog.git
 ```
 
+或者
 
-还没安装 Scoop？
+```powershell
+scoop bucket add sdoog https://gh.xrgzs.top/https://github.com/xrgzs/sdoog.git
+```
+
+### 还没安装 Scoop？
+
+配套 scoop 特供优化版（[仓库](https://github.com/xrgzs/scoop)）：
 
 ```powershell
 irm c.xrgzs.top/c/scoop | iex
@@ -29,50 +40,173 @@ irm c.xrgzs.top/c/scoop | iex
 
 以下是几点提交贡献的小提示：
 
-1. 遵循 [Contributing Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md#for-scoop-buckets) 的规范提交 Pull Request，懒得看的话需要注意以下几点：
+1. 不要重复添加以下仓库已有的配置文件，除非配置文件内容不同或有特殊优化：
+
+   此仓库为潇然系统定制版scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
+
+   | Name            | Source                                             |
+   | --------------- | -------------------------------------------------- |
+   | main            | https://github.com/ScoopInstaller/Main             |
+   | extras          | https://github.com/ScoopInstaller/Extras           |
+   | versions        | https://github.com/ScoopInstaller/Versions         |
+   | nirsoft         | https://github.com/ScoopInstaller/Nirsoft          |
+   | sysinternals    | https://github.com/niheaven/scoop-sysinternals     |
+   | php             | https://github.com/ScoopInstaller/PHP              |
+   | nerd-fonts      | https://github.com/matthewjberger/scoop-nerd-fonts |
+   | nonportable     | https://github.com/ScoopInstaller/Nonportable      |
+   | java            | https://github.com/ScoopInstaller/Java             |
+   | games           | https://github.com/Calinou/scoop-games             |
+   | **abgo_bucket** | https://github.com/abgox/abgo_bucket.git           |
+   | **aki**         | https://github.com/akirco/aki-apps.git             |
+   | **dorado**      | https://github.com/chawyehsu/dorado.git            |
+   | **DoveBoy**     | https://github.com/DoveBoy/Apps.git                |
+   | **scoop-zapps** | https://github.com/kkzzhizhou/scoop-zapps.git      |
+
+2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 Url Proxy 功能能够自动处理
+
+3. 尽量使用便携版软件，并 `persist` 程序数据，尽量纳入 scoop 原生管理
+
+4. 不要使用绝对路径，请使用 scoop 提供的变量或 `$env:系统变量`
+
+5. 安装时创建的文件，卸载的时候要删除
+
+6. 如果有自动更新程序，最好干掉，如果是后台自动更新无法关闭那种，不要安装到 `scoop\apps` 目录下
+
+7. 如果能加入优化配置文件，尽量加入，别人不做的我们做
+
+8. 受限于 scoop 的机制，不适合用 scoop 安装的软件，可以 ~~祸害~~ 提交到其它仓库（甩锅+手动狗头.jpg）
+
+9. 遵循 [Scoop Contributing Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md#for-scoop-buckets) 的规范提交 Pull Request，懒得看的话，需要注意以下几点：
 
    - 不要用 Master 分支提交 Pull Request
-   - 一个 Manifest 一个 Branch 一个 PR
-   - 这是常规的 Pull Request 提交规范
-   - 对命名没有强制性要求（己所不欲），但要能看得出改了什么
+   - 一个 Manifest 一个 Branch 一个 Pull Request
+   - 本仓库对 Pull Request、Commit 和 Branch 命名没有强制性要求，但要能看得出来改了什么
 
-2. 此仓库为潇然系统定制版scoop打造，默认安装会添加以下仓库，请不要重复添加以下仓库已有的配置文件，除非配置文件内容不同或有特殊优化：
+10. 提交 PR 前，请开一台电脑或虚拟机，测试以下内容：
 
-   ```powershell
-   Name         Source
-   ----         ------
-   main         https://github.com/ScoopInstaller/Main
-   extras       https://github.com/ScoopInstaller/Extras
-   versions     https://github.com/ScoopInstaller/Versions
-   nirsoft      https://github.com/ScoopInstaller/Nirsoft
-   sysinternals https://github.com/niheaven/scoop-sysinternals
-   php          https://github.com/ScoopInstaller/PHP
-   nerd-fonts   https://github.com/matthewjberger/scoop-nerd-fonts
-   nonportable  https://github.com/ScoopInstaller/Nonportable
-   java         https://github.com/ScoopInstaller/Java
-   games        https://github.com/Calinou/scoop-games
-   abgo_bucket  https://github.com/abgox/abgo_bucket.git
-   aki          https://github.com/akirco/aki-apps.git
-   dorado       https://github.com/chawyehsu/dorado.git
-   DoveBoy      https://github.com/DoveBoy/Apps.git
-   scoop-zapps  https://github.com/kkzzhizhou/scoop-zapps.git
-   ```
-
-3. 确保配置文件能够正常执行 Auto Update
-
-   - 两种测试方法：
-
-     1. VS Code 在 JSON 配置文件下按 F5
-
-     2. 在项目根目录执行：
+    - 能够正常安装
 
         ```powershell
-         .\bin\checkver.ps1 -App 软件名称 -Update
+        scoop install .\bucket\<name>.json
         ```
 
-   - 可以先破坏要更新的内容，然后本地执行检测操作，确保配置文件能用且为最新版本
+    - 能够正常使用
 
-4. 提交 PR 时，清空默认的提交内容，加入你认为有用的信息
+    - 能够正常执行 Autoupdate
 
-5. 提交 PR 后，如果有更改，在 PR 中评论 `/verify`
+        - 可以先破坏要更新的内容（尤其是 `version` 字段），然后本地执行检测操作，确保配置文件能用且为最新版本
 
+        - 两种测试方法：
+
+            1. VS Code 在 JSON 配置文件下按 <kbd>F5</kbd>
+
+               - Only sdoog can do.
+
+            2. 在项目根目录执行：
+
+               ```powershell
+                .\bin\checkver.ps1 -App 软件名称 -Update
+               ```
+
+11. 提交 PR 时，清空默认的提交内容，加入你认为有用的信息（提交上一步测试的截图/输出）
+
+12. 提交 PR 后，如果有更改，在 GitHub PR 页面发送评论 `/verify`，让机器人再次检测
+
+希望此规范能够帮助到参与第三方 scoop 仓库的贡献者，提供一个轻松、高效的贡献流程。
+
+## 编写技巧
+
+本仓库一些关于编写配置的规范和技巧（不看会后悔）
+
+### 配置定义
+
+你想知道关于配置文件的定义项，这里都有，在编写配置文件时建议同时打开：
+
+https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests
+
+### 自动更新
+
+`checkver` 不会写？看这里：
+
+https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate
+
+### 读取脚本
+
+读取现有配置中的脚本块，避免人脑反转义
+
+从 JSON 配置中读取：
+
+```powershell
+PS D:\sdoog> (Get-Content .\bucket\qqnt.json | ConvertFrom-Json).installer.script
+
+# Output:
+$configpath = "$env:PUBLIC\Documents\Tencent\QQ"
+if (!(Test-Path -Path "$configpath")) {
+    New-Item -Path "$configpath" -Type Directory -Force | Out-Null
+}
+if (!(Test-Path -Path "$configpath\UserDataInfo.ini" -PathType leaf)) {
+    Set-Content -NoNewline -Path "$configpath\UserDataInfo.ini" -Value "[UserDataSet]`nUserDataSavePathType=2`nUserDataSavePath=`"$persist_dir\Tencent Files`""
+}
+```
+
+从 `scoop cat` 中读取：
+
+```powershell
+PS D:\sdoog> (scoop cat python | ConvertFrom-Json).installer.script
+
+# Output:
+Expand-DarkArchive "$dir\setup.exe" "$dir\_tmp"
+@('path.msi', 'pip.msi') | ForEach-Object {
+    Remove-Item "$dir\_tmp\AttachedContainer\$_"
+}
+(Get-ChildItem "$dir\_tmp\AttachedContainer\*.msi").FullName | ForEach-Object {
+    # appendpath.msi does not contain any file, which causes 'msiexec /a' to fail
+    if($((Get-Item $_).Basename) -eq 'appendpath') { return }
+    Expand-MsiArchive $_ "$dir"
+}
+Remove-Item "$dir\_tmp", "$dir\setup.exe" -Force -Recurse
+if ($global) {
+    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''
+    Set-EnvVar -Name PATHEXT -Value "$pathext;.PY;.PYW" -Global
+}
+```
+
+### 嵌入脚本
+
+还在吐槽爬虫难写、人工转义费劲？
+
+将 PowerShell 脚本块转换成 JSON Array 以便嵌入到配置中，自动转义相关符号，避免人工转义
+
+所以你可以放心往脚本里面多写点东西，使此仓库具有独特性
+
+```powershell
+PS D:\sdoog> Get-Content .\Untitled-1.ps1
+
+# Output:
+if ($global) {
+    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''
+    Set-EnvVar -Name PATHEXT -Value "$pathext;.PY;.PYW" -Global
+}
+
+PS D:\sdoog> Get-Content .\Untitled-1.ps1 | ConvertTo-Json
+
+# Output:
+[
+  "if ($global) {",
+  "    $pathext = (Get-EnvVar -Name PATHEXT -Global) -replace ';.PYW?', ''",
+  "    Set-EnvVar -Name PATHEXT -Value \"$pathext;.PY;.PYW\" -Global",
+  "}"
+]
+```
+
+### 蓝奏文件夹分享自动更新
+
+参考 [pecmd-beta](bucket/pecmd-beta.json)
+
+### 创建桌面快捷方式
+
+啥？还要用外置脚本？直接从开始菜单复制一个不就行，卸载的时候记得删除
+
+参考 [xrok](bucket/xrok.json)
+
+*未完待续……*
