@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "xrgzs/sdoog:main"
+    [String]$upstream = "xrgzs/sdoog:master"
 )
 
 if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
