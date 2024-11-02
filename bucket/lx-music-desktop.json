@@ -21,28 +21,15 @@
     ],
     "installer": {
         "script": [
-            "$configpath = \"$env:APPDATA\\lx-music-desktop\"",
-            "if (!(Test-Path \"$configpath\")) {",
-            "   New-Item -Path \"$configpath\" -Type Directory -Force | Out-Null",
-            "   New-Item -Path \"$persist_dir\\userdata\\LxDatas\" -Type Directory -Force | Out-Null",
-            "   New-Item \"$env:APPDATA\\lx-music-desktop\\LxDatas\" -ItemType Junction -Target \"$persist_dir\\userdata\\LxDatas\" | Out-Null",
-            "   New-Item -Path \"$persist_dir\\userdata\\databases\" -Type Directory -Force | Out-Null",
-            "   New-Item \"$env:APPDATA\\lx-music-desktop\\databases\" -ItemType Junction -Target \"$persist_dir\\userdata\\databases\" | Out-Null",
-            "}",
-
-            "if (!(Test-Path \"$persist_dir\\userdata\\LxDatas\\user_api.json\")) {",
-            "    Invoke-WebRequest -Uri \"http://url.xrgzs.top/lxapi\" -OutFile \"$persist_dir\\userdata\\LxDatas\\user_api.json\"",
+            "if (!(Test-Path \"$persist_dir\\userData\\LxDatas\")) {",
+            "    New-Item -Path \"$persist_dir\\userData\\LxDatas\" -Type Directory -Force | Out-Null",
+            "    Set-Content -Path \"$persist_dir\\userData\\LxDatas\\config_v2.json\" -Value '{\"version\":\"2.1.0\",\"setting\":{\"version\":\"2.1.0\",\"common.apiSource\":\"user_api_834_1707020689173\",\"common.sourceNameType\":\"real\",\"common.isAgreePact\":true,\"player.playQuality\":\"320k\",\"player.isShowTaskProgess\":true,\"player.isMediaDeviceRemovedStopPlay\":true,\"player.isShowLyricTranslation\":true,\"player.isShowLyricRoma\":true,\"list.isClickPlayList\":true,\"list.isShowSource\":true,\"list.isSaveScrollLocation\":true,\"list.actionButtonsVisible\":true,\"download.enable\":true,\"download.maxDownloadNum\":3,\"download.skipExistFile\":true,\"download.isDownloadLrc\":true,\"download.isDownloadTLrc\":true,\"download.isDownloadRLrc\":true,\"download.lrcFormat\":\"gbk\",\"download.isEmbedPic\":true,\"download.isUseOtherSource\":true,\"search.isShowHotSearch\":true,\"search.isFocusSearchBox\":true}}'",
+            "    Invoke-WebRequest -Uri \"https://c.xrgzs.top/lx/user_api.json\" -OutFile \"$persist_dir\\userData\\LxDatas\\user_api.json\"",
             "}"
-        ]
-    },
-    "uninstaller":{
-        "script":[
-            "$configpath = \"$env:APPDATA\\lx-music-desktop\"",
-            "remove-Item -Recurse -Force -Path \"$configpath\""
-        ]
+          ]
     },
     "persist": [
-        "userdata"
+        "portable"
     ],
     "checkver": "github",
     "autoupdate": {
