@@ -1,0 +1,65 @@
+{
+    "version": "13.10.5",
+    "description": "(Beta version) A complete replacement for Explorer, with far more functionality than any other file manager available today.",
+    "homepage": "https://www.gpsoft.com.au/",
+    "license": "Shareware",
+    "url": "https://cdn.gpsoft.com.au/files/Opus13/Beta/DOpusInstall-13.10.5.Beta.exe",
+    "hash": "0914451b4028ced851f2f7dd814fc800fe25d1a6d30f4b19a11c946671a1b762",
+    "bin": "dopusrt.exe",
+    "shortcuts": [
+        [
+            "dopus.exe",
+            "Directory Opus"
+        ]
+    ],
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/FORCECLOSEAPPLICATIONS",
+            "/TASKS=\"\"",
+            "/DIR=\"$dir\""
+        ]
+    },
+    "pre_install": [
+        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name air) scripts/AirUtils.psm1)",
+        "RedirectDirectory \"$env:PROGRAMDATA\\GPSoftware\" \"$persist_dir\\PROGRAMDATA\\GPSoftware\"",
+        "RedirectDirectory \"$env:APPDATA\\GPSoftware\" \"$persist_dir\\APPDATA\\GPSoftware\"",
+        "RedirectDirectory \"$env:LOCALAPPDATA\\GPSoftware\" \"$persist_dir\\LOCALAPPDATA\\GPSoftware\"",
+        "Remove-Module -Name AirUtils"
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name air) scripts/AirUtils.psm1)",
+            "    RemoveJunction \"$env:PROGRAMDATA\\GPSoftware\"",
+            "    RemoveJunction \"$env:APPDATA\\GPSoftware\"",
+            "RemoveJunction \"$env:LOCALAPPDATA\\GPSoftware\"",
+            "    Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/NORESTART') -Quiet",
+            "    Start-Sleep 2",
+            "    WriteLog 'DirectoryOpus will be removed after system reboot.' -Level 'Info'",
+            "    Remove-Module -Name AirUtils",
+            "}"
+        ]
+    },
+    "checkver": {
+        "script": [
+            "$rssUrl = 'https://resource.dopus.com/c/new-releases/28.rss'",
+            "$webContent = Invoke-WebRequest -Uri $rssUrl | Select-Object -ExpandProperty Content",
+            "$titleRegex = 'Directory Opus ([\\d.]+)(?: \\(Beta\\))?'",
+            "$titles = ([xml]$webContent).SelectNodes(\"//item/title\")",
+            "$latestRelease = $titles | Where-Object { $_.InnerText -match $titleRegex } | Select-Object -First 1",
+            "$version = [regex]::Match($latestRelease.InnerText, $titleRegex).Groups[1].Value",
+            "$majorVersion = $version.Split('.')[0]",
+            "$isBeta = $latestRelease.InnerText -match '\\(Beta\\)'",
+            "$urlTemplate = 'https://cdn.gpsoft.com.au/files/Opus{0}/{1}DOpusInstall-{2}{3}.exe'",
+            "$betaPath = if ($isBeta) { 'Beta/' } else { '' }",
+            "$betaSuffix = if ($isBeta) { '.Beta' } else { '' }",
+            "$url = $urlTemplate -f $majorVersion, $betaPath, $version, $betaSuffix",
+            "return \"$version|$url\""
+        ],
+        "regex": "^(?<version>[\\d.]+)\\|(?<url>.+)$"
+    },
+    "autoupdate": {
+        "url": "$matchUrl"
+    }
+}
