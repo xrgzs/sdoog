@@ -35,10 +35,6 @@
         [
             "BCompare.exe",
             "Beyond Compare 5"
-        ],
-        [
-            "BCClipboard.exe",
-            "Clipboard Compare"
         ]
     ],
     "persist": [
