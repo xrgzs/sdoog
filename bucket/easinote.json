@@ -20,7 +20,7 @@
             "    New-Item $dataPathPersist -Type Directory -Force | Out-Null",
             "}",
             "if (Test-Path $dataPathPersist) {",
-            "    Remove-Item $dataPath -Force -Recurse -ErrorAction SilentlyContinue",
+            "    Remove-Item $dataPath -Force -Recurse | Out-Null",
             "    New-Item -Type Junction -Path $dataPath -Target $dataPathPersist | Out-Null",
             "} else {",
             "    if (Test-Path $dataPath) {",
@@ -85,34 +85,37 @@
             "@=\"$($dir -replace '\\\\','\\\\')\\\\Main\\\\EasiNote.exe \\\"%%1\\\" -m Display\"",
             "\"@ | Set-Content -Path \"$dir\\install_EasiNote.reg\" -Encoding Unicode",
             "",
-            "reg.exe import \"$dir\\install_EasiNote.reg\""
+            "reg.exe import \"$dir\\install_EasiNote.reg\" *>$null"
           ]
     },
     "uninstaller": {
         "script": [
+            "$dataPath = \"$env:APPDATA\\Seewo\\EasiNote5\"",
+            "Remove-Item $dataPath -Recurse -Force | Out-Null",
+            "",
             "if ($global) {",
             "    $registry_scope = \"HKLM\"",
             "} else {",
             "    $registry_scope = \"HKCU\"",
             "}",
             "",
-            "reg.exe delete \"$registry_scope\\Software\\Classes\\.enb\" /f",
-            "reg.exe delete \"$registry_scope\\Software\\Classes\\.enbx\" /f",
-            "reg.exe delete \"$registry_scope\\Software\\Classes\\easinote\" /f",
-            "reg.exe delete \"$registry_scope\\Software\\Classes\\iseewo.enb\" /f",
-            "reg.exe delete \"$registry_scope\\Software\\Classes\\iseewo.enbx\" /f"
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.enb\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.enbx\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\easinote\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\iseewo.enb\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\iseewo.enbx\" /f *>$null"
         ]
     },
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\希沃白板 5.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\希沃白板 5.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im swenserver.exe *>$null",
         "taskkill /f /im EasiNote.exe *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force | Out-Null"
     ],
     "checkver": {
         "script": [

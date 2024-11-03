@@ -1,7 +1,7 @@
 {
     "version": "1.0.1.8095",
     "description": "易上手的白板书写软件",
-    "homepage": "https://easinote.seewo.com/",
+    "homepage": "https://e.seewo.com/product/EasiNote5c",
     "license": "Proprietary",
     "url": "https://e.seewo.com/download/file?code=EasiNote5C&&version=1.0.1.8095#/dl.7z",
     "hash": "75d4b62d58a5d21f6118fd4cb31e0e45f9ba961d8b39109b8d4baccf59831bb0",
@@ -12,15 +12,20 @@
             "希沃轻白板"
         ]
     ],
+    "uninstaller": {
+        "script": [
+            "Remove-Item \"$env:APPDATA\\Seewo\\EasiNote5C\" -Recurse -Force | Out-Null"
+        ]
+    },
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\希沃轻白板.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\希沃轻白板.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im swenserver.exe *>$null",
         "taskkill /f /im EasiNote5C.exe *>$null"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force -ErrorAction SilentlyContinue",
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force | Out-Null",
     "checkver": {
         "script": [
             ". $pwd\\bin\\utils.ps1",

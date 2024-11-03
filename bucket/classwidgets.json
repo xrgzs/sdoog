@@ -23,14 +23,14 @@
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\ClassWidgets.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\ClassWidgets.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im ClassWidgets.exe *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue",
-        "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force | Out-Null",
+        "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\ClassWidgets.lnk\" -Force | Out-Null"
     ],
     "checkver": "github",
     "autoupdate": {

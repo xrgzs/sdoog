@@ -22,13 +22,13 @@
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im \"Ink Canvas Artistry.exe\" *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force | Out-Null"
     ],
     "checkver": "github",
     "autoupdate": {

@@ -21,13 +21,13 @@
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas For Class.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas For Class.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im \"InkCanvasForClass.exe\" *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force | Out-Null"
     ],
     "checkver": {
         "url": "https://gitlab.com/api/v4/projects/62994318/releases",
