@@ -38,6 +38,13 @@
         ]
     ],
     "persist": "Tencent Files",
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\QQ.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\QQ.lnk\" -Force | Out-Null"
+    ],
+    "post_uninstall": [
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\QQ.lnk\" -Force | Out-Null"
+    ],
     "uninstaller": {
         "script": "Remove-Item -Path \"$env:PUBLIC\\Documents\\Tencent\" -Recurse -Force | Out-Null"
     },
