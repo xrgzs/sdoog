@@ -9,8 +9,28 @@
     "shortcuts": [
         [
             "ClassWidgets.exe",
-            "Class Widgets"
+            "ClassWidgets"
         ]
+    ],
+    "persist":[
+        "config.ini",
+        "config"
+    ],
+    "pre_install":[
+        "if (!(Test-Path \"$dir\\config.ini\") -or !(Get-Item \"$dir\\config.ini\").Length) {",
+        "    New-Item \"$dir\\config.ini\" -ItemType File -Force | Out-Null",
+        "}"
+    ],
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\ClassWidgets.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "pre_uninstall": [
+        "taskkill /f /im ClassWidgets.exe *>$null"
+    ],
+    "post_uninstall": [
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue",
+        "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\ClassWidgets.lnk\" -Force -ErrorAction SilentlyContinue"
     ],
     "checkver": "github",
     "autoupdate": {
