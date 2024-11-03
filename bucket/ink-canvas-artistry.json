@@ -3,7 +3,6 @@
     "description": "A fantastic Ink Canvas in WPF/C#, based on WXRIW/Ink-Canvas.",
     "homepage": "https://github.com/InkCanvas/Ink-Canvas-Artistry",
     "license": "GPL-3.0 license",
-    "bin": "Ink Canvas Artistry.exe",
     "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v4.9.4/Ink.Canvas.Artistry.V4.9.4.Portable.zip",
     "hash": "1143770a0d2a5cf2011573c2bd09f9c1881121021b312c5bdc175c191ac9e9d5",
     "shortcuts": [
@@ -14,6 +13,22 @@
     ],
     "persist": [
         "Settings.json"
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+        "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"startup\":{\"isAutoUpdate\":false}}'",
+        "}"
+    ],
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "pre_uninstall": [
+        "taskkill /f /im \"Ink Canvas Artistry.exe\" *>$null"
+    ],
+    "post_uninstall": [
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue"
     ],
     "checkver": "github",
     "autoupdate": {
