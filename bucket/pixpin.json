@@ -9,22 +9,9 @@
     "url": "https://download.pixpinapp.com/PixPin_1.8.22.0.zip",
     "hash": "a9c0442c944cbaab31a980ff50cbd85544283b352081d8d5a66f3dfea3ee838b",
     "extract_dir": "PixPin",
-    "pre_install": [
-        "if(-not (Test-Path -Path \"$dir\\History\")){mkdir \"$dir\\History\"}",
-        "if(-not (Test-Path -Path \"$dir\\Data\")){mkdir \"$dir\\Data\"}",
-        "if(-not (Test-Path -Path \"$dir\\Coredump\")){mkdir \"$dir\\Coredump\"}",
-        "if(-not (Test-Path -Path \"$dir\\Config\")){mkdir \"$dir\\Config\"}"
-    ],
-    "bin": [
-        [
-            "PixPin.exe",
-            "pixpin"
-        ]
-    ],
     "persist": [
         "History",
         "Data",
-        "Coredump",
         "Config"
     ],
     "shortcuts": [
@@ -33,6 +20,11 @@
             "PixPin"
         ]
     ],
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\PixPin.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\PixPin.lnk\" -Force | Out-Null"
+    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\PixPin.lnk\" -Force | Out-Null",
     "checkver": {
         "script": [
             "$url = 'https://pixpinapp.com/'",
