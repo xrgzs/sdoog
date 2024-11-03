@@ -3,14 +3,19 @@
     "description": "Windows screen annotation tool with efficient annotation and rich features, Make screen demonstrations simpler, teaching more efficient, suitable for touch devices and computers.",
     "homepage": "https://github.com/Alan-CRL/Inkeys",
     "license": "GPL-3.0 license",
-    "bin": "智绘教20240719a.exe",
     "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20240719a/IDT20240719a.zip",
     "hash": "5f8b26874aec6b57e47e9327e7d913de1a1bb13444d6a1c8d11d3507c7540290",
+    "extract_dir": "智绘教",
     "shortcuts": [
         [
             "智绘教20240719a.exe",
             "智绘教"
         ]
+    ],
+    "persist":[
+        "opt",
+        "PlugIn",
+        "ScreenShot"
     ],
     "checkver": {
         "url": "https://github.com/Alan-CRL/Inkeys/releases",
@@ -18,7 +23,6 @@
     },
     "autoupdate": {
         "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/IDT$version.zip",
-        "bin": "智绘教$version.exe",
         "shortcuts": [
             [
                 "智绘教$version.exe",
