@@ -3,6 +3,7 @@
     "description": "Notepad4 (Notepad2++) is a light-weight Scintilla based text editor",
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/zufuliu/notepad4",
+    "notes": "If you want to replace Windows Notepad UWP, please uninstall it first.",
     "architecture": {
         "64bit": {
             "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_HD_zh-Hans_x64_v24.09r5472.zip",
@@ -34,32 +35,35 @@
     "installer": {
         "script": [
             "if ($global) {",
-            "    $registry_scope = \"HKCU\"",
+            "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
             "} else {",
-            "    $registry_scope = \"HKLM\"",
+            "    $registry_scope = \"HKEY_CURRENT_USER\"",
             "}",
             "",
-            "# Delete the old right-click menu item",
-            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad2\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad2\" /f",
             "",
-            "# Create the new right-click menu item",
-            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -ErrorAction SilentlyContinue | Out-Null",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"\" -Value \"使用 Notepad4 编辑(&2)\" -ErrorAction SilentlyContinue | Out-Null",
+            "@\"",
+            "Windows Registry Editor Version 5.00",
             "",
-            "# Set the command to launch Notepad4",
-            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Force -ErrorAction SilentlyContinue | Out-Null",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"icon\" -Value \"$dir\\Notepad4\\Notepad4.exe\" -ErrorAction SilentlyContinue | Out-Null",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Name \"\" -Value \"`\"$dir\\Notepad4\\Notepad4.exe`\" `\"%1`\"\" -ErrorAction SilentlyContinue | Out-Null"
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad4]",
+            "@=\"使用 Notepad4 编辑(&2)\"",
+            "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad4.exe\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad4.exe\\\" \\\"%1\\\"\"",
+            "\"@ | Set-Content -Path \"$dir\\install-notepad4.reg\" -Encoding Unicode",
+            "",
+            "reg import \"$dir\\install-notepad4.reg\""
         ]
     },
     "uninstaller": {
         "script": [
             "if ($global) {",
-            "    $registry_scope = \"HKCU\"",
-            "} else {",
             "    $registry_scope = \"HKLM\"",
+            "} else {",
+            "    $registry_scope = \"HKCU\"",
             "}",
-            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" /f"
         ]
     },
     "checkver": {
