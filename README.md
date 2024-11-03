@@ -8,7 +8,7 @@
 [![Target Windows 10](https://img.shields.io/badge/Target-Windows%2010-0067B8.svg?style=flat-square)](https://www.microsoft.com/en-us/windows)
 [![Repo size](https://img.shields.io/github/repo-size/xrgzs/sdoog.svg?style=flat-square)](https://github.com/WuwuZiQWQ/March7th)
 
-对现有仓库的补充，不求数量，长期更新
+对现有仓库的补充，不求数量，只图好用
 
 </div>
 
@@ -42,7 +42,7 @@ irm c.xrgzs.top/c/scoop | iex
 
 1. 不要重复添加以下仓库已有的配置文件，除非配置文件内容不同或有特殊优化：
 
-   此仓库为潇然系统定制版scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
+   此仓库为潇然系统优化版 scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
 
    | Name            | Source                                             |
    | --------------- | -------------------------------------------------- |
@@ -62,7 +62,7 @@ irm c.xrgzs.top/c/scoop | iex
    | **DoveBoy**     | https://github.com/DoveBoy/Apps.git                |
    | **scoop-zapps** | https://github.com/kkzzhizhou/scoop-zapps.git      |
 
-2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 Url Proxy 功能能够自动处理
+2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 `Url Proxy` 功能能够自动处理
 
 3. 尽量使用便携版软件，并 `persist` 程序数据，尽量纳入 scoop 原生管理
 
@@ -134,7 +134,7 @@ https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate
 
 读取现有配置中的脚本块，避免人脑反转义
 
-从 JSON 配置中读取：
+从配置文件中读取：
 
 ```powershell
 PS D:\sdoog> (Get-Content .\bucket\qqnt.json | ConvertFrom-Json).installer.script
@@ -207,6 +207,91 @@ PS D:\sdoog> Get-Content .\Untitled-1.ps1 | ConvertTo-Json
 
 啥？还要用外置脚本？直接从开始菜单复制一个不就行，卸载的时候记得删除
 
+注意安装时机为 `post_install` ，`installer.script` 的时候还没创建开始菜单快捷方式
+
 参考 [xrok](bucket/xrok.json)
+
+### 持久化数据
+
+官方文档仅适用于便携版软件（数据存程序同一目录），比较简单，这边需要进一步补充
+
+https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data
+
+如果要持久化的数据非文件夹，如配置文件，需要在 `pre_install` 中创建对应需要持久化的文件，像这样：
+
+```json
+"persist":[
+    "Settings.json"
+],
+"pre_install":[
+    "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
+    "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+    "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"UpdateMode\":0}'",
+    "}"
+]
+```
+
+如果要持久化的数据与程序不在同一目录，如 `$env:APPDATA` / `$env:LOCALAPPDATA` 等，这种情况 scoop 不支持处理，我们需要设定一个标准手动解决
+
+笔记：
+
+> 正常 `persist` 定义的持久化数据在执行 `scoop uninstall <name>` 时不会删除，需要使用 `scoop uninstall <name> -p` 命令
+>
+> 目前 `scoop uninstall <name> -p` 可以删除手动创建的持久化数据
+>
+> 某仓库会在 `uninstall` 字段删除持久化数据，这边我们遵循 scoop 的设计规范，不学那样搞，因为 scoop 没有 `reinstall` 命令，你只能卸了重装
+>
+> PowerShell 的 `Remove-Item` cmdlet 无法删除 junction，需要使用 .NET [`System.IO.Directory` 的 `Delete` 方法](https://learn.microsoft.com/zh-cn/dotnet/api/system.io.directory.delete)
+
+在 `installer.script` 中添加迁移配置和创建 Junction 的代码
+
+```powershell
+# Define Paths
+$dataPath = "$env:APPDATA\Seewo\EasiNote5"
+$persistPath = "$persist_dir\Data"
+# Create persist dir
+New-Item $persistPath -Type Directory -Force | Out-Null
+if (Test-Path $dataPath) {
+    $dataPathItem = Get-Item -Path $dataPath
+    $persistPathItem = Get-Item -Path $persistPathItem
+    if ($dataPathItem.LinkType -eq 'Junction') {
+        # Delete old Junction
+        # Remove-Item regard junction as actual directory, do not use it.
+        try { $dataPathItem.Delete() } catch {}
+    } else {
+        # Migrate data
+        Get-ChildItem $dataPath | ForEach-Object { Move-Item $_.FullName $persistPath -Force } | Out-Null
+        Remove-Item $dataPath -Force -Recurse | Out-Null
+    }
+}
+# Create new Junction
+New-Item -ItemType Junction -Path $dataPath -Target $persistPath | Out-Null
+```
+
+```mermaid
+flowchart TD
+    A[开始] --> B{数据目录存在？}
+    B -->|否| E[结束]
+    B -->|是| C{数据目录是符号链接？}
+    C -->|是| D[删除旧符号链接]
+    C -->|否| F[迁移数据]
+    F --> G[删除原数据目录]
+    D --> H[创建新符号链接]
+    G --> H[创建新符号链接]
+    H --> E[结束]
+```
+
+在 `uninstaller.script` 中添加删除 Junction 的代码，不处理 `$persist_dir`
+
+```powershell
+# Delete Junction only
+$dataPath = "$env:APPDATA\Seewo\EasiNote5"
+$dataPathItem = Get-Item -Path $dataPath
+try {$dataPathItem.Delete() } catch {}
+```
+
+参考 [easinote](bucket/easinote.json)
+
+我们目前认为这些命令不用外置脚本，方便在虚拟机里面不加仓库直接测试
 
 *未完待续……*

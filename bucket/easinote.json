@@ -15,19 +15,19 @@
     "installer": {
         "script": [
             "$dataPath = \"$env:APPDATA\\Seewo\\EasiNote5\"",
-            "$dataPathPersist = \"$persist_dir\\Data\"",
-            "if (!(Test-Path $dataPathPersist)) {",
-            "    New-Item $dataPathPersist -Type Directory -Force | Out-Null",
-            "}",
-            "if (Test-Path $dataPathPersist) {",
-            "    Remove-Item $dataPath -Force -Recurse | Out-Null",
-            "    New-Item -Type Junction -Path $dataPath -Target $dataPathPersist | Out-Null",
-            "} else {",
-            "    if (Test-Path $dataPath) {",
-            "        Move-Item $dataPath $dataPathPersist -Force",
-            "        New-Item -Type Junction -Path $dataPath -Target $dataPathPersist | Out-Null",
+            "$persistPath = \"$persist_dir\\Data\"",
+            "New-Item $persistPath -Type Directory -Force | Out-Null",
+            "if (Test-Path $dataPath) {",
+            "    $dataPathItem = Get-Item -Path $dataPath",
+            "    $persistPathItem = Get-Item -Path $persistPathItem",
+            "    if ($dataPathItem.LinkType -eq 'Junction') {",
+            "        try { $dataPathItem.Delete() } catch {}",
+            "    } else {",
+            "        Get-ChildItem $dataPath | ForEach-Object { Move-Item $_.FullName $persistPath -Force } | Out-Null",
+            "        Remove-Item $dataPath -Force -Recurse | Out-Null",
             "    }",
             "}",
+            "New-Item -ItemType Junction -Path $dataPath -Target $persistPath | Out-Null",
             "",
             "if ($global) {",
             "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
@@ -86,12 +86,13 @@
             "\"@ | Set-Content -Path \"$dir\\install_EasiNote.reg\" -Encoding Unicode",
             "",
             "reg.exe import \"$dir\\install_EasiNote.reg\" *>$null"
-          ]
+        ]
     },
     "uninstaller": {
         "script": [
             "$dataPath = \"$env:APPDATA\\Seewo\\EasiNote5\"",
-            "Remove-Item $dataPath -Recurse -Force | Out-Null",
+            "$dataPathItem = Get-Item -Path $dataPath",
+            "try {$dataPathItem.Delete() } catch {}",
             "",
             "if ($global) {",
             "    $registry_scope = \"HKLM\"",
