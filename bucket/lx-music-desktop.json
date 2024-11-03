@@ -11,6 +11,10 @@
         "32bit": {
             "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.9.0/lx-music-desktop-v2.9.0-win7_x86-green.7z",
             "hash": "9e2594a6dab86c19e4e0d33bcde8b9764e57d1788473f3ccb3f423377b65f30e"
+        },
+        "arm64": {
+            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.9.0/lx-music-desktop-v2.9.0-win_arm64-green.7z",
+            "hash": "468d990c057a23d77bdd771a4ace70d9b6bccb684be003f8e2cf65751aa3dddb"
         }
     },
     "shortcuts": [
@@ -26,18 +30,14 @@
             "    Set-Content -Path \"$dir\\portable\\userData\\LxDatas\\config_v2.json\" -Value '{\"version\":\"2.1.0\",\"setting\":{\"version\":\"2.1.0\",\"common.apiSource\":\"user_api_834_1707020689173\",\"common.sourceNameType\":\"real\",\"common.isAgreePact\":true,\"common.tryAutoUpdate\":false,\"common.showChangeLog\":false,\"player.playQuality\":\"320k\",\"player.isShowTaskProgess\":true,\"player.isMediaDeviceRemovedStopPlay\":true,\"player.isShowLyricTranslation\":true,\"player.isShowLyricRoma\":true,\"list.isClickPlayList\":true,\"list.isShowSource\":true,\"list.isSaveScrollLocation\":true,\"list.actionButtonsVisible\":true,\"download.enable\":true,\"download.maxDownloadNum\":3,\"download.skipExistFile\":true,\"download.isDownloadLrc\":true,\"download.isDownloadTLrc\":true,\"download.isDownloadRLrc\":true,\"download.lrcFormat\":\"gbk\",\"download.isEmbedPic\":true,\"download.isUseOtherSource\":true,\"search.isShowHotSearch\":true,\"search.isFocusSearchBox\":true}}'",
             "    Invoke-WebRequest -Uri \"https://c.xrgzs.top/lx/user_api.json\" -OutFile \"$dir\\portable\\userData\\LxDatas\\user_api.json\"",
             "}"
-          ]
+        ]
     },
-    "persist": [
-        "portable"
-    ],
+    "persist": "portable",
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
         "Copy-Item -Path \"$scoop_startmenu_folder\\LX Music.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\LX Music.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
-    "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\LX Music.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\LX Music.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
@@ -46,6 +46,9 @@
             },
             "32bit": {
                 "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v$version/lx-music-desktop-v$version-win7_x86-green.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v$version/lx-music-desktop-v$version-win_arm64-green.7z"
             }
         }
     }
