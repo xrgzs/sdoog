@@ -1,30 +1,67 @@
 {
     "version": "24.09r5472",
     "description": "Notepad4 (Notepad2++) is a light-weight Scintilla based text editor",
-    "license": "BSD",
+    "license": "BSD-3-Clause",
     "homepage": "https://github.com/zufuliu/notepad4",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_en_x64_v24.09r5472.zip",
-            "hash": "1381b1058a44b7b5f3f4fa5a8141dd1c04e1e901c134525633dc6cc4cb81a60e"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_HD_zh-Hans_x64_v24.09r5472.zip",
+            "hash": "12a0630411cfb12e0dffc61f92730332148c8fd27c3f21bf5a302903850c86cc"
         },
         "32bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_en_Win32_v24.09r5472.zip",
-            "hash": "13fb38790f0a6ebb692038a3ec299a35046aacee70c84f61a463dbfa6e768ef7"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_zh-Hant_Win32_v24.09r5472.zip",
+            "hash": "74daf0811c031bf7a978b092b2cac230d475538b7aabcf564e48aef12b889798"
         }
     },
-    "bin": "Notepad4.exe",
+    "bin": [
+        "Notepad4.exe",
+        "matepath.exe"
+    ],
     "shortcuts": [
         [
             "Notepad4.exe",
             "Notepad4"
+        ],
+        [
+            "matepath.exe",
+            "matepath"
         ]
     ],
     "persist": [
         "Notepad4.ini",
-        "metapath.ini",
-        "Notepad4 DarkTheme.ini"
+        "matepath.ini"
     ],
+    "installer": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKCU\"",
+            "} else {",
+            "    $registry_scope = \"HKLM\"",
+            "}",
+            "",
+            "# Delete the old right-click menu item",
+            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad2\" -Recurse -ErrorAction SilentlyContinue",
+            "",
+            "# Create the new right-click menu item",
+            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Force",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"\" -Value \"使用 Notepad4 编辑(&2)\"",
+            "",
+            "# Set the command to launch Notepad4",
+            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Force",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"icon\" -Value \"$dir\\Notepad4\\Notepad4.exe\"",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Name \"\" -Value \"`\"$dir\\Notepad4\\Notepad4.exe`\" `\"%1`\"\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKCU\"",
+            "} else {",
+            "    $registry_scope = \"HKLM\"",
+            "}",
+            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Recurse -ErrorAction SilentlyContinue"
+        ]
+    },
     "checkver": {
         "url": "https://api.github.com/repos/zufuliu/notepad4/releases/latest",
         "jsonpath": "$.tag_name",
@@ -33,10 +70,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_en_x64_v$version.zip"
+                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_HD_zh-Hans_x64_v$version.zip"
             },
             "32bit": {
-                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_en_Win32_v$version.zip"
+                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_zh-Hant_Win32_v$version.zip"
             }
         }
     }
