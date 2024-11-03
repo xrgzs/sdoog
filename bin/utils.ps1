@@ -27,3 +27,21 @@ function Get-LanzouList {
 }
 
 
+function ConvertFrom-HtmlEncodedText {
+    <#
+    .SYNOPSIS
+      Converts a string that has been HTML-encoded for HTTP transmission into a decoded string.
+    .PARAMETER InputObject
+      The string to be decoded
+    #>
+    [OutputType([string])]
+    param (
+        [parameter(Mandatory, ValueFromPipeline, HelpMessage = 'The string to be decoded')]
+        [string]
+        $InputObject
+    )
+
+    process {
+        [System.Net.WebUtility]::HtmlDecode($InputObject)
+    }
+}
