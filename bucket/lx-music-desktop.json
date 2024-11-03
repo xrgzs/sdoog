@@ -22,7 +22,7 @@
     "installer": {
         "script": [
             "if (!(Test-Path \"$persist_dir\\userData\\LxDatas\")) {",
-            "    New-Item -Path \"$persist_dir\\userData\\LxDatas\" -Type Directory -Force | Out-Null",
+            "    New-Item -Path \"$persist_dir\\userData\\LxDatas\" -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null",
             "    Set-Content -Path \"$persist_dir\\userData\\LxDatas\\config_v2.json\" -Value '{\"version\":\"2.1.0\",\"setting\":{\"version\":\"2.1.0\",\"common.apiSource\":\"user_api_834_1707020689173\",\"common.sourceNameType\":\"real\",\"common.isAgreePact\":true,\"player.playQuality\":\"320k\",\"player.isShowTaskProgess\":true,\"player.isMediaDeviceRemovedStopPlay\":true,\"player.isShowLyricTranslation\":true,\"player.isShowLyricRoma\":true,\"list.isClickPlayList\":true,\"list.isShowSource\":true,\"list.isSaveScrollLocation\":true,\"list.actionButtonsVisible\":true,\"download.enable\":true,\"download.maxDownloadNum\":3,\"download.skipExistFile\":true,\"download.isDownloadLrc\":true,\"download.isDownloadTLrc\":true,\"download.isDownloadRLrc\":true,\"download.lrcFormat\":\"gbk\",\"download.isEmbedPic\":true,\"download.isUseOtherSource\":true,\"search.isShowHotSearch\":true,\"search.isFocusSearchBox\":true}}'",
             "    Invoke-WebRequest -Uri \"https://c.xrgzs.top/lx/user_api.json\" -OutFile \"$persist_dir\\userData\\LxDatas\\user_api.json\"",
             "}"

@@ -142,7 +142,7 @@ PS D:\sdoog> (Get-Content .\bucket\qqnt.json | ConvertFrom-Json).installer.scrip
 # Output:
 $configpath = "$env:PUBLIC\Documents\Tencent\QQ"
 if (!(Test-Path -Path "$configpath")) {
-    New-Item -Path "$configpath" -Type Directory -Force | Out-Null
+    New-Item -Path "$configpath" -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
 }
 if (!(Test-Path -Path "$configpath\UserDataInfo.ini" -PathType leaf)) {
     Set-Content -NoNewline -Path "$configpath\UserDataInfo.ini" -Value "[UserDataSet]`nUserDataSavePathType=2`nUserDataSavePath=`"$persist_dir\Tencent Files`""
@@ -225,7 +225,7 @@ https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data
 ],
 "pre_install":[
     "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-    "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+    "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
     "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"UpdateMode\":0}'",
     "}"
 ]
@@ -250,7 +250,7 @@ https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data
 $dataPath = "$env:APPDATA\Seewo\EasiNote5"
 $persistPath = "$persist_dir\Data"
 # Create persist dir
-New-Item $persistPath -Type Directory -Force | Out-Null
+New-Item $persistPath -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
 if (Test-Path $dataPath) {
     $dataPathItem = Get-Item -Path $dataPath
     $persistPathItem = Get-Item -Path $persistPathItem

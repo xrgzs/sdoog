@@ -33,7 +33,7 @@
         "$envfilePath = \"$(appdir qqnt $global)\\current\\Files\\dbghelp.dll\"",
         "info \"Removing hardlink for $envfilePath\"",
         "if ((Get-Item $envfilePath).LinkType -eq \"HardLink\") {",
-        "    Remove-Item -Path $envfilePath",
+        "    Remove-Item -Path $envfilePath -Force -ErrorAction SilentlyContinue | Out-Null",
         "}"
     ],
     "checkver": "github",

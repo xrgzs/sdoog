@@ -6,7 +6,7 @@
     "pre_install": [
         "function New-PersistFile([String] $path) {",
         "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
-        "        New-Item $path -ItemType File -Force | Out-Null",
+        "        New-Item $path -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "    }",
         "}",
         "New-PersistFile \"$persist_dir\\BCFileFormats.xml\"",

@@ -16,19 +16,19 @@
     ],
     "pre_install": [
         "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"startup\":{\"isAutoUpdate\":false}}'",
         "}"
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force | Out-Null"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im \"Ink Canvas Artistry.exe\" *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force | Out-Null"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": "github",
     "autoupdate": {

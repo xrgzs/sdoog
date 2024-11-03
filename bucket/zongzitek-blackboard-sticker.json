@@ -17,19 +17,19 @@
     ],
     "pre_install": [
         "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"Update\":{\"IsUpdateAutomatic\":false}}'",
         "}"
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\ZongziTEK 黑板贴.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force | Out-Null"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\ZongziTEK 黑板贴.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im ZongziTEK_Blackboard_Sticker.exe *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force | Out-Null"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": "github",
     "autoupdate": {

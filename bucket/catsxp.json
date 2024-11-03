@@ -26,7 +26,7 @@
     ],
     "pre_install": [
         "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "}"
     ],
     "checkver": {

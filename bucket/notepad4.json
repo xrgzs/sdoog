@@ -40,16 +40,16 @@
             "}",
             "",
             "# Delete the old right-click menu item",
-            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad2\" -Recurse -ErrorAction SilentlyContinue",
+            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad2\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
             "",
             "# Create the new right-click menu item",
-            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Force",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"\" -Value \"使用 Notepad4 编辑(&2)\"",
+            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -ErrorAction SilentlyContinue | Out-Null",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"\" -Value \"使用 Notepad4 编辑(&2)\" -ErrorAction SilentlyContinue | Out-Null",
             "",
             "# Set the command to launch Notepad4",
-            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Force",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"icon\" -Value \"$dir\\Notepad4\\Notepad4.exe\"",
-            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Name \"\" -Value \"`\"$dir\\Notepad4\\Notepad4.exe`\" `\"%1`\"\""
+            "New-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Name \"icon\" -Value \"$dir\\Notepad4\\Notepad4.exe\" -ErrorAction SilentlyContinue | Out-Null",
+            "Set-ItemProperty -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\\command\" -Name \"\" -Value \"`\"$dir\\Notepad4\\Notepad4.exe`\" `\"%1`\"\" -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "uninstaller": {
@@ -59,7 +59,7 @@
             "} else {",
             "    $registry_scope = \"HKLM\"",
             "}",
-            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Recurse -ErrorAction SilentlyContinue"
+            "Remove-Item -Path \"${registry_scope}:\\SOFTWARE\\Classes\\*\\shell\\Notepad4\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "checkver": {

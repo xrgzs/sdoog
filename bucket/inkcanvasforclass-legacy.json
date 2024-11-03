@@ -15,19 +15,19 @@
     "persist": "Settings.json",
     "pre_install": [
         "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force | Out-Null",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"startup\":{\"isAutoUpdate\":false}}'",
         "}"
     ],
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas For Class.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force | Out-Null"
+        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas For Class.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
         "taskkill /f /im \"InkCanvasForClass.exe\" *>$null"
     ],
     "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force | Out-Null"
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": {
         "url": "https://gitlab.com/api/v4/projects/62994318/releases",
