@@ -9,11 +9,16 @@
             "hash": "5c4d1097fc481262a42007ccef73ed65ceef7a136ff669d17ef3db52f85a6f12"
         }
     },
-    "install": {
+    "installer": {
         "script": [
             "Add-AppxPackage -Path $dir\\Snap.Hutao.1.11.7.msix"
             ]
         },
+    "uninstaller"{
+        "script":[
+            "Get-AppxPackage *SnapHutao* |Remove-AppxPackage"
+        ]
+    },
     "checkver": {
         "github": "https://github.com/DGP-Studio/Snap.Hutao"
     },
