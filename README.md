@@ -246,26 +246,8 @@ https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data
 在 `installer.script` 中添加迁移配置和创建 Junction 的代码
 
 ```powershell
-# Define Paths
-$dataPath = "$env:APPDATA\Seewo\EasiNote5"
-$persistPath = "$persist_dir\Data"
-# Create persist dir
-New-Item $persistPath -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
-if (Test-Path $dataPath) {
-    $dataPathItem = Get-Item -Path $dataPath
-    $persistPathItem = Get-Item -Path $persistPathItem
-    if ($dataPathItem.LinkType -eq 'Junction') {
-        # Delete old Junction
-        # Remove-Item regard junction as actual directory, do not use it.
-        try { $dataPathItem.Delete() } catch {}
-    } else {
-        # Migrate data
-        Get-ChildItem $dataPath | ForEach-Object { Move-Item $_.FullName $persistPath -Force } | Out-Null
-        Remove-Item $dataPath -Force -Recurse | Out-Null
-    }
-}
-# Create new Junction
-New-Item -ItemType Junction -Path $dataPath -Target $persistPath | Out-Null
+. "$bucketsdir\$bucket\bin\utils.ps1"
+New-PersistDirectory "$env:APPDATA\Seewo\EasiNote5" "$persist_dir\Data" -Migrate
 ```
 
 ```mermaid
@@ -284,10 +266,8 @@ flowchart TD
 在 `uninstaller.script` 中添加删除 Junction 的代码，不处理 `$persist_dir`
 
 ```powershell
-# Delete Junction only
-$dataPath = "$env:APPDATA\Seewo\EasiNote5"
-$dataPathItem = Get-Item -Path $dataPath
-try {$dataPathItem.Delete() } catch {}
+. "$bucketsdir\$bucket\bin\utils.ps1"
+Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 ```
 
 参考 [easinote](bucket/easinote.json)

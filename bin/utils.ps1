@@ -45,3 +45,48 @@ function ConvertFrom-HtmlEncodedText {
         [System.Net.WebUtility]::HtmlDecode($InputObject)
     }
 }
+
+function New-PersistDirectory {
+    param (
+        [parameter(Mandatory = $true, Position = 0)]
+        [string]
+        $dataPath,
+
+        [parameter(Mandatory = $true, Position = 1)]
+        [string]
+        $persistPath,
+
+        [switch]
+        $Migrate
+    )
+    # Create persist dir
+    New-Item $persistPath -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
+    if (Test-Path $dataPath) {
+        $dataPathItem = Get-Item -Path $dataPath
+        $persistPathItem = Get-Item -Path $persistPathItem
+        if ($dataPathItem.LinkType -eq 'Junction') {
+            # Delete old Junction
+            # Remove-Item regard junction as actual directory, do not use it.
+            try { $dataPathItem.Delete() } catch {}
+        } else {
+            if ($Migrate) {
+                # Migrate data
+                Get-ChildItem $dataPath | ForEach-Object { Move-Item $_.FullName $persistPath -Force } | Out-Null
+            }
+            Remove-Item $dataPath -Force -Recurse | Out-Null
+        }
+    }
+    # Create new Junction
+    New-Item -ItemType Junction -Path $dataPath -Target $persistPath | Out-Null
+}
+
+function Remove-Junction {
+    param (
+        [parameter(Mandatory = $true, Position = 0)]
+        [string]
+        $dataPath
+    )
+    # Delete Junction only
+    $dataPathItem = Get-Item -Path $dataPath
+    try { $dataPathItem.Delete() } catch {}
+}
