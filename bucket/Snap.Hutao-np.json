@@ -5,25 +5,21 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/1.11.7/Snap.Hutao.1.11.7.msix",
+            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/1.11.7/Snap.Hutao.1.11.7.msix#/dl.msix",
             "hash": "5c4d1097fc481262a42007ccef73ed65ceef7a136ff669d17ef3db52f85a6f12"
         }
     },
     "installer": {
-        "script": [
-            "Add-AppxPackage -Path $dir\\Snap.Hutao.1.11.7.msix"
-            ]
-        },
-    "uninstaller"{
-        "script":[
-            "Get-AppxPackage *SnapHutao* |Remove-AppxPackage"
-        ]
+        "script": "Add-AppxPackage -Path $dir\\dl.msix"
+    },
+    "uninstaller": {
+        "script": "Get-AppxPackage *Snap*Hutao* | Remove-AppxPackage"
     },
     "checkver": {
         "github": "https://github.com/DGP-Studio/Snap.Hutao"
     },
     "autoupdate": {
-        "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/$version/Snap.Hutao.$version.msix",
+        "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/$version/Snap.Hutao.$version.msix#/dl.msix",
         "hash": {
             "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/$version/SHA256SUMS"
         }
