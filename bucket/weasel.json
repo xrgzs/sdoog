@@ -1,5 +1,6 @@
 {
     "homepage": "https://rime.im/",
+    "description": "基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法",
     "license": "GPL-3.0-or-later",
     "version": "0.16.3",
     "url": "https://github.com/rime/weasel/releases/download/0.16.3/weasel-0.16.3.0-installer.exe#/dl.7z",
@@ -14,7 +15,7 @@
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "persist": "Rime",
-    "pre_uninstall": "Start-Process -FilePath \"$dir/weaselserver.exe\" -ArgumentList \"/q\" | Out-Null",
+    "pre_uninstall": "Start-Process -FilePath \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" | Out-Null",
     "checkver": {
         "url": "https://api.github.com/repos/rime/weasel/releases/latest",
         "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"
