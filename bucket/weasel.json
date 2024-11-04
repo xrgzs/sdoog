@@ -1,0 +1,25 @@
+{
+    "homepage": "https://rime.im/",
+    "license": "GPL-3.0-or-later",
+    "version": "0.16.3",
+    "url": "https://github.com/rime/weasel/releases/download/0.16.3/weasel-0.16.3.0-installer.exe#/dl.7z",
+    "hash": "efa114b20a8cda39c34316cd1a9b5ed25ac0581891aa3e485c830ff7cc2dbdd9",
+    "installer": {
+        "script": [
+            "if(!(Test-Path \"$dir\\Rime\")) {New-Item \"$dir\\Rime\" -ItemType Directory | Out-Null} ",
+            "& \"$dir\\WeaselSetup.exe\" /i",
+            "& \"$dir\\WeaselDeployer.exe\" /install",
+            "& \"$dir\\WeaselServer.exe\""
+        ]
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "persist": "Rime",
+    "pre_uninstall": "Start-Process -FilePath \"$dir/weaselserver.exe\" -ArgumentList \"/q\" | Out-Null",
+    "checkver": {
+        "url": "https://api.github.com/repos/rime/weasel/releases/latest",
+        "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"
+    },
+    "autoupdate": {
+        "url": "https://github.com/rime/weasel/releases/download/$matchVersion/weasel-$matchReal-installer.exe#/dl.7z"
+    }
+}
