@@ -203,6 +203,47 @@ PS D:\sdoog> Get-Content .\Untitled-1.ps1 | ConvertTo-Json
 
 参考 [pecmd-beta](bucket/pecmd-beta.json)
 
+
+### WinGet 自动更新
+
+我们提供了 WinGet PowerShell 模块，只需导入即可使用
+
+manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAML 配置
+
+如果只要版本号，可以：
+
+```json
+"checkver": {
+    "script": [
+        "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
+        "$Manifest = Get-WinGetInfo -Id '<WinGetPackageID>'",
+        "return $$Manifest.latest_version\""
+    ]
+},
+"autoupdate": {
+    "url": "https://www.example.com/download/$version/$version"
+}
+```
+
+如果要同时将版本号和URL同时匹配出来，可以：
+
+```json
+"checkver": {
+    "script": [
+        "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
+        "$Manifest = Get-WinGetManifest -Id '<WinGetPackageID>'",
+        "$version = $Manifest.PackageVersion",
+        "$url = $Manifest.Installers.InstallerUrl",
+        "return \"$version=====$url\""
+    ],
+    "regex": "(.*)=====(?<url>.*)"
+},
+"autoupdate": {
+    "url": "$matchUrl"
+}
+```
+
+
 ### 创建桌面快捷方式
 
 啥？还要用外置脚本？直接从开始菜单复制一个不就行，卸载的时候记得删除

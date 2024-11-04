@@ -120,7 +120,7 @@ function Get-WinGetManifest {
     $versionDataUrl = "https://cdn.winget.microsoft.com/cache/packages/$Id/$hexString/versionData.mszyml"
     Write-Debug "正在请求软件版本信息..."
     Write-Debug "versionDataUrl: $versionDataUrl"
-    $buffer = (Invoke-WebRequest $ManifestUrl).Content
+    $buffer = (Invoke-WebRequest $versionDataUrl).Content
     $versionData = (ConvertFrom-MSZIP -buffer $buffer | ConvertFrom-Yaml).vD[0]
     Write-Debug "获取到以下软件版本信息："
     Write-Debug "RelativePath: $($versionData.rP)"
