@@ -63,7 +63,6 @@ function New-PersistDirectory {
     New-Item $persistPath -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
     if (Test-Path $dataPath) {
         $dataPathItem = Get-Item -Path $dataPath
-        $persistPathItem = Get-Item -Path $persistPathItem
         if ($dataPathItem.LinkType -eq 'Junction') {
             # Delete old Junction
             # Remove-Item regard junction as actual directory, do not use it.
