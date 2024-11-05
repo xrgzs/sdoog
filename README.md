@@ -217,7 +217,8 @@ manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAM
     "script": [
         "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
         "$Manifest = Get-WinGetInfo -Id '<WinGetPackageID>'",
-        "return $$Manifest.latest_version\""
+        "$ver = $Manifest.latest_version'",
+        "return $ver\""
     ]
 },
 "autoupdate": {
@@ -232,8 +233,8 @@ manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAM
     "script": [
         "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
         "$Manifest = Get-WinGetManifest -Id '<WinGetPackageID>'",
-        "$version = $Manifest.PackageVersion",
-        "$url = $Manifest.Installers.InstallerUrl",
+        "$version  = $Manifest.PackageVersion",
+        "$url      = $Manifest.Installers.InstallerUrl",
         "return \"$version=====$url\""
     ],
     "regex": "(.*)=====(?<url>.*)"

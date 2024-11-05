@@ -1,6 +1,38 @@
 $DebugPreference = 'Continue'
 Import-Module $(Join-Path $PSScriptRoot "SQLite.psm1")
-try { Import-Module powershell-yaml } catch { Install-Module -Name powershell-yaml -Force }
+
+function Install-Yq {
+    $installers = @('scoop', 'choco', 'winget')
+    foreach ($installer in $installers) {
+        try {
+            switch ($installer) {
+                'scoop' { scoop install main/yq }
+                'choco' { choco install yq -y --no-progress }
+                'winget' { winget install --id "MikeFarah.yq" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force }
+            }
+            if (Get-Command yq -ErrorAction SilentlyContinue) {
+                return
+            }
+        } catch {
+            Write-Warning "$installer 安装失败"
+        }
+    }
+    Write-Warning "所有安装方法均失败"
+}
+
+if (-not (Get-Command yq -ErrorAction SilentlyContinue)) {
+    Write-Warning "yq 未安装"
+    Install-Yq | Out-Null
+}
+
+function ConvertFrom-Yaml {
+    param (
+        [parameter(Mandatory, ValueFromPipeline)]
+        [string]
+        $InputObject
+    )
+    return $InputObject | yq -o xml | yq -p xml -o json | ConvertFrom-Json
+}
 
 function ConvertFrom-MSZIP {
     <#
@@ -128,7 +160,7 @@ function Get-WinGetManifest {
     $manifestUrl = "https://cdn.winget.microsoft.com/cache/" + $versionData.rP
     Write-Debug "manifestUrl:  $manifestUrl"
     $manifest = Invoke-RestMethod $manifestUrl
-    $result = $manifest | ConvertFrom-Yaml -Ordered
+    $result = $manifest | ConvertFrom-Yaml
     return $result
 }
 
