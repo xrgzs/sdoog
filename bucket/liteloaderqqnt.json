@@ -1,17 +1,18 @@
 {
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Lightweight, simple and open source QQNT plugin loader.",
     "homepage": "https://github.com/LiteLoaderQQNT/LiteLoaderQQNT",
     "license": "MIT",
-    "url": "https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases/download/1.2.2/LiteLoaderQQNT.zip",
-    "hash": "a325c592ec53b7469c44f7eea5d27a0984e14d54ccd8d596446d0938bc91d561",
-    "depends": [
-        "sdoog/qqnt"
-    ],
+    "url": "https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases/download/1.2.3/LiteLoaderQQNT.zip",
+    "hash": "c7223a709b9514c1dbfd11e891af7d1a2076e53f888d431490975f170f0f8819",
+    "depends": "sdoog/qqnt",
     "suggest": {
         "qqntfileverifypatch": "sdoog/dllhijack-qqnt"
     },
-    "notes": "Every time you update qqnt, run llqqnt_install.ps1 to reinstall it.\nWe recommend that you first install a plugin such as LL-plugin-list-viewer from https://github.com/ltxhhz/LL-plugin-list-viewer.",
+    "notes": [
+        "Every time you update qqnt, run llqqnt_install.ps1 to reinstall it.",
+        "We recommend that you first install a plugin such as LL-plugin-list-viewer from https://github.com/ltxhhz/LL-plugin-list-viewer."
+    ],
     "pre_install": [
         "$content = '$qqnt_dir = \"path/to/qqnt\\Files\"",
         "$llqqnt_dir = \"path/to/llqqnt\"",
