@@ -15,7 +15,10 @@
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "persist": "Rime",
-    "pre_uninstall": "Start-Process -FilePath \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" | Out-Null",
+    "pre_uninstall": [
+        "taskkill /f /im WeaselServer.exe",
+        "Invoke-ExternalCommand \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" -Quiet"
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/rime/weasel/releases/latest",
         "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"

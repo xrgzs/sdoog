@@ -11,10 +11,6 @@
                 [
                     "PotPlayerMini64.exe",
                     "PotPlayer"
-                ],
-                [
-                    "PotPlayerTools.exe",
-                    "PotPlayer Setting Tools"
                 ]
             ]
         },
@@ -25,18 +21,18 @@
                 [
                     "PotPlayerMini.exe",
                     "PotPlayer"
-                ],
-                [
-                    "PotPlayerTools.exe",
-                    "PotPlayer Setting Tools"
                 ]
             ]
         }
     },
-
+    "shortcuts": [
+        [
+            "PotPlayerTools.exe",
+            "PotPlayer Setting Tools"
+        ]
+    ],
     "installer": {
         "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Quiet",
             "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
             "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\PotPlayer\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"

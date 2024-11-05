@@ -29,17 +29,13 @@
     ],
     "installer": {
         "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process -Wait \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Verb RunAs | Out-Null",
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Quiet",
             "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
             "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\2345王牌软件\\看图王\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "uninstaller": {
-        "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process -Wait \"$dir\\uninstall.exe\" -ArgumentList '/S' -Verb RunAs | Out-Null"
-        ]
+        "script": "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet"
     },
     "checkver": {
         "script": [
