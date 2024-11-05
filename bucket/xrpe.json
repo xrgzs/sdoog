@@ -1,0 +1,115 @@
+{
+    "description": "潇然 PE，启动！网络装机中心，给您不一样的启动体验",
+    "version": "24.10.27.2133",
+    "homepage": "https://pe.xrgzs.top/",
+    "license": "Freeware",
+    "depends": "gsudo",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
+            "hash": "md5:dc98fdb1d0a0e18749fc9fbd5a7c7086"
+        },
+        "32bit": {
+            "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
+            "hash": "md5:10abc14455ddc1b938b78177bba56858"
+        }
+    },
+    "bin": "reboot-to-xrpe.cmd",
+    "installer": {
+        "script": [
+            "$driverletter = Split-Path -Path $dir -Qualifier",
+            "$wimpath = Split-Path -Path $dir -NoQualifier",
+            "",
+            "@\"",
+            "",
+            "cls",
+            "@chcp 65001 >nul",
+            "@echo off",
+            "@fltmc >nul || (gsudo \"%~f0\" %* & exit)",
+            "",
+            "bcdedit /create {ramdiskoptions}",
+            "bcdedit /set {ramdiskoptions} ramdisksdidevice partition=c:",
+            "bcdedit /set {ramdiskoptions} ramdisksdipath \\Windows\\Boot\\DVD\\PCAT\\boot.sdi",
+            "",
+            "rem bcdedit /set {ramdiskoptions} ramdisksdipath \\Windows\\Boot\\DVD\\EFI\\boot.sdi",
+            "",
+            "bcdedit /create {ffffffff-8d96-11de-8e71-fffffffffffe} /d \"Xiaoran PE\" /application osloader",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} device ramdisk=\"[$driverletter]$wimpath\\boot.wim\",{ramdiskoptions}",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} osdevice ramdisk=\"[$driverletter]$wimpath\\boot.wim\",{ramdiskoptions}",
+            "",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} path \\windows\\system32\\boot\\winload.exe",
+            "",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} path \\windows\\system32\\boot\\winload.efi",
+            "",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} systemroot \\windows",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} detecthal yes",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} winpe Yes",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} pae ForceEnable",
+            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} nx OptIn",
+            "",
+            "bcdedit /displayorder {ffffffff-8d96-11de-8e71-fffffffffffe} /addlast",
+            "bcdedit /displayorder {ffffffff-8d96-11de-8e71-fffffffffffe} /addlast",
+            "",
+            "bcdedit /timeout 6",
+            "\"@ | Out-File -FilePath \"$dir\\install-xrpe.cmd\" -Encoding utf8",
+            "",
+            "",
+            "@\"",
+            "",
+            "cls",
+            "@chcp 65001 >nul",
+            "@echo off",
+            "@fltmc >nul || (gsudo \"%~f0\" %* & exit)",
+            "",
+            "echo \"Are you sure to reboot to Xiaoran PE?\"",
+            "",
+            "pause",
+            "",
+            "bcdedit /bootsequence {ffffffff-8d96-11de-8e71-fffffffffffe} /addfirst",
+            "",
+            "shutdown /r /t 0",
+            "\"@ | Out-File -FilePath \"$dir\\reboot-to-xrpe.cmd\" -Encoding utf8",
+            "",
+            "",
+            "@\"",
+            "",
+            "cls",
+            "@chcp 65001 >nul",
+            "",
+            "@fltmc >nul || (gsudo \"%~f0\" %* & exit)",
+            "",
+            "bcdedit.exe /delete {ffffffff-8d96-11de-8e71-fffffffffffe}",
+            "",
+            "\"@ | Out-File -FilePath \"$dir\\uninstall-xrpe.cmd\" -Encoding utf8",
+            "",
+            "",
+            "cmd.exe /c \"$dir\\install-xrpe.cmd\"",
+            ""
+        ]
+    },
+    "uninstaller": {
+        "script": "gsudo cmd.exe /c \"$dir\\uninstall-xrpe.cmd\""
+    },
+    "checkver": {
+        "url": "https://c.xrgzs.top/PEDownload.ini",
+        "regex": "V([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
+                "hash": {
+                    "url": "https://c.xrgzs.top/PEDownload.ini",
+                    "regex": "PEX64MD5=([\\w]{32})"
+                }
+            },
+            "32bit": {
+                "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
+                "hash": {
+                    "url": "https://c.xrgzs.top/PEDownload.ini",
+                    "regex": "PEX86MD5=([\\w]{32})"
+                }
+            }
+        }
+    }
+}
