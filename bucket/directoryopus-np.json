@@ -1,0 +1,48 @@
+{
+    "version": "13.10",
+    "description": "A complete replacement for Explorer, with far more functionality than any other file manager available today.",
+    "homepage": "https://www.xrgzs.top/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
+    },
+    "url": "https://cdn.gpsoft.com.au/files/Opus13/DOpusInstall-13.10.exe",
+    "hash": "8ee05def1c4112216d0de0d6cde0789b0d17c3696ddef4b6dbc9dea9c07c6a4a",
+    "bin": "dopusrt.exe",
+    "shortcuts": [
+        [
+            "dopus.exe",
+            "Directory Opus"
+        ]
+    ],
+    "innosetup": true,
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:PROGRAMDATA\\GPSoftware\" \"$persist_dir\\PROGRAMDATA\\GPSoftware\" -Migrate",
+        "New-PersistDirectory \"$env:APPDATA\\GPSoftware\" \"$persist_dir\\APPDATA\\GPSoftware\" -Migrate",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\GPSoftware\" \"$persist_dir\\LOCALAPPDATA\\GPSoftware\" -Migrate"
+    ],
+    "uninstaller": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Remove-Junction \"$env:PROGRAMDATA\\GPSoftware\"",
+            "Remove-Junction \"$env:APPDATA\\GPSoftware\"",
+            "Remove-Junction \"$env:LOCALAPPDATA\\GPSoftware\"",
+            "Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/NORESTART') -Quiet",
+            "info 'DirectoryOpus will be removed after system reboot.'"
+        ]
+    },
+    "checkver": {
+        "script": [
+            "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
+            "$Manifest = Get-WinGetManifest -Id 'GPSoftware.DirectoryOpus'",
+            "$version  = $Manifest.PackageVersion",
+            "$url      = $Manifest.Installers.InstallerUrl",
+            "return \"$version=====$url\""
+        ],
+        "regex": "(.*)=====(?<url>.*)"
+    },
+    "autoupdate": {
+        "url": "$matchUrl"
+    }
+}
