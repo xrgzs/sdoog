@@ -11,6 +11,10 @@
                 [
                     "PotPlayerMini64.exe",
                     "PotPlayer"
+                ],
+                [
+                    "PotPlayerTools.exe",
+                    "PotPlayer Setting Tools"
                 ]
             ]
         },
@@ -21,6 +25,10 @@
                 [
                     "PotPlayerMini.exe",
                     "PotPlayer"
+                ],
+                [
+                    "PotPlayerTools.exe",
+                    "PotPlayer Setting Tools"
                 ]
             ]
         }
