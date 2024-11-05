@@ -308,6 +308,7 @@ flowchart TD
 在 `uninstaller.script` 中添加删除 Junction 的代码，不处理 `$persist_dir`
 
 ```powershell
+$bucket = (scoop info $app).Bucket
 . "$bucketsdir\$bucket\bin\utils.ps1"
 Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 ```

@@ -78,6 +78,7 @@
     },
     "uninstaller": {
         "script": [
+            "$bucket = (scoop info $app).Bucket",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\"",
             "",
