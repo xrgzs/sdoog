@@ -1,0 +1,60 @@
+{
+    "version": "1.7.22347.0",
+    "description": "PotPlayer 美化增强版",
+    "homepage": "https://www.mefcl.com/potplayer.html",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/isf222cm11la&type=down#/installer.exe",
+            "hash": "a311749c6fc71c7e1e0e8ed58faedaa34c5ab02280c0489ac8f5e86be166fb0c",
+            "shortcuts": [
+                [
+                    "PotPlayerMini64.exe",
+                    "PotPlayer"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iqeBk2cm125a&type=down#/installer.exe",
+            "hash": "676a511ed40923847cda2e165cf8710b7a91db2ef50756a114874aa37e0b2459",
+            "shortcuts": [
+                [
+                    "PotPlayerMini.exe",
+                    "PotPlayer"
+                ]
+            ]
+        }
+    },
+
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Quiet",
+            "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\PotPlayer\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "uninstaller": {
+        "script": "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet"
+    },
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$l = Get-LanzouList \"https://www.lanzoui.com/b00zpcsja\" 6fdn",
+            "$fa = $l | Where-Object { $_.name_all -like \"_64Bit_*_Public_mefcl_Setup.exe\" } | Select-Object -First 1",
+            "$fb = $l | Where-Object { $_.name_all -like \"_32Bit_*_Public_mefcl_Setup.exe\" } | Select-Object -First 1",
+            "$fa.name_all + '=====' + $fa.id + '=====' + $fb.id"
+        ],
+        "regex": "_64Bit_(.*)_Public_mefcl_Setup.exe=====(?<sharekeya>.*)=====(?<sharekeyb>.*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/installer.exe"
+            },
+            "32bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/installer.exe"
+            }
+        }
+    }
+}
