@@ -12,7 +12,6 @@
         ]
     ],
     "persist": [
-        "Data",
         "User"
     ],
     "post_install": [
