@@ -43,7 +43,7 @@
         "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\Notepad--.lnk\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
-        "$bucket = (scoop info $app).Bucket",
+        "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Remove-Junction \"$env:APPDATA\\notepad\""
     ],

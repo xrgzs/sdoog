@@ -41,7 +41,7 @@
     ],
     "uninstaller": {
         "script": [
-            "$bucket = (scoop info $app).Bucket",
+            "$bucket = $install.bucket",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "Remove-Junction \"$env:APPDATA\\wocloud\""
         ]
