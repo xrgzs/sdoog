@@ -12,6 +12,13 @@
                 "-Update"
             ],
             "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Sdoog: Escape current file to JSON Array",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "Get-Content -Path '${file}' | ConvertTo-Json",
+            "cwd": "${cwd}"
         }
     ]
 }
