@@ -43,12 +43,12 @@
         "script": [
             "$bucket = (scoop info $app).Bucket",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\""
+            "Remove-Junction \"$env:APPDATA\\wocloud\""
         ]
     },
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\联通云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
-        "url": "https://pack.pan.wo.cn/download/latest.yml",
+        "script": "Invoke-RestMethod -Uri \"https://pack.pan.wo.cn/download/latest.yml?t=$(Get-Date -Format FileDateTime)\"",
         "regex": "version: (.*)"
     },
     "autoupdate": {
