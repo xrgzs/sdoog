@@ -20,11 +20,13 @@
         "$scoop_startmenu_folder = shortcut_folder $global",
         "Copy-Item -Path \"$scoop_startmenu_folder\\123云盘.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\123云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
-    "pre_uninstall": [
-        "$bucket = (scoop info $app).Bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Remove-Junction \"$env:APPDATA\\123pan\""
-    ],
+    "uninstaller": {
+        "script": [
+            "$bucket = (scoop info $app).Bucket",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Remove-Junction \"$env:APPDATA\\123pan\""
+        ]
+    },
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\123云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
