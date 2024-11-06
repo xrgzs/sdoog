@@ -26,6 +26,10 @@
         "url": "https://gitee.com/cxasm/notepad--/releases",
         "regex": "(?<path>/cxasm/notepad--/releases/download/v.*/Notepad--v(.*)-plugin-Installer\\.exe)"
     },
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\notepad\" \"$persist_dir\\AppData\" -Migrate"
+    ],
     "installer": {
         "args": [
             "/VERYSILENT",
@@ -37,6 +41,11 @@
     },
     "post_install": [
         "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\Notepad--.lnk\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "pre_uninstall": [
+        "$bucket = (scoop info $app).Bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Remove-Junction \"$env:APPDATA\\notepad\""
     ],
     "uninstaller": {
         "file": "unins000.exe",
