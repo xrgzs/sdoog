@@ -1,7 +1,7 @@
 {
     "version": "13.10",
     "description": "A complete replacement for Explorer, with far more functionality than any other file manager available today.",
-    "homepage": "https://www.xrgzs.top/",
+    "homepage": "https://www.gpsoft.com.au/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
@@ -15,7 +15,6 @@
             "Directory Opus"
         ]
     ],
-    "innosetup": true,
     "installer": {
         "args": [
             "/VERYSILENT",
@@ -38,6 +37,7 @@
             "Remove-Junction \"$env:APPDATA\\GPSoftware\"",
             "Remove-Junction \"$env:LOCALAPPDATA\\GPSoftware\"",
             "Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/NORESTART') -Quiet",
+            "Start-Sleep -Seconds 10",
             "info 'DirectoryOpus will be removed after system reboot.'"
         ]
     },

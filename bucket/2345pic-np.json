@@ -35,7 +35,10 @@
         ]
     },
     "uninstaller": {
-        "script": "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet"
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
+            "Start-Sleep -Seconds 10"
+        ]
     },
     "checkver": {
         "script": [

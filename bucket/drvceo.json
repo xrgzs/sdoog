@@ -5,7 +5,7 @@
     "license": "Freeware",
     "url": "http://api.xrgzs.top/360baoku/?appid=1900060398#/dl.exe",
     "hash": "02a6629f39da40ac576ec8065c0ab61f28b6c9bda5f57efabe3471ecd9b7ef51",
-    "depends": "innounp",
+    "innosetup": true,
     "pre_install": [
         "function New-PersistFile([String] $path) {",
         "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
