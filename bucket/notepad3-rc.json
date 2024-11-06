@@ -28,15 +28,15 @@
         "@\"",
         "Windows Registry Editor Version 5.00",
         "",
-        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad3]",
-        "@=\"使用 Notepad3 编辑(&3)\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad3RC]",
+        "@=\"使用 Notepad3 RC 编辑(&3)\"",
         "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad3.exe\"",
         "",
-        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad3\\command]",
+        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad3RC\\command]",
         "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad3.exe\\\" \\\"%1\\\"\"",
-        "\"@ | Set-Content -Path \"$dir\\install-notepad3.reg\" -Encoding Unicode",
+        "\"@ | Set-Content -Path \"$dir\\install-notepad3rc.reg\" -Encoding Unicode",
         "",
-        "reg import \"$dir\\install-notepad3.reg\""
+        "reg import \"$dir\\install-notepad3rc.reg\""
     ],
     "uninstaller": {
         "script": [
@@ -45,7 +45,7 @@
             "} else {",
             "    $registry_scope = \"HKCU\"",
             "}",
-            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad3\" /f"
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shell\\notepad3RC\" /f"
         ]
     },
     "bin": [
@@ -56,15 +56,15 @@
     "shortcuts": [
         [
             "Notepad3.exe",
-            "Notepad3"
+            "Notepad3 RC"
         ],
         [
             "minipath.exe",
-            "minipath"
+            "minipath RC"
         ],
         [
             "grepWinNP3.exe",
-            "grepWinNP3"
+            "grepWinNP3 RC"
         ]
     ],
     "persist": [
