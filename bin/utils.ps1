@@ -4,7 +4,7 @@ function Get-LanzouList {
         [Parameter(Mandatory = $true, Position = 0)]
         [string]
         $Uri,
-        [Parameter(Mandatory = $true, Position = 1)]
+        [Parameter(Mandatory = $false, Position = 1)]
         [string]
         $Pass
     )
