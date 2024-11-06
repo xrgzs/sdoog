@@ -1,0 +1,57 @@
+{
+    "version": "2.5.9",
+    "description": "联通云盘是中国联通面向个人及家庭用户全新推出的一款智慧云端存储产品，旨在满足用户的海量数据存储、家庭内容共享和极速数据传输的需求。具有智能相册、畅快下载、微信备份和家庭分组等丰富多彩的智能云存储功能。",
+    "homepage": "https://pan.wo.cn/",
+    "license": "Proprietary",
+    "hash": "a719a184921b9b9b1e5bc2bdb1f9afdc27d71cbeb7f69509fc182132c2c412dd",
+    "url": "https://pack.pan.wo.cn/download/WoCloud-2.5.9.exe#/dl.7z",
+    "shortcuts": [
+        [
+            "WoCloud.exe",
+            "联通云盘"
+        ]
+    ],
+    "architecture": {
+        "64bit": {
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
+                ]
+            }
+        },
+        "32bit": {
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
+                ]
+            }
+        }
+    },
+    "pre_uninstall": [
+        "taskkill /f /im WoCloud.exe *>$null"
+    ],
+    "post_install": [
+        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse | Out-Null",
+        "",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\wocloud\" \"$persist_dir\\AppData\" -Migrate",
+        "",
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\联通云盘.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\联通云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "uninstaller": {
+        "script": [
+            "$bucket = (scoop info $app).Bucket",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\""
+        ]
+    },
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\联通云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
+    "checkver": {
+        "url": "https://pack.pan.wo.cn/download/latest.yml",
+        "regex": "version: (.*)"
+    },
+    "autoupdate": {
+        "url": "https://pack.pan.wo.cn/download/WoCloud-$version.exe#/dl.7z"
+    }
+}
