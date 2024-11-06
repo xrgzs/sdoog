@@ -16,6 +16,14 @@
         ]
     ],
     "innosetup": true,
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/FORCECLOSEAPPLICATIONS",
+            "/TASKS=\"\"",
+            "/DIR=\"$dir\""
+        ]
+    },
     "pre_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:PROGRAMDATA\\GPSoftware\" \"$persist_dir\\PROGRAMDATA\\GPSoftware\" -Migrate",
