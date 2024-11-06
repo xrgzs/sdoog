@@ -40,7 +40,7 @@
         "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\\\" \\\"%1\\\"\"",
         "\"@ | Set-Content -Path \"$dir\\install-notepad--.reg\" -Encoding Unicode",
         "",
-        "reg import \"$dir\\install-notepad-.reg\""
+        "reg import \"$dir\\install-notepad--.reg\""
     ],
     "uninstaller": {
         "script": [
