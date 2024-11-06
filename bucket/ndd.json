@@ -1,0 +1,70 @@
+{
+    "version": "2.20.1",
+    "description": "一个支持windows/linux/mac的文本编辑器，目标是要替换notepad++，来自中国。",
+    "homepage": "https://gitee.com/cxasm/notepad--",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://gitee.com/cxasm/notepad--/releases/download/v2.20.1/Notepad--v2.20.1-plugin-Installer.exe",
+            "hash": "50be74b691f81478e8221101e6fb0c5988e8142983459375afc444ef41f98fc7"
+        }
+    },
+    "innosetup": true,
+    "bin": [
+        "Notepad--.exe",
+        [
+            "Notepad--.exe",
+            "ndd"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Notepad--.exe",
+            "Notepad--"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitee.com/cxasm/notepad--/releases",
+        "regex": "(?<path>/cxasm/notepad--/releases/download/v.*/Notepad--v(.*)-plugin-Installer\\.exe)"
+    },
+    "installer": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+            "} else {",
+            "    $registry_scope = \"HKEY_CURRENT_USER\"",
+            "}",
+            "",
+            "@\"",
+            "Windows Registry Editor Version 5.00",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--]",
+            "@=\"使用 Notepad-- 编辑(&1)\"",
+            "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\\\" \\\"%1\\\"\"",
+            "\"@ | Set-Content -Path \"$dir\\install-notepad--.reg\" -Encoding Unicode",
+            "",
+            "reg import \"$dir\\install-notepad--.reg\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM\"",
+            "} else {",
+            "    $registry_scope = \"HKCU\"",
+            "}",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--\" /f"
+        ]
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://gitee.com$matchPath"
+            }
+        },
+        "extract_dir": "Notepad--v$version-win10-portable"
+    }
+}
