@@ -6,7 +6,7 @@
 if (-not (Test-Path "$env:SCOOP_HOME\schema.json.bak")) {
     Move-Item "$env:SCOOP_HOME\schema.json" "$env:SCOOP_HOME\schema.json.bak" -Force
 }
-Copy-Item (Join-Path $PSScriptRoot 'bin' 'schema.json') "$env:SCOOP_HOME\schema.json" -Force
+Copy-Item (Join-Path $PSScriptRoot 'schema.json') "$env:SCOOP_HOME\schema.json" -Force
 
 $pesterConfig = New-PesterConfiguration -Hashtable @{
     Run    = @{
