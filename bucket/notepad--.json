@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "url": "https://gitee.com/cxasm/notepad--/releases/latest",
-        "regex": "(?<path>/cxasm/notepad--/releases/download/v[\\d.]+/Notepad--v(.*)-win10-portable\\.zip)"
+        "regex": "(?<path>/cxasm/notepad--/releases/download/v.*/Notepad--v(.*)-win10-portable\\.zip)"
     },
     "post_install": [
         "Remove-Item -Path \"$dir\\*.zip\" -Force",
