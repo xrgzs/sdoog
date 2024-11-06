@@ -21,27 +21,28 @@
         "url": "https://gitee.com/cxasm/notepad--/releases/latest",
         "regex": "(?<path>/cxasm/notepad--/releases/download/v.*/Notepad--v(.*)-win10-portable\\.zip)"
     },
-    "post_install": [
-        "Remove-Item -Path \"$dir\\*.zip\" -Force",
-        "if ($global) {",
-        "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
-        "} else {",
-        "    $registry_scope = \"HKEY_CURRENT_USER\"",
-        "}",
-        "",
-        "@\"",
-        "Windows Registry Editor Version 5.00",
-        "",
-        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--]",
-        "@=\"使用 Notepad-- 编辑(&1)\"",
-        "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\"",
-        "",
-        "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--\\command]",
-        "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\\\" \\\"%1\\\"\"",
-        "\"@ | Set-Content -Path \"$dir\\install-notepad--.reg\" -Encoding Unicode",
-        "",
-        "reg import \"$dir\\install-notepad--.reg\""
-    ],
+    "installer": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+            "} else {",
+            "    $registry_scope = \"HKEY_CURRENT_USER\"",
+            "}",
+            "",
+            "@\"",
+            "Windows Registry Editor Version 5.00",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--]",
+            "@=\"使用 Notepad-- 编辑(&1)\"",
+            "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\*\\shell\\Notepad--\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad--.exe\\\" \\\"%1\\\"\"",
+            "\"@ | Set-Content -Path \"$dir\\install-notepad--.reg\" -Encoding Unicode",
+            "",
+            "reg import \"$dir\\install-notepad--.reg\""
+        ]
+    },
     "uninstaller": {
         "script": [
             "if ($global) {",
