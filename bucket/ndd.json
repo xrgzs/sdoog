@@ -29,6 +29,9 @@
     },
     "installer": {
         "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\notepad\" \"$persist_dir\\AppData\" -Migrate",
+            "",
             "if ($global) {",
             "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
             "} else {",
@@ -51,6 +54,9 @@
     },
     "uninstaller": {
         "script": [
+            "$bucket = (scoop info $app).Bucket",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Remove-Junction \"$env:APPDATA\\notepad\"",
             "if ($global) {",
             "    $registry_scope = \"HKLM\"",
             "} else {",
