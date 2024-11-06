@@ -20,18 +20,36 @@ function Install-Yq {
     Write-Warning "所有安装方法均失败"
 }
 
+function Install-PowerShellYaml {
+    try {
+        Install-Module -Name PowerShell-Yaml -Force
+    } catch {
+        Write-Warning "PowerShell-Yaml 安装失败: $_"
+    }
+}
+
 if (-not (Get-Command yq -ErrorAction SilentlyContinue)) {
     Write-Warning "yq 未安装"
     Install-Yq | Out-Null
 }
 
-function ConvertFrom-Yaml {
+if (-not (Get-Module -ListAvailable -Name PowerShell-Yaml)) {
+    Write-Warning "PowerShell-Yaml 未安装"
+    Install-PowerShellYaml | Out-Null
+}
+
+function ConvertFrom-YamlString {
     param (
         [parameter(Mandatory, ValueFromPipeline)]
         [string]
         $InputObject
     )
-    return $InputObject | yq -o xml | yq -p xml -o json | ConvertFrom-Json
+    try {
+        $OutputObject = $InputObject | yq -o xml | yq -p xml -o json | ConvertFrom-Json
+    } catch {
+        $OutputObject = $InputObject | ConvertFrom-Yaml
+    }
+    return $OutputObject
 }
 
 function ConvertFrom-MSZIP {
@@ -153,14 +171,14 @@ function Get-WinGetManifest {
     Write-Debug "正在请求软件版本信息..."
     Write-Debug "versionDataUrl: $versionDataUrl"
     $buffer = (Invoke-WebRequest $versionDataUrl).Content
-    $versionData = (ConvertFrom-MSZIP -buffer $buffer | ConvertFrom-Yaml).vD[0]
+    $versionData = (ConvertFrom-MSZIP -buffer $buffer | ConvertFrom-YamlString).vD[0]
     Write-Debug "获取到以下软件版本信息："
     Write-Debug "RelativePath: $($versionData.rP)"
     Write-Debug "Version:      $($versionData.v)"
     $manifestUrl = "https://cdn.winget.microsoft.com/cache/" + $versionData.rP
     Write-Debug "manifestUrl:  $manifestUrl"
     $manifest = Invoke-RestMethod $manifestUrl
-    $result = $manifest | ConvertFrom-Yaml
+    $result = $manifest | ConvertFrom-YamlString
     return $result
 }
 
