@@ -1,0 +1,29 @@
+{
+    "version": "7.40.7100",
+    "description": "AIDA64官方版（原EVEREST）是一款综合性的系统硬件检测工具，号称最权威的电脑硬件检测，监控与测试软件。",
+    "homepage": "https://www.423down.com/887.html",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://www.aida64.com/licensing"
+    },
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihwcJ2d4of7g&type=down#/dl.7z",
+    "hash": "4eb339098bdf79fdfa158570e2db061b4a29a0b39ac53b5f55599f1749c76e11",
+    "persist": "aida64.ini",
+    "shortcuts": [
+        [
+            "aida64.exe",
+            "AIDA64 Extreme"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f1dp0mh\" | Where-Object { $_.name_all -like \"AIDA64-Extreme-v*-Full.7z\" } | Select-Object -First 1",
+            "$f.name_all + '=====' + $f.id"
+        ],
+        "regex": "AIDA64-Extreme-v(.*)-Full.7z=====(?<sharekey>.*)"
+    },
+    "autoupdate": {
+        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+    }
+}
