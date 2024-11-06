@@ -1,0 +1,20 @@
+{
+    "version": "14.1.1278",
+    "description": "360安全浏览器（360SE14）是基于Chromium内核的双核浏览器，采用Chromeium108稳定版的内核。",
+    "homepage": "https://www.423down.com/13808.html",
+    "license": "Freeware",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://423down.lanzouo.com/infkd18wnh3a&type=down#/dl.7z",
+    "hash": "4579a22bc0eab543b4f7f49d86a50e7f50f0d02df26ac9b5926011769595d810",
+    "shortcuts": [
+        [
+            "Application\\360se.exe",
+            "360安全浏览器"
+        ]
+    ],
+    "persist": "User Data",
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\360安全浏览器.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\360安全浏览器.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\360安全浏览器.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+}
