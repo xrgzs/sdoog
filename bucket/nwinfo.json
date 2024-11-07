@@ -1,0 +1,59 @@
+{
+    "version": "1.0.4",
+    "description": "NWinfo is a Win32 program that allows you to obtain system and hardware information.",
+    "homepage": "https://github.com/a1ive/nwinfo/",
+    "license": "Unlicense",
+    "url": "https://github.com/a1ive/nwinfo/releases/download/v1.0.4/nwinfo.zip",
+    "hash": "3d6cdbfd176e2b41cce5e5a4f6c86d7d8e2210a3c85ab5f5641ace3c9e773c5b",
+    "extract_dir": "nwinfo",
+    "architecture": {
+        "64bit": {
+            "bin": [
+                [
+                    "nwinfo64.exe",
+                    "nwinfo"
+                ],
+                [
+                    "gnwinfo64.exe",
+                    "gnwinfo"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "gnwinfo64.exe",
+                    "NWinfo GUI"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": [
+                [
+                    "nwinfo.exe",
+                    "nwinfo"
+                ],
+                [
+                    "gnwinfo.exe",
+                    "gnwinfo"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "gnwinfo.exe",
+                    "NWinfo GUI"
+                ]
+            ]
+        }
+    },
+    "persist": [
+        "gnwinfo.ini"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/a1ive/nwinfo/releases/download/v$version/nwinfo.zip"
+    }
+}
