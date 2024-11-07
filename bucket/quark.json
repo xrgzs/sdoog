@@ -17,8 +17,8 @@
     ],
     "installer": {
         "script": [
-            "Move-Item -Path \"$dir\\{code_GetAppExeDestName}\" -Destination \"quark.exe\" -Force",
-            "Move-Item -Path \"$dir\\{code_GetAppProxyExeDestName}\" -Destination \"quark_proxy.exe\" -Force",
+            "Move-Item -Path \"$dir\\{code_GetAppExeDestName}\" -Destination \"$dir\\quark.exe\" -Force",
+            "Move-Item -Path \"$dir\\{code_GetAppProxyExeDestName}\" -Destination \"$dir\\quark_proxy.exe\" -Force",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:LOCALAPPDATA\\Quark\" \"$persist_dir\\LocalAppData\" -Migrate"
         ]
