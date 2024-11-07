@@ -8,6 +8,7 @@
     },
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihwcJ2d4of7g&type=down#/dl.7z",
     "hash": "4eb339098bdf79fdfa158570e2db061b4a29a0b39ac53b5f55599f1749c76e11",
+    "extract_dir": "AIDA64 Extreme",
     "persist": "aida64.ini",
     "shortcuts": [
         [
