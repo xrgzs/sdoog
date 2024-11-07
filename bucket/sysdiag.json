@@ -1,0 +1,46 @@
+{
+    "version": "6.0.3.1-2024.11.07.1",
+    "description": "火绒安全软件6.0，畅享纯粹终端防护，轻快运行，静享守护，全面防御",
+    "homepage": "https://www.huorong.cn/person",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-x64-6.0.3.1-2024.11.07.1.exe#/installer.exe",
+            "hash": "d75de665924e6b6bce8449904448e13363681c80c8db4db31ec053d3e6e86381"
+        },
+        "32bit": {
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-x86-6.0.3.1-2024.11.07.1.exe#/installer.exe",
+            "hash": "87ec1a974b182254667a1540a4d0b5ab0b94bfaed085b8a7157d5f60a25938ce"
+        },
+        "arm64": {
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-arm64-6.0.3.1-2024.11.07.1.exe#/installer.exe",
+            "hash": "43a984491a8e9c33179895df034d7d26f94546ecd3a01e837e8a1b5ef1aee1a0"
+        }
+    },
+    "installer": {
+        "script":[
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -RunAs",
+            "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://www.huorong.cn/product/downloadHr60.php?pro=hr60&plat=x64UrlAll&ver=$(Get-Date -Format FileDateTime)\" | Get-RedirectedUrl1st -UserAgent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36\""
+        ],
+        "regex": "(?<domain>https?://.*)/sysdiag-all-x64-(.*).exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchDomain/sysdiag-all-x64-$version.exe#/installer.exe"
+            },
+            "32bit": {
+                "url": "$matchDomain/sysdiag-all-x86-$version.exe#/installer.exe"
+            },
+            "arm64": {
+                "url": "$matchDomain/sysdiag-all-arm64-$version.exe#/installer.exe"
+            }
+        }
+    }
+}
