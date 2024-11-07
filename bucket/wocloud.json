@@ -34,10 +34,7 @@
         "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse | Out-Null",
         "",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "New-PersistDirectory \"$env:APPDATA\\wocloud\" \"$persist_dir\\AppData\" -Migrate",
-        "",
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\联通云盘.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\联通云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        "New-PersistDirectory \"$env:APPDATA\\wocloud\" \"$persist_dir\\AppData\" -Migrate"
     ],
     "uninstaller": {
         "script": [
@@ -46,7 +43,6 @@
             "Remove-Junction \"$env:APPDATA\\wocloud\""
         ]
     },
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\联通云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": "Invoke-RestMethod -Uri \"https://pack.pan.wo.cn/download/latest.yml?t=$(Get-Date -Format FileDateTime)\"",
         "regex": "version: (.*)"

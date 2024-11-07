@@ -38,10 +38,6 @@
         "New-PersistFile \"$persist_dir\\syncclouddb.db\"",
         "New-PersistFile \"$persist_dir\\accountdb.db\""
     ],
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\中国移动云盘.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\中国移动云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall":[
         "taskkill /f /im cloudBackupDisk.exe",
         "taskkill /f /im cloudSyncDisk.exe",
@@ -50,7 +46,6 @@
         "taskkill /f /im MirrorServer.exe",
         "taskkill /f /im mountSpace.exe"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\中国移动云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": "(Invoke-WebRequest -UseBasicParsing -Uri 'https://yun.139.com/platformInfo/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos' -Method Post -ContentType 'application/json' -Body '{\"adpostid\": 2016}').Content",
         "jsonpath": "$.body[?(@.name == 'Windows')].description",

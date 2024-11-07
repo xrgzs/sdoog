@@ -15,17 +15,14 @@
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\123pan\" \"$persist_dir\\AppData\" -Migrate",
-            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal",
-            "$scoop_startmenu_folder = shortcut_folder $global",
-            "Copy-Item -Path \"$scoop_startmenu_folder\\123云盘.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\123云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal"
         ]
     },
     "uninstaller": {
         "script": [
             "$bucket = $install.bucket",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\123pan\"",
-            "Remove-Item \"$env:USERPROFILE\\Desktop\\123云盘.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+            "Remove-Junction \"$env:APPDATA\\123pan\""
         ]
     },
     "checkver": {
