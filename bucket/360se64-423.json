@@ -5,6 +5,7 @@
     "license": "Freeware",
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iGauX2dl6sne&type=down#/dl.7z",
     "hash": "0bc9476a6d9ee421829cdce030a7868ca2ba0345d5ccfaba9c90fe878ebd8d2a",
+    "extract_dir": "360SE",
     "shortcuts": [
         [
             "Application\\360se.exe",
