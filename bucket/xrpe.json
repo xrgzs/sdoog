@@ -4,6 +4,7 @@
     "homepage": "https://pe.xrgzs.top/",
     "license": "Freeware",
     "depends": "gsudo",
+    "notes": "If you want to reboot to Xiaran PE immediately, please run 'reboot-to-xrpe'. For further details, please visit https://pe.xrgzs.top .",
     "architecture": {
         "64bit": {
             "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
@@ -27,6 +28,8 @@
             "@echo off",
             "@reg query \"HKU\\S-1-5-19\" >nul 2>&1 || (gsudo \"%~f0\" %* & exit /b)",
             "",
+            "echo Xiaran PE Install Script",
+            "",
             "bcdedit /create {ramdiskoptions}",
             "bcdedit /set {ramdiskoptions} ramdisksdidevice partition=c:",
             "bcdedit /set {ramdiskoptions} ramdisksdipath \\Windows\\Boot\\DVD\\PCAT\\boot.sdi",
@@ -39,7 +42,7 @@
             "",
             "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} path \\windows\\system32\\boot\\winload.exe",
             "",
-            "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} path \\windows\\system32\\boot\\winload.efi",
+            "bcdedit /enum {current} | find /i \"winload.efi\" && bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} path \\windows\\system32\\boot\\winload.efi",
             "",
             "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} systemroot \\windows",
             "bcdedit /set {ffffffff-8d96-11de-8e71-fffffffffffe} detecthal yes",
@@ -51,6 +54,8 @@
             "bcdedit /displayorder {ffffffff-8d96-11de-8e71-fffffffffffe} /addlast",
             "",
             "bcdedit /timeout 6",
+            "",
+            "echo Xiaoran PE has been added to BCD entry.",
             "\"@ | Out-File -FilePath \"$dir\\install-xrpe.cmd\" -Encoding utf8",
             "",
             "",
@@ -61,7 +66,7 @@
             "@echo off",
             "@reg query \"HKU\\S-1-5-19\" >nul 2>&1 || (gsudo \"%~f0\" %* & exit /b)",
             "",
-            "echo \"Are you sure to reboot to Xiaoran PE?\"",
+            "echo Are you sure to reboot to Xiaoran PE?",
             "",
             "pause",
             "",
@@ -75,17 +80,20 @@
             "",
             "cls",
             "@chcp 65001 >nul",
-            "",
+            "@echo off",
             "@reg query \"HKU\\S-1-5-19\" >nul 2>&1 || (gsudo \"%~f0\" %* & exit /b)",
             "",
+            "echo Xiaran PE Uninstall Script",
+            "",
             "bcdedit.exe /delete {ffffffff-8d96-11de-8e71-fffffffffffe}",
+            "",
+            "echo Xiaoran PE has been uninstalled.",
             "",
             "\"@ | Out-File -FilePath \"$dir\\uninstall-xrpe.cmd\" -Encoding utf8",
             "",
             "",
-            "cmd.exe /c \"$dir\\install-xrpe.cmd\"",
-            ""
-        ]
+            "cmd.exe /c \"$dir\\install-xrpe.cmd\""
+          ]
     },
     "uninstaller": {
         "script": "gsudo cmd.exe /c \"$dir\\uninstall-xrpe.cmd\""
