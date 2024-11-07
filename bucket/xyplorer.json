@@ -8,6 +8,7 @@
     },
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/irKqk2eiic3i&type=down#/dl.7z",
     "hash": "4fed8b8b5c688831b2576592876166d009de242c69d7ec7d63086070b2121f2d",
+    "extract_dir": "XYplorer",
     "bin": "XYplorer.exe",
     "shortcuts": [
         [
