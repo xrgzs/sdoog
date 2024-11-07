@@ -6,6 +6,7 @@
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ii5cf28z0sed&type=down#/dl.7z",
     "hash": "c6e05bce2507456e2c507a204e24706f24f0cd2f70bfc7a781f06b1f34ec5d22",
     "persist": "Data",
+    "extract_dir": "Bandicam",
     "shortcuts": [
         [
             "BandicamPortable.exe",
