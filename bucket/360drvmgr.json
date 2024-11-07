@@ -13,7 +13,7 @@
         ]
     ],
     "uninstaller": {
-        "script": "Invoke-ExternalCommand \"$dir\\清理残留.bat\" -Quiet"
+        "script": "if ($cmd -eq 'uninstall') { Invoke-ExternalCommand \"$dir\\清理残留.bat\" -Quiet }"
     },
     "post_install": [
         "$scoop_startmenu_folder = shortcut_folder $global",
