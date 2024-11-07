@@ -1,9 +1,9 @@
 {
-    "version": "7.44.6",
+    "version": "7.44.6.1",
     "description": "百度网盘是一款国民级产品,已连续9年为超过7亿用户提供稳定、安全的个人云存储服务,已实现电脑、手机、电视等多种终端场景的覆盖和互联,并支持多类型文件的备份、分享、查看和处理任务。通过百度网盘PC客户端存入的文件，不会占用本地空间，也不会因为浏览器、网络等突发问题中途中断，大文件传输更稳定。",
     "homepage": "https://pan.baidu.com/download",
     "license": "Unknown",
-    "url": "https://issuepcdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.44.6.1.exe#/dl.7z",
+    "url": "http://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.44.6.1.exe#dl.7z",
     "hash": "ba1ae83c098a80484e6f550bf4ba55787cbf62e1de9cc748464cb432a6de12fc",
     "shortcuts": [
         [
@@ -11,9 +11,7 @@
             "百度网盘"
         ]
     ],
-    "persist": [
-        "users"
-    ],
+    "persist": "users",
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
