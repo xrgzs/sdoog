@@ -8,7 +8,7 @@
             "script": "${workspaceFolder}\\bin\\checkver.ps1",
             "args": [
                 "-App",
-                "${fileBasenameNoExtension}",
+                "\"${fileBasenameNoExtension}\"",
                 "-Update"
             ],
             "cwd": "${workspaceFolder}",
