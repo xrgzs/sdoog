@@ -5,6 +5,7 @@
     "homepage": "https://www.423down.com/10151.html",
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ir2wx2929bxc&type=down#/dl.7z",
     "hash": "8b66a92134073889adeb6b3f3600f8add4c34874fbf3b85f6a57b0c5da23f294",
+    "extract_dir": "InnoExtractor",
     "bin": "InnoExtractor.exe",
     "shortcuts": [
         [
@@ -12,6 +13,7 @@
             "Inno Extractor"
         ]
     ],
+    "persist": "Config.ief",
     "checkver": {
         "script": [
             "$response = Invoke-RestMethod -Uri \"https://www.423down.com/10151.html\"",
