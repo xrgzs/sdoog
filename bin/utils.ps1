@@ -131,7 +131,7 @@ function Remove-Junction {
 
 function Stop-App {
     param(
-        [Parameter(Mandatory = $true, Position = 0, ValueFromPipeline, HelpMessage = "Array of paths to search for executables")]
+        [Parameter(Position = 0, ValueFromPipeline, HelpMessage = "Array of paths to search for executables")]
         [string[]]
         $Path
     )
