@@ -14,12 +14,16 @@
     "post_install": [
         "@('$PLUGINSDIR', '$TEMP', 'uninst.exe', 'UninstSetup.exe') | ForEach-Object {",
         "    Remove-Item \"$dir\\$_\" -Recurse -Force",
-        "}"
+        "}",
+        "",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\ecloud\" \"$persist_dir\\AppData\" -Migrate"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\ecloud\""
     ],
     "checkver": {
         "url": "https://cloud.189.cn/api/portal/getClientByType.action?clientType=TELEPC-newf",
