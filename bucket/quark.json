@@ -1,0 +1,46 @@
+{
+    "version": "1.9.0.155",
+    "description": "夸克浏览器学习、工作、生活的高效拍档",
+    "homepage": "https://www.quark.cn/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://broccoli.uc.cn/apps/quark_icloud_pay/routes/service_help"
+    },
+    "url": "https://pdds.ucweb.com/download/stfile/vv6z55x8wvwzvx9yw/QuarkPC_V1.9.0.155_windows_pf5001_(zh-cn)_release_(Build1973490-241105190728-x64).exe",
+    "hash": "84ffcb0bead4060db6325dc4e4ed9e56563d7e9eba05e2dec33b15f91c015208",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "quark.exe",
+            "夸克"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "Move-Item -Path \"$dir\\{code_GetAppExeDestName}\" -Destination \"quark.exe\" -Force",
+            "Move-Item -Path \"$dir\\{code_GetAppProxyExeDestName}\" -Destination \"quark_proxy.exe\" -Force",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\Quark\" \"$persist_dir\\LocalAppData\" -Migrate"
+        ]
+    },
+    "post_install": [
+        "$scoop_startmenu_folder = shortcut_folder $global",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\夸克.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\夸克.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "uninstaller": {
+        "script": [
+            "$bucket = $install.bucket",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Remove-Junction \"$env:LOCALAPPDATA\\Quark\"",
+            "Remove-Item \"$env:USERPROFILE\\Desktop\\夸克.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "checkver": {
+        "url": "https://com-cms.quark.cn/cms?partner_id=quark_pc_homepage&group=quark_pc_homepage&uc_param_str=cgligimiosntwilasspijbnwdnnifrpfbivecpchbtbmprpvstsvgddsudkt&user_type=utdid&uid=04d722d5-700e-444b-a75c-da8e6a1dc5fe",
+        "jsonpath": "$.data.allUserRes.quark_home_pc_package_test[0].items[0].package_link",
+        "regex": "(?<url>^https?://.*QuarkPC_V([\\d.]+).*\\.exe$)"
+    },
+    "autoupdate": {
+        "url": "$matchUrl"
+    }
+}
