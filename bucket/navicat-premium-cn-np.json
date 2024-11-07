@@ -42,6 +42,10 @@
         "regex": "version ([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://dn.navicat.com.cn/download/navicat17_premium_cs_x64.exe#/installer.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://dn.navicat.com.cn/download/navicat17_premium_cs_x64.exe#/installer.exe"
+            }
+        }
     }
 }

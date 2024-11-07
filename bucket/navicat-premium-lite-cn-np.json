@@ -23,7 +23,7 @@
             "/DIR=\"$dir\""
         ]
     },
-    "post_install":[
+    "post_install": [
         "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\PremiumSoft\\Navicat Premium Lite 17.lnk\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
@@ -44,6 +44,10 @@
         "regex": "version ([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://dn.navicat.com.cn/download/navicat17_premium_lite_cs_x64.exe#/installer.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://dn.navicat.com.cn/download/navicat17_premium_lite_cs_x64.exe#/installer.exe"
+            }
+        }
     }
 }
