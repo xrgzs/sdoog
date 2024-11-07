@@ -15,10 +15,19 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S') -RunAs",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:ProgramData\\Huorong\\Sysdiag\" \"$persist_dir\\ProgramData\" -Migrate",
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S',\"/D=$dir\") -RunAs",
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
+    "pre_uninstall": [
+        "Invoke-ExternalCommand \"$dir\\uninst.exe\" -RunAs",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:ProgramData\\Huorong\\Sysdiag\""
+    ],
     "checkver": {
         "script": [
             "$resp = Invoke-RestMethod -Uri \"https://api.crxsoso.com/microsoft/parse\" `",
