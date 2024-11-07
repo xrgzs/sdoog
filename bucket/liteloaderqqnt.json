@@ -43,6 +43,11 @@
             "llqqnt_install"
         ]
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "post_uninstall": [
         "$qqnt_dir = \"$(appdir qqnt $global)\\current\\Files\"",
         "$path = \"$qqnt_dir\\resources\\app\"",

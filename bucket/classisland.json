@@ -32,7 +32,9 @@
         "Copy-Item -Path \"$scoop_startmenu_folder\\ClassIsland.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ClassIsland.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
-        "taskkill /f /im ClassIsland.exe *>$null"
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ],
     "post_uninstall": [
         "Remove-Item \"$env:USERPROFILE\\Desktop\\ClassIsland.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",

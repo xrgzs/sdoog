@@ -16,6 +16,11 @@
         "config",
         "debug"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "checkver": {
         "github": "https://github.com/MaaAssistantArknights/MaaAssistantArknights"
     },

@@ -16,8 +16,10 @@
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "persist": "Rime",
     "pre_uninstall": [
-        "taskkill /f /im WeaselServer.exe",
-        "Invoke-ExternalCommand \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" -Quiet"
+        "Invoke-ExternalCommand \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" -Quiet",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/rime/weasel/releases/latest",

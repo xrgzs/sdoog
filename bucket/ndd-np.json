@@ -45,7 +45,8 @@
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Remove-Junction \"$env:APPDATA\\notepad\""
+        "Remove-Junction \"$env:APPDATA\\notepad\"",
+        "Stop-App"
     ],
     "uninstaller": {
         "file": "unins000.exe",

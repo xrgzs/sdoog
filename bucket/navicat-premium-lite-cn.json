@@ -16,6 +16,11 @@
         ]
     ],
     "innosetup": true,
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "checkver": {
         "url": "https://www.navicat.com.cn/products/navicat-premium-release-note",
         "regex": "version ([\\d.]+)"

@@ -29,6 +29,11 @@
         "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "}"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "checkver": {
         "regex": "(?sm)<li>(?:版本|Ver)：([\\d.]+)</li>\\s*<li>(?:内核|Kernel)：(?<kernelmajor>\\d+)[\\d.]+</li>"
     },

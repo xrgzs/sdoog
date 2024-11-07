@@ -9,6 +9,11 @@
         "New-Item -Path \"$dir\" -Name \"config.ini\" -ItemType \"file\" -Force -ErrorAction SilentlyContinue | Out-Null",
         "New-Item -Path \"$dir\" -Name \"StarwardDatabase.db\" -ItemType \"file\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "extract_dir": "Starward",
     "bin": "Starward.exe",
     "shortcuts": [

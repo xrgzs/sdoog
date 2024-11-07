@@ -39,12 +39,9 @@
         "New-PersistFile \"$persist_dir\\accountdb.db\""
     ],
     "pre_uninstall":[
-        "taskkill /f /im cloudBackupDisk.exe",
-        "taskkill /f /im cloudSyncDisk.exe",
-        "taskkill /f /im mCloud.exe",
-        "taskkill /f /im mCloudCef.exe",
-        "taskkill /f /im MirrorServer.exe",
-        "taskkill /f /im mountSpace.exe"
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ],
     "checkver": {
         "script": "(Invoke-WebRequest -UseBasicParsing -Uri 'https://yun.139.com/platformInfo/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos' -Method Post -ContentType 'application/json' -Body '{\"adpostid\": 2016}').Content",

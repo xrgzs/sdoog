@@ -29,6 +29,11 @@
             "New-Item Registry::HKEY_CLASSES_ROOT\\quicker\\shell\\open\\command -Force -ItemType String -Value \"`\"$dir\\QuickerStarter.exe`\" `\"%1`\"\" | Out-Null"
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "uninstaller": {
         "script": [
             "if (!(is_admin)) {",

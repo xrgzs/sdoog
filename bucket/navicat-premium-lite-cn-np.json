@@ -26,6 +26,11 @@
     "post_install":[
         "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\PremiumSoft\\Navicat Premium Lite 17.lnk\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "uninstaller": {
         "file": "unins000.exe",
         "args": [

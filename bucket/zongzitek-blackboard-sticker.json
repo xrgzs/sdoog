@@ -26,7 +26,9 @@
         "Copy-Item -Path \"$scoop_startmenu_folder\\ZongziTEK 黑板贴.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
-        "taskkill /f /im ZongziTEK_Blackboard_Sticker.exe *>$null"
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ],
     "post_uninstall": [
         "Remove-Item \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"

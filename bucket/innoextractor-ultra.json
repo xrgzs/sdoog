@@ -14,6 +14,11 @@
         ]
     ],
     "persist": "Config.ief",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "checkver": {
         "script": [
             "$response = Invoke-RestMethod -Uri \"https://www.423down.com/10151.html\"",

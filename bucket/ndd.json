@@ -52,11 +52,14 @@
             "reg import \"$dir\\install-notepad--.reg\""
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\notepad\""
+    ],
     "uninstaller": {
         "script": [
-            "$bucket = $install.bucket",
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\notepad\"",
             "if ($global) {",
             "    $registry_scope = \"HKLM\"",
             "} else {",

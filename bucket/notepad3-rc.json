@@ -38,6 +38,11 @@
         "",
         "reg import \"$dir\\install-notepad3rc.reg\""
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "uninstaller": {
         "script": [
             "if ($global) {",

@@ -12,5 +12,10 @@
             "HPMMake.exe",
             "HotPE模块制作工具"
         ]
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ]
 }

@@ -15,6 +15,11 @@
     },
     "extract_dir": "Sunshine",
     "pre_install": "Set-Content \"$dir/sunshine.bat\" (@('@echo off', 'pushd %~dp0 && sunshine.exe %* && popd') -join \"`r`n\")",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "bin": [
         "sunshine.bat",
         "tools/dxgi-info.exe",

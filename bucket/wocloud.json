@@ -27,22 +27,18 @@
             }
         }
     },
-    "pre_uninstall": [
-        "taskkill /f /im WoCloud.exe *>$null"
-    ],
     "post_install": [
         "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse | Out-Null",
         "",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\wocloud\" \"$persist_dir\\AppData\" -Migrate"
     ],
-    "uninstaller": {
-        "script": [
-            "$bucket = $install.bucket",
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\wocloud\""
-        ]
-    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\wocloud\""
+    ],
     "checkver": {
         "script": "Invoke-RestMethod -Uri \"https://pack.pan.wo.cn/download/latest.yml?t=$(Get-Date -Format FileDateTime)\"",
         "regex": "version: (.*)"

@@ -78,10 +78,6 @@
     },
     "uninstaller": {
         "script": [
-            "$bucket = $install.bucket",
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\"",
-            "",
             "if ($global) {",
             "    $registry_scope = \"HKLM\"",
             "} else {",
@@ -100,8 +96,10 @@
         "Copy-Item -Path \"$scoop_startmenu_folder\\希沃白板 5.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
-        "taskkill /f /im swenserver.exe *>$null",
-        "taskkill /f /im EasiNote.exe *>$null"
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\""
     ],
     "post_uninstall": [
         "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"

@@ -31,6 +31,11 @@
         "$scoop_startmenu_folder = shortcut_folder $global",
         "Copy-Item -Path \"$scoop_startmenu_folder\\潇然一键装机助理.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",

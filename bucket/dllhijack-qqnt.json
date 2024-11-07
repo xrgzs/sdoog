@@ -30,6 +30,9 @@
         "}"
     ],
     "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
         "$envfilePath = \"$(appdir qqnt $global)\\current\\Files\\dbghelp.dll\"",
         "info \"Removing hardlink for $envfilePath\"",
         "if ((Get-Item $envfilePath).LinkType -eq \"HardLink\") {",

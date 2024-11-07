@@ -24,6 +24,11 @@
         "New-PersistFile \"$persist_dir\\BCState.xml.bak\"",
         "Expand-InnoArchive -Path \"$dir\\$fname\" -Switches \"-a\" -Removal"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "architecture": {
         "64bit": {
             "installer": {

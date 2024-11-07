@@ -12,7 +12,6 @@
 
 </div>
 
-
 ## 使用说明
 
 ### 添加本仓库：
@@ -35,32 +34,31 @@ scoop bucket add sdoog https://gh.xrgzs.top/https://github.com/xrgzs/sdoog.git
 irm c.xrgzs.top/c/scoop | iex
 ```
 
-
 ## 提交贡献
 
 以下是几点提交贡献的小提示：
 
 1. 不要重复添加以下仓库已有的配置文件，除非配置文件内容不同或有特殊优化：
 
-   此仓库为潇然系统优化版 scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
+    此仓库为潇然系统优化版 scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
 
-   | Name            | Source                                             |
-   | --------------- | -------------------------------------------------- |
-   | main            | https://github.com/ScoopInstaller/Main             |
-   | extras          | https://github.com/ScoopInstaller/Extras           |
-   | versions        | https://github.com/ScoopInstaller/Versions         |
-   | nirsoft         | https://github.com/ScoopInstaller/Nirsoft          |
-   | sysinternals    | https://github.com/niheaven/scoop-sysinternals     |
-   | php             | https://github.com/ScoopInstaller/PHP              |
-   | nerd-fonts      | https://github.com/matthewjberger/scoop-nerd-fonts |
-   | nonportable     | https://github.com/ScoopInstaller/Nonportable      |
-   | java            | https://github.com/ScoopInstaller/Java             |
-   | games           | https://github.com/Calinou/scoop-games             |
-   | **abgo_bucket** | https://github.com/abgox/abgo_bucket.git           |
-   | **aki**         | https://github.com/akirco/aki-apps.git             |
-   | **dorado**      | https://github.com/chawyehsu/dorado.git            |
-   | **DoveBoy**     | https://github.com/DoveBoy/Apps.git                |
-   | **scoop-zapps** | https://github.com/kkzzhizhou/scoop-zapps.git      |
+    | Name            | Source                                             |
+    | --------------- | -------------------------------------------------- |
+    | main            | https://github.com/ScoopInstaller/Main             |
+    | extras          | https://github.com/ScoopInstaller/Extras           |
+    | versions        | https://github.com/ScoopInstaller/Versions         |
+    | nirsoft         | https://github.com/ScoopInstaller/Nirsoft          |
+    | sysinternals    | https://github.com/niheaven/scoop-sysinternals     |
+    | php             | https://github.com/ScoopInstaller/PHP              |
+    | nerd-fonts      | https://github.com/matthewjberger/scoop-nerd-fonts |
+    | nonportable     | https://github.com/ScoopInstaller/Nonportable      |
+    | java            | https://github.com/ScoopInstaller/Java             |
+    | games           | https://github.com/Calinou/scoop-games             |
+    | **abgo_bucket** | https://github.com/abgox/abgo_bucket.git           |
+    | **aki**         | https://github.com/akirco/aki-apps.git             |
+    | **dorado**      | https://github.com/chawyehsu/dorado.git            |
+    | **DoveBoy**     | https://github.com/DoveBoy/Apps.git                |
+    | **scoop-zapps** | https://github.com/kkzzhizhou/scoop-zapps.git      |
 
 2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 `Url Proxy` 功能能够自动处理
 
@@ -78,11 +76,11 @@ irm c.xrgzs.top/c/scoop | iex
 
 9. 遵循 [Scoop Contributing Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md#for-scoop-buckets) 的规范提交 Pull Request，懒得看的话，需要注意以下几点：
 
-   - 不要用 Master 分支提交 Pull Request
-   - 一个 Manifest 一个 Branch 一个 Pull Request
-   - 本仓库对 Pull Request、Commit 和 Branch 命名没有强制性要求，但要能看得出来改了什么
+    - 不要用 Master 分支提交 Pull Request
+    - 一个 Manifest 一个 Branch 一个 Pull Request
+    - 本仓库对 Pull Request、Commit 和 Branch 命名没有强制性要求，但要能看得出来改了什么
 
-10. 提交 PR 前，请开一台电脑或虚拟机，测试以下内容：
+10. 提交 PR 前，请开一台电脑或虚拟机，要求**开启 UAC**，测试以下内容：
 
     - 能够正常安装
 
@@ -92,6 +90,10 @@ irm c.xrgzs.top/c/scoop | iex
 
     - 能够正常使用
 
+    - 能够正常持久化配置文件
+
+    - 能够正常卸载
+
     - 能够正常执行 Autoupdate
 
         - 可以先破坏要更新的内容（尤其是 `version` 字段），然后本地执行检测操作，确保配置文件能用且为最新版本
@@ -100,19 +102,19 @@ irm c.xrgzs.top/c/scoop | iex
 
             1. VS Code 在 JSON 配置文件下按 <kbd>F5</kbd>
 
-               - Only sdoog can do.
+                - Only sdoog can do.
 
             2. 在项目根目录执行：
 
-               ```powershell
-                .\bin\checkver.ps1 -App 软件名称 -Update
-               ```
+                ```powershell
+                 .\bin\checkver.ps1 -App 软件名称 -Update
+                ```
 
 11. 提交 PR 时，清空默认的提交内容，加入你认为有用的信息（提交上一步测试的截图/输出）
 
 12. 提交 PR 后，如果有更改，在 GitHub PR 页面发送评论 `/verify`，让机器人再次检测
 
-希望此规范能够帮助到参与第三方 scoop 仓库的贡献者，提供一个轻松、高效的贡献流程。
+希望此规范能够帮助到参与第三方 scoop 仓库的贡献者，提供一个轻松、高效的软件提交流程，如果不会搞的话可以发 issue。
 
 ## 编写技巧
 
@@ -122,13 +124,11 @@ irm c.xrgzs.top/c/scoop | iex
 
 你想知道关于配置文件的定义项，这里都有，在编写配置文件时建议同时打开：
 
-https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests
-
-### 自动更新
-
-`checkver` 不会写？看这里：
-
-https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate
+-   [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+    -   [Creating an App Manifest](https://github.com/ScoopInstaller/Scoop/wiki/Creating-an-app-manifest)
+    -   [Autoupdate](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate)
+    -   [Persistent data](https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data)
+    -   [Pre and Post install and uninstall Scripts](<https://github.com/ScoopInstaller/Scoop/wiki/Pre-Post-(un)install-scripts>)
 
 ### 读取脚本
 
@@ -203,7 +203,6 @@ PS D:\sdoog> Get-Content .\Untitled-1.ps1 | ConvertTo-Json
 
 参考 [pecmd-beta](bucket/pecmd-beta.json)
 
-
 ### WinGet 自动更新
 
 我们提供了 WinGet PowerShell 模块，只需导入即可使用
@@ -226,7 +225,7 @@ manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAM
 }
 ```
 
-如果要同时将版本号和URL同时匹配出来，可以：
+如果要同时将版本号和 URL 同时匹配出来，可以：
 
 ```json
 "checkver": {
@@ -244,6 +243,9 @@ manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAM
 }
 ```
 
+### 匹配转链
+
+`Get-RedirectedUrl1st`：匹配 301 / 302 等带有 Location 头的转链
 
 ### 创建桌面快捷方式
 
@@ -315,6 +317,20 @@ Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 
 参考 [easinote](bucket/easinote.json)
 
-我们目前认为这些命令不用外置脚本，方便在虚拟机里面不加仓库直接测试
+这些命令需要外置脚本，所有请务必在仓库内测试
 
-*未完待续……*
+### 关闭目录下的所有程序
+
+`Stop-App`：关闭安装目录下所有正在运行的程序，可加第一个参数传入需要关闭的其它目录，使用此函数无需指定程序名称
+
+建议在 `pre_uninstall`、`uninstaller.script` 中调用
+
+```powershell
+$bucket = $install.bucket
+. "$bucketsdir\$bucket\bin\utils.ps1"
+Stop-App
+```
+
+目前暂不支持提权关闭
+
+_未完待续……_

@@ -56,6 +56,11 @@
             "reg import \"$dir\\install-notepad4.reg\""
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "uninstaller": {
         "script": [
             "if ($global) {",

@@ -18,13 +18,12 @@
             "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal"
         ]
     },
-    "uninstaller": {
-        "script": [
-            "$bucket = $install.bucket",
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\123pan\""
-        ]
-    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\123pan\""
+    ],
     "checkver": {
         "script": [
             "Import-Module \"$pwd\\bin\\WinGet.psm1\"",

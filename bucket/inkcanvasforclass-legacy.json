@@ -24,7 +24,9 @@
         "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas For Class.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
-        "taskkill /f /im \"InkCanvasForClass.exe\" *>$null"
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
     ],
     "post_uninstall": [
         "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas For Class.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"

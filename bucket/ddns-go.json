@@ -18,6 +18,15 @@
         }
     },
     "bin": "ddns-go.exe",
+    "post_install":[
+        "Invoke-ExternalCommand -Path \"$dir\\ddns-go.exe\" -ArgumentList @('-s', 'install') -RunAs"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Invoke-ExternalCommand -Path \"$dir\\ddns-go.exe\" -ArgumentList @('-s', 'uninstall') -RunAs"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {

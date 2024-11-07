@@ -23,14 +23,16 @@
     },
     "uninstaller": {
         "script": [
-            "$bucket = $install.bucket",
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "Remove-Junction \"$env:APPDATA\\Easeware\\DriverEasy\"",
-            "",
             "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
             "Start-Sleep -Seconds 10"
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Easeware\\DriverEasy\""
+    ],
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",

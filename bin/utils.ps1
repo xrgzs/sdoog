@@ -46,6 +46,45 @@ function ConvertFrom-HtmlEncodedText {
     }
 }
 
+
+function Get-RedirectedUrl1st {
+    <#
+    .SYNOPSIS
+      Get the first redirected URL from the given URL
+    .PARAMETER Uri
+      The Uniform Resource Identifier (URI) that will be redirected
+    .PARAMETER UserAgent
+      The user agent string for the web request
+    #>
+    [OutputType([string])]
+    param (
+        [parameter(Mandatory, ValueFromPipeline, HelpMessage = 'The URI that will be redirected')]
+        [string]
+        $Uri,
+
+        [Parameter(HelpMessage = 'The user agent string for the web request')]
+        [string]
+        $UserAgent,
+
+        [Parameter(HelpMessage = 'The user agent string for the web request')]
+        [System.Collections.IDictionary]
+        $Headers
+    )
+
+    process {
+        $Request = [System.Net.WebRequest]::Create($Uri)
+        if ($UserAgent) {
+            $Request.UserAgent = $UserAgent
+        }
+        if ($Headers) {
+            $Headers.GetEnumerator() | ForEach-Object -Process { $Request.Headers.Set($_.Key, $_.Value) }
+        }
+        $Request.AllowAutoRedirect = $false
+        $Response = $Request.GetResponse()
+        Write-Output -InputObject $Response.GetResponseHeader('Location')
+        $Response.Close()
+    }
+}
 function New-PersistDirectory {
     param (
         [parameter(Mandatory = $true, Position = 0)]
@@ -88,4 +127,29 @@ function Remove-Junction {
     # Delete Junction only
     $dataPathItem = Get-Item -Path $dataPath
     try { $dataPathItem.Delete() } catch {}
+}
+
+function Stop-App {
+    param(
+        [Parameter(Mandatory = $true, Position = 0, ValueFromPipeline, HelpMessage = "Array of paths to search for executables")]
+        [string[]]
+        $Path
+    )
+
+    # 如果未传入 Path 参数，使用默认值
+    if (-not $Path) {
+        $Path = @($dir, (Split-Path $dir -Parent) + '\current')
+    }
+
+    # 获取所有进程到内存中，提高性能
+    $allProcesses = Get-Process
+
+    foreach ($app_dir in $Path) {
+        $allProcesses | Where-Object {
+            $_.Modules.FileName -like "$app_dir\*"
+        } | ForEach-Object {
+            Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue
+            Wait-Process -Id $_.Id -ErrorAction SilentlyContinue -Timeout 30
+        }
+    }
 }

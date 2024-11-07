@@ -20,6 +20,11 @@
         "New-PersistFile \"$persist_dir\\BCState.xml\"",
         "New-PersistFile \"$persist_dir\\BCState.xml.bak\""
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iPN3W2dlpe0b&type=down#/dl.7z",

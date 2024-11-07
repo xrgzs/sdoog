@@ -16,6 +16,11 @@
         ]
     },
     "post_install": "reg.exe add \"HKCU\\Software\\StartIsBack\" /f /v \"DarkMagic\" /t REG_DWORD /d 1",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "uninstaller": {
         "script": ". \"$env:LOCALAPPDATA\\StartAllBack\\StartAllBackCfg.exe\" /uninstall /silent"
     },

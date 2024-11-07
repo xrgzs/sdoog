@@ -17,6 +17,11 @@
             "Remove-Item \"$dir\\app.7z\" -Force"
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "shortcuts": [
         [
             "app/oopz.exe",

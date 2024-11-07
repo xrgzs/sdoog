@@ -16,6 +16,11 @@
             "StarRailCopilot"
         ]
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "persist": "config",
     "checkver": {
         "url": "https://github.com/LmeSzinc/StarRailCopilot/releases",

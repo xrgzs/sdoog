@@ -16,6 +16,11 @@
         "$scoop_startmenu_folder = shortcut_folder $global",
         "Copy-Item -Path \"$scoop_startmenu_folder\\360 极速浏览器X.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\360 极速浏览器X.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\360 极速浏览器X.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
