@@ -9,10 +9,11 @@
             "hash": "32429d2da19f72d76416828516da6e8849bdb43632eb7d2de87e53dd6191d050"
         }
     },
+    "extract_to": "installer",
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('-s') -Quiet",
-            "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
+            "Invoke-ExternalCommand \"$dir\\installer\\installer.exe\" -ArgumentList @('-s') -Quiet",
+            "Remove-Item \"$dir\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "checkver": {
