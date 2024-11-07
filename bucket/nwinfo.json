@@ -10,17 +10,17 @@
         "64bit": {
             "bin": [
                 [
-                    "nwinfo64.exe",
+                    "nwinfox64.exe",
                     "nwinfo"
                 ],
                 [
-                    "gnwinfo64.exe",
+                    "gnwinfox64.exe",
                     "gnwinfo"
                 ]
             ],
             "shortcuts": [
                 [
-                    "gnwinfo64.exe",
+                    "gnwinfox64.exe",
                     "NWinfo GUI"
                 ]
             ]
