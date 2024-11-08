@@ -1,12 +1,12 @@
 {
-    "version": "24.9.1",
+    "version": "24.10.1",
     "description": "AMD Software: Adrenalin Edition Driver Vega and Polaris Series for Windows® 10 & Windows® 11 64-bit",
     "homepage": "https://www.cybermania.ws/hardware/amdradeon/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.9.1-win10-win11-vega-polaris.exe#/dl.7z",
-            "hash": "f5da5456d84c8dc5f9f1885b16268cd1922031713421265d2589d3a1e3904c47"
+            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.10.1-win10-win11-oct-rdna.exe#/dl.7z",
+            "hash": "17220b0f1a30d0ddaa0c4e32bb64188c7ed17b40e36fec582e09d4aca8024736"
         }
     },
     "extract_to": "installer",
