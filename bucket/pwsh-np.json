@@ -11,6 +11,10 @@
         "32bit": {
             "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x86.msi#/installer.msi",
             "hash": "a3f17465ba4b0838b37b5b6f93d03efebc49b065ce5a93d51f1a9bd364df3e30"
+        },
+        "arm64": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-arm64.msi#/installer.msi",
+            "hash": "16a649d1f47e0020d38d893af1c5037eaed7dfce76ed420675c589cd54e3a079"
         }
     },
     "installer": {
@@ -27,6 +31,9 @@
             },
             "32bit": {
                 "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x86.msi#/installer.msi"
+            },
+            "arm64": {
+                "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.msi#/installer.msi"
             }
         },
         "hash": {
