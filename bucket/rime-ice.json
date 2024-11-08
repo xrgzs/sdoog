@@ -8,8 +8,7 @@
     "notes": "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
     "depends": "weasel",
     "post_install": [
-        "$rimeuserdir = Get-ItemProperty -Path \"HKCU:\\Software\\Rime\\Weasel\" | Select-Object -ExpandProperty RimeUserDir",
-        "Copy-Item \"$dir\\*\" \"$rimeuserdir\" -Exclude \"install.json\",\"manifest.json\" -Recurse -force"
+        "Copy-Item \"$dir\\*\" \"$env:AppData\\Rime\" -Exclude \"install.json\",\"manifest.json\" -Recurse -Force"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/iDvel/rime-ice/releases/latest",
