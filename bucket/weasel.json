@@ -1,31 +1,36 @@
 {
-    "homepage": "https://rime.im/",
-    "description": "基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法",
-    "license": "GPL-3.0-or-later",
     "version": "0.16.3",
-    "url": "https://github.com/rime/weasel/releases/download/0.16.3/weasel-0.16.3.0-installer.exe#/dl.7z",
+    "description": "基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法",
+    "homepage": "https://rime.im/",
+    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/rime/weasel/releases/download/0.16.3/weasel-0.16.3.0-installer.e",
     "hash": "efa114b20a8cda39c34316cd1a9b5ed25ac0581891aa3e485c830ff7cc2dbdd9",
     "installer": {
         "script": [
-            "if(!(Test-Path \"$dir\\Rime\")) {New-Item \"$dir\\Rime\" -ItemType Directory | Out-Null} ",
-            "& \"$dir\\WeaselSetup.exe\" /i",
-            "& \"$dir\\WeaselDeployer.exe\" /install",
-            "& \"$dir\\WeaselServer.exe\""
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\Rime\" \"$persist_dir\\AppData\" -Migrate",
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S',\"/D=$dir\") -RunAs",
+            "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
-    "persist": "Rime",
+    "persist": "Data",
     "pre_uninstall": [
-        "Invoke-ExternalCommand \"$dir\\weaselserver.exe\" -ArgumentList \"/q\" -Quiet",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Rime\""
     ],
+    "uninstaller": {
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
+            "Start-Sleep -Seconds 10"
+        ]
+    },
     "checkver": {
         "url": "https://api.github.com/repos/rime/weasel/releases/latest",
         "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"
     },
     "autoupdate": {
-        "url": "https://github.com/rime/weasel/releases/download/$matchVersion/weasel-$matchReal-installer.exe#/dl.7z"
+        "url": "https://github.com/rime/weasel/releases/download/$matchVersion/weasel-$matchReal-installer.exe#/installer.exe"
     }
 }
