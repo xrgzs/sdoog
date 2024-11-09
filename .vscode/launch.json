@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Scoop: Check manifest for a newer version.",
+            "name": "Scoop: Check current manifest for a newer version",
             "type": "PowerShell",
             "request": "launch",
             "script": "${workspaceFolder}\\bin\\checkver.ps1",
@@ -19,6 +19,58 @@
             "request": "launch",
             "script": "Get-Content -Path '${file}' | ConvertTo-Json",
             "cwd": "${cwd}"
+        },
+        {
+            "name": "Scoop: Check current manifest for a newer version (Force)",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkver.ps1",
+            "args": [
+                "-App",
+                "\"${fileBasenameNoExtension}\"",
+                "-ForceUpdate"
+            ],
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Scoop: Check ALL manifests's versions",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkver.ps1",
+            "args": [
+                "-Update"
+            ],
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Scoop: List manifests which do not have valid URLs.",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkurls.ps1",
+            "args": [
+                "-Update"
+            ],
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Scoop: Check if ALL urls inside manifest have correct hashes",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkurls.ps1",
+            "args": [
+                "-Update"
+            ],
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Scoop: Check if ALL urls inside manifest have correct hashes",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\bin\\checkurls.ps1",
+            "args": [
+                "-Update"
+            ],
+            "cwd": "${workspaceFolder}",
         }
     ]
 }
