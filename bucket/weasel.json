@@ -32,7 +32,7 @@
             "    '/f',",
             "    '/v', 'UninstallString',",
             "    '/reg:32'",
-            ") -RunAs -Activity 'Removing previous installation registry key...' -ContinueExitCodes @{'1'='Not installed'}",
+            ") -RunAs -Activity 'Removing previous installation registry key...' -ContinueExitCodes @{1='Not installed'}",
             "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel /f /v \"RimeUserDir\" /t REG_SZ /d \"$env:APPDATA\\Rime\"",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs -Activity 'Running Weasel NSIS Setup...'",
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
@@ -40,15 +40,15 @@
         ]
     },
     "bin": [
-        "weasel-$version/rime-install.bat",
-        "weasel-$version/WeaselDeployer.exe",
-        "weasel-$version/WeaselServer.exe",
-        "weasel-$version/WeaselSetup.exe"
+        "weasel-0.16.3\\rime-install.bat",
+        "weasel-0.16.3\\WeaselDeployer.exe",
+        "weasel-0.16.3\\WeaselServer.exe",
+        "weasel-0.16.3\\WeaselSetup.exe"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -RunAs -Activity 'Running Weasel uninstaller...'",
+        "Invoke-ExternalCommand \"$dir\\weasel-$version\\uninstall.exe\" -ArgumentList '/S' -RunAs -Activity 'Running Weasel uninstaller...'",
         "Start-Sleep -Seconds 10",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Rime\""
@@ -58,6 +58,12 @@
         "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"
     },
     "autoupdate": {
-        "url": "https://github.com/rime/weasel/releases/download/$matchVersion/weasel-$matchReal-installer.exe#/installer.exe"
+        "url": "https://github.com/rime/weasel/releases/download/$matchVersion/weasel-$matchReal-installer.exe#/installer.exe",
+        "bin": [
+            "weasel-$matchVersion\\rime-install.bat",
+            "weasel-$matchVersion\\WeaselDeployer.exe",
+            "weasel-$matchVersion\\WeaselServer.exe",
+            "weasel-$matchVersion\\WeaselSetup.exe"
+        ]
     }
 }
