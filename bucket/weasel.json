@@ -9,9 +9,9 @@
         "如果不会配置小狼毫，请阅读Wiki",
         "Wiki: https://github.com/rime/weasel/wiki",
         "",
-        "用户配置目录：'$env:APPDATA\\Rime'，已做持久化处理",
+        "用户配置目录：\"$env:APPDATA\\Rime\" ，已做持久化处理",
         "",
-        "小狼毫内置的方案安装脚本已添加shims，只需运行：'rime-install'即可调用，",
+        "小狼毫内置的方案安装脚本已添加shims，只需运行：'rime-install' 即可调用，",
         "输入 'plum' 即可安装完整版的东风破 /plum/"
     ],
     "installer": {
@@ -25,18 +25,18 @@
             "    '/t', 'REG_SZ',",
             "    '/d', \"`\"$dir`\"\",",
             "    '/reg:32'",
-            ") -RunAs -Activity 'Writing Weasel InstallDir registry key...'",
+            ") -RunAs -Activity 'Writing Weasel InstallDir registry key...' | Out-Null",
             "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @(",
             "    'delete',",
             "    'HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Weasel',",
             "    '/f',",
             "    '/v', 'UninstallString',",
             "    '/reg:32'",
-            ") -RunAs -Activity 'Removing previous installation registry key...' -ContinueExitCodes @{1='Not installed'}",
-            "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel /f /v \"RimeUserDir\" /t REG_SZ /d \"$env:APPDATA\\Rime\"",
-            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs -Activity 'Running Weasel NSIS Setup...'",
+            ") -RunAs -Activity 'Removing previous installation registry key...' -ContinueExitCodes @{1='Not installed'} | Out-Null",
+            "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel /f /v \"RimeUserDir\" /t REG_SZ /d \"$env:APPDATA\\Rime\" *>$null",
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -RunAs -Activity 'Running Weasel NSIS Setup...' | Out-Null",
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
-            "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel\\Updates /f /v \"CheckForUpdates\" /t REG_SZ /d 0"
+            "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel\\Updates /f /v \"CheckForUpdates\" /t REG_SZ /d 0  *>$null"
         ]
     },
     "bin": [
@@ -48,7 +48,8 @@
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Invoke-ExternalCommand \"$dir\\weasel-$version\\uninstall.exe\" -ArgumentList '/S' -RunAs -Activity 'Running Weasel uninstaller...'",
+        "Invoke-ExternalCommand \"$dir\\weasel-$version\\uninstall.exe\" -ArgumentList '/S' -RunAs -Activity 'Running Weasel uninstaller...' | Out-Null",
+        "info 'Waiting for the Weasel process to exit...'",
         "Start-Sleep -Seconds 10",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Rime\""
