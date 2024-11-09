@@ -80,7 +80,13 @@
             "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Directory\\Background\\shell\\Notepad++\" /f"
         ]
     },
-    "bin": "notepad++.exe",
+    "bin": [
+        "notepad++.exe",
+        [
+            "notepad++.exe",
+            "npp"
+        ]
+    ],
     "shortcuts": [
         [
             "notepad++.exe",
