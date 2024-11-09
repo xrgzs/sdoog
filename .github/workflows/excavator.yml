@@ -52,10 +52,11 @@ jobs:
           }
 
       - name: Excavate
-        uses: ScoopInstaller/GithubActions@main
+        uses: xrgzs/ScoopGithubActions@usecore
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: 1
+          USE_CORE: 1
+          # SKIP_UPDATED: 1
 
       - name: Disconnect Cloudflare WRAP
         shell: pwsh
