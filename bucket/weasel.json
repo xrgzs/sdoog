@@ -33,15 +33,11 @@
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
+        "Start-Sleep -Seconds 10",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Rime\""
     ],
-    "uninstaller": {
-        "script": [
-            "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
-            "Start-Sleep -Seconds 10"
-        ]
-    },
     "checkver": {
         "url": "https://api.github.com/repos/rime/weasel/releases/latest",
         "regex": "rime/weasel/releases/download/(?<Version>[\\d.]+)/weasel-(?<Real>[\\d.]+)-installer.exe"
