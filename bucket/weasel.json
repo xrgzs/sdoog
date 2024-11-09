@@ -1,4 +1,5 @@
 {
+    "##": "由于无法正确解压NSIS中对应architecture的文件，本包目前以np方式安装!",
     "version": "0.16.3",
     "description": "【小狼毫】Rime for Windows輸入法。基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法。",
     "homepage": "https://rime.im/",
@@ -9,10 +10,9 @@
         "如果不会配置小狼毫，请阅读Wiki",
         "Wiki: https://github.com/rime/weasel/wiki",
         "",
-        "用户配置目录：\"$env:APPDATA\\Rime\" ，已做持久化处理",
+        "用户配置目录：\"$env:APPDATA\\Rime\" --> \"$persist_dir\\AppData\"，已做持久化处理",
         "",
-        "小狼毫内置的方案安装脚本已添加shims，只需运行：'rime-install' 即可调用，",
-        "输入 'plum' 即可安装完整版的东风破 /plum/"
+        "小狼毫内置的方案安装脚本已添加shims，只需在任意目录运行：'rime-install'即可"
     ],
     "installer": {
         "script": [
