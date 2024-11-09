@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   schedule:
     # run every 4 hours
-    - cron: '20 */4 * * *'
+    - cron: "20 */4 * * *"
 name: Excavator
 jobs:
   excavate:
@@ -10,8 +10,43 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
+
+      - name: Install Cloudflare WRAP
+        shell: pwsh
+        run: |
+          Write-Host "installing Cloudflare WARP..."
+          Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
+          Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait
+          . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" registration new
+          . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" connect
+          # Add a loop to wait for the status to be connected
+          for ($attemptCount = 0; $attemptCount -lt 10; $attemptCount++) {
+              $output = . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" status
+              Write-Host $output
+              if ($output -like "*Status update: Connected*") {
+                  break
+              }
+              Start-Sleep -Seconds 5  # Wait for 5 seconds before checking again
+          }
+          if ($attemptCount -eq 10) {
+              Write-Host "Failed to connect after 10 attempts."
+              exit 1  # Exit with an error code
+          }
+
       - name: Excavate
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: 1
+
+      - name: Disconnect Cloudflare WRAP
+        shell: pwsh
+        run: |
+          if (Test-Path "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe") {
+              try {
+                  . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" disconnect
+              }
+              catch {
+                  Write-Warning "Failed to disconnect Cloudflare WARP"
+              }
+          }

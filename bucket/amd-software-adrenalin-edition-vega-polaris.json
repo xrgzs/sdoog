@@ -17,7 +17,7 @@
         ]
     },
     "checkver": {
-        "script": "Invoke-RestMethod -Uri \"https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html\"",
+        "script": "Invoke-RestMethod -Uri \"https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html\" -TimeoutSec 10",
         "regex": "(?<url>https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-vega-polaris.exe)"
     },
     "autoupdate": {

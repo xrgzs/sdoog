@@ -17,7 +17,7 @@
         ]
     },
     "checkver": {
-        "script": "Invoke-RestMethod -Uri \"https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-7000-series/amd-radeon-rx-7600.html\"",
+        "script": "Invoke-RestMethod -Uri \"https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-7000-series/amd-radeon-rx-7600.html\" -TimeoutSec 10",
         "regex": "(?<url>https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-rdna.exe)"
     },
     "autoupdate": {
