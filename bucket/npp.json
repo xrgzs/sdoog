@@ -57,7 +57,7 @@
         "\"icon\"=\"$($dir -replace '\\\\','\\\\')\\\\Notepad++.exe\"",
         "",
         "[$registry_scope\\SOFTWARE\\Classes\\Directory\\Background\\shell\\Notepad++\\command]",
-        "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad++.exe\\\" \\\"%1\\\"\"",
+        "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Notepad++.exe\\\" \\\"%V\\\"\"",
         "",
         "\"@ | Set-Content -Path \"$dir\\install-notepad++.reg\" -Encoding Unicode",
         "",
