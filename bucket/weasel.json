@@ -18,7 +18,7 @@
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\Rime\" \"$persist_dir\\AppData\" -Migrate",
-            "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @(\"add HKLM\\SOFTWARE\\Rime\\Weasel /f /v InstallDir /t REG_SZ /d \"\"$dir\"\" /reg:32\") -RunAs",
+            "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @(\"add HKLM\\SOFTWARE\\Rime\\Weasel /f /v InstallDir /t REG_SZ /d `\"$dir`\" /reg:32\") -RunAs",
             "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel /f /v \"RimeUserDir\" /t REG_SZ /d \"$env:APPDATA\\Rime\"",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S',\"/D=$dir\") -RunAs",
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
