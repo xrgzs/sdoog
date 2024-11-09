@@ -1,14 +1,18 @@
 {
     "version": "2024.11.07.215826",
     "homepage": "https://github.com/iDvel/rime-ice",
-    "description": "雾凇拼音提供了一套开箱即用的完整配置，包含了输入方案（全拼、双拼）、长期维护的词库及各项扩展功能。",
+    "description": "Rime 配置：雾凇拼音 | 长期维护的简体词库",
     "license": "GPL-3.0-only",
     "url": "https://github.com/iDvel/rime-ice/releases/download/nightly/full.zip",
     "hash": "4d89a08d71182061f9bc215e43a8cbffb3be169107d4def0a213302f361a06a3",
-    "notes": "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
+    "notes": [
+        "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
+        "目前安装后暂不支持卸载，为了避免更新，您可以执行：'scoop uninstall $app'，或者：'scoop hold $app'"
+    ],
     "depends": "weasel",
+    "extract_to": "rime-ice",
     "post_install": [
-        "Copy-Item \"$dir\\*\" \"$env:AppData\\Rime\" -Exclude \"install.json\",\"manifest.json\" -Recurse -Force"
+        "Copy-Item \"$dir\\rime-ice\\*\" \"$env:AppData\\Rime\" -Recurse -Force"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/iDvel/rime-ice/releases/latest",
