@@ -14,27 +14,27 @@ function Install-Yq {
                 return
             }
         } catch {
-            Write-Warning "$installer 安装失败"
+            Write-Warning "$installer faild to install yq."
         }
     }
-    Write-Warning "所有安装方法均失败"
+    Write-Warning "All methods of installing yq are failed."
 }
 
 function Install-PowerShellYaml {
     try {
         Install-Module -Name PowerShell-Yaml -Force
     } catch {
-        Write-Warning "PowerShell-Yaml 安装失败: $_"
+        Write-Warning "PowerShell-Yaml installation faild: $_"
     }
 }
 
 if (-not (Get-Command yq -ErrorAction SilentlyContinue)) {
-    Write-Warning "yq 未安装"
+    Write-Warning "yq has not been installed."
     Install-Yq | Out-Null
 }
 
 if (-not (Get-Module -ListAvailable -Name PowerShell-Yaml)) {
-    Write-Warning "PowerShell-Yaml 未安装"
+    Write-Warning "PowerShell-Yaml has not been installed."
     Install-PowerShellYaml | Out-Null
 }
 
@@ -141,19 +141,19 @@ function Get-WinGetInfo {
     )
     # 获取软件信息，避免重复请求，存储为全局变量
     if (!$Global:WinGetDB) {
-        Write-Warning "WinGet 数据库未加载，正在加载..."
+        Write-Warning "WinGet Database has not been loaded yet, loading now..."
         $Global:WinGetDB = Get-WinGetDatabase
     } else {
-        Write-Debug "WinGet 数据库已加载，正在使用缓存数据..."
+        Write-Debug "WinGet Database has been loaded already, using cache data..."
     }
     # 使用模糊匹配软件ID
     $Info = $Global:WinGetDB | Where-Object { $_.id -like "*$Id*" } | Select-Object -First 1
     if (!$Info) {
-        Write-Debug "未找到软件信息，请检查软件ID是否正确"
+        Write-Debug "Cannot find software info for $Id, please check your input."
         return
     }
     # 获取软件版本信息
-    Write-Debug "匹配到软件信息：$Info"
+    Write-Debug "Got version information: $Info"
     return $Info
 }
 
@@ -168,11 +168,11 @@ function Get-WinGetManifest {
     $Id = $Info.id
     $hexString = [BitConverter]::ToString($Info.hash).Replace("-", "").ToLower().Substring(0, 8)
     $versionDataUrl = "https://cdn.winget.microsoft.com/cache/packages/$Id/$hexString/versionData.mszyml"
-    Write-Debug "正在请求软件版本信息..."
+    Write-Debug "Requesting for version data..."
     Write-Debug "versionDataUrl: $versionDataUrl"
     $buffer = (Invoke-WebRequest $versionDataUrl).Content
     $versionData = (ConvertFrom-MSZIP -buffer $buffer | ConvertFrom-YamlString).vD[0]
-    Write-Debug "获取到以下软件版本信息："
+    Write-Debug "Got informations:"
     Write-Debug "RelativePath: $($versionData.rP)"
     Write-Debug "Version:      $($versionData.v)"
     $manifestUrl = "https://cdn.winget.microsoft.com/cache/" + $versionData.rP
