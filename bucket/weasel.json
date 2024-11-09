@@ -21,7 +21,7 @@
             "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @(",
             "    'add', 'HKLM\\SOFTWARE\\Rime\\Weasel',",
             "    '/f',",
-            "    '/v', 'InstallCommand',",
+            "    '/v', 'InstallDir',",
             "    '/t', 'REG_SZ',",
             "    '/d', \"`\"$dir`\"\",",
             "    '/reg:32'",
