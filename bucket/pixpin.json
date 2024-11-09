@@ -31,13 +31,6 @@
     ],
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\PixPin.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
-        "script": [
-            "$url = 'https://pixpinapp.com/'",
-            "$resp = Invoke-WebRequest -Uri $url -TimeoutSec 10",
-            "$cont = $resp.Content",
-            "$pattern = 'PixPin_[\\d.]+.exe'",
-            "[regex]::Match($cont, $pattern).Value"
-        ],
         "regex": "PixPin_([\\d\\.]+)\\.exe"
     },
     "autoupdate": {

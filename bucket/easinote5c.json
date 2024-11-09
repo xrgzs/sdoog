@@ -32,7 +32,7 @@
             ". $pwd\\bin\\utils.ps1",
             "",
             "$seewoApps = [regex]::Match(",
-            "  (Invoke-WebRequest -Uri 'https://e.seewo.com/').Content,",
+            "  (Invoke-WebRequest -Uri 'https://e.seewo.com/' -TimeoutSec 10).Content,",
             "    \"var apps_str = '(.+?)';\"",
             ").Groups[1].Value | ConvertFrom-HtmlEncodedText | ConvertFrom-Json",
             "$seewoApp = $seewoApps | Where-Object { $_.packageCode -like 'EasiNote*c' } | Select-Object -First 1",
