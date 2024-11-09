@@ -14,6 +14,10 @@
         "",
         "小狼毫内置的方案安装脚本已添加shims，只需在任意目录运行：'rime-install'即可"
     ],
+    "suggest": {
+        "plum": "sdoog/plum",
+        "rime-ice": "sdoog/rime-ice"
+    },
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
