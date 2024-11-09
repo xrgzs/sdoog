@@ -1,15 +1,24 @@
 {
     "version": "0.16.3",
-    "description": "基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法",
+    "description": "【小狼毫】Rime for Windows輸入法。基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法。",
     "homepage": "https://rime.im/",
     "license": "GPL-3.0-or-later",
     "url": "https://github.com/rime/weasel/releases/download/0.16.3/weasel-0.16.3.0-installer.exe#/installer.exe",
     "hash": "efa114b20a8cda39c34316cd1a9b5ed25ac0581891aa3e485c830ff7cc2dbdd9",
+    "notes": [
+        "如果不会配置小狼毫，请阅读Wiki",
+        "Wiki: https://github.com/rime/weasel/wiki",
+        "",
+        "用户配置目录：'$env:APPDATA\\Rime'，已做持久化处理",
+        "",
+        "小狼毫内置的方案安装脚本已添加shims，只需运行：'rime-install'即可调用，",
+        "输入 'plum' 即可安装完整版的东风破 /plum/"
+    ],
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\Rime\" \"$persist_dir\\AppData\" -Migrate",
-            "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @('add HKLM\\SOFTWARE\\Rime\\Weasel /f /v InstallDir /t REG_SZ /d \"$dir\" /reg:32') -RunAs",
+            "Invoke-ExternalCommand \"reg.exe\" -ArgumentList @(\"add HKLM\\SOFTWARE\\Rime\\Weasel /f /v InstallDir /t REG_SZ /d \"\"$dir\"\" /reg:32\") -RunAs",
             "reg.exe add HKCU\\SOFTWARE\\Rime\\Weasel /f /v \"RimeUserDir\" /t REG_SZ /d \"$env:APPDATA\\Rime\"",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S',\"/D=$dir\") -RunAs",
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
