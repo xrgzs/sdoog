@@ -1,10 +1,10 @@
 {
-    "version": "1.5.0.3",
+    "version": "1.5.0.4",
     "description": "一款适用于班级多媒体屏幕的课表的信息显示工具，可以一目了然地显示各种信息。",
     "homepage": "https://github.com/ClassIsland/ClassIsland",
     "license": "MIT",
-    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.5.0.3/ClassIsland.zip",
-    "hash": "6f49d1a189a164e9e640df4f408c36c93148825b7f5f9b20123c525a2482aa67",
+    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.5.0.4/ClassIsland.zip",
+    "hash": "3739b40274289088018ea0c825315238382e7500ccb220f839a130195d394dd6",
     "suggest": {
         ".NET 8.0 Desktop Runtime": "extra/windowsdesktop-runtime"
     },
@@ -15,13 +15,13 @@
             "ClassIsland"
         ]
     ],
-    "persist":[
+    "persist": [
         "Settings.json",
         "Config",
         "Plugins",
         "Profiles"
     ],
-    "pre_install":[
+    "pre_install": [
         "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
         "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"UpdateMode\":0}'",
