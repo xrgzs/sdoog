@@ -1,7 +1,8 @@
 {
+    "##": "苏妈NB，指定官网爬取会卡死",
     "version": "24.10.1",
     "description": "AMD Software: Adrenalin Edition Driver for Windows® 10 & Windows® 11 64-bit",
-    "homepage": "https://www.cybermania.ws/hardware/amdradeon/",
+    "homepage": "https://github.com/24HourSupport/CommonSoftware",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
@@ -17,8 +18,9 @@
         ]
     },
     "checkver": {
-        "script": "Invoke-RestMethod -Uri \"https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-7000-series/amd-radeon-rx-7600.html\" -TimeoutSec 10",
-        "regex": "(?<url>https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-rdna.exe)"
+        "url": "https://github.com/24HourSupport/CommonSoftware/raw/refs/heads/main/amd_gpu.json",
+        "jsonpath": "$.consumer.link",
+        "regex": "(?<url>.*whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-rdna.exe)"
     },
     "autoupdate": {
         "architecture": {
