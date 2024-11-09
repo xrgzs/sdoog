@@ -14,6 +14,12 @@
             "Remove-Item \"$dir\\installer.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
+    "bin": [
+        "rime-install.bat",
+        "WeaselDeployer.exe",
+        "WeaselServer.exe",
+        "WeaselSetup.exe"
+    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
