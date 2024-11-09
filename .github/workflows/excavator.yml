@@ -18,6 +18,24 @@ jobs:
           Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
           Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait
           . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" registration new
+          @("api.github.com",
+            "api.github.com",
+            "*.actions.githubusercontent.com"
+            "codeload.github.com",
+            "ghcr.io",
+            "*.actions.githubusercontent.com",
+            "results-receiver.actions.githubusercontent.com",
+            "*.blob.core.windows.net",
+            "objects.githubusercontent.com",
+            "objects-origin.githubusercontent.com",
+            "github-releases.githubusercontent.com",
+            "github-registry-files.githubusercontent.com",
+            "*.actions.githubusercontent.com",
+            "*.pkg.github.com",
+            "ghcr.io",
+            "github-cloud.githubusercontent.com",
+            "github-cloud.s3.amazonaws.com"
+           ) | ForEach-Object { . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" tunnel host add "$_" }
           . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" connect
           # Add a loop to wait for the status to be connected
           for ($attemptCount = 0; $attemptCount -lt 10; $attemptCount++) {
