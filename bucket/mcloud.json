@@ -44,7 +44,7 @@
         "Stop-App"
     ],
     "checkver": {
-        "script": "(Invoke-WebRequest -UseBasicParsing -Uri 'https://yun.139.com/platformInfo/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos' -Method Post -ContentType 'application/json' -Body '{\"adpostid\": 2016}').Content",
+        "script": "(Invoke-WebRequest -UseBasicParsing -Uri 'https://yun.139.com/platformInfo/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos' -Method Post -ContentType 'application/json' -Body '{\"adpostid\": 2016}' -TimeoutSec 10).Content",
         "jsonpath": "$.body[?(@.name == 'Windows')].description",
         "regex": "V([\\d.]+)"
     },

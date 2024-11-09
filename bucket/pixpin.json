@@ -33,7 +33,7 @@
     "checkver": {
         "script": [
             "$url = 'https://pixpinapp.com/'",
-            "$resp = Invoke-WebRequest -Uri $url",
+            "$resp = Invoke-WebRequest -Uri $url -TimeoutSec 10",
             "$cont = $resp.Content",
             "$pattern = 'PixPin_[\\d.]+.exe'",
             "[regex]::Match($cont, $pattern).Value"
