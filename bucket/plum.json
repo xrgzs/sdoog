@@ -1,5 +1,5 @@
 {
-    "version": "4c28f11",
+    "version": "2024.04.17.4c28f11",
     "homepage": "https://github.com/rime/plum",
     "description": "東風破 /plum/: Rime configuration manager and input schema repository",
     "license": "LGPL-3.0-or-later",
@@ -27,9 +27,9 @@
         "Remove-Junction \"$env:APPDATA\\plum\""
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/rime/plum/commits?sha=master&per_page=1",
-        "jsonpath": "$[0].sha",
-        "regex": "(?<sha>(.{7}).*)"
+        "url": "https://github.com/rime/plum/commits/master.atom",
+        "regex": "(?s)>(\\d+)-(\\d+)-(\\d+)T.*?/(?<sha>(?<short>[0-9a-f]{7})[0-9a-f]{33})",
+        "replace": "${1}.${2}.${3}.${short}"
     },
     "autoupdate": {
         "extract_dir": "plum-$matchSha",
