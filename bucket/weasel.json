@@ -42,8 +42,7 @@
     "bin": [
         "weasel-0.16.3\\rime-install.bat",
         "weasel-0.16.3\\WeaselDeployer.exe",
-        "weasel-0.16.3\\WeaselServer.exe",
-        "weasel-0.16.3\\WeaselSetup.exe"
+        "weasel-0.16.3\\WeaselServer.exe"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
@@ -63,8 +62,7 @@
         "bin": [
             "weasel-$matchVersion\\rime-install.bat",
             "weasel-$matchVersion\\WeaselDeployer.exe",
-            "weasel-$matchVersion\\WeaselServer.exe",
-            "weasel-$matchVersion\\WeaselSetup.exe"
+            "weasel-$matchVersion\\WeaselServer.exe"
         ]
     }
 }
