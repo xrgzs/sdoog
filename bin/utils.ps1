@@ -310,7 +310,7 @@ function Set-RegValue {
         if ((Get-ItemPropertyValue -Path $Path -Name $Name) -ne $Value) { throw }
     } catch {
         $Path = $Path.Replace(':', '')
-        $ArgumentList = @("add /f `"$Path`" /v `"$Name`" /d `"$Value`"")
+        $ArgumentList = @("add `"$Path`" /f /v `"$Name`" /d `"$Value`"")
         if ($Type) { $ArgumentList += "/t $Type" }
         Start-Process -FilePath "reg.exe" -ArgumentList $ArgumentList -Wait -Verb "RunAs" -WindowStyle Hidden
     }
