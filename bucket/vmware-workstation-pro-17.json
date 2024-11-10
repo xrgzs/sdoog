@@ -1,0 +1,39 @@
+{
+    "version": "17.6.1-24319023",
+    "homepage": "https://www.vmware.com/",
+    "description": "An application for creating and running virtual machines on your computer.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.vmware.com/ca/help/legal.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.1-24319023.exe#/installer.exe",
+            "hash": "f95429e395a583eb5ba91f09b040e2f8c53a5e7aa37c4c6bfcaf82115a8d3fa4"
+        }
+    },
+    "pre_install": [
+        "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/s', '/v', \"`\"/qn EULAS_AGREED=1 AUTOSOFTWAREUPDATE=0 INSTALLDIR=$dir`\"\") -RunAs"
+    ],
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "   Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/s', '/v', \"`\"/qn REMOVE=ALL`\"\") -RunAs",
+        "   Start-Sleep -Seconds 2",
+        "   Write-Host \"Please restart your computer to uninstall $app properly\" -F 'Red'",
+        "}"
+    ],
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "(Get-XRSoft)['VMware_Workstation_Pro_17_64位_官方版'].SoftUrl"
+        ],
+        "regex": "(?<url>.*VMware-workstation-full-(.*).exe)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchUrl#/installer.exe"
+            }
+        }
+    }
+}
