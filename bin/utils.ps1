@@ -286,3 +286,42 @@ function Stop-App {
         }
     }
 }
+
+function Set-RegValue {
+    param (
+        [Parameter(Mandatory, Position = 0)]
+        [string]
+        $Path,
+
+        [Parameter(Mandatory, Position = 1)]
+        [string]
+        $Name,
+
+        [Parameter(Mandatory, Position = 2)]
+        [object]
+        $Value,
+
+        [Parameter(Position = 3)]
+        [ValidateSet("REG_SZ", "REG_EXPAND_SZ", "REG_MULTI_SZ", "REG_DWORD", "REG_QWORD", "REG_BINARY")]
+        [string]
+        $Type
+    )
+    try {
+        if ((Get-ItemPropertyValue -Path $Path -Name $Name) -ne $Value) { throw }
+    } catch {
+        $Path = $Path.Replace(':', '')
+        $ArgumentList = @("add /f `"$Path`" /v `"$Name`" /d `"$Value`"")
+        if ($Type) { $ArgumentList += "/t $Type" }
+        Start-Process -FilePath "reg.exe" -ArgumentList $ArgumentList -Wait -Verb "RunAs" -WindowStyle Hidden
+    }
+}
+
+function Enable-DevelopmentMode {
+    try {
+        Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowAllTrustedApps" -Value 1 -Type REG_DWORD
+        Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Value 1 -Type REG_DWORD
+    } catch {
+        Write-Error "This App requires enable developmoent mode to install. Failed to enable development mode. Please reinstall this App."
+        exit 1
+    }
+}
