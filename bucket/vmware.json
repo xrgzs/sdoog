@@ -12,6 +12,16 @@
             "hash": "f95429e395a583eb5ba91f09b040e2f8c53a5e7aa37c4c6bfcaf82115a8d3fa4"
         }
     },
+    "shortcuts": [
+        [
+            "vmware.exe",
+            "VMware Workstation Pro"
+        ],
+        [
+            "vmplayer.exe",
+            "VMware Workstation 17 Player"
+        ]
+    ],
     "installer": {
         "script": [
             "if (!(is_admin)) {",
