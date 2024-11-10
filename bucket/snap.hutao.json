@@ -11,20 +11,22 @@
     },
     "pre_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Enable-DevelopmentMode"
+        "Enable-DevelopmentMode",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\Packages\\60568DGPStudio.SnapHutao_wbnnev551gwxy\" \"$persist_dir\\Packages\" -Migrate"
     ],
     "installer": {
         "script": "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
     },
     "pre_uninstall": [
-        "if ($cmd -eq 'uninstall') {",
-        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao\" | Remove-AppxPackage",
-        "} else {",
-        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao\" | Remove-AppxPackage -PreserveApplicationData",
-        "}",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\Packages\\60568DGPStudio.SnapHutao_wbnnev551gwxy\"",
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao_wbnnev551gwxy\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao_wbnnev551gwxy\" | Remove-AppxPackage -PreserveApplicationData",
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/DGP-Studio/Snap.Hutao"
