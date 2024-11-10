@@ -17,7 +17,7 @@
     "post_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\plum\" \"$dir\"",
-        "$files = Get-ChildItem -Path $dir -File -Exclude \"manifest.json\"",
+        "$files = Get-ChildItem -Path \"$dir\\*\" -File -Exclude \"manifest.json\"",
         "$files += Get-ChildItem -Path \"$dir\\scripts\" -File",
         "foreach ($file in $files) {",
         "    info \"Processing $file ...\"",
