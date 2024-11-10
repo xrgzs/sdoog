@@ -5,10 +5,6 @@
     "license": "GPL-3.0-only",
     "url": "https://github.com/Mintimate/oh-my-rime/archive/80ad2223a03f95d5d8579d174fa6881df97136f0.zip",
     "hash": "743c648bd112035e4dfff27bffde0fc4eb4016f0020529d39ceba319f6331f0c",
-    "notes": [
-        "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
-        "为了避免更新，您可以执行：'scoop uninstall oh-my-rime-git'，或者：'scoop hold oh-my-rime-git'"
-    ],
     "extract_dir": "oh-my-rime-80ad2223a03f95d5d8579d174fa6881df97136f0",
     "depends": "weasel",
     "extract_to": "oh-my-rime",
