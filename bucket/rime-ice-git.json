@@ -7,7 +7,7 @@
     "hash": "adfcdf9b311a659d0a621a1a5323b09df1b47cd010e01026bf073f547eb00839",
     "notes": [
         "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
-        "为了避免更新，您可以执行：'scoop uninstall rime-ice'，或者：'scoop hold rime-ice'"
+        "为了避免更新，您可以执行：'scoop uninstall rime-ice-git'，或者：'scoop hold rime-ice-git'"
     ],
     "extract_dir": "rime-ice-9a2a217bf57f53212b114aa7c0a702e4d8b55519",
     "depends": "weasel",
