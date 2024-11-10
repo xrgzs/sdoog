@@ -53,23 +53,22 @@
             "cwd": "${workspaceFolder}",
         },
         {
-            "name": "Scoop: Check if ALL urls inside manifest have correct hashes",
+            "name": "Scoop: Check if urls in current manifest have correct hashes",
             "type": "PowerShell",
             "request": "launch",
-            "script": "${workspaceFolder}\\bin\\checkurls.ps1",
-            "args": [
-                "-Update"
-            ],
+            "script": "${workspaceFolder}\\bin\\checkhashes.ps1",
             "cwd": "${workspaceFolder}",
+            "args": [
+                "-App",
+                "\"${fileBasenameNoExtension}\"",
+                "-Update"
+            ]
         },
         {
             "name": "Scoop: Check if ALL urls inside manifest have correct hashes",
             "type": "PowerShell",
             "request": "launch",
-            "script": "${workspaceFolder}\\bin\\checkurls.ps1",
-            "args": [
-                "-Update"
-            ],
+            "script": "${workspaceFolder}\\bin\\checkhashes.ps1",
             "cwd": "${workspaceFolder}",
         }
     ]
