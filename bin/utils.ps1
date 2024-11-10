@@ -26,6 +26,15 @@ function Get-LanzouList {
     return $list.text
 }
 
+function Get-XRSoft {
+    if (!$Global:XRSoft) {
+        $wc = New-Object System.Net.WebClient
+        $wc.Encoding = [System.Text.Encoding]::GetEncoding("GBK")
+        $content = $wc.DownloadString("https://c.xrgzs.top/SoftN.ini")
+        $Global:XRSoft = $content | ConvertFrom-Ini
+    }
+    return $Global:XRSoft
+}
 
 function ConvertFrom-HtmlEncodedText {
     <#
@@ -43,6 +52,130 @@ function ConvertFrom-HtmlEncodedText {
 
     process {
         [System.Net.WebUtility]::HtmlDecode($InputObject)
+    }
+}
+
+
+function ConvertFrom-Ini {
+    <#
+    .SYNOPSIS
+      Convert INI string into ordered hashtable
+    .PARAMETER InputObject
+      The INI string to be converted
+    .PARAMETER CommentChars
+      The characters that describe a comment
+      Lines starting with the characters provided will be rendered as comments
+      Default: ";"
+    .PARAMETER IgnoreComments
+      Remove lines determined to be comments from the resulting dictionary
+    .NOTES
+      This code is modified from https://github.com/lipkau/PsIni under the MIT license
+
+      The MIT License (MIT)
+
+      Copyright (c) 2019 Oliver Lipkau
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+    .LINK
+      https://github.com/lipkau/PsIni
+    #>
+    # [OutputType([ordered])]
+    param (
+        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName, HelpMessage = 'The INI string to be converted')]
+        [AllowEmptyString()]
+        [string]
+        $Content,
+
+        [Parameter(
+            HelpMessage = 'The characters that describe a comment'
+        )]
+        [char[]]
+        $CommentChars = @(';'),
+
+        [Parameter(
+            HelpMessage = 'Remove lines determined to be comments from the resulting dictionary'
+        )]
+        [switch]
+        $IgnoreComments
+    )
+
+    begin {
+        $SectionRegex = '^\s*\[(.+)\]\s*$'
+        $KeyRegex = "^\s*(.+?)\s*=\s*(['`"]?)(.*)\2\s*$"
+        $CommentRegex = "^\s*[$($CommentChars -join '')](.*)$"
+
+        # Name of the section, in case the INI string had none
+        $RootSection = '_'
+
+        $Object = [ordered]@{}
+        $CommentCount = 0
+    }
+
+    process {
+        $StringReader = [System.IO.StringReader]::new($Content)
+
+        for ($Text = $StringReader.ReadLine(); $null -ne $Text; $Text = $StringReader.ReadLine()) {
+            switch -Regex ($Text) {
+                $SectionRegex {
+                    $Section = $Matches[1]
+                    $Object[$Section] = [ordered]@{}
+                    $CommentCount = 0
+                    continue
+                }
+                $CommentRegex {
+                    if (-not $IgnoreComments) {
+                        if (-not $Section) {
+                            $Section = $RootSection
+                            $Object[$Section] = [ordered]@{}
+                        }
+                        $Key = '#Comment' + ($CommentCount++)
+                        $Value = $Matches[1]
+                        $Object[$Section][$Key] = $Value
+                    }
+                    continue
+                }
+                $KeyRegex {
+                    if (-not $Section) {
+                        $Section = $RootSection
+                        $Object[$Section] = [ordered]@{}
+                    }
+                    $Key = $Matches[1]
+                    $Value = $Matches[3].Replace('\r', "`r").Replace('\n', "`n")
+                    if ($Object[$Section][$Key]) {
+                        if ($Object[$Section][$Key] -is [array]) {
+                            $Object[$Section][$Key] += $Value
+                        } else {
+                            $Object[$Section][$Key] = @($Object[$Section][$Key], $Value)
+                        }
+                    } else {
+                        $Object[$Section][$Key] = $Value
+                    }
+                    continue
+                }
+            }
+        }
+
+        $StringReader.Dispose()
+    }
+
+    end {
+        return $Object
     }
 }
 
