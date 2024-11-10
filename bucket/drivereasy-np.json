@@ -21,13 +21,9 @@
             "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\DriverEasy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
-    "uninstaller": {
-        "script": [
-            "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
-            "Start-Sleep -Seconds 10"
-        ]
-    },
     "pre_uninstall": [
+        "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
+        "Start-Sleep -Seconds 10",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
