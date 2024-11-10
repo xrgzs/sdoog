@@ -1,0 +1,38 @@
+{
+    "version": "1.11.9",
+    "description": "一个实用的多功能原神工具箱",
+    "homepage": "https://hut.ao/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/1.11.9/Snap.Hutao.1.11.9.msix#/dl.zip",
+            "hash": "572f62c4aa81b33e29368d188ef9d66f018e334532620d999424f2cda4582a2b"
+        }
+    },
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Enable-DevelopmentMode"
+    ],
+    "installer": {
+        "script": "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+    },
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"60568DGPStudio.SnapHutao\" | Remove-AppxPackage -PreserveApplicationData",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "github": "https://github.com/DGP-Studio/Snap.Hutao"
+    },
+    "autoupdate": {
+        "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/$version/Snap.Hutao.$version.msix#/dl.zip",
+        "hash": {
+            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/$version/SHA256SUMS"
+        }
+    }
+}
