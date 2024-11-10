@@ -12,7 +12,9 @@
         "",
         "用户配置目录：\"$env:APPDATA\\Rime\" --> \"$persist_dir\\AppData\"，已做持久化处理",
         "",
-        "小狼毫内置的方案安装脚本已添加shims，只需在任意目录运行：'rime-install'即可"
+        "小狼毫内置的方案安装脚本已添加shims，只需在任意目录运行：'rime-install'即可",
+        "",
+        "注意：使用本仓库提供的词库会覆盖默认配置，如果希望以“旁挂”方式使用，请安装：'sdoog/plum'，自动解决网络问题。"
     ],
     "suggest": {
         "plum": "sdoog/plum",
