@@ -55,7 +55,7 @@ jobs:
         uses: xrgzs/ScoopGithubActions@usecore
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USE_CORE: 1
+          FORCE_PWSH: 1
           # SKIP_UPDATED: 1
 
       - name: Disconnect Cloudflare WRAP
