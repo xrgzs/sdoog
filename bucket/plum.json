@@ -12,6 +12,7 @@
     ],
     "depends": "weasel",
     "extract_dir": "plum-4c28f11f451facef809b380502874a48ba964ddb",
+    "persist": "package",
     "bin": "rime-install.bat",
     "post_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
