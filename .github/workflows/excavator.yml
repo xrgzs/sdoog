@@ -18,7 +18,7 @@ jobs:
           Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
           Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait
           . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" registration new
-          @("api.github.com",
+          @("github.com",
             "api.github.com",
             "*.actions.githubusercontent.com"
             "codeload.github.com",
