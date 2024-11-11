@@ -1,0 +1,24 @@
+{
+    "version": "2.8",
+    "description": "Open-source Windows and Office activator featuring HWID, Ohook, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+    "homepage": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "To run the script, use the following command: \"mas_aio\"",
+        "For more details, check Homepage: <https://massgrave.dev>"
+    ],
+    "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip",
+    "hash": "f798b0790fd6e62fb0ff0195c06f7c655ae0a55e1b3c9d6b4c28b7d5483ce6f6",
+    "extract_dir": "Microsoft-Activation-Scripts-master\\MAS",
+    "bin": [
+        [
+            "All-In-One-Version\\MAS_AIO.cmd",
+            "mas_aio"
+        ]
+    ],
+    "persist": "Data",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip"
+    }
+}
