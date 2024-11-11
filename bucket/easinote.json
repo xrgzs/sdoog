@@ -1,11 +1,11 @@
 {
-    "version": "5.2.4.8535",
+    "version": "5.2.4.8560",
     "description": "为互动教学而生",
     "homepage": "https://easinote.seewo.com/",
     "license": "Proprietary",
-    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwjownhhulnhlwhooqxlhuopphihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1730191308%3B2045551308%26q-key-time%3D1730191308%3B2045551308%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D178c599c177389ad34cdc7d6f68ee640f0c626ff&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.8535_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.8535_seewo.exe#/dl.7z",
-    "hash": "5b6ba8c1d89a2925bafa915ff5cd2f3447cc83a64348201d99e73b424676ca84",
-    "extract_dir": "EasiNote5_5.2.4.8535",
+    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwyxmphhulnhlwhoqvjhzpouphihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1731308687%3B2046668687%26q-key-time%3D1731308687%3B2046668687%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D60c79219c510e3c55068d56484e2d28de4df05e4&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.8560_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.8560_seewo.exe#/dl.7z",
+    "hash": "ba4d9233de81c839d6c444e74d5207b5aa1cfa5584bdbe09e1c10356e6bb0a5f",
+    "extract_dir": "EasiNote5_5.2.4.8560",
     "shortcuts": [
         [
             "Main\\EasiNote.exe",
@@ -101,9 +101,7 @@
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Seewo\\EasiNote5\""
     ],
-    "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃白板 5.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
             "$Object1 = Invoke-RestMethod -Uri 'https://easinote.seewo.com/com/softinfo?softCode=EasiNote5'",
