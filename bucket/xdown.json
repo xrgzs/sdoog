@@ -1,10 +1,10 @@
 {
-    "version": "2.0.8.7",
+    "version": "2.0.8.9",
     "description": "XDown 是一款专业的文件下载与分享工具，支持http，BT，磁力等下载方式，并且支持制作种子文件。",
     "homepage": "http://xdown.org/",
     "license": "Freeware",
-    "url": "http://dl.xdown.org/windows/i386/xdown-2.0.8.7.zip",
-    "hash": "c35a641d52667488152d4bab1990dc293d48c6714d3987d53df3b807f2ffd185",
+    "url": "http://dl.xdown.org/windows/i386/xdown-2.0.8.9.zip",
+    "hash": "eb851d94c9ad78fa8f7443c28a0a3cce7c0136c82f15e2e3aa9326d201946a21",
     "extract_dir": "xdown",
     "persist": "profile",
     "shortcuts": [
