@@ -1,0 +1,38 @@
+{
+    "version": "15.6.9.16287",
+    "description": "向日葵 for Windows 安装后即可发起和接受远程控制，提供安全顺畅的远程体验",
+    "homepage": "https://sunlogin.oray.com/",
+    "license": {
+        "identifier": "Freeware"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64.exe#/SunloginClient.exe",
+            "hash": "6eb495a65db75e759e76ef6c538e2a7a4b16def021ef623f4aecc6f55e9c025d"
+        },
+        "32bit": {
+            "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS.exe#/SunloginClient.exe",
+            "hash": "6eb495a65db75e759e76ef6c538e2a7a4b16def021ef623f4aecc6f55e9c025d"
+        }
+    },
+    "shortcuts": [
+        [
+            "SunloginClient.exe",
+            "向日葵个人版"
+        ]
+    ],
+    "checkver": {
+        "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64.exe.ver",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64.exe#/SunloginClient.exe"
+            },
+            "32bit": {
+                "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS.exe#/SunloginClient.exe"
+            }
+        }
+    }
+}
