@@ -1,0 +1,41 @@
+{
+    "version": "4.0.0.20241108",
+    "description": "微信 Windows 版 QT测试版",
+    "homepage": "https://pc.weixin.qq.com/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.wechat.com/en/service_terms.html"
+    },
+    "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z",
+    "hash": "7beb925cc983f09ffffec750f79dac84ec36125c69943265fa6fd4abbe9b3a5f",
+    "shortcuts": [
+        [
+            "Weixin.exe",
+            "微信（测试版）"
+        ]
+    ],
+    "post_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\Tencent\\xwechat\" \"$persist_dir\\AppData\" -Migrate",
+        "New-PersistDirectory \"$env:USERPROFILE\\Documents\\xwechat_files\" \"$persist_dir\\xwechat_files\" -Migrate",
+        "New-Item -Path \"HKCU:\\Software\\Tencent\\Weixin\" -Name \"InstallPath\" -Value \"$dir\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\微信（测试版）.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\微信（测试版）.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Tencent\\xwechat\"",
+        "Remove-Junction \"$env:APPDATA\\Documents\\xwechat_files\"",
+        "Remove-Item -Path \"HKCU:\\Software\\Tencent\\Weixin\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\微信（测试版）.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
+    "checkver": {
+        "script": "(Invoke-WebRequest -Uri \"https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe\" -Method Head).headers['Last-Modified'] | Get-Date -Format FileDateTimeUniversal",
+        "regex": "(\\d{8})",
+        "replace": "4.0.0.$1"
+    },
+    "autoupdate": {
+        "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z"
+    }
+}
