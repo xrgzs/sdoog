@@ -23,6 +23,7 @@
         "args": [
             "/VERYSILENT",
             "/FORCECLOSEAPPLICATIONS",
+            "/NORESTART",
             "/TASKS=\"\""
         ]
     },

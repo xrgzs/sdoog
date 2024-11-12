@@ -19,6 +19,7 @@
         "args": [
             "/VERYSILENT",
             "/FORCECLOSEAPPLICATIONS",
+            "/NORESTART",
             "/TASKS=\"desktopicon\"",
             "/DIR=\"$dir\""
         ]
