@@ -8,11 +8,11 @@
     },
     "url": [
         "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe#/installer.exe",
-        "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/_dopus_patcher.exe#/patcher.exe"
+        "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
     ],
     "hash": [
         "6c872c90f08727f59e3a8ae5261e9de201128bbdb2dd84291c6dcdc5f26867ee",
-        "d4a2c30bfd1aa426eaaa7d36d9cec05317a1dd87c464d35229d5f5cab8944142"
+        "14d73c845e621f0ab1f773141b2696d2cebe5b68f6bc37c3ff5f5e5845fce128"
     ],
     "bin": "dopusrt.exe",
     "shortcuts": [
@@ -37,9 +37,7 @@
             "/DIR=\"$dir\""
         ]
     },
-    "post_install": [
-        "Invoke-ExternalCommand \"cmd.exe\" -ArgumentList @('/c', \"echo y | `\"$dir\\patcher.exe`\"\") -Quiet -RunAs"
-    ],
+    "post_install": "Invoke-ExternalCommand \"cmd.exe\" -ArgumentList @('/c', \"echo y | `\"$dir\\patcher.exe`\"\") -Quiet -RunAs",
     "pre_uninstall": [
         "Start-Sleep -Seconds 5",
         "$bucket = $install.bucket",
@@ -63,7 +61,7 @@
     "autoupdate": {
         "url": [
             "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe#/installer.exe",
-            "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/_dopus_patcher.exe#/patcher.exe"
+            "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
         ],
         "hash": [
             {
