@@ -1,0 +1,41 @@
+{
+    "version": "7.6.15.101210804",
+    "description": "钉钉，让进步发生",
+    "homepage": "https://www.dingtalk.com/",
+    "license": {
+        "identifier": "EULA",
+        "url": "https://tms.dingtalk.com/markets/dingtalk/service-terms-zh"
+    },
+    "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v7.6.15.101210804.exe#/dl.7z",
+    "hash": "md5:263e0654b18aed58b5be4f4d705c4f8b",
+    "post_install": [
+        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\DingTalk\" \"$persist_dir\\AppData\" -Migrate",
+        "Copy-Item -Path \"$scoop_startmenu_folder\\钉钉.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\钉钉.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\DingTalk\""
+    ],
+    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\钉钉.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
+    "shortcuts": [
+        [
+            "DingtalkLauncher.exe",
+            "钉钉"
+        ]
+    ],
+    "checkver": {
+        "url": "https://im.dingtalk.com/manifest/new/release_windows_vista_later_gray4.json",
+        "regex": "DingTalk_v([\\d.]+).exe"
+    },
+    "autoupdate": {
+        "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v$version.exe#/dl.7z",
+        "hash": {
+            "url": "https://im.dingtalk.com/manifest/new/release_windows_vista_later_gray4.json",
+            "jsonpath": "$.win.install.md5"
+        }
+    }
+}
