@@ -1,6 +1,6 @@
 {
     "version": "17.6.1-24319023",
-    "homepage": "https://www.vmware.com/",
+    "homepage": "https://docs.vmware.com/en/VMware-Tools/index.html",
     "description": "An application for creating and running virtual machines on your computer.",
     "license": {
         "identifier": "Freeware",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.1-24319023.exe#/installer.exe",
-            "hash": "f95429e395a583eb5ba91f09b040e2f8c53a5e7aa37c4c6bfcaf82115a8d3fa4"
+            "url": "https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.1/24319023/windows/core/VMware-workstation-17.6.1-24319023.exe.tar#/dl.7z",
+            "hash": "6a741e0a28934e434abeadfd9b742d8c4993a268f7c1aa43748a74c9fbdeb735"
         }
     },
     "shortcuts": [
@@ -30,7 +30,8 @@
             "}",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\VMware\" \"$persist_dir\\AppData\" -Migrate",
-            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/s', '/v', \"`\"/qn EULAS_AGREED=1 AUTOSOFTWAREUPDATE=0 INSTALLDIR=$dir`\"\") -RunAs"
+            "Invoke-ExternalCommand \"$dir\\VMware-workstation-$version.exe\" -ArgumentList @('/s', '/v', \"`\"/qn EULAS_AGREED=1 AUTOSOFTWAREUPDATE=0 INSTALLDIR=$dir`\"\") -RunAs",
+            "Remove-Item \"$dir\\VMware-workstation-$version.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "pre_uninstall": [
@@ -39,7 +40,8 @@
         "    exit 1",
         "}",
         "if ($cmd -eq 'uninstall') {",
-        "   Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/s', '/v', \"`\"/qn REMOVE=ALL`\"\") -RunAs",
+        "   Get-ItemProperty HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"VMware Workstation*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn REBOOT=R REMOVE=ALL') -Quiet }",
+        "   Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"VMware Workstation*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn REBOOT=R REMOVE=ALL') -Quiet -RunAs }",
         "   Start-Sleep -Seconds 2",
         "   Write-Host \"Please restart your computer to uninstall $app properly\" -F 'Red'",
         "}",
@@ -50,15 +52,21 @@
     ],
     "checkver": {
         "script": [
-            ". \"$pwd\\bin\\utils.ps1\"",
-            "(Get-XRSoft)['VMware_Workstation_Pro_17_64位_官方版'].SoftUrl"
+            "$Object1 = Invoke-WebRequest -Uri \"https://softwareupdate.vmware.com/cds/vmw-desktop/ws/\"",
+            "$Version = $Object1.Links.href.Trim('/') | Where-Object { [version]::TryParse($_, [ref]$null) } | Sort-Object { [version]$_ } -Descending | Select-Object -First 1",
+            "",
+            "$Object2 = Invoke-WebRequest -Uri \"https://softwareupdate.vmware.com/cds/vmw-desktop/ws/$version\"",
+            "$Build = $Object2.Links.href.Trim('/') | Where-Object { $_ -ne '..' } | Select-Object -Last 1",
+            "",
+            "$Version + '=====' + $Build"
         ],
-        "regex": "(?<url>.*VMware-workstation-full-(.*).exe)"
+        "regex": "(?<ver>.*)=====(?<build>.*)",
+        "replace": "$1-$2"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchUrl#/installer.exe"
+                "url": "https://softwareupdate.vmware.com/cds/vmw-desktop/ws/$matchVer/$matchBuild/windows/core/VMware-workstation-$version.exe.tar#/dl.7z"
             }
         }
     }
