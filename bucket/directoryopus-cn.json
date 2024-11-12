@@ -32,24 +32,30 @@
         "args": [
             "/VERYSILENT",
             "/FORCECLOSEAPPLICATIONS",
+            "/NORESTART",
             "/TASKS=\"\"",
             "/DIR=\"$dir\""
         ]
     },
     "post_install": [
-        "Invoke-ExternalCommand \"$dir\\patcher.exe\" -RunAs"
+        "Invoke-ExternalCommand \"cmd.exe\" -ArgumentList @('/c', \"echo y | `\"$dir\\patcher.exe`\"\") -Quiet -RunAs"
     ],
     "pre_uninstall": [
-        "Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/NORESTART') -Quiet",
-        "Start-Sleep -Seconds 10",
+        "Start-Sleep -Seconds 5",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Remove-Junction \"$env:PROGRAMDATA\\GPSoftware\"",
         "Remove-Junction \"$env:APPDATA\\GPSoftware\"",
-        "Remove-Junction \"$env:LOCALAPPDATA\\GPSoftware\"",
-        "info 'DirectoryOpus will be removed after system reboot.'"
+        "Remove-Junction \"$env:LOCALAPPDATA\\GPSoftware\""
     ],
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT",
+            "/NORESTART"
+        ]
+    },
     "checkver": {
         "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe.ver",
         "regex": "([\\d.]+)"
