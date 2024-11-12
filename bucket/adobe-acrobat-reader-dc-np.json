@@ -8,23 +8,29 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400420243/AcroRdrDCx642400420243_zh_CN.exe",
+            "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400420243/AcroRdrDCx642400420243_zh_CN.exe#/dl.7z",
             "hash": "d88a134942b5a24669f6d1a071feacbcffc626ee132670db81da2d16692f2bb5"
         }
     },
-    "extract_dir": "installer",
+    "extract_to": "installer",
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\installer\\setup.exe\"  -ArgumentList @('/sAll', '/rs', '/quiet', '/msi',\"`\"INSTALLDIR=`\"$dir`\" ALLUSERS=0 EULA_ACCEPT=YES DISABLEDESKTOPSHORTCUT=1`\"\") -Quiet",
+            "New-Item \"$dir\\program\" -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null",
+            "if ($Global) {",
+            "    $ArgumentList = @('/sAll', '/rs', '/quiet', \"/msi ALLUSERS=1 EULA_ACCEPT=YES DISABLEDESKTOPSHORTCUT=1 INSTALLDIR=`\"$dir\\program`\"\")",
+            "} else {",
+            "    $ArgumentList = @('/sAll', '/rs', '/quiet', \"/msi ALLUSERS=0 EULA_ACCEPT=YES DISABLEDESKTOPSHORTCUT=1 INSTALLDIR=`\"$dir\\program`\"\")",
+            "}",
+            "Invoke-ExternalCommand \"$dir\\installer\\setup.exe\"  -ArgumentList $ArgumentList -Quiet",
             "Remove-Item \"$dir\\installer\\\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
     "pre_uninstall": [
+        "Get-ItemProperty HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"Adobe Acrobat*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn') -Quiet }",
+        "Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"Adobe Acrobat*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn') -Quiet -RunAs }",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App",
-        "Get-ItemProperty HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"*Adobe Acrobat DC*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn') -Quiet }",
-        "Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.DisplayName -like \"*Adobe Acrobat DC*\" } | Select-Object -ExpandProperty PSChildName | ForEach-Object { Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @('/x', \"$_\", '/qn') -Quiet -RunAs }"
+        "Stop-App"
     ],
     "checkver": {
         "url": "https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html",
@@ -33,7 +39,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/$cleanVersion/AcroRdrDCx64$cleanVersion_zh_CN.exe"
+                "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/$cleanVersion/AcroRdrDCx64$cleanVersion_zh_CN.exe#/dl.7z"
             }
         }
     }
