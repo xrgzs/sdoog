@@ -216,8 +216,7 @@ manifestUrl 会在 DEBUG 中输出，建议开启 DUBUG，以便查看具体 YAM
     "script": [
         "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
         "$Manifest = Get-WinGetInfo -Id '<WinGetPackageID>'",
-        "$ver = $Manifest.latest_version'",
-        "return $ver\""
+        "$Manifest.latest_version"
     ]
 },
 "autoupdate": {
@@ -323,7 +322,7 @@ Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 
 `Stop-App`：关闭安装目录下所有正在运行的程序，可加第一个参数传入需要关闭的其它目录，使用此函数无需指定程序名称
 
-建议在 `pre_uninstall`、`uninstaller.script` 中调用
+建议在 `pre_uninstall`、`uninstaller.script` （无法避免scoop检测正在运行）中调用
 
 ```powershell
 $bucket = $install.bucket
@@ -332,5 +331,15 @@ Stop-App
 ```
 
 目前暂不支持提权关闭
+
+### 安装UWP应用
+
+开启开发者模式，然后使用 `Add-AppxPackage -Register <AppxManifestPath>` 即可
+
+无需担心MS Store会自动升级
+
+可能不支持persist，需要自行测试
+
+参考 [snap.hutao](bucket/snap.hutao.json)
 
 _未完待续……_
