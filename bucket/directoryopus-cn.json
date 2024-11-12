@@ -1,0 +1,71 @@
+{
+    "version": "13.11",
+    "description": "Directory Opus 是受欢迎的一款文件管理器。Directory Opus 注重鼠标操作，与倾向于键盘快捷键操作的 Total Commander 形成鲜明的对比。Directory Opus 集成许多非常实用的功能，包括音视频的预览、解压缩处理等。",
+    "homepage": "https://www.ghxi.com/directoryopus.html",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
+    },
+    "url": [
+        "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe#/installer.exe",
+        "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/_dopus_patcher.exe#/patcher.exe"
+    ],
+    "hash": [
+        "6c872c90f08727f59e3a8ae5261e9de201128bbdb2dd84291c6dcdc5f26867ee",
+        "d4a2c30bfd1aa426eaaa7d36d9cec05317a1dd87c464d35229d5f5cab8944142"
+    ],
+    "bin": "dopusrt.exe",
+    "shortcuts": [
+        [
+            "dopus.exe",
+            "Directory Opus"
+        ]
+    ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:PROGRAMDATA\\GPSoftware\" \"$persist_dir\\PROGRAMDATA\\GPSoftware\" -Migrate",
+        "New-PersistDirectory \"$env:APPDATA\\GPSoftware\" \"$persist_dir\\APPDATA\\GPSoftware\" -Migrate",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\GPSoftware\" \"$persist_dir\\LOCALAPPDATA\\GPSoftware\" -Migrate"
+    ],
+    "installer": {
+        "file": "installer.exe",
+        "args": [
+            "/VERYSILENT",
+            "/FORCECLOSEAPPLICATIONS",
+            "/TASKS=\"\"",
+            "/DIR=\"$dir\""
+        ]
+    },
+    "post_install": [
+        "Invoke-ExternalCommand \"$dir\\patcher.exe\" -RunAs"
+    ],
+    "pre_uninstall": [
+        "Invoke-ExternalCommand \"$dir\\unins000.exe\" -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/NORESTART') -Quiet",
+        "Start-Sleep -Seconds 10",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:PROGRAMDATA\\GPSoftware\"",
+        "Remove-Junction \"$env:APPDATA\\GPSoftware\"",
+        "Remove-Junction \"$env:LOCALAPPDATA\\GPSoftware\"",
+        "info 'DirectoryOpus will be removed after system reboot.'"
+    ],
+    "checkver": {
+        "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe.ver",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": [
+            "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe#/installer.exe",
+            "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/_dopus_patcher.exe#/patcher.exe"
+        ],
+        "hash": [
+            {
+                "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe.sha256"
+            },
+            {
+                "mode": "download"
+            }
+        ]
+    }
+}
