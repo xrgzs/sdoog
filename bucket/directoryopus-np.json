@@ -1,13 +1,13 @@
 {
-    "version": "13.10",
+    "version": "13.11",
     "description": "A complete replacement for Explorer, with far more functionality than any other file manager available today.",
     "homepage": "https://www.gpsoft.com.au/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
     },
-    "url": "https://cdn.gpsoft.com.au/files/Opus13/DOpusInstall-13.10.exe",
-    "hash": "8ee05def1c4112216d0de0d6cde0789b0d17c3696ddef4b6dbc9dea9c07c6a4a",
+    "url": "https://cdn.gpsoft.com.au/files/Opus13/DOpusInstall-13.11.exe",
+    "hash": "6c872c90f08727f59e3a8ae5261e9de201128bbdb2dd84291c6dcdc5f26867ee",
     "bin": "dopusrt.exe",
     "shortcuts": [
         [
@@ -46,13 +46,10 @@
     },
     "checkver": {
         "script": [
-            "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
-            "$Manifest = Get-WinGetManifest -Id 'GPSoftware.DirectoryOpus'",
-            "$version  = $Manifest.PackageVersion",
-            "$url      = $Manifest.Installers.InstallerUrl",
-            "return \"$version=====$url\""
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://www.gpsoft.com.au/endpoints/download.php?id=release\" | Get-RedirectedUrl1st"
         ],
-        "regex": "(.*)=====(?<url>.*)"
+        "regex": "(?<url>.*DOpusInstall-(.*).exe)"
     },
     "autoupdate": {
         "url": "$matchUrl"
