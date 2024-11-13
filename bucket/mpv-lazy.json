@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/hooke007/MPV_lazy/releases/download/20240824/mpv-lazy-20240824.exe#/dl.7z",
-            "hash": "062e04cd5e480015e66d6427b3265bcaa601af0b9ade80961d4d0b07d7311445"
+            "hash": "a9bb67acff2aac9a089db61c9066337fb5f522fceca1a56e8b49477098e92f54"
         }
     },
     "extract_dir": "mpv-lazy",
