@@ -1,0 +1,25 @@
+{
+    "version": "17.01.2352.000",
+    "homepage": "https://www.microsoft.com/en-us/download/details.aspx?id=100607",
+    "description": "Microsoft Support and Recovery Assistant(SaRA) is a desktop client that enables Microsoft customers to troubleshoot and diagnose their issues.",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.microsoft.com/servicesagreement"
+    },
+    "url": "https://download.microsoft.com/download/9/0/4/90412ee2-beeb-4696-9980-862d3b57a37e/SaRA_17_01_2352_000.zip",
+    "hash": "d13487d4f793db3d5ff70ce17133678f49390a18cb1ccea67b2c902cb87c19f9",
+    "installer": {
+        "file": "SaraSetup.exe",
+        "args": "/q"
+    },
+    "uninstaller": {
+        "script": "Get-ItemProperty HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object { $_.HelpLink -eq \"https://aka.ms/SaRA_Home*\" } | Select-Object -ExpandProperty UninstallString | ForEach-Object { cmd.exe /c \"$_\" }"
+    },
+    "checkver": {
+        "regex": "/(?<path>download/\\S+/SaRA_(\\d+)_(\\d+)_(\\d+)_(\\d+)\\.zip)",
+        "replace": "${1}.${2}.${3}.${4}"
+    },
+    "autoupdate": {
+        "url": "https://download.microsoft.com/$matchPath"
+    }
+}
