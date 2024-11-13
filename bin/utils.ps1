@@ -304,7 +304,11 @@ function Set-RegValue {
         [Parameter(Position = 3)]
         [ValidateSet("REG_SZ", "REG_EXPAND_SZ", "REG_MULTI_SZ", "REG_DWORD", "REG_QWORD", "REG_BINARY")]
         [string]
-        $Type
+        $Type,
+
+        [Parameter()]
+        [switch]
+        $Wow64
     )
     try {
         if ((Get-ItemPropertyValue -Path $Path -Name $Name) -ne $Value) { throw }
@@ -312,6 +316,7 @@ function Set-RegValue {
         $Path = $Path.Replace(':', '')
         $ArgumentList = @("add `"$Path`" /f /v `"$Name`" /d `"$Value`"")
         if ($Type) { $ArgumentList += "/t $Type" }
+if ($Wow64) { $ArgumentList += "/reg:32" }
         Start-Process -FilePath "reg.exe" -ArgumentList $ArgumentList -Wait -Verb "RunAs" -WindowStyle Hidden
     }
 }
