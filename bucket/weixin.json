@@ -1,5 +1,5 @@
 {
-    "version": "4.0.0.20241108",
+    "version": "4.0.0.32",
     "description": "微信 Windows 版 QT测试版",
     "homepage": "https://pc.weixin.qq.com/",
     "license": {
@@ -31,9 +31,12 @@
     ],
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\微信（测试版）.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
-        "script": "(Invoke-WebRequest -Uri \"https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe\" -Method Head).headers['Last-Modified'] | Get-Date -Format FileDateTimeUniversal",
-        "regex": "(\\d{8})",
-        "replace": "4.0.0.$1"
+        "script": [
+            "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
+            "$Manifest = Get-WinGetInfo -Id 'Tencent.WeChat.Universal'",
+            "$Manifest.latest_version"
+        ],
+        "regex": "(.*)"
     },
     "autoupdate": {
         "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z"
