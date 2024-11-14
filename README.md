@@ -28,10 +28,53 @@ scoop bucket add sdoog https://gh.xrgzs.top/https://github.com/xrgzs/sdoog.git
 
 ### 还没安装 Scoop？
 
-配套 scoop 特供优化版（[仓库](https://github.com/xrgzs/scoop)）：
+配套 Scoop 特供优化版（[仓库](https://github.com/xrgzs/scoop)），优化包括但不限于：
+
+1. 添加 hook，自动判断并替换下载链接为国内源，无需仓库支持；基于 ISP 检测，加速策略更为精准
+2. 执行 `scoop search` 时避免大量报错
+3. 执行 `scoop update` 时不使用 `git pull` 拉取仓库，无需手动解决 commit 冲突
+4. 安装脚本自动配置好 7zip、git、aria2 环境，并做好相关优化
+5. 安装脚本支持管理员权限安装，自动修复 Scoop 文件 ACL 到当前用户
+
+#### 默认安装
 
 ```powershell
 irm c.xrgzs.top/c/scoop | iex
+```
+
+#### 增加指定软件
+
+多个可用空格分隔
+
+```powershell
+iex "& { $(irm c.xrgzs.top/c/scoop) } -Append xrok"
+```
+
+#### 精简安装
+
+仅安装主程序、git、aria2，添加 main 和 sdoog
+
+```powershell
+iex "& { $(irm c.xrgzs.top/c/scoop) } -Slim"
+```
+
+#### 设置安装路径
+
+安装到 D 盘
+
+```powershell
+iex "& { $(irm c.xrgzs.top/c/scoop) } -ScoopDir 'D:\Scoop' -ScoopGlobalDir 'D:\ScoopGlobal'"
+```
+
+#### 切换到此版本
+
+如果已经安装 Scoop，可以切换到此专用版本
+
+```powershell
+# scoop config scoop_repo "https://gh.xrgzs.top/https://gitee.com/xrgzs/scoop"
+scoop config scoop_repo 'https://gitee.com/xrgzs/scoop'
+
+scoop update
 ```
 
 ## 提交贡献
@@ -322,7 +365,7 @@ Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 
 `Stop-App`：关闭安装目录下所有正在运行的程序，可加第一个参数传入需要关闭的其它目录，使用此函数无需指定程序名称
 
-建议在 `pre_uninstall`、`uninstaller.script` （无法避免scoop检测正在运行）中调用
+建议在 `pre_uninstall`、`uninstaller.script` （无法避免 scoop 检测正在运行）中调用
 
 ```powershell
 $bucket = $install.bucket
@@ -332,14 +375,45 @@ Stop-App
 
 目前暂不支持提权关闭
 
-### 安装UWP应用
+### 安装 UWP 应用
 
 开启开发者模式，然后使用 `Add-AppxPackage -Register <AppxManifestPath>` 即可
 
-无需担心MS Store会自动升级
+无需担心 MS Store 会自动升级
 
-可能不支持persist，需要自行测试
+可能不支持 persist，需要自行测试
 
 参考 [snap.hutao](bucket/snap.hutao.json)
 
 _未完待续……_
+
+
+## 免责声明
+
+访问本仓库或传播、查看、使用本仓库资源即视为同意且遵守本仓库的免责声明。
+
+本仓库仅提供软件下载链接，并不提供任何软件及安装包。相关软件搜集自互联网，用户在使用前请自行评估风险，后果自担，我们不承担任何责任。
+
+本仓库为非盈利性开源仓库，所有资源都来自互联网，所发布的一切资源及软件分析文章教程仅限用于学习、交流和研究目的，所有资源不代表本站立场。
+
+本仓库并不贩卖软件，且不修改软件，不存在任何商业目的及用途，如果您访问和下载此仓库内的软件，表示您同意只将此文件或者技术教程用于参考、学习而非其他用途，请使用者和传播者遵循相关法律法规。
+
+本仓库所有资源不得用于任何商业用途和非法用途。版权归原公司所有！如果您希望长期使用，请向作者购买正版版权，假如因用户未购买正版版权而导致版权纠纷，本站概不负责。如果无意侵犯了您的版权，请联系我们及时标明版权或是删除（提供相关版权证明）。
+
+本仓库对任何资源不提供任何技术支持，遇到问题请自行研究或购买正版。
+
+本仓库仅提供一个展示、交流的平台，不对其内容的准确性、真实性、正当性、合法性负责，也不承担任何法律责任。
+
+任何人因使用本仓库而可能遭致的意外及其造成的损失（包括通过使用本站的资源而感染电脑病毒或查看本站技术文章并操作造成的经济损失），我们对此概不负责，亦不承担任何法律责任。
+
+本仓库对发布的资源不能完全保证其完整性和安全性，请在下载后自行检查。在使用过程中出现的任何问题均与本仓库无关，请自行处理！部分资源有时效性，不保证发布的资源在任何时间绝对可用。
+
+本仓库遵守国家法律法规，禁止制作、复制、发布、传播等具有反动、色情、暴力、淫秽，政治等内容的信息，一经发现，立即删除。
+
+本仓库的传播者、使用者的一切意向、言行、用途和由此造成的任何结果，由该传播者和使用者自行负责，我们对此不承担任何法律责任。
+
+本仓库在法律允许最大范围内对本声明拥有解释权与修改权。
+
+如果本仓库有敏感资源或不合适的内容将积极配合有关执法部门检查及整改。
+
+对免责声明的解释、修改及更新权均属于 @xrgzs 所有。
