@@ -8,6 +8,10 @@
             "url": "https://cdn.storeedgefd.dsx.mp.microsoft.com/eus2/cachedpackages/26a3755a-29ce-45be-95c4-50e5daf4f2c1_fdbd58197499b51f9df01f5abc0b9734c7ec41a75f60b5a828f3603e39b51ebb#/installer.exe",
             "hash": "fdbd58197499b51f9df01f5abc0b9734c7ec41a75f60b5a828f3603e39b51ebb"
         },
+        "32bit": {
+            "url": "https://cdn.storeedgefd.dsx.mp.microsoft.com/eus2/cachedpackages/26a3755a-29ce-45be-95c4-50e5daf4f2c1_2204bb207044054af546ee0b7760788dd40d1a19ef74b7ab022b47d9b53762cf#/installer.exe",
+            "hash": "2204bb207044054af546ee0b7760788dd40d1a19ef74b7ab022b47d9b53762cf"
+        },
         "arm64": {
             "url": "https://cdn.storeedgefd.dsx.mp.microsoft.com/eus2/cachedpackages/26a3755a-29ce-45be-95c4-50e5daf4f2c1_af7cf6b981b6fbaf1b57be5c16afe1b3a4bd29ee2292b1c39f27925284c4614b#/installer.exe",
             "hash": "af7cf6b981b6fbaf1b57be5c16afe1b3a4bd29ee2292b1c39f27925284c4614b"
@@ -27,29 +31,5 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Remove-Junction \"$env:ProgramData\\Huorong\\Sysdiag\""
-    ],
-    "checkver": {
-        "script": [
-            "$resp = Invoke-RestMethod -Uri \"https://api.crxsoso.com/microsoft/parse\" `",
-            "    -Method \"POST\" `",
-            "    -Headers @{  \"origin\" = \"https://www.crxsoso.com\"; \"referer\" = \"https://www.crxsoso.com/store/detail/XPDNH1FMW7NB40\" } `",
-            "    -ContentType \"application/json; charset=UTF-8\" `",
-            "    -Body \"{`\"data`\":`\"08aab02d94623aa345afd2ad21c936594fd49132100fff590ad8cbdbf0e45aa7`\"}\"",
-            "",
-            "$res = $resp.data | Sort-Object { $_.platform } -Descending",
-            "",
-            "$res[0].dlink + '=====' + $res[1].dlink + '=====' + $res[2].dlink"
-        ],
-        "regex": "(?<urlx86>.*sysdiag-all-x86-(.*).exe)=====(?<urlx64>.*)=====(?<urla64>.*)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "$matchUrlx64#/installer.exe"
-            },
-            "arm64": {
-                "url": "$matchUrla64#/installer.exe"
-            }
-        }
-    }
+    ]
 }
