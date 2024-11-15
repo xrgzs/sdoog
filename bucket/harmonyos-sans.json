@@ -5,9 +5,12 @@
     "license": "HarmonyOS Sans Fonts License Agreement",
     "url": "https://developer.huawei.com/images/download/next/HarmonyOS-Sans.zip",
     "hash": "c8ac95f3715631f3787336e9689571c12ae818a0059713a726313605ce0eb8d3",
-    "extract_dir": "HarmonyOS Sans_",
+    "extract_to": "zip",
     "installer": {
         "script": [
+            "Remove-Item \"$dir\\zip\\__MACOSX\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Get-ChildItem \"$dir\\zip\\*.ttf\" -File -Recurse | ForEach-Object { Move-Item $_.FullName $dir -Force -ErrorAction SilentlyContinue | Out-Null }",
+            "Remove-Item \"$dir\\zip\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
             "$currentBuildNumber = [int] (Get-ItemProperty \"HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\").CurrentBuildNumber",
             "$windows10Version1809BuildNumber = 17763",
             "$isPerUserFontInstallationSupported = $currentBuildNumber -ge $windows10Version1809BuildNumber",
