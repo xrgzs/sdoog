@@ -41,7 +41,7 @@
     "autoupdate": {
         "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z",
         "hash": {
-            "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/refs/heads/master/manifests/t/Tencent/WeChat/Universal/4.0.0.34/Tencent.WeChat.Universal.installer.yaml",
+            "url": "https://raw.githubusercontent.com/microsoft/winget-pkgs/refs/heads/master/manifests/t/Tencent/WeChat/Universal/$version/Tencent.WeChat.Universal.installer.yaml",
             "regex": "InstallerSha256:\\s+([a-fA-F0-9]{64})"
         }
     }
