@@ -10,8 +10,8 @@
             "hash": "5573ff8baf2c043ded1800400b1cff59f6541cfe1a63177b78e3885f9f41ccfa"
         },
         "32bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.11r5548/Notepad4_zh-Hant_Win32_v24.11r5548.zip",
-            "hash": "a9a0ee3b7ee07ebb238654dc94544d55bf81181ea9a95256aff7832bea3c24bd"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.11r5548/Notepad4_zh-Hans_Win32_v24.11r5548.zip",
+            "hash": "5fd8f02e40ded756d9392ed3e6d0b187c5b13b064ce603c704673aba2382d184"
         }
     },
     "bin": [
@@ -82,7 +82,7 @@
                 "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_HD_zh-Hans_x64_v$version.zip"
             },
             "32bit": {
-                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_zh-Hant_Win32_v$version.zip"
+                "url": "https://github.com/zufuliu/notepad4/releases/download/v$version/Notepad4_zh-Hans_Win32_v$version.zip"
             }
         }
     }
