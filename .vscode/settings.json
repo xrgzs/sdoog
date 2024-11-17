@@ -22,5 +22,8 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/tmp": true
+    },
+    "terminal.integrated.env.windows": {
+        "SCOOP_DEBUG": "true"
     }
 }
