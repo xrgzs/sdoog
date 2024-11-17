@@ -25,7 +25,7 @@
     "installer": {
         "script": [
             "if (!(is_admin)) {",
-            "    error \"Administrator rights are required to uninstall $app.\"",
+            "    error \"Administrator rights are required to install $app.\"",
             "    scoop uninstall $app",
             "    exit 1",
             "}",
