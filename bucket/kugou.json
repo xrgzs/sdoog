@@ -1,0 +1,82 @@
+{
+    "version": "11.1.31",
+    "description": "酷狗音乐，就是歌多",
+    "homepage": "https://www.kugou.com/",
+    "license": "Proprietary",
+    "url": "http://download.kugou.com/download/kugou_pc#/dl.7z",
+    "hash": "a6523ca08859757b612d94a60dc36202c1038a86ed89c44fed118365bf547ffe",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "# Do not migrate settings",
+            "if (Test-Path \"$env:APPDATA\\KuGou8\\kugou.ini\") {",
+            "    Remove-Item \"$env:APPDATA\\KuGou8\\kugou.ini\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}",
+            "New-PersistDirectory \"$env:APPDATA\\KuGou8\" \"$persist_dir\\AppData\" -Migrate",
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\KuGou.7z\" \"$dir\"",
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\AppData.7z\" \"$persist_dir\\AppData\" -Overwrite 'Skip'",
+            "Remove-Item -Recurse -Force \"$dir\\`$PLUGINSDIR\"",
+            "$appversion = [System.Diagnostics.FileVersionInfo]::GetVersionInfo(\"$dir\\KuGou.exe\").FileVersion",
+            "New-Item -ItemType Junction -Path \"$dir\\$appversion\" -Target \"$dir\" | Out-Null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\" /v \"AppDataPath\" /t REG_SZ /d \"$env:APPDATA\\Kugou8\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\" /v \"AppPath\" /t REG_SZ /d \"$dir\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\" /v \"KuGou8\" /t REG_SZ /d \"$dir\\KuGou.exe\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\" /v \"Version\" /t REG_SZ /d \"$appversion\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\\Prefetcher\" /v \"Enable\" /t REG_DWORD /d \"0\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\kugou\\Prefetcher\" /v \"LastDetectedPath\" /t REG_SZ /d \"$dir\\KuGou.exe\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\KuGou8\" /v \"AppVersion\" /t REG_SZ /d \"$appversion\" /f *>$null",
+            "reg.exe add \"HKCU\\SOFTWARE\\KuGou8\" /v \"AppVersionLast\" /t REG_SZ /d \"$appversion\" /f *>$null",
+            "if (-not (Test-Path \"$persist_dir\\AppData\\kugou.ini\")) {",
+            "@\"",
+            "[DownloadConfigSection]",
+            "DownloadPath=$persist_dir\\KuGou",
+            "TempPath=$persist_dir\\KuGou\\Temp",
+            "",
+            "[Fanxing]",
+            "PlayingRecommend=0",
+            "",
+            "[GeneralConfigSection]",
+            "AutoRunDlnaKey=0",
+            "DynamicDesktopUsageDenominator=2",
+            "RegisterRestart=0",
+            "",
+            "[LyricConfigSection]",
+            "LyricPath=$persist_dir\\KuGou\\Lyric\\",
+            "",
+            "[MP3Copy]",
+            "SyncPrompt=0",
+            "",
+            "[Player]",
+            "SystemMediaControl=1",
+            "\"@ | Set-Content \"$persist_dir\\AppData\\kugou.ini\" -Encoding unicode -Force",
+            "success \"[New install] The download folder have been set to $persist_dir\\KuGou successfully!\"",
+            "}"
+        ]
+    },
+    "persist": [
+        "KuGou\\Temp",
+        "KuGou\\Lyric"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\KuGou8\"",
+        "reg.exe delete \"HKCU\\SOFTWARE\\kugou\" /f *>$null",
+        "reg.exe delete \"HKCU\\SOFTWARE\\KuGou8\" /f *>$null",
+        "reg.exe delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"Kugou8\" /f *>$null"
+    ],
+    "shortcuts": [
+        [
+            "KuGou.exe",
+            "酷狗音乐"
+        ]
+    ],
+    "checkver": {
+        "url": "https://download.kugou.com/",
+        "regex": "V (\\d+(\\.\\d+)+)"
+    },
+    "autoupdate": {
+        "url": "http://download.kugou.com/download/kugou_pc#/dl.7z"
+    }
+}
