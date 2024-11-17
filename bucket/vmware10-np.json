@@ -21,7 +21,8 @@
     "installer": {
         "script": [
             "if (!(is_admin)) {",
-            "    error \"Administrator rights are required to install $app.\"",
+            "    error \"Administrator rights are required to uninstall $app.\"",
+            "    scoop uninstall $app",
             "    exit 1",
             "}",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",

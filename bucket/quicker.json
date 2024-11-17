@@ -21,6 +21,7 @@
         "script": [
             "if (!(is_admin)) {",
             "    error \"Administrator rights are required to uninstall $app.\"",
+            "    scoop uninstall $app",
             "    exit 1",
             "}",
             "New-Item Registry::HKEY_CLASSES_ROOT\\quicker -Force -ItemType String -Value 'URL:Quicker Protocol' | Out-Null",
