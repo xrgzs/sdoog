@@ -1,17 +1,17 @@
 {
-    "version": "24.09r5472",
+    "version": "24.11r5548",
     "description": "Notepad4 (Notepad2++) is a light-weight Scintilla based text editor",
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/zufuliu/notepad4",
     "notes": "If you want to replace Windows Notepad UWP, please uninstall it first.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_HD_zh-Hans_x64_v24.09r5472.zip",
-            "hash": "12a0630411cfb12e0dffc61f92730332148c8fd27c3f21bf5a302903850c86cc"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.11r5548/Notepad4_HD_zh-Hans_x64_v24.11r5548.zip",
+            "hash": "5573ff8baf2c043ded1800400b1cff59f6541cfe1a63177b78e3885f9f41ccfa"
         },
         "32bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.09r5472/Notepad4_zh-Hant_Win32_v24.09r5472.zip",
-            "hash": "74daf0811c031bf7a978b092b2cac230d475538b7aabcf564e48aef12b889798"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v24.11r5548/Notepad4_zh-Hant_Win32_v24.11r5548.zip",
+            "hash": "a9a0ee3b7ee07ebb238654dc94544d55bf81181ea9a95256aff7832bea3c24bd"
         }
     },
     "bin": [
