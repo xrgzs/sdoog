@@ -15,16 +15,11 @@
     "uninstaller": {
         "script": "if ($cmd -eq 'uninstall') { Invoke-ExternalCommand \"$dir\\清理残留.bat\" -Quiet }"
     },
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\360驱动大师.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\360驱动大师.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\360驱动大师.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",

@@ -26,8 +26,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\Tencent\\WeChat\" \"$persist_dir\\AppData\" -Migrate",
         "New-PersistDirectory \"$env:USERPROFILE\\Documents\\WeChat Files\" \"$persist_dir\\WeChat Files\" -Migrate",
-        "New-Item -Path \"HKCU:\\Software\\Tencent\\WeChat\" -Name \"InstallPath\" -Value \"$dir\" -Force -ErrorAction SilentlyContinue | Out-Null",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\微信.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\微信.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        "New-Item -Path \"HKCU:\\Software\\Tencent\\WeChat\" -Name \"InstallPath\" -Value \"$dir\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
@@ -37,7 +36,6 @@
         "Remove-Junction \"$env:APPDATA\\Documents\\WeChat Files\"",
         "Remove-Item -Path \"HKCU:\\Software\\Tencent\\WeChat\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\微信.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
             "Import-Module \"$pwd\\bin\\WinGet.psm1\"",

@@ -11,8 +11,7 @@
     "post_install": [
         "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "New-PersistDirectory \"$env:APPDATA\\DingTalk\" \"$persist_dir\\AppData\" -Migrate",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\钉钉.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\钉钉.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        "New-PersistDirectory \"$env:APPDATA\\DingTalk\" \"$persist_dir\\AppData\" -Migrate"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
@@ -20,7 +19,6 @@
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\DingTalk\""
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\钉钉.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "shortcuts": [
         [
             "DingtalkLauncher.exe",

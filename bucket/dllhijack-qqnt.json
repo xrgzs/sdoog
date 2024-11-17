@@ -3,9 +3,7 @@
     "description": "QQNTFileVerifyPatch - DLLHijackMethod",
     "homepage": "https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch",
     "license": "MIT",
-    "depends": [
-        "sdoog/qqnt"
-    ],
+    "depends": "sdoog/qqnt",
     "suggest": {
         "liteLoaderqqnt": "sdoog/liteLoaderqqnt"
     },

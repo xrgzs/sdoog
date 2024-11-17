@@ -40,9 +40,6 @@
             "/CURRENTUSER"
         ]
     },
-    "post_install": [
-        "Remove-Item \"$([Environment]::GetFolderPath('programs'))\\Notepad--.lnk\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",

@@ -51,16 +51,11 @@
         "pkplugin.ini"
     ],
     "pre_install": "ForEach ($emptyFile in $manifest.persist | Where-Object { $_ -ne 'plugins' }) {New-Item \"$dir\\$emptyFile\" -ItemType file -ErrorAction SilentlyContinue | Out-Null}",
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Total Commander.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Total Commander.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\Total Commander.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",

@@ -33,16 +33,11 @@
         ]
     },
     "persist": "portable",
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\LX Music.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\LX Music.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\LX Music.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": "github",
     "autoupdate": {
         "architecture": {

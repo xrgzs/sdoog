@@ -30,16 +30,12 @@
             "Remove-Item \"$dir\\UninsFile\" -Recurse -Force"
         ]
     },
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\驱动总裁.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\驱动总裁.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
+    "post_install": "$scoop_startmenu_folder = shortcut_folder $global",
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\驱动总裁.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "shortcuts": [
         [
             "Drvceo.exe",
