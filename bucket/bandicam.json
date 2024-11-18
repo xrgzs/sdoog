@@ -2,9 +2,9 @@
     "homepage": "https://www.423down.com/2119.html",
     "description": "Bandicam（班迪录屏）是一款简单好用的高清录屏软件，电脑屏幕录像软件，高清视频录像软件。录屏大师Bandicam中文版可以录屏幕，录视频，录游戏。这款由韩国开发的高清视频录制工具，录制的视频文件体积小，支持录制H264编码的高清视频，高压缩率的无损4K超清视频，支持编辑视频，录制截图，添加水印，文字，鼠标效果。",
     "license": "Proprietary",
-    "version": "7.1.4.2458",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ii5cf28z0sed&type=down#/dl.7z",
-    "hash": "c6e05bce2507456e2c507a204e24706f24f0cd2f70bfc7a781f06b1f34ec5d22",
+    "version": "8.0.0.2509",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iN4BY2ffmpqb&type=down#/dl.7z",
+    "hash": "8cce8fb61f6fe75d340200255765ac5e703a6ec4064d5fe2c4bae8623e3d4000",
     "persist": "Data",
     "extract_dir": "Bandicam",
     "shortcuts": [
