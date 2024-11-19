@@ -1,14 +1,14 @@
 {
-    "version": "18.0.8.5",
+    "version": "18.0.8.6",
     "description": "Driver removal utility that can help you completely uninstall AMD/NVIDIA graphics card drivers and packages from your system, without leaving leftovers behind (including registry keys, folders and files, driver store)",
     "homepage": "https://www.wagnardsoft.com/display-driver-uninstaller-DDU-",
     "license": {
         "identifier": "Freeware",
         "url": "https://github.com/Wagnard/display-drivers-uninstaller/blob/WPF/LICENSE.md"
     },
-    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.8.5.exe#/dl.7z",
-    "hash": "987f28141a843e1ef8db95dfae930407c2a1890184478559e6e7125857cab799",
-    "extract_dir": "DDU v18.0.8.5",
+    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.8.6.exe#/dl.7z",
+    "hash": "3ab6f04e59174475305d4c34abcc1973fe11e8a28402e2941b74d870bbb7b712",
+    "extract_dir": "DDU v18.0.8.6",
     "pre_install": [
         "function New-PersistFile([String] $path) {",
         "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
