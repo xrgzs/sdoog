@@ -44,7 +44,12 @@
         "Stop-App"
     ],
     "uninstaller": {
-        "script": "Remove-Item -Path \"$env:PUBLIC\\Documents\\Tencent\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    Remove-Item -Path \"$env:PUBLIC\\Documents\\Tencent\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    Remove-Item -Path \"$env:AppData\\QQ\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}"
+        ]
     },
     "checkver": {
         "script": [
