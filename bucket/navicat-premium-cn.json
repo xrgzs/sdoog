@@ -5,8 +5,8 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://dn.navicat.com.cn/download/navicat17_premium_cs_x64.exe#/installer.exe",
-            "hash": "7aed76bdacd6144ff729c64936d174b08c3cc17652766cb6ac5dbba1454cf305"
+            "url": "https://dl.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe#/installer.exe",
+            "hash": "6c872c90f08727f59e3a8ae5261e9de201128bbdb2dd84291c6dcdc5f26867ee"
         }
     },
     "shortcuts": [
@@ -22,14 +22,13 @@
         "Stop-App"
     ],
     "checkver": {
-        "url": "https://www.navicat.com.cn/products/navicat-premium-release-note",
-        "regex": "version ([\\d.]+)"
+        "url": "https://dl.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe.ver",
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://dn.navicat.com.cn/download/navicat17_premium_cs_x64.exe#/installer.exe"
-            }
+        "url": "https://dl.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe#/installer.exe",
+        "hash": {
+            "url": "https://dl.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe.sha256"
         }
     }
 }
