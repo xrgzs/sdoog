@@ -1,13 +1,13 @@
 {
-    "version": "17.01.2352.000",
+    "version": "17.01.2465.000",
     "homepage": "https://www.microsoft.com/en-us/download/details.aspx?id=100607",
     "description": "Microsoft Support and Recovery Assistant(SaRA) is a desktop client that enables Microsoft customers to troubleshoot and diagnose their issues.",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.microsoft.com/servicesagreement"
     },
-    "url": "https://download.microsoft.com/download/9/0/4/90412ee2-beeb-4696-9980-862d3b57a37e/SaRA_17_01_2352_000.zip",
-    "hash": "d13487d4f793db3d5ff70ce17133678f49390a18cb1ccea67b2c902cb87c19f9",
+    "url": "https://download.microsoft.com/download/9/0/4/90412ee2-beeb-4696-9980-862d3b57a37e/SaRA_17_01_2465_000.zip",
+    "hash": "ec1958a08c7d3f8bf40afd25c78306c4e69bd1dda799ae11b6eef13a6baaf563",
     "installer": {
         "file": "SaraSetup.exe",
         "args": "/q"
