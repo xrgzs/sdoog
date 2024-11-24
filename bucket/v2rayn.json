@@ -1,0 +1,81 @@
+{
+    "##": "no juicity, hysteria1 and tuic in the main bucket. hysteria is hysteria2.",
+    "version": "7.2.0",
+    "description": "(Auto update cores by scoop) A V2Ray client for Windows, support Xray core and others",
+    "homepage": "https://github.com/2dust/v2rayN",
+    "license": "GPL-3.0-or-later",
+    "depends": [
+        "main/xray",
+        "extras/hysteria",
+        "main/mihomo",
+        "main/naiveproxy",
+        "main/sing-box",
+        "main/v2ray"
+    ],
+    "suggest": {
+        ".NET 8 Desktop Runtime": "windowsdesktop-runtime-lts"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.2.0/v2rayN-windows-64.zip",
+            "hash": "0dd239c2ce5f0e313d7c9a18010ab55f8935c0cc0dfe6160368271faba660762",
+            "extract_dir": "v2rayN-windows-64"
+        },
+        "arm64": {
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.2.0/v2rayN-windows-arm64.zip",
+            "hash": "04296299fbe3b026b7e4fa0db612d9a24e15100de787373d6b65d245bc081382",
+            "extract_dir": "v2rayN-windows-arm64"
+        }
+    },
+    "bin": "v2rayN.exe",
+    "shortcuts": [
+        [
+            "v2rayN.exe",
+            "v2rayN"
+        ]
+    ],
+    "persist": "guiConfigs",
+    "installer": {
+        "script": [
+            "function New-AppLink {",
+            "    param(",
+            "        [string] $App,",
+            "        [string] $Target",
+            "    )",
+            "    New-Item -ItemType Directory -Path $Target -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    $AppItem = scoop which xray | Get-Item",
+            "    try {",
+            "        New-Item -ItemType SymbolicLink -Target $AppItem.FullName -Path \"$Target\\$App.exe\" -Force -ErrorAction Stop | Out-Null",
+            "    } catch {",
+            "        Copy-Item -Path \"$scoopdir\\shims\\$App.exe\" -Destination \"$Target\\$App.exe\" -Force | Out-Null",
+            "        Copy-Item -Path \"$scoopdir\\shims\\$App.shim\" -Destination \"$Target\\$App.shim\" -Force | Out-Null",
+            "    }",
+            "}",
+            "",
+            "New-AppLink -App 'xray' -Target \"$dir\\bin\\xray\"",
+            "New-AppLink -App 'hysteria' -Target \"$dir\\bin\\hysteria2\"",
+            "New-AppLink -App 'mihomo' -Target \"$dir\\bin\\mihomo\"",
+            "New-AppLink -App 'sing-box' -Target \"$dir\\bin\\sing-box\"",
+            "New-AppLink -App 'v2ray' -Target \"$dir\\bin\\v2ray\""
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/2dust/v2rayN/releases?per_page=1",
+        "jsonpath": "$.tag_name"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-arm64.zip"
+            }
+        }
+    }
+}
