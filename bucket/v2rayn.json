@@ -55,7 +55,7 @@
             "New-AppLink -App 'xray' -Target \"$dir\\bin\\xray\"",
             "New-AppLink -App 'hysteria' -Target \"$dir\\bin\\hysteria2\"",
             "New-AppLink -App 'mihomo' -Target \"$dir\\bin\\mihomo\"",
-            "New-AppLink -App 'sing-box' -Target \"$dir\\bin\\sing-box\"",
+            "New-AppLink -App 'sing-box' -Target \"$dir\\bin\\sing_box\"",
             "New-AppLink -App 'v2ray' -Target \"$dir\\bin\\v2ray\""
         ]
     },
