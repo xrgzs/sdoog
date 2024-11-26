@@ -19,6 +19,9 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
+    "uninstaller": {
+        "script": "if ($cmd -eq 'uninstall') { Remove-Item -Path \"$env:AppData\\Havysoft\" -Recurse -Force —ErrorAction SilentlyContinue | Out-Null }"
+    },
     "checkver": {
         "script": [
             "$response = Invoke-RestMethod -Uri \"https://www.423down.com/10151.html\"",
