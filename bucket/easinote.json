@@ -1,11 +1,11 @@
 {
-    "version": "5.2.4.8609",
+    "version": "5.2.4.8613",
     "description": "为互动教学而生",
     "homepage": "https://easinote.seewo.com/",
     "license": "Proprietary",
-    "url": "https://imlizhi-store-https.seewo.com/EasiNote5_5.2.4.8609(20241125190938).exe#/dl.7z",
-    "hash": "04f66e57b0431e7e3fba63e2499758015c4a2b6793c25f0a26d234204442232b",
-    "extract_dir": "EasiNote5_5.2.4.8609",
+    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwvpxihhulnhlwhowiwjoounhhihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1732604924%3B2047964924%26q-key-time%3D1732604924%3B2047964924%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D50445cf2c2aa117ef333ec6ed9e2b826ce2175e9&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.8613_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.8613_seewo.exe#/dl.7z",
+    "hash": "cba24fd8cee3e95e4d12b3cb41579a62b13ea0b9fca22e853658ab11a4ad3325",
+    "extract_dir": "EasiNote5_5.2.4.8613",
     "shortcuts": [
         [
             "Main\\EasiNote.exe",
