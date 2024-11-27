@@ -1,5 +1,5 @@
 {
-    "version": "6.3.1.83",
+    "version": "6.3.1.84",
     "description": "Listary also brings recent folders and files at your fingertips from Explorer and File Open/Save Dialog box. Last opened file is automatically highlighted for instant access.",
     "homepage": "https://www.cybermania.ws/apps/listary-pro/",
     "license": "Proprietary",
@@ -7,7 +7,7 @@
     "architecture": {
         "64bit": {
             "url": "https://dl.xrgzs.top/d/pxy/Software/Listary/ListaryProx64.7z",
-            "hash": "f60aaeb41eca97d7732d41ddb9c7a29876fdc48a9aecd27ef97ed63ae5ae3004"
+            "hash": "a22035a1c7fdc812341760e1863197e28dd103daf9234b921f8f849b458263cc"
         }
     },
     "installer": {
