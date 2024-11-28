@@ -43,10 +43,8 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "unlink_persist_data $manifest $dir",
-        "if ($cmd -eq 'uninstall') {",
-        "    Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S /no_browser' -RunAs",
-        "    Start-Sleep -Seconds 10",
-        "}"
+        "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S /no_browser' -RunAs",
+        "Start-Sleep -Seconds 10"
     ],
     "checkver": {
         "script": [
