@@ -1,10 +1,10 @@
 {
-    "version": "11.1.31",
+    "version": "20.0.10",
     "description": "酷狗音乐，就是歌多",
     "homepage": "https://www.kugou.com/",
     "license": "Proprietary",
     "url": "http://download.kugou.com/download/kugou_pc#/dl.7z",
-    "hash": "a6523ca08859757b612d94a60dc36202c1038a86ed89c44fed118365bf547ffe",
+    "hash": "21b82e090da81800498f2244daa46ae3efc849bad3e7712f038773b8e4b204f9",
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
