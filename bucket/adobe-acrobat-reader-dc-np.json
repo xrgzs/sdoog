@@ -1,5 +1,5 @@
 {
-    "version": "24.004.20272",
+    "version": "24.005.20307",
     "description": "Adobe Acrobat Reader DC. Not only view, but print, sign, and annotate PDFs with the free Adobe Acrobat Reader DC.",
     "homepage": "https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400420272/AcroRdrDCx642400420272_zh_CN.exe#/dl.7z",
-            "hash": "77db6a8d1f220a794c81a1643c8b1b3701c1cab70029909080b14c1f725e06e5"
+            "url": "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400520307/AcroRdrDCx642400520307_zh_CN.exe#/dl.7z",
+            "hash": "cfed674aff9b7674345139dcc7fe108950a16f31b003ebc8318171dc9a0940b6"
         }
     },
     "extract_to": "installer",
