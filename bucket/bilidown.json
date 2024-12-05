@@ -1,0 +1,34 @@
+{
+    "version": "1.2.4",
+    "description": "一款简洁好用的B站视频下载工具",
+    "homepage": "https://zhouql.vip/bilibili/pc/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i7jXE2d59w5c&type=down#/dl.7z",
+            "hash": "0f0edef5c9b6a6c49006b93b285eb849e1ccbcfbd7216aa52db48e8921cd59ca"
+        }
+    },
+    "checkver": {
+        "regex": "v([\\d.]+)</div>[\\s\\S]*lanzou.\\.com/(?<sharekey>\\w+)"
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+            "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+        ]
+    },
+    "shortcuts": [
+        [
+            "bilidown.exe",
+            "Bilidown"
+        ]
+    ],
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+            }
+        }
+    }
+}
