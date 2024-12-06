@@ -25,7 +25,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Tencent\\xwechat\"",
-        "Remove-Junction \"$env:APPDATA\\Documents\\xwechat_files\"",
+        "Remove-Junction \"$env:USERPROFILE\\Documents\\xwechat_files\"",
         "Remove-Item -Path \"HKCU:\\Software\\Tencent\\Weixin\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": {
