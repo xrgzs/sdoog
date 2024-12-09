@@ -427,11 +427,7 @@ Scoop bucket 的软件安装包配置为 JSON 格式，安装需要调用的命�
     | nonportable     | <https://github.com/ScoopInstaller/Nonportable>      |
     | java            | <https://github.com/ScoopInstaller/Java>             |
     | games           | <https://github.com/Calinou/scoop-games>             |
-    | **abgo_bucket** | <https://github.com/abgox/abgo_bucket.git>           |
-    | **aki**         | <https://github.com/akirco/aki-apps.git>             |
     | **dorado**      | <https://github.com/chawyehsu/dorado.git>            |
-    | **DoveBoy**     | <https://github.com/DoveBoy/Apps.git>                |
-    | **scoop-zapps** | <https://github.com/kkzzhizhou/scoop-zapps.git>      |
 
 2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 `Url Proxy` 功能能够自动处理
 
