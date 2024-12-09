@@ -1,0 +1,47 @@
+{
+    "version": "2.11",
+    "homepage": "https://www.bitcomet.com/",
+    "license": {
+        "identifier": "freeware for non-commercial use",
+        "url": "https://www.bitcomet.com/en/license"
+    },
+    "notes": "Switch to Chinese Traditional to unlock more features.",
+    "url": "https://download.bitcomet.com/achive/BitComet_2.11.zip",
+    "hash": "d083d3dfb979cbd3787535e9de14bd2bd2e5a3e072864674c31bdb9cbfd631e0",
+    "persist": [
+        "BitComet.xml",
+        "Downloads.xml",
+        "torrents",
+        "share",
+        "archive"
+    ],
+    "architecture": {
+        "64bit": {
+            "shortcuts": [
+                [
+                    "BitComet_x64.exe",
+                    "BitComet"
+                ]
+            ]
+        },
+        "32bit": {
+            "shortcuts": [
+                [
+                    "BitComet.exe",
+                    "BitComet"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://www.bitcomet.com/en/archive",
+        "regex": "BitComet_([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://download.bitcomet.com/achive/BitComet_$version.zip",
+        "hash": {
+            "url": "https://www.bitcomet.com/en/archive",
+            "find": "BitComet_$version.zip.*?($sha256)"
+        }
+    }
+}
