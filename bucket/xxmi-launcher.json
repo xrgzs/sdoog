@@ -24,7 +24,13 @@
         "    Set-Content -Path \"$dir\\XXMI Launcher Config.json\" -Value '{\"Launcher\":{\"auto_update\":false}}'",
         "}"
     ],
-    "persist": "XXMI Launcher Config.json",
+    "persist": [
+        "XXMI Launcher Config.json",
+        "WWMI",
+        "ZZMI",
+        "SRMI",
+        "GIMI"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
