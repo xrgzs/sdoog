@@ -37,11 +37,11 @@
             "",
             "'errorpage.zip', 'newtab.zip' | ForEach-Object {",
             "    Remove-Item \"$dir\\$version\\$_\" -Force -ErrorAction SilentlyContinue | Out-Null",
-            "    Invoke-WebRequest \"https://dl.xrgzs.top/d/pxy/Software/360/csex/$_\" -OutFile \"$dir\\$version\\$_\"",
+            "    Invoke-WebRequest \"https://alist.xrgzs.top/d/pxy/Software/360/csex/$_\" -OutFile \"$dir\\$version\\$_\"",
             "}",
             "",
             "if (-not (Test-Path \"$persist_dir\\User Data\\Default\\Preferences\")) {",
-            "    Invoke-WebRequest \"https://dl.xrgzs.top/d/pxy/Software/360/csex/UserData.exe\" -OutFile \"$dir\\UserData.rar\"",
+            "    Invoke-WebRequest \"https://alist.xrgzs.top/d/pxy/Software/360/csex/UserData.exe\" -OutFile \"$dir\\UserData.rar\"",
             "    Expand-7zipArchive -Path \"$dir\\UserData.rar\" -ExtractDir 'User Data' -DestinationPath \"$persist_dir\\User Data\" -Removal",
             "}"
         ]

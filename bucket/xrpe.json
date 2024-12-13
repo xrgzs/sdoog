@@ -7,11 +7,11 @@
     "notes": "If you want to reboot to Xiaran PE immediately, please run 'reboot-to-xrpe'. For further details, please visit https://pe.xrgzs.top .",
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
+            "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
             "hash": "md5:3bb7c999fcd2991b67cc014aa9ede412"
         },
         "32bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
+            "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
             "hash": "md5:dcc5660bcd1288ad29f9519fdcc39792"
         }
     },
@@ -105,14 +105,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
+                "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
                 "hash": {
                     "url": "https://c.xrgzs.top/PEDownload.ini",
                     "regex": "PEX64MD5=([\\w]{32})"
                 }
             },
             "32bit": {
-                "url": "https://dl.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
+                "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
                 "hash": {
                     "url": "https://c.xrgzs.top/PEDownload.ini",
                     "regex": "PEX86MD5=([\\w]{32})"

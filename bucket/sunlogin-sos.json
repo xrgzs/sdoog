@@ -7,11 +7,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe#/SunloginSOS.exe",
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe#/SunloginSOS.exe",
             "hash": "b43068c3243f546739b75c6c56a335036d0c9b2e10d647f0353a8ae634db033a"
         },
         "32bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE.exe#/SunloginSOS.exe",
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE.exe#/SunloginSOS.exe",
             "hash": "b43068c3243f546739b75c6c56a335036d0c9b2e10d647f0353a8ae634db033a"
         }
     },
@@ -22,16 +22,16 @@
         ]
     ],
     "checkver": {
-        "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe.ver",
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe.ver",
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe#/SunloginSOS.exe"
+                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE_x64.exe#/SunloginSOS.exe"
             },
             "32bit": {
-                "url": "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE.exe#/SunloginSOS.exe"
+                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SL_WINDOWS_LITE.exe#/SunloginSOS.exe"
             }
         }
     }
