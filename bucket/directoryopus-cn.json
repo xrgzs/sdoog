@@ -1,5 +1,5 @@
 {
-    "version": "13.11",
+    "version": "500",
     "description": "Directory Opus 是受欢迎的一款文件管理器。Directory Opus 注重鼠标操作，与倾向于键盘快捷键操作的 Total Commander 形成鲜明的对比。Directory Opus 集成许多非常实用的功能，包括音视频的预览、解压缩处理等。",
     "homepage": "https://www.ghxi.com/directoryopus.html",
     "license": {
@@ -11,8 +11,8 @@
         "https://dl.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
     ],
     "hash": [
-        "6c872c90f08727f59e3a8ae5261e9de201128bbdb2dd84291c6dcdc5f26867ee",
-        "14d73c845e621f0ab1f773141b2696d2cebe5b68f6bc37c3ff5f5e5845fce128"
+        "1e4a96890abdcf87b289fd871c4382957917004379721b058cfacfed1a0ecf6c",
+        "3e7a3dbffeda9bf33b776209e38ea54f60dee8dfe3579564798cd26bb3954f6e"
     ],
     "bin": "dopusrt.exe",
     "shortcuts": [
