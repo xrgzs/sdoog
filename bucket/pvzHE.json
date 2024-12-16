@@ -1,10 +1,10 @@
 {
-    "version": "2.6.1",
+    "version": "3.0.1",
     "homepage": "hhttps://space.bilibili.com/97213827",
     "description": "植物大战僵尸杂交版 是 B 站 UP 主潜艇伟伟迷 DIY 的一款游戏，他将植物大战僵尸内的物品进行了杂糅创作，使其有了新的形态和功能。",
     "license": "Freeware",
-    "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/Uploads/%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8%E6%9D%82%E4%BA%A4%E7%89%88_%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4_2.6.1_%E6%BD%9C%E8%89%87%E4%BC%9F%E4%BC%9F%E8%BF%B7%E6%94%B9%E7%89%88.HPM#/dl.7z",
-    "hash": "1c5b67ebfa088998af3a5db49e975136242c57534fbe80e84b8e810351902f17",
+    "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/Uploads/%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8%E6%9D%82%E4%BA%A4%E7%89%88_%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4_3.0.1_%E6%BD%9C%E8%89%87%E4%BC%9F%E4%BC%9F%E8%BF%B7%E6%94%B9%E7%89%88.HPM#/dl.7z",
+    "hash": "54f64a05969bcb8ba3466ac79b11cd42dbac802bba0970ac0d0fdfed76c2e377",
     "shortcuts": [
         [
             "PlantsVsZombies.exe",
@@ -29,7 +29,7 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/api/fs/list?path=/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/Onekey/PE/HotPE/Uploads",
-        "regex": "植物大战僵尸杂交版_潇然工作室_(.+)_潜艇伟伟迷改版.HPM"
+        "regex": "植物大战僵尸杂交版_潇然工作室_(\\d+\\.\\d+\\.\\d+)_潜艇伟伟迷改版.HPM"
     },
     "autoupdate": {
         "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/Uploads/%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8%E6%9D%82%E4%BA%A4%E7%89%88_%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4_$version_%E6%BD%9C%E8%89%87%E4%BC%9F%E4%BC%9F%E8%BF%B7%E6%94%B9%E7%89%88.HPM#/dl.7z"
