@@ -18,12 +18,17 @@
     "extract_to": "installer",
     "pre_install": [
         "Expand-7zipArchive \"$dir\\installer\\.rdata\" \"$dir\"",
-        "Remove-Item \"$dir\\installer\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Remove-Item \"$dir\\installer\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+        "New-PersistDirectory \"$env:APPDATA\\leigod\" \"$persist_dir\\APPDATA\" -Migrate",
+        "New-PersistDirectory \"$env:USERPROFILE\\.leigod\" \"$persist_dir\\.leigod\" -Migrate"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\leigod\"",
+        "Remove-Junction \"$env:USERPROFILE\\.leigod\""
     ],
     "checkver": {
         "url": "https://www.leigod.com/configs.json",
