@@ -1,5 +1,5 @@
 {
-    "version": "17.6.1-24319023",
+    "version": "17.6.2-24409262",
     "homepage": "https://www.vmware.com/",
     "description": "An application for creating and running virtual machines on your computer.",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.1-24319023.exe#/installer.exe",
-            "hash": "f95429e395a583eb5ba91f09b040e2f8c53a5e7aa37c4c6bfcaf82115a8d3fa4"
+            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.2-24409262.exe#/installer.exe",
+            "hash": "5e556b7fc1bd27775143eea930cac68760a1b5dc9b4c089d3fc664cd8439645b"
         }
     },
     "shortcuts": [
