@@ -1,24 +1,24 @@
 $DebugPreference = 'Continue'
 Import-Module $(Join-Path $PSScriptRoot "SQLite.psm1")
 
-function Install-Yq {
-    $installers = @('scoop', 'choco', 'winget')
-    foreach ($installer in $installers) {
-        try {
-            switch ($installer) {
-                'scoop' { scoop install main/yq }
-                'choco' { choco install yq -y --no-progress }
-                'winget' { winget install --id "MikeFarah.yq" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force }
-            }
-            if (Get-Command yq -ErrorAction SilentlyContinue) {
-                return
-            }
-        } catch {
-            Write-Warning "$installer faild to install yq."
-        }
-    }
-    Write-Warning "All methods of installing yq are failed."
-}
+# function Install-Yq {
+#     $installers = @('scoop', 'choco', 'winget')
+#     foreach ($installer in $installers) {
+#         try {
+#             switch ($installer) {
+#                 'scoop' { scoop install main/yq }
+#                 'choco' { choco install yq -y --no-progress }
+#                 'winget' { winget install --id "MikeFarah.yq" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force }
+#             }
+#             if (Get-Command yq -ErrorAction SilentlyContinue) {
+#                 return
+#             }
+#         } catch {
+#             Write-Warning "$installer faild to install yq."
+#         }
+#     }
+#     Write-Warning "All methods of installing yq are failed."
+# }
 
 function Install-PowerShellYaml {
     try {
@@ -28,10 +28,10 @@ function Install-PowerShellYaml {
     }
 }
 
-if (-not (Get-Command yq -ErrorAction SilentlyContinue)) {
-    Write-Warning "yq has not been installed."
-    Install-Yq | Out-Null
-}
+# if (-not (Get-Command yq -ErrorAction SilentlyContinue)) {
+#     Write-Warning "yq has not been installed."
+#     Install-Yq | Out-Null
+# }
 
 if (-not (Get-Module -ListAvailable -Name PowerShell-Yaml)) {
     Write-Warning "PowerShell-Yaml has not been installed."
@@ -44,12 +44,12 @@ function ConvertFrom-YamlString {
         [string]
         $InputObject
     )
-    try {
-        $OutputObject = $InputObject | yq -o xml | yq -p xml -o json | ConvertFrom-Json
-    } catch {
-        $OutputObject = $InputObject | ConvertFrom-Yaml
-    }
-    return $OutputObject
+    # try {
+    #     $OutputObject = $InputObject | yq -o xml | yq -p xml -o json | ConvertFrom-Json
+    # } catch {
+    #     $OutputObject = $InputObject | ConvertFrom-Yaml
+    # }
+    return $InputObject | ConvertFrom-Yaml
 }
 
 function ConvertFrom-MSZIP {
