@@ -1,10 +1,10 @@
 {
-    "version": "6.23.203.2",
+    "version": "6.24.1221.1",
     "description": "Notepad-like text editor based on the Scintilla source code",
     "homepage": "https://rizonesoft.com/downloads/notepad3/",
     "license": "BSD-3-Clause",
-    "url": "https://downloads.rizonesoft.com/Notepad3/Notepad3_6.23.203.2_Portable.zip",
-    "hash": "468662e0c1c6e800b161d04b6767df9710e0a0f25c369e342b910b26638b20bd",
+    "url": "https://downloads.rizonesoft.com/Notepad3/Notepad3_6.24.1221.1_Portable.zip",
+    "hash": "7562f66a7e05fb99df3b92fa0fa37461111600288a39eea92270643ba12efb97",
     "architecture": {
         "64bit": {
             "installer": {
