@@ -1,13 +1,14 @@
 {
-    "version": "2.11",
+    "version": "2.11.11.12",
     "homepage": "https://www.bitcomet.com/",
     "license": {
         "identifier": "freeware for non-commercial use",
         "url": "https://www.bitcomet.com/en/license"
     },
     "notes": "Switch to Chinese Traditional to unlock more features.",
-    "url": "https://download.bitcomet.com/achive/BitComet_2.11.zip",
-    "hash": "7b8e1167e23f350f139df0a56b2e7a28b68e7b540550da370b3791cb9368d12d",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iK6Ai2ewjeah&type=down#/dl.7z",
+    "hash": "8201110e54e9ce470a255794ae06bec2dbad89f52539901ca9d7ba4e47b07408",
+    "extract_dir": "BitComet",
     "persist": [
         "BitComet.xml",
         "Downloads.xml",
@@ -34,10 +35,14 @@
         }
     },
     "checkver": {
-        "url": "https://www.bitcomet.com/en/archive",
-        "regex": "BitComet_([\\d.]+)\\.zip"
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$f = Get-LanzouList \"https://www.lanzouw.com/b00zqjbkh\" 5q6j | Where-Object { $_.name_all -like \"BitComet_*_Greent.7z\" } | Select-Object -First 1",
+            "$f.name_all + '=====' + $f.id"
+        ],
+        "regex": "BitComet_v(.*)_Greent.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://download.bitcomet.com/achive/BitComet_$version.zip"
+        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }
