@@ -7,7 +7,7 @@
     },
     "notes": "Switch to Chinese Traditional to unlock more features.",
     "url": "https://download.bitcomet.com/achive/BitComet_2.11.zip",
-    "hash": "d083d3dfb979cbd3787535e9de14bd2bd2e5a3e072864674c31bdb9cbfd631e0",
+    "hash": "7b8e1167e23f350f139df0a56b2e7a28b68e7b540550da370b3791cb9368d12d",
     "persist": [
         "BitComet.xml",
         "Downloads.xml",
@@ -38,10 +38,6 @@
         "regex": "BitComet_([\\d.]+)\\.zip"
     },
     "autoupdate": {
-        "url": "https://download.bitcomet.com/achive/BitComet_$version.zip",
-        "hash": {
-            "url": "https://www.bitcomet.com/en/archive",
-            "find": "BitComet_$version.zip.*?($sha256)"
-        }
+        "url": "https://download.bitcomet.com/achive/BitComet_$version.zip"
     }
 }
