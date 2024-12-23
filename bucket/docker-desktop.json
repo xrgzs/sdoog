@@ -1,0 +1,63 @@
+{
+    "version": "4.37.1",
+    "description": "Docker Desktop. Open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.",
+    "homepage": "https://www.docker.com/products/docker-desktop/",
+    "license": "Proprietary",
+    "architecture": {
+        "arm64": {
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe",
+            "hash": "8eec2a8cfd42d008024f0950f091a01c75d3f737860e123dd41dbbebeab0312a"
+        },
+        "64bit": {
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
+            "hash": "755ea81173f0621d9683808c75dff65fa4e6ef39aeefb5a7f2723b682119c20f"
+        }
+    },
+    "shortcuts": [
+        [
+            "docker\\Docker Desktop.exe",
+            "Docker Desktop"
+        ]
+    ],
+    "env_add_path": "docker\\resources\\bin",
+    "installer": {
+        "args": [
+            "install",
+            "--quiet",
+            "--accept-license",
+            "--backend=wsl-2",
+            "--installation-dir=$dir\\docker"
+        ]
+    },
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:USERPROFILE\\.docker\" \"$persist_dir\\USERPROFILE\\.docker\" -Migrate",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\Docker\" \"$persist_dir\\LOCALAPPDATA\\Docker\" -Migrate",
+        "New-PersistDirectory \"$env:APPDATA\\Docker\" \"$persist_dir\\APPDATA\\Docker\" -Migrate"
+    ],
+    "uninstaller": {
+        "file": "docker\\Docker Desktop Installer.exe",
+        "args": [
+            "uninstall",
+            "--quiet",
+            "--installation-dir=$dir\\docker"
+        ]
+    },
+    "checkver": {
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/Version.txt",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe"
+            },
+            "64bit": {
+                "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}
