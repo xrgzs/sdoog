@@ -1,5 +1,5 @@
 {
-    "version": "1.1.4",
+    "version": "1.2.0",
     "description": "Launcher tool for XXMI",
     "homepage": "https://github.com/SpectrumQT/XXMI-Launcher",
     "license": "GPL-3.0-or-later",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SpectrumQT/XXMI-Launcher/releases/download/v1.1.4/XXMI-LAUNCHER-PACKAGE-v1.1.4.zip",
-            "hash": "82ada532f16cbcf3bfca6f09c4bc3233f4d04024498112000246a293d52702a3"
+            "url": "https://github.com/SpectrumQT/XXMI-Launcher/releases/download/v1.2.0/XXMI-LAUNCHER-PACKAGE-v1.2.0.zip",
+            "hash": "b1d6044213d3401ea44428da1865b9a52807293c87fe11bf9232cabab71f3dde"
         }
     },
     "shortcuts": [
