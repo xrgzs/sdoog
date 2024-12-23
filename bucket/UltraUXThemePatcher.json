@@ -1,0 +1,26 @@
+{
+    "version": "4.4.3",
+    "description": "UltraUXThemePatcher（Win系统主题破解工具）可以破解Windows主题限制，让你可以使用第三方主题！支持WinXP/Vista/7/8.1/10/11",
+    "homepage": "https://zhutix.com/tools/win-theme-patcher/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://b.zhutix.com/software/UltraUXThemePatcher_4.4.3.exe#/UltraUXThemePatcher.exe",
+            "hash": "431675fcbb448567fafc83fee2b93c620ab7a7f5d3d7a7c7b922fec52d58deb2"
+        }
+    },
+    "notes": "UltraUXThemePatcher's author removed the /S option from later releases. You must install it live, or find an older version that works with silent install.",
+    "bin": "UltraUXThemePatcher.exe",
+    "shortcuts": [
+        [
+            "UltraUXThemePatcher.exe",
+            "UltraUXThemePatcher"
+        ]
+    ],
+    "checkver": {
+        "regex": "(?<url>https://b.zhutix.com/software/UltraUXThemePatcher_([\\d.]+).exe)"
+    },
+    "autoupdate": {
+        "url": "$matchUrl#/UltraUXThemePatcher.exe"
+    }
+}
