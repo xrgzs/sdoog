@@ -35,6 +35,14 @@
         "New-PersistDirectory \"$env:LOCALAPPDATA\\Docker\" \"$persist_dir\\LOCALAPPDATA\\Docker\" -Migrate",
         "New-PersistDirectory \"$env:APPDATA\\Docker\" \"$persist_dir\\APPDATA\\Docker\" -Migrate"
     ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:USERPROFILE\\.docker\"",
+        "Remove-Junction \"$env:LOCALAPPDATA\\Docker\"",
+        "Remove-Junction \"$env:APPDATA\\Docker\""
+    ],
     "uninstaller": {
         "file": "docker\\Docker Desktop Installer.exe",
         "args": [
