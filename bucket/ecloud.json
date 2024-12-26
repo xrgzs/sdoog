@@ -1,10 +1,10 @@
 {
     "homepage": "https://cloud.189.cn/",
     "description": "天翼云盘是基于云计算技术的个人/家庭云数据中心，是一个提供文件同步、备份及分享等服务的网络云存储平台。您可以通过网页、PC客户端及移动客户端随时随地的把照片、音乐、视频、文档等轻松地保存到网络，无须担心文件丢失。通过天翼云，多终端上传和下载、管理、分享文件变得轻而易举。",
-    "version": "7.1.2",
+    "version": "7.1.5",
     "license": "Proprietary",
     "url": "http://api.xrgzs.top/soft/ecloud#/dl.7z",
-    "hash": "a7168ce1e623e540ddbb7105c6466fe104100733b51fd2565154c425283122c3",
+    "hash": "69e1a0205cb66b6a12ae94f39a526cc1243caf9bfbbe94124b881a1e9a74f5cb",
     "shortcuts": [
         [
             "eCloud.exe",
