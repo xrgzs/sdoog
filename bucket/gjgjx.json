@@ -1,0 +1,19 @@
+{
+    "version": "10",
+    "description": "《搞机工具箱》是一款利用ADB (安卓调试桥）来控制手机的玩机工具。",
+    "homepage": "https://jamcz.com/gjgjx/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://alist.xrgzs.top/d/pxy/Software/CzJam/%E6%90%9E%E6%9C%BA%E5%B7%A5%E5%85%B7%E7%AE%B1V10.7z",
+            "hash": "ea935dc852cfaef3288578f755c6a943fbdd22f0966827dc0d4f31b0d8dfd259"
+        }
+    },
+    "extract_dir": "搞机工具箱V10",
+    "shortcuts": [
+        [
+            "搞机工具箱V10.exe",
+            "搞机工具箱"
+        ]
+    ]
+}
