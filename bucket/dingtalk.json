@@ -9,7 +9,7 @@
     "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v7.6.15.101210804.exe#/dl.7z",
     "hash": "md5:263e0654b18aed58b5be4f4d705c4f8b",
     "post_install": [
-        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+        "Remove-Item \"build\\updater\" -Recurse",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\DingTalk\" \"$persist_dir\\AppData\" -Migrate"
     ],
@@ -21,7 +21,7 @@
     ],
     "shortcuts": [
         [
-            "DingtalkLauncher.exe",
+            "build\\dist\\DingTalk.exe",
             "钉钉"
         ]
     ],
