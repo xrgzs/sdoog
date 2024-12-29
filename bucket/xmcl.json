@@ -13,11 +13,10 @@
             "hash": "ddf2c1a7e031d6bdc169df700a6e14ea6556c345f711766d11aaf5eeae095330"
         }
     },
-    "bin": "xmcl.exe",
     "shortcuts": [
         [
-            "xmcl.exe",
-            "XMCL"
+            "X Minecraft Launcher.exe",
+            "X Minecraft Launcher"
         ]
     ],
     "checkver": {
