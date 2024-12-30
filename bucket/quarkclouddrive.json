@@ -1,15 +1,15 @@
 {
-    "version": "3.16.0",
+    "version": "3.17.0",
     "description": "夸克网盘 电脑高效拍档 一键存爽快看",
     "homepage": "https://pan.quark.cn/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://broccoli.uc.cn/apps/quark_icloud_pay/routes/service_help"
     },
-    "url": "https://pdds.quark.cn/download/stfile/vv6z6yyzwvwzvx8xk/QuarkCloudDrive_v3.16.0_release_(Build2015915-20241212225931).exe",
-    "hash": "0d87dbc052863a4b2facdc55e9dff88189e12958f09e2eff2024bd5177d5645c",
+    "url": "https://pdds.quark.cn/download/stfile/vv6z66z6wvwzvx8xk/QuarkCloudDrive_v3.17.0_release_(Build2035553-20241230145730).exe",
+    "hash": "ee6143b224e0d794a0fee36787003282cb4b96e0bcc8b2ba068de94fca038674",
     "innosetup": true,
-    "extract_dir": "app-3.16.0",
+    "extract_dir": "app-3.17.0",
     "shortcuts": [
         [
             "QuarkCloudDrive.exe",
