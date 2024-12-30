@@ -1,6 +1,6 @@
 {
     "##": "no juicity, hysteria1 and tuic in the main bucket. hysteria is hysteria2.",
-    "version": "7.4.2",
+    "version": "7.5.0",
     "description": "(Auto update cores by scoop) A V2Ray client for Windows, support Xray core and others",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-or-later",
@@ -17,13 +17,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.4.2/v2rayN-windows-64.zip",
-            "hash": "dd190394c3f840e0f313e2277fd9dcf16592379751aeb645657980f5f3329059",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.5.0/v2rayN-windows-64.zip",
+            "hash": "2fb4b2276f2d99d291127a2154a01280f20b26d196deefb52e4cbbb40f29dc3a",
             "extract_dir": "v2rayN-windows-64"
         },
         "arm64": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.4.2/v2rayN-windows-arm64.zip",
-            "hash": "424e15bba8fdfa59e01fb49ef587ab369c1ee0e5c0ed6cb4365dbbf2e9693c9c",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.5.0/v2rayN-windows-arm64.zip",
+            "hash": "04241582339c580270c26df604571d7620232492b1ea398589104d5869ec021e",
             "extract_dir": "v2rayN-windows-arm64"
         }
     },
