@@ -1,12 +1,12 @@
 {
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "一款简洁好用的B站视频下载工具",
     "homepage": "https://zhouql.vip/bilibili/pc/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/inmoo2itq2be&type=down#/dl.7z",
-            "hash": "14d5fc7cd6253054960e2286775238347acd412f92efd129d0f7544ce07b09eb"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihi8J2jkybob&type=down#/dl.7z",
+            "hash": "850c27f2a13267c4970d249b3ca3abb180ba5b45dac02316a95d0b7cb03e27c3"
         }
     },
     "checkver": {
