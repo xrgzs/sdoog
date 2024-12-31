@@ -19,6 +19,18 @@
             "X Minecraft Launcher"
         ]
     ],
+    "post_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:USERPROFILE\\.xmcl\" \"$persist_dir\\.xmcl\" -Migrate",
+        "New-PersistDirectory \"$env:APPDATA\\xmcl\" \"$persist_dir\\xmcl\" -Migrate"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:USERPROFILE\\.xmcl\"",
+        "Remove-Junction \"$env:APPDATA\\xmcl\""
+    ],
     "checkver": {
         "github": "https://github.com/Voxelum/x-minecraft-launcher"
     },
