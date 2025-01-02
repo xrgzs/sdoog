@@ -1,0 +1,38 @@
+{
+    "version": "2.2.35",
+    "description": "鼠标/触控板/屏系统全局手势",
+    "license": "Freeware",
+    "homepage": "https://github.com/zhaokeli/FastGestures",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.35/FastGestures-Green-v2.2.35_x64.zip",
+            "hash": "9cb198d6efbe41aaab22ced33c1bf640579ef2f6a00308eda35f4e9f81611fbe"
+        },
+        "32bit": {
+            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.35/FastGestures-Green-v2.2.35_x64.zip",
+            "hash": "9cb198d6efbe41aaab22ced33c1bf640579ef2f6a00308eda35f4e9f81611fbe"
+        }
+    },
+    "shortcuts": [
+        [
+            "FastGestures.exe",
+            "FastGestures"
+        ]
+    ],
+    "post_install": [
+        "Remove-Item \"$dir\\Update.bat\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Remove-Item \"$dir\\Update.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
+    "persist": "data",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/zhaokeli/FastGestures/releases/download/$version/FastGestures-Green-v$version_x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/zhaokeli/FastGestures/releases/download/$version/FastGestures-Green-v$version_x64.zip"
+            }
+        }
+    }
+}
