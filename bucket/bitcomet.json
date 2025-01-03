@@ -19,7 +19,7 @@
     "installer": {
         "script": [
             "if (!(Test-Path \"$persist_dir\\Downloads.xml\") -or !(Get-Item \"$persist_dir\\Downloads.xml\").Length) {",
-            "    New-Item $path -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    New-Item \"$persist_dir\\Downloads.xml\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
             "    Set-Content -Path \"$persist_dir\\Downloads.xml\" -Value '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><BitComet Author=\"RnySmile\" Version=\"0.1\"><Torrents/></BitComet>'",
             "}"
         ]
