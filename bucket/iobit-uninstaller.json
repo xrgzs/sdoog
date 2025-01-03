@@ -21,10 +21,10 @@
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
-            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f19v03a\" | Where-Object { $_.name_all -like \"IObitUninstaller-Pro-v*-Portable.exe\" } | Select-Object -First 1",
+            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f19v03a\" | Where-Object { $_.name_all -like \"IObitUninstaller-Pro-*-Portable.exe\" } | Select-Object -First 1",
             "$f.name_all + '=====' + $f.id"
         ],
-        "regex": "IObitUninstaller-Pro-v(.*)-Portable.exe=====(?<sharekey>.*)"
+        "regex": "IObitUninstaller-Pro-v?(.*)-Portable.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
         "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
