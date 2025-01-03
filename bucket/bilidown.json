@@ -14,10 +14,18 @@
     },
     "installer": {
         "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\bilidown\" \"$persist_dir\\AppData\" -Migrate",
             "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
             "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
         ]
     },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\bilidown\""
+    ],
     "shortcuts": [
         [
             "bilidown.exe",
