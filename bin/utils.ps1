@@ -334,14 +334,15 @@ function Enable-DevelopmentMode {
 function New-AppLink {
     param(
         [string] $App,
-        [string] $Target
+        [string] $Target,
+        [string] $Name = $App
     )
     New-Item -ItemType Directory -Path $Target -Force -ErrorAction SilentlyContinue | Out-Null
     $AppItem = scoop which $App | Get-Item
     try {
-        New-Item -ItemType SymbolicLink -Target $AppItem.FullName -Path "$Target\$App.exe" -Force -ErrorAction Stop | Out-Null
+        New-Item -ItemType SymbolicLink -Target $AppItem.FullName -Path "$Target\$Name.exe" -Force -ErrorAction Stop | Out-Null
     } catch {
-        Copy-Item -Path "$scoopdir\shims\$App.exe" -Destination "$Target\$App.exe" -Force | Out-Null
-        Copy-Item -Path "$scoopdir\shims\$App.shim" -Destination "$Target\$App.shim" -Force | Out-Null
+        Copy-Item -Path "$scoopdir\shims\$App.exe" -Destination "$Target\$Name.exe" -Force | Out-Null
+        Copy-Item -Path "$scoopdir\shims\$App.shim" -Destination "$Target\$Name.shim" -Force | Out-Null
     }
 }
