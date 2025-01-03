@@ -35,15 +35,15 @@
         "Stop-App"
     ],
     "checkver": {
-        "regex": "(?sm)<li>(?:版本|Ver)：([\\d.]+)</li>\\s*<li>(?:内核|Kernel)：(?<kernelmajor>\\d+)[\\d.]+</li>"
+        "regex": "(?sm)<li>(?:版本|Ver)[：:] ?([\\d.]+)</li>\\s*<li>(?:内核|Kernel)[：:] ?(?<kernelmajor>\\d+)[\\d.]+</li>"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://catsxp.oss-cn-hongkong.aliyuncs.com/x64/portable_x64_release_$matchKernelmajor_$underscoreVersion.zip"
+                "url": "https://catsxp.oss-cn-hongkong.aliyuncs.com/win_x64/portable_x64_release_$matchKernelmajor_$underscoreVersion.zip"
             },
             "32bit": {
-                "url": "https://catsxp.oss-cn-hongkong.aliyuncs.com/x86/portable_x86_release_$matchKernelmajor_$underscoreVersion.zip"
+                "url": "https://catsxp.oss-cn-hongkong.aliyuncs.com/win_x86/portable_x86_release_$matchKernelmajor_$underscoreVersion.zip"
             }
         }
     }
