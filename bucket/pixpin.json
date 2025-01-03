@@ -26,9 +26,10 @@
         "Stop-App"
     ],
     "checkver": {
-        "regex": "PixPin_([\\d\\.]+)\\.exe"
+        "url": "https://api.viewdepth.cn/app_info?app_id=pixpin&update_type=1&sys=win",
+        "jsonpath": "$.ver_info.version"
     },
     "autoupdate": {
-        "url": "https://download.pixpinapp.com/PixPin_$match1.zip"
+        "url": "https://download.pixpinapp.com/PixPin_$version.zip"
     }
 }
