@@ -37,14 +37,18 @@
         "    Remove-Item -Path $envfilePath -Force -ErrorAction SilentlyContinue | Out-Null",
         "}"
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://api.github.com/repos/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "(?<tag>DllHijack_([\\d.]+))"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/download/DllHijack_$version/dbghelp_x64.dll"
+                "url": "https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/download/$matchTag/dbghelp_x64.dll"
             },
             "32bit": {
-                "url": "https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/download/DllHijack_$version/dbghelp_x86.dll"
+                "url": "https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/releases/download/$matchTag/dbghelp_x86.dll"
             }
         }
     }
