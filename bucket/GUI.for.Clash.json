@@ -53,7 +53,8 @@
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Item \"$env:APPDATA\\GUI.for.Clash.exe\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": "github",
     "autoupdate": {
