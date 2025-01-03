@@ -316,7 +316,7 @@ function Set-RegValue {
         $Path = $Path.Replace(':', '')
         $ArgumentList = @("add `"$Path`" /f /v `"$Name`" /d `"$Value`"")
         if ($Type) { $ArgumentList += "/t $Type" }
-if ($Wow64) { $ArgumentList += "/reg:32" }
+        if ($Wow64) { $ArgumentList += "/reg:32" }
         Start-Process -FilePath "reg.exe" -ArgumentList $ArgumentList -Wait -Verb "RunAs" -WindowStyle Hidden
     }
 }
@@ -328,5 +328,20 @@ function Enable-DevelopmentMode {
     } catch {
         Write-Error "This App requires enable developmoent mode to install. Failed to enable development mode. Please reinstall this App."
         exit 1
+    }
+}
+
+function New-AppLink {
+    param(
+        [string] $App,
+        [string] $Target
+    )
+    New-Item -ItemType Directory -Path $Target -Force -ErrorAction SilentlyContinue | Out-Null
+    $AppItem = scoop which $App | Get-Item
+    try {
+        New-Item -ItemType SymbolicLink -Target $AppItem.FullName -Path "$Target\$App.exe" -Force -ErrorAction Stop | Out-Null
+    } catch {
+        Copy-Item -Path "$scoopdir\shims\$App.exe" -Destination "$Target\$App.exe" -Force | Out-Null
+        Copy-Item -Path "$scoopdir\shims\$App.shim" -Destination "$Target\$App.shim" -Force | Out-Null
     }
 }
