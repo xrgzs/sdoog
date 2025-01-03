@@ -47,7 +47,7 @@
     "post_install": [
         "if (!(Test-Path \"$persist_dir\\data\\user.yaml\") -or !(Get-Item \"$persist_dir\\data\\user.yaml\").Length) {",
         "    New-Item \"$persist_dir\\data\\user.yaml\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$persist_dir\\data\\user.yaml\" -Value \"lang: zh`nkernel:`n  branch: main\"",
+        "    Set-Content -Path \"$persist_dir\\data\\user.yaml\" -Value \"lang: zh`nkernel:`n  branch: main`nrollingRelease: false\"",
         "}"
     ],
     "pre_uninstall": [
