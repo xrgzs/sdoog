@@ -29,7 +29,11 @@
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "New-AppLink -App 'sing-box' -Target \"$dir\\data\\sing-box\""
+            "New-AppLink -App 'sing-box' -Target \"$persist_dir\\data\\sing-box\"",
+            "if (!(Test-Path \"$persist_dir\\data\\user.yaml\") -or !(Get-Item \"$persist_dir\\data\\user.yaml\").Length) {",
+            "    New-Item \"$persist_dir\\data\\user.yaml\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    Set-Content -Path \"$persist_dir\\data\\user.yaml\" -Value \"lang: zh`nkernel:`n  branch: main\"",
+            "}"
         ]
     },
     "pre_uninstall": [
