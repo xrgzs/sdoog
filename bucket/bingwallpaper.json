@@ -1,10 +1,10 @@
 {
-    "version": "2.0.1.4",
+    "version": "2.0.1.6",
     "description": "“必应壁纸”包含必应主页上特别推荐的一批来自世界各地的精美图片。您不仅每天都会在桌面上看到一个新图像，而且还可以浏览图像并了解其来源。",
     "homepage": "https://bingwallpaper.microsoft.com/Windows/bing/bing-wallpaper/",
     "license": "Freeware",
-    "url": "https://download.microsoft.com/download/a/b/9/ab92b51f-92ea-4d46-9d21-9446bd20eed8/Installer/2.0.1.4/Bing/W011/BingWallpaper.exe#/dl.7z",
-    "hash": "a71ee2955d92692ce4153e78befd2ffa03c168838b3caa3f39e07327facb6a18",
+    "url": "https://download.microsoft.com/download/a/b/9/ab92b51f-92ea-4d46-9d21-9446bd20eed8/Installer/2.0.1.6/Bing/W011/BingWallpaper.exe#/dl.7z",
+    "hash": "0b30dd5cfce8d20192bf62ed507fae5da36229911cb065b46ea9cad9aeb34b78",
     "extract_to": "installer",
     "installer": {
         "script": [
