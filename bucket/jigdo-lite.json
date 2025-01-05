@@ -15,7 +15,7 @@
         ":hasrun",
         "sh jigdo-lite %*",
         "pause",
-        "' | Out-File -Encoding ascii -FilePath \"jigdo-lite.bat\" -Force"
+        "' | Out-File -Encoding ascii -FilePath \"$dir\\jigdo-lite.bat\" -Force"
     ],
     "checkver": {
         "url": "https://www.einval.com/~steve/software/jigdo/download/",
