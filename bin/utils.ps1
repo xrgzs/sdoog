@@ -346,3 +346,34 @@ function New-AppLink {
         Copy-Item -Path "$scoopdir\shims\$App.shim" -Destination "$Target\$Name.shim" -Force | Out-Null
     }
 }
+
+function Convert-PngToIco {
+    <#
+    .LINK
+        https://www.xrgzs.top/posts/powershell-png-to-ico
+    #>
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$PngPath,
+        [Parameter(Mandatory = $true, Position = 1)]
+        [string]$IcoPath
+    )
+    $png = [System.IO.File]::ReadAllBytes($pngPath)
+    $ico = [System.IO.MemoryStream]::new()
+    $bin = [System.IO.BinaryWriter]::new($ico)
+    $bin.Write([uint16]0) # 保留
+    $bin.Write([uint16]1) # 图像类型，ico 为 1
+    $bin.Write([uint16]1) # 图像数量，1 张
+    $bin.Write([sbyte]0) # 宽度
+    $bin.Write([sbyte]0) # 高度
+    $bin.Write([sbyte]0) # 颜色
+    $bin.Write([sbyte]0) # 保留
+    $bin.Write([uint16]1) # 颜色平面
+    $bin.Write([uint16]32) # 每像素位数（32bpp）
+    $bin.Write([uint32]$png.Length) # 图像文件大小
+    $bin.Write([uint32]22) # 图像数据偏移量
+    $bin.Write($png)
+    [System.IO.File]::WriteAllBytes($icoPath, $ico.ToArray())
+    $bin.Dispose()
+    $ico.Dispose()
+}
