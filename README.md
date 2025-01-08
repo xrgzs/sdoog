@@ -72,7 +72,7 @@ iex "& { $(irm c.xrgzs.top/c/scoop) } -ScoopDir 'D:\Scoop' -ScoopGlobalDir 'D:\S
 如果已经安装 Scoop，可以切换到此专用版本
 
 ```powershell
-# scoop config scoop_repo "https://gh.xrgzs.top/https://gitee.com/xrgzs/scoop"
+# scoop config scoop_repo "https://gh.xrgzs.top/https://github.com/xrgzs/scoop"
 scoop config scoop_repo 'https://gitee.com/xrgzs/scoop'
 
 scoop update
