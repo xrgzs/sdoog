@@ -1,5 +1,5 @@
 {
-    "version": "4.37.1",
+    "version": "4.37.2",
     "description": "Docker Desktop. Open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.",
     "homepage": "https://www.docker.com/products/docker-desktop/",
     "license": "Proprietary",
@@ -19,7 +19,7 @@
             "Docker Desktop"
         ]
     ],
-    "env_add_path": "docker\\resources\\bin",
+    "bin": "docker\\DockerCli.exe",
     "installer": {
         "args": [
             "install",
@@ -30,12 +30,29 @@
         ]
     },
     "pre_install": [
+        "if (!(is_admin)) {",
+        "    error \"Administrator rights are required to install $app.\"",
+        "    scoop uninstall $app",
+        "    exit 1",
+        "}",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:USERPROFILE\\.docker\" \"$persist_dir\\USERPROFILE\\.docker\" -Migrate",
         "New-PersistDirectory \"$env:LOCALAPPDATA\\Docker\" \"$persist_dir\\LOCALAPPDATA\\Docker\" -Migrate",
         "New-PersistDirectory \"$env:APPDATA\\Docker\" \"$persist_dir\\APPDATA\\Docker\" -Migrate"
     ],
+    "post_install": [
+        "Remove-Item \"$env:USERPROFILE\\Desktop\\Docker Desktop.lnk\" -Force",
+        "Remove-Item \"$env:PROGRAMDATA\\Microsoft\\Windows\\Start Menu\\Docker Desktop.lnk\" -Force"
+    ],
     "pre_uninstall": [
+        "if (!(is_admin)) {",
+        "    error \"Administrator rights are required to uninstall $app.\"",
+        "    exit 1",
+        "}",
+        "info 'Shutting down Docker Desktop...'",
+        ". \"$dir\\docker\\DockerCli.exe\" -Shutdown",
+        "info 'Uninstalling Docker Desktop...'",
+        "Start-Process -FilePath \"$dir\\docker\\Docker Desktop Installer.exe\" -ArgumentList @('uninstall', '--quiet', \"--installation-dir=$dir\\docker\") -Wait -Verb RunAs",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
@@ -43,14 +60,6 @@
         "Remove-Junction \"$env:LOCALAPPDATA\\Docker\"",
         "Remove-Junction \"$env:APPDATA\\Docker\""
     ],
-    "uninstaller": {
-        "file": "docker\\Docker Desktop Installer.exe",
-        "args": [
-            "uninstall",
-            "--quiet",
-            "--installation-dir=$dir\\docker"
-        ]
-    },
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/Version.txt",
         "regex": "([\\d.]+)"
