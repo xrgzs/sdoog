@@ -6,11 +6,11 @@
     "architecture": {
         "arm64": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe",
-            "hash": "8eec2a8cfd42d008024f0950f091a01c75d3f737860e123dd41dbbebeab0312a"
+            "hash": "d25108f7118216c51ffa97be0e86e7720ca30ea500d9179061265c03aa6b96bf"
         },
         "64bit": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
-            "hash": "755ea81173f0621d9683808c75dff65fa4e6ef39aeefb5a7f2723b682119c20f"
+            "hash": "331f809f1e139a868e8339af4382d2569ed7301c5341fcec834b47a30994781f"
         }
     },
     "shortcuts": [
