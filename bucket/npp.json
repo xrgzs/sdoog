@@ -1,6 +1,6 @@
 {
     "version": "8.7.5",
-    "description": "批判性使用",
+    "description": "一款非常有特色的文本编辑器",
     "homepage": "https://notepad-plus-plus.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
@@ -18,7 +18,7 @@
         }
     },
     "pre_install": [
-        "'session.xml', 'userDefineLang.xml', 'nativeLang.xml' | ForEach-Object {",
+        "'session.xml', 'userDefineLang.xml' | ForEach-Object {",
         "    if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" -ItemType File | Out-Null }",
         "}",
         "if (!(Test-Path \"$persist_dir\\stylers.xml\")) { Copy-Item \"$dir\\stylers.model.xml\" \"$dir\\stylers.xml\" }"
@@ -61,7 +61,19 @@
         "",
         "\"@ | Set-Content -Path \"$dir\\install-notepad++.reg\" -Encoding Unicode",
         "",
-        "reg import \"$dir\\install-notepad++.reg\""
+        "reg import \"$dir\\install-notepad++.reg\"",
+        "",
+        "$xml = [xml](Get-Content \"$dir\\config.xml\")",
+        "$xml.SelectNodes(\"NotepadPlus/GUIConfigs/GUIConfig[@name='searchEngine']\").SetAttribute('searchEngineChoice', '0')",
+        "$xml.SelectNodes(\"NotepadPlus/GUIConfigs/GUIConfig[@name='searchEngine']\").SetAttribute('searchEngineCustom', 'https://cn.bing.com/search?q=$(CURRENT_WORD)')",
+        "$xml.SelectNodes(\"NotepadPlus/GUIConfigs/GUIConfig[@name='SmartHighLight']\").SetAttribute('wholeWordOnly', 'no')",
+        "try {",
+        "    $xml.SelectNodes(\"NotepadPlus/GUIConfigs/GUIConfig[@name='DarkMode']\").SetAttribute('enableWindowsMode', 'yes')",
+        "} catch {",
+        "    warn 'DarkMode will not be enabled util the next update.'",
+        "}",
+        "$xml.Save(\"$dir\\config.xml\")",
+        "Copy-Item \"$dir\\localization\\chineseSimplified.xml\" \"$dir\\nativeLang.xml\" -Force"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
@@ -100,7 +112,6 @@
         "themes",
         "userDefineLangs",
         "config.xml",
-        "nativeLang.xml",
         "session.xml",
         "shortcuts.xml",
         "stylers.xml",
