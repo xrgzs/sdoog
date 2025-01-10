@@ -1,17 +1,15 @@
 {
-    "##": "no juicity, hysteria1 and tuic in the main bucket. hysteria is hysteria2.",
     "version": "7.5.6",
-    "description": "(Auto update cores by scoop) A V2Ray client for Windows, support Xray core and others",
+    "description": "(Auto update 4 cores by scoop) A V2Ray client for Windows, support Xray core and others",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-or-later",
     "depends": [
         "main/xray",
         "extras/hysteria",
         "main/mihomo",
-        "main/naiveproxy",
-        "main/sing-box",
-        "main/v2ray"
+        "main/sing-box"
     ],
+    "notes": "Better use administrator privileges to install so that the cores could be linked by symlinks, rather than shims, providing better compatibility and performance.",
     "suggest": {
         ".NET 8 Desktop Runtime": "windowsdesktop-runtime-lts"
     },
@@ -39,10 +37,9 @@
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-AppLink -App 'xray' -Target \"$dir\\bin\\xray\"",
-            "New-AppLink -App 'hysteria' -Target \"$dir\\bin\\hysteria2\"",
+            "New-AppLink -App 'hysteria' -Target \"$dir\\bin\\hysteria\"",
             "New-AppLink -App 'mihomo' -Target \"$dir\\bin\\mihomo\"",
-            "New-AppLink -App 'sing-box' -Target \"$dir\\bin\\sing_box\"",
-            "New-AppLink -App 'v2ray' -Target \"$dir\\bin\\v2ray\""
+            "New-AppLink -App 'sing-box' -Target \"$dir\\bin\\sing_box\""
         ]
     },
     "pre_uninstall": [
