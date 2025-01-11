@@ -4,11 +4,11 @@
     "homepage": "https://github.com/microsoft/WSL",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.3.26/wsl.2.3.26.0.x64.msi#/wsl.msi",
+            "url": "https://github.com/microsoft/WSL/releases/download/2.3.26/wsl.2.3.26.0.x64.msi#/wsl.msi_",
             "hash": "cd3f2a68a1a5836f6a1cc9965a7f5f54db267ca221eaa87df29345ab7957aec4"
         },
         "arm64": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.3.26/wsl.2.3.26.0.arm64.msi#/wsl.msi",
+            "url": "https://github.com/microsoft/WSL/releases/download/2.3.26/wsl.2.3.26.0.arm64.msi#/wsl.msi_",
             "hash": "d23b30f34d3e21bbf1a92db0a25d55d446262eb2169e84ffff999ee77f751ac5"
         }
     },
@@ -18,16 +18,15 @@
         "    scoop uninstall $app",
         "    exit 1",
         "}",
-        "# Enable Hyper-V Core for WSL2",
-        "Enable-WindowsOptionalFeature -FeatureName 'VirtualMachinePlatform' -All -Online -NoRestart -LimitAccess",
-        "# Enable WSL1",
-        "Enable-WindowsOptionalFeature -FeatureName 'Microsoft-Windows-Subsystem-Linux' -All -Online -NoRestart -LimitAccess"
+        "info 'Enable Hyper-V Core for WSL2...'",
+        "Enable-WindowsOptionalFeature -FeatureName 'VirtualMachinePlatform' -All -Online -NoRestart -LimitAccess | Out-Null",
+        "info 'Enable WSL1...'",
+        "Enable-WindowsOptionalFeature -FeatureName 'Microsoft-Windows-Subsystem-Linux' -All -Online -NoRestart -LimitAccess | Out-Null"
     ],
     "installer": {
         "script": [
-            "Invoke-ExternalCommand 'msiexec' -RunAs -ArgumentList @('/i', \"$dir\\wsl.msi\", '/quiet', '/norestart')",
-            "# Use WSL2 as default",
-            "wsl.exe --set-default-version 2"
+            "Invoke-ExternalCommand 'msiexec' -RunAs -ArgumentList @('/i', \"$dir\\wsl.msi_\", '/quiet', '/norestart')",
+            "warn 'You must restart your computer for the changes to take effect.'"
         ]
     },
     "checkver": "github",
