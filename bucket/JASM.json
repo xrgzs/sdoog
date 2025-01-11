@@ -1,5 +1,5 @@
 {
-    "version": "2.18.8",
+    "version": "2.19.0",
     "description": "Just Another Skin Manager",
     "homepage": "https://github.com/Jorixon/JASM",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Jorixon/JASM/releases/download/v2.18.8/SelfContained_JASM_v2.18.8.7z",
-            "hash": "4c19d6da354759d6d05ae986912146fb562f5bf3736f857694f739c96f8ab82f",
+            "url": "https://github.com/Jorixon/JASM/releases/download/v2.19.0/SelfContained_JASM_v2.19.0.7z",
+            "hash": "3456cec4d33172dccb7801405605a80e0326ec377038ec328a4d64528b77d6f7",
             "extract_dir": "JASM"
         }
     },
