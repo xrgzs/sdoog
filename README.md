@@ -689,13 +689,13 @@ Stop-App
 
 ### 安装 UWP 应用
 
-开启开发者模式，然后使用 `Add-AppxPackage -Register <AppxManifestPath>` 即可
+开启开发者模式，然后使用 `Add-AppxPackage -Register <AppxManifestPath>` 即可，如果是来自 MS Store 的应用，需要删除签名文件
 
 无需担心 MS Store 会自动升级
 
 可能不支持 persist，需要自行测试
 
-参考 [snap.hutao](bucket/snap.hutao.json)
+参考 [snap.hutao](bucket/snap.hutao.json) [nvidia-cpl](bucket/nvidia-cpl.json)
 
 ### 导入注册表
 
@@ -761,6 +761,64 @@ Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlo
     ```
 
 PS：UAC弹窗会超时
+
+### 下载文件
+
+可以调用 Scoop 自带的方法下载文件：
+
+```json
+...
+"installer": {
+    "script": [
+        "if (!(Test-Path \"$dir\\mmdb\\GeoIP2-City.mmdb\")) {",
+        "    Invoke-Download \"https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb\" \"$dir\\mmdb\\GeoIP2-City.mmdb\"",
+        "}",
+        "if (!(Test-Path \"$dir\\mmdb\\GeoIP2-ISP.mmdb\")) {",
+        "    Invoke-Download \"https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb\" \"$dir\\mmdb\\GeoIP2-ISP.mmdb\"",
+        "}"
+    ]
+},
+...
+```
+
+### 链接依赖应用
+
+可以链接 Scoop 安装的应用为依赖，方法：
+
+```powershell
+# 链接 <AppName>.exe 到 <TargetDir>\<AppName>.exe
+New-AppLink -App <AppName> -Target <TargetDir>
+
+# 链接 <AppName>.exe 到 <TargetDir>\<AppNewName>.exe
+New-AppLink -App <AppName> -Target <TargetDir> -Name <AppNewName>
+```
+
+管理员权限安装，会创建符号链接，性能和兼容性更好
+
+用户权限安装，会复制 Scoop 的 Shim，以实现差不多同样的效果，但会多占用一个进制
+
+### 使用 PNG 图标
+
+Windows 不支持使用 PNG 作为快捷方式的图标，可以通过 `Convert-PngToIco` 将 PNG 转为 ICO
+
+```powershell
+Convert-PngToIco "$dir\app.png" "$dir\app.ico"
+```
+
+然后创建快捷方式：
+
+```json
+...
+"shortcuts": [
+    [
+        "app.bat",
+        "app",
+        "",
+        "app.ico"
+    ]
+],
+...
+```
 
 ## 免责声明
 
