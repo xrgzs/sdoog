@@ -1,5 +1,5 @@
 {
-    "version": "5.25.2",
+    "version": "5.26.0",
     "description": "WindowTop enable you to pin any window on top, enable window transparency, even click through transparent window, set window dark/read mode, shrink the window to small size and more.",
     "homepage": "https://www.cybermania.ws/apps/windowtop-pro/",
     "license": "Proprietary",
@@ -7,7 +7,7 @@
     "architecture": {
         "64bit": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z",
-            "hash": "cd146bd20f0986c24aefbde5b613c471ef2aa069fd185813e7508d074d8d71bd"
+            "hash": "583a3a03c33d74fa988037cb8e52b2c98f4d21a2ebd376c047cc908073e15dd2"
         }
     },
     "installer": {
@@ -30,9 +30,7 @@
         "Remove-Junction \"$env:APPDATA\\WindowTop\""
     ],
     "uninstaller": {
-        "script": [
-            "reg.exe delete HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v WindowTop /f"
-        ]
+        "script": "reg.exe delete HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v WindowTop /f"
     },
     "shortcuts": [
         [
