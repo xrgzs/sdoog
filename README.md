@@ -159,7 +159,7 @@ scoop update
 #### 查看可更新 app
 
 ```powershell
-scoop status
+scoop status -l
 
 # Output:
 #
