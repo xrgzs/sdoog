@@ -1,7 +1,8 @@
 {
     "version": "2.3.26",
-    "description": "Windows Subsystem for Linux (WSL) Installer",
-    "homepage": "https://github.com/microsoft/WSL",
+    "description": "Windows Subsystem for Linux (WSL) 2 Installer",
+    "homepage": "https://docs.microsoft.com/windows/wsl",
+    "license": "Proprietary",
     "architecture": {
         "64bit": {
             "url": "https://github.com/microsoft/WSL/releases/download/2.3.26/wsl.2.3.26.0.x64.msi#/wsl.msi_",
@@ -26,17 +27,25 @@
     "installer": {
         "script": [
             "Invoke-ExternalCommand 'msiexec' -RunAs -ArgumentList @('/i', \"$dir\\wsl.msi_\", '/quiet', '/norestart')",
+            "$currentBuildNumber = [int] (Get-ItemProperty \"HKLM:\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\").CurrentBuildNumber",
+            "if ((!(Test-Path \"$env:USERPROFILE\\.wslconfig\") -or !(Get-Item \"$env:USERPROFILE\\.wslconfig\").Length) -and $currentBuildNumber -lt 22000) {",
+            "    New-Item \"$env:USERPROFILE\\.wslconfig\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    \"[wsl2]`nkernel=C:\\\\Program Files\\\\WSL\\\\tools\\\\kernel\" | Set-Content -Path \"$env:USERPROFILE\\.wslconfig\"",
+            "}",
+            ". \"C:\\Program Files\\WSL\\wsl.exe\" --set-default-version 2",
             "warn 'You must restart your computer for the changes to take effect.'"
         ]
     },
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/microsoft/WSL"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/microsoft/WSL/releases/download/$version/wsl.$version.0.x64.msi#/wsl.msi"
+                "url": "https://github.com/microsoft/WSL/releases/download/$version/wsl.$version.0.x64.msi#/wsl.msi_"
             },
             "arm64": {
-                "url": "https://github.com/microsoft/WSL/releases/download/$version/wsl.$version.0.arm64.msi#/wsl.msi"
+                "url": "https://github.com/microsoft/WSL/releases/download/$version/wsl.$version.0.arm64.msi#/wsl.msi_"
             }
         }
     }

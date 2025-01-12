@@ -19,6 +19,9 @@
             "Docker Desktop"
         ]
     ],
+    "suggest": {
+        "Windows Subsystem for Linux 2": "sdoog/wsl2"
+    },
     "bin": "docker\\DockerCli.exe",
     "installer": {
         "args": [
