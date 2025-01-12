@@ -1,0 +1,31 @@
+{
+    "version": "11575640567",
+    "description": "Application runtime environment customization utility",
+    "homepage": "https://github.com/M2Team/NanaRun",
+    "url": "https://nightly.link/M2Team/NanaRun/actions/runs/11575640567/NanaRun_CI_Build.zip",
+    "hash": "d2f978fee934c52d119d28b0fbac1a23e8ed6d2c1bba9c10e490bce838d166cc",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "extract_dir": "Release\\Win32"
+        },
+        "64bit": {
+            "extract_dir": "Release\\x64"
+        },
+        "arm64": {
+            "extract_dir": "Release\\ARM64"
+        }
+    },
+    "bin": [
+        "MinSudo.exe",
+        "NanaRun.exe",
+        "SynthRdp.exe"
+    ],
+    "checkver": {
+        "url": "https://nightly.link/M2Team/NanaRun/workflows/BuildBinaries/main/NanaRun_CI_Build",
+        "regex": "actions/runs/(\\d+)#artifacts"
+    },
+    "autoupdate": {
+        "url": "https://nightly.link/M2Team/NanaRun/actions/runs/$version/NanaRun_CI_Build.zip"
+    }
+}
