@@ -21,6 +21,13 @@
             "cwd": "${cwd}"
         },
         {
+            "name": "Sdoog: Unescape installer.script from current manifest",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "(Get-Content -Path '${file}' | ConvertFrom-Json).installer.script",
+            "cwd": "${cwd}"
+        },
+        {
             "name": "Scoop: Check current manifest for a newer version (Force)",
             "type": "PowerShell",
             "request": "launch",
