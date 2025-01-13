@@ -22,6 +22,10 @@
         ]
     },
     "pre_uninstall": [
+        "while (Get-Service -Name 'FlClashHelperService' -ErrorAction SilentlyContinue) {",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('stop', 'FlClashHelperService') -RunAs -Quiet",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('delete', 'FlClashHelperService') -RunAs -Quiet",
+        "}",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
