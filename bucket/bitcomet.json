@@ -1,13 +1,13 @@
 {
-    "version": "2.11.11.12",
+    "version": "2.12.1.14",
     "homepage": "https://www.bitcomet.com/",
     "license": {
         "identifier": "freeware for non-commercial use",
         "url": "https://www.bitcomet.com/en/license"
     },
     "notes": "Switch to Chinese Traditional to unlock more features.",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iK6Ai2ewjeah&type=down#/dl.7z",
-    "hash": "8201110e54e9ce470a255794ae06bec2dbad89f52539901ca9d7ba4e47b07408",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1XHj2kx6ixi&type=down#/dl.7z",
+    "hash": "f73a04a1114780d45676ce996cdb04d7ada254053db07f51c19dec4e94144628",
     "extract_dir": "BitComet",
     "persist": [
         "BitComet.xml",
