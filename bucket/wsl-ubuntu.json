@@ -1,10 +1,10 @@
 {
-    "version": "2404.1.66.0",
+    "version": "2404.1.68.0",
     "description": "Install a complete Ubuntu terminal environment in minutes with Windows Subsystem for Linux (WSL)",
     "homepage": "https://www.microsoft.com/store/productId/9PDXGNCFSCZV",
     "license": "Proprietary",
     "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Ubuntu.appxbundle#/dl.7z",
-    "hash": "18339dcfb4a13de380d4a4e233a961c0dddc9e2eca52120334cfadb18f6c74e1",
+    "hash": "93e4c4f94cb907dfd05e89864d4f2e1d0b200bb2e1df832d68cd5ff6b8668ea0",
     "notes": [
         "Call `ubuntu.exe` to start Ubuntu installation.",
         "See more: https://ubuntu.com/desktop/wsl"
