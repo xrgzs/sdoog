@@ -46,6 +46,9 @@
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe#/dl.7z"
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/ToDesk.exe.sha256"
+        }
     }
 }
