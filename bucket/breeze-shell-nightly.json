@@ -1,12 +1,12 @@
 {
-    "version": "13117518454",
+    "version": "13120985366",
     "description": "Bring fluency & delication back to Windows",
     "license": "Unlicense",
     "homepage": "https://breeze.microblock.cc/",
     "architecture": {
         "64bit": {
-            "url": "https://nightly.link/std-microblock/breeze-shell/actions/runs/13117518454/artifact.zip",
-            "hash": "b4cb59a0e959b22ced5c7edd4f44bc99f9f10e7af8d7a61ff0f661c76e9f11a4",
+            "url": "https://nightly.link/std-microblock/breeze-shell/actions/runs/13120985366/artifact.zip",
+            "hash": "848b9d2b14f0da8cd9b3c839014f7ff7c12293fb45a696456e01c13f64690567",
             "extract_dir": "x64/release"
         }
     },
