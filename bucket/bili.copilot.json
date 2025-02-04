@@ -1,16 +1,16 @@
 {
-    "version": "2.2501.4.0",
+    "version": "2.2501.2.0",
     "description": "哔哩助理 | B站第三方 Windows 桌面客户端，使用 Windows App SDK 构建的原生应用",
     "homepage": "https://bili.richasy.net/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2501.4.0/BiliCopilot_2.2501.4.0_x64.7z",
-            "hash": "eb80a79e6d0c5d91ea77180484e40a6a5e1addda4a0f27f5ad700558ac122226"
+            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2501.2.0/BiliCopilot_2.2501.2.0_x64.7z",
+            "hash": "05d056cfe56e12b0f23f4865a4c4a876307fa26424fc78316305546dca3e5af9"
         },
         "arm64": {
-            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2501.4.0/BiliCopilot_2.2501.4.0_arm64.7z",
-            "hash": "1bd8064013325b4c5c2e75d4df3f890a148f0be5d1813fa14036268a5b65e673"
+            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2501.2.0/BiliCopilot_2.2501.2.0_arm64.7z",
+            "hash": "1b421d9990a7592d1e2be0e9a8d02cc7aaeea10c984d3f7bf842dcbd69c314a0"
         }
     },
     "extract_to": "Deploy",
@@ -39,7 +39,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "checkver":{
+    "checkver": {
         "github": "https://github.com/Richasy/Bili.Copilot"
     },
     "autoupdate": {
