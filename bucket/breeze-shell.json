@@ -1,7 +1,7 @@
 {
     "version": "0.1.6",
     "description": "Bring fluency & delication back to Windows",
-    "license": "Unlicense",
+    "license": "AGPL-3.0-or-later",
     "homepage": "https://breeze.microblock.cc/",
     "architecture": {
         "64bit": {
@@ -12,7 +12,7 @@
     },
     "shortcuts": [
         [
-            "inject.exe",
+            "breeze.exe",
             "breeze-shell",
             "",
             "icon.ico"
