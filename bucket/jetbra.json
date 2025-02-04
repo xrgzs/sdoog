@@ -1,0 +1,81 @@
+{
+    "version": "20250204-mod",
+    "description": "(Modified) Auto apply to Scoop installed JB apps",
+    "homepage": "https://3.jetbra.in",
+    "license": "Apache-2.0",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/JetBrains/Jetbrains%20Products%20with%20Crack/jetbra-mod-20250204.zip",
+    "hash": "279b56281a1f20e1545e9a06db5594cb3aafb80e106264ed02236e92a014bf65",
+    "extract_dir": "jetbra",
+    "notes": [
+        "* Get keys from \"$dir\\keys.html\" or \"https://3.jetbra.in\".",
+        "* Pevious installed JB apps from Scoop is patched automatically.",
+        "* Newly installed JB apps from Scoop would not be patched automatically.",
+        "  - Reinstall this app: \"scoop update $app -f\"",
+        "  - Add `vmoptions` manually according to \"$dir\\readme.txt\"",
+        "* The JB apps not installed from Scoop would not be patched automatically.",
+        "  - Install: \"$dir\\script\\install-current-user.vbs\"",
+        "  - Uninstall: \"$dir\\script\\uninstall-current-user.vbs\""
+    ],
+    "shortcuts": [
+        [
+            "keys.html",
+            "JetBrains\\Jetbra Keys"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "Write-Host ''",
+            "Get-Content \"$dir\\readme.txt\"",
+            "function Update-VmOptions([string]$file) {",
+            "    Write-Host \"Patching $file...\"",
+            "    $jarFile = \"$dir\\ja-netfilter.jar\"",
+            "    $newContent = @()",
+            "    $regex = '^-javaagent:.*[\\/\\\\]ja-netfilter\\.jar.*'",
+            "    Copy-Item -Path $file -Destination \"$file.bak\"",
+            "    Get-Content $file | ForEach-Object {",
+            "        if ($_ -notmatch $regex) {",
+            "            $newContent += $_",
+            "        }",
+            "    }",
+            "    $newContent += \"--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED\"",
+            "    $newContent += \"--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED\"",
+            "    $newContent += \"-javaagent:$jarFile=jetbrains\"",
+            "    $newContent | Set-Content $file",
+            "}",
+            "",
+            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
+            "foreach ($prd in $JBProducts) {",
+            "    Get-ChildItem \"$scoopdir\\apps\\$prd*\\current\\IDE\\bin\\*.exe.vmoptions\" | ForEach-Object {",
+            "        Update-VmOptions -file $_.FullName",
+            "    }",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "function Update-VmOptions([string]$file) {",
+            "    Write-Host \"Restoring $file...\"",
+            "    if (Test-Path \"$file.bak\") {",
+            "        Copy-Item -Path \"$file.bak\" -Destination $file -Force",
+            "    } else {",
+            "        $newContent = @()",
+            "        $regex = '^-javaagent:.*[\\/\\\\]ja-netfilter\\.jar.*'",
+            "        Get-Content $file | ForEach-Object {",
+            "            if ($_ -notmatch $regex) {",
+            "                $newContent += $_",
+            "            }",
+            "        }",
+            "        $newContent | Set-Content $file",
+            "    }",
+            "",
+            "}",
+            "",
+            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
+            "foreach ($prd in $JBProducts) {",
+            "    Get-ChildItem \"$scoopdir\\apps\\$prd*\\current\\IDE\\bin\\*.exe.vmoptions\" | ForEach-Object {",
+            "        Update-VmOptions -file $_.FullName",
+            "    }",
+            "}"
+        ]
+    }
+}
