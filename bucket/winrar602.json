@@ -1,0 +1,36 @@
+{
+    "version": "6.02",
+    "description": "Powerful archive manager",
+    "homepage": "https://rarlab.com/",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://www.win-rar.com/gtb_priv.html?&L=0"
+    },
+    "notes": "Set up context menu within settings window.",
+    "architecture": {
+        "64bit": {
+            "url": "https://alist.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x64_SC.7z",
+            "hash": "d6c5e9096f412ed86575dd5ebf889e694f5ad563fb571d808c3004ce1ecccd41"
+        },
+        "32bit": {
+            "url": "https://alist.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x86_SC.7z",
+            "hash": "4bfb6806b475844b8364070448ca2826d3e639a3b02485d27e7582914ce66364"
+        }
+    },
+    "pre_install": "if (!(Test-Path \"$persist_dir\\WinRar.ini\")) { New-Item \"$dir\\WinRar.ini\" | Out-Null }",
+    "bin": [
+        "Rar.exe",
+        "UnRAR.exe",
+        "WinRAR.exe"
+    ],
+    "shortcuts": [
+        [
+            "WinRAR.exe",
+            "WinRAR"
+        ]
+    ],
+    "persist": [
+        "WinRar.ini",
+        "Themes"
+    ]
+}
