@@ -1,0 +1,37 @@
+{
+    "version": "1.9.0RC1",
+    "description": "ppInk is a user-friendly on-screen annotation software for Windows, compatible with Mouse use, touchscreen or drawing tablet(also with pressure).",
+    "homepage": "https://github.com/pubpub-zz/ppInk",
+    "license": "MIT",
+    "url": "https://github.com/pubpub-zz/ppInk/releases/download/v1.9.0RC1/ppInk.zip",
+    "hash": "6e99f4dbf7e3c1e2d2e0cb99a66bf944056e2fbc336d3ff990aa21edbaf7a945",
+    "extract_dir": "ppInk",
+    "shortcuts": [
+        [
+            "ppInk.exe",
+            "ppInk"
+        ]
+    ],
+    "pre_install": [
+        "function New-PersistFile([String] $path) {",
+        "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
+        "        New-Item $path -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    }",
+        "}",
+        "New-PersistFile \"$persist_dir\\pens.ini\"",
+        "New-PersistFile \"$persist_dir\\config.ini\"",
+        "New-PersistFile \"$persist_dir\\hotkeys.ini\""
+    ],
+    "persist": [
+        "pens.ini",
+        "config.ini",
+        "hotkeys.ini"
+    ],
+    "checkver": {
+        "github": "https://github.com/pubpub-zz/ppInk",
+        "regex": "/releases/tag/v(.*?)\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/pubpub-zz/ppInk/releases/download/v$version/ppInk.zip"
+    }
+}
