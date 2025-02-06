@@ -20,18 +20,6 @@
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"startup\":{\"isAutoUpdate\":false}}'",
         "}"
     ],
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\Ink Canvas Artistry.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
-    "pre_uninstall": [
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
-    ],
-    "post_uninstall": [
-        "Remove-Item \"$env:USERPROFILE\\Desktop\\Ink Canvas Artistry.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/InkCanvas/Ink-Canvas-Artistry/releases/download/v$version/Ink.Canvas.Artistry.V$version.Portable.zip"

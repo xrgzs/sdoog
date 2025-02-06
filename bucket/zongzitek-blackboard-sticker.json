@@ -21,16 +21,6 @@
         "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"Update\":{\"IsUpdateAutomatic\":false}}'",
         "}"
     ],
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\ZongziTEK 黑板贴.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
-    "pre_uninstall": [
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
-    ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\ZongziTEK 黑板贴.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/releases/download/v$version/ZongziTEK_Blackboard_Sticker.zip"

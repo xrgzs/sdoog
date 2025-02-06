@@ -13,20 +13,13 @@
         ]
     ],
     "uninstaller": {
-        "script": [
-            "Remove-Item \"$env:APPDATA\\Seewo\\EasiNote5C\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
-        ]
+        "script": "Remove-Item \"$env:APPDATA\\Seewo\\EasiNote5C\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     },
-    "post_install": [
-        "$scoop_startmenu_folder = shortcut_folder $global",
-        "Copy-Item -Path \"$scoop_startmenu_folder\\希沃轻白板.lnk\" -Destination \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null"
-    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
-    "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\希沃轻白板.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "script": [
             ". $pwd\\bin\\utils.ps1",
