@@ -1,6 +1,6 @@
 {
     "version": "2.4.10",
-    "description": "Windows Subsystem for Linux (WSL) 2 Installer",
+    "description": "(sudo) Windows Subsystem for Linux (WSL) 2 Installer",
     "homepage": "https://docs.microsoft.com/windows/wsl",
     "license": "Proprietary",
     "architecture": {

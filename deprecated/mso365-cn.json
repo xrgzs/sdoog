@@ -1,6 +1,6 @@
 {
     "version": "16.0.18129.20158",
-    "description": "Family of client software, server software and services developed by Microsoft.",
+    "description": "(sudo) Family of client software, server software and services developed by Microsoft.",
     "homepage": "https://www.office.com/",
     "license": {
         "identifier": "Proprietary",

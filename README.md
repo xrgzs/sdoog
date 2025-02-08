@@ -758,7 +758,7 @@ Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlo
    Start-Process -FilePath "$dir\installer.exe" -ArgumentList @('/S', "/D=$dir") -Wait -Verb "RunAs" -WindowStyle Hidden
    ```
 
-5. 不允许以用户权限安装，如果你安装的软件大量涉及到 HKLM、提权，此时为了避免麻烦，推荐使用这种方式，否则尽量使用上述几种
+5. 不允许以用户权限安装，如果你安装的软件大量涉及到 HKLM、提权，此时为了避免麻烦，推荐使用这种方式，注意要在 description 中加上`(sudo)`，否则尽量使用上述几种
 
     ```powershell
     if (!(is_admin)) {

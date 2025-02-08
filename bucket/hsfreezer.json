@@ -1,0 +1,45 @@
+{
+    "version": "11.4.2.10946",
+    "description": "雪藏HsFreezer是一款调度计算机资源的进程管理软件 and 游戏暂停冻结软件 and 老板键平替软件 and .....自定义软件)",
+    "homepage": "https://github.com/superDMS/HsFreezer-Hidden-in-the-snow-/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/imw7R2e1oixi&type=down#/installer.exe",
+            "hash": "1b5ec00b6abc9ec40ceecfd5b5e6bb9c5221b939df8bc5cb33ae16b234eec2f8"
+        },
+        "32bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ibuyt2e1oj3e&type=down#/installer.exe",
+            "hash": "b7a5d3c38a340c4a9a9a878618a4b68f33db21e5568be69234365a8e16cb2ccd"
+        }
+    },
+    "shortcuts": [
+        [
+            "2345PicViewer.exe",
+            "2345看图王"
+        ],
+        [
+            "2345PdfReader.exe",
+            "2345看图王-PDF阅读器"
+        ],
+        [
+            "2345Pic.exe",
+            "2345看图王-图片管理"
+        ]
+    ],
+
+    "checkver": {
+        "url": "https://gitee.com/damodms/hs-freezer-hidden-in-the-snow/releases",
+        "regex": "(?<path>/cxasm/notepad--/releases/download/v.*/Notepad--v(.*)-plugin-Installer\\.exe)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/installer.exe"
+            },
+            "32bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/installer.exe"
+            }
+        }
+    }
+}

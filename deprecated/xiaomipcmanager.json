@@ -1,6 +1,6 @@
 {
     "version": "4.3.0.1881",
-    "description": "小米电脑管家，「人车家全生态」让设备实时动态组网，所有设备协同如一个整体，带来划时代互联体验",
+    "description": "(sudo) 小米电脑管家，「人车家全生态」让设备实时动态组网，所有设备协同如一个整体，带来划时代互联体验",
     "homepage": "https://hyperos.mi.com/continuity",
     "license": "Proprietary",
     "notes": "非常规安装，可能会破坏系统，不保证能用",

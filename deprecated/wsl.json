@@ -1,6 +1,6 @@
 {
     "version": "2.3.26",
-    "description": "Windows Subsystem for Linux (WSL) Installer",
+    "description": "(sudo) Windows Subsystem for Linux (WSL) Installer",
     "homepage": "https://github.com/microsoft/WSL",
     "architecture": {
         "64bit": {

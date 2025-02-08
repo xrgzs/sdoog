@@ -1,7 +1,7 @@
 {
     "version": "17.6.2-24409262",
     "homepage": "https://docs.vmware.com/en/VMware-Tools/index.html",
-    "description": "An application for creating and running virtual machines on your computer.",
+    "description": "(sudo) An application for creating and running virtual machines on your computer.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.vmware.com/ca/help/legal.html"
