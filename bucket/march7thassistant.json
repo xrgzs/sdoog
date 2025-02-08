@@ -1,0 +1,35 @@
+{
+    "version": "2025.1.20",
+    "homepage": "https://moesnow.github.io/March7thAssistant/",
+    "description": "崩坏：星穹铁道全自动 三月七小助手",
+    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2025.1.20/March7thAssistant_v2025.1.20_full.7z",
+    "hash": "bc27ab6499e218a9adb68f74fd083272ab3eb04d6344231f9c9d1586b3a884f0",
+    "extract_dir": "March7thAssistant_v2025.1.20_full",
+    "shortcuts": [
+        [
+            "March7th Launcher.exe",
+            "March7th Launcher"
+        ]
+    ],
+    "pre_install": [
+        "function New-PersistFile([String] $path) {",
+        "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
+        "        New-Item $path -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    }",
+        "}",
+        "New-PersistFile \"$persist_dir\\config.yaml\""
+    ],
+    "post_install": "Remove-Item \"$dir\\March7th Updater.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
+    "persist": [
+        "config.yaml",
+        "settings"
+    ],
+    "checkver": {
+        "github": "https://github.com/moesnow/March7thAssistant"
+    },
+    "autoupdate": {
+        "extract_dir": "March7thAssistant_v$version_full",
+        "url": "https://github.com/moesnow/March7thAssistant/releases/download/v$version/March7thAssistant_v$version_full.7z"
+    }
+}
