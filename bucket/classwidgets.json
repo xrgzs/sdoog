@@ -1,16 +1,16 @@
 {
-    "version": "13215078425",
+    "version": "13217154080",
     "description": "Class Widgets 是一款能够显示当前课程的桌面组件应用程序。其提供了易用课程表编辑和美观的桌面组件。",
     "homepage": "https://github.com/Class-Widgets/Class-Widgets",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "32bit": {
-            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13215078425/windows-latest-x86.zip",
-            "hash": "cc95d8f0e504ccd6b1b766ca25d471b172b1e589ed19f2bb38d1e8d2fe6fb9ee"
+            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13217154080/windows-latest-x86.zip",
+            "hash": "ce6f555267705efd7559b6e57b45edcd16a74b815bb4c81db36cf31761445ad1"
         },
         "64bit": {
-            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13215078425/windows-latest-x64.zip",
-            "hash": "ddd02f399d66f772b47acfa1324aa66a9ae0b4d22fa381f1435cb9504f9923b5"
+            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13217154080/windows-latest-x64.zip",
+            "hash": "4c832b4bf15ff555a5edca13bd41a850d371ff2c261ad790d8b041675b8c8fe3"
         }
     },
     "extract_dir": "ClassWidgets",
