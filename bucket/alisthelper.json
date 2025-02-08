@@ -1,16 +1,23 @@
 {
     "version": "0.2.0",
-    "description": "Alist Helper is an application developed using Flutter, designed to simplify the use of the desktop version of alist. It can manage alist, allowing you to easily start and stop the alist program.",
+    "description": "Alist Helper is an application developed using Flutter, designed to simplify the use of the desktop version of alist.",
     "homepage": "https://github.com/Xmarmalade/alisthelper",
     "license": "GPL-3.0-or-later",
     "suggest": {
-        "alist": "alist"
+        "Alist": [
+            "main/alist",
+            "sdoog/alist-beta"
+        ],
+        "Rclone": "main/rclone"
     },
-    "notes": "Show alist working directory by 'scoop prefix alist'",
+    "notes": [
+        "Show Alist working directory by 'scoop prefix alist'",
+        "Show Rclone working directory by 'scoop prefix rclone'"
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Xmarmalade/alisthelper/releases/download/v0.2.0/AlistHelper_installer_v0.2.0_windows-x86_64.exe",
-            "hash": "fcb203cc7d27276b8daf176e96f9c50ff23381257eb371048732680816aeaa9c"
+            "url": "https://github.com/Xmarmalade/alisthelper/releases/download/v0.2.0/AlistHelper_v0.2.0_windows-x86_64.zip",
+            "hash": "84270d6dc82a61d45ec701f8a53354d8a23644797cea1da51a1a8def824d6440"
         }
     },
     "shortcuts": [
@@ -19,7 +26,6 @@
             "Alist Helper"
         ]
     ],
-    "innosetup": true,
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
@@ -36,7 +42,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Xmarmalade/alisthelper/releases/download/v$version/AlistHelper_installer_v$version_windows-x86_64.exe"
+                "url": "https://github.com/Xmarmalade/alisthelper/releases/download/v$version/AlistHelper_v$version_windows-x86_64.zip"
             }
         }
     }
