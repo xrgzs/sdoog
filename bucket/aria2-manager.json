@@ -1,0 +1,54 @@
+{
+    "version": "1.1.7",
+    "description": "Aria2 Manager is a useful tool that allows user to run Aria2 in the background easily.",
+    "homepage": "https://aria2e.com/",
+    "license": "BSD-3-Clause",
+    "url": "https://github.com/alexhua/Aria2-Manager/releases/download/v1.1.7/Aria2Manager-Full.zip",
+    "hash": "50d5c14c4bc454169cc96eb63679e8f308d8a0832d584e274ec2b935a7c58e89",
+    "notes": [
+        "Aria2 Explorer - Web Browser Extensions:",
+        "* Chrome: https://chrome.google.com/webstore/detail/mpkodccbngfoacfalldjimigbofkhgjn",
+        "* Edge: https://microsoftedge.microsoft.com/addons/detail/jjfgljkjddpcpfapejfkelkbjbehagbh",
+        "* Firefox: https://addons.mozilla.org/addon/aria2manager/",
+        "",
+        "Task management online: https://ui.aria2e.com"
+    ],
+    "shortcuts": [
+        [
+            "Aria2Manager.exe",
+            "Aria2 Manager"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM:\"",
+            "} else {",
+            "    $registry_scope = \"HKCU:\"",
+            "}",
+            "New-Item \"$registry_scope\\SOFTWARE\\Classes\\aria2\" -Force -ItemType String -Value 'URL:Aria2 Protocol' | Out-Null",
+            "New-ItemProperty \"$registry_scope\\SOFTWARE\\Classes\\aria2\" -Force -PropertyType string -Name 'URL Protocol' -Value '' | Out-Null",
+            "New-Item \"$registry_scope\\SOFTWARE\\Classes\\aria2\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\Aria2Manager.exe`\" `\"%1`\"\" | Out-Null"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM:\"",
+            "} else {",
+            "    $registry_scope = \"HKCU:\"",
+            "}",
+            "Remove-Item \"$registry_scope\\SOFTWARE\\Classes\\aria2\" -Recurse -Force | Out-Null"
+        ]
+    },
+    "persist": [
+        "aria2.session",
+        "aria2.conf"
+    ],
+    "checkver": {
+        "github": "https://github.com/alexhua/Aria2-Manager"
+    },
+    "autoupdate": {
+        "url": "https://github.com/alexhua/Aria2-Manager/releases/download/v$version/Aria2Manager-Full.zip"
+    }
+}
