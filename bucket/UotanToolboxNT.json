@@ -1,0 +1,51 @@
+{
+    "version": "3.3.0",
+    "description": "为玩机发烧友而生的全新现代化工具箱 | A Modern Toolbox for Geeks",
+    "homepage": "https://toolbox.uotan.cn/",
+    "license": "GPL-3.0-or-later",
+    "suggest": {
+        ".NET 8 Desktop Runtime": "windowsdesktop-runtime-lts"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.3.0/UotanToolbox_Windows_x64_3.3.0.zip",
+            "hash": "43dfaf9bd8f0c7b4c419c64608f4acf9934c8e2a04416fab50cb320fb94254d6"
+        },
+        "arm64": {
+            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.3.0/UotanToolbox_Windows_arm64_3.3.0.zip",
+            "hash": "674c034554f47a839ecdf31f6a6ea6e31f67d4dfc84d8755da0f25208ea07729"
+        }
+    },
+    "shortcuts": [
+        [
+            "UotanToolbox.exe",
+            "柚坛工具箱"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LocalAppData\\UotanToolbox\" \"$persist_dir\\LocalAppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LocalAppData\\UotanToolbox\""
+    ],
+    "persist": "Backup",
+    "checkver": {
+        "github": "https://github.com/Uotan-Dev/UotanToolboxNT"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/$version/UotanToolbox_Windows_x64_$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/$version/UotanToolbox_Windows_arm64_$version.zip"
+            }
+        }
+    }
+}
