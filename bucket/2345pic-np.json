@@ -1,16 +1,16 @@
 {
-    "version": "11.4.2.10946",
+    "version": "11.5.0.11632",
     "description": "强大的图片浏览管理软件",
     "homepage": "https://www.mefcl.com/2345pic.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/imw7R2e1oixi&type=down#/installer.exe",
-            "hash": "1b5ec00b6abc9ec40ceecfd5b5e6bb9c5221b939df8bc5cb33ae16b234eec2f8"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iyLer2n2ajvi&type=down#/installer.exe",
+            "hash": "dbea7b34fa290e1c65047041cba5bb7f42647fe19f2fb2e8d6f9f26dd83d499b"
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ibuyt2e1oj3e&type=down#/installer.exe",
-            "hash": "b7a5d3c38a340c4a9a9a878618a4b68f33db21e5568be69234365a8e16cb2ccd"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iaUld2n2aj0h&type=down#/installer.exe",
+            "hash": "f60124aaf1f56f14f7423b702c2948edeb52269545c89195b673d6856320366c"
         }
     },
     "shortcuts": [
