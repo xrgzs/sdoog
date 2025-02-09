@@ -20,6 +20,12 @@
             "PixPin"
         ]
     ],
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config.json\") -or !(Get-Item \"$persist_dir\\config.json\").Length) {",
+        "    New-Item \"$persist_dir\\config.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\config.json\" -Value '{\"System.Crash feedback.UploadCrashInformation\":{\"t\":1735664461,\"v\":false},\"System.Update.AutoCheckUpdate\":{\"t\":1735664461,\"v\":false}}'",
+        "}"
+    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
