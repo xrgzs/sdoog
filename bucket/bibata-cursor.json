@@ -1,0 +1,57 @@
+{
+    "version": "2.0.7",
+    "description": "Open source, compact, and material designed cursor set.",
+    "homepage": "https://www.bibata.live/",
+    "license": "GPL-3.0-or-later",
+    "url": [
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Classic-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Classic-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Amber-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Amber-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Classic-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Ice-Right-Windows.zip",
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Ice-Windows.zip"
+    ],
+    "hash": [
+        "6a68cfefaa082445dcc2cb647ee4f4d17d8f4c858fc3d5d0165cd44561ac78cc",
+        "5151e0f8648d00fb734fea501def12b5cc1fbc65ba12a6e28db2e1295ebf8961",
+        "0949d0857d614bbbea79350b823a5cc7203b4220a716350918ef40f647d450bc",
+        "b98eca4077d6e7796ff7e710e4d220ca13439f1118160d1e7b3db9e91fdec2be",
+        "6adec5b9db0e3c5ec218821a1c1f62ccd83f43fd2257a0e31b1a99d815f7e9c3",
+        "0045e40324da5b540b3bee260f53d0792df62be9cdef91655a024ae9f151bd04",
+        "32acb00c4181be3851be3302630eaf42a4aae5f3a1c1e11df06b7380777dd2d0",
+        "cdae96d74c55e11142a72a1d8cc9a2a2c4a9efd3e792623dd1033043f319e4e5",
+        "35ebc194729fea454d98fbe40d8a550a38d4434f6037f72f7fdb39cd28be9234",
+        "caa802eda19eb6c704530ea918c9b4b6edd336268f5c8e89bd0a58e26f556b1d",
+        "868f2afc0fd91d334ec71962c339606defa5d85ce58fccc04485d54a4ac71aa2"
+    ],
+    "pre_install": "New-Item \"HKCU:\\Control Panel\\Cursors\\Schemes\" -ErrorAction SilentlyContinue | Out-Null",
+    "installer": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -PropertyType String -Value \"$($_.FullName)\\Pointer.cur,$($_.FullName)\\Help.cur,$($_.FullName)\\Work.ani,$($_.FullName)\\Busy.ani,$($_.FullName)\\Cross.cur,$($_.FullName)\\Text.cur,$($_.FullName)\\Handwriting.cur,$($_.FullName)\\Unavailable.cur,$($_.FullName)\\Vert.cur,$($_.FullName)\\Horz.cur,$($_.FullName)\\Dgn1.cur,$($_.FullName)\\Dgn2.cur,$($_.FullName)\\Move.cur,$($_.FullName)\\Alternate.cur,$($_.FullName)\\Link.cur,$($_.FullName)\\Pin.cur,$($_.FullName)\\Person.cur,$($_.FullName)\\Pan.cur,$($_.FullName)\\Grabbing.cur,$($_.FullName)\\Zoom-in.cur,$($_.FullName)\\Zoom-out.cur\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "uninstaller": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "checkver": {
+        "github": "https://github.com/ful1e5/Bibata_Cursor"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Amber-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Amber-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Classic-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Classic-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Ice-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Ice-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Original-Amber-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Original-Amber-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Original-Classic-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Original-Ice-Right-Windows.zip",
+            "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Original-Ice-Windows.zip"
+        ]
+    }
+}
