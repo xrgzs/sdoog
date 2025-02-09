@@ -1,0 +1,28 @@
+{
+    "version": "3.6.0",
+    "description": "Recreate standard inverted mouse cursors in Windows 10/11 with a more modern design",
+    "homepage": "https://github.com/emvaized/modern_inverted_mouse_cursors",
+    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/emvaized/modern_inverted_mouse_cursors/releases/download/3.6.0/3.6.0.zip",
+    "hash": "33e3d4ce0328bda0d8413c69ae4833c0f6f6191810c92a3668ffc236f7358534",
+    "extract_dir": "cursors",
+    "pre_install": "New-Item \"HKCU:\\Control Panel\\Cursors\\Schemes\" -ErrorAction SilentlyContinue | Out-Null",
+    "installer": {
+        "script": [
+            "New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"Modern Inverted Mouse Cursors (no tail)\" -PropertyType String -Value \"$dir\\arrow_no_tail.cur,$dir\\help_no_tail.cur,$dir\\working_no_tail.ani,$dir\\busy.ani,$dir\\cross.cur,$dir\\beam_v2.cur,$dir\\pen.cur,$dir\\unavailable_v2.cur,$dir\\vertical.cur,$dir\\horizontal.cur,$dir\\diagonal_1.cur,$dir\\diagonal_2.cur,$dir\\move.cur,$dir\\special.cur,$dir\\link_v2.cur\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"Modern Inverted Mouse Cursors (regular)\" -PropertyType String -Value\"$dir\\arrow_no_tail.cur,$dir\\help_no_tail.cur,$dir\\working_no_tail.ani,$dir\\busy.ani,$dir\\cross.cur,$dir\\beam_v2.cur,$dir\\pen.cur,$dir\\unavailable_v2.cur,$dir\\vertical.cur,$dir\\horizontal.cur,$dir\\diagonal_1.cur,$dir\\diagonal_2.cur,$dir\\move.cur,$dir\\special.cur,$dir\\link_v2.cur\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"Modern Inverted Mouse Cursors (regular)\" -PropertyType String -Value \"$dir\\arrow_tail_detached.cur,$dir\\help_tail_detached.cur,$dir\\working_tail_detached_v2.ani,$dir\\busy.ani,$dir\\cross.cur,$dir\\beam_v2.cur,$dir\\pen.cur,$dir\\unavailable_v2.cur,$dir\\vertical.cur,$dir\\horizontal.cur,$dir\\diagonal_1.cur,$dir\\diagonal_2.cur,$dir\\move.cur,$dir\\special.cur,$dir\\link_v2.cur\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name 'Modern Inverted Mouse Cursors (no tail)' -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name 'Modern Inverted Mouse Cursors (regular)' -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name 'Modern Inverted Mouse Cursors (tail detached)' -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/emvaized/modern_inverted_mouse_cursors/releases/download/$version/$version.zip"
+    }
+}
