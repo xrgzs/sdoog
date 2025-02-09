@@ -1,19 +1,19 @@
 {
-    "version": "13217154080",
+    "version": "1.1.7.1",
     "description": "Class Widgets 是一款能够显示当前课程的桌面组件应用程序。其提供了易用课程表编辑和美观的桌面组件。",
     "homepage": "https://github.com/Class-Widgets/Class-Widgets",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "32bit": {
-            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13217154080/windows-latest-x86.zip",
-            "hash": "ce6f555267705efd7559b6e57b45edcd16a74b815bb4c81db36cf31761445ad1"
+            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v1.1.7.1/ClassWidgets-Windows-x86.zip",
+            "hash": "9fd0b4f8cf2a8e02e83d449178e23b5f042bc60de232d1d06ad04f8dd6258d00"
         },
         "64bit": {
-            "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/13217154080/windows-latest-x64.zip",
-            "hash": "4c832b4bf15ff555a5edca13bd41a850d371ff2c261ad790d8b041675b8c8fe3"
+            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v1.1.7.1/ClassWidgets-Windows-x64.zip",
+            "hash": "a13a9b7de2e8f74674de9f55db01486087c9a06de2b1f64a07fcd2499fb912f3"
         }
     },
-    "extract_dir": "ClassWidgets",
+    "extract_dir": "dist\\ClassWidgets",
     "bin": "ClassWidgets.exe",
     "shortcuts": [
         [
@@ -31,22 +31,14 @@
         "    Set-Content -Path \"$dir\\config.ini\" -Value \"[Other]`nauto_check_update = 0\"",
         "}"
     ],
-    "pre_uninstall": [
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
-    ],
-    "checkver": {
-        "url": "https://nightly.link/Class-Widgets/Class-Widgets/workflows/build/main/windows-latest-x64",
-        "regex": "View run #(\\d+)"
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/$version/windows-latest-x86.zip"
+                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v$version/ClassWidgets-Windows-x86.zip"
             },
             "64bit": {
-                "url": "https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/$version/windows-latest-x64.zip"
+                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v$version/ClassWidgets-Windows-x64.zip"
             }
         }
     }
