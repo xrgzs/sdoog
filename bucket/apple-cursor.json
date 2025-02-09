@@ -1,0 +1,28 @@
+{
+    "version": "2.0.1",
+    "description": "Open source macOS Cursors with HiDPI Support.",
+    "homepage": "https://github.com/ful1e5/apple_cursor",
+    "license": "GPL-3.0-or-later",
+    "url": [
+        "https://github.com/ful1e5/apple_cursor/releases/download/v2.0.1/macOS-White-Windows.zip",
+        "https://github.com/ful1e5/apple_cursor/releases/download/v2.0.1/macOS-Windows.zip"
+    ],
+    "hash": [
+        "241585cf0f2476fc89b1fc6f6a773e06749ae35cff55f6a0daed5722a3b1c794",
+        "64a2c74780908954a2ec497f67919709280ebb8ebdf3e3b9336bac071589c9de"
+    ],
+    "pre_install": "New-Item \"HKCU:\\Control Panel\\Cursors\\Schemes\" -ErrorAction SilentlyContinue | Out-Null",
+    "installer": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -PropertyType String -Value \"$($_.FullName)\\Pointer.cur,$($_.FullName)\\Help.cur,$($_.FullName)\\Work.ani,$($_.FullName)\\Busy.ani,$($_.FullName)\\Cross.cur,$($_.FullName)\\Text.cur,$($_.FullName)\\Handwriting.cur,$($_.FullName)\\Unavailable.cur,$($_.FullName)\\Vert.cur,$($_.FullName)\\Horz.cur,$($_.FullName)\\Dgn1.cur,$($_.FullName)\\Dgn2.cur,$($_.FullName)\\Move.cur,$($_.FullName)\\Alternate.cur,$($_.FullName)\\Link.cur,$($_.FullName)\\Pin.cur,$($_.FullName)\\Person.cur,$($_.FullName)\\Pan.cur,$($_.FullName)\\Grabbing.cur,$($_.FullName)\\Zoom-in.cur,$($_.FullName)\\Zoom-out.cur\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "uninstaller": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/ful1e5/apple_cursor/releases/download/v$version/macOS-White-Windows.zip",
+            "https://github.com/ful1e5/apple_cursor/releases/download/v$version/macOS-Windows.zip"
+        ]
+    }
+}
