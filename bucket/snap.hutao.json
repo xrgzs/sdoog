@@ -11,7 +11,8 @@
     },
     "pre_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Enable-DevelopmentMode"
+        "Enable-DevelopmentMode",
+        "New-PersistDirectory \"$([Environment]::GetFolderPath('Personal'))\\Hutao\" \"$persist_dir\\Personal\" -Migrate"
     ],
     "installer": {
         "script": "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
@@ -24,7 +25,8 @@
         "}",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Remove-Junction \"$([Environment]::GetFolderPath('Personal'))\\Hutao\""
     ],
     "checkver": {
         "github": "https://github.com/DGP-Studio/Snap.Hutao"
