@@ -25,10 +25,13 @@
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "Enable-DevelopmentMode",
             "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
             "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
         ]
     },
     "pre_uninstall": [
+        "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
         "if ($cmd -eq 'uninstall') {",
         "    reg.exe delete \"HKEY_CURRENT_USER\\SOFTWARE\\NanaZip\" /f",
         "    Get-AppxPackage -Name \"40174MouriNaruto.NanaZip\" | Remove-AppxPackage",
