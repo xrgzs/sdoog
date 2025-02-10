@@ -1,0 +1,45 @@
+{
+    "version": "3.9.1.0",
+    "homepage": "https://files.community/",
+    "description": "A modern file manager that helps users organize their files and folders.",
+    "license": "MIT",
+    "url": "https://cdn.files.community/files/preview/Files.Package_3.9.1.0_Test/Files.Package_3.9.1.0_x64_arm64.msixbundle#/dl.7z",
+    "hash": "b67cf6214047fa30c33d3cd23a5db0807d51164adcbf477282bf478ad291d151",
+    "extract_to": "Deploy",
+    "architecture": {
+        "64bit": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_x64.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        },
+        "arm64": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_arm64.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
+            "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+            "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+        ]
+    },
+    "pre_uninstall": [
+        "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"FilesPreview\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"FilesPreview\" | Remove-AppxPackage -PreserveApplicationData",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "url": "https://cdn.files.community/files/preview/Files.Package.appinstaller",
+        "regex": "Version=\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://cdn.files.community/files/preview/Files.Package_$version_Test/Files.Package_$version_x64_arm64.msixbundle#/dl.7z"
+    }
+}
