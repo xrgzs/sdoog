@@ -1,0 +1,42 @@
+{
+    "version": "3.6.0.0",
+    "homepage": "https://files.community/",
+    "description": "A modern file manager that helps users organize their files and folders.",
+    "license": "MIT",
+    "url": "https://cdn.files.community/files/stable/Files.Package_3.6.0.0_Stable_Test/Files.Package_3.6.0.0_x64_arm64_Stable.msixbundle#/dl.7z",
+    "hash": "cf51ee2515c31b00b5f4e9720d9b062bd9ae9cfccb1f5a96ace5092529b785a7",
+    "extract_to": "Deploy",
+    "architecture": {
+        "64bit": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_x64_Stable.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        },
+        "arm64": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_arm64_Stable.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
+            "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+        ]
+    },
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"Files\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"Files\" | Remove-AppxPackage -PreserveApplicationData",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "url": "https://files.community/appinstallers/Files.stable.appinstaller",
+        "regex": "Version=\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://cdn.files.community/files/stable/Files.Package_$version_Stable_Test/Files.Package_$version_x64_arm64_Stable.msixbundle#/dl.7z"
+    }
+}
