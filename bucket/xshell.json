@@ -15,7 +15,7 @@
     "notes": [
         "* Known issue:",
         "  - 'Initialize Flexnet Service failed' is displayed when you start Xshell every time.",
-        "  - User data and passwords ($env:USERPROFILE\\Documents\\NetSarang Computer\\8) are not persisted by Scoop.",
+        "  - User data and passwords ($([Environment]::GetFolderPath('Personal'))\\NetSarang Computer\\8) are not persisted by Scoop.",
         "  - The free licensing of Xshell and Xftp is for non-commercial use only."
     ],
     "shortcuts": [

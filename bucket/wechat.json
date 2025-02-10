@@ -25,7 +25,7 @@
     "post_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\Tencent\\WeChat\" \"$persist_dir\\AppData\" -Migrate",
-        "New-PersistDirectory \"$env:USERPROFILE\\Documents\\WeChat Files\" \"$persist_dir\\WeChat Files\" -Migrate",
+        "New-PersistDirectory \"$([Environment]::GetFolderPath('Personal'))\\WeChat Files\" \"$persist_dir\\WeChat Files\" -Migrate",
         "New-Item -Path \"HKCU:\\Software\\Tencent\\WeChat\" -Name \"InstallPath\" -Value \"$dir\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [

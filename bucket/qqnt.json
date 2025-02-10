@@ -22,7 +22,7 @@
     },
     "installer": {
         "script": [
-            "$configpath = \"$env:PUBLIC\\Documents\\Tencent\\QQ\"",
+            "$configpath = \"$([Environment]::GetFolderPath('CommonDocuments'))\\Tencent\\QQ\"",
             "if (!(Test-Path -Path \"$configpath\")) {",
             "    New-Item -Path \"$configpath\" -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null",
             "}",
@@ -46,7 +46,7 @@
     "uninstaller": {
         "script": [
             "if ($cmd -eq 'uninstall') {",
-            "    Remove-Item -Path \"$env:PUBLIC\\Documents\\Tencent\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    Remove-Item -Path \"$([Environment]::GetFolderPath('CommonDocuments'))\\Tencent\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
             "    Remove-Item -Path \"$env:AppData\\QQ\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
             "}"
         ]

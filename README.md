@@ -511,7 +511,7 @@ Scoop bucket 的软件安装包配置为 JSON 格式，安装需要调用的命�
 PS D:\sdoog> (Get-Content .\bucket\qqnt.json | ConvertFrom-Json).installer.script
 
 # Output:
-$configpath = "$env:PUBLIC\Documents\Tencent\QQ"
+$configpath = "$([Environment]::GetFolderPath('CommonDocuments'))\Tencent\QQ"
 if (!(Test-Path -Path "$configpath")) {
     New-Item -Path "$configpath" -Type Directory -Force -ErrorAction SilentlyContinue | Out-Null
 }

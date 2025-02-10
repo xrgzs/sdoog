@@ -17,7 +17,7 @@
     "post_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\Tencent\\xwechat\" \"$persist_dir\\AppData\" -Migrate",
-        "New-PersistDirectory \"$env:USERPROFILE\\Documents\\xwechat_files\" \"$persist_dir\\xwechat_files\" -Migrate",
+        "New-PersistDirectory \"$([Environment]::GetFolderPath('Personal'))\\xwechat_files\" \"$persist_dir\\xwechat_files\" -Migrate",
         "New-Item -Path \"HKCU:\\Software\\Tencent\\Weixin\" -Name \"InstallPath\" -Value \"$dir\" -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "pre_uninstall": [
@@ -25,7 +25,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Tencent\\xwechat\"",
-        "Remove-Junction \"$env:USERPROFILE\\Documents\\xwechat_files\"",
+        "Remove-Junction \"$([Environment]::GetFolderPath('Personal'))\\xwechat_files\"",
         "Remove-Item -Path \"HKCU:\\Software\\Tencent\\Weixin\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": {
