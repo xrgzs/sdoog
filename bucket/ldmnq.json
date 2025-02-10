@@ -28,12 +28,20 @@
         "ldrecord\\video",
         "vms"
     ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$([Environment]::GetFolderPath('Personal'))\\leidian9\" \"$persist_dir\\Personal\" -Migrate"
+    ],
     "installer": {
         "script": "Invoke-ExternalCommand \"$dir\\!)绿化处理.bat\" -Quiet"
     },
     "pre_uninstall": [
         "(Get-Content \"$dir\\!)卸载处理.bat\") -replace 'CHOICE /C 12 /N >NUL 2>NUL', 'exit /b' | Set-Content \"$dir\\!)卸载处理.bat\"",
-        "Invoke-ExternalCommand \"$dir\\!)卸载处理.bat\" -Quiet"
+        "Invoke-ExternalCommand \"$dir\\!)卸载处理.bat\" -Quiet",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$([Environment]::GetFolderPath('Personal'))\\leidian9\""
     ],
     "checkver": {
         "script": [
