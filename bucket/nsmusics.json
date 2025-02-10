@@ -1,0 +1,42 @@
+{
+    "version": "1.3.0",
+    "description": "NSMusicS NineSong Cloud-Native Music Server/ Full platform Client，support navidrome, jellyfin, emby",
+    "homepage": "https://github.com/Super-Badmen-Viper/NSMusicS",
+    "license": "AGPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Super-Badmen-Viper/NSMusicS/releases/download/NSMusicS-v1.3.0/NSMusicS-Win-1.3.0-x64.zip",
+            "hash": "8d83b3c1a8b73f38432fc1b9a119175812e0fb21bb9ebd2987c084053a9ee2a2",
+            "extract_dir": "NSMusicS-Win-1.3.0-x64"
+        }
+    },
+    "shortcuts": [
+        [
+            "NSMusicS.exe",
+            "NSMusicS"
+        ]
+    ],
+    "post_install": [
+        "Remove-Item \"$dir\\`$*\" -Recurse -Force",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\NSMusicS\" \"$persist_dir\\AppData\" -Migrate"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\NSMusicS\""
+    ],
+    "checkver": {
+        "github": "https://github.com/Super-Badmen-Viper/NSMusicS",
+        "regex": "/releases/tag/NSMusicS-(?:v|V)?([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Super-Badmen-Viper/NSMusicS/releases/download/NSMusicS-v$version/NSMusicS-Win-$version-x64.zip",
+                "extract_dir": "NSMusicS-Win-$version-x64"
+            }
+        }
+    }
+}
