@@ -23,11 +23,6 @@
         "NSISDIR": "$dir"
     },
     "persist": "nsisconf.nsh",
-    "pre_uninstall": [
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
-    ],
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
