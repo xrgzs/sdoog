@@ -1,8 +1,8 @@
 {
     "version": "2.3.0.0",
-    "description": "123云盘官方是一款十分优秀的网盘软件，123云盘完全免费，注册后可以获得2T的空间容量，文件分享链接采用 AI + 人工的审核机制，异常文件将会无法分享，还支持新建文件夹、移动文件、重命名、回收站、管理已分享的文件等功能，满足用户的各种网盘功能使用需求。",
+    "description": "123云盘是一款空间大、不限速、专注大文件传输分发的云存储服务产品。",
     "homepage": "https://www.123pan.com/",
-    "license": "Unknown",
+    "license": "Proprietary",
     "url": "https://app.123957.com/pc-pro/windows/230/123pan_2.3.0.exe#/dl.7z",
     "hash": "3e64ef9159b70de157cdf212c6f98f95c41153d29fd5435395d6fa4d7a36d78f",
     "shortcuts": [
@@ -15,7 +15,8 @@
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\123pan\" \"$persist_dir\\AppData\" -Migrate",
-            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal"
+            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal",
+            "Remove-Item \"$dir\\`$*\" -Recurse -Force"
         ]
     },
     "pre_uninstall": [
