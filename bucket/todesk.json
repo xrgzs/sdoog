@@ -6,7 +6,7 @@
         "identifier": "Proprietary",
         "url": "https://www.todesk.com/licence.html"
     },
-    "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe#/dl.7z",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_4.7.6.3.exe#/dl.7z",
     "hash": "5cb11ae8d25ef106f6dc42034f7b388990b6c85413cf4008a6f2797978bf6a7c",
     "shortcuts": [
         [
@@ -46,9 +46,10 @@
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe#/dl.7z",
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_$version.exe#/dl.7z",
         "hash": {
-            "url": "$baseurl/ToDesk.exe.sha256"
+            "url": "$url.sha256",
+            "mode": "extract"
         }
     }
 }
