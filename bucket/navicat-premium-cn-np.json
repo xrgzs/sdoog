@@ -5,8 +5,8 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe#/installer.exe",
-            "hash": "e9038179fa93e84fd601e7d830cdc36fd6f60309184f2a4e37f4cf8acf3b6bb5"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64_17.1.13.exe#/installer.exe",
+            "hash": "7551aac361db65751d2fcbc9b6bee642953c3f12a14744866c75a5cb16148526"
         }
     },
     "shortcuts": [
@@ -42,9 +42,9 @@
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe#/installer.exe",
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64_$version.exe#/installer.exe",
         "hash": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64.exe.sha256"
+            "url": "$url.sha256"
         }
     }
 }

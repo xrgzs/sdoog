@@ -3,7 +3,7 @@
     "description": "The Kali for Windows application allows one to install and run the Kali Linux open-source penetration testing distribution natively, from the Windows 10 OS. ",
     "homepage": "https://www.microsoft.com/store/productId/9PKR34TNCV07",
     "license": "Proprietary",
-    "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Kali.appxbundle#/dl.7z",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Kali_1.2024.4.0.appxbundle#/dl.7z",
     "hash": "8426223d92d9d8ddba466534cc127ad34b0b60a84c64948ee21557d6d571f8f3",
     "notes": [
         "Call `kali.exe` to start Kali installation.",
@@ -47,12 +47,13 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Kali.appxbundle.ver",
-        "regex": "([\\d.]+)"
+        "regex": "(\\d+\\.\\d+\\.\\d+\\.\\d+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Kali.appxbundle#/dl.7z",
+        "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Kali_$version.appxbundle#/dl.7z",
         "hash": {
-            "url": "$url.sha256"
+            "url": "$url.sha256",
+            "mode": "extract"
         }
     }
 }

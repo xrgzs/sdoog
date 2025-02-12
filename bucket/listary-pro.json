@@ -6,7 +6,7 @@
     "depends": "innounp",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Listary/ListaryProx64.7z",
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Listary/ListaryProx64_6.3.1.84.7z",
             "hash": "a22035a1c7fdc812341760e1863197e28dd103daf9234b921f8f849b458263cc"
         }
     },
@@ -75,9 +75,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Listary/ListaryProx64.7z",
+                "url": "https://alist.xrgzs.top/d/pxy/Software/Listary/ListaryProx64_$version.7z",
                 "hash": {
-                    "url": "https://alist.xrgzs.top/d/pxy/Software/Listary/ListaryProx64.7z.sha256"
+                    "url": "$url.sha256",
+                    "mode": "extract"
                 }
             }
         }

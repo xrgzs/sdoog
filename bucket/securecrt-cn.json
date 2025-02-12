@@ -5,8 +5,8 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT.7z#/dl.7z",
-            "hash": "c45f0803a6294e39a31b2ef763cc58c4e56fdeb33310619d47ae877d1cf7b2a9"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT_9.6.1.7z#/dl.7z",
+            "hash": "f24e0a6a10aead33fb788badd97cbc33f390f5e9b3d3da0770a44c5886bd0cf2"
         }
     },
     "extract_dir": "SecureCRT",
@@ -28,9 +28,9 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT.7z#/dl.7z",
+                "url": "https://alist.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT_$version.7z#/dl.7z",
                 "hash": {
-                    "url": "https://alist.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT.7z.sha256"
+                    "url": "$url.sha256"
                 }
             }
         }
