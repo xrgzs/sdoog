@@ -1,12 +1,12 @@
 {
-    "version": "1.13.1",
+    "version": "1.13.3",
     "description": "一个实用的多功能原神工具箱",
     "homepage": "https://hut.ao/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/1.13.1/Snap.Hutao.1.13.1.msix#/dl.zip",
-            "hash": "8dcd90d169d2553c31015bf026365b10b63f57e38317b5163dedd2c51b7e46d3"
+            "url": "https://github.com/DGP-Studio/Snap.Hutao/releases/download/1.13.3/Snap.Hutao.1.13.3.msix#/dl.zip",
+            "hash": "cc915bb4669ddc7b4084f02fb5df8fa983d59903858932e848823a01c24c086b"
         }
     },
     "pre_install": [
