@@ -1,0 +1,50 @@
+{
+    "version": "2.82.0",
+    "homepage": "https://www.filecxx.com/zh_CN/index.html",
+    "description": "文件蜈蚣是一个全能网络文件上传/下载器, BitTorrent客户端, WebDAV客户端, FTP客户端, 和SSH客户端.",
+    "license": "Freeware",
+    "notes": "激活码：https://www.filecxx.com/zh_CN/activation_code.html",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/filecxx/FileCentipede/releases/download/v2.82.0/filecxx_2.82_win_x64.zip",
+            "hash": "f0bdef157f45ae1652ede116ebe98d889d163e5c094e88a076e917989742fe1e"
+        }
+    },
+    "bin": "lib\\filec.exe",
+    "shortcuts": [
+        [
+            "lib\\fileu.exe",
+            "文件蜈蚣"
+        ]
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\lib\\fileu_win32.conf\") -or !(Get-Item \"$persist_dir\\lib\\fileu_win32.conf\").Length) {",
+        "    New-Item \"$persist_dir\\lib\\fileu_win32.conf\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\lib\\fileu_win32.conf\" -Value '{}'",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\lib\\data_windows.db\") -or !(Get-Item \"$persist_dir\\lib\\data_windows.db\").Length) {",
+        "    New-Item \"$persist_dir\\lib\\data_windows.db\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "}"
+    ],
+    "pre_uninstall": [
+        "Invoke-ExternalCommand \"$dir\\lib\\filec.exe\" -ArgumentList '-ss remove' -RunAs -Quiet",
+        "Invoke-ExternalCommand \"$dir\\lib\\filec.exe\" -ArgumentList '-u' -RunAs -Quiet",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "persist": [
+        "lib\\fileu_win32.conf",
+        "lib\\data_windows.db"
+    ],
+    "checkver": {
+        "github": "https://github.com/filecxx/FileCentipede"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/filecxx/FileCentipede/releases/download/v$version/filecxx_$majorVersion.$minorVersion_win_x64.zip"
+            }
+        }
+    }
+}
