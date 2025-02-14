@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "description": "A collection of activation/evaluation extension methods for Windows 7 through 11.",
+    "homepage": "https://github.com/massgravel/TSforge",
+    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/massgravel/TSforge/releases/download/1.0.0/TSforge_1.0.0.zip",
+    "hash": "dda8f5195d2ca3fbd0afd8371d079312c691799f71d36edf90469c335570fc69",
+    "checkver": "github",
+    "bin": "bin\\TSforge.exe",
+    "autoupdate": {
+        "url": "https://github.com/massgravel/TSforge/releases/download/$version/TSforge_$version.zip"
+    }
+}
