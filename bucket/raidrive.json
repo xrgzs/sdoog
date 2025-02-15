@@ -1,0 +1,47 @@
+{
+    "version": "2023.9.256",
+    "description": "RaiDrive | Mount a Cloud Storage like a USB drive",
+    "homepage": "https://www.raidrive.com/",
+    "license": "Proprietary",
+    "notes": "User profiles are stored in registry: 'HKEY_CURRENT_USER\\SOFTWARE\\OpenBoxLab\\RaiDrive'",
+    "suggest": {
+        "Microsoft .NET 6.0 Desktop Runtime": "windowsdesktop-runtime-6.0"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_2023.9.256_x64.msi",
+            "hash": "c4c4ecae27ccefee187766833a57d3aab3ee2af44bbd41c27ab0a32d3828dc17"
+        },
+        "32bit": {
+            "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_2023.9.256_x86.msi",
+            "hash": "3d80bbfa9606648964a5cc01fe4313c873fe011b8e7189bc392affc5937f0f71"
+        },
+        "arm64": {
+            "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_2023.9.256_arm64.msi",
+            "hash": "59bdb7ce31e54c72cf5854dc57a53cd52f2fe5b015211f7540f66b0813374837"
+        }
+    },
+    "shortcuts": [
+        [
+            "RaiDrive.exe",
+            "RaiDrive"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.raidrive.com/download",
+        "regex": "RaiDrive_([\\d.]+)_x64.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_$version_x64.msi"
+            },
+            "32bit": {
+                "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_$version_x86.msi"
+            },
+            "arm64": {
+                "url": "https://app.raidrive.com/download/raidrive/release/RaiDrive_$version_arm64.msi"
+            }
+        }
+    }
+}
