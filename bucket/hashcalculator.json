@@ -6,6 +6,10 @@
     "url": "https://github.com/hrpzcf/HashCalculator/releases/download/6.1.2/HashCalculator-6.1.2.zip",
     "hash": "12d59683d87ad82e4a1bb4514a2b1e514a5129b44daf9106db7e02beec24f1e0",
     "bin": "HashCalculator.exe",
+    "notes": [
+        "* Register context menu: HashCalculator.exe -i -s",
+        "* Unregister context menu: HashCalculator.exe -u -s"
+    ],
     "shortcuts": [
         [
             "HashCalculator.exe",
@@ -13,28 +17,12 @@
         ]
     ],
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config.json\") -or !(Get-Item \"$persist_dir\\config.json\").Length) {",
-        "    New-Item \"$persist_dir\\config.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$persist_dir\\config.json\" -Value '{}'",
+        "if (!(Test-Path \"$persist_dir\\settings.json\") -or !(Get-Item \"$persist_dir\\settings.json\").Length) {",
+        "    New-Item \"$persist_dir\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\settings.json\" -Value '{}'",
         "}"
     ],
-    "installer": {
-        "file": "HashCalculator.exe",
-        "args": [
-            "shell",
-            "-i",
-            "-s"
-        ]
-    },
-    "uninstaller": {
-        "file": "HashCalculator.exe",
-        "args": [
-            "shell",
-            "-u",
-            "-s"
-        ]
-    },
-    "persist": "config.json",
+    "persist": "settings.json",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/hrpzcf/HashCalculator/releases/download/$version/HashCalculator-$version.zip",
