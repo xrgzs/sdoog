@@ -33,7 +33,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\Tencent\\WeChat\"",
-        "Remove-Junction \"$env:APPDATA\\Documents\\WeChat Files\"",
+        "Remove-Junction \"$([Environment]::GetFolderPath('Personal'))\\WeChat Files\"",
         "Remove-Item -Path \"HKCU:\\Software\\Tencent\\WeChat\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
     ],
     "checkver": {
