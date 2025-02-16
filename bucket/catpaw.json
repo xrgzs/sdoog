@@ -1,0 +1,35 @@
+{
+    "version": "2.0.3_beta4",
+    "description": "Continue the development of CatVodOpen.",
+    "homepage": "https://github.com/CatPawApp/CatPawOpen",
+    "license": "Unknown",
+    "url": "https://github.com/CatPawApp/CatPawOpen/releases/download/beta/windows_release_open_2.0.3_beta4.7z",
+    "hash": "bf31843e5107d1500163a4859a48d09f981f329231fed9bc28cd608f1cd994fd",
+    "extract_dir": "Release",
+    "shortcuts": [
+        [
+            "catpaw.exe",
+            "猫爪"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$([Environment]::GetFolderPath('Personal'))\\.catpaw\" \"$persist_dir\\.catpaw\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$([Environment]::GetFolderPath('Personal'))\\.catpaw\""
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/CatPawApp/CatPawOpen/releases?per_page=1",
+        "regex": "windows_release_open_([\\d.]+_\\w+)\\.7z",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://github.com/CatPawApp/CatPawOpen/releases/download/beta/windows_release_open_$version.7z"
+    }
+}
