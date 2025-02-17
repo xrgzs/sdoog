@@ -8,18 +8,19 @@
     },
     "depends": "extras/hysteria",
     "notes": [
+        "* This is the beta and Avalonia UI version.",
         "* Better use administrator privileges to install so that the cores could be linked by symlinks, rather than shims, providing better compatibility and performance.",
         "* If the tray icon doesn't appear, run the v2rayN.exe from the version number path: '$original_dir\\v2rayN.exe'"
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.9.0/v2rayN-windows-64.zip",
-            "hash": "3944c57929bf23d3b057f2a91ca8bbb0c370c5726c17a64707964400b682c518",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.9.0/v2rayN-windows-64-desktop.zip",
+            "hash": "0fc3351d603b371deec2af56a1ef4a235833e78b148f95a2ddadeb1d0c2551be",
             "extract_dir": "v2rayN-windows-64"
         },
         "arm64": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.9.0/v2rayN-windows-arm64.zip",
-            "hash": "34ede3be3ca9fc224ec02d7e28b0200917ced666ab97f627def3d27f2a00e98f",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.9.0/v2rayN-windows-arm64-desktop.zip",
+            "hash": "cf862c18a1b21693132ace268fe0f081c265cf5fa0fa0c77835b11a1cc641cda",
             "extract_dir": "v2rayN-windows-arm64"
         }
     },
@@ -29,7 +30,10 @@
             "v2rayN"
         ]
     ],
-    "persist": "guiConfigs",
+    "persist": [
+        "guiConfigs",
+        "binConfigs"
+    ],
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
@@ -43,10 +47,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-64.zip"
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-64-desktop.zip"
             },
             "arm64": {
-                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-arm64.zip"
+                "url": "https://github.com/2dust/v2rayN/releases/download/$version/v2rayN-windows-arm64-desktop.zip"
             }
         }
     }
