@@ -1,20 +1,17 @@
 {
-    "version": "1.1.9",
+    "version": "1.2.5",
     "description": "Game voice platform",
     "homepage": "https://oopz.cn/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://help.oopz.cn/agreement/service"
     },
-    "notes": "\"https://www.oopz.cn/download/xx?v=\".concat(Date.now() / 1e3 | 0)",
-    "url": "https://downloadcdn.oopz.cn/release/119/oopz_setup_v1.1.9.exe#/dl.7z",
-    "hash": "219c6233cd02180c37bcc26b38c4a4dd557fe9d0a6bbe2d2891fdd662c1522a2",
+    "url": "https://downloadcdn.oopz.cn/release/125/oopz_setup_v1.2.5.exe#/dl.7z",
+    "hash": "c69c8572857dbabde3439e0750cf565382dda2552aea3b601ebe229d14666b7d",
     "installer": {
         "script": [
-            "Move-Item \"$dir\\`$TEMP\\oopz_nsis\\app.7z\" \"$dir\\app.7z\"",
-            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$TEMP\" -Force -Recurse",
-            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\\app\"",
-            "Remove-Item \"$dir\\app.7z\" -Force"
+            "Expand-7zipArchive \"$dir\\`$TEMP\\oopz_nsis\\app.7z\" \"$dir\\app\"",
+            "Remove-Item \"$dir\\`$*\" -Recurse -Force"
         ]
     },
     "pre_uninstall": [
@@ -27,5 +24,15 @@
             "app/oopz.exe",
             "Oopz"
         ]
-    ]
+    ],
+    "checkver": {
+        "script": [
+            ". bin\\utils.ps1",
+            "Get-RedirectedUrl1st -Uri \"https://www.oopz.cn/download/xx?v=$([int] (Get-Date (Get-Date).ToUniversalTime() -uformat \"%s\"))\""
+        ],
+        "regex": "oopz_setup_v([\\d.]+)\\.exe"
+    },
+    "autoupdate": {
+        "url": "https://downloadcdn.oopz.cn/release/$cleanVersion/oopz_setup_v$version.exe#/dl.7z"
+    }
 }
