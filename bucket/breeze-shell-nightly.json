@@ -7,7 +7,7 @@
         "64bit": {
             "url": "https://nightly.link/std-microblock/breeze-shell/actions/runs/13352566043/windows-build.zip",
             "hash": "67b236e8190824b1ee86e9387c20cdaa8e117d3f1c2d70fff91e0c78daa04e36",
-            "extract_dir": "x64/release"
+            "extract_dir": "releasedbg"
         }
     },
     "shortcuts": [
