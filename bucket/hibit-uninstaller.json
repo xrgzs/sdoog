@@ -1,10 +1,10 @@
 {
-    "version": "3.2.40",
+    "version": "3.2.55",
     "description": "HiBit Uninstaller中文绿色版 (更新中文去升级原生单文件) 是一款免费小巧强大的软件卸载工具，HIBit软件卸载程序最新版集成软件安装跟踪功能，软件强制卸载，批量卸载，拖拽文件形式卸载，应用程序管理，系统更新补丁管理，注册表清理，垃圾文件清理，文件粉碎程序，快捷方式修复，进程管理，启动项管理，系统服务，计划任务，资源管理器菜单项管理等功能于一身。",
     "homepage": "https://www.423down.com/9979.html",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iHDRF2aztq3g&type=down#/hibit-uninstaller.exe",
-    "hash": "5756cfd53073f7ccba29d441edc3b758a05dc6d70bacfcbec6bff5323c72f0f2",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iFJH52ob1z3c&type=down#/hibit-uninstaller.exe",
+    "hash": "a25bb08a936dc7b1d08dc4d341db896fb6a29a8331d1ec6be583de09d539ee6d",
     "shortcuts": [
         [
             "hibit-uninstaller.exe",
