@@ -1,13 +1,13 @@
 {
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "Game voice platform",
     "homepage": "https://oopz.cn/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://help.oopz.cn/agreement/service"
     },
-    "url": "https://downloadcdn.oopz.cn/release/125/oopz_setup_v1.2.5.exe#/dl.7z",
-    "hash": "c69c8572857dbabde3439e0750cf565382dda2552aea3b601ebe229d14666b7d",
+    "url": "https://downloadcdn.oopz.cn/release/126/oopz_setup_v1.2.6.exe#/dl.7z",
+    "hash": "aab06411a756e8d214311c648c98d16bab79bdbc047542360bbb3fbe1457825d",
     "installer": {
         "script": [
             "Expand-7zipArchive \"$dir\\`$TEMP\\oopz_nsis\\app.7z\" \"$dir\\app\"",
