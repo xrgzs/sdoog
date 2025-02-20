@@ -1,10 +1,10 @@
 {
-    "version": "1.18.0.0",
+    "version": "1.19.0.0",
     "description": "Get Debian for the Windows Subsystem for Linux (WSL)",
     "homepage": "https://www.microsoft.com/store/productId/9MSVKQC78PK6",
     "license": "Proprietary",
-    "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Debian_1.18.0.0.appxbundle#/dl.7z",
-    "hash": "c1eebcc05bf5ef0555ea6d1420aa59b45a69864c38443cdd88bd10dff3bbf1c6",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/WSL/Debian_1.19.0.0.appxbundle#/dl.7z",
+    "hash": "94482a9d8b64e71ee7dfe438a363e250a9851bd07afceffe31fd0f782ac88b23",
     "notes": [
         "Call `debian.exe` to start Debian installation.",
         "- Set a username and password for your Debian GNU/Linux installation when prompted.",
