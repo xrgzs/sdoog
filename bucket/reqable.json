@@ -9,7 +9,7 @@
     "notes": "Reqable是一款用于企业接口生产的网络基础设施工具，某些特性可以修改网络传输数据，其设计和目的均是用于接口生产过程中的开发、调试和测试，请勿用于非许可用途！更多信息，请参阅使用条款。",
     "architecture": {
         "64bit": {
-            "url": "https://pkgs.reqable.com/download/reqable-app-windows-x86_64.zip?platform=windows&arch=x86_64&version=2.32.1&ext=zip#/dl.zip",
+            "url": "https://github.com/reqable/reqable-app/releases/download/2.32.1/reqable-app-windows-x86_64.zip",
             "hash": "1db1d37c1b6840c0f4da9a2a921cd5740de2a0d8d722f705cba35285f96a6cb5"
         }
     },
@@ -30,16 +30,12 @@
         "Remove-Junction \"$env:APPDATA\\Reqable\""
     ],
     "checkver": {
-        "script": [
-            ". \"$pwd\\bin\\utils.ps1\"",
-            "\"https://api.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=zh\" | Get-RedirectedUrl1st"
-        ],
-        "regex": "(?<Url>^https?://.*version=([\\d.]+).*)"
+        "github": "https://github.com/reqable/reqable-app"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchUrl#/dl.zip"
+                "url": "https://github.com/reqable/reqable-app/releases/download/$version/reqable-app-windows-x86_64.zip"
             }
         }
     }
