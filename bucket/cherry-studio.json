@@ -1,5 +1,5 @@
 {
-    "version": "0.9.27",
+    "version": "0.9.29",
     "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
     "homepage": "https://cherry-ai.com/",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v0.9.27/Cherry-Studio-0.9.27-setup.exe#/dl.7z",
-            "hash": "sha512:97779f800a640c79c249ba2ec93cc41bc1b43616c7c214be4c06f00a208bf7bf1b7138f00e47e87ad0fec066056e82a4dc734a251a55a61968a85212f99551e8",
+            "url": "https://github.com/CherryHQ/cherry-studio/releases/download/v0.9.29/Cherry-Studio-0.9.29-setup.exe#/dl.7z",
+            "hash": "sha512:346ac23a7e4b33932527611f1f27f96f02f00f2b99541fbc16f544ada18cd76fac9f6b0737f5d0f3c9e9a549a25f788f601d0caa45f855a15eaae3f918c5cf25",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         }
     },
