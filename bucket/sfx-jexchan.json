@@ -1,5 +1,5 @@
 {
-    "version": "v7.0.2.3855",
+    "version": "7.0.2.3855",
     "homepage": "http://bbs.wuyou.net/forum.php?mod=viewthread&tid=419412&fromuid=378114",
     "license": "Freeware",
     "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iLH4T2ojktwh&type=down#/dl.zip",
@@ -33,7 +33,7 @@
             "$f = Get-LanzouList \"https://mefcl.lanzouw.com/b011o5q5i\" 5upn | Where-Object { $_.name_all -like \"单文件制作_*.7z\" } | Select-Object -First 1",
             "$f.name_all + '=====' + $f.id"
         ],
-        "regex": "单文件制作_(.*).7z=====(?<sharekey>.*)"
+        "regex": "单文件制作_v?(.*).7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
         "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.zip"
