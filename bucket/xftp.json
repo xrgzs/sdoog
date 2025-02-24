@@ -1,5 +1,5 @@
 {
-    "version": "8.0.0066p",
+    "version": "8.0.0067p",
     "description": "Effortless File Transfers Over A Network (Free for Home/School)",
     "homepage": "https://www.xshell.com/en/free-for-home-school/",
     "license": {
@@ -10,8 +10,8 @@
         "isx",
         "gsudo"
     ],
-    "url": "https://cdn.netsarang.net/3a9c1902/Xftp-8.0.0066p.exe#/dl.exe",
-    "hash": "ad16bd4f9863d97f7aee2307ea14804f57e11d1dc9757a32c3f20d5ba1f01747",
+    "url": "https://cdn.netsarang.net/274efd03/Xftp-8.0.0067p.exe#/dl.exe",
+    "hash": "9bed597b1dbef125b8dcd5d7b0776ddfc807fa2c284869ed75646ef3b2384187",
     "notes": [
         "* Known issue:",
         "  - 'Initialize Flexnet Service failed' is displayed when you start Xftp every time.",
@@ -54,9 +54,9 @@
         ]
     },
     "checkver": {
-        "regex": "https://cdn.netsarang.net/(?<hash>[^/]+)/Xftp-([\\d.]+p).exe#/dl.exe"
+        "regex": "https://cdn.netsarang.net/(?<hash>[^/]+)/Xftp-([\\d.]+p).exe"
     },
     "autoupdate": {
-        "url": "https://cdn.netsarang.net/$matchHash/Xftp-$version.exe"
+        "url": "https://cdn.netsarang.net/$matchHash/Xftp-$version.exe#/dl.exe"
     }
 }
