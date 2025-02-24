@@ -1,0 +1,200 @@
+{
+    "version": "1.10.6",
+    "description": "A minimal Markdown editor and reader",
+    "homepage": "https://typora.io",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://support.typora.io/License-Agreement/"
+    },
+    "notes": [
+        "If you have not got a licence: ",
+        "- Get one from official websize.",
+        "- 'Remove-Item \"$persist_dir\\AppData\\profile.data\"' to renew a 15-day trial. (would lose your data)",
+        "- Use a popblocker to close the activate window automatically."
+    ],
+    "suggest": {
+        "Pandoc": "main/pandoc"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://download.typora.io/windows/typora-setup-x64-1.10.6.exe",
+            "hash": "b74c0a832aac563fc9535e641a97a267eba486869b5c8e4a4e0c21c6a8cf898d"
+        },
+        "32bit": {
+            "url": "https://download.typora.io/windows/typora-setup-ia32-1.10.6.exe",
+            "hash": "0e8e87da0b3c148f29526ad57c2ab6ac5bba85da99702ab3548e1deb9e364d2a"
+        }
+    },
+    "innosetup": true,
+    "bin": "Typora.exe",
+    "shortcuts": [
+        [
+            "Typora.exe",
+            "Typora"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\Typora\" \"$persist_dir\\AppData\" -Migrate",
+            "",
+            "ensure \"$persist_dir\\AppData\\themes\"",
+            "Invoke-Download \"https://alist.xrgzs.top/d/pxy/Software/Typora/themes/lapis.css\" \"$persist_dir\\AppData\\themes\\lapis.css\"",
+            "Invoke-Download \"https://alist.xrgzs.top/d/pxy/Software/Typora/themes/lapis-dark.css\" \"$persist_dir\\AppData\\themes\\lapis-dark.css\"",
+            "",
+            "if ($global) {",
+            "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+            "} else {",
+            "    $registry_scope = \"HKEY_CURRENT_USER\"",
+            "}",
+            "",
+            "@\"",
+            "Windows Registry Editor Version 5.00",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.markdown\\OpenWithProgids]",
+            "\"Typora.markdown\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.md]",
+            "@=\"Typora.md\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.md\\ShellNew]",
+            "\"NullFile\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.md\\OpenWithProgids]",
+            "\"Typora.md\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdown\\OpenWithProgids]",
+            "\"Typora.mdown\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mkd\\OpenWithProgids]",
+            "\"Typora.mkd\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mmd\\OpenWithProgids]",
+            "\"Typora.mmd\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.text\\OpenWithProgids]",
+            "\"Typora.text\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Applications\\Typora.exe\\SupportedTypes]",
+            "\".markdown\"=\"\"",
+            "\".md\"=\"\"",
+            "\".mdown\"=\"\"",
+            "\".mkd\"=\"\"",
+            "\".mmd\"=\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.markdown]",
+            "@=\"Markdown File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.markdown\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.markdown\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.md]",
+            "@=\"Markdown File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.md\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.md\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mdown]",
+            "@=\"Markdown File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mdown\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mdown\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mkd]",
+            "@=\"Markdown File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mkd\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mkd\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mmd]",
+            "@=\"Markdown File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\\shell]",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\\shell\\open]",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.text]",
+            "@=\"Text File\"",
+            "\"AppUserModelID\"=\"abnerworks.Typora\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.text\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\assets\\\\file.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Typora.text\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\\\" \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Typora.exe]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\Typora.exe\"",
+            "",
+            "\"@ | Set-Content -Path \"$dir\\install-typora.reg\"",
+            "",
+            "reg.exe import \"$dir\\install-typora.reg\""
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Typora\""
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM\"",
+            "} else {",
+            "    $registry_scope = \"HKCU\"",
+            "}",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.markdown\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.md\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.mdown\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.mkd\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.mmd\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.text\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Applications\\Typora.exe\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.markdown\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.md\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.mdown\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.mkd\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.text\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Typora.exe\" /f"
+        ]
+    },
+    "checkver": {
+        "url": "https://typora.io/releases/stable",
+        "regex": "<h2>([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.typora.io/windows/typora-setup-x64-$version.exe"
+            },
+            "32bit": {
+                "url": "https://download.typora.io/windows/typora-setup-ia32-$version.exe"
+            }
+        }
+    }
+}
