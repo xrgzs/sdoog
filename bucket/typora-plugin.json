@@ -1,0 +1,30 @@
+{
+    "version": "1.13.0",
+    "description": "Typora plugin. feature enhancement tool | Typora 插件，功能增强工具",
+    "homepage": "https://github.com/obgnail/typora_plugin",
+    "license": "MIT",
+    "depends": "typora",
+    "url": "https://github.com/obgnail/typora_plugin/releases/download/1.13.0/typora-plugin@v1.13.0.zip",
+    "hash": "c9a5f2d2da138777d0c9eed3d7e5ed130695252462e922d00e4e0be3f9205af9",
+    "installer": {
+        "script": [
+            "ensure \"$(scoop prefix typora)\\resources\"",
+            "Copy-Item \"$dir\\plugin\" \"$(scoop prefix typora)\\resources\" -Recurse -Force -ErrorAction 'SilentlyContinue'",
+            "Push-Location \"$(scoop prefix typora)\\resources\\plugin\\bin\"",
+            ". \".\\install_windows.ps1\"",
+            "Pop-Location"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Push-Location \"$(scoop prefix typora)\\resources\\plugin\\bin\"",
+            ". \".\\uninstall_windows.ps1\"",
+            "Pop-Location",
+            "Remove-Item \"$(scoop prefix typora)\\resources\\plugin\" -Force -Recurse"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/obgnail/typora_plugin/releases/download/$version/typora-plugin@v$version.zip"
+    }
+}
