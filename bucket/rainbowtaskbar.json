@@ -1,0 +1,49 @@
+{
+    "version": "3.0.2",
+    "description": "Powerful, customizable Windows 10/11 taskbar effects.",
+    "homepage": "https://github.com/ad2017gd/RainbowTaskbar",
+    "license": "MIT",
+    "suggest": {
+        ".NET 8 Desktop Runtime": "windowsdesktop-runtime-lts"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.0.2/rnbtsk-x64.exe#/rnbtsk.exe",
+            "hash": "8ef9afd187b01f2996309ec6ffc3178f8cd9ddc17b32016ea05cd54f2ab28d03"
+        },
+        "32bit": {
+            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.0.2/rnbtsk.exe#/rnbtsk.exe",
+            "hash": "5e3d6b6010f6dd342137c073d7c705e03d8f6aff4fbcda5e5a5a0abf7d28f244"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\RainbowTaskbar\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\RainbowTaskbar\""
+    ],
+    "shortcuts": [
+        [
+            "rnbtsk.exe",
+            "RainbowTaskbar"
+        ]
+    ],
+    "persist": "settings.json",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/$version/rnbtsk-x64.exe#/rnbtsk.exe"
+            },
+            "32bit": {
+                "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/$version/rnbtsk.exe#/rnbtsk.exe"
+            }
+        }
+    }
+}
