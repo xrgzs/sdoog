@@ -1,5 +1,5 @@
 {
-    "version": "5.0.4.30422",
+    "version": "5.0.6.30713",
     "description": "一个很好用的文件对比软件，大家都明白。",
     "homepage": "https://www.mefcl.com/beyond-compare.html",
     "license": "Unlicense",
@@ -27,12 +27,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iqCWf2ggdung&type=down#/dl.7z",
-            "hash": "d4ce6320f3fde603ce14840fa0101439b8a74dac1886d8dbbadf06bcd7e4b20d"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/irL6o2p3rebi&type=down#/dl.7z",
+            "hash": "3b076b82315856f4d7905a947ff31843f65703def65f4f17a172733c4c168f94"
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i8wgM2ggdthe&type=down#/dl.7z",
-            "hash": "0e18c8930abe57025f5fdd359344259c85997ae370cd0709a30ce2ff5637b5ac"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihjGP2p3rdta&type=down#/dl.7z",
+            "hash": "70a9b9993205c3b3f2245b29ed9be752cc4cb1ef0273f17d1db4134e58db0350"
         }
     },
     "bin": "BCompare.exe",
