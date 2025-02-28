@@ -1,10 +1,10 @@
 {
-    "version": "5.0.5.30614",
+    "version": "5.0.6.30713",
     "description": "Beyond Compare 5 (zh-cn)",
     "homepage": "https://www.scootersoftware.com",
     "license": "Proprietary",
-    "url": "https://www.scootersoftware.com/files/BCompare-zh-5.0.5.30614.exe",
-    "hash": "600be72c56e72410ed5bb08bdeae14a15a597510acf4bc89f9c5930d4279601d",
+    "url": "https://www.scootersoftware.com/files/BCompare-zh-5.0.6.30713.exe",
+    "hash": "6e42b6fd6ccd05a96312addbfb65599e92fdaa368030163f9d7b06c29fd455f7",
     "depends": "innounp",
     "pre_install": [
         "function New-PersistFile([String] $path) {",
