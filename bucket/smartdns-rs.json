@@ -1,0 +1,46 @@
+{
+    "version": "0.10.0",
+    "description": "A cross platform local DNS server (Dnsmasq like) written in rust to obtain the fastest website IP for the best Internet experience, supports DoT, DoQ, DoH, DoH3.",
+    "homepage": "https://github.com/mokeyish/smartdns-rs",
+    "license": "GPL-3.0-only",
+    "notes": [
+        "It is still under development, please do not use it in production environment, welcome to try and provide feedback.",
+        "Please refer to https://github.com/mokeyish/smartdns-rs/blob/main/TODO.md for the function coverage"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.10.0/smartdns-x86_64-pc-windows-msvc-v0.10.0.zip",
+            "hash": "bdf1c98b32dcbe684260aec91386deb8cc77bf38907dd59e27e3fc3997e7d2f2",
+            "extract_dir": "smartdns-x86_64-pc-windows-msvc"
+        },
+        "32bit": {
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.10.0/smartdns-i686-pc-windows-msvc-v0.10.0.zip",
+            "hash": "b37c49891d0b912a1cbde412772a24b6760276b665df26fb5284b83d772eddff",
+            "extract_dir": "smartdns-i686-pc-windows-msvc"
+        },
+        "arm64": {
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.10.0/smartdns-aarch64-pc-windows-msvc-v0.10.0.zip",
+            "hash": "3dc32bd713b61458344d41b5ae1ac6cb3a6308e7a4dfe8008c381a3daa54e22a",
+            "extract_dir": "smartdns-aarch64-pc-windows-msvc"
+        }
+    },
+    "bin": "smartdns.exe",
+    "persist": [
+        "conf_files",
+        "smartdns.conf"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v$version/smartdns-x86_64-pc-windows-msvc-v$version.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v$version/smartdns-i686-pc-windows-msvc-v$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v$version/smartdns-aarch64-pc-windows-msvc-v$version.zip"
+            }
+        }
+    }
+}
