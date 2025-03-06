@@ -1,13 +1,13 @@
 {
     "##": "苏妈NB，指定官网爬取会卡死",
-    "version": "24.12.1",
+    "version": "25.3.1",
     "description": "AMD Software: Adrenalin Edition Driver Including Vega and Polaris Series Graphics Support for Windows® 10 & Windows® 11 64-bit",
     "homepage": "https://github.com/24HourSupport/CommonSoftware",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.12.1-win10-win11-dec-rdna-combined.exe#/dl.7z",
-            "hash": "adeeefb6c60908c2eb92058e6856233f7693a9a9ca1142afe54128b1ad0d325c"
+            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-25.3.1-win10-win11-march-rdna-combined.exe#/dl.7z",
+            "hash": "8859b39e3520a9d7f0fed3a25134407c63926ff404d806d53965d4206cdcb62b"
         }
     },
     "extract_to": "installer",
