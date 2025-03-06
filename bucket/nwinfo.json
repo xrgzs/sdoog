@@ -1,10 +1,10 @@
 {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "NWinfo is a Win32 program that allows you to obtain system and hardware information.",
     "homepage": "https://github.com/a1ive/nwinfo/",
     "license": "Unlicense",
-    "url": "https://github.com/a1ive/nwinfo/releases/download/v1.1.1/nwinfo.zip",
-    "hash": "c8be910380417d45311599d7024787896961e5fa433bad79b694c7f5bb0f6952",
+    "url": "https://github.com/a1ive/nwinfo/releases/download/v1.1.2/nwinfo.zip",
+    "hash": "8711b62b239d03319ff13837eeb51ab07ea08737bb2f6c72d9771db77dae0d70",
     "extract_dir": "nwinfo",
     "architecture": {
         "64bit": {
