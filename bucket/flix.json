@@ -1,12 +1,12 @@
 {
-    "version": "1.2.2",
+    "version": "1.3.1",
     "description": "Flix 快传 | 像聊天一样传文件",
     "homepage": "https://flix.center/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/System/Windows/Other/Share/Flix/flix_win.1.2.2.exe",
-            "hash": "07756c381fd2a1941f851919bbdd2338dbcb110b93d905a65ea0a92b8857bbbb"
+            "url": "https://dl.xrgzs.top/d/pxy/System/Windows/Other/Share/Flix/flix_win.1.3.1.exe",
+            "hash": "82c07e43eb46568818e94454183d5e15b5f15f61e5e4f546e7873be1694dc196"
         }
     },
     "innosetup": true,
