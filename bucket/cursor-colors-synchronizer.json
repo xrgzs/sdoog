@@ -1,10 +1,10 @@
 {
-    "version": "3.3",
+    "version": "3.4",
     "description": "Synchronizes cursor colors with Windows",
     "homepage": "https://github.com/SunsetTechuila/Cursor-Colors-Synchronizer",
     "license": "Freeware",
-    "url": "https://github.com/SunsetTechuila/Cursor-Colors-Synchronizer/releases/download/v3.3/Cursor-Colors-Synchronizer.zip",
-    "hash": "038efa1cc7e8a34bc2fd2be889fbdfb72863453a23e7877edc91e8b8f7ee68bf",
+    "url": "https://github.com/SunsetTechuila/Cursor-Colors-Synchronizer/releases/download/v3.4/Cursor-Colors-Synchronizer.zip",
+    "hash": "eb353c8e64b69ff3adf4c204b10946ee27f5c74a56ddff7d11fce63636256b1c",
     "notes": "Run 'sudo CCS' to configure Cursor-Colors-Synchronizer",
     "pre_install": [
         "function New-PersistFile([String] $path) {",
