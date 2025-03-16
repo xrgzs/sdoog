@@ -1,0 +1,51 @@
+{
+    "version": "3.1.2.1",
+    "description": "SakuraFrp 启动器 Windows 用户界面",
+    "homepage": "https://www.natfrp.com/",
+    "license": "AGPL-3.0-or-later",
+    "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.1.2.1/SakuraLauncher.exe",
+    "hash": "md5:5cba68644d17f715081e6f3797c58c04",
+    "architecture": {
+        "64bit": {
+            "pre_install": "Get-ChildItem \"$dir\" '*,2.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
+        },
+        "32bit": {
+            "pre_install": "Get-ChildItem \"$dir\" '*,1.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
+        },
+        "arm64": {
+            "pre_install": "Get-ChildItem \"$dir\" '*,3.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',3') }"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\SakuraLauncher\" \"$persist_dir\\LocalAppData\" -Migrate",
+            "Remove-Item \"$dir\\*,*.exe\", \"$dir\\*,*.sig\" -Recurse -Force"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\123pan\""
+    ],
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "SakuraLauncher.exe",
+            "SakuraFrp 启动器"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.natfrp.com/cgi/v4/system/clients",
+        "jsonpath": "$.windows.ver"
+    },
+    "autoupdate": {
+        "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/$version/SakuraLauncher.exe",
+        "hash": {
+            "url": "https://www.natfrp.com/cgi/v4/system/clients",
+            "mode": "json",
+            "jsonpath": "$.windows.archs.default.hash"
+        }
+    }
+}
