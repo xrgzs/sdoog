@@ -1,12 +1,12 @@
 {
-    "version": "0.4.2",
+    "version": "0.4.3",
     "description": "如快 - 快速启动器 | 提升生产力",
     "homepage": "https://www.sofast.fun/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Blushyes/sofast-release/releases/download/v0.4.2/sofast_windows_v0.4.2_setup.exe#/dl.7z",
-            "hash": "a6da756d803f2daf2312045e1aac319d703e6b202d5c393fa3e07d7c3de389dc"
+            "url": "https://github.com/Blushyes/sofast-release/releases/download/v0.4.3/sofast_windows_v0.4.3_setup.exe#/dl.7z",
+            "hash": "b8a21f25046421d6aee260e18f59698273d88ad3127e813325cc6e6b331f7398"
         }
     },
     "bin": "sofast.exe",
