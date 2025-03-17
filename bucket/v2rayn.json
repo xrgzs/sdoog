@@ -1,5 +1,5 @@
 {
-    "version": "7.10.4",
+    "version": "7.10.5",
     "description": "A GUI client for Windows, Linux and macOS, support Xray and sing-box and others",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-or-later",
@@ -14,13 +14,13 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.10.4/v2rayN-windows-64-desktop.zip",
-            "hash": "29db4c7e197da7755e0dd085936e48635cf8972c2ced05c8c158d2bd0a76749a",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.10.5/v2rayN-windows-64-desktop.zip",
+            "hash": "1aab7fdedfa3f114247cb714a9cec8e62ecf6e85c21f4657695b5cabb5ddc554",
             "extract_dir": "v2rayN-windows-64"
         },
         "arm64": {
-            "url": "https://github.com/2dust/v2rayN/releases/download/7.10.4/v2rayN-windows-arm64-desktop.zip",
-            "hash": "4b885c862615481a6d46f2ee23c2584c55577dc3d5be3543b70d9fc1e0c8c76a",
+            "url": "https://github.com/2dust/v2rayN/releases/download/7.10.5/v2rayN-windows-arm64-desktop.zip",
+            "hash": "b4078ef33338e0efbaa691d83383e6855c683f20664b46051825f2119453f30f",
             "extract_dir": "v2rayN-windows-arm64"
         }
     },
