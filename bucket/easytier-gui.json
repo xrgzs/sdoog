@@ -1,5 +1,5 @@
 {
-    "version": "2.2.2",
+    "version": "2.2.4",
     "description": "A simple, decentralized mesh VPN with WireGuard support.",
     "homepage": "https://easytier.cn/",
     "license": "Apache-2.0",
