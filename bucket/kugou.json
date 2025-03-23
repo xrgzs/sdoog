@@ -1,5 +1,5 @@
 {
-    "version": "20.0.31.27094",
+    "version": "20.0.31",
     "description": "酷狗音乐，就是歌多",
     "homepage": "https://www.kugou.com/",
     "license": "Proprietary",
@@ -64,8 +64,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://pc.qq.com/detail/14/detail_4514.html",
-        "regex": "最新([\\d.]+)官方正式版"
+        "url": "https://soft-api.safe.360.cn/main/v1/soft/info?softid=72",
+        "jsonpath": "$.data.version"
     },
     "autoupdate": {
         "url": "http://download.kugou.com/download/kugou_pc#/dl.7z"
