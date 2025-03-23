@@ -14,6 +14,11 @@
             "微信（测试版）"
         ]
     ],
+    "extract_to": "Deploy",
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\Deploy\\install.7z\" $dir",
+        "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
     "post_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:APPDATA\\Tencent\\xwechat\" \"$persist_dir\\AppData\" -Migrate",
