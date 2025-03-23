@@ -1,0 +1,45 @@
+{
+    "version": "2.20.1",
+    "homepage": "http://www.verysync.com/",
+    "description": "一款高效的数据传输工具",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "http://dl.verysync.com/releases/v2.20.1/verysync-windows-amd64-v2.20.1.zip",
+            "hash": "67bbae6091c7ab7d3ef9447b8307cba0a7ac5b3751ee5199fe60c2baad1fc9b1",
+            "extract_dir": "verysync-windows-amd64-v2.20.1"
+        },
+        "32bit": {
+            "url": "http://dl.verysync.com/releases/v2.20.1/verysync-windows-386-v2.20.1.zip",
+            "hash": "668d4bdfaef8c96d1a77939f0b1e7ca31d4c18b95add6f9128ace9ce25f996d6",
+            "extract_dir": "verysync-windows-386-v2.20.1"
+        }
+    },
+    "bin": "verysync.exe",
+    "shortcuts": [
+        [
+            "verysync.exe",
+            "微力同步"
+        ]
+    ],
+    "persist": "config",
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://www.verysync.com/download.php?platform=windows-amd64\" | Get-RedirectedUrl1st"
+        ],
+        "regex": "verysync-windows-amd64-v(\\d+\\.\\d+\\.\\d+).zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://dl.verysync.com/releases/v$version/verysync-windows-amd64-v$version.zip",
+                "extract_dir": "verysync-windows-amd64-v$version"
+            },
+            "32bit": {
+                "url": "http://dl.verysync.com/releases/v$version/verysync-windows-386-v$version.zip",
+                "extract_dir": "verysync-windows-386-v$version"
+            }
+        }
+    }
+}
