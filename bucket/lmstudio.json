@@ -1,5 +1,5 @@
 {
-    "version": "0.3.13-2",
+    "version": "0.3.14-5",
     "homepage": "https://lmstudio.ai/",
     "description": "Discover, download, and run local LLMs",
     "license": {
@@ -8,13 +8,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://installers.lmstudio.ai/win32/x64/0.3.13-2/LM-Studio-0.3.13-2-x64.exe#/dl.7z",
-            "hash": "e822aa85f6a2f8fdba4e200834c39073a839fafcce8a9c700baf1bfa1fe12c1d",
+            "url": "https://installers.lmstudio.ai/win32/x64/0.3.14-5/LM-Studio-0.3.14-5-x64.exe#/dl.7z",
+            "hash": "b9de1a02697822a3c5455a91163e8ae7b425dce4059aa8b1b7bb359cffeb2d8a",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         },
         "arm64": {
-            "url": "https://installers.lmstudio.ai/win32/arm64/0.3.13-2/LM-Studio-0.3.13-2-arm64.exe#/dl.7z",
-            "hash": "2fcf75a2efa9bcceb1676fc87067da0a384badaa3bc5723837046390203bb5d8",
+            "url": "https://installers.lmstudio.ai/win32/arm64/0.3.14-5/LM-Studio-0.3.14-5-arm64.exe#/dl.7z",
+            "hash": "8da414ce8ca3e202788c2cfcebc9e979a0e8a534fcc4d47fc4d24c4348e85281",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\""
         }
     },
