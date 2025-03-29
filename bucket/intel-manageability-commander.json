@@ -1,0 +1,40 @@
+{
+    "version": "2.4.0",
+    "description": "Intel® Manageability Commander is a lightweight console used to connect with and utilize the features of Intel® Active Management Technology (Intel® AMT).",
+    "homepage": "https://www.intel.com/content/www/us/en/download/18796/intel-manageability-commander.html",
+    "license": "Proprietary",
+    "extract_dir": "PFiles\\Intel\\Intel Manageability Commander",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloadmirror.intel.com/27807/IMCInstaller-2.4.0.msi",
+            "hash": "337609a035769f077b250b2dcc41b189d54cd86089ad08f20c3358afcd6b92b3"
+        }
+    },
+    "pre_install": [
+        "Invoke-Download \"https://github.com/electron/electron/releases/download/v8.0.3/electron-v8.0.3-win32-ia32.zip\" \"$dir\\electron.zip\"",
+        "Expand-Archive -Path \"$dir\\electron.zip\" -DestinationPath $dir -Force",
+        "Remove-Item \"$dir\\electron.zip\" -Force"
+    ],
+    "shortcuts": [
+        [
+            "electron.exe",
+            "Intel Manageability Commander",
+            "",
+            "resources/app/images/imc.ico"
+        ]
+    ],
+    "checkver": {
+        "regex": "(?<url>https://downloadmirror.intel.com/.*/IMCInstaller-([\\d.]+).msi)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchUrl",
+                "hash": {
+                    "url": "https://www.intel.com/content/www/us/en/download/18796/intel-manageability-commander.html",
+                    "regex": "SHA256: ([a-fA-F0-9]{64})"
+                }
+            }
+        }
+    }
+}
