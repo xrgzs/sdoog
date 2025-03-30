@@ -1,0 +1,32 @@
+{
+    "version": "1.0.5.2S",
+    "description": "小米应用商店 PC 版",
+    "homepage": "https://hyperos.mi.com/continuity",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://mi-file.njsyue.com/as/file/upg/MStore_1.0.5.2S_Setup.exe#/dl.7z",
+            "hash": "2c603d955b7d118c1653117bfbe8e9f96736e75999fb5d1e2d34969141247fb7"
+        }
+    },
+    "shortcuts": [
+        [
+            "MiAppStore.exe",
+            "小米应用商店"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://mi.njsyue.com/as-service/as1.0/app/pub/common/latestDown\" | Get-RedirectedUrl1st"
+        ],
+        "regex": "https://mi-file.njsyue.com/as/file/upg/MStore_(.*)_Setup.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://mi-file.njsyue.com/as/file/upg/MStore_$version_Setup.exe#/dl.7z"
+            }
+        }
+    }
+}
