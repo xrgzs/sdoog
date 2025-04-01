@@ -1,5 +1,5 @@
 {
-    "version": "8.0.0068p",
+    "version": "8.0.0069p",
     "description": "The Industry’s Most Powerful SSH Client (Free for Home/School)",
     "homepage": "https://www.xshell.com/en/free-for-home-school/",
     "license": {
@@ -10,8 +10,8 @@
         "isx",
         "gsudo"
     ],
-    "url": "https://cdn.netsarang.net/2e876904/Xshell-8.0.0068p.exe#/dl.exe",
-    "hash": "491e619e78ab9952a233acf72110988593a68aab100637772ddf2a8139969db8",
+    "url": "https://cdn.netsarang.net/e07c1105/Xshell-8.0.0069p.exe#/dl.exe",
+    "hash": "b9bf7568360d641cc9620604ad851e6f3ecc3763dc4abb285a608ec08f485bf1",
     "notes": [
         "* Known issue:",
         "  - 'Initialize Flexnet Service failed' is displayed when you start Xshell every time.",
