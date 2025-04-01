@@ -1,6 +1,6 @@
 {
     "version": "4.0.3.22",
-    "description": "微信 Windows 版 QT测试版",
+    "description": "微信 QT多桌面端统一版",
     "homepage": "https://pc.weixin.qq.com/",
     "license": {
         "identifier": "Proprietary",
@@ -11,7 +11,7 @@
     "shortcuts": [
         [
             "Weixin.exe",
-            "微信（测试版）"
+            "微信"
         ]
     ],
     "extract_to": "Deploy",
