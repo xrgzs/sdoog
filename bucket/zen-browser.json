@@ -12,11 +12,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/zen-browser/desktop/releases/download/1.11b/zen.installer.exe#/dl.7z",
-            "hash": "ed32c03faceb259235a0a583b6c932c7ae45711d043118d8c05afbd9c3ed6c9c"
+            "hash": "8555479f93d36b2223ae25e0d58775d5894b54f26b61def6d12be4b443dd875f"
         },
         "arm64": {
             "url": "https://github.com/zen-browser/desktop/releases/download/1.11b/zen.installer-arm64.exe#/dl.7z",
-            "hash": "fd6923a2c191a51a4879d604a4932b4e252a15c4d5212ac53294a67432c8586c"
+            "hash": "809abe790d1153d1a2c5db1423929a54dbeacc12b51952046f1d1e9d9bfdc01e"
         }
     },
     "extract_dir": "core",
