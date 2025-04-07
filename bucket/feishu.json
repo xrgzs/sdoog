@@ -6,8 +6,16 @@
         "identifier": "EULA",
         "url": "https://www.feishu.cn/en/terms"
     },
-    "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/205ce781/Feishu-win32_ia32-7.40.6-signed.exe#/dl.7z",
-    "hash": "md5:6bf321132e83317048d4cc01e1f19138",
+    "architecture": {
+        "32bit": {
+            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/205ce781/Feishu-win32_ia32-7.40.6-signed.exe#/dl.7z",
+            "hash": "md5:6bf321132e83317048d4cc01e1f19138"
+        },
+        "64bit": {
+            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/4882b2be/Feishu-win32_x64-7.40.6-signed.exe#/dl.7z",
+            "hash": "md5:f4a773e96cf9dc683e90dc4674269b93"
+        }
+    },
     "extract_to": "app",
     "shortcuts": [
         [
@@ -28,14 +36,28 @@
         "Remove-Junction \"$env:APPDATA\\LarkShell\""
     ],
     "checkver": {
-        "url": "https://www.feishu.cn/api/downloads",
-        "regex": "(?sm)Windows.*?https://(?<path>[\\w.-/].*?)-(?<version>[\\d.]+)(?<suffix>[\\w.-].*?).exe"
+        "script": [
+            "$resp = Invoke-RestMethod 'https://www.feishu.cn/api/downloads'",
+            "return $resp.versions.Windows.version_number + '=====' + $resp.versions.Windows.download_link + '=====' + $resp.versions.Windows_x64.download_link"
+        ],
+        "regex": "Windows@V(.*)=====(?<url32>.*)=====(?<url64>.*)"
     },
     "autoupdate": {
-        "url": "https://$matchPath-$version$matchSuffix.exe#/dl.7z",
-        "hash": {
-            "url": "https://www.feishu.cn/api/downloads",
-            "jsonpath": "$.versions.Windows.hash"
+        "architecture": {
+            "32bit": {
+                "url": "$matchUrl32#/dl.7z",
+                "hash": {
+                    "url": "https://www.feishu.cn/api/downloads",
+                    "jsonpath": "$.versions.Windows.hash"
+                }
+            },
+            "64bit": {
+                "url": "$matchUrl64#/dl.7z",
+                "hash": {
+                    "url": "https://www.feishu.cn/api/downloads",
+                    "jsonpath": "$.versions.Windows_x64.hash"
+                }
+            }
         }
     }
 }
