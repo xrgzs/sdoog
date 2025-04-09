@@ -1,13 +1,13 @@
 {
-    "version": "7.60.7300",
+    "version": "7.65.7400",
     "description": "AIDA64（原EVEREST）是一款综合性的系统硬件检测工具，号称最权威的电脑硬件检测，监控与测试软件。",
     "homepage": "https://www.423down.com/887.html",
     "license": {
         "identifier": "Shareware",
         "url": "https://www.aida64.com/licensing"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i0kz72o7ck9a&type=down#/dl.7z",
-    "hash": "fb542d48fee9f5759a475f358c8b79ccd532eadea5e2d235233c9234a271a040",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/in77O2t11fkj&type=down#/dl.7z",
+    "hash": "e0c9fd12f9a094f3d49e65f39399c6c9f930b3f905b9ef97799a7e4a3d77c1e1",
     "extract_dir": "AIDA64 Extreme",
     "persist": "aida64.ini",
     "shortcuts": [
