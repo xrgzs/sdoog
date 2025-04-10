@@ -1,0 +1,46 @@
+{
+    "version": "3.2",
+    "description": "跨平台、轻量易用的开源C/C++集成开发环境",
+    "homepage": "http://royqh.net/redpandacpp/",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ijcYb2gg3u6j&type=down#/dl.7z",
+            "hash": "7b78c2503364cb575c94e031bab50613fcbda1f30bc1f154dd0d4a28ef8b7eee"
+        },
+        "32bit": {
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i3QIj2gg3pve&type=down#/dl.7z",
+            "hash": "69df268883fe7d53351f565d61808f85fa5d97aa781250c6ad2a39bc08885218"
+        }
+    },
+    "shortcuts": [
+        [
+            "RedPandaIDE.exe",
+            "小熊猫C++"
+        ]
+    ],
+    "persist": "config",
+    "installer": {
+        "script": "Remove-Item \"$dir\\`$*\" -Recurse -Force"
+    },
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$l = Get-LanzouList \"https://wwe.lanzoui.com/b01os0mwd\" f0tp",
+            "$fa = $l | Where-Object { $_.name_all -like \"RedPanda.C++.*.win64.MinGW64*Setup.exe\" } | Select-Object -First 1",
+            "$fb = $l | Where-Object { $_.name_all -like \"RedPanda.C++.*.win32.MinGW32*Setup.exe\" } | Select-Object -First 1",
+            "$fa.name_all + '=====' + $fa.id + '=====' + $fb.id"
+        ],
+        "regex": "RedPanda.C\\+\\+.(.*).win64.MinGW64.*Setup.exe=====(?<sharekeya>.*)=====(?<sharekeyb>.*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/dl.7z"
+            }
+        }
+    }
+}
