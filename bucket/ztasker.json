@@ -1,10 +1,10 @@
 {
     "homepage": "http://www.everauto.net",
     "description": "一个定时/热键自动化任务工具，可以采用定时或热键的方式执行多种自动化任务.",
-    "version": "2.1.4",
+    "version": "2.1.5",
     "license": "Freeware",
-    "url": "https://everauto.net/down/zTasker_2.1.4_%E7%BB%BF%E8%89%B2%E7%89%88.7z#/dl.7z",
-    "hash": "64f6b69446698b544986a52761538648cb82d290f1bda619904701e4c4452645",
+    "url": "https://everauto.net/down/zTasker_2.1.5_%E7%BB%BF%E8%89%B2%E7%89%88.7z#/dl.7z",
+    "hash": "5c89cfac789babc133f713b7b1b4f1636a7bc2565dc46197bdcff84fe59bc9e1",
     "shortcuts": [
         [
             "zTasker.exe",
