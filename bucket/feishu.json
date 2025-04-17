@@ -1,5 +1,5 @@
 {
-    "version": "7.40.6",
+    "version": "7.41.5",
     "homepage": "https://www.feishu.cn/",
     "description": "Connect with teammates anytime and anywhere",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "32bit": {
-            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/205ce781/Feishu-win32_ia32-7.40.6-signed.exe#/dl.7z",
-            "hash": "md5:6bf321132e83317048d4cc01e1f19138"
+            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/65bfc192/Feishu-win32_ia32-7.41.5-signed.exe#/dl.7z",
+            "hash": "md5:f53baac1d251ad8429cfd2350300a31a"
         },
         "64bit": {
-            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/4882b2be/Feishu-win32_x64-7.40.6-signed.exe#/dl.7z",
-            "hash": "md5:f4a773e96cf9dc683e90dc4674269b93"
+            "url": "https://sf3-cn.feishucdn.com/obj/ee-appcenter/66757a9c/Feishu-win32_x64-7.41.5-signed.exe#/dl.7z",
+            "hash": "md5:550421d2003766a0c849b149400dbf3d"
         }
     },
     "extract_to": "app",
