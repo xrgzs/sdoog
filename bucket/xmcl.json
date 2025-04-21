@@ -1,16 +1,16 @@
 {
-    "version": "0.50.0",
+    "version": "0.50.1",
     "description": "X Minecraft Launcher (XMCL) 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft Forge、 Fabric、Quilt、CurseForge 和 Modrinth。",
     "homepage": "https://xmcl.app/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v0.50.0/xmcl-0.50.0-win32-x64.zip",
-            "hash": "3ce5c6923c164491e74c53483a9d40d73c7b7d0d3a86ce3d3415d45d6e03f887"
+            "url": "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v0.50.1/xmcl-0.50.1-win32-x64.zip",
+            "hash": "6c78bd7ffc1afcf2f89547f9b5e333f4133c457834a9682518e44153059a3905"
         },
         "32bit": {
-            "url": "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v0.50.0/xmcl-0.50.0-win32-ia32.zip",
-            "hash": "f8c21983165de32e6fe03cb6251d9a1f9e48a9da014d25e0995dd56df49bb878"
+            "url": "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v0.50.1/xmcl-0.50.1-win32-ia32.zip",
+            "hash": "c9e1f6ea9868985eb4bb11d203eedd0e7c583ea17a38cf8786f7a5476404ee80"
         }
     },
     "shortcuts": [
