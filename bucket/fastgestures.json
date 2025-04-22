@@ -1,16 +1,16 @@
 {
-    "version": "2.2.45",
+    "version": "2.2.46",
     "description": "鼠标/触控板/屏系统全局手势",
     "license": "Freeware",
     "homepage": "https://github.com/zhaokeli/FastGestures",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.45/FastGestures-Green-v2.2.45_x64.zip",
-            "hash": "88e5258edb044bc711aa6bf48e044c8c7b0b669890c269a5c1a4add604d1d882"
+            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.46/FastGestures-Green-v2.2.46_x64.zip",
+            "hash": "4d1f488795fd20a8a8a3a0e2fd4865ed1c2fd124496b437f76802085f86f606e"
         },
         "32bit": {
-            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.45/FastGestures-Green-v2.2.45_x64.zip",
-            "hash": "88e5258edb044bc711aa6bf48e044c8c7b0b669890c269a5c1a4add604d1d882"
+            "url": "https://github.com/zhaokeli/FastGestures/releases/download/2.2.46/FastGestures-Green-v2.2.46_x64.zip",
+            "hash": "4d1f488795fd20a8a8a3a0e2fd4865ed1c2fd124496b437f76802085f86f606e"
         }
     },
     "shortcuts": [
