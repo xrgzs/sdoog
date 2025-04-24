@@ -1,0 +1,97 @@
+{
+    "version": "1.39.2",
+    "description": "黑盒语音，玩家开黑大本营",
+    "homepage": "https://chat.xiaoheihe.cn/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://macc.max-c.com/chat/pc/chat_installer_x64_new_1.39.2.873.exe#/dl.7z",
+            "hash": "5bef1db21ba26360b5a1bfe39e611b7503c924b98f5674fd792c9b6787545301"
+        }
+    },
+    "extract_dir": "1.39.2",
+    "shortcuts": [
+        [
+            "HeyboxChat.exe",
+            "黑盒语音"
+        ]
+    ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\heybox-chat-electron\" \"$persist_dir\\APPDATA\\heybox-chat-electron\" -Migrate",
+        "if ($global) {",
+        "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+        "} else {",
+        "    $registry_scope = \"HKEY_CURRENT_USER\"",
+        "}",
+        "$instdir = $($dir -replace '\\\\', '\\\\')",
+        "@\"",
+        "Windows Registry Editor Version 5.00",
+        "[$registry_scope\\SOFTWARE\\Classes\\heychat]",
+        "\"URL Protocol\"=\"$instdir\\\\HeyboxChat.exe\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\heychat\\shell\\open\\command]",
+        "@=\"\\\"$instdir\\\\HeyboxChat.exe\\\" \\\"--protocol=%1\\\"\"",
+        "[$registry_scope\\SOFTWARE\\WOW6432Node\\Qingfeng\\HeyboxChat]",
+        "\"InstallPath\"=\"$instdir\"",
+        "[$registry_scope\\SOFTWARE\\WOW6432Node\\Qingfeng\\HeyboxChat\\version]",
+        "\"asarVersion\"=\"$version\"",
+        "\"current\"=\"$version\"",
+        "\"LastCheckTime\"=\"0\"",
+        "\"nextLaunchVersion\"=\"$version\"",
+        "[$registry_scope\\SOFTWARE\\Qingfeng\\HeyboxChat\\version]",
+        "\"asarVersion\"=\"$version\"",
+        "\"current\"=\"$version\"",
+        "\"LastCheckTime\"=\"0\"",
+        "\"nextLaunchVersion\"=\"$version\"",
+        "[HEKY_CURRENT_USER\\SOFTWARE\\Qingfeng\\HeyboxChat\\version]",
+        "\"asarVersion\"=\"$version\"",
+        "\"current\"=\"$version\"",
+        "\"LastCheckTime\"=\"0\"",
+        "\"nextLaunchVersion\"=\"$version\"",
+        "\"@ | Set-Content -Path \"$dir\\install.reg\" -Encoding Unicode",
+        "reg import \"$dir\\install.reg\"",
+        "",
+        "ensure \"$env:ProgramData\\Qingfeng\\heyboxchat\"",
+        "@\"",
+        "{",
+        "  \"InstallPath\": \"$instdir\",",
+        "  \"next\": \"\",",
+        "  \"last\": \"$version\",",
+        "  \"current\": \"$version\",",
+        "  \"asarVersion\": \"$version\",",
+        "  \"nextLaunchVersion\": \"$version\",",
+        "  \"LastCheckTime\": 0",
+        "}",
+        "\"@ | Set-Content -Path \"$env:ProgramData\\Qingfeng\\heyboxchat\\version.json\""
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\heybox-chat-electron\"",
+        "if ($global) {",
+        "    $registry_scope = \"HKLM\"",
+        "} else {",
+        "    $registry_scope = \"HKCU\"",
+        "}",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\heychat\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\WOW6432Node\\Qingfeng\\HeyboxChat\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\WOW6432Node\\Qingfeng\\HeyboxChat\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Qingfeng\\HeyboxChat\" /f",
+        "reg.exe delete \"HKCU\\SOFTWARE\\Qingfeng\\HeyboxChat\" /f",
+        "Remove-Item \"$env:ProgramData\\Qingfeng\\heyboxchat\" -Recurse -Force"
+    ],
+    "checkver": {
+        "url": "https://chat.xiaoheihe.cn/chatroom/settings/get_history_version?os_type=web&version=999.0.4&x_os_type=Windows&type=64&hkey=S2UYS97&_time=1&nonce=1",
+        "jsonpath": "$.result.list[0].download_url",
+        "regex": "(?<filename>chat_installer_x64_new_(\\d+\\.\\d+\\.\\d+)\\.\\d+\\.exe)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://macc.max-c.com/chat/pc/$matchFilename#/dl.7z"
+            }
+        },
+        "extract_dir": "$version"
+    }
+}
