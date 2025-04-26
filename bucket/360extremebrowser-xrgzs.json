@@ -1,0 +1,71 @@
+{
+    "version": "22.3.5096.64",
+    "description": "360 Extreme Browser, super fast browsing, extremely smooth.",
+    "homepage": "https://browser.360totalsecurity.com/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://free.360totalsecurity.com/se/360extremebrowser_setup_22.3.5096.64.exe#/dl.7z",
+            "hash": "e7375b7294becf99be16546a5e06b531891b394aeaf6fa471dd92e78879a75b8"
+        }
+    },
+    "shortcuts": [
+        [
+            "360extremebrowser.exe",
+            "360 Extreme Browser"
+        ]
+    ],
+    "persist": "User Data",
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\chrome.7z\" -ExtractDir 'Chrome-bin' -Removal",
+            "'ExtFeedWeibo', 'ExtWebmail', 'ExtYouxi', 'gameplugin', 'guard', 'huabao', 'seguard', 'sesvc', 'sesvr' | ForEach-Object {",
+            "    Remove-Item \"$dir\\components\\$_\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}",
+            "",
+            "'360BDoctorExt' | ForEach-Object {",
+            "    Remove-Item \"$dir\\$version\\$_\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}",
+            "",
+            "'360net.dll', '360NetBase.dll', '360P2SP.dll', 'ceup.exe', 'chromeup.dll', 'CombineExt.dll', 'livep.dat', 'LiveUpd360.dll', 'PDown.dll', 'Safelive.dll', 'chrome.7z', 'SodaDownloader.exe' | ForEach-Object {",
+            "    Remove-Item \"$dir\\$version\\installer\\$_\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}",
+            "",
+            "'360bdoctor.exe', 'cloudurls.dat', 'KitTip.dll', 'safe505.dll', 'safehp.exe', 'sesafe64.dll', 'updatecfg.ini', 'urllibauth.dat', 'urlproc.dll', 'urlproc64.dll' | ForEach-Object {",
+            "    Remove-Item \"$dir\\$version\\$_\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "}",
+            "",
+            "'errorpage.zip', 'newtab.zip' | ForEach-Object {",
+            "    Remove-Item \"$dir\\$version\\$_\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    Invoke-WebRequest \"https://alist.xrgzs.top/d/pxy/Software/360/csex/$_\" -OutFile \"$dir\\$version\\$_\"",
+            "}",
+            "",
+            "if (-not (Test-Path \"$persist_dir\\User Data\\Default\\Preferences\")) {",
+            "    Invoke-WebRequest \"https://alist.xrgzs.top/d/pxy/Software/360/csex/UserData.exe\" -OutFile \"$dir\\UserData.rar\"",
+            "    Expand-7zipArchive -Path \"$dir\\UserData.rar\" -ExtractDir 'User Data' -DestinationPath \"$persist_dir\\User Data\" -Removal",
+            "}"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    reg.exe delete HKCU\\SOFTWARE\\360ExtremeBrowser /f",
+            "}"
+        ]
+    },
+    "checkver": {
+        "regex": "https://free.360totalsecurity.com/se/360extremebrowser_setup_([\\d.]+).exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://free.360totalsecurity.com/se/360extremebrowser_setup_$version.exe#/dl.7z"
+            }
+        }
+    }
+}
