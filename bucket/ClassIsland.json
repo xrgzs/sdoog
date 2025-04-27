@@ -1,10 +1,10 @@
 {
-    "version": "1.6.1.1",
+    "version": "1.6.2.0",
     "description": "一款适用于班级多媒体屏幕的课表的信息显示工具，可以一目了然地显示各种信息。",
     "homepage": "https://classisland.tech/",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.6.1.1/ClassIsland.zip",
-    "hash": "a65bfd690114b8cc4b80bcdee63dcd62577a09d4d43788f3d9d9bbedc76e1ade",
+    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.6.2.0/ClassIsland.zip",
+    "hash": "12a2a10b4d7ae51bef05021e6fabb4b7a925a44ea8e323dd091c3f6e13409b2a",
     "suggest": {
         "Microsoft .NET 8.0 Desktop Runtime": "windowsdesktop-runtime-lts"
     },
