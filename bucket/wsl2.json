@@ -3,6 +3,9 @@
     "description": "(sudo) Windows Subsystem for Linux (WSL) 2 Installer",
     "homepage": "https://docs.microsoft.com/windows/wsl",
     "license": "Proprietary",
+    "suggest": {
+        "usbipd": "usbipd-np"
+    },
     "architecture": {
         "64bit": {
             "url": "https://github.com/microsoft/WSL/releases/download/2.4.13/wsl.2.4.13.0.x64.msi#/wsl.msi_",

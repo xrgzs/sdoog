@@ -1,0 +1,34 @@
+{
+    "version": "5.0.0",
+    "description": "(sudo )Windows software for sharing locally connected USB devices to other machines, including Hyper-V guests and WSL 2. ",
+    "homepage": "https://github.com/dorssel/usbipd-win",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": " https://github.com/dorssel/usbipd-win/releases/download/v5.0.0/usbipd-win_5.0.0_x64.msi#/installer.exe",
+            "hash": "24b5c36e25086c2be9b753ad5761fce0e10925950aa8367d2f059dc7fdfc1f36"
+        },
+        "arm64": {
+            "url": "https://github.com/dorssel/usbipd-win/releases/download/v5.0.0/usbipd-win_5.0.0_arm64.msi#/installer.exe",
+            "hash": "98e53bdf43f0b564f992e5a6b1e50a67b5b350feb4551e1490ffac0599c23e1e"
+        }
+    },
+    "installer": {
+        "script": [
+            "Move-Item \"$dir\\installer.exe\" \"$dir\\installer.msi\"",
+            "Invoke-ExternalCommand \"msiexec.exe\" -ArgumentList @(\"/package `\"$dir\\installer.msi`\"\", \"/quiet\") -Quiet",
+            "Remove-Item \"$dir\\installer.msi\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": " https://github.com/dorssel/usbipd-win/releases/download/v$version/usbipd-win_$version_x64.msi#/installer.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/dorssel/usbipd-win/releases/download/v$version/usbipd-win_$version_arm64.msi#/installer.exe"
+            }
+        }
+    }
+}
