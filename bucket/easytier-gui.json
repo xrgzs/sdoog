@@ -5,12 +5,12 @@
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.2/easytier-gui_2.2.2_x64-setup.exe#/dl.7z",
-            "hash": "52bf8630fab2e08169e3976893cb8d3f90b159a973c2162715bbc534c63d324a"
+            "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.4/easytier-gui_2.2.4_x64-setup.exe#/dl.7z",
+            "hash": "51c14d69c098fd841ee1a1760ccb76c71f9e72ac872055e98a689e947ff42963"
         },
         "arm64": {
-            "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.2/easytier-gui_2.2.2_arm64-setup.exe#/dl.7z",
-            "hash": "0182f33eeab4212c8ee8c539d086da2d2e83c19b781bedf95c59d64c9cb83af4"
+            "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.4/easytier-gui_2.2.4_arm64-setup.exe#/dl.7z",
+            "hash": "6d049604f39efd08f2e37d8bbf7f7f384582e0323d39a3ca18b3b1c0147fc1f8"
         }
     },
     "bin": "easytier-gui.exe",
@@ -39,10 +39,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.2/easytier-gui_2.2.2_x64-setup.exe#/dl.7z"
+                "url": "https://github.com/EasyTier/EasyTier/releases/download/v$version/easytier-gui_$version_x64-setup.exe#/dl.7z"
             },
             "arm64": {
-                "url": "https://github.com/EasyTier/EasyTier/releases/download/v2.2.2/easytier-gui_2.2.2_arm64-setup.exe#/dl.7z"
+                "url": "https://github.com/EasyTier/EasyTier/releases/download/v$version/easytier-gui_$version_arm64-setup.exe#/dl.7z"
             }
         }
     }
