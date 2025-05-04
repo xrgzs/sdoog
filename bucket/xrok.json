@@ -1,10 +1,10 @@
 {
     "description": "潇然一键装机助理，让人人都成电脑系统装机大师",
-    "version": "6.25.4.29",
+    "version": "6.25.5.4",
     "homepage": "https://www.xrgzs.top/xrok",
     "license": "Freeware",
     "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z",
-    "hash": "6be10dc9bf5ab9567792278741577b5ad1154b356416105d254877ecf57ea45f",
+    "hash": "818b48d93771676164908a635e5c2b20dcbced64674ed5c2e60263db97870534",
     "bin": [
         [
             "UjyQii.exe",
