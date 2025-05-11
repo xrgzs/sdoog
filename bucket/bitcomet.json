@@ -1,5 +1,5 @@
 {
-    "version": "2.12.1.14",
+    "version": "2.13.4.13",
     "homepage": "https://www.bitcomet.com/",
     "license": {
         "identifier": "freeware for non-commercial use",
@@ -8,8 +8,8 @@
     "suggest": {
         "PeerBanHelper": "sdoog/peerbanhelper"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1XHj2kx6ixi&type=down#/dl.7z",
-    "hash": "f73a04a1114780d45676ce996cdb04d7ada254053db07f51c19dec4e94144628",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i9BM72tlsfpg&type=down#/dl.7z",
+    "hash": "ef7084668f0599a1671c1382ba3743c69776eb3900f78700c9db1f9f2a86c2ae",
     "extract_dir": "BitComet",
     "persist": [
         "BitComet.xml",
@@ -47,10 +47,10 @@
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
-            "$f = Get-LanzouList \"https://www.lanzouw.com/b00zqjbkh\" 5q6j | Where-Object { $_.name_all -like \"BitComet_*_Greent.7z\" } | Select-Object -First 1",
+            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f1awgqb\" | Where-Object { $_.name_all -like \"BitComet-*.7z\" } | Select-Object -First 1",
             "$f.name_all + '=====' + $f.id"
         ],
-        "regex": "BitComet_v(.*)_Greent.7z=====(?<sharekey>.*)"
+        "regex": "BitComet-(.*)-Stable-Modify-x86-x64.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
         "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
