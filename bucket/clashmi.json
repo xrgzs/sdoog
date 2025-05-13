@@ -1,10 +1,10 @@
 {
-    "version": "1.0.0.43",
+    "version": "1.0.0.44",
     "description": "Clash Mihomo for iOS/Android",
     "homepage": "https://github.com/KaringX/clashmi",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/KaringX/clashmi/releases/download/v1.0.0.43/clashmi_1.0.0.43_windows_x64.zip",
-    "hash": "85ee9b57c52c720798da2dba95b2503de56fef1bb75c935a2d69c8c6a5b1c333",
+    "url": "https://github.com/KaringX/clashmi/releases/download/v1.0.0.44/clashmi_1.0.0.44_windows_x64.zip",
+    "hash": "6fccf4e58fb3caf640352969c84925e6a4defe1b79b91dd91961f06e50d66905",
     "shortcuts": [
         [
             "clashmi.exe",
