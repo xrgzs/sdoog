@@ -1,5 +1,5 @@
 {
-    "version": "2025.05.12.161020",
+    "version": "2025.05.13.010553",
     "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
     "homepage": "https://github.com/rustdesk/rustdesk",
     "license": "AGPL-3.0-only",
