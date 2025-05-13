@@ -10,12 +10,12 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.4.0-x86_64.msi",
-            "hash": "b6ddd2e30d400841b22d4ad8c1a2f43050b487bc07d382ff3d3d37cca653b0f5",
+            "hash": "1fea483ebc38273bf4c3694ca5be187746b3aa2e068e024e8291a3d7cc36e8f9",
             "extract_dir": "PFiles64\\RustDesk"
         },
         "32bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.4.0-x86-sciter.exe#/RustDesk.exe",
-            "hash": "a72c5c705107d98cc039207fd9b3ca8bbd6f31bb94df45463e3d71e1e1d1123d"
+            "hash": "f2147d955e5d3396ccb3eb873c07c3261aa9b7c687923029eea8e9b65bee514e"
         }
     },
     "shortcuts": [
