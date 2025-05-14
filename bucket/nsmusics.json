@@ -1,13 +1,13 @@
 {
-    "version": "1.5.4",
+    "version": "1.5.5",
     "description": "NSMusicS NineSong Cloud-Native Music Server/ Full platform Client，support navidrome, jellyfin, emby",
     "homepage": "https://github.com/Super-Badmen-Viper/NSMusicS",
     "license": "AGPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Super-Badmen-Viper/NSMusicS/releases/download/NSMusicS-v1.5.4/NSMusicS-Win-1.5.4-x64.zip",
-            "hash": "f55f7d63a5366e31b65b4b19c1a98ad130dc78eb05c478ddfa0a346274533bf2",
-            "extract_dir": "NSMusicS-Win-1.5.4-x64"
+            "url": "https://github.com/Super-Badmen-Viper/NSMusicS/releases/download/NSMusicS-v1.5.5/NSMusicS-Win-1.5.5-x64.zip",
+            "hash": "5bc968b89509dd8f614af51d50138417bb1ba5fec5cfdc99ceccd14d2a461a68",
+            "extract_dir": "NSMusicS-Win-1.5.5-x64"
         }
     },
     "shortcuts": [
