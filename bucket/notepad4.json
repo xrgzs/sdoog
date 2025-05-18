@@ -1,21 +1,21 @@
 {
-    "version": "25.01r5618",
+    "version": "25.05r5670",
     "description": "Notepad4 (Notepad2⨯2, Notepad2++) is a light-weight Scintilla based text editor for Windows with syntax highlighting, code folding, auto-completion and API list for many programming languages and documents, bundled with file browser plugin matepath.",
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/zufuliu/notepad4",
     "notes": "If you want to replace Windows Notepad UWP, please uninstall it first.",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.01r5618/Notepad4_HD_zh-Hans_ARM64_v25.01r5618.zip",
-            "hash": "e2696a28a8544d100234087838f9f49b05427471b39c37206bd96a044aad1292"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.05r5670/Notepad4_HD_zh-Hans_ARM64_v25.05r5670.zip",
+            "hash": "0482de40ff02995b81bebfc12a0b2aa1d40a783a868f1726ed70b98e63229f24"
         },
         "64bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.01r5618/Notepad4_HD_zh-Hans_x64_v25.01r5618.zip",
-            "hash": "de7286ba54805519d2e0e2f27192b86ebb30346b50c5f530213f306461babcb9"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.05r5670/Notepad4_HD_zh-Hans_x64_v25.05r5670.zip",
+            "hash": "2fbe2a8e23cdef5899f29608027b09c7e8de9aef6306a6c0cd731f0775414040"
         },
         "32bit": {
-            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.01r5618/Notepad4_zh-Hans_Win32_v25.01r5618.zip",
-            "hash": "d1316fde4433c6c85429f9d718674ac9b7cc88261362d600ad09f5acf2a414ba"
+            "url": "https://github.com/zufuliu/notepad4/releases/download/v25.05r5670/Notepad4_zh-Hans_Win32_v25.05r5670.zip",
+            "hash": "6f5505dcd01ffe03b51ee04d9abe64bad1e0a5173e6bf330f12a665317859188"
         }
     },
     "bin": [
