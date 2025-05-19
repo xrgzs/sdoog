@@ -1,13 +1,13 @@
 {
-    "version": "2.2.26",
+    "version": "2.2.27",
     "description": "A feature-rich screenshot program",
     "homepage": "https://github.com/xland/ScreenCapture",
     "license": {
         "identifier": "GPL-3.0-or-later",
         "url": "https://github.com/xland/ScreenCapture/blob/main/LICENSE"
     },
-    "url": "https://github.com/xland/ScreenCapture/releases/download/2.2.26/ScreenCapture.exe",
-    "hash": "96b9866110f7a8aa97617b9660c32303806b630b9006dd97a33e6f8592440907",
+    "url": "https://github.com/xland/ScreenCapture/releases/download/2.2.27/ScreenCapture.exe",
+    "hash": "a950c2735a28be1d502e0f41d45958cfc2db7e57b425fccaf9bf7d40d29bb521",
     "bin": "ScreenCapture.exe",
     "shortcuts": [
         [
