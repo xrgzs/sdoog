@@ -1,12 +1,12 @@
 {
-    "version": "3.9.8.5270",
+    "version": "3.9.9.5271",
     "description": "StartAllBack 是一个 Windows 11 下设置工具，可以改变开始菜单为经典样式，还可以更改管理器样式，增加菜单间距等，Windows 11 系统非常值得一试。",
     "homepage": "https://www.mefcl.com/startallback.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i4roc2ufnogb&type=down#/dl.exe",
-            "hash": "feb16a86cda2dd597d6c9efde10c7dcbbd4c2abbcdc8a32b842d4dc04e6daf61"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i8Kcy2ws1zcb&type=down#/dl.exe",
+            "hash": "83e180c62b6a09f7694ec3b1066776f78eccef9f79ea85c1c622b546248812ec"
         }
     },
     "installer": {
