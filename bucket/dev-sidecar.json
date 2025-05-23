@@ -1,14 +1,30 @@
 {
-    "version": "1.8.9",
-    "description": "开发者边车，github打不开，github加速，git clone加速，git release下载加速，stackoverflow加速",
+    "version": "2.0.0",
+    "description": "开发者边车，通过本地代理的方式将https请求代理到一些国内的加速通道上",
     "homepage": "https://github.com/docmirror/dev-sidecar",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v1.8.9/DevSidecar-1.8.9-node17.exe#/dl.7z",
-            "hash": "c9f64cc0a98f0292a120085aa26a7852ab3381eaed0b42d2c3e11af285598172",
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.0.0/DevSidecar-2.0.0-windows-x64.exe#/dl.7z",
+            "hash": "accb44a28382a17034e7eee5d8a9f5d5471958c23b51fb4d5054b61e645adcaa",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.0.0/DevSidecar-2.0.0-windows-ia32.exe#/dl.7z",
+            "hash": "f7854471bb40b3e50dbfc3c1d4e36da1a789c657c8e2c7c22b6cfe5724b73c23",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-ia32.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+            ]
+        },
+        "arm64": {
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.0.0/DevSidecar-2.0.0-windows-arm64.exe#/dl.7z",
+            "hash": "5251908bb4cf916902adc992f53483794dde97e1c1434452b40adef04f65b62f",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
             ]
         }
@@ -33,7 +49,13 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/DevSidecar-$version-node17.exe#/dl.7z"
+                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/DevSidecar-$version-windows-x64.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/DevSidecar-$version-windows-ia32.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/DevSidecar-$version-windows-arm64.exe#/dl.7z"
             }
         }
     }
