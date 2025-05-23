@@ -1,0 +1,36 @@
+{
+    "version": "2411.6.0",
+    "description": "Modules for running NixOS on the Windows Subsystem for Linux",
+    "homepage": "https://github.com/nix-community/NixOS-WSL",
+    "license": "Apache-2.0",
+    "url": "https://github.com/nix-community/NixOS-WSL/releases/download/2411.6.0/nixos.wsl",
+    "hash": "e89ca5905fa5a6a15ece708f90046b80f855ce0bceb8d345b6c2090ac776aaff",
+    "notes": [
+        "Call `wsl -d NixOS` to start NixOS.",
+        "After the initial installation, you need to update your channels once, to be able to use `nixos-rebuild`:",
+        "sudo nix-channel --update",
+        "If you want to make NixOS your default distribution, you can do so with:",
+        "wsl -s NixOS",
+        "",
+        "See more: https://nix-community.github.io/NixOS-WSL/install.html"
+    ],
+    "suggest": {
+        "Windows Subsystem for Linux 2": "sdoog/wsl2"
+    },
+    "pre_install": [
+        "if (-not (Get-Command \"wslconfig.exe\" -ErrorAction SilentlyContinue)) {",
+        "    error 'It seems that you don''t have WSL installed. Please install it first.'",
+        "}"
+    ],
+    "installer": {
+        "script": "wsl.exe --install --from-file \"$dir\\nixos.wsl\""
+    },
+    "post_install": "scoop hold $app",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/nix-community/NixOS-WSL/releases/download/$version/nixos.wsl",
+        "hash": {
+            "url": "$baseurl/nixos.wsl.sha256"
+        }
+    }
+}
