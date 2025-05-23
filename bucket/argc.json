@@ -1,0 +1,57 @@
+{
+    "version": "1.22.0",
+    "description": "Argc is a powerful Bash framework that simplifies building full-featured CLIs.",
+    "homepage": "https://github.com/sigoden/argc",
+    "notes": [
+        "PowerShell Integration:",
+        "- To enable menu completion with Tab, add the following to your PowerShell profile:",
+        "  Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete",
+        "  $argc_scripts = ((Get-ChildItem -File -Path ($env:ARGC_COMPLETIONS_ROOT + '\\completions\\windows'), ($env:ARGC_COMPLETIONS_ROOT + '\\completions')) | ForEach-Object { $_.BaseName })",
+        "  argc --argc-completions powershell $argc_scripts | Out-String | Invoke-Expression",
+        "",
+        "Windows Usage:",
+        "- Argc requires Bash. Most Windows developers have Git Bash installed with Git, allowing argc and GNU tools (grep, sed, awk, etc.) to be used in Windows environments.",
+        "",
+        "Making .sh Files Executable:",
+        "- To run .sh scripts directly as .cmd or .exe files, execute these commands in PowerShell:",
+        "",
+        "  # Add .sh to PATHEXT",
+        "  [Environment]::SetEnvironmentVariable(\"PATHEXT\", [Environment]::GetEnvironmentVariable(\"PATHEXT\", \"Machine\") + \";.SH\", \"Machine\")",
+        "",
+        "  # Associate .sh files with Git Bash",
+        "  New-Item -LiteralPath Registry::HKEY_CLASSES_ROOT\\.sh",
+        "  New-ItemProperty -LiteralPath Registry::HKEY_CLASSES_ROOT\\.sh -Name \"(Default)\" -Value \"sh_auto_file\" -PropertyType String -Force",
+        "  New-ItemProperty -LiteralPath Registry::HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\sh_auto_file\\shell\\open\\command -Name '(default)' -Value '\"C:\\Program Files\\Git\\bin\\bash.exe\" \"%1\" %*' -PropertyType String -Force"
+    ],
+    "depends": "sdoog/argc-completions",
+    "license": "Apache-2.0|MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/sigoden/argc/releases/download/v1.22.0/argc-v1.22.0-aarch64-pc-windows-msvc.zip",
+            "hash": "6337076048148e77a89d36a38128aae58caae252b2bb39a665a606c57495ff0b"
+        },
+        "64bit": {
+            "url": "https://github.com/sigoden/argc/releases/download/v1.22.0/argc-v1.22.0-x86_64-pc-windows-msvc.zip",
+            "hash": "1fcb7979fdd40c182f21e92879b2513d12e032c5575cc0731a7f67b08e99ae9a"
+        },
+        "32bit": {
+            "url": "https://github.com/sigoden/argc/releases/download/v1.22.0/argc-v1.22.0-i686-pc-windows-msvc.zip",
+            "hash": "a646f7142ce7c10bcfdfdc4b48e4734ced18a9dae4fbdca9f8969bd473a72ea8"
+        }
+    },
+    "bin": "argc.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/sigoden/argc/releases/download/v$version/argc-v$version-aarch64-pc-windows-msvc.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/sigoden/argc/releases/download/v$version/argc-v$version-x86_64-pc-windows-msvc.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/sigoden/argc/releases/download/v$version/argc-v$version-i686-pc-windows-msvc.zip"
+            }
+        }
+    }
+}
