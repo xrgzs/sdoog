@@ -1,5 +1,5 @@
 {
-    "version": "8.0.0068p",
+    "version": "8.0.0074p",
     "description": "Effortless File Transfers Over A Network (Free for Home/School)",
     "homepage": "https://www.xshell.com/en/free-for-home-school/",
     "license": {
@@ -10,8 +10,8 @@
         "isx",
         "gsudo"
     ],
-    "url": "https://cdn.netsarang.net/2e876904/Xftp-8.0.0068p.exe#/dl.exe",
-    "hash": "b05f85ba4fb94e8d529f0f708cc64b609770c1e4eb2acbca4a901bb8ceb53ef9",
+    "url": "https://cdn.netsarang.net/0111a906/Xftp-8.0.0074p.exe#/dl.exe",
+    "hash": "3086f07a88bbe25a61a08a621dceb1b4748fcc8290be1a57f58bf05bc77d9544",
     "notes": [
         "* Known issue:",
         "  - 'Initialize Flexnet Service failed' is displayed when you start Xftp every time.",
