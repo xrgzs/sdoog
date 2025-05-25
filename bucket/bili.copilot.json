@@ -1,16 +1,16 @@
 {
-    "version": "2.2502.1.0",
+    "version": "2.2505.1.0",
     "description": "哔哩助理 | B站第三方 Windows 桌面客户端，使用 Windows App SDK 构建的原生应用",
     "homepage": "https://bili.richasy.net/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2502.1.0/BiliCopilot_2.2502.1.0_x64.7z",
-            "hash": "32712c3219236cc3f6bb75f5e5ac9f16328c2cecb2247a16209e46057b8079d0"
+            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2505.1.0/BiliCopilot_2.2505.1.0_x64.7z",
+            "hash": "33277bd4576bfe5fe29fb58112e7d04f97dcfe1be00de4b772519915fe5932bb"
         },
         "arm64": {
-            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2502.1.0/BiliCopilot_2.2502.1.0_arm64.7z",
-            "hash": "97d35c37151f22b929224e2164ba8d193f266e4eac8ee6ed71d6462ed60f44f4"
+            "url": "https://github.com/Richasy/Bili.Copilot/releases/download/v2.2505.1.0/BiliCopilot_2.2505.1.0_arm64.7z",
+            "hash": "27e089bbca3eb2f42915f5e791d82d58967030557438c3ede35382e390ddd145"
         }
     },
     "extract_to": "Deploy",
