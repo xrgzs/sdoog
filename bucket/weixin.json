@@ -1,5 +1,5 @@
 {
-    "version": "4.0.5.16",
+    "version": "4.0.5.17",
     "description": "微信 QT多桌面端统一版",
     "homepage": "https://pc.weixin.qq.com/",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://www.wechat.com/en/service_terms.html"
     },
     "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z",
-    "hash": "ccc0322b04748a4c849cd66d6e3d4b8aa949de012fc83980468f9da413ab4d06",
+    "hash": "d55de987f41a14abaeefe9e0a235388f6d19635436009795ada9f25be64448ff",
     "shortcuts": [
         [
             "Weixin.exe",
