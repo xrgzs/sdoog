@@ -1,12 +1,12 @@
 {
-    "version": "22.3.5096.64",
+    "version": "22.3.5106.64",
     "description": "360 Extreme Browser, super fast browsing, extremely smooth.",
     "homepage": "https://browser.360totalsecurity.com/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://free.360totalsecurity.com/se/360extremebrowser_setup_22.3.5096.64.exe#/dl.7z",
-            "hash": "e7375b7294becf99be16546a5e06b531891b394aeaf6fa471dd92e78879a75b8"
+            "url": "https://free.360totalsecurity.com/se/360extremebrowser_setup_22.3.5106.64.exe#/dl.7z",
+            "hash": "ce4b44393eca4d38b821252d5349d1bdd5ec152259058c3cbe6baeb49ec83c01"
         }
     },
     "shortcuts": [
