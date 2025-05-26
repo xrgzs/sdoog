@@ -1,10 +1,25 @@
 {
-    "version": "20250128a",
+    "version": "20250503a",
     "description": "Windows screen annotation tool with efficient annotation and rich features, Make screen demonstrations simpler, teaching more efficient, suitable for touch devices and computers.",
     "homepage": "https://www.inkeys.top/",
-    "license": "GPL-3.0 license",
-    "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250128a/Inkeys20250128a.zip",
-    "hash": "e0cf789172f23d712d74b3c389b5eb96bc088d2ab874107e16f1db8c1d0f439e",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250503a/Inkeys20250503a-x86.zip",
+            "hash": "13f6b3a7548cc822c08b218266f36b1da2931ad4dadd3f1fd99aade77940665a",
+            "extract_dir": "Inkeys"
+        },
+        "64bit": {
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250503a/Inkeys20250503a-x64.zip",
+            "hash": "a443554d3effe210bf6e8479e1d3404dda1cd7ea24a2f7c8549e691e8715985d",
+            "extract_dir": "Inkeys64"
+        },
+        "arm64": {
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250503a/Inkeys20250503a-Arm64.zip",
+            "hash": "62b520a66dd381dfa3403f1fcf423fb1ddc142f979de529e944a933b915d0a61",
+            "extract_dir": "InkeysArm64"
+        }
+    },
     "extract_dir": "Inkeys",
     "shortcuts": [
         [
@@ -18,10 +33,20 @@
         "ScreenShot"
     ],
     "checkver": {
-        "url": "https://github.com/Alan-CRL/Inkeys/releases",
+        "github": "https://github.com/Alan-CRL/Inkeys",
         "regex": "/Alan-CRL/Inkeys/releases/tag/([\\d\\w]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/Inkeys$version.zip"
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/Inkeys$version-x86.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/Inkeys$version-x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/Alan-CRL/Inkeys/releases/download/$version/Inkeys$version-Arm64.zip"
+            }
+        }
     }
 }
