@@ -1,5 +1,5 @@
 {
-    "version": "5.1.4_beta1",
+    "version": "5.1.4_beta9c",
     "description": "a portable shell program(desktop, startmenu, quick launch, taskbar, notifyarea, clock), whitch can run in Windows XP, 2003(need rebuild), Windows 7, 8, 8.1, 10, 11, Windows Server 2008, 2012, 2016, 2019, 2022 and the Windows Preinstallation Environment(WinPE), and both x86, x64 environment.",
     "homepage": "http://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=371541",
     "license": "",
@@ -33,6 +33,6 @@
             ]
         }
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoux.com/imgKW27a5yuj&type=down#/dl.7z",
-    "hash": "3A0437D587416EED3B4737F9A8D55C01B0CE3A80752530AE8F49EC1535FCF9D9"
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoux.com/iwogo2wxf1wb&type=down#/dl.7z",
+    "hash": "8e11b0f7dc7d447a15d858f8d31e03a6f9783679fbb1725cbe7263802155ea13"
 }
