@@ -1,0 +1,43 @@
+{
+    "version": "2025.05.01.126391",
+    "description": "Arch Linux on Windows Subsystem for Linux",
+    "homepage": "https://archlinux.org/",
+    "license": "GPL-3.0-or-later",
+    "url": "https://geo.mirror.pkgbuild.com/wsl/2025.05.01.126391/archlinux-2025.05.01.126391.wsl#/archlinux.wsl",
+    "hash": "1df0b5e9533ddf7a9a29cf95d970eeb4f79a25da1e18e221c404ca45e832622c",
+    "notes": [
+        "Call `wsl -d archlinux` to start Arch Linux.",
+        "If you want to make Arch Linux your default distribution, you can do so with:",
+        "wsl -s archlinux",
+        "",
+        "See more: https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL"
+    ],
+    "suggest": {
+        "Windows Subsystem for Linux 2": "sdoog/wsl2"
+    },
+    "pre_install": [
+        "if (-not (Get-Command \"wslconfig.exe\" -ErrorAction SilentlyContinue)) {",
+        "    error 'It seems that you don''t have WSL installed. Please install it first.'",
+        "}"
+    ],
+    "uninstaller": {
+        "script": "wslconfig.exe /u archlinux"
+    },
+    "installer": {
+        "script": "wsl.exe --install --from-file \"$dir\\archlinux.wsl\" --name archlinux --location \"$persist_dir\\data\""
+    },
+    "post_install": "scoop hold $app",
+    "persist": "data",
+    "checkver": {
+        "url": "https://raw.githubusercontent.com/microsoft/WSL/refs/heads/master/distributions/DistributionInfo.json",
+        "jsonpath": "$.ModernDistributions.archlinux[0].Amd64Url.Url",
+        "regex": "(?<url>.*/archlinux-([\\d.]+)\\.wsl)"
+    },
+    "autoupdate": {
+        "url": "$matchUrl#/archlinux.wsl",
+        "hash": {
+            "url": "https://raw.githubusercontent.com/microsoft/WSL/refs/heads/master/distributions/DistributionInfo.json",
+            "jsonpath": "$.ModernDistributions.archlinux[0].Amd64Url.Sha256"
+        }
+    }
+}
