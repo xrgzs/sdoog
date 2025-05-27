@@ -22,10 +22,14 @@
         "    error 'It seems that you don''t have WSL installed. Please install it first.'",
         "}"
     ],
+     "uninstaller": {
+        "script": "wslconfig.exe /u NixOS"
+    },
     "installer": {
-        "script": "wsl.exe --install --from-file \"$dir\\nixos.wsl\""
+        "script": "wsl.exe --install --from-file \"$dir\\nixos.wsl\" --name NixOS --location \"$persist_dir\\data\""
     },
     "post_install": "scoop hold $app",
+    "persist": "data",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/nix-community/NixOS-WSL/releases/download/$version/nixos.wsl",
