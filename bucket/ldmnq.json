@@ -1,12 +1,12 @@
 {
-    "version": "9.1.45.1",
+    "version": "9.1.46.0",
     "homepage": "https://www.ldmnq.com/",
     "description": "玩电脑手游模拟器安卓版首选雷电模拟器9.0最新版采用Android 9版本内核。雷电安卓模拟器最新版，支持OPENGL3.1模式3D渲染，游戏稳定多开无压力，提供谷歌安装器，一键宏按键，脚本录制，多开分屏同步器等功能。",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/LDPlayer/%E9%9B%B7%E7%94%B5%E6%A8%A1%E6%8B%9F%E5%99%A89(64)-9.1.45.1%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%BB%BF%E8%89%B2%E7%89%88.exe#/dl.7z",
-            "hash": "92c839f78db0602a6e29acbb8bdae45633d4e2693a07cd091b831d01ab0208a6"
+            "url": "https://dl.xrgzs.top/d/pxy/Software/LDPlayer/%E9%9B%B7%E7%94%B5%E6%A8%A1%E6%8B%9F%E5%99%A89(64)-9.1.46.0%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%BB%BF%E8%89%B2%E7%89%88.exe#/dl.7z",
+            "hash": "7d8cc726c09c236c50217111499a81c2f08535e5397c557abbba211855e1b8a5"
         }
     },
     "extract_dir": "LDPlayer9",
