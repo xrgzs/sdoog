@@ -1,21 +1,21 @@
 {
-    "version": "0.3",
+    "version": "0.4",
     "description": "FFmpegFreeUI（简称 3FUI）是 FFmpeg 的专业交互外壳，使用 .NET 10 框架，使用纯 WinForm 开发，配合 SunnyUI 和自绘制打造专业高效的暗黑风格界面。",
     "homepage": "https://github.com/Lake1059/FFmpegFreeUI",
     "depends": "ffmpeg",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.3/FFmpegFreeUI.arm64.exe#/FFmpegFreeUI.exe",
-            "hash": "eaf1cc0070c805fb551f40d3ba971942c7223683d83884047face3266d10e7d1"
+            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.4/FFmpegFreeUI.arm64.exe#/FFmpegFreeUI.exe",
+            "hash": "e7c04d97d8e655df4c37f50de460e94bbed1d99cc933b116ee63c354d575e486"
         },
         "64bit": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.3/FFmpegFreeUI.x64.exe#/FFmpegFreeUI.exe",
-            "hash": "29dc1d9accfdf17d624b555e93dcfecdc3ae8173c3b979737a3c152decf80d77"
+            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.4/FFmpegFreeUI.x64.exe#/FFmpegFreeUI.exe",
+            "hash": "9cc3e4db5043a16c8f0bb4f8cb3646617abaa82f17444bcaf4dcdc9642e6f6b0"
         },
         "32bit": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.3/FFmpegFreeUI.x86.exe#/FFmpegFreeUI.exe",
-            "hash": "9d46e0b4c860aa87b870d8b9ba5273fe9db46e57f288b9c143025e0be46162e1"
+            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/0.4/FFmpegFreeUI.x86.exe#/FFmpegFreeUI.exe",
+            "hash": "b6a665c8b8b647e1579a9afc7e372da33740330e881e5b09b56d9474508c7891"
         }
     },
     "shortcuts": [
