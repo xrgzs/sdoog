@@ -1,10 +1,10 @@
 {
-    "version": "20250430",
+    "version": "20250530",
     "description": "完美解码是一款为高清影视爱好者精心打造的影音解码包，能软硬件解码播放流行的视频和音频格式。集成多媒体播放器PotPlayer、MPC-HC、MPC-BE，分离器解码器套件LAV Filters，高画质渲染器MPCVR、madVR，支持中英语言安装使用。",
     "homepage": "https://jm.wmzhe.com",
     "license": "Proprietary",
-    "url": "https://dl-t1.wmzhe.com/13/13163/PureCodec20250430.exe#/installer.exe",
-    "hash": "md5:19ec844cbe571c650fde9254f498f255",
+    "url": "https://dl-t1.wmzhe.com/13/13163/PureCodec20250530.exe#/installer.exe",
+    "hash": "md5:a5c2e10aa5598cb0c95bbe727a0caefb",
     "installer": {
         "script": "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Quiet"
     },
