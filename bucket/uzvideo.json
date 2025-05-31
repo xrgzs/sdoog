@@ -1,0 +1,32 @@
+{
+    "version": "1.6.57",
+    "description": "uz影视，追剧、直播、无广、投屏、免费",
+    "homepage": "https://github.com/YYDS678/uzVideo",
+    "license": "Freeware",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%861.6.57_win.zip",
+    "hash": "b9eb8905e8cc38de1c65173d4604d7ed699e481cce1a5b74b5da6ea0041ed4be",
+    "shortcuts": [
+        [
+            "uz_video.exe",
+            "uz影视"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.uzvideo\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Remove-Junction \"$env:APPDATA\\com.uzvideo\""
+    ],
+    "checkver": {
+        "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/Version_win.txt",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86$version_win.zip"
+    }
+}
