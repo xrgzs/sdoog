@@ -1,10 +1,10 @@
 {
-    "version": "next",
+    "version": "2",
     "description": "HarmonyOS Sans 是一款无衬线字体，它没有额外的装饰笔画，结构更加简洁清晰，在 UI 界面上具有更良好的屏幕显示效果，并且能带来更高阅读效率。HarmonyOS Sans 在字体设计上考虑了多元的应用场景，优化字形显示的灰度效果，以达到在多端的应用场景下拥有一致的体验效果。",
     "homepage": "https://developer.huawei.com/consumer/cn/design/resource/",
     "license": "HarmonyOS Sans Fonts License Agreement",
-    "url": "https://developer.huawei.com/images/download/next/HarmonyOS-Sans.zip",
-    "hash": "c8ac95f3715631f3787336e9689571c12ae818a0059713a726313605ce0eb8d3",
+    "url": "https://developer.huawei.com/images/download/next/HarmonyOS-Sans-v2.zip",
+    "hash": "ba7ddf71fc4dee33a7170869564ad76d421a2ed5c58e5aac9a573c39945ef654",
     "extract_to": "zip",
     "installer": {
         "script": [
