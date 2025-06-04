@@ -1,11 +1,11 @@
 {
     "##": "由于无法正确解压NSIS中对应architecture的文件，本包目前以np方式安装!",
-    "version": "0.17.3",
+    "version": "0.17.4",
     "description": "【小狼毫】Rime for Windows輸入法。基於 中州韻輸入法引擎/Rime Input Method Engine 等開源技術的 Windows 中文输入法。",
     "homepage": "https://rime.im/",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/rime/weasel/releases/download/0.17.3/weasel-0.17.3.0-installer.exe#/installer.exe",
-    "hash": "4f1da8d81d3bb6261d8c965abb19ffd3da7a25874ba77a10e8ba0d58a367b366",
+    "url": "https://github.com/rime/weasel/releases/download/0.17.4/weasel-0.17.4.0-installer.exe#/installer.exe",
+    "hash": "cf509534a8f5f8af9c98ed7cbb8f135439f145a8cbe7e50ede42bb5b5ab45c29",
     "notes": [
         "如果不会配置小狼毫，请阅读Wiki",
         "Wiki: https://github.com/rime/weasel/wiki",
@@ -46,9 +46,9 @@
         ]
     },
     "bin": [
-        "weasel-0.17.3\\rime-install.bat",
-        "weasel-0.17.3\\WeaselDeployer.exe",
-        "weasel-0.17.3\\WeaselServer.exe"
+        "weasel-0.17.4\\rime-install.bat",
+        "weasel-0.17.4\\WeaselDeployer.exe",
+        "weasel-0.17.4\\WeaselServer.exe"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
