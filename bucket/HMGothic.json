@@ -1,5 +1,5 @@
 {
-    "version": "1.0.31",
+    "version": "1.0.32",
     "description": "HM Gothic, a Chinese programming font based on Inter, Iosevka and HarmonyOS Sans. (TTF version)",
     "homepage": "https://github.com/xrgzs/HM-Gothic",
     "license": {
@@ -19,8 +19,8 @@
         "This takes more disk space than TTC version, but will make the font list shorter.",
         ""
     ],
-    "url": "https://github.com/xrgzs/HM-Gothic/releases/download/v1.0.31/HM-TTF-Unhinted-1.0.31.7z",
-    "hash": "ae88feb867e318b8bd042886cf4b25e7667e6509ffa473267166c4dba3f54690",
+    "url": "https://github.com/xrgzs/HM-Gothic/releases/download/v1.0.32/HM-TTF-Unhinted-1.0.32.7z",
+    "hash": "55c2b30ac102f8803c3dae9cd5de6f6416b0c21801b30fd4920d1b2153eadd2a",
     "installer": {
         "script": [
             "$currentBuildNumber = [int] (Get-ItemProperty \"HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\").CurrentBuildNumber",
