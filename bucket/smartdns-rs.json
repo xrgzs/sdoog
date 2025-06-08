@@ -1,5 +1,5 @@
 {
-    "version": "0.11.1",
+    "version": "0.11.2",
     "description": "A cross platform local DNS server (Dnsmasq like) written in rust to obtain the fastest website IP for the best Internet experience, supports DoT, DoQ, DoH, DoH3.",
     "homepage": "https://github.com/mokeyish/smartdns-rs",
     "license": "GPL-3.0-only",
@@ -9,18 +9,18 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.1/smartdns-x86_64-pc-windows-msvc-v0.11.1.zip",
-            "hash": "9bf3129efb3f44cf8c288abb8c9a1ff5b086d4311f005a146738195f949b5f62",
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.2/smartdns-x86_64-pc-windows-msvc-v0.11.2.zip",
+            "hash": "02c2d4a102264957149b9150b8dde0fda8ffa6ab002f1a40bc8ec6c59c9f8082",
             "extract_dir": "smartdns-x86_64-pc-windows-msvc"
         },
         "32bit": {
-            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.1/smartdns-i686-pc-windows-msvc-v0.11.1.zip",
-            "hash": "130d6ccd85fbec82ae9ef6936886f684b947fe1d3a076f9639ede444467f5899",
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.2/smartdns-i686-pc-windows-msvc-v0.11.2.zip",
+            "hash": "353c089ac91bed0c51935256d244c7e6c38eb05611c66e0cc08ccb4e2f1e1ad3",
             "extract_dir": "smartdns-i686-pc-windows-msvc"
         },
         "arm64": {
-            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.1/smartdns-aarch64-pc-windows-msvc-v0.11.1.zip",
-            "hash": "2d35ef1581f52704d6ac10db12f710ae4f46386a4ac57d6d42a81ec9e6425254",
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/v0.11.2/smartdns-aarch64-pc-windows-msvc-v0.11.2.zip",
+            "hash": "17cd302db1e72899acf94463058f3224788204d8a4b47df327a013127e9a5785",
             "extract_dir": "smartdns-aarch64-pc-windows-msvc"
         }
     },
