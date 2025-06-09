@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/gdy666/lucky/releases/download/v2.17.8/lucky_2.17.8_Windows_x86_64.tar.gz",
-            "hash": "a31b923b5175e98c0eb6e960abd84eff98fa6fd948840f20b2fdfa8a54f08bff"
+            "hash": "37310b319c71c3cfcf37d38364298d3b15655a0e31ca12d71c7826dca7f74723"
         }
     },
     "bin": "lucky.exe",
