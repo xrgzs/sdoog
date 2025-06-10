@@ -180,7 +180,8 @@
             "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.mkd\" /f",
             "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.mmd\" /f",
             "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Typora.text\" /f",
-            "reg.exe delete \"$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Typora.exe\" /f"
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Typora.exe\" /f",
+            "reg.exe delete \"HKCU\\SOFTWARE\\Typora\" /f"
         ]
     },
     "checkver": {
