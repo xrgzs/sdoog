@@ -1,5 +1,5 @@
 {
-    "version": "13.16",
+    "version": "500",
     "description": "Directory Opus 是受欢迎的一款文件管理器。Directory Opus 注重鼠标操作，与倾向于键盘快捷键操作的 Total Commander 形成鲜明的对比。Directory Opus 集成许多非常实用的功能，包括音视频的预览、解压缩处理等。",
     "homepage": "https://www.gpsoft.com.au/",
     "license": {
@@ -7,12 +7,12 @@
         "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
     },
     "url": [
-        "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_13.16.exe#/installer.exe",
+        "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_500.exe#/installer.exe",
         "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
     ],
     "hash": [
-        "ce2b66e4bf8f247005555d495766568502bc41d25590b8cd598fcbe839199dc6",
-        "14d73c845e621f0ab1f773141b2696d2cebe5b68f6bc37c3ff5f5e5845fce128"
+        "3e7a3dbffeda9bf33b776209e38ea54f60dee8dfe3579564798cd26bb3954f6e",
+        "efa025d8128377d2841788f43abf922a9e6416529f5c2d6a409bb1639a5aa3c2"
     ],
     "bin": "dopusrt.exe",
     "shortcuts": [
