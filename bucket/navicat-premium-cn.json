@@ -1,12 +1,12 @@
 {
-    "version": "17.2.7",
+    "version": "500",
     "description": "Navicat Premium 是强大的一体化数据库开发解决方案，可从单一应用程序无缝连接多个数据库，包括 MySQL、PostgreSQL、MongoDB、MariaDB、SQL Server、Oracle、SQLite 和 Redis。",
     "homepage": "https://www.navicat.com.cn/products/navicat-premium-lite",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64_17.2.7.exe#/installer.exe",
-            "hash": "8a1f511f128b3b15ca2e5c2124a96bdeb9538ba70b56a9d9ee76367679fec246"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_cs_x64_500.exe#/installer.exe",
+            "hash": "49cafa5cf46c2cbe0aee42f74f99ff2016364d6b8e57f9ac0f82d6096edabfa5"
         }
     },
     "shortcuts": [
