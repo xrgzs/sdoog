@@ -1,5 +1,5 @@
 {
-    "version": "500",
+    "version": "5.5.022114",
     "description": "向日葵企业版客户端 for Windows 安装在被控制的设备。批量管理大规模设备，轻松管理高效远控，适用于远程维护、技术支持、远程办公等场景",
     "homepage": "https://sunlogin.oray.com/",
     "license": {
@@ -7,12 +7,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_500.exe#/SunloginEnterprise.exe",
-            "hash": "3e7a3dbffeda9bf33b776209e38ea54f60dee8dfe3579564798cd26bb3954f6e"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_5.5.022114.exe#/SunloginEnterprise.exe",
+            "hash": "39663d42e8cb6e4b192aabd9ad218bfd65db876f7f6d28dcc34306f1f7388dd3"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_500.exe#/SunloginEnterprise.exe",
-            "hash": "3e7a3dbffeda9bf33b776209e38ea54f60dee8dfe3579564798cd26bb3954f6e"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_5.5.022114.exe#/SunloginEnterprise.exe",
+            "hash": "e22f73d9ff3955ac136a0eabfd34ba30ada9190bda6e498a94a0c39e5c4d8d6b"
         }
     },
     "shortcuts": [
