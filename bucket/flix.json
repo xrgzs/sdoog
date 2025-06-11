@@ -1,11 +1,11 @@
 {
-    "version": "1.4.0",
+    "version": "1.6.0",
     "description": "Flix 快传 | 像聊天一样传文件",
     "homepage": "https://flix.center/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/System/Windows/Other/Share/Flix/flix_win.1.4.0.exe",
+            "url": "https://dl.xrgzs.top/d/pxy/System/Windows/Other/Share/Flix/flix_win.1.6.0.exe",
             "hash": "a5664ecc677a92ea9191f78c0ca6161f0978f4fd27c637d3cd8aaad6834761bb"
         }
     },
