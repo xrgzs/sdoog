@@ -1,12 +1,12 @@
 {
-    "version": "0.8.85",
+    "version": "0.8.86",
     "description": "基于ClashMeta的多平台代理客户端，简单易用，开源无广告。",
     "homepage": "https://github.com/chen08209/FlClash",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/chen08209/FlClash/releases/download/v0.8.85/FlClash-0.8.85-windows-amd64.zip",
-            "hash": "777cbcbb2e775aae5483aba97cbaf2bfaae1249ecaeea34e5d19a4d02bf9943a"
+            "url": "https://github.com/chen08209/FlClash/releases/download/v0.8.86/FlClash-0.8.86-windows-amd64.zip",
+            "hash": "1a9b6305160b351647fff9f3e58947c2669d45115e243a42978a9540f878e4a4"
         }
     },
     "shortcuts": [
