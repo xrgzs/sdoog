@@ -1,18 +1,18 @@
 {
-    "version": "4.6.0",
+    "version": "4.6.1",
     "description": "go-musicfox 是用 Go 写的又一款网易云音乐命令行客户端，支持各种音质级别、UnblockNeteaseMusic、Last.fm、MPRIS 和 macOS 交互响应（睡眠暂停、蓝牙耳机连接断开响应和菜单栏控制等）等功能特性。.",
     "homepage": "https://github.com/go-musicfox/go-musicfox",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/go-musicfox/go-musicfox/releases/download/v4.6.0/go-musicfox_4.6.0_windows_amd64.zip",
-            "hash": "57e81086f9e14c511cf42fd5858cbcea0b092f2ec81144313c1127b46cd2542f",
-            "extract_dir": "go-musicfox_4.6.0_windows_amd64"
+            "url": "https://github.com/go-musicfox/go-musicfox/releases/download/v4.6.1/go-musicfox_4.6.1_windows_amd64.zip",
+            "hash": "bf20a9e99ca6e9f14d0978012df1868a9bcb9c5c4cbe8a51abf5af9507893dbf",
+            "extract_dir": "go-musicfox_4.6.1_windows_amd64"
         },
         "arm64": {
-            "url": "https://github.com/go-musicfox/go-musicfox/releases/download/v4.6.0/go-musicfox_4.6.0_windows_amd64.zip",
-            "hash": "57e81086f9e14c511cf42fd5858cbcea0b092f2ec81144313c1127b46cd2542f",
-            "extract_dir": "go-musicfox_4.6.0_windows_amd64"
+            "url": "https://github.com/go-musicfox/go-musicfox/releases/download/v4.6.1/go-musicfox_4.6.1_windows_arm64.zip",
+            "hash": "b3ce073ea62cb516b5f3ce0c931befc252f9f8ec424ad5b1b0bbeeab5352372f",
+            "extract_dir": "go-musicfox_4.6.1_windows_arm64"
         }
     },
     "bin": "musicfox.exe",
@@ -34,7 +34,7 @@
         "Stop-App",
         "Remove-Junction \"$env:USERPROFILE\\.go-musicfox\""
     ],
-    "checkver":  "github",
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
