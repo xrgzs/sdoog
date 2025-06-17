@@ -1,10 +1,10 @@
 {
-    "version": "8.3.3",
+    "version": "8.4.0",
     "description": "The official client for China Mobile 139 Cloud and 139 Email",
     "homepage": "https://c.139.com/",
     "license": "Proprietary",
-    "hash": "b5e7c69eb22f1478d22d967fbf41a213fb528b4d052bdecde33445a147531ace",
-    "url": "https://yun.mcloud.139.com/mCloudPc/v833/mCloud_Setup-001.exe#/dl.7z",
+    "hash": "8f26fe341a614d78584b4127f29343f9561563b2638ecb620a312fd5d29908da",
+    "url": "https://yun.mcloud.139.com/mCloudPc/v840/mCloud_Setup-001.exe#/dl.7z",
     "installer": {
         "script": [
             "Remove-Item -Force -Recurse \"$dir\\*\" -Exclude \"app.7z\"",
