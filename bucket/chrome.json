@@ -20,6 +20,7 @@
             "hash": "09d21f1efe0d6cd0c9c8837a8845dcde83030eb913190d85e9c609da3b1314ae"
         }
     },
+    "extract_dir": "Chrome-bin",
     "bin": "chrome.exe",
     "shortcuts": [
         [
@@ -33,8 +34,7 @@
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "New-PersistDirectory \"$env:LocalAppData\\Google\\Chrome\\User Data\" \"$persist_dir\\User Data\" -Migrate",
-            "Expand-7zipArchive \"$dir\\chrome.7z\" -ExtractDir 'Chrome-bin' -Removal"
+            "New-PersistDirectory \"$env:LocalAppData\\Google\\Chrome\\User Data\" \"$persist_dir\\User Data\" -Migrate"
         ]
     },
     "pre_uninstall": [
