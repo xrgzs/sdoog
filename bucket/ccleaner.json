@@ -1,10 +1,10 @@
 {
-    "version": "6.36.11508",
+    "version": "6.37.11523",
     "homepage": "https://www.423down.com/716.html",
     "description": "CCleaner中文版是一款免费的系统优化和隐私保护工具的系统清理软件，它体积小，扫描速度非常快，支持自定义清理规则，增强了应用程序清理范围和效果。CCleaner最新版是Piriform（梨子公司）最著名广受好评的系统清理优化及隐私保护软件，也是该公司主打和首发产品，能有效清除各种系统垃圾文件及应用程序垃圾，同时具备系统优化功能;能对临时文件夹，历史记录，注册表冗余条目等进行垃圾清理，附带启动项管理，软件卸载功能。",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihfvH2xglwkf&type=down#/dl.7z",
-    "hash": "c0cb4c455e6a29a051e4b1b2efa4f7987b4d0f34ac9fdec1f25fbceea5657c88",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ijpoC2zl1b7i&type=down#/dl.7z",
+    "hash": "d1d40c5689e585e9f7051876d985199d4530a7095f3efe99cf6c7ba6b28c382c",
     "persist": "CCleaner.ini",
     "extract_dir": "CCleaner",
     "shortcuts": [
