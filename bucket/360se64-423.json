@@ -1,12 +1,12 @@
 {
-    "version": "16.1.2098.64",
+    "version": "16.1.2110.64",
     "description": "360安全浏览器15正式版（360SE15）是基于Chromium内核的双核浏览器，Chromium内核提升至122，支持Win7系统，新增夜间模式，自动模式动态切换支持IE内核。",
     "homepage": "https://www.423down.com/13808.html",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ifelD2zxg7kj&type=down#/dl.7z",
-            "hash": "1af3e8a3f9d43f164932ac8582d55292eb930fec189723494e43913472912ced"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iCsEI30e0zng&type=down#/dl.7z",
+            "hash": "aa29d4521601a2f63792d5e3759a0300070a69e9776156edb50584e35d9a7dfc"
         }
     },
     "extract_dir": "360SE",
