@@ -3,7 +3,7 @@
     "description": "酷狗音乐，就是歌多",
     "homepage": "https://www.kugou.com/",
     "license": "Proprietary",
-    "url": "http://download.kugou.com/download/kugou_pc#/dl.7z",
+    "url": "https://downmini.yun.kugou.com/web/kugou_release_20052.exe#/dl.7z",
     "hash": "7dc272ff8bbe00f708f49633085e9515d7298033fdd659b2d3063d1eb807d0a4",
     "installer": {
         "script": [
@@ -68,6 +68,6 @@
         "jsonpath": "$.data.version"
     },
     "autoupdate": {
-        "url": "http://download.kugou.com/download/kugou_pc#/dl.7z"
+        "url": "https://downmini.yun.kugou.com/web/kugou_release_$cleanVersion.exe#/dl.7z"
     }
 }
