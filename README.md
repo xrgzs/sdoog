@@ -15,7 +15,7 @@
 
 > [!CAUTION]
 >
-> 本仓库使用到的 API 来自个人服务器，原则上禁止其他桶合并，如果发现滥用，后期地址全部作废
+> 本仓库使用到的 API 来自个人服务器，原则上禁止其他桶合并，如果发现滥用，后期地址可能会作废
 >
 > 本仓库大多数软件配置使用了桶内私有脚本和命名空间，其他桶合并会出现安装失败、软件功能无法正常使用
 >
@@ -345,11 +345,13 @@ scoop config aria2-warning-enabled false
 
 ### 创建桌面快捷方式
 
+**如果您使用的是我们的修改版 Scoop，默认创建桌面快捷方式、控制面板卸载程序**，可以自由开启或关闭，详见：https://github.com/xrgzs/scoop?tab=readme-ov-file
+
 安装任意桌面整理软件，映射开始菜单下的 `Scoop Apps` 文件夹即可，兼容所有仓库
 
 开始菜单路径：`%AppData%\Microsoft\Windows\Start Menu\Programs\Scoop Apps`
 
-个人使用 DeskGo，téng xùn 为数不多的良心产品，[点此下载](http://api.xrgzs.top/qqsoft/?softid=23125)
+~~个人使用 DeskGo，téng xùn 为数不多的良心产品，[点此下载](http://api.xrgzs.top/qqsoft/?softid=23125)~~
 
 ### 你是否需要使用 Scoop 来安装某个应用
 
