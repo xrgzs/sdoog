@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "description": "A desktop application for OpenList",
+    "homepage": "https://oplist.org/",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.2.0/OpenList.Desktop_0.2.0_x64-setup.exe#/dl.7z",
+            "hash": "7b446cbfb9b7e86260f82bcd46aae98087d346f1a7b537638da9395d2283c194"
+        },
+        "arm64": {
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.2.0/OpenList.Desktop_0.2.0_x64-setup.exe#/dl.7z",
+            "hash": "7b446cbfb9b7e86260f82bcd46aae98087d346f1a7b537638da9395d2283c194"
+        }
+    },
+    "shortcuts": [
+        [
+            "openlist-desktop.exe",
+            "OpenList Desktop"
+        ]
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\settings.json\") -or !(Get-Item \"$dir\\settings.json\").Length) {",
+        "    New-Item \"$dir\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$dir\\settings.json\" -Value '{\"app\":{\"auto_update_enabled\":false}}'",
+        "}"
+    ],
+    "post_install": [
+        "Remove-Item \"$dir\\`$*\" -Force -Recurse"
+    ],
+    "persist": [
+        "settings.json",
+        "logs"
+    ],
+    "checkver": {
+        "github": "https://github.com/OpenListTeam/OpenList-Desktop"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_x64-setup.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_x64-setup.exe#/dl.7z"
+            }
+        }
+    }
+}
