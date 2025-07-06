@@ -26,11 +26,12 @@
         "}"
     ],
     "post_install": [
-        "Remove-Item \"$dir\\`$*\" -Force -Recurse"
+        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
     ],
     "persist": [
         "settings.json",
-        "logs"
+        "logs",
+        "data"
     ],
     "checkver": {
         "github": "https://github.com/OpenListTeam/OpenList-Desktop"
