@@ -1,0 +1,39 @@
+{
+    "version": "2.3.1",
+    "description": "「自选优选 IP」测试 Cloudflare CDN 延迟和速度，获取最快 IP ！当然也支持其他 CDN / 网站 IP ~",
+    "homepage": "https://github.com/XIU2/CloudflareSpeedTest",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v2.3.1/cfst_windows_arm64.zip",
+            "hash": "7a0bedbe9dd47dc424a55d809dbcd733f1dc1dcf182072665466a3e6473c0f82"
+        },
+        "64bit": {
+            "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v2.3.1/cfst_windows_amd64.zip",
+            "hash": "0d674647670ce2804c0fa32bfca347a64019753e40c1bb155f0bcdeb1f59843a"
+        },
+        "32bit": {
+            "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v2.3.1/cfst_windows_386.zip",
+            "hash": "2b11b1c1426e038d8061b472b8c802726956f23c08fcf69b11a92c363da05478"
+        }
+    },
+    "bin": "cfst.exe",
+    "persist": [
+        "ipv6.txt",
+        "ip.txt"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v$version/cfst_windows_arm64.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v$version/cfst_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/XIU2/CloudflareSpeedTest/releases/download/v$version/cfst_windows_386.zip"
+            }
+        }
+    }
+}
