@@ -1,16 +1,16 @@
 {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A desktop application for OpenList",
     "homepage": "https://oplist.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.2.0/OpenList.Desktop_0.2.0_x64-setup.exe#/dl.7z",
-            "hash": "7b446cbfb9b7e86260f82bcd46aae98087d346f1a7b537638da9395d2283c194"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.3.0/OpenList.Desktop_0.3.0_x64-setup.exe#/dl.7z",
+            "hash": "43cc59b5e557f67a7d2f66adbef517fbb7cd4fd7e9032fa274fef5373e38b885"
         },
         "arm64": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.2.0/OpenList.Desktop_0.2.0_x64-setup.exe#/dl.7z",
-            "hash": "7b446cbfb9b7e86260f82bcd46aae98087d346f1a7b537638da9395d2283c194"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.3.0/OpenList.Desktop_0.3.0_x64-setup.exe#/dl.7z",
+            "hash": "43cc59b5e557f67a7d2f66adbef517fbb7cd4fd7e9032fa274fef5373e38b885"
         }
     },
     "shortcuts": [
@@ -25,9 +25,7 @@
         "    Set-Content -Path \"$dir\\settings.json\" -Value '{\"app\":{\"auto_update_enabled\":false}}'",
         "}"
     ],
-    "post_install": [
-        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
-    ],
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse",
     "pre_uninstall": [
         "while (Get-Service -Name 'openlist_desktop_service' -ErrorAction SilentlyContinue) {",
         "    Invoke-ExternalCommand \"$dir\\uninstall-openlist-service.exe\" -RunAs -Quiet",
