@@ -15,8 +15,9 @@
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\douyin\" \"$persist_dir\\AppData\" -Migrate",
-            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\" -Removal",
-            "Remove-Item \"$dir\\app.7z\", \"$dir\\`$*\", \"$dir\\uninst*\", \"$dir\\resources\\app-update.yml\", \"$dir\\installer_downloader*\", \"$dir\\app_shell_updater*\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null"
+            "Expand-7zipArchive \"$dir\\app.7z\" \"$dir\\$version\" -Removal",
+            "Remove-Item \"$dir\\$version\\app.7z\", \"$dir\\$version\\`$*\", \"$dir\\$version\\uninst*\", \"$dir\\$version\\resources\\app-update.yml\", \"$dir\\$version\\installer_downloader*\", \"$dir\\$version\\app_shell_updater*\", \"$dir\\$version\\tray\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
+            "Copy-Item \"$dir\\$version\\douyin.backup\" \"$dir\\douyin.exe\" -Force"
         ]
     },
     "pre_uninstall": [
