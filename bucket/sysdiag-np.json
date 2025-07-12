@@ -1,20 +1,20 @@
 {
-    "version": "6.0.7.1-2025.07.11.1",
+    "version": "6.0.7.1-2025.07.12.1",
     "description": "火绒安全软件6.0，畅享纯粹终端防护，轻快运行，静享守护，全面防御",
     "homepage": "https://www.huorong.cn/person",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://down-tencent.huorong.cn/sysdiag-all-x64-6.0.7.1-2025.07.11.1.exe#/installer.exe",
-            "hash": "baaaad1eb97ecfa4ecd1a54d914ef04c252c9200158721b92ddd4bb31b5aa244"
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-x64-6.0.7.1-2025.07.12.1.exe#/installer.exe",
+            "hash": "675dabdbcff1b67d7db794dcb0dffa5706757060c67cebdb4914c9cd07700e3b"
         },
         "32bit": {
-            "url": "https://down-tencent.huorong.cn/sysdiag-all-x86-6.0.7.1-2025.07.11.1.exe#/installer.exe",
-            "hash": "c2b34cee740cf91c5b51ee320887465af02a7ea2663f9c23f92c0140c78a5467"
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-x86-6.0.7.1-2025.07.12.1.exe#/installer.exe",
+            "hash": "2d343d8a7f20dd329035ce6da60783b64b86f987841434d85943d435e3eae34c"
         },
         "arm64": {
-            "url": "https://down-tencent.huorong.cn/sysdiag-all-arm64-6.0.7.1-2025.07.11.1.exe#/installer.exe",
-            "hash": "8e94afaefcc3fb75b0f6f53584c93aa02f41712243ed8dc4f876818762879c73"
+            "url": "https://down-tencent.huorong.cn/sysdiag-all-arm64-6.0.7.1-2025.07.12.1.exe#/installer.exe",
+            "hash": "0608042b7076be07fc57682bdf3e19acd5961b2166a4ea477b4b47bbbf58bb66"
         }
     },
     "installer": {
