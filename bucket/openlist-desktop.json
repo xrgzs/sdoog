@@ -1,16 +1,16 @@
 {
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "A desktop application for OpenList",
     "homepage": "https://oplist.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.3.0/OpenList.Desktop_0.3.0_x64-setup.exe#/dl.7z",
-            "hash": "43cc59b5e557f67a7d2f66adbef517fbb7cd4fd7e9032fa274fef5373e38b885"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.4.0/OpenList.Desktop_0.4.0_x64-setup.exe#/dl.7z",
+            "hash": "500ddbc34c73a663c1ca5a82f55df56321ae4e2e8b727be26d6ebf4f9f19f881"
         },
         "arm64": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.3.0/OpenList.Desktop_0.3.0_x64-setup.exe#/dl.7z",
-            "hash": "43cc59b5e557f67a7d2f66adbef517fbb7cd4fd7e9032fa274fef5373e38b885"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.4.0/OpenList.Desktop_0.4.0_x64-setup.exe#/dl.7z",
+            "hash": "500ddbc34c73a663c1ca5a82f55df56321ae4e2e8b727be26d6ebf4f9f19f881"
         }
     },
     "shortcuts": [
