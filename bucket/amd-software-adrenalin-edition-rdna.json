@@ -2,11 +2,11 @@
     "##": "苏妈NB，指定官网爬取会卡死",
     "version": "25.6.1",
     "description": "AMD Software: Adrenalin Edition Driver for Windows® 10 & Windows® 11 64-bit",
-    "homepage": "https://github.com/24HourSupport/CommonSoftware",
+    "homepage": "https://github.com/nunodxxd/AMD-Software-Adrenalin",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-25.6.1-win10-win11-june5-rdna.exe#/dl.7z",
+            "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/25.6.1/whql-amd-software-adrenalin-edition-25.6.1-win10-win11-june5-rdna.exe#/dl.7z",
             "hash": "b7d6bf26289877dc180754068b1692a25f6d2b212178e34a765e08fc72a33b88"
         }
     },
@@ -18,14 +18,13 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/24HourSupport/CommonSoftware/raw/refs/heads/main/amd_gpu.json",
-        "jsonpath": "$.consumer.link",
-        "regex": "(?<url>.*whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-rdna.exe)"
+        "github": "https://github.com/nunodxxd/AMD-Software-Adrenalin",
+        "regex": "(?<name>whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-rdna.exe)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchUrl#/dl.7z"
+                "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/$version/$matchName#/dl.7z"
             }
         }
     }

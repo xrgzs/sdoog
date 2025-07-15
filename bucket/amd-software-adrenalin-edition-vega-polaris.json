@@ -1,13 +1,13 @@
 {
     "##": "苏妈NB，指定官网爬取会卡死",
-    "version": "24.9.1",
+    "version": "25.5.1",
     "description": "AMD Software: Adrenalin Edition Driver Vega and Polaris Series for Windows® 10 & Windows® 11 64-bit",
-    "homepage": "https://github.com/24HourSupport/CommonSoftware",
+    "homepage": "https://github.com/nunodxxd/AMD-Software-Adrenalin",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.9.1-win10-win11-vega-polaris.exe#/dl.7z",
-            "hash": "f5da5456d84c8dc5f9f1885b16268cd1922031713421265d2589d3a1e3904c47"
+            "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/25.5.1/whql-amd-software-adrenalin-edition-25.5.1-win10-win11-may8-vega-polaris.exe#/dl.7z",
+            "hash": "346d8e6648c4bbaba72b62599e81dab965c4ab108dd49f36a50e19c8d04b8fe1"
         }
     },
     "extract_to": "installer",
@@ -18,14 +18,13 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/24HourSupport/CommonSoftware/raw/refs/heads/main/amd_gpu.json",
-        "jsonpath": "$.polaris-vega.link",
-        "regex": "(?<url>.*whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-vega-polaris.exe)"
+        "github": "https://github.com/nunodxxd/AMD-Software-Adrenalin",
+        "regex": "(?<name>whql-amd-software-adrenalin-edition-([\\d.]+)-win10-win11-\\w+-vega-polaris.exe)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchUrl#/dl.7z"
+                "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/$version/$matchName#/dl.7z"
             }
         }
     }
