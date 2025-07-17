@@ -1,5 +1,5 @@
 {
-    "version": "17.6.3-24583834",
+    "version": "17.6.4-24832109",
     "homepage": "https://www.vmware.com/",
     "description": "(sudo) An application for creating and running virtual machines on your computer.",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.3-24583834.exe#/installer.exe",
-            "hash": "d7c04b4dd1e6bf551693897d4805e99c45198a830c6361d9af8267b40906857b"
+            "url": "https://dl.xrgzs.top/d/pxy/Software/VMware/VMware-workstation-full-17.6.4-24832109.exe#/installer.exe",
+            "hash": "10fe3a36f525d88aa133118ab3b5a16b18da88d4aa11b14d74e4164b3fb94ba9"
         }
     },
     "shortcuts": [
