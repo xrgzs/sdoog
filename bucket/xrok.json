@@ -1,10 +1,10 @@
 {
     "description": "潇然一键装机助理，让人人都成电脑系统装机大师",
-    "version": "6.25.7.10",
+    "version": "6.25.7.17",
     "homepage": "https://www.xrgzs.top/xrok",
     "license": "Freeware",
     "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z",
-    "hash": "987141114dc80926865de587f36799ba95ac986e35d3ef3053a99dada425a135",
+    "hash": "2a5c87fd9d2880d340209a0dc0b7e216bd001312e83e41385733dfcfe9f5e0d6",
     "bin": [
         [
             "UjyQii.exe",
@@ -39,7 +39,7 @@
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",
-         "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z"
