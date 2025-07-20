@@ -1,10 +1,10 @@
 {
-    "version": "2.19.90",
+    "version": "2.19.91",
     "description": "Advanced Subscription Manager",
     "homepage": "https://github.com/sub-store-org/Sub-Store",
     "license": "AGPL-3.0 license",
-    "url": "https://github.com/sub-store-org/Sub-Store/releases/download/2.19.90/sub-store.bundle.js",
-    "hash": "1c03e6f9b50dbd69f16dcdeccf057143b4791748ae18c11bc924e74ec2acc98c",
+    "url": "https://github.com/sub-store-org/Sub-Store/releases/download/2.19.91/sub-store.bundle.js",
+    "hash": "c10e0b1f3687416b020deebbd9c2ef9c4afa5634eb6ec251fdc4b64c5eef70af",
     "suggest": {
         "nodejs-lts": "nodejs-lts"
     },
