@@ -1,12 +1,21 @@
 {
-    "version": "1.7.0.1",
+    "version": "1.7.103.0",
     "description": "一款适用于班级多媒体屏幕的课表的信息显示工具，可以一目了然地显示各种信息。",
     "homepage": "https://classisland.tech/",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.7.0.1/ClassIsland.zip",
-    "hash": "7f1316b08269ec0eafe085dfa03e286c393716c2593f40aff173e8d8a6d981b3",
-    "suggest": {
-        "Microsoft .NET 8.0 Desktop Runtime": "windowsdesktop-runtime-lts"
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_windows_arm64_selfContained_folder.zip",
+            "hash": "7b383e6eb774554e05fd10fe17db7392dd9520597cd6fee2c588bf7fba402ea1"
+        },
+        "64bit": {
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_windows_x64_selfContained_folder.zip",
+            "hash": "826f2a12be2113aa65d244b959d5422620af73923a30b9e223722e03d9bae8ab"
+        },
+        "32bit": {
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/1.7.103.0/ClassIsland_app_windows_x86_selfContained_folder.zip",
+            "hash": "36dc898f9868637ac7ade7c4cbd2a725db9a42c1ea3f62a86beba43d853ed838"
+        }
     },
     "shortcuts": [
         [
@@ -15,16 +24,7 @@
         ]
     ],
     "persist": [
-        "Settings.json",
-        "Config",
-        "Plugins",
-        "Profiles"
-    ],
-    "pre_install": [
-        "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
-        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$dir\\Settings.json\" -Value '{\"UpdateMode\":0}'",
-        "}"
+        "data"
     ],
     "post_uninstall": "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\ClassIsland.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
@@ -32,6 +32,16 @@
         "jsonpath": "$.tag_name"
     },
     "autoupdate": {
-        "url": "https://github.com/ClassIsland/ClassIsland/releases/download/$version/ClassIsland.zip"
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/ClassIsland/ClassIsland/releases/download/$version/ClassIsland_app_windows_arm64_selfContained_folder.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/ClassIsland/ClassIsland/releases/download/$version/ClassIsland_app_windows_x64_selfContained_folder.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/ClassIsland/ClassIsland/releases/download/$version/ClassIsland_app_windows_x86_selfContained_folder.zip"
+            }
+        }
     }
 }
