@@ -1,5 +1,5 @@
 {
-    "version": "2025.07.21.071039",
+    "version": "2025.07.21.084956",
     "description": "A file list program that supports multiple storages, powered by Gin and SolidJS, fork of AList.",
     "homepage": "https://oplist.org/",
     "license": "AGPL-3.0-or-later",
