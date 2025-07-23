@@ -14,7 +14,9 @@
     ],
     "persist": [
         "config",
-        "debug"
+        "debug",
+        "data",
+        "archievement"
     ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
