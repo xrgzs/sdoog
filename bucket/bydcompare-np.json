@@ -1,10 +1,10 @@
 {
-    "version": "5.1.1.31157",
+    "version": "5.1.2.31185",
     "description": "一个很好用的文件对比软件，大家都明白。",
     "homepage": "https://www.mefcl.com/beyond-compare.html",
     "license": "Unlicense",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iEj8Q31qa4lg&type=down#/installer.exe",
-    "hash": "99ae112c548ac5328dc9dfd40154f0b6bbf8242ec94d9d8b16602fa8fbdff164",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iJcDj31tjepc&type=down#/installer.exe",
+    "hash": "2520f381d6706f011f132fbae0ac33d77fa8687a6d5a54a542912bc0bc611623",
     "pre_install": [
         "function New-PersistFile([String] $path) {",
         "    if (!(Test-Path $path) -or !(Get-Item $path).Length) {",
