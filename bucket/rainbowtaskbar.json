@@ -1,5 +1,5 @@
 {
-    "version": "3.1.1",
+    "version": "3.1.2",
     "description": "Powerful, customizable Windows 10/11 taskbar effects.",
     "homepage": "https://github.com/ad2017gd/RainbowTaskbar",
     "license": "MIT",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.1.1/rnbtsk-x64.exe#/rnbtsk.exe",
-            "hash": "d77a26244de8fee2f3f6b024f676b01714ad2ab6c1d6e22e38775ec998f83600"
+            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.1.2/rnbtsk-x64.exe#/rnbtsk.exe",
+            "hash": "04f5917583cbf14f945bbfc5fca8a3c1cfdc7e960c7486b1dfe64ea961706bc6"
         },
         "32bit": {
-            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.1.1/rnbtsk.exe#/rnbtsk.exe",
-            "hash": "ac1fb8661ef046d9be70d77e2964f96ab694bb67c8fab6759805ef59eed5490b"
+            "url": "https://github.com/ad2017gd/RainbowTaskbar/releases/download/3.1.2/rnbtsk.exe#/rnbtsk.exe",
+            "hash": "46ef2198ee453767c807fe7ef90eeb7a8fb8b4e3c7e3a8f980dd2db6a5ea659b"
         }
     },
     "installer": {
