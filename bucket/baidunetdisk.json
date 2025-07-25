@@ -1,10 +1,10 @@
 {
-    "version": "7.58.0.110",
+    "version": "7.59.0.103",
     "description": "百度网盘是一款国民级产品,已连续9年为超过7亿用户提供稳定、安全的个人云存储服务,已实现电脑、手机、电视等多种终端场景的覆盖和互联,并支持多类型文件的备份、分享、查看和处理任务。通过百度网盘PC客户端存入的文件，不会占用本地空间，也不会因为浏览器、网络等突发问题中途中断，大文件传输更稳定。",
     "homepage": "https://pan.baidu.com/download",
     "license": "Unknown",
-    "url": "http://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.58.0.110.exe#dl.7z",
-    "hash": "1196fd30ff3218d406c68e56ff07f008016ee25ca3597dc42d9645b7553ae8c9",
+    "url": "http://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.59.0.103.exe#dl.7z",
+    "hash": "743cdda572755c54b957ab8ac3f94961e8da832563260f4c7c2f06285feb5707",
     "shortcuts": [
         [
             "BaiduNetdisk.exe",
