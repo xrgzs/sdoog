@@ -17,7 +17,7 @@
             "hash": "56bd36969fb0c64f367c9537fa3fa6e277f80e1ef526ae57ebfa3cedeac23236"
         }
     },
-    "bin": "hulo.exe",
+    "bin": "bin/hulo.exe",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
