@@ -1,0 +1,35 @@
+{
+    "version": "0.3.0",
+    "description": "Hulo programming language - a modern scripting language",
+    "homepage": "https://github.com/hulo-lang/hulo",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/hulo-lang/hulo/releases/download/v0.3.0/hulo_Windows_x86_64.zip",
+            "hash": "973262d7321a956b97f8529ef754e69b98ed8db58971335b9d01fcf296c05008"
+        },
+        "32bit": {
+            "url": "https://github.com/hulo-lang/hulo/releases/download/v0.3.0/hulo_Windows_i386.zip",
+            "hash": "1a7d5aa50a48566aee944170e13c835ed8d9c67d7ee13cb244ab44ad7ee1a064"
+        },
+        "arm64": {
+            "url": "https://github.com/hulo-lang/hulo/releases/download/v0.3.0/hulo_Windows_arm64.zip",
+            "hash": "56bd36969fb0c64f367c9537fa3fa6e277f80e1ef526ae57ebfa3cedeac23236"
+        }
+    },
+    "bin": "hulo.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/hulo-lang/hulo/releases/download/v$version/hulo_Windows_x86_64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/hulo-lang/hulo/releases/download/v$version/hulo_Windows_i386.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/hulo-lang/hulo/releases/download/v$version/hulo_Windows_arm64.zip"
+            }
+        }
+    }
+}
