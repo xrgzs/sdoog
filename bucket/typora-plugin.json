@@ -1,11 +1,11 @@
 {
-    "version": "1.15.8",
+    "version": "1.15.9",
     "description": "Typora plugin. feature enhancement tool | Typora 插件，功能增强工具",
     "homepage": "https://github.com/obgnail/typora_plugin",
     "license": "MIT",
     "depends": "typora",
-    "url": "https://github.com/obgnail/typora_plugin/releases/download/1.15.8/typora-plugin@v1.15.8.zip",
-    "hash": "ff7df78a0308376aacdde61dd671622436a3b08ff415762d3191e6c28e0fee6c",
+    "url": "https://github.com/obgnail/typora_plugin/releases/download/1.15.9/typora-plugin@v1.15.9.zip",
+    "hash": "f75edf555e81819858f5c0e093a2e8d0f21b0cfe1cbca2a3c48d12b4ded82507",
     "installer": {
         "script": [
             "ensure \"$(scoop prefix typora)\\resources\"",
