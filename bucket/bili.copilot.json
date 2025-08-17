@@ -17,29 +17,29 @@
     "pre_install": [
         "if ([Environment]::OSVersion.Version.Major -lt \"10\" -or [System.Environment]::OSVersion.Version.Build -lt 22000) {",
         "    throw \"Bili.Copilot requires Windows 11 or later to work.\"",
-        "}",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Enable-DevelopmentMode"
+        "}"
     ],
     "installer": {
         "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
             "Get-ChildItem \"$dir\\Deploy\\*.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }",
             "Get-ChildItem \"$dir\\Deploy\\Dependencies\\*64\\*.msix\" | Add-AppxPackage -ForceTargetApplicationShutdown -AllowUnsigned -ForceUpdateFromAnyVersion",
             "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
-            "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+            "Import-AppxPSModule",
             "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
         ]
     },
     "pre_uninstall": [
-        "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Import-AppxPSModule",
         "if ($cmd -eq 'uninstall') {",
         "    Get-AppxPackage -Name \"Richasy.Bili.Copilot\" | Remove-AppxPackage",
         "} else {",
         "    Get-AppxPackage -Name \"Richasy.Bili.Copilot\" | Remove-AppxPackage -PreserveApplicationData",
-        "}",
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/Richasy/Bili.Copilot"

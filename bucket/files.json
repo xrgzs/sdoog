@@ -20,20 +20,20 @@
             "Enable-DevelopmentMode",
             "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
             "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
-            "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+            "Import-AppxPSModule",
             "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
         ]
     },
     "pre_uninstall": [
-        "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Import-AppxPSModule",
         "if ($cmd -eq 'uninstall') {",
         "    Get-AppxPackage -Name \"Files\" | Remove-AppxPackage",
         "} else {",
         "    Get-AppxPackage -Name \"Files\" | Remove-AppxPackage -PreserveApplicationData",
-        "}",
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "}"
     ],
     "checkver": {
         "url": "https://files.community/appinstallers/Files.stable.appinstaller",

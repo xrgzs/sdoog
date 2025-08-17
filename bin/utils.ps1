@@ -331,6 +331,16 @@ function Enable-DevelopmentMode {
     }
 }
 
+function Import-AppxPSModule {
+    if (-not (Get-Module -Name Appx)) {
+        if ($PSVersionTable.PSEdition -eq 'Core') {
+            Import-Module -Name Appx -UseWindowsPowerShell
+        } else {
+            Import-Module -Name Appx
+        }
+    }
+}
+
 function New-AppLink {
     param(
         [string] $App,
