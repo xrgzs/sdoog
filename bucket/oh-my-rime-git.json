@@ -1,11 +1,11 @@
 {
-    "version": "2025.08.07.198d7a5",
+    "version": "2025.08.17.6486130",
     "homepage": "https://github.com/Mintimate/oh-my-rime",
     "description": "oh-my-rime 输入法，快速初始化rime⚡，同时适配多个平台💻，也可以叫它『薄荷输入法』，亦或者『Mint Input』。",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/Mintimate/oh-my-rime/archive/198d7a5e67100eea31e95594a4d32f8c5567ab14.zip",
-    "hash": "15d77da971b997e93b7bee521165711ed6d9db4658f2197506565b2e608c3119",
-    "extract_dir": "oh-my-rime-198d7a5e67100eea31e95594a4d32f8c5567ab14",
+    "url": "https://github.com/Mintimate/oh-my-rime/archive/648613046ce57bb10a13d06e9fc7d55b20f12208.zip",
+    "hash": "463c40a44449d32d55bfe717d49d079c4cf0d2dd41e4d0dfe84384438915f6fe",
+    "extract_dir": "oh-my-rime-648613046ce57bb10a13d06e9fc7d55b20f12208",
     "depends": "weasel",
     "extract_to": "oh-my-rime",
     "post_install": [
