@@ -1,0 +1,47 @@
+{
+    "version": "6.4.810.0",
+    "description": "获取商店应用 | 离线下载 Microsoft Store 商店应用",
+    "homepage": "https://github.com/Gaoyifei1011/GetStoreApp",
+    "license": "MIT",
+    "url": "https://github.com/Gaoyifei1011/GetStoreApp/releases/download/v6.4.810.0/GetStoreAppPackage_6.4.810.0_x86_x64_arm64.msixbundle#/dl.7z",
+    "hash": "2928f7a664e152aaa6c5061fd592c89beb5f099b77198dcc3077a2f5829da080",
+    "extract_to": "Deploy",
+    "architecture": {
+        "32bit": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_x86.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        },
+        "64bit": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_x64.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        },
+        "arm64": {
+            "pre_install": "Get-ChildItem \"$dir\\Deploy\\*_ARM64.msix\" | ForEach-Object { Expand-7zipArchive $_ $dir }"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
+            "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+            "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+        ]
+    },
+    "pre_uninstall": [
+        "if (-not (Get-Module -Name Appx)) { Import-Module -Name Appx -UseWindowsPowerShell }",
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"Gaoyifei1011.GetStoreApp\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"Gaoyifei1011.GetStoreApp\" | Remove-AppxPackage -PreserveApplicationData",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "github": "https://github.com/Gaoyifei1011/GetStoreApp"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Gaoyifei1011/GetStoreApp/releases/download/v$version/GetStoreAppPackage_$version_x86_x64_arm64.msixbundle#/dl.7z"
+    }
+}
