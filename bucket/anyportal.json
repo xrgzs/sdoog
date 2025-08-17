@@ -1,10 +1,10 @@
 {
-    "version": "0.6.22+96",
+    "version": "0.6.23+97",
     "description": "v2ray, xray, ... GUI for Windows, macOS, Linux, Android",
     "homepage": "https://github.com/AnyPortal/AnyPortal",
     "license": "Unknown",
-    "url": "https://github.com/AnyPortal/AnyPortal/releases/download/v0.6.22%2B96/anyportal-windows.zip",
-    "hash": "15ae1fb390281826460abab4d72494b6523a60bec94d1214a6f336c1f7940fca",
+    "url": "https://github.com/AnyPortal/AnyPortal/releases/download/v0.6.23%2B97/anyportal-windows.zip",
+    "hash": "8ca9bb9f2ec29e654d28f8567c125c9b61f65826f714fd041841789278f9a1f2",
     "extract_dir": "anyportal-windows",
     "shortcuts": [
         [
