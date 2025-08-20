@@ -1,15 +1,15 @@
 {
-    "version": "1.46.0",
+    "version": "1.47.0",
     "description": "黑盒语音，玩家开黑大本营",
     "homepage": "https://chat.xiaoheihe.cn/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://macc.max-c.com/chat/pc/chat_installer_x64_new_1.46.0.1069.exe#/dl.7z",
-            "hash": "f3fca6013177e828590862cdfdb32980aa57fa65ea76f4568febdc7e7b19a68f"
+            "url": "https://macc.max-c.com/chat/pc/chat_installer_x64_new_1.47.0.1099.exe#/dl.7z",
+            "hash": "6e4ccb4a83e58ceec00b1dcfcd980c222d5d409e7b41459e518e99dbb92f6bb0"
         }
     },
-    "extract_dir": "1.46.0",
+    "extract_dir": "1.47.0",
     "shortcuts": [
         [
             "HeyboxChat.exe",
