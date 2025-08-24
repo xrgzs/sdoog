@@ -1,5 +1,5 @@
 {
-    "version": "2.15.6.15",
+    "version": "2.16.8.23",
     "homepage": "https://www.bitcomet.com/",
     "license": {
         "identifier": "freeware for non-commercial use",
@@ -8,8 +8,8 @@
     "suggest": {
         "PeerBanHelper": "sdoog/peerbanhelper"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iDnQ12yxlz2d&type=down#/dl.7z",
-    "hash": "a77b936d2d10edc86f3eec933398b1aea2959dcb3f54ca9ba8e17f9423cdd0f5",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iOuF534d869e&type=down#/dl.7z",
+    "hash": "065abafb66ef512d74a94f84d2872ee79f47263bd904dc1991d78ead838cdb05",
     "extract_dir": "BitComet",
     "persist": [
         "BitComet.xml",
