@@ -1,23 +1,23 @@
 {
     "##": "https://www.inkeys.top/",
-    "version": "20250822a",
+    "version": "20250830a",
     "description": "Windows screen annotation tool with efficient annotation and rich features, Make screen demonstrations simpler, teaching more efficient, suitable for touch devices and computers.",
     "homepage": "https://github.com/Alan-CRL/Inkeys",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250822a/Inkeys20250822a-x86.zip",
-            "hash": "98126ff34f42386bad7c93c665eebe3a0a642f35a25bf6c1ac059fe99eba367f",
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250830a/Inkeys20250830a-x86.zip",
+            "hash": "a756859632955b1f32e72c5ccc49048f38a406477bb70af4811659c3ddb2570e",
             "extract_dir": "Inkeys"
         },
         "64bit": {
-            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250822a/Inkeys20250822a-x64.zip",
-            "hash": "8942c5de847c5c67f668c69eab61ac38e502214a844dc79be8a90c5298fa778f",
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250830a/Inkeys20250830a-x64.zip",
+            "hash": "c6dd0810de85b516bbdaaac13817e44fadf4d1219f5e1d182ee0f3451d3d9868",
             "extract_dir": "Inkeys64"
         },
         "arm64": {
-            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250822a/Inkeys20250822a-Arm64.zip",
-            "hash": "b40ed770d290b164735b1343e84eb49608ed6df7fb1903f8c0eea630464e09fa",
+            "url": "https://github.com/Alan-CRL/Inkeys/releases/download/20250830a/Inkeys20250830a-Arm64.zip",
+            "hash": "f725948627f3ed662bc94d421fe1c952c2fcb77eefaabdd594026e30925af55b",
             "extract_dir": "InkeysArm64"
         }
     },
