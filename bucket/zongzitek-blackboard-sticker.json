@@ -1,10 +1,10 @@
 {
-    "version": "3.2.8.1",
+    "version": "3.3",
     "description": "用于白板一体机的桌面部件，有小黑板（布置作业）、启动台、课程表",
     "homepage": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker",
     "license": "GPL-3.0 license",
-    "url": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/releases/download/v3.2.8.1/ZongziTEK_Blackboard_Sticker.zip",
-    "hash": "cca93eed6ebe23b3033be99913bfd488cf656c3cea2e4b382a4d02d7c0d922cf",
+    "url": "https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/releases/download/v3.3/ZongziTEK_Blackboard_Sticker.zip",
+    "hash": "e2d5a584ecee9589f7cf39b14a9c4e2f0812d1cd015568364ab3f3a9ac7b7865",
     "shortcuts": [
         [
             "ZongziTEK_Blackboard_Sticker.exe",
