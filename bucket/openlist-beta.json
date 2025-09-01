@@ -1,20 +1,20 @@
 {
-    "version": "2025.08.31.081956",
+    "version": "2025.09.01.111950",
     "description": "A file list program that supports multiple storages, powered by Gin and SolidJS, fork of AList.",
     "homepage": "https://oplist.org/",
     "license": "AGPL-3.0-or-later",
     "architecture": {
         "64bit": {
             "url": "https://github.com/OpenListTeam/OpenList/releases/download/beta/openlist-windows-amd64.zip",
-            "hash": "d424227a75ae9291881590b3b21f630afa46884c39ee8bbd1943f3eced3c1e38"
+            "hash": "427c14b052498dca828653a4c82790a842078faf6d50c7bddb4b1d2828a0ea48"
         },
         "32bit": {
             "url": "https://github.com/OpenListTeam/OpenList/releases/download/beta/openlist-windows-386.zip",
-            "hash": "c6d1081d562667831268856d4962b448c4f9b1409549d6c314e6932608fff72f"
+            "hash": "fefb136facb524be21a290f46ad1afc922f2c809289e1c2c09a7f353cda38543"
         },
         "arm64": {
             "url": "https://github.com/OpenListTeam/OpenList/releases/download/beta/openlist-windows-amd64.zip",
-            "hash": "d424227a75ae9291881590b3b21f630afa46884c39ee8bbd1943f3eced3c1e38"
+            "hash": "427c14b052498dca828653a4c82790a842078faf6d50c7bddb4b1d2828a0ea48"
         }
     },
     "bin": [
