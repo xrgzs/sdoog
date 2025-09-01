@@ -1,10 +1,10 @@
 {
-    "version": "5.1.1263.0",
+    "version": "6.0.1461.0",
     "description": "NanaZip is an open source file archiver intended for the modern Windows experience, forked from the source code of well-known open source file archiver 7-Zip.",
     "homepage": "https://github.com/M2Team/NanaZip",
     "license": "MIT",
-    "url": "https://github.com/M2Team/NanaZip/releases/download/5.1.1263.0/NanaZipPreview_5.1.1263.0.msixbundle#/dl.7z",
-    "hash": "7baf6695a56f8cfa2c6cbf8bf2166067a14cba9d95353e155ff1ca4ee0791096",
+    "url": "https://github.com/M2Team/NanaZip/releases/download/6.0.1461.0/NanaZipPreview_6.0.1461.0.msixbundle#/dl.7z",
+    "hash": "875b42f0b990fba52fd8fdfc2eadef4c2caec1442b866a91987512667a4e690d",
     "extract_to": "Deploy",
     "architecture": {
         "64bit": {
