@@ -1,13 +1,13 @@
 {
-    "version": "2025.08.29",
+    "version": "2025.09.02",
     "description": "一个输入法状态提示工具。An input method status tip tool.",
     "homepage": "https://github.com/abgox/InputTip",
     "license": {
         "identifier": "MIT",
         "url": "https://github.com/abgox/InputTip/blob/main/LICENSE"
     },
-    "url": "https://github.com/abgox/InputTip/releases/download/v2025.08.29/InputTip.zip",
-    "hash": "99bb208de404c8fad6dfa70af6d3779646eceb54f80a75d0c4bbb7df3df51268",
+    "url": "https://github.com/abgox/InputTip/releases/download/v2025.09.02/InputTip.zip",
+    "hash": "3627a38bb1485f7028037bc69486a4ee591a07f48851c1936b9e017710c818cd",
     "extract_dir": "InputTip",
     "shortcuts": [
         [
