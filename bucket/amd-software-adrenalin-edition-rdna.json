@@ -1,13 +1,13 @@
 {
     "##": "苏妈NB，指定官网爬取会卡死",
-    "version": "25.6.1",
+    "version": "25.9.1",
     "description": "AMD Software: Adrenalin Edition Driver for Windows® 10 & Windows® 11 64-bit",
     "homepage": "https://github.com/nunodxxd/AMD-Software-Adrenalin",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/25.6.1/whql-amd-software-adrenalin-edition-25.6.1-win10-win11-june5-rdna.exe#/dl.7z",
-            "hash": "b7d6bf26289877dc180754068b1692a25f6d2b212178e34a765e08fc72a33b88"
+            "url": "https://github.com/nunodxxd/AMD-Software-Adrenalin/releases/download/25.9.1/whql-amd-software-adrenalin-edition-25.9.1-win10-win11-sep-rdna.exe#/dl.7z",
+            "hash": "e26b633fc730884efd5670741d8041634efeaf6f0ae802a01730385c74fefbd3"
         }
     },
     "extract_to": "installer",
