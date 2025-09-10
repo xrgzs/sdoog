@@ -1,11 +1,11 @@
 {
-    "version": "2025.8.13",
+    "version": "2025.9.10",
     "homepage": "https://moesnow.github.io/March7thAssistant/",
     "description": "崩坏：星穹铁道全自动 三月七小助手",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2025.8.13/March7thAssistant_full.7z",
-    "hash": "9b5d214ac906a0b2bf4741877bff9e2359aa629120057c2b591c61893cdd45b6",
-    "extract_dir": "March7thAssistant_v2025.8.13_full",
+    "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2025.9.10/March7thAssistant_full.7z",
+    "hash": "e23f052d5dee597c53d10ab4053162f7b156684e5031657d66b11eb678c6052a",
+    "extract_dir": "March7thAssistant_v2025.9.10_full",
     "shortcuts": [
         [
             "March7th Launcher.exe",
