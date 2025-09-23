@@ -1,12 +1,12 @@
 {
-    "version": "1.7.22618.0",
+    "version": "1.7.22619.0",
     "description": "PotPlayer 美化增强版",
     "homepage": "https://www.mefcl.com/potplayer.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ixOd336hbmrc&type=down#/installer.exe",
-            "hash": "71fae716cfebfe78b15aecf6be3f9730733998c05a7409977817a11fbb5fbe86",
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ibIZ636ueduh&type=down#/installer.exe",
+            "hash": "ef164eeb70c0afa1fa0a5e9b4ca7e7b52296afe32f2b15ae1d0a39372fd5d166",
             "shortcuts": [
                 [
                     "PotPlayerMini64.exe",
@@ -15,8 +15,8 @@
             ]
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iGefg36hbncd&type=down#/installer.exe",
-            "hash": "af12c77e1da22072fe86d57cad90f2f101c50a521beec77e73dbb7d6b9fa8c3a",
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1bgL36ueekd&type=down#/installer.exe",
+            "hash": "4a315c19f3b72ba3984430eb07daec278ea051734ce79f86dce00670d6b0a565",
             "shortcuts": [
                 [
                     "PotPlayerMini.exe",
