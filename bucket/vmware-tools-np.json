@@ -1,5 +1,5 @@
 {
-    "version": "13.0.1-24843032",
+    "version": "13.0.5-24915695",
     "homepage": "https://docs.vmware.com/en/VMware-Tools/index.html",
     "description": "VMware Tools is a set of services and components that enable several features in various VMware products for better management and seamless user interactions with guest operating systems.",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://packages.vmware.com/tools/releases/13.0.1/windows/x64/VMware-tools-13.0.1-24843032-x64.exe#/installer.exe",
-            "hash": "829953b6c92719dd32080a46d8fc1089f3b70cd96f954b20803d329aec63a74e"
+            "url": "https://packages.vmware.com/tools/releases/13.0.5/windows/x64/VMware-tools-13.0.5-24915695-x64.exe#/installer.exe",
+            "hash": "54753f73574b710d297cea99796183001c1d1790f8500fc16bfbb8b70b6d51ab"
         },
         "arm64": {
-            "url": "https://packages.vmware.com/tools/releases/13.0.1/windows/arm/VMware-tools-13.0.1-24843032-arm.exe#/installer.exe",
-            "hash": "a585459c65753460633141231d1545c666ac2ae2f4abc5a134350048a5b78098"
+            "url": "https://packages.vmware.com/tools/releases/13.0.5/windows/arm/VMware-tools-13.0.5-24915695-arm.exe#/installer.exe",
+            "hash": "a8ebda603388c5724364610b88a5a62e7ae81c95f8c990a29881ae87ea70413f"
         }
     },
     "installer": {
