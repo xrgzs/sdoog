@@ -15,8 +15,18 @@
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
+        "Stop-App",
+        "Import-AppxPSModule",
+        "Get-AppxPackage -Name \"3AD8A913.49937325EFC59\" | Remove-AppxPackage"
     ],
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\`$*\" -Recurse -Force",
+            "Rename-Item \"$dir\\AutoUpdate\" -NewName \"AutoUpdate_Bak\"",
+            "Rename-Item \"$dir\\sysres\" -NewName \"sysres_Bak\"",
+            "Rename-Item \"$dir\\BaiduNetdiskService.Msixbundle\" -NewName \"BaiduNetdiskService.Msixbundle.Bak\""
+        ]
+    },
     "uninstaller": {
         "script": [
             "Remove-Item -Path \"$env:APPDATA\\PLogs\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
