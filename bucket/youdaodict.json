@@ -1,0 +1,62 @@
+{
+    "version": "11.2.250829",
+    "description": "网易有道翻译 | 史上最强大的翻译生产力工具",
+    "homepage": "https://cidian.youdao.com/",
+    "license": "Proprietary",
+    "url": "https://download.ydstatic.com/cidian/static/11.2/250829/YoudaoDictSetup.exe#/dl.7z",
+    "hash": "24fc9a70c47c456f37c90a2dacf62c11894c2e8c77fdb5807683269c15a33ec3",
+    "shortcuts": [
+        [
+            "YoudaoDict.exe",
+            "网易有道翻译"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\Yodao\\DeskDict\" \"$persist_dir\\LocalAppData\" -Migrate",
+            "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\dict.7z\" \"$dir\"",
+            "Remove-Item \"$dir\\`$*\" -Recurse -Force",
+            "Remove-Item \"$dir\\uninst.exe\" -Force",
+            "if ($global) {",
+            "    $registry_scope = \"HKLM:\"",
+            "} else {",
+            "    $registry_scope = \"HKCU:\"",
+            "}",
+            "New-Item \"$registry_scope\\SOFTWARE\\Classes\\yddict\" -Force -ItemType String -Value 'URL:yddict' | Out-Null",
+            "New-ItemProperty \"$registry_scope\\SOFTWARE\\Classes\\yddict\" -Force -PropertyType string -Name 'URL Protocol' -Value '' | Out-Null",
+            "New-Item \"$registry_scope\\SOFTWARE\\Classes\\yddict\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\YoudaoDict.exe`\" `\"-startWithParam`\" `\"%1`\"\" | Out-Null"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\Yodao\\DeskDict\""
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM:\"",
+            "} else {",
+            "    $registry_scope = \"HKCU:\"",
+            "}",
+            "Remove-Item \"$registry_scope\\SOFTWARE\\Classes\\yddict\" -Recurse -Force | Out-Null",
+            "if ($cmd -eq 'uninstall') {",
+            "    Remove-ItemProperty \"HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" -Name \"YoudaoDict\" -Force | Out-Null",
+            "    Remove-Item \"HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\网易有道翻译\" -Recurse -Force | Out-Null",
+            "}"
+        ]
+    },
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://cidian.youdao.com/download/YoudaoDict.exe\" | Get-RedirectedUrl1st"
+        ],
+        "regex": "(?<url>.*/cidian/static/(?<mainver>.*)/(?<patchver>.*)/YoudaoDictSetup.exe)",
+        "replace": "${mainver}.${patchver}"
+    },
+    "autoupdate": {
+        "url": "$matchUrl#/dl.7z"
+    }
+}
