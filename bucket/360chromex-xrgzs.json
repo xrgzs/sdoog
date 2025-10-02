@@ -1,12 +1,12 @@
 {
-    "version": "22.3.3087.64",
-    "description": "360极速浏览器X，极速浏览，极致顺滑。全新Chromium122内核，64位双核浏览器，性能更高，体验更佳。",
+    "version": "23.0.1020.64",
+    "description": "360极速浏览器X，极速浏览，极致顺滑。全新Chromium132内核，64位双核浏览器，性能更高，体验更佳。",
     "homepage": "https://browser.360.cn/eex/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://down.360safe.com/cse/360csex_22.3.3087.64.exe#/dl.7z",
-            "hash": "a87566ceb6cee2936862c5427377a0407d406f76bce65bbc6b8e3896bc5daa0a"
+            "url": "https://down.360safe.com/cse/360csex_23.0.1020.64.exe#/dl.7z",
+            "hash": "8e062c2004daf6a885c6a2139a26ae27f4157a596020510ad797c658c7541f10"
         }
     },
     "shortcuts": [
@@ -59,6 +59,7 @@
         ]
     },
     "checkver": {
+        "url": "https://bbs.360.cn/thread-16169101-1-1.html",
         "regex": "https://down.360safe.com/cse/360csex_([\\d.]+).exe"
     },
     "autoupdate": {
