@@ -24,6 +24,6 @@
         "regex": "zTasker_([\\d.]+)_Setup\\.exe"
     },
     "autoupdate": {
-        "url": "https://www.everauto.net/down/zTasker_$version_%E7%BB%BF%E8%89%B2%E7%89%88.7z#/dl.7z"
+        "url": "https://www.everauto.net/down/zTasker_$version_%E7%BB%BF%E8%89%B2%E7%89%88_%E4%B8%8D%E8%A6%81%E6%94%BEC%E7%9B%98.7z#/dl.7z"
     }
 }
