@@ -1,10 +1,10 @@
 {
-    "version": "9.3.8.0",
+    "version": "9.5.0.0",
     "description": "(sudo) 酷我音乐为你提供高品质音乐，无损音乐下载",
     "homepage": "http://kuwo.cn/",
     "license": "Proprietary",
-    "url": "https://down.kuwo.cn/mbox/kwmusic_web_6.exe#/dl.7z",
-    "hash": "40a24f9e1cb28b59cac08b2d43ac5efb24777bb9816aa7595cb8ae89e32d1314",
+    "url": "http://api.xrgzs.top/qqsoft/?softid=9601#/dl.7z",
+    "hash": "26dfd80fa17c3180a17e028d5f1cfce15c73514f08b534df1ef7005c0472c967",
     "installer": {
         "script": [
             "if (!(is_admin)) {",
@@ -89,16 +89,10 @@
         ]
     ],
     "checkver": {
-        "script": [
-            "Import-Module \"$pwd\\bin\\WinGet.psm1\"",
-            "$Manifest = Get-WinGetManifest -Id 'Kuwo.KuwoMusic'",
-            "$version  = $Manifest.PackageVersion",
-            "$url      = $Manifest.Installers.InstallerUrl",
-            "return \"$version=====$url\""
-        ],
-        "regex": "(.*)=====(?<url>.*)"
+        "url": "https://soft-api.safe.360.cn/main/v1/soft/info?softid=19",
+        "jsonpath": "$.data.version"
     },
     "autoupdate": {
-        "url": "$matchUrl#/dl.7z"
+        "url": "http://api.xrgzs.top/qqsoft/?softid=9601#/dl.7z"
     }
 }
