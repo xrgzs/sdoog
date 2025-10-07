@@ -1,12 +1,12 @@
 {
-    "version": "25.2",
+    "version": "25.3",
     "description": "MobaXterm 是一款功能强大的终端模拟器和远程计算机管理软件",
     "homepage": "https://www.osssr.com/5704.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iyn7y2v928pi&type=down#/dl.7z",
-            "hash": "8a07fd0a19ecc7cdfc3dfb79c25d6bbbbf52b6ac810be55ab26e3cc1dc34cc0a"
+            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i0xg237lx0lg&type=down#/dl.7z",
+            "hash": "bdf24af20c3bb806c65bb7e52877948c2522325ccf5a7b136ef472440f2325c5"
         }
     },
     "pre_install": [
@@ -31,10 +31,10 @@
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
-            "$f = Get-LanzouList \"https://osssr.lanzoux.com/b01ty3lgf\" | Where-Object { $_.name_all -like \"MobaXterm.*.Portable OSSSR.COM.7z\" } | Select-Object -First 1",
+            "$f = Get-LanzouList \"https://osssr.lanzoum.com/b01ty3lgf\" | Where-Object { $_.name_all -like \"MobaXterm.*.Portable OSSSR.7z\" } | Select-Object -First 1",
             "$f.name_all + '=====' + $f.id"
         ],
-        "regex": "MobaXterm.(.*).Portable OSSSR.COM.7z=====(?<sharekey>.*)"
+        "regex": "MobaXterm.(.*).Portable OSSSR.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
         "architecture": {
