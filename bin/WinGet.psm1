@@ -150,7 +150,7 @@ function Get-WinGetInfo {
     $Info = $Global:WinGetDB | Where-Object { $_.id -like "*$Id*" } | Select-Object -First 1
     if (!$Info) {
         Write-Debug "Cannot find software info for $Id, please check your input."
-        return
+        throw "Cannot find software info for $Id, please check your input."
     }
     # 获取软件版本信息
     Write-Debug "Got version information: $Info"
@@ -165,12 +165,14 @@ function Get-WinGetManifest {
     if (!$Info) {
         $Info = Get-WinGetInfo -Id $Id
     }
+    write-Debug "Getting manifest for $Info..."
     $Id = $Info.id
     $hexString = [BitConverter]::ToString($Info.hash).Replace("-", "").ToLower().Substring(0, 8)
     $versionDataUrl = "https://cdn.winget.microsoft.com/cache/packages/$Id/$hexString/versionData.mszyml"
     Write-Debug "Requesting for version data..."
     Write-Debug "versionDataUrl: $versionDataUrl"
     $buffer = (Invoke-WebRequest $versionDataUrl).Content
+    Write-Debug "Converting version data from MSZIP format..."
     $versionData = (ConvertFrom-MSZIP -buffer $buffer | ConvertFrom-YamlString).vD[0]
     Write-Debug "Got informations:"
     Write-Debug "RelativePath: $($versionData.rP)"
@@ -178,6 +180,7 @@ function Get-WinGetManifest {
     $manifestUrl = "https://cdn.winget.microsoft.com/cache/" + $versionData.rP
     Write-Debug "manifestUrl:  $manifestUrl"
     $manifest = Invoke-RestMethod $manifestUrl
+
     $result = $manifest | ConvertFrom-YamlString
     return $result
 }
