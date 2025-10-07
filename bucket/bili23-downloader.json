@@ -1,10 +1,10 @@
 {
-    "version": "1.65.2",
+    "version": "1.66.1",
     "description": "跨平台的 B 站视频下载工具，支持 Windows、Linux、macOS 三平台，下载 B 站视频/番剧/电影/纪录片等资源。",
     "homepage": "https://bili23.scott-sloan.cn/",
     "license": "MIT",
-    "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v1.65.2/Bili23_Downloader_v1.65.2_win_release.zip",
-    "hash": "64bb35233528da1e512a1246ec46b699fb2056767c0586607400809bbb429fa5",
+    "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v1.66.1/Bili23_Downloader-1.66.1-windows-x64.zip",
+    "hash": "f51ed36a24e7618057243cf22a067061c6e4c61afddccfde87fad9e697379f06",
     "extract_dir": "Bili23 Downloader",
     "shortcuts": [
         [
@@ -23,6 +23,6 @@
         "github": "https://github.com/ScottSloan/Bili23-Downloader"
     },
     "autoupdate": {
-        "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v$version/Bili23_Downloader_v$version_win_release.zip"
+        "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v$version/Bili23_Downloader-$version-windows-x64.zip"
     }
 }
