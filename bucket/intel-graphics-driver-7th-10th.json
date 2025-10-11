@@ -1,12 +1,12 @@
 {
-    "version": "31.0.101.2135",
+    "version": "31.0.101.2137",
     "description": "Intel® Graphics Driver for 7th-10th Gen Intel® Core™ Processor Graphics, and related Intel Atom®, Pentium®, and Celeron® processors.",
     "homepage": "https://www.intel.com/content/www/us/en/download/776137/intel-7th-10th-gen-processor-graphics-windows.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://downloadmirror.intel.com/850983/gfx_win_101.2135.exe#/dl.7z",
-            "hash": "e3f8d4659789fa70b5bc2ae4a3c1ddcfdf0ae69ebb0b9ea0c88983d1990666ca"
+            "url": "https://downloadmirror.intel.com/866705/gfx_win_101.2137.exe#/dl.7z",
+            "hash": "f2f835a1374449d6cded0b5e6def5a00e428e4d1e946957faa303376d4250919"
         }
     },
     "extract_to": "installer",
