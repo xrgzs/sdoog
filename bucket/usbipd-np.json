@@ -1,16 +1,16 @@
 {
-    "version": "5.2.0",
+    "version": "5.3.0",
     "description": "(sudo )Windows software for sharing locally connected USB devices to other machines, including Hyper-V guests and WSL 2. ",
     "homepage": "https://github.com/dorssel/usbipd-win",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": " https://github.com/dorssel/usbipd-win/releases/download/v5.2.0/usbipd-win_5.2.0_x64.msi#/installer.exe",
-            "hash": "dba895e90c215de39e05b1e1506a55e67300c4c2fd946831fd2f5c9d38eabc45"
+            "url": " https://github.com/dorssel/usbipd-win/releases/download/v5.3.0/usbipd-win_5.3.0_x64.msi#/installer.exe",
+            "hash": "1c984914aec944de19b64eff232421439629699f8138e3ddc29301175bc6d938"
         },
         "arm64": {
-            "url": "https://github.com/dorssel/usbipd-win/releases/download/v5.2.0/usbipd-win_5.2.0_arm64.msi#/installer.exe",
-            "hash": "daa30ad402355ba532754b832cdaa1c6dd0d29e9c39a83f6b5fe0405ea147d57"
+            "url": "https://github.com/dorssel/usbipd-win/releases/download/v5.3.0/usbipd-win_5.3.0_arm64.msi#/installer.exe",
+            "hash": "efd7c4eb99b144c1623e616064a7b262f83d0994b0d7fde16c95d4b07528b24d"
         }
     },
     "installer": {
