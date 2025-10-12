@@ -1,10 +1,10 @@
 {
-    "version": "20.0.61",
+    "version": "20.0.70",
     "description": "酷狗音乐，就是歌多",
     "homepage": "https://www.kugou.com/",
     "license": "Proprietary",
     "url": "http://api.xrgzs.top/360baoku/?appid=72#/dl.7z",
-    "hash": "1195f078f1aecde74f6d07df926b69ee5c24f253856c4ba7609ea160ad5b2d03",
+    "hash": "f679d1b50eb1955bc176c9a262a838e79b27f8fec38601c747b23d79a51327e2",
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
