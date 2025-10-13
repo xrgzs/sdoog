@@ -4,7 +4,7 @@
     "homepage": "https://www.natfrp.com/",
     "license": "AGPL-3.0-or-later",
     "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.1.3.2/SakuraLauncher.exe",
-    "hash": "md5:14953f98c79701e5b38b9385e51829d0",
+    "hash": "md5:8cabcf5ac65c430cf4d7b67c07dddddc",
     "architecture": {
         "64bit": {
             "pre_install": "Get-ChildItem \"$dir\" '*,2.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
@@ -27,7 +27,7 @@
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
-        "Remove-Junction \"$env:APPDATA\\123pan\""
+        "Remove-Junction \"$env:LOCALAPPDATA\\SakuraLauncher\""
     ],
     "innosetup": true,
     "shortcuts": [
