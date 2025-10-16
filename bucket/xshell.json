@@ -1,23 +1,11 @@
 {
-    "version": "8.0.0069p",
-    "description": "The Industry’s Most Powerful SSH Client (Free for Home/School)",
-    "homepage": "https://www.xshell.com/en/free-for-home-school/",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://www.xshell.com/docs/ver8_free_eula.pdf"
-    },
-    "depends": [
-        "isx",
-        "gsudo"
-    ],
-    "url": "https://cdn.netsarang.net/3e435107/Xshell-8.0.0069p.exe#/dl.exe",
-    "hash": "b9bf7568360d641cc9620604ad851e6f3ecc3763dc4abb285a608ec08f485bf1",
-    "notes": [
-        "* Known issue:",
-        "  - 'Initialize Flexnet Service failed' is displayed when you start Xshell every time.",
-        "  - User data and passwords ($([Environment]::GetFolderPath('Personal'))\\NetSarang Computer\\8) are not persisted by Scoop.",
-        "  - The free licensing of Xshell and Xftp is for non-commercial use only."
-    ],
+    "version": "8.0.0087r",
+    "description": "The Industry’s Most Powerful SSH Client",
+    "homepage": "https://www.423down.com/8196.html",
+    "license": "Proprietary",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i2Etj38abung&type=down#/dl.7z",
+    "hash": "a628f0e547216fd8b31ceebf97bea40e8d005833ee79cbb33a102129153ce140",
+    "extract_dir": "Xshell",
     "shortcuts": [
         [
             "Xshell.exe",
@@ -28,36 +16,24 @@
     ],
     "env_add_path": "$dir",
     "installer": {
-        "script": [
-            "Invoke-ExternalCommand ((Get-Command 'isx' -CommandType Application).Source) -ArgumentList \"$dir\\dl.exe\" -LogPath \"$dir\\isx.log\" | Out-Null",
-            "$folder = Get-ChildItem \"$dir\" -Directory | Select-Object -First 1 -ExpandProperty FullName",
-            "Expand-MsiArchive \"$folder\\Xshell 8.msi\" \"$dir\\_msi\"",
-            "# Move-Item \"$dir\\_msi\\NetSarang\\*\" \"$dir\" -Force",
-            "Move-Item \"$dir\\_msi\\program files\\NetSarang\\Xshell 8\\*\" \"$dir\" -Force",
-            "Remove-Item $folder -Force -Recurse",
-            "Remove-Item \"$dir\\_msi\" -Force -Recurse",
-            "Remove-Item \"$dir\\LiveUpdate.dat\" -Force",
-            "Remove-Item \"$dir\\LiveUpdate.exe\" -Force",
-            "Remove-Item \"$dir\\nsregister.exe\" -Force",
-            "reg.exe add \"HKCU\\SOFTWARE\\NetSarang\\Xshell\\8\\License\" /v \"SubmitTime\" /t REG_DWORD /d \"2145888000\" /f",
-            "reg.exe add \"HKCU\\SOFTWARE\\NetSarang\\Xshell\\8\\Personal\" /v \"Notified\" /t REG_DWORD /d \"1\" /f",
-            "reg.exe add \"HKCU\\SOFTWARE\\NetSarang\\Xshell\\8\\LiveUpdate\" /v \"EnableLiveUpdate\" /t REG_DWORD /d \"0\" /f",
-            "gsudo reg.exe add \"HKLM\\SOFTWARE\\NetSarang\\Xshell\\8\" /v \"MagicCode\" /t REG_BINARY /d \"0b58da690bc91ef18518f1d686c1f47ce80709000b00\" /f /reg:32"
-        ]
+        "script": "Invoke-ExternalCommand \"$dir\\!)绿化处理.bat\" -Quiet"
     },
-    "uninstaller": {
-        "script": [
-            "reg.exe delete \"HKCU\\SOFTWARE\\NetSarang\\Xshell\\8\" /f",
-            "gsudo {",
-            "    reg.exe delete \"HKLM\\SOFTWARE\\NetSarang\\Xshell\\8\" /f *>$null",
-            "    reg.exe delete \"HKLM\\SOFTWARE\\WOW6432Node\\NetSarang\\Xshell\\8\" /f *>$null",
-            "}"
-        ]
-    },
+    "pre_uninstall": [
+        "(Get-Content \"$dir\\!)卸载移除.bat\") -replace 'CHOICE /C 1 /N >NUL 2>NUL', 'exit /b' | Set-Content \"$dir\\!)卸载移除.bat\"",
+        "Invoke-ExternalCommand \"$dir\\!)卸载移除.bat\" -Quiet",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
     "checkver": {
-        "regex": "https://cdn.netsarang.net/(?<hash>[^/]+)/Xshell-([\\d.]+p).exe"
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f19ry9g\" | Where-Object { $_.name_all -like \"Xshell-*-Modified-Green.7z\" } | Select-Object -First 1",
+            "$f.name_all + '=====' + $f.id"
+        ],
+        "regex": "Xshell-(.*)-Modified-Green.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://cdn.netsarang.net/$matchHash/Xshell-$version.exe#/dl.exe"
+        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

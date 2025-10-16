@@ -1,0 +1,49 @@
+{
+    "version": "21.5-SR0",
+    "description": "X-Ways WinHex，全球知名的计算机取证及数据恢复软件，十六进制编辑器和磁盘编辑器。",
+    "homepage": "https://www.423down.com/995.html",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iZSDD2yjyy5e&type=down#/dl.7z",
+    "hash": "79337e3a8d99710fd3b171afe98dff8b330a56d9ed3249ef911a8657b208f989",
+    "extract_dir": "WinHex",
+    "architecture": {
+        "64bit": {
+            "bin": [
+                [
+                    "WinHex64.exe",
+                    "WinHex"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "WinHex64.exe",
+                    "WinHex"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": [
+                [
+                    "WinHex.exe",
+                    "WinHex"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "WinHex.exe",
+                    "WinHex"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f1bltdg\" | Where-Object { $_.name_all -like \"WinHex-*-x86-x64.exe\" } | Select-Object -First 1",
+            "$f.name_all + '=====' + $f.id"
+        ],
+        "regex": "WinHex-(.*)-x86-x64.exe=====(?<sharekey>.*)"
+    },
+    "autoupdate": {
+        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+    }
+}
