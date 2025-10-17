@@ -1,0 +1,60 @@
+{
+    "version": "2.13.3",
+    "description": "PCL CE 是基于 PCL 开源代码二次开发的社区版本，包括了主线暂未制作的功能和改进！",
+    "homepage": "https://github.com/PCL-Community/PCL2-CE",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://github.com/PCL-Community/PCL2-CE?tab=License-1-ov-file"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.13.3/PCL2_CE_Release_x64.exe#/PCL2_CE.exe",
+            "hash": "8afdcb80b64d813c4b71dbb290baabbc1edafd0885a76a15eabe96fba81466a6"
+        },
+        "arm64": {
+            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.13.3/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe",
+            "hash": "d393a8c0a7122624a62c52c744837c6c63711d0b3debfc9b0518b745d7302478"
+        }
+    },
+    "bin": "PCL2_CE.exe",
+    "shortcuts": [
+        [
+            "PCL2_CE.exe",
+            "Plain Craft Launcher 2 Community Edition"
+        ]
+    ],
+    "suggest": {
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ],
+        ".NET 8 Desktop Runtime": "windowsdesktop-runtime-lts"
+    },
+    "pre_install": [
+        "# Ensure game directory is set to persist directory",
+        "ensure \"$persist_dir\\PCL\"",
+        "ensure \"$persist_dir\\.minecraft\"",
+        "ensure \"$persist_dir\\.minecraft\\versions\"",
+        "if (!(Test-Path \"$persist_dir\\PCL\\Setup.ini\") -or !(Get-Item \"$persist_dir\\PCL\\Setup.ini\").Length) {",
+        "    New-Item \"$persist_dir\\PCL\\Setup.ini\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\PCL\\Setup.ini\" -Value \"LaunchFolderSelect:$persist_dir\\.minecraft\\`nSystemSystemUpdate:3\"",
+        "}"
+    ],
+    "persist": [
+        "PCL",
+        ".minecraft"
+    ],
+    "checkver": {
+        "github": "https://github.com/PCL-Community/PCL2-CE"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/$version/PCL2_CE_Release_x64.exe#/PCL2_CE.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/$version/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe"
+            }
+        }
+    }
+}
