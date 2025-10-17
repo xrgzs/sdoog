@@ -1,20 +1,20 @@
 {
-    "version": "5.8.0",
+    "version": "5.8.1",
     "description": "A simple and standalone WebDAV server.",
     "homepage": "https://github.com/hacdias/webdav",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.0/windows-amd64-webdav.zip",
-            "hash": "118b5134d0966d5e79e916630c2d5b87ecd23755e14257ef4228ebcca31169c9"
+            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.1/windows-amd64-webdav.zip",
+            "hash": "b62ca10e3161d78e7ef14b309dd28a214629061be3fa37f44560b67acd9eedeb"
         },
         "32bit": {
-            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.0/windows-386-webdav.zip",
-            "hash": "95ff6a4dc9a26a705d8ddceda48f2cd354ea3f3ca76684338e272c97b2068ea5"
+            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.1/windows-386-webdav.zip",
+            "hash": "ab77f1f87e88f25e1b3f0d8024cbc788d7658ea076007240c8629b0e4594df78"
         },
         "arm64": {
-            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.0/windows-arm64-webdav.zip",
-            "hash": "1b887fb996a6cf8dc0395c4f1255f6245965e821ad3ce1a5055e6b5b13d05128"
+            "url": "https://github.com/hacdias/webdav/releases/download/v5.8.1/windows-arm64-webdav.zip",
+            "hash": "036438338dafb80a5d0a3b3b16fccae047dd4e41d18f2e2988c844fd937d36c8"
         }
     },
     "bin": "webdav.exe",
