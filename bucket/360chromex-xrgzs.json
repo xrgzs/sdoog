@@ -1,12 +1,12 @@
 {
-    "version": "23.0.1020.64",
+    "version": "23.1.1040.64",
     "description": "360极速浏览器X，极速浏览，极致顺滑。全新Chromium132内核，64位双核浏览器，性能更高，体验更佳。",
     "homepage": "https://browser.360.cn/eex/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://down.360safe.com/cse/360csex_23.0.1020.64.exe#/dl.7z",
-            "hash": "8e062c2004daf6a885c6a2139a26ae27f4157a596020510ad797c658c7541f10"
+            "url": "https://down.360safe.com/cse/360csex_23.1.1040.64.exe#/dl.7z",
+            "hash": "44b3302df21d8367383ec5f9079b75db6483e15161d272847d5b43d235c74de5"
         }
     },
     "shortcuts": [
