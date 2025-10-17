@@ -23,7 +23,7 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64.exe.ver",
-        "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

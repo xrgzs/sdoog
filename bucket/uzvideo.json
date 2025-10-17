@@ -24,7 +24,7 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/Version_Win.txt",
-        "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86Win_$version.zip"

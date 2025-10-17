@@ -40,7 +40,7 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z.ver",
-         "regex": "(\\d\\.[\\d.]+)"
+         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

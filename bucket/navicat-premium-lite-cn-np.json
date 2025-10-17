@@ -39,7 +39,7 @@
     },
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_lite_cs_x64.exe.ver",
-        "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_lite_cs_x64_$version.exe#/installer.exe",

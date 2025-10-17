@@ -30,7 +30,7 @@
     ],
     "checkver": {
         "url": "https://1.mashiro.asia/",
-        "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

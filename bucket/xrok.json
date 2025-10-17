@@ -39,7 +39,7 @@
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",
-        "regex": "(\\d\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z"
