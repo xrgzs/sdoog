@@ -1,5 +1,5 @@
 {
-    "version": "6.0.0.22931",
+    "version": "16.0.0.22931",
     "description": "向日葵 for Windows 安装后即可发起和接受远程控制，提供安全顺畅的远程体验",
     "homepage": "https://sunlogin.oray.com/",
     "license": {
@@ -7,12 +7,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_6.0.0.22931.exe#/SunloginClient.exe",
-            "hash": "a5664ecc677a92ea9191f78c0ca6161f0978f4fd27c637d3cd8aaad6834761bb"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_16.0.0.22931.exe#/SunloginClient.exe",
+            "hash": "b1154374d1293b990af7d3ff3524d98522639e13e37a2d4f705b52695e51cf37"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_6.0.0.22931.exe#/SunloginClient.exe",
-            "hash": "a5664ecc677a92ea9191f78c0ca6161f0978f4fd27c637d3cd8aaad6834761bb"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_16.0.0.22931.exe#/SunloginClient.exe",
+            "hash": "cfed5b47cf83417ccf70509717a6e087cb5ee9dbf5d41af823ec2a19329fc2b0"
         }
     },
     "shortcuts": [
