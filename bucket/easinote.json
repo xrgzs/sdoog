@@ -1,11 +1,11 @@
 {
-    "version": "5.2.4.9158",
+    "version": "5.2.4.9240",
     "description": "为互动教学而生",
     "homepage": "https://easinote.seewo.com/",
     "license": "Proprietary",
-    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwvnknhhulnhlwhuqoyqhmkkphihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1756970505%3B2072330505%26q-key-time%3D1756970505%3B2072330505%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D7fa57ced3c4f640e7ffd9475974acb984645eb2c&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.9158_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.9158_seewo.exe#/dl.7z",
-    "hash": "0860b80f3918f665aba81002e085e24f548209affe344ba58c1ff6dfcae798bb",
-    "extract_dir": "EasiNote5_5.2.4.9158",
+    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwipluhhulnhlwhvhyqpwoynphihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1760952970%3B2076312970%26q-key-time%3D1760952970%3B2076312970%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D57efe6272b827f0fb4c654f676fc99fc1901a2e1&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.9240_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.9240_seewo.exe#/dl.7z",
+    "hash": "fa3c1be263a39ca814d4fba7396d97ffb761c74f167078ce2dd9f3c956beb4db",
+    "extract_dir": "EasiNote5_5.2.4.9240",
     "shortcuts": [
         [
             "Main\\EasiNote.exe",
