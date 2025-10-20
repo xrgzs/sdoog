@@ -1,13 +1,13 @@
 {
-    "version": "13.18",
+    "version": "13.19",
     "description": "A complete replacement for Explorer, with far more functionality than any other file manager available today.",
     "homepage": "https://www.gpsoft.com.au/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
     },
-    "url": "https://cdn2.gpsoft.com.au/files/Opus13/DOpusInstall-13.18.exe",
-    "hash": "30ba5438852e8a5b06b5edb79ff36b166eb4b6d39ec2a6c5aa3176345d2a7b67",
+    "url": "https://cdn2.gpsoft.com.au/files/Opus13/DOpusInstall-13.19.exe",
+    "hash": "b039ef7d722aeebbe83c80cf998f62aace9f8f9cbe4e4e442343bd29a34bc6c0",
     "bin": "dopusrt.exe",
     "shortcuts": [
         [
