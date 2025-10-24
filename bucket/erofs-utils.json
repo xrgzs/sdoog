@@ -1,0 +1,34 @@
+{
+    "version": "1.8.10-251024",
+    "description": "A tool for extracting erofs images implemented using erofs-utils",
+    "homepage": "https://github.com/sekaiacg/erofs-utils",
+    "license": {
+        "identifier": "GPL-2.0-or-later",
+        "url": "https://github.com/sekaiacg/erofs-utils?tab=License-1-ov-file"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/sekaiacg/erofs-utils/releases/download/v1.8.10-251024/erofs-utils-v1.8.10-g878e67d4-251024-Cygwin_x86_64.zip",
+            "hash": "31e24f58c799f29f8e26980806f21d965c43714a332026e0bb636990eba1d184"
+        }
+    },
+    "bin": [
+        "dump.erofs.exe",
+        "extract.erofs.exe",
+        "fsck.erofs.exe",
+        "mkfs.erofs.exe"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/sekaiacg/erofs-utils/releases/latest",
+        "jsonpath": "$.assets[*].browser_download_url",
+        "regex": "/erofs-utils-v([\\d.]+)-(\\w+)-(\\d+)-Cygwin_x86_64.zip",
+        "replace": "${1}-${3}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/sekaiacg/erofs-utils/releases/download/v$version/erofs-utils-v$match1-$match2-$match3-Cygwin_x86_64.zip"
+            }
+        }
+    }
+}
