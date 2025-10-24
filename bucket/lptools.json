@@ -1,0 +1,38 @@
+{
+    "version": "251024",
+    "description": "Tools to extract or create Android super.img",
+    "homepage": "https://github.com/sekaiacg/lptools",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-251024/lptools-251024-Windows_x86_64.zip",
+            "hash": "bfd9bd7a41968d5271af7ebf6bfead8a1aa7568500a10117801945e41766968c"
+        },
+        "arm64": {
+            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-251024/lptools-251024-Windows_aarch64.zip",
+            "hash": "d1611fc773b36847b0f9eae3fed0facaa4531d025761984fc102cce1b4492318"
+        }
+    },
+    "bin": [
+        "append2simg.exe",
+        "lpadd.exe",
+        "lpdump.exe",
+        "lpmake.exe",
+        "lpunpack.exe",
+        "simg2img.exe"
+    ],
+    "checkver": {
+        "github": "https://github.com/sekaiacg/lptools",
+        "regex": "/releases/tag/lptools-(.*?)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-$version/lptools-$version-Windows_x86_64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-$version/lptools-$version-Windows_aarch64.zip"
+            }
+        }
+    }
+}
