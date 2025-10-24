@@ -1,0 +1,60 @@
+{
+    "version": "4.14",
+    "description": "A localized Chinese version of Proxifier, designed to help users in China more easily access Proxifier’s powerful features and enhance their user experience.",
+    "homepage": "https://github.com/1564307973/Proxifier-CN",
+    "license": "MIT",
+    "url": "https://github.com/1564307973/Proxifier-CN/releases/download/v4.14/Proxifier.v4.14.Chs.rar#/dl.rar",
+    "hash": "d6f001eecf35cb0fe5740702489ac284fd5beb45c3dbb8dfa43b144e27c0e76f",
+    "bin": "Proxifier.exe",
+    "shortcuts": [
+        [
+            "Proxifier.exe",
+            "Proxifier"
+        ]
+    ],
+    "pre_install": [
+        "if ($global) {",
+        "    $registry_scope = \"HKLM:\"",
+        "} else {",
+        "    $registry_scope = \"HKCU:\"",
+        "}",
+        "New-Item \"$registry_scope\\SOFTWARE\\Initex\\Proxifier\\Settings\" -Force | Out-Null",
+        "New-ItemProperty \"$registry_scope\\SOFTWARE\\Initex\\Proxifier\\Settings\" -Force -PropertyType DWord -Name 'UpdateCheck' -Value 0x0 | Out-Null",
+        "New-Item \"$registry_scope\\SOFTWARE\\Initex\\Proxifier\\License\" -Force | Out-Null",
+        "New-ItemProperty \"$registry_scope\\SOFTWARE\\Initex\\Proxifier\\License\" -Force -PropertyType String -Name 'Key' -Value '4MHDA-C3FNN-EV6YH-ZENEQ-5A2CP' | Out-Null",
+        "New-ItemProperty \"$registry_scope\\SOFTWARE\\Initex\\Proxifier\\License\" -Force -PropertyType String -Name 'Owner' -Value $env:USERNAME | Out-Null",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\Proxifier4\" \"$persist_dir\\AppData\" -Migrate"
+    ],
+    "installer": {
+        "file": "ProxifierSetup.exe",
+        "args": [
+            "/VERYSILENT",
+            "/FORCECLOSEAPPLICATIONS",
+            "/NORESTART",
+            "/TASKS=\"\"",
+            "/DIR=\"$dir\""
+        ]
+    },
+    "post_install": "Copy-Item \"$dir\\CN\\*\" $dir -Recurse -Force",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Proxifier4\""
+    ],
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT",
+            "/FORCECLOSEAPPLICATIONS",
+            "/NORESTART"
+        ]
+    },
+    "checkver": {
+        "github": "https://github.com/1564307973/Proxifier-CN"
+    },
+    "autoupdate": {
+        "url": "https://github.com/1564307973/Proxifier-CN/releases/download/v$version/Proxifier.v$version.Chs.rar#/dl.rar"
+    }
+}
