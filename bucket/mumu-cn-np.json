@@ -26,10 +26,16 @@
             "    exit 1",
             "}",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', '/auto_start=false', \"/D=$dir\") -RunAs",
-            "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
-            "Remove-Item \"$dir\\shell\\MuMuPlayerUpdater.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
+            "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
         ]
     },
+    "post_install": [
+        "Remove-Item \"$dir\\nx_main\\MuMuNxUpdater.exe\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Remove-Item \"$env:APPDATA\\Netease\\MuMuPlayer\\data\\startupImage\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "New-Item \"$env:APPDATA\\Netease\\MuMuPlayer\\data\" -Name 'startupImage' -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Remove-Item \"$env:APPDATA\\Netease\\MuMuPlayer\\data\\msgCenter\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "New-Item \"$env:APPDATA\\Netease\\MuMuPlayer\\data\" -Name 'msgCenter' -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null"
+    ],
     "pre_uninstall": [
         "if (!(is_admin)) {",
         "    error \"Administrator rights are required to uninstall $app.\"",
