@@ -1,25 +1,21 @@
 {
-    "version": "4.1.34.3742",
+    "version": "5.8.4.1933",
     "description": "(sudo) MuMu Player 12 Large Screen, Unlimited Games Android 12 | Customize keep-alive apps | Multi-Instance.",
     "homepage": "https://mumuglobal.com",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.mumuplayer.com/news/update/20190906/30607_831430.html"
     },
-    "url": "http://a11.gdl.netease.com/MuMuNG-setup-V4.1.34.3742-overseas-0718171742.exe#/installer.exe",
-    "hash": "md5:b9090e5f9b267ba994649482cd151819",
+    "url": "http://a11.gdl.easebar.com/MuMu-setup-V5.8.4.1933-overseas-1023154613.exe#/installer.exe",
+    "hash": "e897b34797b058ab4de07e08093011b99b397fc00959f92f454a00e5e563eb1c",
     "persist": [
         "configs",
         "vms"
     ],
     "shortcuts": [
         [
-            "shell\\MuMuPlayer.exe",
-            "MuMu Player 12"
-        ],
-        [
-            "shell\\MuMuMultiPlayer.exe",
-            "MuMu MultiPlayer 12"
+            "nx_main\\MuMuNxMain.exe",
+            "MuMuPlayer"
         ]
     ],
     "installer": {
@@ -48,9 +44,12 @@
     ],
     "checkver": {
         "script": [
-            "$url = \"https://api.mumuglobal.com/api/v1/download/nemux?architecture=x86_64&machine=%22%22&usage=1\"",
-            "$response = Invoke-RestMethod -Uri $url -Method Post",
-            "$response.data.mumu.version + '=====' + $response.data.mumu.checksum + '=====' + $response.data.mumu.link"
+            "$response = Invoke-RestMethod -Uri 'https://api.mumuglobal.com/api/v1/download/nx' -Method Post -Form @{",
+            "    architecture = 'x86_64'",
+            "    machine      = '\"\"'",
+            "    usage        = '1'",
+            "}",
+            "$response.data.version + '=====' + $response.data.mumu.checksum + '=====' + $response.data.mumu.link"
         ],
         "regex": "(.*)=====(?<md5>.*)=====(?<url>.*)"
     },
