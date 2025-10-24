@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/sekaiacg/payload_extract/releases/download/v1.2.7-250826/payload_extract-v1.2.7-Windows_x86_64-2508262329.zip",
-            "hash": "f8e4d985a7c3b6d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d"
+            "hash": "sha1:f8e4d985a7c3b6d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d"
         }
     },
     "bin": "payload_extract.exe",
