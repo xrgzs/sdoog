@@ -24,11 +24,11 @@
         "ensure \"$persist_dir\\Config\"",
         "if (!(Test-Path \"$persist_dir\\Config\\PixPinConfig.json\") -or !(Get-Item \"$persist_dir\\Config\\PixPinConfig.json\").Length) {",
         "    New-Item \"$persist_dir\\Config\\PixPinConfig.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$persist_dir\\Config\\PixPinConfig.json\" -Value '{\"System.Crash feedback.UploadCrashInformation\":{\"t\":1735664461,\"v\":false},\"System.Update.AutoCheckUpdate\":{\"t\":1735664461,\"v\":false}}'",
+        "    Set-Content -Path \"$persist_dir\\Config\\PixPinConfig.json\" -Value '{\"System.Crash feedback.UploadCrashInformation\":{\"t\":1735664461,\"v\":false},\"System.Update.UpgradeMode#s.win\":{\"t\":1735664461,\"v\":0}}'",
         "}",
         "if (!(Test-Path \"$dir\\LocalStorage.data\") -or !(Get-Item \"$dir\\LocalStorage.data\").Length) {",
         "    New-Item \"$dir\\LocalStorage.data\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$dir\\LocalStorage.data\" -Value \"[General]`nIsFirstRun=false\"",
+        "    Set-Content -Path \"$dir\\LocalStorage.data\" -Value \"[General]`nIsFirstRun=false`ndevID=$((New-Guid).Guid)\"",
         "}"
     ],
     "pre_uninstall": [
