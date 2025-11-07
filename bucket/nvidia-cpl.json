@@ -1,12 +1,12 @@
 {
-    "version": "8.1.968.0",
+    "version": "8.1.966.0",
     "description": "Featuring display management, application, and gaming-specific features, the NVIDIA Control Panel ensures the best overall experience using NVIDIA graphics",
     "homepage": "https://www.microsoft.com/store/productId/9NF8H0H7WMLT",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/NVIDIACpl/NVIDIACpl.appx#/dl.7z",
-            "hash": "856cb2cdafa667b6104a9fa2faa1347a82c05b035789cae44191746c03ecc706"
+            "hash": "7e07b849c90741493cae1346008ffafc467a7ea31bdf66396a85128acef5e7f1"
         }
     },
     "shortcuts": [
@@ -37,7 +37,7 @@
     ],
     "checkver": {
         "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/NVIDIACpl/NVIDIACpl.appx.ver",
-         "regex": "(\\d+\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
