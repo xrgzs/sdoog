@@ -1,13 +1,13 @@
 {
-    "version": "5.9.0.1981",
+    "version": "5.9.5.2110",
     "description": "(sudo) MuMu模拟器12 大屏超级炫 手游不受限 安卓12 | 标签拖动分屏 | 自定义应用保活 | 自由多开。",
     "homepage": "https://mumu.163.com",
     "license": {
         "identifier": "Freeware",
         "url": "https://mumu.163.com/sdk/privacy/index.html"
     },
-    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.9.0.1981-1031225541.exe#/installer.exe",
-    "hash": "md5:78a5c2dddc462a9a887843f0b5626d7d",
+    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.9.5.2110-1111175905.exe#/installer.exe",
+    "hash": "md5:b32bacda5d7c6137f1f0e6c95fab3a84",
     "persist": [
         "configs",
         "vms"
