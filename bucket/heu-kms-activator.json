@@ -1,5 +1,5 @@
 {
-    "version": "63.2.0",
+    "version": "63.3.0",
     "description": "KMS Activator中文版是一款简洁高效的KMS/OEM智能激活工具，适用所有Windows,Office版本，无需联网即可一键激活，支持UEFI的KMS激活工具。KMS服务是微软对Windows,Office等产品的批量许可服务，利用KMS可以激活局域网内的产品。该工具利用KMS机制在系统搭建KMS服务器，从而实现在线或离线激活。",
     "homepage": "https://github.com/zbezj/HEU_KMS_Activator",
     "license": "Freeware",
@@ -30,17 +30,17 @@
         "",
         "注：Defender会误报威胁，需要提前加入排除！"
     ],
-    "url": "https://github.com/zbezj/HEU_KMS_Activator/releases/download/63.2.0/HEU_KMS_Activator_v63.2.0.rar#/dl.7z",
-    "hash": "6cb0efacbd9d3afd8c76d3f340b088c3e98f637ad20b3e5c9536eb379891ee72",
+    "url": "https://github.com/zbezj/HEU_KMS_Activator/releases/download/63.3.0/HEU_KMS_Activator_v63.3.0.rar#/dl.7z",
+    "hash": "3235279d8342f511104a4b828a3aff41c87f024ad92512b57d8ad42f926d60b1",
     "bin": [
         [
-            "HEU_KMS_Activator_v63.2.0.exe",
+            "HEU_KMS_Activator_v63.3.0.exe",
             "HEU_KMS_Activator"
         ]
     ],
     "shortcuts": [
         [
-            "HEU_KMS_Activator_v63.2.0.exe",
+            "HEU_KMS_Activator_v63.3.0.exe",
             "HEU KMS Activator"
         ]
     ],
