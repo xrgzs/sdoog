@@ -1,5 +1,5 @@
 {
-    "version": "2025.09.30.b064fc6",
+    "version": "2025.11.11.7327f3b",
     "description": "Open-source Windows and Office activator featuring HWID, Ohook, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
     "homepage": "https://github.com/massgravel/Microsoft-Activation-Scripts",
     "license": "GPL-3.0-or-later",
@@ -8,7 +8,7 @@
         "For more details, check Homepage: <https://massgrave.dev>"
     ],
     "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip",
-    "hash": "ed03feec3bb1f5d1160a4883c5f91435a9b9fa510a5c0a75d18d910473bfa3f5",
+    "hash": "85b00866fa46c5128d370345d2fb627f63e1489647b82ea21f43dc5c652d86db",
     "extract_dir": "Microsoft-Activation-Scripts-master\\MAS",
     "bin": [
         [
