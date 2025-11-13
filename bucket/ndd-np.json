@@ -1,12 +1,12 @@
 {
-    "version": "3.6.1",
+    "version": "3.6.2",
     "description": "一个支持windows/linux/mac的文本编辑器，目标是要替换notepad++，来自中国。",
     "homepage": "https://gitee.com/cxasm/notepad--",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://gitee.com/cxasm/notepad--/releases/download/v3.6.1/Notepad--v3.6.1-plugin-Installer.exe",
-            "hash": "93840a2778da72fcc1e2cecbf6f3f79e5eefee45d896624eb0497ed83ed434b0"
+            "url": "https://gitee.com/cxasm/notepad--/releases/download/v3.6.2/Notepad--v3.6.2-plugin-Installer.exe",
+            "hash": "d196b0b28c5da36df8a29da15b6fa6be403b906d9729d385aeb455c43a8ef2e3"
         }
     },
     "bin": [
