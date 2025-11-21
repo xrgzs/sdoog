@@ -1,10 +1,10 @@
 {
-    "version": "20251119",
+    "version": "20251121",
     "description": "OlSoul Windows 系统调校程序，可以方便的对电脑进行一些设置，修复，内容多且实用。",
     "homepage": "http://olsoul.com",
     "license": "",
-    "url": "http://pan.olsoul.com:88/OlSoul_%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%A0%A1%E7%A8%8B%E5%BA%8F/Windows%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%A0%A1_20251119_0b4d0223.exe#/OlSoul.exe",
-    "hash": "bf523842fd660520d0a7db835976ded743971f681d1f6f440befdfd83dfd7691",
+    "url": "http://pan.olsoul.com:88/OlSoul_%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%A0%A1%E7%A8%8B%E5%BA%8F/Windows%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%A0%A1_20251121_86a02521.exe#/OlSoul.exe",
+    "hash": "2be1fdf649317e8842c8dd96c5f1d983ccdce1862ded3c99abc610027d58509f",
     "shortcuts": [
         [
             "OlSoul.exe",
