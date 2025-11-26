@@ -1,10 +1,10 @@
 {
-    "version": "9.4.191603",
+    "version": "9.5.191645",
     "description": "R-Studio中文版是一款数据恢复软件，可以恢复任何磁盘分区类型文件，包括对已损坏或已删除的分区、加密的文件、数据流、硬盘分区创建镜像、rdr、RAID磁盘阵列，R-Studio最新版最大特色在于能自动识别RAID参数修复损坏的磁盘阵列，在数据恢复效率和文件质量上非常出众。",
     "homepage": "https://www.423down.com/8132.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iuT4s35pc0lc&type=down#/dl.7z",
-    "hash": "dfcf3445dcd22a7de85e7111eb7eb0f1be3764531aa02915a3135751978dddd7",
+    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iXpse3c6v15e&type=down#/dl.7z",
+    "hash": "a4aa5723f717d0a3c36acccfacc36b66e0761bfea29da3e5c636562e518b7ddd",
     "extract_dir": "R-Studio",
     "shortcuts": [
         [
