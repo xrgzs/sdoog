@@ -1,0 +1,33 @@
+{
+    "version": "2.2.2",
+    "description": "Windows Packet Divert (WinDivert) is a user-mode packet interception library for Windows 7, Windows 8 and Windows 10.",
+    "homepage": "https://www.reqrypt.org/windivert.html",
+    "license": {
+        "identifier": "LGPL-3.0-only",
+        "url": "https://github.com/basil00/WinDivert?tab=License-1-ov-file"
+    },
+    "extract_dir": "WinDivert-2.2.2-A",
+    "url": "https://github.com/basil00/WinDivert/releases/download/v2.2.2/WinDivert-2.2.2-A.zip",
+    "hash": "63cb41763bb4b20f600b6de04e991a9c2be73279e317d4d82f237b150c5f3f15",
+    "architecture": {
+        "32bit": {
+            "env_set": {
+                "WINDIVERT_PATH": "$dir\\x86"
+            },
+            "env_add_path": "x86"
+        },
+        "64bit": {
+            "env_set": {
+                "WINDIVERT_PATH": "$dir\\x64"
+            },
+            "env_add_path": "x64"
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/basil00/WinDivert"
+    },
+    "autoupdate": {
+        "extract_dir": "WinDivert-$version-A",
+        "url": "https://github.com/basil00/WinDivert/releases/download/v$version/WinDivert-$version-A.zip"
+    }
+}
