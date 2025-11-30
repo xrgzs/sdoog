@@ -1,0 +1,32 @@
+{
+    "version": "0.2.8",
+    "description": "一款支持emby的播放器",
+    "homepage": "https://t.me/Hills_app",
+    "license": "Freeware",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/Hills/Hills-windows-v0.2.8.zip",
+    "hash": "fbef3846c12eea04a5593c195b75d2f6605529b80edb11107242cf90a154d753",
+    "shortcuts": [
+        [
+            "hills_desktop.exe",
+            "Hills"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.mountains\\Hills\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Remove-Junction \"$env:APPDATA\\com.mountains\\Hills\""
+    ],
+    "checkver": {
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Hills/Version_Win.txt",
+        "regex": "(\\d+\\.[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://alist.xrgzs.top/d/pxy/Software/Hills/Hills-windows-v$version.zip"
+    }
+}
