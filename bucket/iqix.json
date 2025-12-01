@@ -1,12 +1,12 @@
 {
     "description": "更智能，更高效，更强大之全新第十代 IQI X Windows 一键安装。IQI的开发编写始于2012年，已迭代了IQI5、IQI6、IQI8、IQI9等几大典型版本。其广泛的兼容性和良好的使用体验得到了不少用户的一致好评。而今，全新设计开发的第十代IQI X也将正式与大家见面。",
-    "version": "10.0.6.2198",
+    "version": "10.0.6.2206",
     "homepage": "https://www.xyboot.com/iqi_x_windows_%e4%b8%80%e9%94%ae%e5%ae%89%e8%a3%85-image_quick_installer_x-2020/",
     "license": "Freeware",
-    "url": "https://cloud.xyboot.top/IQI_X/IQI_X_x64_x86_v10.0.6.2198.rar#/dl.7z",
-    "hash": "cd6bc20f8a7f6176513d30a9d794ac39bfe85c37316f4053ca700e102d23dc8f",
+    "url": "https://cloud.xyboot.top/IQI_X/IQI_X_x64_x86_v10.0.6.2206.rar#/dl.7z",
+    "hash": "e88d9b52642a420d393b15e9381d855c80ef9f615e745b99fcbe8ff2e748fc75",
     "notes": "使用时请手动前往 高级 => 关于程序，取消 “设置 目标系统首页为2345网址导航”，或者执行 'IQIX.exe /unhomepage_ini'。",
-    "extract_dir": "IQI_X_x64_x86_v10.0.6.2198",
+    "extract_dir": "IQI_X_x64_x86_v10.0.6.2206",
     "architecture": {
         "64bit": {
             "bin": [
