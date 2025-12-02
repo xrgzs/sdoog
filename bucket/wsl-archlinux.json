@@ -1,10 +1,10 @@
 {
-    "version": "2025.11.01.150831",
+    "version": "2025.12.01.153427",
     "description": "Arch Linux on Windows Subsystem for Linux",
     "homepage": "https://archlinux.org/",
     "license": "GPL-3.0-or-later",
-    "url": "https://fastly.mirror.pkgbuild.com/wsl/2025.11.01.150831/archlinux-2025.11.01.150831.wsl#/archlinux.wsl",
-    "hash": "9dbac892c38c94fd22a8988eff4e072778f3f445378d33a81474a2b88cb04562",
+    "url": "https://fastly.mirror.pkgbuild.com/wsl/2025.12.01.153427/archlinux-2025.12.01.153427.wsl#/archlinux.wsl",
+    "hash": "8dfe92910a188f191b0af2972bd4bda661178b769ce820a8921e8b7aeae9a517",
     "notes": [
         "Call `wsl -d archlinux` to start Arch Linux.",
         "If you want to make Arch Linux your default distribution, you can do so with:",
