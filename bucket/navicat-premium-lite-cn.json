@@ -1,12 +1,12 @@
 {
-    "version": "17.3.6",
+    "version": "17.3.7",
     "description": "Navicat Premium Lite 是 Navicat 的精简版，它包含了用户执行主要的基本数据库操作所需的核心功能，可用于商业和非商业目的。",
     "homepage": "https://www.navicat.com.cn/products/navicat-premium-lite",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_lite_cs_x64_17.3.6.exe#/installer.exe",
-            "hash": "c09c9ee7c3d7b30abed6789e8a7f61660530309f423db1cc4df38bd52d173795"
+            "url": "https://alist.xrgzs.top/d/pxy/Software/Navicat/navicat17_premium_lite_cs_x64_17.3.7.exe#/installer.exe",
+            "hash": "63a9e1eeb7f1a105d302f50eaa1990734a155ac7259a944361588408b1ef2d23"
         }
     },
     "shortcuts": [
