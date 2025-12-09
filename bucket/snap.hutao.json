@@ -9,7 +9,6 @@
             "hash": "6984e0c94034330452b74739bffb6b4e294d6a751ff062c6a424bd1bf16bfdd9"
         }
     },
-    "deprecated": true,
     "pre_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Enable-DevelopmentMode",
