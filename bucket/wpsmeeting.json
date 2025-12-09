@@ -1,0 +1,35 @@
+{
+    "version": "1.79.120",
+    "description": "便捷简单、高性价比、安全保障",
+    "homepage": "https://meeting.wps.cn",
+    "license": "Proprietary",
+    "url": "https://kmeeting.wpscdn.cn/desktop/1.79/kmeeting_1.79.120.exe#/dl.7z",
+    "hash": "af1566abd5c5a3b02fa1f2c7360526efd4edd337c25325c27f3b7598e47d29ba",
+    "shortcuts": [
+        [
+            "wpsmeeting.exe",
+            "WPS会议"
+        ]
+    ],
+    "installer": {
+        "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
+    },
+    "post_install": [
+        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse | Out-Null",
+        "",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\wpsmeeting\" \"$persist_dir\\AppData\" -Migrate"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\wpsmeeting\""
+    ],
+    "checkver": {
+        "regex": "kmeeting_([\\d.]+)\\.exe"
+    },
+    "autoupdate": {
+        "url": "https://kmeeting.wpscdn.cn/desktop/$majorVersion.$minorVersion/kmeeting_$version.exe#/dl.7z"
+    }
+}
