@@ -5,7 +5,6 @@
     "license": "CC BY-NC-ND-4.0",
     "url": "https://github.com/ldoubil/astral/releases/download/v2.5.7/astral-windows-x64-zip.zip",
     "hash": "17431d469d97eab1bf25b400e6fa6386f3a9f3c4216f9b528d5fcb6f1b8cae12",
-    "extract_dir": "astral",
     "bin": "astral.exe",
     "shortcuts": [
         [
