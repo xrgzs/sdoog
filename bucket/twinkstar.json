@@ -1,12 +1,12 @@
 {
-    "version": "10.11.1000.2511",
+    "version": "10.12.1000.2512",
     "description": "星愿浏览器（Twinkstar Browser）是一款好用，可靠，时尚的浏览器，兼容Chrome插件，提供漫画阅读模式，视频下载，鼠标手势，超级拖拽等功能",
     "homepage": "https://www.twinkstar.com/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://d1.twinkstar.com/win/Twinkstar_v10.11.1000.2511_Release.exe#/dl.7z",
-            "hash": "15ebbd7020ecc93320362b1102df7319c950bffdc1cf5f0dfa5c2ec0a635382e"
+            "url": "https://d1.twinkstar.com/win/Twinkstar_v10.12.1000.2512_Release.exe#/dl.7z",
+            "hash": "dfa3483a2e11fee7a1bd8230fac4214c3c9cbcab9e9466de8e01f4d7cc15635f"
         }
     },
     "extract_dir": "$PLUGINSDIR\\tw_data",
