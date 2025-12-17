@@ -1,16 +1,16 @@
 {
-    "version": "4.54.0",
+    "version": "4.55.0",
     "description": "(sudo) Docker Desktop. Open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.",
     "homepage": "https://www.docker.com/products/docker-desktop/",
     "license": "Proprietary",
     "architecture": {
         "arm64": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe",
-            "hash": "18d6442f80b72bfe314f2221c8041cfb059331b284776301795d744d35e5b0b4"
+            "hash": "7ab396dacede0fe6092e99f4e467d2e806fb8395a25f64508f191bd61eebc3c9"
         },
         "64bit": {
             "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
-            "hash": "7246ffd357c8efb9e247f008988333b468508d7da9d9bdeeb0db0f9cad3f27f4"
+            "hash": "7f424725af2297e346ea5ac8c9ff51f7a14055c4de7f3ad4877b1c2d9fa67e1b"
         }
     },
     "shortcuts": [
