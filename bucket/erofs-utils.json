@@ -1,5 +1,5 @@
 {
-    "version": "1.8.10-251024",
+    "version": "1.8.10-251217",
     "description": "A tool for extracting erofs images implemented using erofs-utils",
     "homepage": "https://github.com/sekaiacg/erofs-utils",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sekaiacg/erofs-utils/releases/download/v1.8.10-251024/erofs-utils-v1.8.10-g878e67d4-251024-Cygwin_x86_64.zip",
-            "hash": "31e24f58c799f29f8e26980806f21d965c43714a332026e0bb636990eba1d184"
+            "url": "https://github.com/sekaiacg/erofs-utils/releases/download/v1.8.10-251217/erofs-utils-v1.8.10-gee46dd74-251217-Cygwin_x86_64.zip",
+            "hash": "b6a24de0cfe49a95283cf306db1d158bdb63850e0687c8a8b0f4c4a540ba35ba"
         }
     },
     "bin": [
