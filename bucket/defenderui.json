@@ -1,10 +1,10 @@
 {
-    "version": "1.34",
+    "version": "1.46",
     "description": "DefenderUI: A better UI for Microsoft Defender",
     "homepage": "https://www.defenderui.com/",
     "license": "Proprietary",
     "url": "https://www.defenderui.com/Download/InstallDefenderUI.exe",
-    "hash": "aff0e8a5112aa26c64a4dc3b698ded747ab5d2a319427a77f8b7ccb1150f44a6",
+    "hash": "df99b283fa2597dc3de715e1c34833bf9ea1675b027bab5db173168c3c512a13",
     "innosetup": true,
     "shortcuts": [
         [
