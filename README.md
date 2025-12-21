@@ -351,8 +351,6 @@ scoop config aria2-warning-enabled false
 
 开始菜单路径：`%AppData%\Microsoft\Windows\Start Menu\Programs\Scoop Apps`
 
-~~个人使用 DeskGo，téng xùn 为数不多的良心产品，[点此下载](http://api.xrgzs.top/qqsoft/?softid=23125)~~
-
 ### 你是否需要使用 Scoop 来安装某个应用
 
 #### 持久化
