@@ -2,7 +2,7 @@
     "version": "7.0.2.3856",
     "homepage": "http://bbs.wuyou.net/forum.php?mod=viewthread&tid=419412&fromuid=378114",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihq0t2vlkvlc&type=down#/dl.zip",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ihq0t2vlkvlc&type=down#/dl.zip",
     "hash": "5748d20f0490f7f33e89fce4226581c03db70d14ed64b47fec26ec0088845d50",
     "architecture": {
         "64bit": {
@@ -36,6 +36,6 @@
         "regex": "单文件制作_v?(.*).7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.zip"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.zip"
     }
 }

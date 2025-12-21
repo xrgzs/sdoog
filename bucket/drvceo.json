@@ -3,7 +3,7 @@
     "version": "2.20.0.3",
     "homepage": "https://www.sysceo.com/software-softwarei-id-258.html",
     "license": "Freeware",
-    "url": "http://api.xrgzs.top/360baoku/?appid=1900060398#/dl.exe",
+    "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=1900060398#/dl.exe",
     "hash": "961d446029a7db29faa99e9abafb559503cbd9b8422dd1615ea62a21e4a6d6eb",
     "innosetup": true,
     "pre_install": [
@@ -49,6 +49,6 @@
         "jsonpath": "$.data.version"
     },
     "autoupdate": {
-        "url": "http://api.xrgzs.top/360baoku/?appid=1900060398#/dl.exe"
+        "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=1900060398#/dl.exe"
     }
 }

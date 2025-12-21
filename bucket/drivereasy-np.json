@@ -3,7 +3,7 @@
     "description": "专业驱动更新管理软件",
     "homepage": "https://www.mefcl.com/drivereasy.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1Ipk3777lxe&type=down#/installer.exe",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i1Ipk3777lxe&type=down#/installer.exe",
     "hash": "450adf0718d5cdf79c6e9053b4e77a82b7e2c62a8e9e413839da0889af7ecea6",
     "shortcuts": [
         [
@@ -39,6 +39,6 @@
         "regex": "DriverEasyPro_(.*)_mefcl_Setup.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
     }
 }

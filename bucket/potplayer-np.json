@@ -5,7 +5,7 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ibIZ636ueduh&type=down#/installer.exe",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ibIZ636ueduh&type=down#/installer.exe",
             "hash": "ef164eeb70c0afa1fa0a5e9b4ca7e7b52296afe32f2b15ae1d0a39372fd5d166",
             "shortcuts": [
                 [
@@ -15,7 +15,7 @@
             ]
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1bgL36ueekd&type=down#/installer.exe",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i1bgL36ueekd&type=down#/installer.exe",
             "hash": "4a315c19f3b72ba3984430eb07daec278ea051734ce79f86dce00670d6b0a565",
             "shortcuts": [
                 [
@@ -58,10 +58,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/installer.exe"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/installer.exe"
             },
             "32bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/installer.exe"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/installer.exe"
             }
         }
     }

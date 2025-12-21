@@ -3,7 +3,7 @@
     "description": "IObit Uninstaller中文版是一款专业的软件卸载工具，IObit Uninstaller最新版功能包括：强制卸载， 批量卸载，安装监视器，文件粉碎，软件健康检查，卸载Windows 更新补丁，移除浏览器工具栏和扩展插件等。",
     "homepage": "https://www.423down.com/7732.html",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i1ZBE35uf3ob&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i1ZBE35uf3ob&type=down#/dl.7z",
     "hash": "af818efa6046433a9bf654f28cb192ab2fa12bf84d8ea4d075ad644d82835016",
     "extract_dir": "IObitUninstaller",
     "shortcuts": [
@@ -27,6 +27,6 @@
         "regex": "IObitUninstaller-Pro-v?(.*)-Portable.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

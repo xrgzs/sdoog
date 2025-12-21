@@ -13,7 +13,7 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iUg041pc6plg&type=down#/dl.7z",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iUg041pc6plg&type=down#/dl.7z",
             "hash": "c398b2811f68f36a9839ff4ea45771e30cd1a00a6d5153c891e3866602f65230",
             "bin": "TOTALCMD64.EXE",
             "shortcuts": [
@@ -24,7 +24,7 @@
             ]
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ia59W1pbj7rg&type=down#/dl.7z",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ia59W1pbj7rg&type=down#/dl.7z",
             "hash": "becaec263d6a25216993d07a4c560c1a55d46141bcc32020d8578277fd9a1588",
             "bin": "TOTALCMD.EXE",
             "shortcuts": [
@@ -70,10 +70,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/dl.7z"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/dl.7z"
             },
             "32bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/dl.7z"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/dl.7z"
             }
         }
     }

@@ -5,11 +5,11 @@
     "license": "Shareware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iclUw2oqgdpc&type=down#/BOOTICE.exe",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iclUw2oqgdpc&type=down#/BOOTICE.exe",
             "hash": "e1cb831ac9213b52066f934ba0fa80ea8a9de48932452d4142fa085a2ba24fc2"
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ig2q82oqgdtg&type=down#/BOOTICE.exe",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ig2q82oqgdtg&type=down#/BOOTICE.exe",
             "hash": "759cf1dad6e1c93e205ef2f4c913c07f74ed469873d9567df00619058252e2ec"
         }
     },

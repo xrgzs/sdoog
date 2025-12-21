@@ -6,7 +6,7 @@
         "identifier": "Shareware",
         "url": "https://www.aida64.com/licensing"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iUDH03dcnrgf&type=down#/AIDA64-Extreme-Lite.exe",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iUDH03dcnrgf&type=down#/AIDA64-Extreme-Lite.exe",
     "hash": "ad760d92c692182e6d86ab7efb4e763121631d315e0970c7787bc592889dd633",
     "shortcuts": [
         [
@@ -28,6 +28,6 @@
         "regex": "AIDA64-Extreme-v(.*)-Lite.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/AIDA64-Extreme-Lite.exe"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/AIDA64-Extreme-Lite.exe"
     }
 }

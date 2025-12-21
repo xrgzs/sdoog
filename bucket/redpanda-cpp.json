@@ -5,11 +5,11 @@
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iadLV2x2yvjc&type=down#/dl.7z",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iadLV2x2yvjc&type=down#/dl.7z",
             "hash": "f3aa465f5f40cdf17c855e66d60d419b19f8f47e73d72f94ee75f001df3e949b"
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ihQ002x2yrod&type=down#/dl.7z",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ihQ002x2yrod&type=down#/dl.7z",
             "hash": "6f4f047a5b4cae966fd6e31fe2c89c6273af018535b8e937f9178659673b3399"
         }
     },
@@ -36,10 +36,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/dl.7z"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeya&type=down#/dl.7z"
             },
             "32bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/dl.7z"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekeyb&type=down#/dl.7z"
             }
         }
     }

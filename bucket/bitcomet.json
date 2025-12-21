@@ -8,7 +8,7 @@
     "suggest": {
         "PeerBanHelper": "sdoog/peerbanhelper"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ifIHh3drzk9i&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ifIHh3drzk9i&type=down#/dl.7z",
     "hash": "1a670f056e9c4d400d4546bc84ff9f2936f3076362f4f9f60ad40d11e94d0211",
     "extract_dir": "BitComet",
     "persist": [
@@ -53,6 +53,6 @@
         "regex": "BitComet-(.*)-Stable-Modify-x86-x64.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

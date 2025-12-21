@@ -3,7 +3,7 @@
     "description": "360驱动大师最新版是一款驱动安装更新软件，拥有百万级的驱动库，驱动安装和升级一键化，无需手动操作；首创驱动体检技术，驱动精确识别匹配；支持无人值守安装驱动，启动参数-q；首创一键智能识别假显卡，假硬件。",
     "homepage": "https://www.423down.com/9157.html",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/ioYBj29un63e&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ioYBj29un63e&type=down#/dl.7z",
     "hash": "7f9c691e76e677d86d759763d314f88f7342e8f8613c25935892f517a1ba47f1",
     "extract_dir": "360DrvMgr",
     "shortcuts": [
@@ -29,6 +29,6 @@
         "regex": "360驱动大师纯净版-(.*)-绿色单文件.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

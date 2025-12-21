@@ -37,7 +37,7 @@
             ]
         }
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iS52f26ttyab&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iS52f26ttyab&type=down#/dl.7z",
     "hash": "c281ad4520e9b12d9ff2b41d270913107fdce831e7ad32146a053155f3bd5144",
     "checkver": {
         "script": [
@@ -49,6 +49,6 @@
         "regex": "PECMD2012.(.*)测试.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

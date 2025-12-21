@@ -3,7 +3,7 @@
     "description": "The Industry’s Most Powerful SSH Client",
     "homepage": "https://www.423down.com/8196.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i2Etj38abung&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i2Etj38abung&type=down#/dl.7z",
     "hash": "a628f0e547216fd8b31ceebf97bea40e8d005833ee79cbb33a102129153ce140",
     "extract_dir": "Xshell",
     "shortcuts": [
@@ -34,6 +34,6 @@
         "regex": "Xshell-(.*)-Modified-Green.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

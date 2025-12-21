@@ -5,7 +5,7 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i6oZv38ylayb&type=down#/installer.exe",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i6oZv38ylayb&type=down#/installer.exe",
             "hash": "0411721de26790b41d6cdb036b0a60d17c3dfbf8dc07e765b1894974dcb78c91"
         }
     },
@@ -54,7 +54,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
+                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
             }
         }
     }

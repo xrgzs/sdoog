@@ -8,7 +8,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "http://api.xrgzs.top/360baoku/?appid=2000003258#/dl.7z",
+            "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=2000003258#/dl.7z",
             "hash": "cc40289de6c35821214c816b8a1101c3ada822f05c7da3b770ae432067eea76a"
         }
     },
@@ -36,7 +36,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://api.xrgzs.top/360baoku/?appid=2000003258#/dl.7z"
+                "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=2000003258#/dl.7z"
             }
         }
     }

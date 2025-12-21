@@ -3,7 +3,7 @@
     "description": "一个很好用的文件对比软件，大家都明白。",
     "homepage": "https://www.mefcl.com/beyond-compare.html",
     "license": "Unlicense",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/imPBX3dzpdte&type=down#/installer.exe",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/imPBX3dzpdte&type=down#/installer.exe",
     "hash": "d754f55939b365b296bc215e4ef7431d0a17559f929946a57d34847390688193",
     "pre_install": [
         "function New-PersistFile([String] $path) {",
@@ -64,6 +64,6 @@
         "regex": "Beyond Compare_32Bit_64Bit_(.*)_mefcl_Setup.exe=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/installer.exe"
     }
 }

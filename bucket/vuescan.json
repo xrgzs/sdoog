@@ -3,7 +3,7 @@
     "description": "VueScan Pro中文版是一款VueScan图像扫描软件，提供色彩平衡和颜色校正功能，适用于6500多台扫描仪，VueScan版内置驱动，可以对扫描仪软件反向工程，支持200种以上的底片类型，复杂的白色平衡算法，用于检查物体表面暇疵的红外线底片扫描，成批扫描，自动剪取图像等等，提高扫描仪的扫描速度和工作效率。",
     "homepage": "https://www.423down.com/15205.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iKAJo3e3v0uh&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iKAJo3e3v0uh&type=down#/dl.7z",
     "hash": "845c9faee25531896d1c361b1efb0a0baaa9098ab41605507b858ed4bc9de439",
     "extract_dir": "VueScan",
     "shortcuts": [
@@ -35,6 +35,6 @@
         "regex": "(.*)=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

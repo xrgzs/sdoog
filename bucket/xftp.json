@@ -3,7 +3,7 @@
     "description": "Effortless File Transfers Over A Network (Free for Home/School)",
     "homepage": "https://www.423down.com/8196.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/iISPS38abudg&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iISPS38abudg&type=down#/dl.7z",
     "hash": "40812051b96705290038087f3b1b360ff9fdcb01485187038a81326dabffc4a0",
     "extract_dir": "Xftp",
     "shortcuts": [
@@ -33,6 +33,6 @@
         "regex": "Xftp-(.*)-Modified-Green.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

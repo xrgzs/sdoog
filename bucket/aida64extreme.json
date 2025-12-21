@@ -6,7 +6,7 @@
         "identifier": "Shareware",
         "url": "https://www.aida64.com/licensing"
     },
-    "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/i555N3dcnqkd&type=down#/dl.7z",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i555N3dcnqkd&type=down#/dl.7z",
     "hash": "e858a284a0235885c90b6cd508e7e5502d7397dd024aef64d81cd5ce18c6e62a",
     "extract_dir": "AIDA64 Extreme",
     "persist": "aida64.ini",
@@ -30,6 +30,6 @@
         "regex": "AIDA64-Extreme-v(.*)-Full.7z=====(?<sharekey>.*)"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
     }
 }

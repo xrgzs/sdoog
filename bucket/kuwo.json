@@ -3,7 +3,7 @@
     "description": "(sudo) 酷我音乐为你提供高品质音乐，无损音乐下载",
     "homepage": "http://kuwo.cn/",
     "license": "Proprietary",
-    "url": "http://api.xrgzs.top/qqsoft/?softid=9601#/dl.7z",
+    "url": "http://api.xrgzs.top/sdlp/qqsoft/?softid=9601#/dl.7z",
     "hash": "26dfd80fa17c3180a17e028d5f1cfce15c73514f08b534df1ef7005c0472c967",
     "installer": {
         "script": [
@@ -93,6 +93,6 @@
         "jsonpath": "$.data.version"
     },
     "autoupdate": {
-        "url": "http://api.xrgzs.top/qqsoft/?softid=9601#/dl.7z"
+        "url": "http://api.xrgzs.top/sdlp/qqsoft/?softid=9601#/dl.7z"
     }
 }
