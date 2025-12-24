@@ -7,7 +7,7 @@
         "url": "https://freefilesync.org/faq.php#commercial-usage"
     },
     "url": "https://freefilesync.org/download/FreeFileSync_14.6_Windows_Setup.exe",
-    "hash": "d7e089de794853ddbba0948ef43cd3db5444eb7861d04c95ff1df5979c76eca9",
+    "hash": "8eb8deedb765d7abdd608116148457b5b419292c707252762915180464759884",
     "innosetup": true,
     "bin": [
         "FreeFileSync.exe",
