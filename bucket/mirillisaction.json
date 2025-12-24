@@ -1,10 +1,10 @@
 {
-    "version": "4.46.0",
+    "version": "4.47.0",
     "homepage": "https://www.423down.com/9693.html",
     "description": "Mirillis Action中文版（暗神屏幕录制软件）是一款专业的高清屏幕录像软件，Action!录像工具及游戏录像软件，拥有三大硬件加速技术，支持120帧的1080P/4K/HDR超清画质录制录制桌面任何区域和实况直播，提供超高清编码MP4（H.264/AVC）支持，录制加密视频，显示游戏帧率，添加实时评论，游戏视频解说等。",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iU4Cl3c12lid&type=down#/dl.7z",
-    "hash": "9246363cd6e28aeaa013d9ae2a8e3b20d529f90013ec6a77c5712211c5e787ad",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/irVT73efdoyj&type=down#/dl.7z",
+    "hash": "8f2eb4c354a7a75184fdc033c59cddd1c28f25afb1a6f8d306df7052074bc2ec",
     "extract_dir": "Action!",
     "persist": "Data",
     "shortcuts": [
