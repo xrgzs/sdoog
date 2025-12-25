@@ -1,12 +1,12 @@
 {
-    "version": "7.6.1.677",
+    "version": "7.6.2.367",
     "description": "Total Uninstal中文版是一款专业软件卸载工具及安装监视工具，主要提供软件卸载及程序监视功能。Total Uninstal专业版的安装监视功能可以通过系统快照比较系统改动详情，记录程序安装过程全部改动，例如：程序及对注册表和系统文件的修改，通过分析生成安装前后的详细日志。分析已安装的程序，卸载已安装的程序无需使用那些程序自带的卸载，通过它可以分析出在系统留下的每处痕迹，进行强制卸载的完全移除，不留任何痕迹。",
     "homepage": "https://www.423down.com/6178.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iZ8Gm1wfxc8h&type=down#/dl.7z",
-            "hash": "9a7d8c2f54c9ac55fe8f117726b48bd765109171421afaffb231f4cb3849b0ea"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iFph73egxhsh&type=down#/dl.7z",
+            "hash": "d33421ba70b265a7b940308eb8dff4b874d7daee8cb861bad3233eeecf754097"
         }
     },
     "extract_dir": "TotalUninstall",
