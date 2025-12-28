@@ -1,10 +1,10 @@
 {
-    "version": "2.6.5",
+    "version": "2.6.6",
     "description": "Astral 是一个基于 EasyTier 的跨平台网络应用，提供简单易用的 P2P 网络连接和 VPN 服务。通过 Flutter 构建的现代化界面，让用户能够轻松创建和管理虚拟网络。",
     "homepage": "https://astral.fan/",
     "license": "CC BY-NC-ND-4.0",
-    "url": "https://github.com/ldoubil/astral/releases/download/v2.6.5/astral-windows-x64-zip.zip",
-    "hash": "3f749962c819813e1c8591dd799499c14fc39c93fff7779014c42bc0b34ddadc",
+    "url": "https://github.com/ldoubil/astral/releases/download/v2.6.6/astral-windows-x64-zip.zip",
+    "hash": "56ccdc0b2818d0252a50de79cd11787bd473dcf65c648758eeb53b943c016c70",
     "bin": "astral.exe",
     "shortcuts": [
         [
