@@ -1,10 +1,10 @@
 {
-    "version": "2.10.9",
+    "version": "2.12.1",
     "description": "Minecraft 启动器：Plain Craft Launcher！",
     "homepage": "https://ifdian.net/a/LTcat",
     "license": "Shareware",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iPgUL37xur8j&type=down#/dl.7z",
-    "hash": "4fadca47d57d1f545165b62a1f6971908f937eb735bf9461899df091dbea227d",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iBDHC3ewhm6f&type=down#/dl.7z",
+    "hash": "109fefcea91333dc68e9cced7efebe7307f25d42de8ae9119350d13219105c0c",
     "bin": [
         "Plain Craft Launcher 2.exe",
         [
