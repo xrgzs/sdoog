@@ -1,9 +1,9 @@
 {
-    "version": "21.5-SR0",
+    "version": "21.6-SR3",
     "description": "X-Ways WinHex，全球知名的计算机取证及数据恢复软件，十六进制编辑器和磁盘编辑器。",
     "homepage": "https://www.423down.com/995.html",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iZSDD2yjyy5e&type=down#/dl.7z",
-    "hash": "79337e3a8d99710fd3b171afe98dff8b330a56d9ed3249ef911a8657b208f989",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iDBZU3ewak3i&type=down#/dl.7z",
+    "hash": "cf14a7d4a4218da5865829de9409885b8d3ab93e45af195b477f2d4b4ab68dc6",
     "extract_dir": "WinHex",
     "architecture": {
         "64bit": {
