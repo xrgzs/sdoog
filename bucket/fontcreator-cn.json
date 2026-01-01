@@ -1,12 +1,12 @@
 {
-    "version": "15.0.0.3039",
+    "version": "15.0.0.3040",
     "description": "FontCreator 是一款专业的字体编辑和创建软件，专为需要设计、修改和管理字体的用户而设计。",
     "homepage": "https://www.osssr.com/15923.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iFr163dbzbti&type=down#/dl.7z",
-            "hash": "524e4a63378ef700d50aab51288d09988e164b05db58f052ab9334c1fb8a3366"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iNYTo3ez30de&type=down#/dl.7z",
+            "hash": "c059e8d021d9b0d57f0a2f9c7c58079dcd928fcf5971ae0f0205cbfc329c4673"
         }
     },
     "extract_dir": "FontCreator",
