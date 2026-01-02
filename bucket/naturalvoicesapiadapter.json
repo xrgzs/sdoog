@@ -1,5 +1,5 @@
 {
-    "version": "0.2.8",
+    "version": "0.2.9",
     "description": "Make Azure natural TTS voices accessible to any SAPI 5-compatible application.",
     "license": "MIT",
     "homepage": "https://github.com/gexgd0419/NaturalVoiceSAPIAdapter",
