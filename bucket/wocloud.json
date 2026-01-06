@@ -1,10 +1,10 @@
 {
-    "version": "2.7.8",
+    "version": "2.7.9",
     "description": "联通云盘是中国联通面向个人及家庭用户全新推出的一款智慧云端存储产品，旨在满足用户的海量数据存储、家庭内容共享和极速数据传输的需求。具有智能相册、畅快下载、微信备份和家庭分组等丰富多彩的智能云存储功能。",
     "homepage": "https://pan.wo.cn/",
     "license": "Proprietary",
-    "hash": "d8d82733f375e28a08697f58aa994131e26db4d80392feae649d244355476f8f",
-    "url": "https://pack.pan.wo.cn/download/WoCloud-2.7.8.exe#/dl.7z",
+    "hash": "b7e9c2537772f0ffe424b0efd06f7d0884398e017d77e2a589df730a996dcf3c",
+    "url": "https://pack.pan.wo.cn/download/WoCloud-2.7.9.exe#/dl.7z",
     "shortcuts": [
         [
             "WoCloud.exe",
