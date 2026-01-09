@@ -1,16 +1,16 @@
 {
-    "version": "251024",
+    "version": "260109",
     "description": "Tools to extract or create Android super.img",
     "homepage": "https://github.com/sekaiacg/lptools",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-251024/lptools-251024-Windows_x86_64.zip",
-            "hash": "bfd9bd7a41968d5271af7ebf6bfead8a1aa7568500a10117801945e41766968c"
+            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-260109/lptools-260109-Windows_x86_64.zip",
+            "hash": "af103ae29d91eea1ec32b7e2db4b4e09c49906f793982055af6cdac8008b5aef"
         },
         "arm64": {
-            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-251024/lptools-251024-Windows_aarch64.zip",
-            "hash": "d1611fc773b36847b0f9eae3fed0facaa4531d025761984fc102cce1b4492318"
+            "url": "https://github.com/sekaiacg/lptools/releases/download/lptools-260109/lptools-260109-Windows_aarch64.zip",
+            "hash": "48342ec2f0d1477730bb92cab482bb33b44367646c13e80f882d14b03867f7d0"
         }
     },
     "bin": [
