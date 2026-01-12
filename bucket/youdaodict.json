@@ -1,10 +1,10 @@
 {
-    "version": "11.2.260110",
+    "version": "11.2.260112",
     "description": "网易有道翻译 | 史上最强大的翻译生产力工具",
     "homepage": "https://cidian.youdao.com/",
     "license": "Proprietary",
-    "url": "https://download.ydstatic.com/cidian/static/11.2/260110/YoudaoDictSetup.exe#/dl.7z",
-    "hash": "9b4bbb0e688ed6efcfac7b027d49a94ba6b77bfcae57d387559945ba2fb1b511",
+    "url": "https://download.ydstatic.com/cidian/static/11.2/260112/YoudaoDictSetup.exe#/dl.7z",
+    "hash": "f1aed6bc421526cf3ba207d126865d867aeb49099d884e43cdee8f445620514b",
     "shortcuts": [
         [
             "YoudaoDict.exe",
