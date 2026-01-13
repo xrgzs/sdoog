@@ -1,11 +1,11 @@
 {
-    "version": "1.2.2",
+    "version": "1.3.1",
     "description": "A GUI software that provides advanced HyperV virtual machine features such as DDA and GPU-PV.",
     "homepage": "https://github.com/Justsenger/ExHyperV",
-    "url": "https://github.com/Justsenger/ExHyperV/releases/download/v1.2.2/1.2.2.7z",
-    "hash": "ee6da17e98c3d9b754083bfdfd3ad966541a60d146d71bb87896aaa7122d2eaa",
+    "url": "https://github.com/Justsenger/ExHyperV/releases/download/v1.3.1/V1.3.1.7z",
+    "hash": "d3b90f283e3ec74fc735a717bad594cc996fc6cdb21b972408a287768066bb66",
     "license": "GPL-3.0-or-later",
-    "extract_dir": "1.2.2",
+    "extract_dir": "1.3.1",
     "suggest": {
         "Microsoft .NET 8.0 Desktop Runtime": "windowsdesktop-runtime-lts"
     },
@@ -23,7 +23,7 @@
     "persist": "config.xml",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Justsenger/ExHyperV/releases/download/v$version/$version.7z",
+        "url": "https://github.com/Justsenger/ExHyperV/releases/download/v$version/V$version.7z",
         "extract_dir": "$version"
     }
 }
