@@ -1,16 +1,16 @@
 {
-    "version": "1.2.0.2",
+    "version": "1.2.0.3-20659378283",
     "description": "Class Widgets 是一款能够显示当前课程的桌面组件应用程序。其提供了易用课程表编辑和美观的桌面组件。",
     "homepage": "https://github.com/Class-Widgets/Class-Widgets",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v1.2.0.2/ClassWidgets-Windows-x86.zip",
-            "hash": "3fc27ae1812eba11c9c5f98cf4f927e89ce3f8780f1d03df64730e2d2c885966"
+            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/1.2.0.3/ClassWidgets-Windows-x86_20659378283.zip",
+            "hash": "848589a508a76f104a7878daa5051d8716958c6b80d8bd8bd6cbbba9e4ab94ef"
         },
         "64bit": {
-            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v1.2.0.2/ClassWidgets-Windows-x64.zip",
-            "hash": "03cfbbe062ec995698bef5cef07ec9fda97c4d9c970bf9dc0c602371acb468c6"
+            "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/1.2.0.3/ClassWidgets-Windows-x64_20659378283.zip",
+            "hash": "fe980409a1ede0f16eb270da9d2b074b31c0ef689a597007a2a70025152a5e7b"
         }
     },
     "extract_dir": "dist\\ClassWidgets",
@@ -31,14 +31,19 @@
         "    Set-Content -Path \"$dir\\config.ini\" -Value \"[Other]`nauto_check_update = 0\"",
         "}"
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://api.github.com/repos/Class-Widgets/Class-Widgets/releases/latest",
+        "jsonpath": "$.assets[*].browser_download_url",
+        "regex": "/download/(?<ver>[\\d.]+)/ClassWidgets-Windows-x64_(?<build>\\d+).zip",
+        "replace": "${ver}-${build}"
+    },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v$version/ClassWidgets-Windows-x86.zip"
+                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/$matchVer/ClassWidgets-Windows-x86_$matchBuild.zip"
             },
             "64bit": {
-                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/v$version/ClassWidgets-Windows-x64.zip"
+                "url": "https://github.com/Class-Widgets/Class-Widgets/releases/download/$matchVer/ClassWidgets-Windows-x64_$matchBuild.zip"
             }
         }
     }
