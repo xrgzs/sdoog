@@ -1,12 +1,12 @@
 {
     "description": "（已预置启动19045，支持对x64系统和x86系统进行高级处理）更智能，更高效，更强大之全新第十代 IQI X Windows 一键安装。IQI的开发编写始于2012年，已迭代了IQI5、IQI6、IQI8、IQI9等几大典型版本。其广泛的兼容性和良好的使用体验得到了不少用户的一致好评。而今，全新设计开发的第十代IQI X也将正式与大家见面。",
-    "version": "10.0.6.2218",
+    "version": "10.0.6.2228",
     "homepage": "https://www.xyboot.com/iqi_x_windows_%e4%b8%80%e9%94%ae%e5%ae%89%e8%a3%85-image_quick_installer_x-2020/",
     "license": "Freeware",
-    "url": "https://cloud.xyboot.top/IQI_X/IQI_X_x64_x86_v10.0.6.2218_%e5%b7%b2%e9%a2%84%e7%bd%ae%e5%90%af%e5%8a%a8_(%e7%bb%8f%e5%85%b8%e7%89%88).rar#/dl.7z",
-    "hash": "d6ab3aaacf534d3e02b9f5ef4f53a7911cf010ac48202b49687d3735d6155884",
+    "url": "https://cloud.xyboot.top/IQI_X/IQI_X_x64_x86_v10.0.6.2228_%e5%b7%b2%e9%a2%84%e7%bd%ae%e5%90%af%e5%8a%a8_(%e7%bb%8f%e5%85%b8%e7%89%88).rar#/dl.7z",
+    "hash": "760a8484fe307a8ae67a9ccb3bda91b8cc5f05a752bf7ec9a9b1d429bb361ef2",
     "notes": "使用时请手动前往 高级 => 关于程序，取消 “设置 目标系统首页为2345网址导航”，或者执行 'IQIX.exe /unhomepage_ini'。",
-    "extract_dir": "IQI_X_x64_x86_v10.0.6.2218_已预置启动_(经典版)",
+    "extract_dir": "IQI_X_x64_x86_v10.0.6.2228_已预置启动_(经典版)",
     "architecture": {
         "64bit": {
             "bin": [
