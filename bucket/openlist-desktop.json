@@ -9,8 +9,8 @@
             "hash": "ff35b15b09e546083ef982a9bc4ee0e91ffac763c86a4e9d937c4d41cb5241e1"
         },
         "arm64": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.8.0/OpenList.Desktop_0.8.0_x64-setup_windows.exe#/dl.7z",
-            "hash": "ff35b15b09e546083ef982a9bc4ee0e91ffac763c86a4e9d937c4d41cb5241e1"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.8.0/OpenList.Desktop_0.8.0_arm64-setup_windows.exe#/dl.7z",
+            "hash": "1a778f3bd4bbef30b41489c3b07d241be1cb01e4895dc57d79ac77ef62271ac3"
         }
     },
     "shortcuts": [
@@ -20,21 +20,24 @@
         ]
     ],
     "pre_install": [
-        "if (!(Test-Path \"$dir\\settings.json\") -or !(Get-Item \"$dir\\settings.json\").Length) {",
-        "    New-Item \"$dir\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-        "    Set-Content -Path \"$dir\\settings.json\" -Value '{\"app\":{\"auto_update_enabled\":false}}'",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\OpenList Desktop\" \"$persist_dir\\AppData\" -Migrate",
+        "if (!(Test-Path \"$persist_dir\\AppData\\settings.json\") -or !(Get-Item \"$persist_dir\\AppData\\settings.json\").Length) {",
+        "    New-Item \"$persist_dir\\AppData\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\AppData\\settings.json\" -Value '{\"app\":{\"auto_update_enabled\":false}}'",
         "}"
     ],
-    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse",
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse",
     "pre_uninstall": [
-        "while (Get-Service -Name 'openlist_desktop_service' -ErrorAction SilentlyContinue) {",
-        "    Invoke-ExternalCommand \"$dir\\uninstall-openlist-service.exe\" -RunAs -Quiet",
-        "}"
-    ],
-    "persist": [
-        "settings.json",
-        "logs",
-        "data"
+        "if (Test-Path \"$dir\\uninstall-openlist-service.exe\") {",
+        "    while (Get-Service -Name 'openlist_desktop_service' -ErrorAction SilentlyContinue) {",
+        "        Invoke-ExternalCommand \"$dir\\uninstall-openlist-service.exe\" -RunAs -Quiet",
+        "    }",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\OpenList Desktop\""
     ],
     "checkver": {
         "github": "https://github.com/OpenListTeam/OpenList-Desktop"
@@ -45,7 +48,7 @@
                 "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_x64-setup_windows.exe#/dl.7z"
             },
             "arm64": {
-                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_x64-setup_windows.exe#/dl.7z"
+                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_arm64-setup_windows.exe#/dl.7z"
             }
         }
     }
