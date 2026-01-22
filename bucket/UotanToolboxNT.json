@@ -1,5 +1,5 @@
 {
-    "version": "3.3.5",
+    "version": "3.5.0",
     "description": "为玩机发烧友而生的全新现代化工具箱 | A Modern Toolbox for Geeks",
     "homepage": "https://toolbox.uotan.cn/",
     "license": "GPL-3.0-or-later",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.3.5/UotanToolbox_Windows_x64_3.3.5.zip",
-            "hash": "f58d85a55944ca075c2442faddcb1337e48414ba58fd0e1db77ca40a22328fb3"
+            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.5.0/UotanToolbox_Windows_x64_3.5.0.zip",
+            "hash": "002d0eb27024b1dfc48b8b6dfe9046961bd60bc0d616f2990af88e598c2eb886"
         },
         "arm64": {
-            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.3.5/UotanToolbox_Windows_arm64_3.3.5.zip",
-            "hash": "1e4c3a45c4c5dd8a551d1ada431bba766994a3ec183b5b7e1e5f043158df7458"
+            "url": "https://github.com/Uotan-Dev/UotanToolboxNT/releases/download/3.5.0/UotanToolbox_Windows_arm64_3.5.0.zip",
+            "hash": "214cb57131f3d442c4046561b83d05d255e1d9eeb8c509dfea4f04aea2e12faa"
         }
     },
     "shortcuts": [
