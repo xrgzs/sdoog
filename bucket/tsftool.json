@@ -1,0 +1,43 @@
+{
+    "version": "0.9.3.2",
+    "description": "输入法设置工具",
+    "homepage": "https://www.mympc.org/default/tsftool.html",
+    "license": "Freeware",
+    "url": "https://www.mympc.org/usr/uploads/2025/07/TSFTool.rar",
+    "hash": "ae8d775de2fb8b09808e150b068201b5f34192d11f01db12409d84828103b49e",
+    "architecture": {
+        "64bit": {
+            "extract_dir": "Win64"
+        },
+        "32bit": {
+            "extract_dir": "Win32"
+        }
+    },
+    "shortcuts": [
+        [
+            "TSFTool.exe",
+            "TSFTool"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            "$url = \"https://mympc.org/default/tsftool.html\"",
+            "$html = Invoke-WebRequest -Uri $url -UseBasicParsing",
+            "if ($html.Content -match 'TSFTool V([\\d.]+)') {",
+            "    $version = $matches[1]",
+            "} else {",
+            "    throw \"Version not found\"",
+            "}",
+            "if ($html.Content -match 'https://www\\.mympc\\.org/usr/uploads/\\d{4}/\\d{2}/tsftool\\.rar') {",
+            "    $url = $matches[0]",
+            "} else {",
+            "    throw \"Download URL not found\"",
+            "}",
+            "return \"$version=====$url\""
+        ],
+        "regex": "(.*)=====(?<url>.*)"
+    },
+    "autoupdate": {
+        "url": "$matchUrl"
+    }
+}
