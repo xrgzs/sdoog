@@ -1,10 +1,10 @@
 {
-    "version": "11.3.0.161",
+    "version": "11.4.0.166",
     "description": "InnoExtractor中文版（Inno解包工具）是一款查看提取InnoSetup安装包的Inno安装包解包工具，可以提取内部文件和脚本，识别加密文件，脚本解密代码段，导出注册表段，INI运行段，查看编译器版本号VirusTotal检查等。",
     "license": "Proprietary",
     "homepage": "https://www.423down.com/10151.html",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ifdtI3cpchlg&type=down#/dl.7z",
-    "hash": "d338f17a04444370cd7c4243e558b17ce6801ab7e99204c55fe30cf4a2d8653d",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iYnhP3hq6o2j&type=down#/dl.7z",
+    "hash": "7f10b125ac0b6b8011d1893a5f7d074c7509996b3bf73518a0d662322fc272ff",
     "extract_dir": "InnoExtractor",
     "bin": "InnoExtractor.exe",
     "shortcuts": [
