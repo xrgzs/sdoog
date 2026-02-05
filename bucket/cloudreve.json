@@ -1,16 +1,16 @@
 {
-    "version": "4.12.1",
+    "version": "4.13.0",
     "description": "Self-hosted file management and sharing system, supports multiple storage providers",
     "homepage": "https://github.com/cloudreve/Cloudreve",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/cloudreve/Cloudreve/releases/download/4.12.1/cloudreve_4.12.1_windows_amd64.zip",
-            "hash": "c7197b02065977c4f0b713bc2b6b3709d3117e93ca4fbeee7d41246a5d1e81a9"
+            "url": "https://github.com/cloudreve/Cloudreve/releases/download/4.13.0/cloudreve_4.13.0_windows_amd64.zip",
+            "hash": "a90a9ca4f28e99d61f7e57d3491c5b55c7782a27cd45dc59de38b7a3970fb5df"
         },
         "arm64": {
-            "url": "https://github.com/cloudreve/Cloudreve/releases/download/4.12.1/cloudreve_4.12.1_windows_arm64.zip",
-            "hash": "02ed43b922727ff027b14c21798f4e97895c9fdca298be41ec96fd3fcda26e78"
+            "url": "https://github.com/cloudreve/Cloudreve/releases/download/4.13.0/cloudreve_4.13.0_windows_arm64.zip",
+            "hash": "bbfd4b705fd00b9d7c516c2034485667cb99b12381176e6937d45e97680a0aff"
         }
     },
     "bin": "cloudreve.exe",
