@@ -1,12 +1,12 @@
 {
-    "version": "25.4",
+    "version": "26.0",
     "description": "MobaXterm 是一款功能强大的终端模拟器和远程计算机管理软件",
     "homepage": "https://www.osssr.com/5704.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ioS1A3cfkk9a&type=down#/dl.7z",
-            "hash": "69b0c40e5b0a524234f0eaeaf52bcc77170b41a80a89677bf58f34c716bb3786"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ibCEa3hzrhhc&type=down#/dl.7z",
+            "hash": "1782ca0443590757856a37db92502b1eb202b2b27911110233dadef9c2397a9e"
         }
     },
     "pre_install": [
