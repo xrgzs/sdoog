@@ -1,10 +1,10 @@
 {
-    "version": "6.1",
+    "version": "6.2",
     "description": "WO Mic can turn your phone to be a microphone for your computer.",
     "homepage": "https://wolicheng.com/womic/",
     "license": "",
-    "url": "https://wolicheng.com/womic/downloads/WOMicClientSetup6.1.exe#/installer.exe",
-    "hash": "28f0c4f4ec7135700bda47f306ad121bd48e866f16f8c74224fe4e0cf06a9c26",
+    "url": "https://wolicheng.com/womic/downloads/WOMicClientSetup6.2.exe#/installer.exe",
+    "hash": "538401c3e90b25bede595c5fb725bdf4433f147b5e41e43c6386847ffdb5fdae",
     "shortcuts": [
         [
             "WOMicClient.exe",
