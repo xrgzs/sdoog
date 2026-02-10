@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://gitee.com/cxasm/notepad--/releases/download/v3.6.4/Notepad--v3.6.4-plugin-Installer.exe",
-            "hash": "48730e140b1b65df78db639b0a167e8abf5d028d7094ad24a38c815a269606ce"
+            "hash": "1cd7266858cca35752f1ba4a2b6e4ec02f26c6095746c07cf8442d8b872ebc1f"
         }
     },
     "innosetup": true,
