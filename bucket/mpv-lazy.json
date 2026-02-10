@@ -1,5 +1,5 @@
 {
-    "version": "20260000",
+    "version": "20260210",
     "description": "一个打包齐全、便于上手、附完整解决方案的mpv版本（懒人包）",
     "homepage": "https://github.com/hooke007/mpv_PlayKit",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/hooke007/mpv_PlayKit/releases/download/20260000/mpv-lazy-20260000.exe#/dl.7z",
-            "hash": "6e90da16b21a4d429120b81dea6186463d628d74f6b4e6c32167f1fb57a165cd"
+            "url": "https://github.com/hooke007/mpv_PlayKit/releases/download/20260210/mpv-lazy-20260210.exe#/dl.7z",
+            "hash": "3bf809718be71c4c7b7226041633a4ec03a60f4546fbbfb42ec0faed075a7cd4"
         }
     },
     "extract_dir": "mpv-lazy",
