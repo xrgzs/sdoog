@@ -1,13 +1,13 @@
 {
-    "version": "28.20.0100-x64",
+    "version": "28.20.0200-x64",
     "description": "XYplorer中文版是一款多标签文件管理器及增强资源管理器的工具，XYplorer文件管理器支持多标签页栏，管理文件时跟使用Chrome之类浏览器一样，从浏览方便性，和切换滑顺程度，要比Windows系统自带的Explorer资源管理器便捷得多。可以大部分程度上替代系统自带的文件管理器。同时，有浏览器快捷键和鼠标快捷。",
     "homepage": "https://www.423down.com/9854.html",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.xyplorer.com/purchase.php"
     },
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iV21f3hkzveb&type=down#/dl.7z",
-    "hash": "d73f7d9e3401128a8a62268e96a2fc5e74bcb9298837fe7dfa8987f3a39243d3",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iGW0e3iehhch&type=down#/dl.7z",
+    "hash": "0ce60203db0a67414360a697b9445ab553c8da7c8696f675f6a99497e35919cd",
     "extract_dir": "XYplorer",
     "bin": "XYplorer.exe",
     "shortcuts": [
