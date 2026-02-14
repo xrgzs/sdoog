@@ -23,13 +23,19 @@
             "New-PersistDirectory \"$env:LOCALAPPDATA\\Netease\\CloudMusic\" \"$persist_dir\\AppData\" -Migrate"
         ]
     },
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\redist_packages\" -Force -Recurse",
+    "post_install": [
+        "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\redist_packages\" -Force -Recurse",
+        "New-NetFirewallRule -DisplayName 'Block NetEase Cloud Music UDP Inbound (Scoop)' -Program \"$original_dir\\cloudmusic.exe\" -Protocol UDP -Direction Inbound -Action Block -ErrorAction SilentlyContinue",
+        "New-NetFirewallRule -DisplayName 'Block NetEase Cloud Music UDP Outbound (Scoop)' -Program \"$original_dir\\cloudmusic.exe\" -Protocol UDP -Direction Outbound -Action Block -ErrorAction SilentlyContinue"
+    ],
     "uninstaller": {
         "script": [
             "$bucket = $install.bucket",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "Stop-App",
-            "Remove-Junction \"$env:LOCALAPPDATA\\Netease\\CloudMusic\""
+            "Remove-Junction \"$env:LOCALAPPDATA\\Netease\\CloudMusic\"",
+            "Remove-NetFirewallRule -DisplayName 'Block NetEase Cloud Music UDP Inbound (Scoop)' -ErrorAction SilentlyContinue",
+            "Remove-NetFirewallRule -DisplayName 'Block NetEase Cloud Music UDP Outbound (Scoop)' -ErrorAction SilentlyContinue"
         ]
     },
     "bin": "cloudmusic.exe",
