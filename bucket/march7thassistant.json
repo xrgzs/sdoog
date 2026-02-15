@@ -5,7 +5,7 @@
     "license": "GPL-3.0-or-later",
     "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2026.2.13/March7thAssistant_full.7z",
     "hash": "46c3098dc57f65ed21fd89272ebd5420fb46d2fe95d3949eda27b9f6f6342dfc",
-    "extract_dir": "March7thAssistant_v2026.2.13_full",
+    "extract_dir": "March7thAssistant_full",
     "shortcuts": [
         [
             "March7th Launcher.exe",
@@ -29,7 +29,6 @@
         "github": "https://github.com/moesnow/March7thAssistant"
     },
     "autoupdate": {
-        "extract_dir": "March7thAssistant_v$version_full",
         "url": "https://github.com/moesnow/March7thAssistant/releases/download/v$version/March7thAssistant_full.7z"
     }
 }
