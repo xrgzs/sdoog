@@ -29,7 +29,6 @@
         "github": "https://github.com/moesnow/March7thAssistant"
     },
     "autoupdate": {
-        "extract_dir": "March7thAssistant_v$version_full",
         "url": "https://github.com/moesnow/March7thAssistant/releases/download/v$version/March7thAssistant_full.7z"
     }
 }
