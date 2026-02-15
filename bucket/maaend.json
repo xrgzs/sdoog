@@ -2,7 +2,7 @@
     "version": "1.12.11",
     "description": "MaaEnd（终末地小助手）- 明日方舟：终末地全自动辅助工具",
     "homepage": "https://github.com/maaend/maaend",
-    "license": "GPL-3.0-or-later",
+    "license": "AGPL-3.0-or-later",
     "architecture": {
         "64bit": {
             "url": "https://github.com/maaend/maaend/releases/download/v1.12.11/MaaEnd-win-x86_64-v1.12.11.zip",
@@ -21,11 +21,10 @@
         "    New-Item -ItemType Directory -Path \"$persist_dir\\cache\" -Force | Out-Null",
         "}"
     ],
-    "bin": "MaaEnd.exe",
     "shortcuts": [
         [
             "MaaEnd.exe",
-            "MaaEnd（终末地小助手）"
+            "MaaEnd"
         ]
     ],
     "persist": [
@@ -33,8 +32,7 @@
         "cache"
     ],
     "checkver": {
-        "github": "https://github.com/maaend/maaend",
-        "regex": "tag/v([\\d.]+)"
+        "github": "https://github.com/maaend/maaend"
     },
     "autoupdate": {
         "architecture": {
