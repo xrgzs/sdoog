@@ -26,5 +26,8 @@
     },
     "terminal.integrated.env.windows": {
         "SCOOP_DEBUG": "true"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }
