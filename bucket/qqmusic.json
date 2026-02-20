@@ -1,0 +1,76 @@
+{
+    "homepage": "https://y.qq.com/",
+    "description": "(sudo) QQ音乐 PC客户端 海量高品质曲库尽享",
+    "version": "22.0.5",
+    "license": "Proprietary",
+    "url": "https://c.y.qq.com/cgi-bin/file_redirect.fcg?bid=dldir&file=ecosfile%2Fmusic_clntupate%2Fpc%2Fother%2FQQMusic_Setup_2205.exe&sign=1-e22b594b4d6f5850a2edbfdfd3e1996cd970e4a1a185c750069e06dc13820fe8-697863b4#/dl.7z",
+    "hash": "bd8d9bd58e015e64f18a54ada4bd53d1cfc62f7233d0cec402c648031381c7c8",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\Tencent\\QQMusic\" \"$persist_dir\\AppData\" -Migrate",
+            "Copy-Item \"$dir\\QQMusic.tpc\" -Destination \"$dir\\instok\" -Force",
+            "@('QQMusicExternal.exe','QQMusicUninst.exe','QQMusicUp.exe','qmbrowser\\BugReport.exe') | ForEach-Object {",
+            "    Remove-Item \"$dir\\$_\" -Force",
+            "    New-Item \"$dir\\$_\" -ItemType File -Force",
+            "}",
+            "if ($architecture -eq '32bit') {",
+            "    reg add \"HKLM\\Software\\Tencent\\QQMusic\" /f /v \"Install\" /d \"$dir\" >$null",
+            "} else {",
+            "    reg add \"HKLM\\Software\\Tencent\\QQMusic\" /f /v \"Install\" /d \"$dir\" /reg:32 >$null",
+            "}",
+            "Invoke-ExternalCommand \"regsvr32.exe\" -ArgumentList @('/s',\"$dir\\QQMusic_Login.dll\") -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicSvr.exe\" -ArgumentList @('/RegServer') -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/regqmfiles') -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/prefetch', \"$dir\") -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/collecthardwareinfo') -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/CheckDirect2D') -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/CheckDirect3D9ForMVPlay') -RunAs -Quiet",
+            "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/writehardwareinfo') -RunAs -Quiet"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Invoke-ExternalCommand \"regsvr32.exe\" -ArgumentList @('/s','/u',\"$dir\\QQMusic_Login.dll\") -RunAs -Quiet",
+        "Invoke-ExternalCommand \"$dir\\QQMusicSvr.exe\" -ArgumentList @('/UnRegServer') -RunAs -Quiet",
+        "Invoke-ExternalCommand \"$dir\\QQMusicAgent.exe\" -ArgumentList @('/unregmediafilesForUninstall') -RunAs -Quiet",
+        "Remove-Junction \"$env:APPDATA\\Tencent\\QQMusic\"",
+        "reg delete \"HKCU\\Software\\Tencent\\QQMusic\" /f",
+        "reg delete \"HKLM\\Software\\Tencent\\QQMusic\" /f",
+        "reg delete \"HKLM\\SOFTWARE\\Tencent\\QQMusic\" /f /reg:32",
+        "@('.mflac','.mgg','.qmc0','.qmc2','.qmc3','.qmc4','.qmc6','.qmc8','.qmcflac','.qsc3','.tkm') | ForEach-Object {",
+        "    reg delete \"HKCU\\Software\\Classes\\$_\" /f",
+        "    reg delete \"HKLM\\SOFTWARE\\Classes\\$_\" /f",
+        "}",
+        "@('QQMusic.mflac','QQMusic.mgg','QQMusic.qmc0','QQMusic.qmc2','QQMusic.qmc3','QQMusic.qmc4','QQMusic.qmc6','QQMusic.qmc8','QQMusic.qmcflac','QQMusic.qsc3','QQMusic.tkm') | ForEach-Object {",
+        "    reg delete \"HKCU\\Software\\Classes\\$_\" /f",
+        "    reg delete \"HKLM\\SOFTWARE\\Classes\\$_\" /f",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "QQMusic.exe",
+            "QQ音乐"
+        ]
+    ],
+    "persist": "Plugins",
+    "checkver": {
+        "script": [
+            "$url = 'https://y.qq.com/download/download.js'",
+            "$res = Invoke-WebRequest -Uri $url -UseBasicParsing",
+            "$content = $res.Content",
+            "$jsonString = $content -replace '^MusicJsonCallback\\(|\\)$', ''",
+            "$data = $jsonString | ConvertFrom-Json",
+            "$json = $data.data | Where-Object { $_.Ftitle -match \"Windows PC\" }",
+            "$version = $json.Fversion -replace '^最新版:', ''",
+            "$downloadUrl = $json.Flink1",
+            "$version + '=====' + $downloadUrl"
+        ],
+        "regex": "([\\d.]+)=====https://c.y.qq.com/(?<url>.+)"
+    },
+    "autoupdate": {
+        "url": "https://c.y.qq.com/$matchUrl#/dl.7z"
+    }
+}
