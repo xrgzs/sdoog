@@ -1,12 +1,12 @@
 {
-    "version": "9.3.6",
+    "version": "9.3.7",
     "description": "BT 反吸血工具 - 自动封禁不受欢迎、吸血和异常的 BT 客户端，并支持自定义规则。",
     "homepage": "https://github.com/PBH-BTN/PeerBanHelper/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PBH-BTN/PeerBanHelper/releases/download/v9.3.6/PeerBanHelper_Windows_9.3.6_Portable.zip",
-            "hash": "f8c1d3067b1f52d731deaf738efabf767f264e74eb70cb98ecb6cdea5fc6a72d"
+            "url": "https://github.com/PBH-BTN/PeerBanHelper/releases/download/v9.3.7/PeerBanHelper_Windows_9.3.7_Portable.zip",
+            "hash": "bad6511c905f8c26148c8735d0433fa6e00aa85fde9f5023597637fce97418e7"
         }
     },
     "extract_dir": "PeerBanHelper",
