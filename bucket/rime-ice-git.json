@@ -1,15 +1,15 @@
 {
-    "version": "2026.02.06.23f0c39",
+    "version": "2026.02.26.598f73e",
     "homepage": "https://github.com/iDvel/rime-ice",
     "description": "Rime 配置：雾凇拼音 | 长期维护的简体词库",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/iDvel/rime-ice/archive/23f0c39a0b443524e37dbff4f085236b32691291.zip",
-    "hash": "4d02b94ff7810f1a168a753611dd2be76c32cfa6ea11476dd9e8f83aebb55df6",
+    "url": "https://github.com/iDvel/rime-ice/archive/598f73e824f19fc7b33c91b5e4ea953319a9e99e.zip",
+    "hash": "4e7052f1cb73be23be52439400500fa7a8c970d5fc0a3f1a7f13af01a0e4756f",
     "notes": [
         "使用雾凇拼音前需要先安装小狼毫输入法，安装雾凇拼音后需要在小狼毫输入法中配置雾凇拼音，并重新部署",
         "为了避免更新，您可以执行：'scoop uninstall rime-ice-git'，或者：'scoop hold rime-ice-git'"
     ],
-    "extract_dir": "rime-ice-23f0c39a0b443524e37dbff4f085236b32691291",
+    "extract_dir": "rime-ice-598f73e824f19fc7b33c91b5e4ea953319a9e99e",
     "depends": "weasel",
     "extract_to": "rime-ice",
     "post_install": [
