@@ -1,10 +1,10 @@
 {
-    "version": "1.1.7",
+    "version": "1.1.8",
     "description": "Aria2 Manager is a useful tool that allows user to run Aria2 in the background easily.",
     "homepage": "https://aria2e.com/",
     "license": "BSD-3-Clause",
-    "url": "https://github.com/alexhua/Aria2-Manager/releases/download/v1.1.7/Aria2Manager-Full.zip",
-    "hash": "50d5c14c4bc454169cc96eb63679e8f308d8a0832d584e274ec2b935a7c58e89",
+    "url": "https://github.com/alexhua/Aria2-Manager/releases/download/v1.1.8/Aria2Manager-Full.zip",
+    "hash": "a8c2402dd90611a2b4378fe71a2f569775f8495af134b2e39c8ad5eb0a35bd82",
     "notes": [
         "Aria2 Explorer - Web Browser Extensions:",
         "* Chrome: https://chrome.google.com/webstore/detail/mpkodccbngfoacfalldjimigbofkhgjn",
