@@ -1,10 +1,10 @@
 {
-    "version": "2505.7.0",
+    "version": "2511.7.1",
     "description": "Modules for running NixOS on the Windows Subsystem for Linux",
     "homepage": "https://github.com/nix-community/NixOS-WSL",
     "license": "Apache-2.0",
-    "url": "https://github.com/nix-community/NixOS-WSL/releases/download/2505.7.0/nixos.wsl",
-    "hash": "b9db52dc217e7852f715a4693d604da91591158b2da884d67a637cb70d63b1e1",
+    "url": "https://github.com/nix-community/NixOS-WSL/releases/download/2511.7.1/nixos.wsl",
+    "hash": "d73e9e776c4332748ad25a71fbbdf6f8bc02b3ccf52b6edaaf21444c39f448b5",
     "notes": [
         "Call `wsl -d NixOS` to start NixOS.",
         "After the initial installation, you need to update your channels once, to be able to use `nixos-rebuild`:",
