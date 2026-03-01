@@ -1,10 +1,10 @@
 {
-    "version": "16.1.0.3097",
+    "version": "16.2.0.3143",
     "description": "搜狗输入法电脑版是装机必备软件，其打字准，词库全，功能强大，使得输入更高效。搜狗拼音输入法最新版，AI打字准确高效。搜狗输入法去广告精简优化版，移除广告程序精简优化后的用着还不错，至少比官方版用着安心些。",
     "homepage": "https://www.423down.com/587.html",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iSgei3ibcxxg&type=down#/installer.exe",
-    "hash": "e2e00ff8c57459ffef4e872a2ec88b9be1f1198acb2afb2738a585c8fdac073d",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ivvqE3jf8y6b&type=down#/installer.exe",
+    "hash": "f1bfb1f2c485525d449395c2c7b64d8e66ee70b2361ed37e9eed6dab2048b917",
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
