@@ -1,12 +1,12 @@
 {
-    "version": "16.1.2555.64",
+    "version": "16.1.2570.64",
     "description": "360安全浏览器16正式版(360SE16)是基于Chromium内核的双核64位浏览器,采用Chromium132内核速度更快,支持Win7系统,支持IE内核,兼容办公OA系统.360安全浏览器最新版整合了纳米AI搜索和AI办公助手.",
     "homepage": "https://www.423down.com/16617.html",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iQNgJ3jri9pc&type=down#/dl.7z",
-            "hash": "0db48ebd803587f69c7d4a249f5ce60534071a02acbf895cd65527da33f7bb3e"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iCBF13k0d7xc&type=down#/dl.7z",
+            "hash": "57548ecd96dfb4181e27b2985879fa2d0e428d40cd3ac94194ccfc394efe046f"
         }
     },
     "extract_dir": "360SE",
