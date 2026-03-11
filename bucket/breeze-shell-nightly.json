@@ -1,12 +1,12 @@
 {
-    "version": "22814927380",
+    "version": "22964928028",
     "description": "Bring fluency & delication back to Windows",
     "license": "AGPL-3.0-or-later",
     "homepage": "https://breeze.microblock.cc/",
     "architecture": {
         "64bit": {
-            "url": "https://nightly.link/std-microblock/breeze-shell/actions/runs/22814927380/windows-build.zip",
-            "hash": "7aa459bdc54e6ee9e0b5256757b85d0944689f0bd0193896f4959ced29c45c2f",
+            "url": "https://nightly.link/std-microblock/breeze-shell/actions/runs/22964928028/windows-build.zip",
+            "hash": "a79a2999b7368d0ce82b5edc2ed1a5e210036eaa9863d6ed78a11000e5ecf55c",
             "extract_dir": "releasedbg"
         }
     },
