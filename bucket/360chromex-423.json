@@ -1,12 +1,12 @@
 {
-    "version": "23.1.1187.64",
+    "version": "23.1.1200.64",
     "description": "360极速浏览器X绿色便携版是基于Chromium内核的首款64位双核浏览器，采用Chromeium122极速内核，支持IE内核，极简无弹窗广告，全新阅读模式，新标签页壁纸功能，专业级导航，性能更好，体验更佳，速度更快。",
     "homepage": "https://www.423down.com/13808.html",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ijmUq3fqskmf&type=down#/dl.7z",
-            "hash": "b2493e94c0711db515400547f1f1f25fdb536c09224a114e488f8d22606b1f86"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iMa8E3kjt9md&type=down#/dl.7z",
+            "hash": "7374f0a2e5f6ba959cdd363e144ff782357704fb173f7a63606935a99efe1d8e"
         }
     },
     "extract_dir": "360Chrome",
