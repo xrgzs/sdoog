@@ -7,6 +7,10 @@
         "64bit": {
             "url": "https://github.com/gdy666/lucky/releases/download/v2.27.2/lucky_2.27.2_Windows_x86_64.tar.gz",
             "hash": "791bdd9020dc11c90f3111d7f61fdc3812c9317aa6afaf3fe817131a9aac9cad"
+        },
+        "32bit": {
+            "url": "https://github.com/gdy666/lucky/releases/download/v2.27.2/lucky_2.27.2_Windows_i386.tar.gz",
+            "hash": "3cbbb019a212fd0c157e15fb86c87b0da066e1e56da00a23573025c51d54f5fd"
         }
     },
     "bin": "lucky.exe",
@@ -18,6 +22,9 @@
         "architecture": {
             "64bit": {
                 "url": "https://github.com/gdy666/lucky/releases/download/v$version/lucky_$version_Windows_x86_64.tar.gz"
+            },
+            "32bit": {
+                "url": "https://github.com/gdy666/lucky/releases/download/v$version/lucky_$version_Windows_i386.tar.gz"
             }
         }
     }
