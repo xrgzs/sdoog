@@ -1,4 +1,3 @@
-
 # 提交贡献
 
 以下是几点提交贡献的小提示：
@@ -7,19 +6,19 @@
 
     此仓库为潇然系统优化版 scoop（可通过上面的命令安装）打造，默认安装会添加以下仓库：
 
-    | Name            | Source                                             |
-    | --------------- | -------------------------------------------------- |
-    | main            | <https://github.com/ScoopInstaller/Main>             |
-    | extras          | <https://github.com/ScoopInstaller/Extras>           |
-    | versions        | <https://github.com/ScoopInstaller/Versions>         |
-    | nirsoft         | <https://github.com/ScoopInstaller/Nirsoft>          |
-    | sysinternals    | <https://github.com/niheaven/scoop-sysinternals>     |
-    | php             | <https://github.com/ScoopInstaller/PHP>              |
-    | nerd-fonts      | <https://github.com/matthewjberger/scoop-nerd-fonts> |
-    | nonportable     | <https://github.com/ScoopInstaller/Nonportable>      |
-    | java            | <https://github.com/ScoopInstaller/Java>             |
-    | games           | <https://github.com/Calinou/scoop-games>             |
-    | **dorado**      | <https://github.com/chawyehsu/dorado.git>            |
+    | Name         | Source                                               |
+    | ------------ | ---------------------------------------------------- |
+    | main         | <https://github.com/ScoopInstaller/Main>             |
+    | extras       | <https://github.com/ScoopInstaller/Extras>           |
+    | versions     | <https://github.com/ScoopInstaller/Versions>         |
+    | nirsoft      | <https://github.com/ScoopInstaller/Nirsoft>          |
+    | sysinternals | <https://github.com/niheaven/scoop-sysinternals>     |
+    | php          | <https://github.com/ScoopInstaller/PHP>              |
+    | nerd-fonts   | <https://github.com/matthewjberger/scoop-nerd-fonts> |
+    | nonportable  | <https://github.com/ScoopInstaller/Nonportable>      |
+    | java         | <https://github.com/ScoopInstaller/Java>             |
+    | games        | <https://github.com/Calinou/scoop-games>             |
+    | **dorado**   | <https://github.com/chawyehsu/dorado.git>            |
 
 2. 无需担心 GitHub 无法下载问题，优化版 Scoop 自带的 `Url Proxy` 功能能够自动处理
 
@@ -36,13 +35,11 @@
 8. 受限于 scoop 的机制，不适合用 scoop 安装的软件，可以 ~~祸害~~ 提交到其它仓库（甩锅+手动狗头.jpg）
 
 9. 遵循 [Scoop Contributing Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md#for-scoop-buckets) 的规范提交 Pull Request，懒得看的话，需要注意以下几点：
-
     - 不要用 Master 分支提交 Pull Request
     - 一个 Manifest 一个 Branch 一个 Pull Request
     - 本仓库对 Pull Request、Commit 和 Branch 命名没有强制性要求，但要能看得出来改了什么
 
 10. 提交 PR 前，请开一台电脑或虚拟机，要求**开启 UAC**，测试以下内容：
-
     - 能够正常安装
 
         ```powershell
@@ -56,7 +53,6 @@
     - 能够正常卸载
 
     - 能够正常执行 Autoupdate，两种测试方法：
-
         1. VS Code “运行和调试” 中测试（按 F5）
 
         2. 在项目根目录执行：
@@ -80,10 +76,10 @@
 你想知道关于配置清单的定义项，这里都有，在编写配置清单时建议同时打开：
 
 - [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-  - [Creating an App Manifest](https://github.com/ScoopInstaller/Scoop/wiki/Creating-an-app-manifest)
-  - [Autoupdate](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate)
-  - [Persistent data](https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data)
-  - [Pre and Post install and uninstall Scripts](<https://github.com/ScoopInstaller/Scoop/wiki/Pre-Post-(un)install-scripts>)
+    - [Creating an App Manifest](https://github.com/ScoopInstaller/Scoop/wiki/Creating-an-app-manifest)
+    - [Autoupdate](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate)
+    - [Persistent data](https://github.com/ScoopInstaller/Scoop/wiki/Persistent-data)
+    - [Pre and Post install and uninstall Scripts](<https://github.com/ScoopInstaller/Scoop/wiki/Pre-Post-(un)install-scripts>)
 
 ### 读取脚本
 
@@ -265,6 +261,10 @@ Remove-Junction "$env:APPDATA\Seewo\EasiNote5"
 
 这些命令需要外置脚本，所有请务必在仓库内测试
 
+### 删除空目录
+
+一些软件的配置目录为 `$env:AppData` 下的二级目录，为了确保删除干净，且不会影响该开发者的其他应用，可以使用 `Remove-EmptyDirectory` 删除文件夹。
+
 ### 关闭目录下的所有程序
 
 `Stop-App`：关闭安装目录下所有正在运行的程序，可加第一个参数传入需要关闭的其它目录，使用此函数无需指定程序名称
@@ -307,18 +307,16 @@ Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlo
 在开启UAC的系统上，部分软件需要提权（使用管理员权限）才能安装，目前有几种解决方式：
 
 1. 使用 sudo，有多个 sudo，我个人不喜欢使用这种方式
+    - [lukesampson/psutils/sudo.ps1](https://github.com/lukesampson/psutils)（Scoop 官方使用）
 
-   - [lukesampson/psutils/sudo.ps1](https://github.com/lukesampson/psutils)（Scoop 官方使用）
+    - `gsudo` 的别名
 
-   - `gsudo` 的别名
-
-   - Windows 11 24H2+ 自带的 sudo（需要额外设置）
+    - Windows 11 24H2+ 自带的 sudo（需要额外设置）
 
 2. 使用 gsudo，在 `depends` 增加 gsudo，所有命令前面都要加上 gsudo
+    - 可能不支持 PowerShell 命令（需要导入模块）
 
-   - 可能不支持 PowerShell 命令（需要导入模块）
-
-   - 优点是只需提权一次后续无需询问
+    - 优点是只需提权一次后续无需询问
 
 3. 使用 Scoop 内置函数 `Invoke-ExternalCommand` （~\scoop\apps\scoop\current\lib\core.ps1）
 
@@ -338,9 +336,9 @@ Set-RegValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlo
 
 4. 使用 PowerShell 自带 `Start-Process`
 
-   ```powershell
-   Start-Process -FilePath "$dir\installer.exe" -ArgumentList @('/S', "/D=$dir") -Wait -Verb "RunAs" -WindowStyle Hidden
-   ```
+    ```powershell
+    Start-Process -FilePath "$dir\installer.exe" -ArgumentList @('/S', "/D=$dir") -Wait -Verb "RunAs" -WindowStyle Hidden
+    ```
 
 5. 不允许以用户权限安装，如果你安装的软件大量涉及到 HKLM、提权，此时为了避免麻烦，推荐使用这种方式，注意要在 description 中加上`(sudo)`，否则尽量使用上述几种
 

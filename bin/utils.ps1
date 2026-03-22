@@ -262,6 +262,18 @@ function Remove-Junction {
     try { $dataPathItem.Delete() } catch {}
 }
 
+function Remove-EmptyDirectory {
+    param (
+        [parameter(Mandatory = $true, Position = 0)]
+        [string]
+        $Path
+    )
+
+    if ((Test-Path -LiteralPath $Path -PathType Container) -and -not (Get-ChildItem -LiteralPath $Path -Force | Select-Object -First 1)) {
+        Remove-Item -LiteralPath $Path -Force
+    }
+}
+
 function Stop-App {
     param(
         [Parameter(Position = 0, ValueFromPipeline, HelpMessage = "Array of paths to search for executables")]
