@@ -1,0 +1,46 @@
+{
+    "version": "3.4.8",
+    "description": "A full-featured download manager — rebuilt from the ground up.",
+    "homepage": "https://motrix-next.pages.dev/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v3.4.8/MotrixNext_3.4.8_x64-setup.exe#/dl.7z",
+            "hash": "e4447ab9b810a73aaf857d0f3674a76294656ae2712f8f9908510b3ff8f38330"
+        },
+        "arm64": {
+            "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v3.4.8/MotrixNext_3.4.8_arm64-setup.exe#/dl.7z",
+            "hash": "0c4c1b2d2302a81e3ff4d452d2672cd96a8d5980fa48e3f8e974b408537925eb"
+        }
+    },
+    "shortcuts": [
+        [
+            "motrix-next.exe",
+            "MotrixNext"
+        ]
+    ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\com.motrix.next\" \"$persist_dir\\LocalAppData\" -Migrate"
+    ],
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\com.motrix.next\""
+    ],
+    "checkver": {
+        "github": "https://github.com/AnInsomniacy/motrix-next"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v$version/MotrixNext_$version_x64-setup.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/AnInsomniacy/motrix-next/releases/download/v$version/MotrixNext_$version_arm64-setup.exe#/dl.7z"
+            }
+        }
+    }
+}
