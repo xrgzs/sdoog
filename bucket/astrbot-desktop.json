@@ -1,0 +1,46 @@
+{
+    "version": "4.22.0",
+    "description": "The desktop edition of AstrBot, designed for fast local installation and convenient access to ChatUI and plugins.",
+    "homepage": "https://astrbot.app/",
+    "license": "AGPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.22.0/AstrBot_4.22.0_windows_amd64_setup.exe#/dl.7z",
+            "hash": "31076b8ec6d106ef19602a35998993b736e9c7f12bf5fde51962820d10d341dd"
+        },
+        "arm64": {
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.22.0/AstrBot_4.22.0_windows_arm64_setup.exe#/dl.7z",
+            "hash": "679f6aa57e89c43f9ea1eeac448b947249e5d4cc674eb7810b08c50404ba131d"
+        }
+    },
+    "shortcuts": [
+        [
+            "astrbot-desktop-tauri.exe",
+            "AstrBot"
+        ]
+    ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\com.astrbot.desktop.tauri\" \"$persist_dir\\LocalAppData\" -Migrate"
+    ],
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\com.astrbot.desktop.tauri\""
+    ],
+    "checkver": {
+        "github": "https://github.com/AstrBotDevs/AstrBot-desktop"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v$version/AstrBot_$version_windows_amd64_setup.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v$version/AstrBot_$version_windows_arm64_setup.exe#/dl.7z"
+            }
+        }
+    }
+}
