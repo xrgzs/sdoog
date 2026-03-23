@@ -1,5 +1,5 @@
 {
-    "version": "2026.03.22.011306",
+    "version": "2026.03.23.010749",
     "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
     "homepage": "https://github.com/rustdesk/rustdesk",
     "license": "AGPL-3.0-only",
@@ -10,12 +10,12 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.4.6-x86_64.msi",
-            "hash": "feb68c75a9665aec2e14266f2aef59420c55cafa0937d86efcd91ab7b98c6dd9",
+            "hash": "32f5374a4d89edc82d83d8d1924498d16588d7e287467d7ec8a8548f5bad372f",
             "extract_dir": "PFiles64\\RustDesk"
         },
         "32bit": {
             "url": "https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.4.6-x86-sciter.exe#/RustDesk.exe",
-            "hash": "ddd2993bc50cae0c74a0c01eb514b7b6f3255d6c0b6c3f0c0ea1340b11b8a565"
+            "hash": "4c5b0a60b6c68788ae88e786b15ed4b0c9087ddeb3c3c1f4d5cf29389ad90b74"
         }
     },
     "shortcuts": [
