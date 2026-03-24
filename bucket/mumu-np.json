@@ -1,13 +1,13 @@
 {
-    "version": "5.22.2.3170",
+    "version": "5.24.2.3266",
     "description": "(sudo) MuMu Player 12 Large Screen, Unlimited Games Android 12 | Customize keep-alive apps | Multi-Instance.",
     "homepage": "https://mumuglobal.com",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.mumuplayer.com/news/update/20190906/30607_831430.html"
     },
-    "url": "http://a11.gdl.easebar.com/MuMu-setup-V5.22.2.3170-overseas-0307004949.exe#/installer.exe",
-    "hash": "md5:5240afafadf42491ba743d3f92895723",
+    "url": "http://a11.gdl.easebar.com/MuMu-setup-V5.24.2.3266-overseas-0324171722.exe#/installer.exe",
+    "hash": "md5:d57da45ca12e60b53fdda55876a848f6",
     "persist": [
         "configs",
         "vms"
