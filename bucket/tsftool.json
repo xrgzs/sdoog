@@ -1,10 +1,10 @@
 {
-    "version": "0.9.3.3",
+    "version": "0.9.3.4",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
     "url": "https://www.mympc.org/usr/uploads/2025/07/TSFTool.rar",
-    "hash": "ec5b7c56aa420a3c25aa4cedc624ef2472a6ef612f4b62ddf147a1e9f6611e5d",
+    "hash": "93afb45384827953040a69835ed04c6d0b508d945ba13dfafce2a9d549610955",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
