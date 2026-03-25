@@ -1,12 +1,12 @@
 {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "哔哩哔哩视频解析下载工具，支持 8K 视频、Hi-Res 音频、杜比视界下载、批量解析，可扫码登录，常驻托盘。",
     "homepage": "https://github.com/iuroc/bilidown",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/iuroc/bilidown/releases/download/v2.1.0/bilidown_Windows_x86_64.zip",
-            "hash": "5ce3f135ce85b088b60b418939e4a57d4f06a5cdbac0e7e093eb53caeda66dd9"
+            "url": "https://github.com/iuroc/bilidown/releases/download/v2.1.1/bilidown_Windows_x86_64.zip",
+            "hash": "7b738933492d3fc139b40808b3be3535d6dec02e93ac92634050b346599ca706"
         },
         "32bit": {
             "url": "https://github.com/iuroc/bilidown/releases/download/v2.0.15/bilidown_Windows_i386.zip",
