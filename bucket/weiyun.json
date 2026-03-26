@@ -1,5 +1,5 @@
 {
-    "version": "5.2.1579",
+    "version": "5.2.1581",
     "description": "微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。",
     "homepage": "https://www.weiyun.com/",
     "license": {
@@ -14,15 +14,15 @@
     ],
     "architecture": {
         "64bit": {
-            "hash": "ff7b02575ba5db8e7673272a73ec4eadb18b9b1b2e2cb1c0b89457c84d113b96",
-            "url": "https://dldir1.qq.com/weiyun/electron-update/release/5.2.1579/WeiyunApp-Setup-X64-5.2.1579.exe#/dl.7z",
+            "hash": "e0db727a0f9567b219a9bf250473213dcaeb46f95f7d0a5276fde1a40b97d808",
+            "url": "https://dldir1.qq.com/weiyun/electron-update/release/5.2.1581/WeiyunApp-Setup-X64-5.2.1581.exe#/dl.7z",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
             }
         },
         "32bit": {
-            "hash": "1515131c83e28abb34771b7c4ecbf9ac0336300c099224173d92fce9111d0407",
-            "url": "https://dldir1.qq.com/weiyun/electron-update/release/5.2.1579/WeiyunApp-Setup-WIN32-5.2.1579.exe#/dl.7z",
+            "hash": "9ad6acf402d30b2a3ebe6f7f872f75f6fbe63f611a35bab3832e0d3ba077b678",
+            "url": "https://dldir1.qq.com/weiyun/electron-update/release/5.2.1581/WeiyunApp-Setup-WIN32-5.2.1581.exe#/dl.7z",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
             }
