@@ -1,20 +1,20 @@
 {
-    "version": "2.0.3.0",
+    "version": "2.0.3.1",
     "description": "一款适用于班级多媒体屏幕的课表的信息显示工具，可以一目了然地显示各种信息。",
     "homepage": "https://classisland.tech/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.0/ClassIsland_app_windows_arm64_selfContained_folder.zip",
-            "hash": "6f216026d18995569f2aa688c80a2e5e80a05484ee01f0cbc63d777dfbee5325"
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.1/ClassIsland_app_windows_arm64_selfContained_folder.zip",
+            "hash": "fe51d60dc05d3a82f066f545b71ce96e3fba15f9ce993076c5b07ed34c6ba55b"
         },
         "64bit": {
-            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.0/ClassIsland_app_windows_x64_selfContained_folder.zip",
-            "hash": "20954cd529777960795cbc2a69f3b5e467e225b9ad91fb54418fab1f7aa6799b"
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.1/ClassIsland_app_windows_x64_selfContained_folder.zip",
+            "hash": "371bf396adb605002839adfc1dc7233452a8a9a48eb9ec495c3a86f4df25645b"
         },
         "32bit": {
-            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.0/ClassIsland_app_windows_x86_selfContained_folder.zip",
-            "hash": "462f5481a2ab97142187095860813796a20734e47ea57420825aa7f22ddccb8f"
+            "url": "https://github.com/ClassIsland/ClassIsland/releases/download/2.0.3.1/ClassIsland_app_windows_x86_selfContained_folder.zip",
+            "hash": "0157e076aae4e3aaecb3d5aae45d5cd0f71fd6577a73f85ec3609c3c56706a30"
         }
     },
     "shortcuts": [
