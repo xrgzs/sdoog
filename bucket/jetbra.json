@@ -1,14 +1,14 @@
 {
-    "version": "20250204-mod",
+    "version": "20260329-mod",
     "description": "(Modified) Auto apply to Scoop installed JB apps",
     "homepage": "https://3.jetbra.in",
     "license": "Apache-2.0",
-    "url": "https://alist.xrgzs.top/d/pxy/Software/JetBrains/Jetbrains%20Products%20with%20Crack/jetbra-mod-20250204.zip",
-    "hash": "279b56281a1f20e1545e9a06db5594cb3aafb80e106264ed02236e92a014bf65",
+    "url": "https://alist.xrgzs.top/d/pxy/Software/JetBrains/Jetbrains%20Products%20with%20Crack/jetbra-mod-20260329.zip",
+    "hash": "2d8cf95c240be4b2f4661493b19900f3a72d195edefc26de9ca944994681a61f",
     "extract_dir": "jetbra",
     "notes": [
         "* Get keys from \"$dir\\keys.html\" or \"https://3.jetbra.in\".",
-        "* Pevious installed JB apps from Scoop is patched automatically.",
+        "* Previous installed JB apps from Scoop is patched automatically.",
         "* Newly installed JB apps from Scoop would not be patched automatically.",
         "  - Reinstall this app: \"scoop update $app -f\"",
         "  - Add `vmoptions` manually according to \"$dir\\readme.txt\"",
@@ -43,7 +43,7 @@
             "    $newContent | Set-Content $file",
             "}",
             "",
-            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
+            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
             "foreach ($prd in $JBProducts) {",
             "    Get-ChildItem \"$scoopdir\\apps\\$prd*\\current\\IDE\\bin\\*.exe.vmoptions\" | ForEach-Object {",
             "        Update-VmOptions -file $_.FullName",
@@ -53,7 +53,7 @@
     },
     "uninstaller": {
         "script": [
-            "function Update-VmOptions([string]$file) {",
+            "function Restore-VmOptions([string]$file) {",
             "    Write-Host \"Restoring $file...\"",
             "    if (Test-Path \"$file.bak\") {",
             "        Copy-Item -Path \"$file.bak\" -Destination $file -Force",
@@ -70,10 +70,10 @@
             "",
             "}",
             "",
-            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
+            "$JBProducts = @(\"idea-ultimate\", \"clion\", \"phpstorm\", \"goland\", \"pycharm\", \"pycharm-professional\", \"webstorm\", \"webide\", \"rider\", \"datagrip\", \"rubymine\", \"appcode\", \"dataspell\", \"gateway\", \"jetbrains_client\", \"jetbrainsclient\" , \"devecostudio\")",
             "foreach ($prd in $JBProducts) {",
             "    Get-ChildItem \"$scoopdir\\apps\\$prd*\\current\\IDE\\bin\\*.exe.vmoptions\" | ForEach-Object {",
-            "        Update-VmOptions -file $_.FullName",
+            "        Restore-VmOptions -file $_.FullName",
             "    }",
             "}"
         ]
