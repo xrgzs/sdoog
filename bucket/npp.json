@@ -1,20 +1,20 @@
 {
-    "version": "8.9.1",
+    "version": "8.9.3",
     "description": "一款非常有特色的文本编辑器",
     "homepage": "https://notepad-plus-plus.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.1/npp.8.9.1.portable.x64.zip",
-            "hash": "96d39a00d8264ba652a519063313cf3f9f3a1e6cb99f74c7e9c3cecd9ffae989"
+            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.3/npp.8.9.3.portable.x64.zip",
+            "hash": "020c4d697bd0bb24eb332cf9098e62d0c3328b6d6ae65862c4a745e9a7d010a3"
         },
         "32bit": {
-            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.1/npp.8.9.1.portable.zip",
-            "hash": "3e1b4bf90d1a12fe7743784fdf79136a41ed3cf5d74283512e6de71eff21b8bd"
+            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.3/npp.8.9.3.portable.zip",
+            "hash": "2f0e085e90737365b4f76442eee70a3332a9d8b526a1faa734d0f4a8b403ad68"
         },
         "arm64": {
-            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.1/npp.8.9.1.portable.arm64.zip",
-            "hash": "dd03354d4fe0ea2136bbb0bfa256198e44d68d68f82f015d44cd9072483c8bfa"
+            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.3/npp.8.9.3.portable.arm64.zip",
+            "hash": "8d3d587dfce6823ee2c8455caf83c98bbca4c4fdf6a1f29454ccd27b0277f130"
         }
     },
     "pre_install": [

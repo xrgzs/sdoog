@@ -1,0 +1,47 @@
+{
+    "version": "2.3.0",
+    "description": "MaaEnd（终末地小助手）- 明日方舟：终末地全自动辅助工具",
+    "homepage": "https://github.com/maaend/maaend",
+    "license": "AGPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/maaend/maaend/releases/download/v2.3.0/MaaEnd-win-x86_64-v2.3.0.zip",
+            "hash": "405dca7e297d001eb7666fe2033b005674d817f7e71ec6633743e702274ad87c"
+        },
+        "arm64": {
+            "url": "https://github.com/maaend/maaend/releases/download/v2.3.0/MaaEnd-win-aarch64-v2.3.0.zip",
+            "hash": "9d01a2a43f858a1cb377ff212606a5f31a38ba390238e760bf219eef5c40f4b2"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -ItemType Directory -Path \"$persist_dir\\config\" -Force | Out-Null",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\cache\")) {",
+        "    New-Item -ItemType Directory -Path \"$persist_dir\\cache\" -Force | Out-Null",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "MaaEnd.exe",
+            "MaaEnd"
+        ]
+    ],
+    "persist": [
+        "config",
+        "cache"
+    ],
+    "checkver": {
+        "github": "https://github.com/maaend/maaend"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/maaend/maaend/releases/download/v$version/MaaEnd-win-x86_64-v$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/maaend/maaend/releases/download/v$version/MaaEnd-win-aarch64-v$version.zip"
+            }
+        }
+    }
+}

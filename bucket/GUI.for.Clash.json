@@ -1,12 +1,12 @@
 {
-    "version": "1.19.0",
+    "version": "1.22.0",
     "description": "GUI for Clash",
     "homepage": "https://github.com/GUI-for-Cores/GUI.for.Clash",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.19.0/GUI.for.Clash-windows-amd64.zip",
-            "hash": "83fd25c2586b1712d09a7d3ea6d8c79f2e333ec35cf73d4d0c98d946098ca5a3",
+            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.22.0/GUI.for.Clash-windows-amd64.zip",
+            "hash": "5bbf6decf649fe4550bc2b81d2cf3ba266920c8aedf06d6ea3471a1b363380db",
             "installer": {
                 "script": [
                     ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
@@ -15,8 +15,8 @@
             }
         },
         "32bit": {
-            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.19.0/GUI.for.Clash-windows-386.zip",
-            "hash": "c45bc4bca8a47628ab3fde89ba640c964d1f6039711c463fa30118d0bf4a4159",
+            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.22.0/GUI.for.Clash-windows-386.zip",
+            "hash": "0c45193950b0d99532592aa00631d4bf6c1f7a81ce89563bf448994c53ecf1f1",
             "installer": {
                 "script": [
                     ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
@@ -25,8 +25,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.19.0/GUI.for.Clash-windows-arm64.zip",
-            "hash": "daf912c04fa667f5b703dee69d1ea3649a868362fbdb7c0007df30369b3c0440",
+            "url": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.22.0/GUI.for.Clash-windows-arm64.zip",
+            "hash": "1d23e799210732fb1f51f3313cd8a093e3e9a94f304cbc20b7b6f1b3d2ac8b98",
             "installer": {
                 "script": [
                     ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",

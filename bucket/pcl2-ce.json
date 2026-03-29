@@ -1,5 +1,5 @@
 {
-    "version": "2.13.4",
+    "version": "2.14.3",
     "description": "PCL CE 是基于 PCL 开源代码二次开发的社区版本，包括了主线暂未制作的功能和改进！",
     "homepage": "https://github.com/PCL-Community/PCL2-CE",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.13.4/PCL2_CE_Release_x64.exe#/PCL2_CE.exe",
-            "hash": "a5d3235d1847ee0a82477ea8701e4892bf5ca138129609ee3905f42ec14465b5"
+            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.14.3/PCL2_CE_Release_x64.exe#/PCL2_CE.exe",
+            "hash": "4fbbf0aebf7a5f4e2062e4017846143079b74287ff49c00de62bad62e019296e"
         },
         "arm64": {
-            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.13.4/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe",
-            "hash": "ff07d2cdde8ec545ad9694d44056e3e22e5f4cfb37e61fcaf3a3f7b2a6a2a5dd"
+            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.14.3/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe",
+            "hash": "a09c71cf0280db99e05bafc3d46e9a7e09d07ec130e6544c4744c25b4ad05beb"
         }
     },
     "bin": "PCL2_CE.exe",
