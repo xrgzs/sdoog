@@ -1,19 +1,19 @@
 {
     "homepage": "https://music.163.com/",
     "description": "The official NetEase Cloud Music client.",
-    "version": "3.1.29.205104",
+    "version": "3.1.30.205130",
     "license": {
         "identifier": "EULA",
         "url": "https://music.163.com/html/web2/service.html"
     },
     "architecture": {
         "64bit": {
-            "url": "https://d8.music.126.net/dmusic2/NeteaseCloudMusic_Music_official_3.1.29.205104_64.exe#/dl.7z",
-            "hash": "b246aef4c112fd6632579897a7c4a3405becc46825db0a15d97b9aa1bdc2141b"
+            "url": "https://d8.music.126.net/dmusic2/NeteaseCloudMusic_Music_official_3.1.30.205130_64.exe#/dl.7z",
+            "hash": "9ae0f1fabc4286bc4121176d864b871e85c7b5bc24b40a41883dd19ecbe6aba5"
         },
         "32bit": {
-            "url": "https://d8.music.126.net/dmusic2/NeteaseCloudMusic_Music_official_3.1.29.205104_32.exe#/dl.7z",
-            "hash": "13dafabb0f740b794631391dff4a69ca56fee05fbb4b8f1169e492d4c8f444e8"
+            "url": "https://d8.music.126.net/dmusic2/NeteaseCloudMusic_Music_official_3.1.30.205130_32.exe#/dl.7z",
+            "hash": "b38e0448c75451c7f52799153197120a88322a09b080db1489e7917d73bf8ae9"
         }
     },
     "installer": {
