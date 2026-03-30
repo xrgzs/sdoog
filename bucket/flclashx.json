@@ -1,0 +1,52 @@
+{
+    "version": "0.3.2",
+    "description": "A Flutter-based cross-platform Clash GUI client",
+    "homepage": "https://github.com/pluralplay/FlClashX",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-windows-amd64.zip",
+            "hash": "0038e0f587a17f1898ede6041b9e7745af7f8080300fb685a7da3d7f5bb9c6ec"
+        },
+        "arm64": {
+            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-windows-arm64.zip",
+            "hash": "9b3979e99fd3b08f8f71f18b55e296bcd97c7de2e85008b2a6e6268179cea520"
+        }
+    },
+    "shortcuts": [
+        [
+            "FlClashX.exe",
+            "FlClashX"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.follow\\clashx\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "while (Get-Service -Name 'FlClashHelperService' -ErrorAction SilentlyContinue) {",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('stop', 'FlClashHelperService') -RunAs -Quiet",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('delete', 'FlClashHelperService') -RunAs -Quiet",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\com.follow\\clashx\"",
+        "Remove-EmptyDirectory \"$env:APPDATA\\com.follow\""
+    ],
+    "checkver": {
+        "github": "https://github.com/pluralplay/FlClashX"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pluralplay/FlClashX/releases/download/v$version/FlClashX-windows-amd64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/pluralplay/FlClashX/releases/download/v$version/FlClashX-windows-arm64.zip"
+            }
+        }
+    }
+}
