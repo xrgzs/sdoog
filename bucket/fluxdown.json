@@ -16,13 +16,24 @@
             "hash": "32b611da9af6da0156dfda0ad0bce12a145f376055eba9fd7f05e8e0474a0e50"
         }
     },
-    "extract_dir": ".",
-    "bin": "FluxDown.exe",
+    "bin": "flux_down.exe",
     "shortcuts": [
         [
-            "FluxDown.exe",
+            "flux_down.exe",
             "FluxDown"
         ]
+    ],
+     "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\FluxDown\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\FluxDown\""
     ],
     "checkver": {
         "url": "https://fluxdown.zerx.dev/api/release",
