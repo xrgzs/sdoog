@@ -1,24 +1,37 @@
 {
     "version": "0.6.6",
-    "description": "AI Voice Input",
+    "description": "一句话，执行技能。不只是 AI 语音输入法，更是我的语音助手。",
     "homepage": "https://shandianshuo.cn/",
-    "license": "unknown",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://shandianshuo.cn/terms"
+    },
     "architecture": {
         "64bit": {
             "url": "https://download.shandianshuo.cn/windows/shandianshuo_0.6.6_x64-setup.exe#/dl.7z",
             "hash": "8641cf4ebf8b84ff17362424b1fa19aa24925085e2364a669222bd92804dc49e"
         }
     },
-    "bin": "shandianshuo.exe",
     "shortcuts": [
-        [
-            "shandianshuo.exe",
-            "shandianshuo"
-        ],
         [
             "shandianshuo.exe",
             "闪电说"
         ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\Shandianshuo\" \"$persist_dir\\AppData\" -Migrate",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\cn.shandianshuo.desktop\" \"$persist_dir\\LocalAppData\" -Migrate",
+            "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Shandianshuo\"",
+        "Remove-Junction \"$env:LOCALAPPDATA\\cn.shandianshuo.desktop\""
     ],
     "checkver": "download.shandianshuo.cn/windows/shandianshuo_([\\d.]+)_x64-setup.exe",
     "autoupdate": {
