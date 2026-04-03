@@ -1,0 +1,35 @@
+{
+    "homepage": "https://github.com/appshubcc/Bettbox",
+    "description": "Another Better Mihomo Client",
+    "version": "1.16.2",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.16.2/Bettbox-1.16.2-windows-amd64-setup.exe",
+    "hash": "37ed1169a8a82518c0b6790f92e1751db8f99864adaa8d97fd89c63dfde2c60c",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "Bettbox.exe",
+            "Bettbox"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.appshub\\Bettbox\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "while (Get-Service -Name 'BetboxHelperevice' -ErrorAction SilentlyContinue) {",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('stop', 'BetboxHelperevice') -RunAs -Quiet",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('delete', 'BetboxHelperevice') -RunAs -Quiet",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\com.appshub\\Bettbox\""
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/appshubcc/Bettbox/releases/download/v$version/Bettbox-$version-windows-amd64-setup.exe"
+    }
+}
