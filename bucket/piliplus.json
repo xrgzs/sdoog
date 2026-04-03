@@ -16,10 +16,18 @@
             "PiliPlus"
         ]
     ],
-    "post_uninstall": "if ($purge) { Remove-Item \"$env:APPDATA\\com.example\\piliplus\", \"$env:LOCALAPPDATA\\com.example\\piliplus\" -Force -Recurse -ErrorAction SilentlyContinue }",
-    "notes": [
-        "PiliPlus is NOT portable.",
-        "Settings are stored in '%APPDATA%\\com.example\\piliplus', and can be purged using 'scoop uninstall --purge piliplus'."
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.example\\piliplus\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\com.example\\piliplus\"",
+        "Remove-EmptyDirectory \"$env:APPDATA\\com.example\""
     ],
     "checkver": {
         "url": "https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest",
