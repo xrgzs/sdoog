@@ -16,8 +16,19 @@
             "Snow Shot"
         ]
     ],
-    "post_install": "Remove-Item \"$dir\\uninstall*\", \"$dir\\`$*\" -Force -Recurse -ErrorAction SilentlyContinue",
-    "post_uninstall": "if ($purge) { Remove-Item \"$env:LOCALAPPDATA\\com.chao.snowshot\" -Force -Recurse -ErrorAction SilentlyContinue }",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\com.chao.snowshot\" \"$persist_dir\\LocalAppData\" -Migrate",
+            "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\com.chao.snowshot\""
+    ],
     "persist": [
         "configs",
         "plugins",
@@ -25,8 +36,8 @@
         "captureHistoryImages"
     ],
     "checkver": {
-        "url": "https://github.com/mg-chao/snow-shot/releases.atom",
-        "regex": "Repository/\\d+/v(.+?)<"
+        "url": "https://github.com/mg-chao/snow-shot/releases/latest/download/latest.json",
+        "jsonpath": "$.version"
     },
     "autoupdate": {
         "architecture": {
