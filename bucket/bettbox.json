@@ -1,0 +1,51 @@
+{
+    "version": "1.16.2",
+    "description": "Another Better Mihomo Client",
+    "homepage": "https://github.com/appshubcc/Bettbox",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.16.2/Bettbox-1.16.2-windows-amd64-setup.exe",
+            "hash": "37ed1169a8a82518c0b6790f92e1751db8f99864adaa8d97fd89c63dfde2c60c"
+        },
+        "arm64": {
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.16.2/Bettbox-1.16.2-windows-arm64-setup.exe",
+            "hash": "4e2c4459a042ceb3c6eadae7be7be64d9334982903ed56d73ddb10cafe40d0c9"
+        }
+    },
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "Bettbox.exe",
+            "Bettbox"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\com.appshub\\Bettbox\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "while (Get-Service -Name 'BetboxHelperevice' -ErrorAction SilentlyContinue) {",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('stop', 'BetboxHelperevice') -RunAs -Quiet",
+        "    Invoke-ExternalCommand 'sc.exe' -ArgumentList @('delete', 'BetboxHelperevice') -RunAs -Quiet",
+        "}",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\com.appshub\\Bettbox\"",
+        "Remove-EmptyDirectory \"$env:APPDATA\\com.appshub\""
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/appshubcc/Bettbox/releases/download/v$version/Bettbox-$version-windows-amd64-setup.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/appshubcc/Bettbox/releases/download/v$version/Bettbox-$version-windows-arm64-setup.exe"
+            }
+        }
+    }
+}
