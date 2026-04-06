@@ -1,5 +1,5 @@
 {
-    "version": "0.1.36",
+    "version": "0.1.37",
     "description": "Cross-platform download manager with multi-protocol (HTTP/2/HTTPS/FTP/BitTorrent) support, resumable & segmented downloading, zero ads, zero tracking, local-first privacy design. [Portable Edition]",
     "homepage": "https://fluxdown.zerx.dev/",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.36-windows-x64-portable.zip",
-            "hash": "74a79bbb6959331fbcc7d823865f7c9f8286e0b38064d99eae15fee8c009a88f"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.37-windows-x64-portable.zip",
+            "hash": "6b7d3c8104f70698f98cd55dc61523183ffdade1b3f266b5fb788723123e24fb"
         },
         "arm64": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.36-windows-arm64-portable.zip",
-            "hash": "32b611da9af6da0156dfda0ad0bce12a145f376055eba9fd7f05e8e0474a0e50"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.37-windows-arm64-portable.zip",
+            "hash": "fb969970576dfee975249ca308e5217991d53a9ad3451511e4b5cf59a83af4c0"
         }
     },
     "bin": "flux_down.exe",
@@ -23,7 +23,7 @@
             "FluxDown"
         ]
     ],
-     "installer": {
+    "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:APPDATA\\FluxDown\" \"$persist_dir\\AppData\" -Migrate"
