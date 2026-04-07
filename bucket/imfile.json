@@ -1,12 +1,12 @@
 {
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Smooth,high-speed,powerful,and convenient download tool.",
     "homepage": "https://imfile.io/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/imfile-io/imfile-desktop/releases/download/v2.0.0/imFile-Setup-2.0.0.exe#/dl.7z",
-            "hash": "sha512:b4fd0c4d0bde2060196e7090f64164786de847c550b3c0b0d9849002ca69c74b9659f7fe2485c595433caa3881ee46d9c81c02d683cbdabcf806d3682429700d",
+            "url": "https://github.com/imfile-io/imfile-desktop/releases/download/v2.0.1/imFile-Setup-2.0.1.exe#/dl.7z",
+            "hash": "sha512:0180d43f47e1a9cb69d3f72007a224a2109d5fd70994c4fa10bac1d32766e03b44a10a4c992459d847f02fc1e223150c2cc6c1ae1186cdd7aec1d8f6b743f7bd",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         }
     },
