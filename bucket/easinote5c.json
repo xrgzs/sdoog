@@ -1,11 +1,11 @@
 {
-    "version": "1.0.1.8095",
+    "version": "1.0.1.9547",
     "description": "易上手的白板书写软件",
     "homepage": "https://e.seewo.com/product/EasiNote5c",
     "license": "Proprietary",
-    "url": "https://e.seewo.com/download/file?code=EasiNote5C&&version=1.0.1.8095#/dl.7z",
-    "hash": "75d4b62d58a5d21f6118fd4cb31e0e45f9ba961d8b39109b8d4baccf59831bb0",
-    "extract_dir": "EasiNote5C_1.0.1.8095",
+    "url": "https://e.seewo.com/download/file?code=EasiNote5C&&version=1.0.1.9547#/dl.7z",
+    "hash": "843cdaffc57cc152c928fecd15ec59a1b68bb84f8c42b1c4db946c4711968e03",
+    "extract_dir": "EasiNote5C_1.0.1.9547",
     "shortcuts": [
         [
             "Main\\EasiNote5C.exe",
