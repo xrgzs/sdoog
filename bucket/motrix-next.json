@@ -23,7 +23,7 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "New-PersistDirectory \"$env:LOCALAPPDATA\\com.motrix.next\" \"$persist_dir\\LocalAppData\" -Migrate"
     ],
-    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse",
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse -ErrorAction Ignore | Out-Null",
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",

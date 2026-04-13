@@ -27,7 +27,7 @@
         "    Set-Content -Path \"$persist_dir\\AppData\\settings.json\" -Value '{\"app\":{\"auto_update_enabled\":false}}'",
         "}"
     ],
-    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse",
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse -ErrorAction Ignore | Out-Null",
     "pre_uninstall": [
         "if (Test-Path \"$dir\\uninstall-openlist-service.exe\") {",
         "    while (Get-Service -Name 'openlist_desktop_service' -ErrorAction SilentlyContinue) {",
