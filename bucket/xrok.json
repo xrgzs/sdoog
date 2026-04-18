@@ -3,7 +3,7 @@
     "version": "6.26.3.30",
     "homepage": "https://www.xrgzs.top/xrok",
     "license": "Freeware",
-    "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z",
+    "url": "https://list.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z",
     "hash": "488b8f069e9c05dc6bca5aa729269b634fd739630024eb6c82869fc9f4b0ea66",
     "bin": [
         [
@@ -38,10 +38,10 @@
     ],
     "post_uninstall": "Remove-Item \"$env:USERPROFILE\\Desktop\\潇然一键装机助理.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",
+        "url": "https://list.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/QiiVersion.txt",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z"
+        "url": "https://list.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/HotPE/XROK.HPM#/dl.7z"
     }
 }

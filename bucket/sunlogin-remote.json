@@ -7,11 +7,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_6.6.0.21355.exe#/SunloginRemote.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_6.6.0.21355.exe#/SunloginRemote.exe",
             "hash": "3dc92c3a0baf60fe66477717a2ebe7210fed0c5db56aa47f97aa1c9327b71e70"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_6.6.0.21355.exe#/SunloginRemote.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_6.6.0.21355.exe#/SunloginRemote.exe",
             "hash": "673b0d7dd1e85a5300c5936a00b7dae5a023f6e103b0b1ab65628d777b6accf5"
         }
     },
@@ -22,16 +22,16 @@
         ]
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64.exe.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64.exe.ver",
          "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_$version.exe#/SunloginRemote.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_$version.exe#/SunloginRemote.exe"
             },
             "32bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_$version.exe#/SunloginRemote.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_$version.exe#/SunloginRemote.exe"
             }
         },
         "hash": {

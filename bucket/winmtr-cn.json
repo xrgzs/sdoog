@@ -5,11 +5,11 @@
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/WinMTR/WinMTR_X64.exe#/WinMTR.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/WinMTR/WinMTR_X64.exe#/WinMTR.exe",
             "hash": "a7f960dcedfba5ec4ddd2e5d531815100406b8b5a501dea6b2d42870feb4c975"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/WinMTR/WinMTR.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/WinMTR/WinMTR.exe",
             "hash": "a0796c815783c914590486cdf5861e73e3875aabdd83bb226534944bb3a0be32"
         }
     },

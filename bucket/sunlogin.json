@@ -7,11 +7,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_16.0.0.22931.exe#/SunloginClient.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_16.0.0.22931.exe#/SunloginClient.exe",
             "hash": "b1154374d1293b990af7d3ff3524d98522639e13e37a2d4f705b52695e51cf37"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_16.0.0.22931.exe#/SunloginClient.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_16.0.0.22931.exe#/SunloginClient.exe",
             "hash": "cfed5b47cf83417ccf70509717a6e087cb5ee9dbf5d41af823ec2a19329fc2b0"
         }
     },
@@ -22,16 +22,16 @@
         ]
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64.exe.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64.exe.ver",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_$version.exe#/SunloginClient.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_x64_$version.exe#/SunloginClient.exe"
             },
             "32bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_$version.exe#/SunloginClient.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_X_WINDOWS_$version.exe#/SunloginClient.exe"
             }
         },
         "hash": {

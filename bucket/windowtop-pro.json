@@ -6,7 +6,7 @@
     "depends": "innounp",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z",
+            "url": "https://list.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z",
             "hash": "583a3a03c33d74fa988037cb8e52b2c98f4d21a2ebd376c047cc908073e15dd2"
         }
     },
@@ -39,15 +39,15 @@
         ]
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z.ver",
          "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z",
+                "url": "https://list.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z",
                 "hash": {
-                    "url": "https://alist.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z.sha256"
+                    "url": "https://list.xrgzs.top/d/pxy/Software/WindowTopPro/WindowTopProx64.7z.sha256"
                 }
             }
         }

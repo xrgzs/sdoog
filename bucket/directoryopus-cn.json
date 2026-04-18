@@ -7,8 +7,8 @@
         "url": "https://docs.dopus.com/doku.php?id=licence:end_user"
     },
     "url": [
-        "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_13.22.exe#/installer.exe",
-        "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
+        "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_13.22.exe#/installer.exe",
+        "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
     ],
     "hash": [
         "f392045f5a039a8f67e0d81144a2bb208f66a6459b6f272c257ea8b2f713816e",
@@ -55,13 +55,13 @@
         ]
     },
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus.exe.ver",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": [
-            "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_$version.exe#/installer.exe",
-            "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
+            "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/DirectoryOpus_$version.exe#/installer.exe",
+            "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/DirectoryOpus/Crack/dopus_patcher_v1.1.exe#/patcher.exe"
         ],
         "hash": {
             "url": "$url.sha256",

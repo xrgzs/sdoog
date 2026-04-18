@@ -11,7 +11,7 @@
     },
     "installer": {
         "script": [
-            "Invoke-Download \"https://alist.xrgzs.top/d/pxy/Software/Tools/wtsapi32.dll\" \"$dir\\wtsapi32.dll\"",
+            "Invoke-Download \"https://list.xrgzs.top/d/pxy/Software/Tools/wtsapi32.dll\" \"$dir\\wtsapi32.dll\"",
             "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S') -RunAs"
         ]
     },

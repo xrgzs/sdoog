@@ -5,11 +5,11 @@
     "license": "Proprietary",
     "architecture": {
         "arm64": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe",
             "hash": "6c0e59b1233d35e10a47ea30494261740f4cd6ffd794cbabe9a4fd1d1d95de76"
         },
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
             "hash": "5f1c99ede7664642c7efb4d1e34f86e1fc0d4747cc9240440a35afa829db0099"
         }
     },
@@ -64,16 +64,16 @@
         "Remove-Junction \"$env:APPDATA\\Docker\""
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/Version.txt",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Docker/Desktop/Version.txt",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "arm64": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/arm64/Docker%20Desktop%20Installer.exe#/installer.exe"
             },
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Docker/Desktop/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe"
             }
         },
         "hash": {

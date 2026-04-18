@@ -7,11 +7,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_5.6.0.23292.exe#/SunloginEnterprise.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_5.6.0.23292.exe#/SunloginEnterprise.exe",
             "hash": "189daa57696cd86e2bbceb2b88a8192a01c934a5ca367525d1255c832a9c84fb"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_5.6.0.23292.exe#/SunloginEnterprise.exe",
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_5.6.0.23292.exe#/SunloginEnterprise.exe",
             "hash": "76b1b1316da7347f3d8e67747835db76cd65e11c1522df487f3b3aac4b4f6209"
         }
     },
@@ -22,16 +22,16 @@
         ]
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64.exe.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64.exe.ver",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_$version.exe#/SunloginEnterprise.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_x64_$version.exe#/SunloginEnterprise.exe"
             },
             "32bit": {
-                "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_$version.exe#/SunloginEnterprise.exe"
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SLRC_WINDOWS_ENT_$version.exe#/SunloginEnterprise.exe"
             }
         },
         "hash": {

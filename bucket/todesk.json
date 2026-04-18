@@ -6,7 +6,7 @@
         "identifier": "Proprietary",
         "url": "https://www.todesk.com/licence.html"
     },
-    "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_4.8.0.1.exe#/dl.7z",
+    "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_4.8.0.1.exe#/dl.7z",
     "hash": "54995d07589a46dda9b377ca0eff80b005e444a5c03985cddaf79e9f5a339124",
     "shortcuts": [
         [
@@ -42,11 +42,11 @@
     ],
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\uninst.exe\" -Force -Recurse",
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe.ver",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk.exe.ver",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_$version.exe#/dl.7z",
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_$version.exe#/dl.7z",
         "hash": {
             "url": "$url.sha256",
             "mode": "extract"

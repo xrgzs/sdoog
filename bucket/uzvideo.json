@@ -3,7 +3,7 @@
     "description": "uz影视，追剧、直播、无广、投屏、免费",
     "homepage": "https://github.com/YYDS678/uzVideo",
     "license": "Freeware",
-    "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%861.6.70_win.zip",
+    "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%861.6.70_win.zip",
     "hash": "4746ace9b06a3c723580699514886d6fff5d94440baf2e15cff14b85fff3124c",
     "shortcuts": [
         [
@@ -23,10 +23,10 @@
         "Remove-Junction \"$env:APPDATA\\com.uzvideo\""
     ],
     "checkver": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/Version_Win.txt",
+        "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/Version_Win.txt",
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://alist.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86$version_win.zip"
+        "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86$version_win.zip"
     }
 }

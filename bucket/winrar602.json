@@ -9,11 +9,11 @@
     "notes": "Set up context menu within settings window.",
     "architecture": {
         "64bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x64_SC.7z",
+            "url": "https://list.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x64_SC.7z",
             "hash": "d6c5e9096f412ed86575dd5ebf889e694f5ad563fb571d808c3004ce1ecccd41"
         },
         "32bit": {
-            "url": "https://alist.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x86_SC.7z",
+            "url": "https://list.xrgzs.top/d/pxy/Software/WinRAR/WinRAR_v6.02_x86_SC.7z",
             "hash": "4bfb6806b475844b8364070448ca2826d3e639a3b02485d27e7582914ce66364"
         }
     },
