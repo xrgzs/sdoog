@@ -1,0 +1,22 @@
+{
+    "version": "2.0.7",
+    "description": "Open source, compact, and material designed cursor set.",
+    "homepage": "https://www.bibata.live/",
+    "license": "GPL-3.0-or-later",
+    "notes": "It's recommand to install cursors globally (append `-g`).",
+    "url": "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice-Windows.zip",
+    "hash": "0045e40324da5b540b3bee260f53d0792df62be9cdef91655a024ae9f151bd04",
+    "pre_install": "New-Item \"HKCU:\\Control Panel\\Cursors\\Schemes\" -ErrorAction SilentlyContinue | Out-Null",
+    "installer": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { New-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -PropertyType String -Value \"$($_.FullName)\\Pointer.cur,$($_.FullName)\\Help.cur,$($_.FullName)\\Work.ani,$($_.FullName)\\Busy.ani,$($_.FullName)\\Cross.cur,$($_.FullName)\\Text.cur,$($_.FullName)\\Handwriting.cur,$($_.FullName)\\Unavailable.cur,$($_.FullName)\\Vert.cur,$($_.FullName)\\Horz.cur,$($_.FullName)\\Dgn1.cur,$($_.FullName)\\Dgn2.cur,$($_.FullName)\\Move.cur,$($_.FullName)\\Alternate.cur,$($_.FullName)\\Link.cur,$($_.FullName)\\Pin.cur,$($_.FullName)\\Person.cur,$($_.FullName)\\Pan.cur,$($_.FullName)\\Grabbing.cur,$($_.FullName)\\Zoom-in.cur,$($_.FullName)\\Zoom-out.cur\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "uninstaller": {
+        "script": "Get-ChildItem $dir -Directory | ForEach-Object { Remove-ItemProperty \"HKCU:\\Control Panel\\Cursors\\Schemes\" -Name \"$($_.Name) Cursors\" -Force -ErrorAction SilentlyContinue | Out-Null }"
+    },
+    "checkver": {
+        "github": "https://github.com/ful1e5/Bibata_Cursor"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ful1e5/Bibata_Cursor/releases/download/v$version/Bibata-Modern-Ice-Right-Windows.zip"
+    }
+}

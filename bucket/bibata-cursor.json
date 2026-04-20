@@ -3,6 +3,7 @@
     "description": "Open source, compact, and material designed cursor set.",
     "homepage": "https://www.bibata.live/",
     "license": "GPL-3.0-or-later",
+    "notes": "It's recommand to install cursors globally (append `-g`).",
     "url": [
         "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber-Right-Windows.zip",
         "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber-Windows.zip",
