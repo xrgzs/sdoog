@@ -1,16 +1,16 @@
 {
-    "version": "1.3.0-251203",
+    "version": "1.3.1-260422",
     "description": "Extract the image from payload.bin in Android ROM",
     "homepage": "https://github.com/sekaiacg/payload_extract",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sekaiacg/payload_extract/releases/download/v1.3.0-251203/payload_extract-v1.3.0-251203-Windows_x86_64.zip",
-            "hash": "9c5ac372c24a532729cc4af609eb5be555f10cdab444dc2dc5093949a2e81af0"
+            "url": "https://github.com/sekaiacg/payload_extract/releases/download/v1.3.1-260422/payload_extract-v1.3.1-260422-Windows_x86_64.zip",
+            "hash": "e07ac31ca3f45428ba4591d6b68d8fcad7dc605b44444d1bca5d9ed6db165367"
         },
         "arm64": {
-            "url": "https://github.com/sekaiacg/payload_extract/releases/download/v1.3.0-251203/payload_extract-v1.3.0-251203-Windows_aarch64.zip",
-            "hash": "6d9c512ba5a77b60015272e0b3eea9dffdaeedd00d91b133b409948ee9654e11"
+            "url": "https://github.com/sekaiacg/payload_extract/releases/download/v1.3.1-260422/payload_extract-v1.3.1-260422-Windows_aarch64.zip",
+            "hash": "240fab067bdc579303c6b208964a40a1c93c0dbc8676421822ee415a4ba4c626"
         }
     },
     "bin": "payload_extract.exe",
