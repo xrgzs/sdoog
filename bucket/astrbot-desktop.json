@@ -1,16 +1,16 @@
 {
-    "version": "4.23.3",
+    "version": "4.23.5",
     "description": "The desktop edition of AstrBot, designed for fast local installation and convenient access to ChatUI and plugins.",
     "homepage": "https://astrbot.app/",
     "license": "AGPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.23.3/AstrBot_4.23.3_windows_amd64_setup.exe#/dl.7z",
-            "hash": "138f1e162b7d1cc44ae6547ad8c0d4296fe408c29dadb498fcb25a82cc016cd0"
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.23.5/AstrBot_4.23.5_windows_amd64_setup.exe#/dl.7z",
+            "hash": "1337b43fd3d11e9df03a7981271e2620fd00741abd75a722b7fb18ab38c2c81f"
         },
         "arm64": {
-            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.23.3/AstrBot_4.23.3_windows_arm64_setup.exe#/dl.7z",
-            "hash": "8624ee1ba2585fb59f109f7e5b71652327385937a216b256b0c0d788ddac111a"
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.23.5/AstrBot_4.23.5_windows_arm64_setup.exe#/dl.7z",
+            "hash": "a391d08f1c0b22d954eecaa2dc349dc983e4f4750a6ad1535e0a8fb99174bf9a"
         }
     },
     "shortcuts": [
