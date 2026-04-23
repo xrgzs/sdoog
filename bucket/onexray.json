@@ -1,0 +1,39 @@
+{
+    "version": "26.4.2",
+    "description": "Cross Platform Xray-core Client",
+    "homepage": "https://github.com/OneXray/OneXray",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/OneXray/OneXray/releases/download/v26.4.2/OneXray-windows-amd64.zip",
+            "hash": "e2ed7552caed4cef8f4bac03b886423a21f955b9791fb5f94d96be8172f9fb2b"
+        }
+    },
+    "shortcuts": [
+        [
+            "OneXray.exe",
+            "OneXray"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\YuanDevLLC\\OneXray\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\YuanDevLLC\\OneXray\"",
+        "Remove-EmptyDirectory \"$env:APPDATA\\YuanDevLLC\""
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/OneXray/OneXray/releases/download/v$version/OneXray-windows-amd64.zip"
+            }
+        }
+    }
+}
