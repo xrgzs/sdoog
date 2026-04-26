@@ -1,5 +1,5 @@
 {
-    "version": "0.1.40",
+    "version": "0.1.41",
     "description": "Cross-platform download manager with multi-protocol (HTTP/2/HTTPS/FTP/BitTorrent) support, resumable & segmented downloading, zero ads, zero tracking, local-first privacy design. [Portable Edition]",
     "homepage": "https://fluxdown.zerx.dev/",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.40-windows-x64-portable.zip",
-            "hash": "1a186c076ac2c0d08ffb5c7d4c4ffca222b533d554e113023a481b0fb9ab42fd"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.41-windows-x64-portable.zip",
+            "hash": "afacd490e1942a7d1dc87268601f460803c64130602f8aeafb0fa2bbb409d25d"
         },
         "arm64": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.40-windows-arm64-portable.zip",
-            "hash": "5ff47be339d3c5eaef00c416780a7205c4a37dacd8735ba7e0d74c6e9bcb1778"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.1.41-windows-arm64-portable.zip",
+            "hash": "7369dc749ac9872e0f19e1e14723aca254d382cfd53a2a5313e548f6396c1752"
         }
     },
     "bin": "flux_down.exe",
