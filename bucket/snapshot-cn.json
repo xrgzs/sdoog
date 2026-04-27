@@ -1,10 +1,10 @@
 {
-    "version": "1.51.0.121∕122",
+    "version": "1.51.0.124∕125",
     "description": "DriveSnapShot中文版是一款小巧强大的系统热备份软件，硬盘备份软件SnapShot最新版支持磁盘卷热备份还原，差异备份，增量备份，异机还原，远程备份，RAID磁盘阵列，挂载映像文件映射虚拟驱动器，生成哈希文件，命令行操作等，备份速度快，备份的镜像文件体积较小。该工具短小精悍，原生绿色单执行文件，无额外临时数据生成。",
     "homepage": "https://www.423down.com/9700.html",
     "license": "Proprietary",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iMq6o3ns3bba&type=down#/dl.7z",
-    "hash": "009ee08f2d52478d0f89ac890dc39ca95c78056c9941aaa2a40126078e9b303d",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iP2oF3o5q16b&type=down#/dl.7z",
+    "hash": "bb562ba109721c4f2b21c737450e60571b9e7b89619a92dddae0344a558a6d8a",
     "extract_dir": "Snapshot",
     "architecture": {
         "32bit": {
