@@ -1,12 +1,12 @@
 {
-    "version": "6.1.866",
+    "version": "6.1.880",
     "description": "一套功能强大，可取代记事本的文字编辑器，拥有无限制的 Undo/Redo、英文拼字检查、自动换行、列数标记、搜寻取代、同时编辑多文件、全屏幕浏览功能。",
     "homepage": "https://www.mefcl.com/editplus.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iEf5K3lft70b&type=down#/installer.exe",
-            "hash": "34ba2c648c36238c4b16960136535498b45772875bfe8bea79f872b5a9503db4"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iJVLT3ocspsb&type=down#/installer.exe",
+            "hash": "aaf8290235af555cb60317da48697c65c74500b1dccaeb875c925a89f62880df"
         }
     },
     "shortcuts": [
