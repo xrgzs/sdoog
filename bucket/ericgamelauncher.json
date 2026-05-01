@@ -20,7 +20,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/EricZhang233/EricGameLauncher/releases/download/v1.0.18/EricGameLauncher_1.0.18.zip"
+                "url": "https://github.com/EricZhang233/EricGameLauncher/releases/download/v$version/EricGameLauncher_$version.zip"
             }
         }
     }
