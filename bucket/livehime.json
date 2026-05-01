@@ -1,0 +1,46 @@
+{
+    "version": "7.53.4.10500",
+    "description": "哔哩哔哩直播辅助工具",
+    "homepage": "https://live.bilibili.com/liveHime",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.hdslb.com/bili/bililive/win/Livehime-Win-beta-7.53.4.10500-x64.exe",
+            "hash": "md5:bcf71c8d4c75fc5132b52899359b999f"
+        }
+    },
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "livehime.exe",
+            "哔哩哔哩直播姬"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\livehime\" \"$persist_dir\\LocalAppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\livehime\""
+    ],
+    "checkver": {
+        "url": "https://api.live.bilibili.com/xlive/app-blink/v1/liveVersionInfo/getHomePageLiveVersion?system_version=2",
+        "jsonpath": "$.data.curr_version"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.hdslb.com/bili/bililive/win/Livehime-Win-beta-$version-x64.exe",
+                "hash": {
+                    "url": "https://api.live.bilibili.com/xlive/app-blink/v1/liveVersionInfo/getHomePageLiveVersion?system_version=2",
+                    "jsonpath": "$.data.file_md5"
+                }
+            }
+        }
+    }
+}
