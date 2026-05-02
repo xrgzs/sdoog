@@ -1,10 +1,10 @@
 {
-    "version": "6.9.0-beta.3",
+    "version": "6.9.0",
     "description": "An Arknights assistant, supports ZH and EN client",
     "homepage": "https://www.maa.plus/",
     "license": "AGPL-3.0",
-    "url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights/releases/download/v6.9.0-beta.3/MAA-v6.9.0-beta.3-win-x64.zip",
-    "hash": "750fb8bb3bf2b39eaf5c094d211b5607c555b0f824641b4939c89aa3820aa264",
+    "url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights/releases/download/v6.9.0/MAA-v6.9.0-win-x64.zip",
+    "hash": "02579ee323573d951e54d826b3f0a2799c0ac49ee76c3a5c89170eed32422937",
     "bin": "MAA.exe",
     "shortcuts": [
         [
