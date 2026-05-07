@@ -1,12 +1,12 @@
 {
-    "version": "0.0.4",
+    "version": "0.0.5-alpha.1",
     "description": "MAA异环小助手，由MAAFramework强力驱动！",
     "license": "GPL-3.0-only",
     "homepage": "https://github.com/1bananachicken/MaaNTE",
     "architecture": {
         "64bit": {
-            "hash": "d784fab89ff264f58b3d27747580b6c24c017e9ecba849da2997af7cecc0d718",
-            "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v0.0.4/MaaNTE-win-x86_64-v0.0.4-MFAA.zip"
+            "hash": "52c1269947ddd65d5d4ee29ed966398b16caa67fc6d9bd95323b3184483a8283",
+            "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v0.0.5-alpha.1/MaaNTE-win-x86_64-v0.0.5-alpha.1-MFAA.zip"
         }
     },
     "shortcuts": [
