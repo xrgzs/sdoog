@@ -1,16 +1,16 @@
 {
     "description": "DrvIndex 安装设备驱动程序工具（多线程版）",
-    "version": "8.2026.5.701",
+    "version": "9.2026.5.808",
     "homepage": "https://bbs.wuyou.net/forum.php?mod=viewthread&tid=425316",
     "license": "Freeware",
     "architecture": {
         "32bit": {
             "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvIndex_x86.exe#/DrvIndex.exe",
-            "hash": "5b283803892dea950ad02d4f8c70dab76524325f0f565c66929433ac6821ec40"
+            "hash": "334e669da06bd6a42fe5e5a33ea0a4a1f1d1b7344f13484165e479d396fea964"
         },
         "64bit": {
             "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvIndex.exe#/DrvIndex.exe",
-            "hash": "6222dfe1044ab8f4ad766da94a44abc5db4519501fc147544b3749a32fe1f3a0"
+            "hash": "b5ede6c373664dae10c85c8e1402fcf617b2afb3a58837abbcf9e70ad2c5ea0e"
         }
     },
     "bin": "DrvIndex.exe",
