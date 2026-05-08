@@ -1,0 +1,29 @@
+{
+    "version": "1.1.2",
+    "description": "基于 Apple CDN 的跨平台 CLI 测速工具，支持单线程、多线程、延迟采样",
+    "homepage": "https://github.com/nxtrace/iNetSpeed-CLI",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/nxtrace/iNetSpeed-CLI/releases/download/v1.1.2/speedtest-windows-amd64.zip",
+            "hash": "22b7067ee690ecf7a251baeb838787dc672768ef0b22ee3089e594c48473cb9d"
+        }
+    },
+    "bin": [
+        "speedtest.exe",
+        [
+            "speedtest.exe",
+            "iNetSpeed-CLI"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/nxtrace/iNetSpeed-CLI"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/nxtrace/iNetSpeed-CLI/releases/download/v$version/speedtest-windows-amd64.zip"
+            }
+        }
+    }
+}
