@@ -1,17 +1,17 @@
 {
-    "version": "2024.04.17.4c28f11",
+    "version": "2026.05.08.b1be196",
     "homepage": "https://github.com/rime/plum",
     "description": "東風破 /plum/: Rime configuration manager and input schema repository",
     "license": "LGPL-3.0-or-later",
-    "url": "https://github.com/rime/plum/archive/4c28f11f451facef809b380502874a48ba964ddb.zip",
-    "hash": "6b6098f9fedf7c6e8993c9a6710cfbddb5bbb91ec9024ea1caaa8a9bb94d46fa",
+    "url": "https://github.com/rime/plum/archive/b1be1969f914cc005add4090631b855db00c2591.zip",
+    "hash": "abf254bfbefd1bb1e006ecd439bc239f08983d56ab4a19adf3621d68ade449f6",
     "notes": [
         "plum 方案安装脚本已添加shims，只需在任意目录运行：'rime-install'即可",
         "",
         "常用方案：'iDvel/rime-ice'、'Mintimate/oh-my-rime'"
     ],
     "depends": "weasel",
-    "extract_dir": "plum-4c28f11f451facef809b380502874a48ba964ddb",
+    "extract_dir": "plum-b1be1969f914cc005add4090631b855db00c2591",
     "persist": "package",
     "bin": "rime-install.bat",
     "post_install": [
