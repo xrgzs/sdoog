@@ -1,20 +1,20 @@
 {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Make your Bandwidth GO away.",
     "homepage": "https://github.com/xrgzs/bandgo",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.0/bandgo_Windows_x86_64.zip",
-            "hash": "f71acb62dcfc455eb59411c303b91eab3c9356576ee9222837d6cebfe4e01292"
+            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.1/bandgo_Windows_x86_64.zip",
+            "hash": "967c8a349f5ea322761a1d697fbc2dba055e849f56016a75e9ca3d0814e5ec5c"
         },
         "32bit": {
-            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.0/bandgo_Windows_i386.zip",
-            "hash": "5a47fbaa3013e77ed94308789f35ab4bfd48e1584cc1d6cc5e034ef79b150dee"
+            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.1/bandgo_Windows_i386.zip",
+            "hash": "c6b209de7f731c22b69e6311202028b1b6ad083d500ed77d570b0fb1ec1c729f"
         },
         "arm64": {
-            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.0/bandgo_Windows_arm64.zip",
-            "hash": "50409eb6be0cbe524eb6d7607d6136680fac1fbfd00ac057f1a40d9c49d65ba6"
+            "url": "https://github.com/xrgzs/bandgo/releases/download/v1.1.1/bandgo_Windows_arm64.zip",
+            "hash": "231040c3e504fdf230dfb287f959274cac5f5c396643509618c377366180571a"
         }
     },
     "bin": "bandgo.exe",
