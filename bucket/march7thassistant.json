@@ -1,10 +1,10 @@
 {
-    "version": "2026.5.11",
+    "version": "2026.5.12",
     "homepage": "https://moesnow.github.io/March7thAssistant/",
     "description": "崩坏：星穹铁道全自动 三月七小助手",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2026.5.11/March7thAssistant_full.7z",
-    "hash": "9245ba2501432173e1ca1615ab55f8ac425f3adfc5689c9d46728655f061898e",
+    "url": "https://github.com/moesnow/March7thAssistant/releases/download/v2026.5.12/March7thAssistant_full.7z",
+    "hash": "959fb453d1d8f2b2080b68ff14b3a937ccc480cb97fd7739d149aa6cb8ebf301",
     "extract_dir": "March7thAssistant_full",
     "shortcuts": [
         [
