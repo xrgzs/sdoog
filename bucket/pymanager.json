@@ -1,13 +1,13 @@
 {
-    "version": "26.1",
+    "version": "26.2",
     "homepage": "https://www.python.org/downloads/latest/pymanager/",
     "description": "The Python Install Manager (for Windows)",
     "license": {
         "identifier": "PSF-2.0",
         "url": "https://opensource.org/licenses/Python-2.0"
     },
-    "url": "https://www.python.org/ftp/python/pymanager/python-manager-26.1.msi",
-    "hash": "a7a7c9d283264bec3ac5fbb84634e2af5b8aa7eeb6d502e9d20a67551390a77d",
+    "url": "https://www.python.org/ftp/python/pymanager/python-manager-26.2.msi",
+    "hash": "d2f494cafe16a40ab9d4ffb1b6c211813cfdb0b0291639676506e76ce93a271b",
     "extract_dir": "PFiles64\\PyManager",
     "env_add_path": ".",
     "installer": {
