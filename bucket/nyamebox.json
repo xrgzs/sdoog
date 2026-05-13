@@ -1,5 +1,5 @@
 {
-    "version": "5.11.14",
+    "version": "5.11.15",
     "description": "NyameBox (The Original NekoBox Rebranded) - Qt based Desktop cross-platform GUI proxy utility, empowered by sing-box.",
     "homepage": "https://github.com/qr243vbi/nekobox",
     "license": "GPL-3.0-only",
@@ -11,12 +11,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/qr243vbi/nekobox/releases/download/5.11.14/nekobox-5.11.14-windows64.zip",
-            "hash": "ce4a806de171cce90f98a49b511b9286847439c6e3364db45fd382149da59e94"
+            "url": "https://github.com/qr243vbi/nekobox/releases/download/5.11.15/nekobox-5.11.15-windows64.zip",
+            "hash": "375926b7d240e8fb30109b372f821148e81c5295a9d1911acaa69f1bf904b66b"
         },
         "arm64": {
-            "url": "https://github.com/qr243vbi/nekobox/releases/download/5.11.14/nekobox-5.11.14-windows-arm64.zip",
-            "hash": "88d4641334c30087d4322a0e4dab6a4d5b474b36ac5e020e31c2de04c1b787cd"
+            "url": "https://github.com/qr243vbi/nekobox/releases/download/5.11.15/nekobox-5.11.15-windows-arm64.zip",
+            "hash": "c0d7592a7d76f164064fbf85026915099ba6fcfe2eadb71c3b48028ee81440e4"
         }
     },
     "extract_dir": "nekobox",
