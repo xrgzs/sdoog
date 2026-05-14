@@ -1,12 +1,12 @@
 {
-    "version": "32.0.101.8737",
+    "version": "32.0.101.8801",
     "description": "Intel® Graphics Driver for Intel® Arc™ A-Series Graphics, Intel® Iris® Xe Graphics, and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics.",
     "homepage": "https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://downloadmirror.intel.com/918589/gfx_win_101.8737.exe#/dl.7z",
-            "hash": "6e9ff1b5b138223b22029c721ea8e1aa9662003ab12967b6cb5e25cd5e2f9ac3"
+            "url": "https://downloadmirror.intel.com/919610/gfx_win_101.8801.exe#/dl.7z",
+            "hash": "6c5fbeabc6437cc42d7573ca4d94444914f9f8467033c5efde7f37093b1e5b18"
         }
     },
     "extract_to": "installer",
