@@ -1,10 +1,10 @@
 {
-    "version": "1.79.120",
+    "version": "1.92.120",
     "description": "便捷简单、高性价比、安全保障",
     "homepage": "https://meeting.wps.cn",
     "license": "Proprietary",
-    "url": "https://kmeeting.wpscdn.cn/desktop/1.79/kmeeting_1.79.120.exe#/dl.7z",
-    "hash": "af1566abd5c5a3b02fa1f2c7360526efd4edd337c25325c27f3b7598e47d29ba",
+    "url": "https://kmeeting.wpscdn.cn/desktop/1.92/kmeeting_1.92.120.exe#/dl.7z",
+    "hash": "1c6fe31f134ce3e59209b71def98f5eeffe9b3cce94fe85f39afe5c3dad3c5c2",
     "shortcuts": [
         [
             "wpsmeeting.exe",
