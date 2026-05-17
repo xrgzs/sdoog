@@ -1,9 +1,9 @@
 {
-    "version": "7.0.2.3860",
+    "version": "7.0.2.3863",
     "homepage": "http://bbs.wuyou.net/forum.php?mod=viewthread&tid=419412&fromuid=378114",
     "license": "Freeware",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ic8Bu3fkr98d&type=down#/dl.zip",
-    "hash": "18762189b1f604243ed0aa80a7ff6c2589ebd979d149e95584a5452367c37e88",
+    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iegGG3o8ugcj&type=down#/dl.zip",
+    "hash": "431d1915899476121c62f622ba6e8f08d9cbfa4cd2c9f4ef0e7146e7c6704229",
     "architecture": {
         "64bit": {
             "shortcuts": [
@@ -30,10 +30,10 @@
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
-            "$f = Get-LanzouList \"https://mefcl.lanzouw.com/b011o5q5i\" 5upn | Where-Object { $_.name_all -like \"单文件制作_*.7z\" } | Select-Object -First 1",
+            "$f = Get-LanzouList \"https://mefcl.lanzouw.com/b011o5q5i\" 5upn | Where-Object { $_.name_all -like \"单文件制作工具_*.zip\" } | Select-Object -First 1",
             "$f.name_all + '=====' + $f.id"
         ],
-        "regex": "单文件制作_v?(.*).7z=====(?<sharekey>.*)"
+        "regex": "单文件制作工具_v?(.*).zip=====(?<sharekey>.*)"
     },
     "autoupdate": {
         "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.zip"
