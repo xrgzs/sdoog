@@ -1,5 +1,5 @@
 {
-    "version": "1.23.0",
+    "version": "1.24.0",
     "description": "Argc is a powerful Bash framework that simplifies building full-featured CLIs.",
     "homepage": "https://github.com/sigoden/argc",
     "notes": [
@@ -27,16 +27,16 @@
     "license": "Apache-2.0|MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/sigoden/argc/releases/download/v1.23.0/argc-v1.23.0-aarch64-pc-windows-msvc.zip",
-            "hash": "ad48ca7fa4752f07027af000fcb5b80c519de2121df3836d3826942c80b50f3b"
+            "url": "https://github.com/sigoden/argc/releases/download/v1.24.0/argc-v1.24.0-aarch64-pc-windows-msvc.zip",
+            "hash": "243d6f1b67b253193d30a5d6bb5a696b1de0cbb6ecfb7431925e268ef9e114ac"
         },
         "64bit": {
-            "url": "https://github.com/sigoden/argc/releases/download/v1.23.0/argc-v1.23.0-x86_64-pc-windows-msvc.zip",
-            "hash": "55afd573dc89198a828e117125fd950c9f06124ff7c3aee2e7b30ffcc3eadecc"
+            "url": "https://github.com/sigoden/argc/releases/download/v1.24.0/argc-v1.24.0-x86_64-pc-windows-msvc.zip",
+            "hash": "70f70b987cba68677db17c2012b6b7faf09a7374896b98c7ed4d039262f72914"
         },
         "32bit": {
-            "url": "https://github.com/sigoden/argc/releases/download/v1.23.0/argc-v1.23.0-i686-pc-windows-msvc.zip",
-            "hash": "a6c636cefe0729e29078896663806855ef7367f6aa50c77c3bcf13bdf5af2c97"
+            "url": "https://github.com/sigoden/argc/releases/download/v1.24.0/argc-v1.24.0-i686-pc-windows-msvc.zip",
+            "hash": "7f551592ec99fffc7041bdead889b9317ba5f183b1cf8f72c239f135193f7c05"
         }
     },
     "bin": "argc.exe",
