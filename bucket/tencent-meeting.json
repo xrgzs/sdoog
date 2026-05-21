@@ -1,5 +1,5 @@
 {
-    "version": "3.43.3.406",
+    "version": "3.43.10.449",
     "description": "腾讯会议是一款支持多场景、多平台、高清流畅的在线会议软件，为全球220+国家及地区的用户提供安全可靠的会议服务。",
     "homepage": "https://meeting.tencent.com",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "32bit": {
-            "url": "https://updatecdn.meeting.qq.com/cos/f9797be1e1df2f1f6b8b0a1910c6a4e2/TencentMeeting_0300000000_3.43.3.406.publish.officialwebsite.exe#/dl.7z",
-            "hash": "md5:f9797be1e1df2f1f6b8b0a1910c6a4e2"
+            "url": "https://updatecdn.meeting.qq.com/cos/e82b83312a3ccc36caf01d16efd3ce4c/TencentMeeting_0300000000_3.43.10.449.publish.officialwebsite.exe#/dl.7z",
+            "hash": "md5:e82b83312a3ccc36caf01d16efd3ce4c"
         },
         "64bit": {
-            "url": "https://updatecdn.meeting.qq.com/cos/4b660b957c6c25fbd030c2e0e2877b0d/TencentMeeting_0300000000_3.43.3.406_x86_64.publish.officialwebsite.exe#/dl.7z",
-            "hash": "md5:4b660b957c6c25fbd030c2e0e2877b0d"
+            "url": "https://updatecdn.meeting.qq.com/cos/ba871a82af0da24e6d42d25942beffe9/TencentMeeting_0300000000_3.43.10.449_x86_64.publish.officialwebsite.exe#/dl.7z",
+            "hash": "md5:ba871a82af0da24e6d42d25942beffe9"
         }
     },
     "shortcuts": [
