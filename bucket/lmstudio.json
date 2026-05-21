@@ -56,7 +56,10 @@
         ]
     },
     "checkver": {
-        "url": "https://lmstudio.ai",
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://lmstudio.ai/download/latest/win32/x64\" | Get-RedirectedUrl1st"
+        ],
         "regex": "LM-Studio-([\\d-.]+)-x64.exe"
     },
     "autoupdate": {
