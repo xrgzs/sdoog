@@ -1,23 +1,23 @@
 {
-    "description": "DrvIndex 安装设备驱动程序工具（多线程版）",
+    "description": "DrvInstall 安装设备驱动程序工具（多线程版）",
     "version": "9.2026.5.2208",
     "homepage": "https://bbs.wuyou.net/forum.php?mod=viewthread&tid=425316",
     "license": "Freeware",
     "architecture": {
         "32bit": {
-            "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvIndex_x86.exe#/DrvIndex.exe",
+            "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvInstall_x86.exe#/DrvInstall.exe",
             "hash": "054ae8d2fec86e6253edf68124d28986cc2788d01dd05a1eff173f4a1e2d1933"
         },
         "64bit": {
-            "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvIndex.exe#/DrvIndex.exe",
+            "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvInstall.exe#/DrvInstall.exe",
             "hash": "e43d6f3fc519d35495351cbb573d6085de5f68cf0e22d1f4045ae5abb3e305ee"
         }
     },
-    "bin": "DrvIndex.exe",
+    "bin": "DrvInstall.exe",
     "shortcuts": [
         [
-            "DrvIndex.exe",
-            "DrvIndex"
+            "DrvInstall.exe",
+            "DrvInstall"
         ]
     ],
     "checkver": {
@@ -27,14 +27,14 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvIndex_x86.exe#/DrvIndex.exe",
+                "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvInstall_x86.exe#/DrvInstall.exe",
                 "hash": {
                     "url": "https://gitee.com/sgave/my-app/raw/master/86/version.txt",
                     "regex": "$sha256"
                 }
             },
             "64bit": {
-                "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvIndex.exe#/DrvIndex.exe",
+                "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvInstall.exe#/DrvInstall.exe",
                 "hash": {
                     "url": "https://gitee.com/sgave/my-app/raw/master/64/version.txt",
                     "regex": "$sha256"
