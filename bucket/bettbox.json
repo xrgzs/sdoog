@@ -1,16 +1,16 @@
 {
-    "version": "1.17.6",
+    "version": "1.17.8",
     "description": "Another Better Mihomo Client",
     "homepage": "https://github.com/appshubcc/Bettbox",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.17.6/Bettbox-1.17.6-windows-amd64-setup.exe",
-            "hash": "028921c9ae583ae94c385e7e457585b8d0dffe9240fb34d2d67d1850130256f6"
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.17.8/Bettbox-1.17.8-windows-amd64-setup.exe",
+            "hash": "f72dfb559ca53cec05b4fe339b292c794663753ef73e707c33c26904310fc49e"
         },
         "arm64": {
-            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.17.6/Bettbox-1.17.6-windows-arm64-setup.exe",
-            "hash": "b20e9235a5693a761303fad0285348891a2bb7019c47b088400c20a49f3b5bb9"
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.17.8/Bettbox-1.17.8-windows-arm64-setup.exe",
+            "hash": "f0ed39037d931f8997a393950f62e1924cb2196bdaa4b1831f7c9e84c317cef9"
         }
     },
     "innosetup": true,
