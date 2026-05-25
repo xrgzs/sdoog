@@ -1,6 +1,6 @@
 {
     "description": "潇然 PE，启动！网络装机中心，给您不一样的启动体验",
-    "version": "26.5.18.220",
+    "version": "26.5.26.023",
     "homepage": "https://pe.xrgzs.top/",
     "license": "Freeware",
     "depends": "gsudo",
@@ -8,11 +8,11 @@
     "architecture": {
         "64bit": {
             "url": "https://list.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe64.wim#/boot.wim",
-            "hash": "md5:edae4f4e0b208b9945a66625df3d2dcd"
+            "hash": "md5:8a3ee2bf288daaee3871420b9eb08acc"
         },
         "32bit": {
             "url": "https://list.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/pe32.wim#/boot.wim",
-            "hash": "md5:40d93a60e295553f29b00f0096a8956b"
+            "hash": "md5:d18a919b81bed63091b4b9c5d180a6fd"
         }
     },
     "bin": "reboot-to-xrpe.cmd",
