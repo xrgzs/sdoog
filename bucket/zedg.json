@@ -1,0 +1,65 @@
+{
+    "version": "1.4.2",
+    "description": "Zed Editor (Localized / 汉化版)",
+    "homepage": "https://github.com/x6nux/zed-globalization",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.4.2/zedg-zh-cn-windows-x86_64-v1.4.2.zip",
+            "hash": "c40b423b77cc875a988c9d1e559e9b2877f15e44bbe4486672a16c5b89875a7a"
+        },
+        "arm64": {
+            "url": "https://github.com/x6nux/zed-globalization/releases/download/v1.4.2/zedg-zh-cn-windows-aarch64-v1.4.2.zip",
+            "hash": "f586e22497aebea848b48bcc96be2cbbd4cb95a826f6f529d464dc649774a72d"
+        }
+    },
+    "bin": [
+        [
+            "bin\\ZedG.exe",
+            "zedg"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "ZedG.exe",
+            "ZedG"
+        ]
+    ],
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:APPDATA\\Zed\" \"$persist_dir\\AppData\" -Migrate",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\Zed\" \"$persist_dir\\LocalAppData\" -Migrate",
+        "if (!(Test-Path \"$persist_dir\\AppData\\settings.json\") -or !(Get-Item \"$persist_dir\\AppData\\settings.json\").Length) {",
+        "    New-Item \"$persist_dir\\AppData\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$persist_dir\\AppData\\settings.json\" -Value '{\"auto_update\":false,\"telemetry\":{\"diagnostics\":false,\"metrics\":false}}'",
+        "}"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\Zed\"",
+        "Remove-Junction \"$env:LOCALAPPDATA\\Zed\""
+    ],
+    "checkver": {
+        "github": "https://github.com/x6nux/zed-globalization"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/x6nux/zed-globalization/releases/download/v$version/zedg-zh-cn-windows-x86_64-v$version.zip",
+                "hash": {
+                    "url": "https://github.com/x6nux/zed-globalization/releases/download/v$version/sha256sums.txt",
+                    "regex": "([a-f0-9]{64})\\s+zedg-zh-cn-windows-x86_64-v\\$version\\.zip"
+                }
+            },
+            "arm64": {
+                "url": "https://github.com/x6nux/zed-globalization/releases/download/v$version/zedg-zh-cn-windows-aarch64-v$version.zip",
+                "hash": {
+                    "url": "https://github.com/x6nux/zed-globalization/releases/download/v$version/sha256sums.txt",
+                    "regex": "([a-f0-9]{64})\\s+zedg-zh-cn-windows-aarch64-v\\$version\\.zip"
+                }
+            }
+        }
+    }
+}
