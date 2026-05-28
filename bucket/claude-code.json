@@ -1,0 +1,57 @@
+{
+    "version": "2.1.153",
+    "description": "An agentic coding tool built by Anthropic that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows.",
+    "homepage": "https://claude.com/product/claude-code",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.anthropic.com/legal/consumer-terms"
+    },
+    "notes": [
+        "Claude Code nonessential network traffic is disabled by default.",
+        "It's recommended to use `extras/cc-switch` to configure third-party API subscriptions."
+    ],
+    "suggest": {
+        "git": "main/git",
+        "cc-switch": "extras/cc-switch"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.153/claude-win32-x64.zip",
+            "hash": "b2d0bde02d14d68651f264325f10496a0fee51435214c7bde658108b3854643e"
+        },
+        "arm64": {
+            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.153/claude-win32-arm64.zip",
+            "hash": "fb100e237be2524a1bd6a810ef694f3ab6db3e5dc8680cbc74f88965dafa0827"
+        }
+    },
+    "bin": "claude.exe",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:USERPROFILE\\.claude\" \"$persist_dir\\.claude\" -Migrate",
+            "if (!(Test-Path \"$persist_dir\\.claude\\settings.json\") -or !(Get-Item \"$persist_dir\\.claude\\settings.json\").Length) {",
+            "    New-Item \"$persist_dir\\.claude\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+            "    Set-Content -Path \"$persist_dir\\.claude\\settings.json\" -Value '{\"env\":{\"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC\":\"1\"}}' -Encoding Ascii",
+            "}"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:USERPROFILE\\.claude\""
+    ],
+    "checkver": {
+        "github": "https://github.com/anthropics/claude-code"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/anthropics/claude-code/releases/download/v$version/claude-win32-x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/anthropics/claude-code/releases/download/v$version/claude-win32-arm64.zip"
+            }
+        }
+    }
+}
