@@ -11,7 +11,6 @@
         "It's recommended to use `extras/cc-switch` to configure third-party API subscriptions."
     ],
     "suggest": {
-        "git": "main/git",
         "cc-switch": "extras/cc-switch"
     },
     "architecture": {
@@ -31,7 +30,7 @@
             "New-PersistDirectory \"$env:USERPROFILE\\.claude\" \"$persist_dir\\.claude\" -Migrate",
             "if (!(Test-Path \"$persist_dir\\.claude\\settings.json\") -or !(Get-Item \"$persist_dir\\.claude\\settings.json\").Length) {",
             "    New-Item \"$persist_dir\\.claude\\settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
-            "    Set-Content -Path \"$persist_dir\\.claude\\settings.json\" -Value '{\"env\":{\"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC\":\"1\"},\"skipWebFetchPreflight\":true}' -Encoding Ascii",
+            "    Set-Content -Path \"$persist_dir\\.claude\\settings.json\" -Value '{\"env\":{\"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC\":\"1\",\"CLAUDE_CODE_USE_POWERSHELL_TOOL\":\"1\"},\"skipWebFetchPreflight\":true}' -Encoding Ascii",
             "}"
         ]
     },
