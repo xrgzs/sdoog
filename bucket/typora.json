@@ -1,14 +1,15 @@
 {
     "version": "1.13.6",
-    "description": "A minimal Markdown editor and reader",
+    "description": "Simple yet powerful Markdown reader",
     "homepage": "https://typora.io",
     "license": {
         "identifier": "Proprietary",
         "url": "https://support.typora.io/License-Agreement/"
     },
     "notes": [
+        "Tips: Lapis theme is automatically installed. You can select it in 'theme' settings.",
         "If you have not got a licence: ",
-        "- Get one from official websize.",
+        "- Purchase one from official website.",
         "- 'Remove-Item \"$persist_dir\\AppData\\profile.data\"' to renew a 15-day trial. (would lose your data)",
         "- Use a popblocker to close the activate window automatically."
     ],
@@ -39,8 +40,9 @@
             "New-PersistDirectory \"$env:APPDATA\\Typora\" \"$persist_dir\\AppData\" -Migrate",
             "",
             "ensure \"$persist_dir\\AppData\\themes\"",
-            "Invoke-Download \"https://list.xrgzs.top/d/pxy/Software/Typora/themes/lapis.css\" \"$persist_dir\\AppData\\themes\\lapis.css\"",
-            "Invoke-Download \"https://list.xrgzs.top/d/pxy/Software/Typora/themes/lapis-dark.css\" \"$persist_dir\\AppData\\themes\\lapis-dark.css\"",
+            "Invoke-Download \"https://raw.githubusercontent.com/xrgzs/typora-theme-lapis/refs/heads/main/dist/lapis.css\" \"$persist_dir\\AppData\\themes\\lapis.css\"",
+            "Invoke-Download \"https://raw.githubusercontent.com/xrgzs/typora-theme-lapis/refs/heads/main/dist/lapis-dark.css\" \"$persist_dir\\AppData\\themes\\lapis-dark.css\"",
+            "Invoke-Download \"https://raw.githubusercontent.com/xrgzs/typora-theme-lapis/refs/heads/main/dist/lapis-auto.css\" \"$persist_dir\\AppData\\themes\\lapis-auto.css\"",
             "",
             "if ($global) {",
             "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
