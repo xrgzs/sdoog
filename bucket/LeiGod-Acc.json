@@ -1,12 +1,12 @@
 {
-    "version": "11.3.1.9",
+    "version": "11.3.2.0",
     "description": "雷神加速器-专线加速游戏，按分钟计费可暂停",
     "homepage": "https://www.leigod.com/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://update.leigod.com/soft/leigod/win/11.0.0.0/LeiGodSetup.11.3.1.9.exe#/dl.7z",
-            "hash": "7540e72ba32ceff116a4eb93a8a53ef797cf34c33add5b8c6a9f57dc2fc85788"
+            "url": "https://update.leigod.com/soft/leigod/win/11.0.0.0/LeiGodSetup.11.3.2.0.exe#/dl.7z",
+            "hash": "5e3d5177aaedaba3d7b1bd2d75f8c46915f78bd3a857295eb1bfb0f6a9be8a9c"
         }
     },
     "shortcuts": [
