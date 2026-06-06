@@ -1,10 +1,10 @@
 {
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "一款支持emby的播放器",
     "homepage": "https://t.me/Hills_app",
     "license": "Freeware",
-    "url": "https://list.xrgzs.top/d/pxy/Software/Hills/HillsLite-v1.2.0.zip",
-    "hash": "280778d1e3892472a7b527374311c5448151d02b0dcfaf3c5567b5fdf173f087",
+    "url": "https://list.xrgzs.top/d/pxy/Software/Hills/HillsLite-v1.2.1.zip",
+    "hash": "7c8a13eb0d989413d516f07a027e5de58741ed1143cb815a7304f90e2c395aff",
     "shortcuts": [
         [
             "HillsLite.exe",
