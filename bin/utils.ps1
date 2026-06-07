@@ -9,21 +9,72 @@ function Get-LanzouList {
         $Pass
     )
     $sharekey = $Uri -split '/' | Select-Object -Last 1
-    $webcontent = Invoke-RestMethod -Uri "https://www.lanzoui.com/$sharekey" -UseBasicParsing
-    $ajaxm = [regex]::Match($webcontent, '\/filemoreajax\.php\?file=\d+').Value
-    $body = @()
-    $body += "lx=2"
-    $body += "fid=$([regex]::Match($webcontent, "'fid':(\w+)").Groups[1].Value)"
-    $body += "uid=$([regex]::Match($webcontent, "'uid':(\w+)").Groups[1].Value)"
-    $body += "pg=1"
-    $body += "rep=0"
-    $body += "t=$([regex]::Match($webcontent, "var $($([regex]::Match($webcontent, "'t':(\w+)").Groups[1].Value)) = '(\w+)'").Groups[1].Value)"
-    $body += "k=$([regex]::Match($webcontent, "var $($([regex]::Match($webcontent, "'k':(\w+)").Groups[1].Value)) = '(\w+)'").Groups[1].Value)"
-    $body += "up=1"
-    if ($Pass) { $body += "pwd=$Pass" }
-    $body = $body -join "&"
-    $list = Invoke-RestMethod -Uri "https://www.lanzoui.com$ajaxm" -Method Post -Body $body
-    return $list.text
+    $url = "https://www.lanzoui.com/$sharekey"
+
+    # Ensure WebDriver module is loaded
+    if (-not (Get-Module -Name WebDriver)) {
+        Import-Module "$PSScriptRoot/WebDriver.psm1" -Force
+    }
+
+    $driver = Get-EdgeDriver -Headless -ArgumentList @('--disable-gpu', '--no-sandbox')
+    try {
+        $driver.Navigate().GoToUrl($url)
+
+        # Wait for anti-bot JS challenge to complete (up to 30 seconds)
+        $wait = [OpenQA.Selenium.Support.UI.WebDriverWait]::new($driver, [TimeSpan]::FromSeconds(30))
+        $condition = [System.Func[OpenQA.Selenium.IWebDriver, bool]] { param($d); $d.PageSource -match "'fid':\w+" }
+        $null = $wait.Until($condition)
+
+        # Handle password if needed
+        if ($Pass) {
+            try {
+                $pwdInput = $driver.FindElement([OpenQA.Selenium.By]::Id('pwd'))
+                $pwdInput.SendKeys($Pass)
+                $pwdInput.Submit()
+                $null = $wait.Until($condition)
+            } catch {}
+        }
+
+        # Get page source after JS execution
+        $webcontent = $driver.PageSource
+
+        # Extract variables (same logic as original)
+        $ajaxm = [regex]::Match($webcontent, '\/filemoreajax\.php\?file=\d+').Value
+        $fid = [regex]::Match($webcontent, "'fid':(\w+)").Groups[1].Value
+        $uid = [regex]::Match($webcontent, "'uid':(\w+)").Groups[1].Value
+        $tVar = [regex]::Match($webcontent, "'t':(\w+)").Groups[1].Value
+        $kVar = [regex]::Match($webcontent, "'k':(\w+)").Groups[1].Value
+        $t = [regex]::Match($webcontent, "var $tVar = '(\w+)'").Groups[1].Value
+        $k = [regex]::Match($webcontent, "var $kVar = '(\w+)'").Groups[1].Value
+
+        # Build request body
+        $body = @()
+        $body += "lx=2"
+        $body += "fid=$fid"
+        $body += "uid=$uid"
+        $body += "pg=1"
+        $body += "rep=0"
+        $body += "t=$t"
+        $body += "k=$k"
+        $body += "up=1"
+        if ($Pass) { $body += "pwd=$Pass" }
+        $bodyStr = $body -join "&"
+
+        # Execute AJAX call via browser to maintain cookies/session
+        $escapedBody = $bodyStr -replace "'", "\'"
+        $script = @"
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://www.lanzoui.com$ajaxm', false);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('$escapedBody');
+            return xhr.responseText;
+"@
+        $response = $driver.ExecuteScript($script)
+        $list = $response | ConvertFrom-Json
+        return $list.text
+    } finally {
+        Stop-EdgeDriver
+    }
 }
 
 function Get-XRSoft {
