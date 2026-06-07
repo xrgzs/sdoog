@@ -5,8 +5,8 @@
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ikaMK3ntf6he&type=down#/installer.exe",
-            "hash": "02f4bdac08f47a781848451d2daba4f92a9c6d33aeb0ffebdda4b60951e47ac3",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iJHwN3o5k5jc&type=down#/installer.exe",
+            "hash": "53b57e276284937ab4318f404cdb7c9ee980c056ef5b3a602dfbbb17e304c3bf",
             "shortcuts": [
                 [
                     "PotPlayerMini64.exe",
@@ -15,8 +15,8 @@
             ]
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ibApr3ntf4fa&type=down#/installer.exe",
-            "hash": "ab6c78d08e312fca40be3587e4677b1a387c55f18c931b9793fff736f0a0e12d",
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i0Ldg3o5k34f&type=down#/installer.exe",
+            "hash": "dc11dcb432a1d63a5a0b6adc6f4c184b71e7543fa24b8845f99f382e0431ee26",
             "shortcuts": [
                 [
                     "PotPlayerMini.exe",
