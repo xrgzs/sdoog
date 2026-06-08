@@ -1,5 +1,5 @@
 {
-    "version": "6.6.0.21355",
+    "version": "6.7.0.27878",
     "description": "向日葵企业版控制端 for Windows 安装在管理远控的设备。批量管理大规模设备，轻松管理高效远控，适用于远程维护、技术支持、远程办公等场景",
     "homepage": "https://sunlogin.oray.com/",
     "license": {
@@ -7,12 +7,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_6.6.0.21355.exe#/SunloginRemote.exe",
-            "hash": "3dc92c3a0baf60fe66477717a2ebe7210fed0c5db56aa47f97aa1c9327b71e70"
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64_6.7.0.27878.exe#/SunloginRemote.exe",
+            "hash": "113a7bcd2fb7a8cdab8dc537b1c6c099f3a9fdd87670caf6446635d5dacb0d39"
         },
         "32bit": {
-            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_6.6.0.21355.exe#/SunloginRemote.exe",
-            "hash": "673b0d7dd1e85a5300c5936a00b7dae5a023f6e103b0b1ab65628d777b6accf5"
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_6.7.0.27878.exe#/SunloginRemote.exe",
+            "hash": "6b3b79a0cbf18a7305fb8d2f9e7b749ac08db59acd9f187aefc32dca59df58b0"
         }
     },
     "shortcuts": [
@@ -23,7 +23,7 @@
     ],
     "checkver": {
         "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Sunlogin/SUNLOGIN_WINDOWS_x64.exe.ver",
-         "regex": "(\\d+\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
