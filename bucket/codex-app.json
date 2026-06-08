@@ -1,0 +1,55 @@
+{
+    "version": "26.602.4764.0",
+    "description": "A coding agent that helps you build and ship with AI—powered by ChatGPT.",
+    "homepage": "https://openai.com/codex/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Codex/Codex_26.602.4764.0_x64.msix#/dl.7z",
+            "hash": "cf9aa8d704a322efb9ee46cedc2b245b2d7bee517cacade2a635a09323d953ca"
+        }
+    },
+    "suggest": {
+        "cc-switch": "extras/cc-switch"
+    },
+    "shortcuts": [
+        [
+            "app\\codex.exe",
+            "Codex"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
+            "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Import-AppxPSModule",
+            "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Import-AppxPSModule",
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"OpenAI.Codex\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"OpenAI.Codex\" | Remove-AppxPackage -PreserveApplicationData",
+        "}"
+    ],
+    "checkver": {
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Codex/Codex_x64.msix.ver",
+        "regex": "(\\d+\\.[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Codex/Codex_$version_x64.msix#/dl.7z",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}

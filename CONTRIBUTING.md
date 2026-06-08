@@ -289,6 +289,16 @@ Stop-App
 
 参考 [snap.hutao](bucket/snap.hutao.json) [nvidia-cpl](bucket/nvidia-cpl.json)
 
+如果APP来自Microsoft Store，请删除签名：
+
+```powershell
+Remove-Item "$dir\AppxSignature.p7x" -Force -ErrorAction SilentlyContinue | Out-Null
+
+# 否则会报错：
+# Add-AppxPackage: 部署失败，原因是 HRESULT: 0x80073CFF, 要安装此应用程序，需要有 Windows 开发者许可证或启用旁加载的系统。
+# 包含 Windows Store 源的程序包 xxx 不能使用开发人员模式选项进行端加载或安装。
+```
+
 ### 导入注册表
 
 本人习惯优先使用 `reg.exe add` 设置注册表，但有些参数不方便传入，此时可先生成并输出 .reg 文件，然后再 `reg.exe import`导入
