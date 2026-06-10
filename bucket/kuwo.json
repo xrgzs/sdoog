@@ -1,10 +1,10 @@
 {
-    "version": "9.5.0.0",
+    "version": "9.6.0.0",
     "description": "(sudo) 酷我音乐为你提供高品质音乐，无损音乐下载",
     "homepage": "http://kuwo.cn/",
     "license": "Proprietary",
     "url": "http://api.xrgzs.top/sdlp/qqsoft/?softid=9601#/dl.7z",
-    "hash": "26dfd80fa17c3180a17e028d5f1cfce15c73514f08b534df1ef7005c0472c967",
+    "hash": "bae3aa46e0310fe27697fc8d181f2debfd36e88d4434e0de112f6728835494fc",
     "installer": {
         "script": [
             "if (!(is_admin)) {",
