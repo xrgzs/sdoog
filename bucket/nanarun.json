@@ -1,9 +1,9 @@
 {
-    "version": "25995278605",
+    "version": "27473883127",
     "description": "Application runtime environment customization utility",
     "homepage": "https://github.com/M2Team/NanaRun",
-    "url": "https://nightly.link/M2Team/NanaRun/actions/runs/25995278605/NanaRun_CI_Build.zip",
-    "hash": "f4c63684fd4ad2ee709d4e0afac5454959be7dc14148112b35b693655a4dd3de",
+    "url": "https://nightly.link/M2Team/NanaRun/actions/runs/27473883127/NanaRun_CI_Build.zip",
+    "hash": "49bb92eed7c0ba2f5b844533b9af1b479f15baa817b9e710c2ac807685b4390c",
     "license": "MIT",
     "architecture": {
         "32bit": {
