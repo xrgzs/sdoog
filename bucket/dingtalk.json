@@ -1,13 +1,13 @@
 {
-    "version": "7.6.15.101210804",
+    "version": "8.3.30.260610012",
     "description": "钉钉，让进步发生",
     "homepage": "https://www.dingtalk.com/",
     "license": {
         "identifier": "EULA",
         "url": "https://tms.dingtalk.com/markets/dingtalk/service-terms-zh"
     },
-    "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v7.6.15.101210804.exe#/dl.7z",
-    "hash": "md5:263e0654b18aed58b5be4f4d705c4f8b",
+    "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v8.3.30.260610012.exe#/dl.7z",
+    "hash": "md5:c7ddfc9f574e6d1cb334a650449b98a0",
     "pre_install": [
         "ensure \"$dir\\main\\current\"",
         "Move-Item \"$dir\\build\\dist\\*\" \"$dir\\main\\current\" -Force",
@@ -69,13 +69,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://im.dingtalk.com/manifest/new/release_windows_vista_later_gray4.json",
+        "url": "https://dtapp-cast.dingtalk.com/dingtalk-desktop/win_x64/vista_later_v2.json",
         "regex": "DingTalk_v([\\d.]+).exe"
     },
     "autoupdate": {
         "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v$version.exe#/dl.7z",
         "hash": {
-            "url": "https://im.dingtalk.com/manifest/new/release_windows_vista_later_gray4.json",
+            "url": "https://dtapp-cast.dingtalk.com/dingtalk-desktop/win_x64/vista_later_v2.json",
             "jsonpath": "$.win.install.md5"
         }
     }
