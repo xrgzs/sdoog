@@ -1,0 +1,102 @@
+{
+    "version": "5.5.7.1008",
+    "description": "网易邮箱大师-高效强大的全平台邮箱客户端",
+    "homepage": "https://mail.163.com/dashi/index.html",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://mail.163.com/dashi/index.html"
+    },
+    "url": "http://fm.dl.126.net/mailmaster/update2/mail-5.5.7.1008.exe#/dl.7z",
+    "hash": "md5:b0e15d35125aadc399e7b14c50d2072f",
+    "installer": {
+        "script": [
+            "Expand-7ZipArchive \"$dir\\mailmaster.7z\" \"$dir\" -Removal",
+            "Move-Item \"$dir\\MailMaster-bin\\*\" \"$dir\" -Force",
+            "Remove-Item \"$dir\\MailMaster-bin\" -Force -Recurse"
+        ]
+    },
+    "post_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\Netease\\MailMaster\" \"$persist_dir\\LocalAppData\" -Migrate",
+        "if ($global) {",
+        "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+        "} else {",
+        "    $registry_scope = \"HKEY_CURRENT_USER\"",
+        "}",
+        "$instdir = $($dir -replace '\\\\', '\\\\')",
+        "@\"",
+        "Windows Registry Editor Version 5.00",
+        "[$registry_scope\\SOFTWARE\\Classes\\*\\shellex\\ContextMenuHandlers\\MailMaster]",
+        "@=\"{2A535B11-6CFC-4E85-A75F-0E397B1584CF}\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\.eml\\OpenWithProgids]",
+        "\"MailMaster\"=\"\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}]",
+        "@=\"MailMasterShell.FileContextMenuExt Class\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}\\InprocServer32]",
+        "@=\"$instdir\\\\$version\\\\mailmaster_shell_64.dll\"",
+        "\"ThreadingModel\"=\"Apartment\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\MailMaster]",
+        "@=\"网易邮箱大师\"",
+        "\"AppUserModelId\"=\"MailMaster\"",
+        "\"URL Protocol\"=\"\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\MailMaster\\Application]",
+        "\"ApplicationCompany\"=\"NetEase(Hangzhou) Network Co. Ltd.\"",
+        "\"ApplicationDescription\"=\"网易邮箱大师，安全，高效，便捷\"",
+        "\"ApplicationIcon\"=\"$instdir\\\\mailmaster.exe,0\"",
+        "\"ApplicationName\"=\"网易邮箱大师\"",
+        "\"AppUserModelId\"=\"MailMaster\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\MailMaster\\DefaultIcon]",
+        "@=\"$instdir\\\\mailmaster.exe,0\"",
+        "[$registry_scope\\SOFTWARE\\Classes\\MailMaster\\shell\\open\\command]",
+        "@=\"\\\"$instdir\\\\mailmaster.exe\\\" -- \\\"%1\\\"\"",
+        "[$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\mailmaster.exe]",
+        "@=\"$instdir\\\\mailmaster.exe\"",
+        "\"Path\"=\"$instdir\"",
+        "[$registry_scope\\SOFTWARE\\Wow6432Node\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}]",
+        "@=\"MailMasterShell.FileContextMenuExt Class\"",
+        "[$registry_scope\\SOFTWARE\\Wow6432Node\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}\\InprocServer32]",
+        "@=\"$instdir\\\\$version\\\\mailmaster_shell_32.dll\"",
+        "\"ThreadingModel\"=\"Apartment\"",
+        "\"@ | Set-Content -Path \"$dir\\install-mailmaster.reg\" -Encoding Unicode",
+        "reg import \"$dir\\install-mailmaster.reg\""
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\Netease\\MailMaster\"",
+        "if ($global) {",
+        "    $registry_scope = \"HKLM\"",
+        "} else {",
+        "    $registry_scope = \"HKCU\"",
+        "}",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\*\\shellex\\ContextMenuHandlers\\MailMaster\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.eml\\OpenWithProgids\" /v \"MailMaster\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\MailMaster\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\mailmaster.exe\" /f",
+        "reg.exe delete \"$registry_scope\\SOFTWARE\\Wow6432Node\\CLSID\\{2A535B11-6CFC-4E85-A75F-0E397B1584CF}\" /f",
+        "if ($cmd -eq 'uninstall') {",
+        "    reg.exe delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"网易邮箱大师\" /f",
+        "    reg.exe delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.eml\\UserChoice\" /f",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "mailmaster.exe",
+            "网易邮箱大师"
+        ]
+    ],
+    "persist": "LocalAppData",
+    "checkver": {
+        "url": "http://fm.dl.126.net/mailmaster/update2/update_config.json",
+        "jsonpath": "$.full[0].ver"
+    },
+    "autoupdate": {
+        "url": "http://fm.dl.126.net/mailmaster/update2/mail-$version.exe#/dl.7z",
+        "hash": {
+            "url": "http://fm.dl.126.net/mailmaster/update2/update_config.json",
+            "jsonpath": "$.full[0].md5"
+        }
+    }
+}
