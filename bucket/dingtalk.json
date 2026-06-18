@@ -1,12 +1,12 @@
 {
-    "version": "8.3.30.260610012",
+    "version": "8.3.30.260610012.202606300950",
     "description": "钉钉，让进步发生",
     "homepage": "https://www.dingtalk.com/",
     "license": {
         "identifier": "EULA",
         "url": "https://tms.dingtalk.com/markets/dingtalk/service-terms-zh"
     },
-    "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v8.3.30.260610012.exe#/dl.7z",
+    "url": "https://dtapp-cast.dingtalk.com/202606300950/dce4f65fd0378352c7f10d784ff23895/dingtalk-desktop/win_installer/Release/DingTalk_v8.3.30.260610012.exe#/dl.7z",
     "hash": "md5:c7ddfc9f574e6d1cb334a650449b98a0",
     "pre_install": [
         "ensure \"$dir\\main\\current\"",
@@ -69,11 +69,45 @@
         ]
     ],
     "checkver": {
-        "url": "https://dtapp-cast.dingtalk.com/dingtalk-desktop/win_x64/vista_later_v2.json",
-        "regex": "DingTalk_v([\\d.]+).exe"
+        "script": [
+            "$key = 'win-downloader'",
+            "$uuid = '0CE12A2C-3208-DBF7-7577-5C1C0E09A680'",
+            "$ttl = 999999",
+            "$castJson = Invoke-RestMethod 'https://dtapp-cast.dingtalk.com/dingtalk-desktop/win_x64/vista_later_v2.json'",
+            "$castUrl = $castJson.win.install.url_v2",
+            "$buildVer = [regex]::Match($castUrl, 'DingTalk_v([\\d.]+)\\.exe').Groups[1].Value",
+            "$curVer = $expected_ver",
+            "$curBuild = $curVer -replace '\\.\\d{12}$', ''",
+            "$curTs = if ($curVer -match '(\\d{12})$') { $matches[1] } else { '0' }",
+            "$now = [DateTimeOffset]::UtcNow.ToString('yyyyMMddHHmm')",
+            "if ($curBuild -ne $buildVer -or $now -gt $curTs) {",
+            "    $ms = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()",
+            "    $sigStr = \"${castUrl}_${key}_${uuid}_${ms}_${ttl}\"",
+            "    $sha = [System.Security.Cryptography.SHA256]::Create()",
+            "    $hash = $sha.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($sigStr))",
+            "    $sig = -join ($hash | ForEach-Object { $_.ToString('x2') })",
+            "    $h = @{",
+            "        'User-Agent'   = 'Downloader/10.0 Dingtalk/' + $castJson.version",
+            "        'Url'          = $castUrl",
+            "        'Key'          = $key",
+            "        'TTL'          = $ttl.ToString()",
+            "        'Timestamp'    = $ms.ToString()",
+            "        'Signature'    = $sig",
+            "        'Content-Type' = 'application/x-www-form-urlencoded'",
+            "    }",
+            "    $resp = Invoke-RestMethod -Uri 'https://dtupgrade.dingtalk.com/c/u/sign' -Method Post -Headers $h -Body '' -ErrorAction Stop",
+            "    $signTs = [regex]::Match($resp.signedUrl, '/(\\d{12})/').Groups[1].Value",
+            "    $newVer = \"${buildVer}.${signTs}\"",
+            "    \"${newVer}=====$($resp.signedUrl)\"",
+            "} else {",
+            "    $curUrl = $json.url -replace '#/dl\\.7z$', ''",
+            "    \"${curVer}=====$curUrl\"",
+            "}"
+        ],
+        "regex": "(.*)=====(?<url>.*)"
     },
     "autoupdate": {
-        "url": "https://dtapp-pub.dingtalk.com/dingtalk-desktop/win_installer/Release/DingTalk_v$version.exe#/dl.7z",
+        "url": "$matchUrl#/dl.7z",
         "hash": {
             "url": "https://dtapp-cast.dingtalk.com/dingtalk-desktop/win_x64/vista_later_v2.json",
             "jsonpath": "$.win.install.md5"
