@@ -1,12 +1,12 @@
 {
-    "version": "9.6.3",
+    "version": "9.7.1",
     "description": "SecureCRT 高效安全的远程终端仿真工具",
     "homepage": "https://www.osssr.com/6605.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://list.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT_9.6.3.7z#/dl.7z",
-            "hash": "2dae7f651e1f19ce9370a137f3caba145e1b42feed3f59a8c8abe31ec91c404d"
+            "url": "https://list.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT_9.7.1.7z#/dl.7z",
+            "hash": "aa1f82bcbf49880b3954d5a16270cd85156e64922549561c1214047ba7d10c6d"
         }
     },
     "extract_dir": "SecureCRT",
@@ -23,7 +23,7 @@
     "persist": "Data",
     "checkver": {
         "url": "https://list.xrgzs.top/d/pxy/Software/SecureCRT/SecureCRT.7z.ver",
-         "regex": "(\\d+\\.[\\d.]+)"
+        "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
