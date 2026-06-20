@@ -1,0 +1,159 @@
+{
+    "version": "149.0.4022.80",
+    "description": "Microsoft Edge WebView2 Runtime. Embed web content (HTML, CSS, and JavaScript) in your native applications with Microsoft Edge WebView2.",
+    "homepage": "https://developer.microsoft.com/en-us/microsoft-edge/webview2",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://developer.microsoft.com/microsoft-edge/api/eula/webview2"
+    },
+    "notes": "Green/lean build: only core runtime, no Edge Update services, scheduled tasks, or background processes. Uninstalls any existing official WebView2 before installing. Sets registry keys so applications can detect WebView2 via standard paths.",
+    "architecture": {
+        "32bit": {
+            "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/b2dfd099-b107-4a6f-9953-6dc54db68916/Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.x86.cab#/dl.7z",
+            "hash": "53fa925d76067a1f995e676c43c594d53ca1fc99174818c788fafbc52c7a4114",
+            "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.x86"
+        },
+        "64bit": {
+            "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/fa1b7ded-0f30-4810-ad8c-097ec93c1e26/Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.x64.cab#/dl.7z",
+            "hash": "2c9cb91fcc8b46295be9e2d8959518a0d4a56d9b2b75de1a046309462599616a",
+            "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.x64"
+        },
+        "arm64": {
+            "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/ca7c61fa-3130-4bc9-8235-fe1666e24e38/Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.arm64.cab#/dl.7z",
+            "hash": "438ffeac57739a086bf4b613f950c015be08a53f0dc700da79f665d908f4c48f",
+            "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.149.0.4022.80.arm64"
+        }
+    },
+    "env_set": {
+        "WEBVIEW2_BROWSER_EXECUTABLE_FOLDER": "$dir"
+    },
+    "post_install": [
+        "# Block global install without admin",
+        "if ($global -and !(is_admin)) {",
+        "    error 'Administrator rights are required for global install.'",
+        "    scoop uninstall $app",
+        "    exit 1",
+        "}",
+        "",
+        "# Determine standard installation path",
+        "if (is_admin) {",
+        "    $wvBase = if (${env:ProgramFiles(x86)}) { \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeWebView\\Application\" } else { \"$env:ProgramFiles\\Microsoft\\EdgeWebView\\Application\" }",
+        "} else {",
+        "    $wvBase = \"$env:LOCALAPPDATA\\Microsoft\\EdgeWebView\\Application\"",
+        "}",
+        "$wvPath = \"$wvBase\\$version\"",
+        "",
+        "# Uninstall existing official WebView2 if present",
+        "$exe1 = \"$env:LOCALAPPDATA\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\"",
+        "$exe2 = \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\"",
+        "if (Test-Path $exe1) { & $exe1 /uninstall 2>$null }",
+        "if (Test-Path $exe2) { & $exe2 /uninstall 2>$null }",
+        "",
+        "# Kill Edge Update related processes",
+        "Stop-Process -Name 'MicrosoftEdgeUpdate' -Force -ErrorAction SilentlyContinue",
+        "Stop-Process -Name 'msedgewebview2' -Force -ErrorAction SilentlyContinue",
+        "",
+        "# Stop and remove Edge Update services",
+        "'edgeupdate', 'edgeupdatem', 'MicrosoftEdgeElevationService' | ForEach-Object {",
+        "    Stop-Service -Name $_ -Force -ErrorAction SilentlyContinue",
+        "    sc.exe delete $_ 2>&1 | Out-Null",
+        "}",
+        "",
+        "# Remove scheduled tasks",
+        "'MicrosoftEdgeUpdateTaskUserS', 'MicrosoftEdgeUpdateTaskMachineUA', 'MicrosoftEdgeUpdateTaskMachineCore', 'MicrosoftEdgeUpdateBrowserReplacementTask' | ForEach-Object {",
+        "    schtasks.exe /delete /f /tn $_ 2>&1 | Out-Null",
+        "}",
+        "Remove-Item -Path \"$env:windir\\System32\\Tasks\\MicrosoftEdgeUpdate*\" -Force -ErrorAction SilentlyContinue",
+        "",
+        "# Remove unused registry keys",
+        "'Registry::HKEY_USERS\\.DEFAULT\\Software\\Microsoft\\EdgeUpdate', 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate', 'HKLM:\\SOFTWARE\\Microsoft\\EdgeUpdate', 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate', 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Application\\edgeupdate', 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Application\\edgeupdatem', 'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Microsoft Edge Update', 'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Microsoft EdgeWebView' | ForEach-Object {",
+        "    Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue",
+        "}",
+        "",
+        "# Remove background components",
+        "\"$env:windir\\SystemTemp\\MsEdgeCrashpad\", \"$env:LOCALAPPDATA\\Microsoft\\EdgeUpdate\", \"$env:LOCALAPPDATA\\Microsoft\\EdgeCore\", \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeUpdate\", \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeCore\", \"$env:ProgramData\\Microsoft\\EdgeUpdate\" | ForEach-Object {",
+        "    Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue",
+        "}",
+        "",
+        "# Set registry keys so applications can detect WebView2",
+        "if (is_admin) {",
+        "    $regBase = if ([Environment]::Is64BitOperatingSystem) { 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate' } else { 'HKLM:\\SOFTWARE\\Microsoft\\EdgeUpdate' }",
+        "    New-Item -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-ItemProperty -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\" -Name 'EBWebView' -Value $wvPath -Force",
+        "    New-Item -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}\" -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-ItemProperty -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}\" -Name 'pv' -Value '$version' -Force",
+        "}",
+        "New-Item -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}' -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Set-ItemProperty -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}' -Name 'EBWebView' -Value $wvPath -Force",
+        "New-Item -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}' -Force -ErrorAction SilentlyContinue | Out-Null",
+        "Set-ItemProperty -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}' -Name 'pv' -Value '$version' -Force",
+        "",
+        "# Create junction link at standard installation path",
+        "if (Test-Path $wvPath) { Remove-Item -Path $wvPath -Recurse -Force }",
+        "New-Item -Path $wvBase -ItemType Directory -Force | Out-Null",
+        "New-Item -Path $wvPath -ItemType Junction -Value $dir -Force | Out-Null",
+        "",
+        "# Prevent Edge from reinstalling",
+        "if (is_admin) {",
+        "    New-Item -Path $regBase -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-ItemProperty -Path $regBase -Name 'DoNotUpdateToEdgeWithChromium' -Value 1 -Type DWord -Force",
+        "}"
+    ],
+    "pre_uninstall": [
+        "# Admin install requires admin to uninstall",
+        "if (!(is_admin) -and (Test-Path \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeWebView\\Application\\$version\")) {",
+        "    error 'Administrator rights are required to uninstall $app.'",
+        "    exit 1",
+        "}",
+        "",
+        "# Determine standard installation path",
+        "if (is_admin) {",
+        "    $wvBase = if (${env:ProgramFiles(x86)}) { \"${env:ProgramFiles(x86)}\\Microsoft\\EdgeWebView\\Application\" } else { \"$env:ProgramFiles\\Microsoft\\EdgeWebView\\Application\" }",
+        "} else {",
+        "    $wvBase = \"$env:LOCALAPPDATA\\Microsoft\\EdgeWebView\\Application\"",
+        "}",
+        "$wvPath = \"$wvBase\\$version\"",
+        "[System.IO.Directory]::Delete($wvPath, $false) 2>$null",
+        "",
+        "# Remove registry detection keys",
+        "if (is_admin) {",
+        "    $regBase = if ([Environment]::Is64BitOperatingSystem) { 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate' } else { 'HKLM:\\SOFTWARE\\Microsoft\\EdgeUpdate' }",
+        "    Remove-ItemProperty -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\" -Name 'EBWebView' -Force -ErrorAction SilentlyContinue",
+        "    Remove-ItemProperty -Path \"$regBase\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}\" -Name 'pv' -Force -ErrorAction SilentlyContinue",
+        "} else {",
+        "    Remove-ItemProperty -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}' -Name 'EBWebView' -Force -ErrorAction SilentlyContinue",
+        "    Remove-ItemProperty -Path 'HKCU:\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9AEB816}' -Name 'pv' -Force -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "checkver": {
+        "url": "https://developer.microsoft.com/en-us/Microsoft-edge/webview2/",
+        "script": [
+            "$page = $page -replace '\\\\u002F', '/'",
+            "$page -match 'https://msedge\\.sf\\.dl\\.delivery\\.mp\\.microsoft\\.com/filestreamingservice/files/(?<folder>[0-9a-z-]+)/Microsoft\\.WebView2\\.FixedVersionRuntime\\.([0-9.]+)\\.x86\\.cab'",
+            "$arch32 = $Matches.folder",
+            "$page -match 'https://msedge\\.sf\\.dl\\.delivery\\.mp\\.microsoft\\.com/filestreamingservice/files/(?<folder>[0-9a-z-]+)/Microsoft\\.WebView2\\.FixedVersionRuntime\\.(?<version>[0-9.]+)\\.x64\\.cab'",
+            "$version = $Matches.version",
+            "$arch64 = $Matches.folder",
+            "$page -match 'https://msedge\\.sf\\.dl\\.delivery\\.mp\\.microsoft\\.com/filestreamingservice/files/(?<folder>[0-9a-z-]+)/Microsoft\\.WebView2\\.FixedVersionRuntime\\.([0-9.]+)\\.arm64\\.cab'",
+            "$archarm64 = $Matches.folder",
+            "Write-Output \"$version $arch32 $arch64 $archarm64\""
+        ],
+        "regex": "(?<version>[\\d.]+) (?<arch32>[^ ]+) (?<arch64>[^ ]+) (?<archarm64>[^ ]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/$matchArch32/Microsoft.WebView2.FixedVersionRuntime.$version.x86.cab#/dl.7z",
+                "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.$version.x86"
+            },
+            "64bit": {
+                "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/$matchArch64/Microsoft.WebView2.FixedVersionRuntime.$version.x64.cab#/dl.7z",
+                "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.$version.x64"
+            },
+            "arm64": {
+                "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/$matchArcharm64/Microsoft.WebView2.FixedVersionRuntime.$version.arm64.cab#/dl.7z",
+                "extract_dir": "Microsoft.WebView2.FixedVersionRuntime.$version.arm64"
+            }
+        }
+    }
+}
