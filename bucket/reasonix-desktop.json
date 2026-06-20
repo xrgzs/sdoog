@@ -1,0 +1,47 @@
+{
+    "version": "1.10.0",
+    "description": "Reasonix Desktop (Wails shell) | A native desktop window around the Reasonix Go kernel.",
+    "homepage": "https://reasonix.io/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/desktop-v1.10.0/Reasonix-windows-amd64.zip",
+            "hash": "6b8cc3d2c88c47a8792faa79bc06d0bb9865331d6f8e98eb3ccc948b5810caa1"
+        },
+        "arm64": {
+            "url": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/desktop-v1.10.0/Reasonix-windows-arm64.zip",
+            "hash": "eff10c81edd9d8a46fd4aaa121bddb1796e68f27c2f9249aec2c53285ec48899"
+        }
+    },
+    "shortcuts": [
+        [
+            "Reasonix.exe",
+            "Reasonix"
+        ]
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\reasonix\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Remove-Junction \"$env:APPDATA\\reasonix\""
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/esengine/DeepSeek-Reasonix/releases?per_page=1",
+        "jsonpath": "$.[0].tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/desktop-v$version/Reasonix-windows-amd64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/desktop-v$version/Reasonix-windows-arm64.zip"
+            }
+        }
+    }
+}
