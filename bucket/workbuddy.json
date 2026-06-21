@@ -1,0 +1,53 @@
+{
+    "version": "5.1.4.31089177-d0637046",
+    "description": "WorkBuddy Desktop - AI Agent Desktop Application",
+    "homepage": "https://www.codebuddy.cn/work/",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.1.4.31089177-d0637046.exe",
+            "hash": "326b00299b4bb67eb762a9de3861aca5d7ed4694066f74154e1a008f4745ae6b"
+        }
+    },
+    "extract_dir": "{code_GetDestDir}",
+    "innosetup": true,
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:USERPROFILE\\.workbuddy\" \"$persist_dir\\.workbuddy\" -Migrate",
+            "New-PersistDirectory \"$env:AppData\\WorkBuddy\" \"$persist_dir\\AppData\" -Migrate"
+        ]
+    },
+    "post_install": "Remove-Item \"$dir\\uninstall*\", \"$dir\\`$*\" -Force -Recurse -ErrorAction SilentlyContinue",
+    "bin": [
+        [
+            "bin/workbuddy.cmd",
+            "workbuddy"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "WorkBuddy.exe",
+            "WorkBuddy"
+        ]
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:USERPROFILE\\.workbuddy\"",
+        "Remove-Junction \"$env:AppData\\WorkBuddy\""
+    ],
+    "checkver": {
+        "url": "https://www.codebuddy.cn/v2/update?platform=workbuddy-win32-x64-user",
+        "jsonpath": "$.url",
+        "regex": "(?<url>.*WorkBuddy-win32-x64-user-(?<version>[\\d.]+-[\\w.]+)\\.exe)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-$version.exe"
+            }
+        }
+    }
+}
