@@ -10,8 +10,10 @@
         }
     },
     "suggest": {
-        "cc-switch": "extras/cc-switch"
+        "cc-switch": "extras/cc-switch",
+        "codex++": "sdoog/codex-plus-plus"
     },
+    "bin": "app\\resources\\codex.exe",
     "shortcuts": [
         [
             "app\\codex.exe",
