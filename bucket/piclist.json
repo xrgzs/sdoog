@@ -1,18 +1,16 @@
 {
-    "version": "3.2.2",
+    "version": "3.5.0",
     "description": "An image upload and manage tool, base on PicGo",
     "homepage": "https://piclist.cn/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Kuingsmile/PicList/releases/download/v3.2.2/PicList-Setup-3.2.2-x64.exe#/dl.7z",
-            "hash": "5048743289b3f718ad896a152ec03bba228eb86e2a08c09d98c011bcd36c940f",
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
+            "url": "https://github.com/Kuingsmile/PicList/releases/download/v3.5.0/PicList-Setup-3.5.0-x64-portable.zip",
+            "hash": "215e8eabc21a02745660e37eb47cff8b31158379382447983acf7e533f97bebc"
         },
-        "32bit": {
-            "url": "https://github.com/Kuingsmile/PicList/releases/download/v3.2.2/PicList-Setup-3.2.2-ia32.exe#/dl.7z",
-            "hash": "45380eda44c98d9e84d56b6caf5e907e47d4b000edc1fe4a305ff25168e0741f",
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-ia32.7z\" \"$dir\""
+        "arm64": {
+            "url": "https://github.com/Kuingsmile/PicList/releases/download/v3.5.0/PicList-Setup-3.5.0-arm64-portable.zip",
+            "hash": "27bf006d9fa9958e8e5fe6401c6f25c9e3dfdf1971cea00e311c6a604a498626"
         }
     },
     "shortcuts": [
@@ -40,10 +38,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Kuingsmile/PicList/releases/download/v$version/PicList-Setup-$version-x64.exe#/dl.7z"
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/v$version/PicList-Setup-$version-x64-portable.zip"
             },
-            "32bit": {
-                "url": "https://github.com/Kuingsmile/PicList/releases/download/v$version/PicList-Setup-$version-ia32.exe#/dl.7z"
+            "arm64": {
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/v$version/PicList-Setup-$version-arm64-portable.zip"
             }
         }
     }

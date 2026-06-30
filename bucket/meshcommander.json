@@ -1,8 +1,8 @@
 {
     "version": "0.9.7",
     "description": "The ultimate open source Intel® AMT management console",
-    "homepage": "https://www.meshcommander.com/meshcommander",
-    "url": "https://meshcentral.com/meshcommander/MeshCommander-0.9.7.msi",
+    "homepage": "https://www.meshcommander.com",
+    "url": "https://meshcommander.com/Releases/MeshCommander-0.9.7.msi",
     "hash": "ad8ddf812eaa3532ce3a63651cab0c8110d071412c366b3491c9ecd2d03adfb4",
     "extract_dir": "Open Source/MeshCommander",
     "shortcuts": [
@@ -12,10 +12,9 @@
         ]
     ],
     "checkver": {
-        "url": "https://www.meshcommander.com/meshcommander",
-        "re": "MeshCommander ([\\d.]+)<"
+        "re": "MeshCommander-([\\d.]+)\\.msi"
     },
     "autoupdate": {
-        "url": "https://meshcentral.com/meshcommander/MeshCommander-$version.msi"
+        "url": "https://meshcommander.com/Releases/MeshCommander-$version.msi"
     }
 }

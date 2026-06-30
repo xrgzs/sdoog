@@ -1,24 +1,17 @@
 {
-    "version": "5.2",
+    "version": "6.0.28",
     "description": "FFmpegFreeUI（简称 3FUI）是 FFmpeg 的专业交互外壳，使用 .NET 10 框架，使用纯 WinForm 开发，配合 SunnyUI 和自绘制打造专业高效的暗黑风格界面。",
     "homepage": "https://github.com/Lake1059/FFmpegFreeUI",
     "depends": "ffmpeg",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/5.2/FFmpegFreeUI.SelfContained.arm64.7z",
-            "hash": "fa9c447a61812292eaf6c0d7b34bac7906fd861084a43bb3b2d23b60214d322a",
-            "extract_dir": "FFmpegFreeUI SelfContained arm64"
+            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/6.0.28/FFmpegFreeUI.arm64.exe#/FFmpegFreeUI.exe",
+            "hash": "e3ac77bc1a9ab78a81e6c2b224e4e3ced8ab50580898e60226e734a6e80afda5"
         },
         "64bit": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/5.2/FFmpegFreeUI.SelfContained.x64.7z",
-            "hash": "47c142499bfc3d3692406cf36327526bec1dca56e718c0fc99228ec9abc671d5",
-            "extract_dir": "FFmpegFreeUI SelfContained x64"
-        },
-        "32bit": {
-            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/5.2/FFmpegFreeUI.SelfContained.x86.7z",
-            "hash": "9f79d1253a520628ef8f89f46c14573365f731f5635843dd5bd38eed21fc849c",
-            "extract_dir": "FFmpegFreeUI SelfContained x86"
+            "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/6.0.28/FFmpegFreeUI.x64.exe#/FFmpegFreeUI.exe",
+            "hash": "b9578d0f4809f2f1faff6167a771dcc92bae8c3b9906761e4051e914f47c2d78"
         }
     },
     "shortcuts": [
@@ -27,17 +20,21 @@
             "FFmpegFreeUI"
         ]
     ],
+    "persist": "Settings.json",
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\Settings.json\") -or !(Get-Item \"$dir\\Settings.json\").Length) {",
+        "    New-Item \"$dir\\Settings.json\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "    Set-Content -Path \"$dir\\Settings.json\" -Value '{}'",
+        "}"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "arm64": {
-                "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/$version/FFmpegFreeUI.SelfContained.arm64.7z"
+                "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/6.0.28/FFmpegFreeUI.arm64.exe#/FFmpegFreeUI.exe"
             },
             "64bit": {
-                "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/$version/FFmpegFreeUI.SelfContained.x64.7z"
-            },
-            "32bit": {
-                "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/$version/FFmpegFreeUI.SelfContained.x86.7z"
+                "url": "https://github.com/Lake1059/FFmpegFreeUI/releases/download/6.0.28/FFmpegFreeUI.x64.exe#/FFmpegFreeUI.exe"
             }
         }
     }

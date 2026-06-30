@@ -1,16 +1,16 @@
 {
-    "version": "0.8.0",
+    "version": "0.9.0",
     "description": "A desktop application for OpenList",
     "homepage": "https://oplist.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.8.0/OpenList.Desktop_0.8.0_x64-setup_windows.exe#/dl.7z",
-            "hash": "ff35b15b09e546083ef982a9bc4ee0e91ffac763c86a4e9d937c4d41cb5241e1"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.9.0/OpenList-Desktop_0.9.0_x64-setup.exe#/dl.7z",
+            "hash": "e25e5c93d560471a9b2aeaea951a4a6b5a927e2ae03a1c90e2b9ee9c26a03235"
         },
         "arm64": {
-            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.8.0/OpenList.Desktop_0.8.0_arm64-setup_windows.exe#/dl.7z",
-            "hash": "1a778f3bd4bbef30b41489c3b07d241be1cb01e4895dc57d79ac77ef62271ac3"
+            "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.9.0/OpenList-Desktop_0.9.0_arm64-setup.exe#/dl.7z",
+            "hash": "870bb765b44db294f81e4da4c31236280a693be89d349f957eefac8069d32304"
         }
     },
     "shortcuts": [
@@ -29,11 +29,6 @@
     ],
     "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall.exe\" -Force -Recurse -ErrorAction Ignore | Out-Null",
     "pre_uninstall": [
-        "if (Test-Path \"$dir\\uninstall-openlist-service.exe\") {",
-        "    while (Get-Service -Name 'openlist_desktop_service' -ErrorAction SilentlyContinue) {",
-        "        Invoke-ExternalCommand \"$dir\\uninstall-openlist-service.exe\" -RunAs -Quiet",
-        "    }",
-        "}",
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
@@ -45,10 +40,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_x64-setup_windows.exe#/dl.7z"
+                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList-Desktop_$version_x64-setup.exe#/dl.7z"
             },
             "arm64": {
-                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList.Desktop_$version_arm64-setup_windows.exe#/dl.7z"
+                "url": "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v$version/OpenList-Desktop_$version_arm64-setup.exe#/dl.7z"
             }
         }
     }

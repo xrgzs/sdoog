@@ -1,19 +1,19 @@
 {
-    "version": "2.14.3",
+    "version": "2.14.6",
     "description": "PCL CE 是基于 PCL 开源代码二次开发的社区版本，包括了主线暂未制作的功能和改进！",
-    "homepage": "https://github.com/PCL-Community/PCL2-CE",
+    "homepage": "https://github.com/PCL-Community/PCL-CE",
     "license": {
         "identifier": "Shareware",
-        "url": "https://github.com/PCL-Community/PCL2-CE?tab=License-1-ov-file"
+        "url": "https://github.com/PCL-Community/PCL-CE?tab=License-1-ov-file"
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.14.3/PCL2_CE_Release_x64.exe#/PCL2_CE.exe",
-            "hash": "4fbbf0aebf7a5f4e2062e4017846143079b74287ff49c00de62bad62e019296e"
+            "url": "https://github.com/PCL-Community/PCL-CE/releases/download/v2.14.6/PCL2_CE_Release_x64.exe#/PCL2_CE.exe",
+            "hash": "1acbea60764b87e7b8276cfefd221f262448401decdd88591b964054c4f708da"
         },
         "arm64": {
-            "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/2.14.3/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe",
-            "hash": "a09c71cf0280db99e05bafc3d46e9a7e09d07ec130e6544c4744c25b4ad05beb"
+            "url": "https://github.com/PCL-Community/PCL-CE/releases/download/v2.14.6/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe",
+            "hash": "2465bce1a6ce7d1c7b01a2370bf83b9c5dfa6315e107555f9a3096df3b0f8d25"
         }
     },
     "bin": "PCL2_CE.exe",
@@ -45,15 +45,15 @@
         ".minecraft"
     ],
     "checkver": {
-        "github": "https://github.com/PCL-Community/PCL2-CE"
+        "github": "https://github.com/PCL-Community/PCL-CE"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/$version/PCL2_CE_Release_x64.exe#/PCL2_CE.exe"
+                "url": "https://github.com/PCL-Community/PCL-CE/releases/download/v$version/PCL2_CE_Release_x64.exe#/PCL2_CE.exe"
             },
             "arm64": {
-                "url": "https://github.com/PCL-Community/PCL2-CE/releases/download/$version/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe"
+                "url": "https://github.com/PCL-Community/PCL-CE/releases/download/v$version/PCL2_CE_Release_ARM64.exe#/PCL2_CE.exe"
             }
         }
     }
