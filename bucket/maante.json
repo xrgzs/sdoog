@@ -1,12 +1,12 @@
 {
-    "version": "0.0.5-alpha.2",
+    "version": "1.2.0-MXU",
     "description": "MAA异环小助手，由MAAFramework强力驱动！",
     "license": "GPL-3.0-only",
     "homepage": "https://github.com/1bananachicken/MaaNTE",
     "architecture": {
         "64bit": {
-            "hash": "9d7c8771bd18c4b00e21e8fd87c79a2c191868eea449de5e392b68c359f6a1d5",
-            "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v0.0.5-alpha.2/MaaNTE-win-x86_64-v0.0.5-alpha.2-MFAA.zip"
+            "hash": "a5ddde9865873d7ca7b54c2e6b5ac388e4982ccdb93fc74244a867b8ec0a6388",
+            "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v1.2.0/MaaNTE-win-x86_64-v1.2.0-MXU.zip"
         }
     },
     "shortcuts": [
@@ -22,12 +22,12 @@
     "checkver": {
         "url": "https://api.github.com/repos/1bananachicken/MaaNTE/releases?per_page=1",
         "jsonpath": "$[0].assets[0].browser_download_url",
-        "regex": "https://github.com/1bananachicken/MaaNTE/releases/download/v(?<tag>.+)/MaaNTE-win-x86_64-v(.+)-MFAA.zip"
+        "regex": "https://github.com/1bananachicken/MaaNTE/releases/download/v(?<tag>.+)/MaaNTE-win-x86_64-v(.+).zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v$matchTag/MaaNTE-win-x86_64-v$version-MFAA.zip"
+                "url": "https://github.com/1bananachicken/MaaNTE/releases/download/v$matchTag/MaaNTE-win-x86_64-v$version.zip"
             }
         }
     }
