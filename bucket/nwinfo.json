@@ -5,27 +5,8 @@
     "license": "Unlicense",
     "url": "https://github.com/a1ive/nwinfo/releases/download/v1.6.4/nwinfo.zip",
     "hash": "db767d4766accff9ef3ab838f1a2140a744e65863fa3befb8eca48778bb88b79",
-    "extract_dir": "nwinfo",
     "architecture": {
         "64bit": {
-            "bin": [
-                [
-                    "nwinfox64.exe",
-                    "nwinfo"
-                ],
-                [
-                    "gnwinfox64.exe",
-                    "gnwinfo"
-                ]
-            ],
-            "shortcuts": [
-                [
-                    "gnwinfox64.exe",
-                    "NWinfo GUI"
-                ]
-            ]
-        },
-        "32bit": {
             "bin": [
                 [
                     "nwinfo.exe",
@@ -39,6 +20,24 @@
             "shortcuts": [
                 [
                     "gnwinfo.exe",
+                    "NWinfo GUI"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": [
+                [
+                    "nwinfox86.exe",
+                    "nwinfo"
+                ],
+                [
+                    "gnwinfox86.exe",
+                    "gnwinfo"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "gnwinfox86.exe",
                     "NWinfo GUI"
                 ]
             ]
