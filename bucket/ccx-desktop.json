@@ -1,16 +1,16 @@
 {
-    "version": "2.9.36",
+    "version": "2.9.37",
     "description": "Claude / Codex / Gemini AI API proxy and protocol translation gateway",
     "homepage": "https://benedictking.github.io/ccx/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/BenedictKing/ccx/releases/download/v2.9.36/CCX-Desktop-2.9.36-windows-amd64-setup.exe#/dl.7z",
-            "hash": "ee15238e3b85d0626e832904154eac9939209d33dec31ecfa7423e15c981f4fd"
+            "url": "https://github.com/BenedictKing/ccx/releases/download/v2.9.37/CCX-Desktop-2.9.37-windows-amd64-setup.exe#/dl.7z",
+            "hash": "20cd67a318059fedc1b222031c26bf5ca5e6956c7658037abfb70ea2568545ea"
         },
         "arm64": {
-            "url": "https://github.com/BenedictKing/ccx/releases/download/v2.9.36/CCX-Desktop-2.9.36-windows-arm64-setup.exe#/dl.7z",
-            "hash": "be8c9883c26ae57427b287a392b85374dbb9eaead2d2e1690ec9e6ec41854d24"
+            "url": "https://github.com/BenedictKing/ccx/releases/download/v2.9.37/CCX-Desktop-2.9.37-windows-arm64-setup.exe#/dl.7z",
+            "hash": "8a06dcc58e6f72c77ea25a60ad5d22bca1935eea48259fc037c8ee062e6cf502"
         }
     },
     "shortcuts": [
