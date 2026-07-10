@@ -59,6 +59,11 @@ Get-Content .\script.ps1 | ConvertTo-Json
 - If only 32bit download exists, omit `architecture`; otherwise `architecture` is mandatory
 - If app is CLI-only, omit `shortcuts`; if GUI-only with no CLI args, omit `bin`
 
+### PR body
+
+- PR body must follow the template at [`.github/pull_request_template.md`](.github/pull_request_template.md)
+- Use `Closes #XXXX` to link the issue; keep body brief and clear
+
 ### PR title format (mandatory)
 
 | Scenario | Format |
