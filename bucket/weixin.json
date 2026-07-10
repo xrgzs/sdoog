@@ -6,8 +6,8 @@
         "identifier": "Proprietary",
         "url": "https://www.wechat.com/en/service_terms.html"
     },
-    "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z",
-    "hash": "f8efcb4a0118284f860ed658343e9aa4289211785d9afe4f51bbc59b69de75d0",
+    "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_4.1.11.exe#/dl.7z",
+    "hash": "9701600e5d69cbcd23badbfa8ae73bbc7d7fa18d2771e4057184dd02d513dcc2",
     "shortcuts": [
         [
             "Weixin.exe",
@@ -45,6 +45,6 @@
         "regex": "(.*)"
     },
     "autoupdate": {
-        "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe#/dl.7z"
+        "url": "https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin_$matchHead.exe#/dl.7z"
     }
 }
