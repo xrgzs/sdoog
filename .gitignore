@@ -5,3 +5,6 @@ page.html
 checkver-*.html
 bin/SQLite
 bin/WebDriver
+
+# Codex local config (machine-specific). DO NOT COMMIT.
+.codex/
