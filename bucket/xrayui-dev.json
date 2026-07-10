@@ -22,9 +22,7 @@
             "XrayUI"
         ]
     ],
-    "persist": [
-        "Data"
-    ],
+    "persist": "Data",
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",

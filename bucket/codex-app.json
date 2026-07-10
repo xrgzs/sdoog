@@ -16,8 +16,8 @@
     "bin": "app\\resources\\codex.exe",
     "shortcuts": [
         [
-            "app\\codex.exe",
-            "Codex"
+            "app\\ChatGPT.exe",
+            "ChatGPT"
         ]
     ],
     "installer": {
