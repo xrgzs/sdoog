@@ -1,10 +1,10 @@
 {
-    "version": "5.30.1.3586",
+    "version": "9.1.58.1",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.30.1.3586-0523181240.exe",
-    "hash": "8c4a6e93e613f56917eb988c82ebfff33dd2e9cada9ba05193ad77963371a1fd",
+    "url": "https://dl.xrgzs.top/d/pxy/Software/LDPlayer/%E9%9B%B7%E7%94%B5%E6%A8%A1%E6%8B%9F%E5%99%A89(64)-9.1.58.1%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%BB%BF%E8%89%B2%E7%89%88.exe",
+    "hash": "6f34741c3242b2609bce3ecdfef2d9f33f5aec1bfa58100bdea05a559516cb33",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
