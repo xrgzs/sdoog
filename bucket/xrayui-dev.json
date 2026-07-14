@@ -1,5 +1,5 @@
 {
-    "version": "1.16",
+    "version": "1.17",
     "description": "Lightweight native Windows GUI client for Xray core, built with WinUI 3",
     "homepage": "https://github.com/PhoenixNil/XrayUI-dev",
     "license": "Apache-2.0",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PhoenixNil/XrayUI-dev/releases/download/1.16/XrayUI-win-x64.zip",
-            "hash": "c71c8a270df5b7eb5a5c15d1d19dcdec1276e5419d0a955eff8c67739dfceb92"
+            "url": "https://github.com/PhoenixNil/XrayUI-dev/releases/download/1.17/XrayUI-win-x64.zip",
+            "hash": "3a982ac22831aecfc6ea2e63723ed1d2bb844e9d640af6f5a3d0ee6e5dff4dc9"
         },
         "arm64": {
-            "url": "https://github.com/PhoenixNil/XrayUI-dev/releases/download/1.16/XrayUI-win-arm64.zip",
-            "hash": "8e7885956f5d9b4dc87b530e894957d269b7423db1e8e58bbcf6c282cf56ddb4"
+            "url": "https://github.com/PhoenixNil/XrayUI-dev/releases/download/1.17/XrayUI-win-arm64.zip",
+            "hash": "1f2732cdc85d4d9f40e143897371089ee466babf556e5339ff32d67cd3ab3895"
         }
     },
     "shortcuts": [
