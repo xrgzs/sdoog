@@ -1,10 +1,10 @@
 {
-    "version": "9.1.58.1",
+    "version": "4.4.4",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "https://dl.xrgzs.top/d/pxy/Software/LDPlayer/%E9%9B%B7%E7%94%B5%E6%A8%A1%E6%8B%9F%E5%99%A89(64)-9.1.58.1%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%BB%BF%E8%89%B2%E7%89%88.exe",
-    "hash": "6f34741c3242b2609bce3ecdfef2d9f33f5aec1bfa58100bdea05a559516cb33",
+    "url": "https://123.zhutix.com/2024/ruanjian/UltraUXThemePatcher_4.4.4.exe",
+    "hash": "9945195d54509ca4e8a41e468851137a56f711163d4fcbe4a8692ed24023a739",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
