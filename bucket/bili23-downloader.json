@@ -1,10 +1,10 @@
 {
-    "version": "2.10.4",
+    "version": "2.11.0",
     "description": "开源、免费、跨平台的 B 站视频下载工具，支持多线程加速、音视频分离、弹幕元数据获取、自定义命名与分类等功能。",
     "homepage": "https://bili23.scott-sloan.cn/",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v2.10.4/Bili23-Downloader_2.10.4_windows_x64_portable.zip",
-    "hash": "7ee85feee551f1b579631272f4b33d60de33ed8faacf82b1cc9dd81c6991ca6a",
+    "url": "https://github.com/ScottSloan/Bili23-Downloader/releases/download/v2.11.0/Bili23-Downloader_2.11.0_windows_x64_portable.zip",
+    "hash": "4cb4972d6dbe12778e43df55b70ce36892adc8f9510f418c3233fba197133a56",
     "extract_dir": "Bili23-Downloader",
     "shortcuts": [
         [
