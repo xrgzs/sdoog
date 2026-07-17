@@ -17,7 +17,9 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
         "Import-AppxPSModule",
-        "Get-AppxPackage -Name \"3AD8A913.49937325EFC59\" | Remove-AppxPackage"
+        "Get-AppxPackage -Name \"3AD8A913.49937325EFC59\" | Remove-AppxPackage",
+        "Remove-NetFirewallRule -DisplayName 'Block BaiduNetdiskHost Inbound (Scoop)' -ErrorAction SilentlyContinue",
+        "Remove-NetFirewallRule -DisplayName 'Block BaiduNetdiskUnite Inbound (Scoop)' -ErrorAction SilentlyContinue"
     ],
     "installer": {
         "script": [
@@ -27,6 +29,10 @@
             "Rename-Item \"$dir\\BaiduNetdiskService.Msixbundle\" -NewName \"BaiduNetdiskService.Msixbundle.Bak\""
         ]
     },
+    "post_install": [
+        "New-NetFirewallRule -DisplayName 'Block BaiduNetdiskHost Inbound (Scoop)' -Program \"$original_dir\\module\\BrowserEngine\\baidunetdiskhost.exe\" -Direction Inbound -Action Block -ErrorAction SilentlyContinue",
+        "New-NetFirewallRule -DisplayName 'Block BaiduNetdiskUnite Inbound (Scoop)' -Program \"$original_dir\\module\\BrowserEngine\\baidunetdiskunite.exe\" -Direction Inbound -Action Block -ErrorAction SilentlyContinue"
+    ],
     "uninstaller": {
         "script": [
             "Remove-Item -Path \"$env:APPDATA\\PLogs\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
