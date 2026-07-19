@@ -1,10 +1,10 @@
 {
-    "version": "5.30.1.3586",
+    "version": "5.30.2.3616",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.30.1.3586-0523181240.exe",
-    "hash": "8c4a6e93e613f56917eb988c82ebfff33dd2e9cada9ba05193ad77963371a1fd",
+    "url": "http://a11.gdl.easebar.com/MuMu-setup-V5.30.2.3616-overseas-0611173626.exe",
+    "hash": "a2cfdad8d34247227132061baca1986ea80924f9b584e21c75bc9b3617e8432e",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
