@@ -75,7 +75,7 @@ Get-Content .\script.ps1 | ConvertTo-Json
 ### Commit message rules
 
 - First line must match the PR title format
-- For AI-assisted commits, always append `Co-authored-by: Codex <codex@openai.com>` trailer
+- For AI-assisted commits, always append `Co-authored-by: {assistant-name} <{assistant-email}>` trailer (e.g., `Co-authored-by: GitHub Copilot <copilot@github.com>`, `Co-authored-by: Codex <codex@openai.com>`)
 - Keep subject concise (under 50 chars where possible)
 - Use imperative mood
 
