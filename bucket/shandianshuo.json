@@ -1,5 +1,5 @@
 {
-    "version": "0.7.5",
+    "version": "0.7.6",
     "description": "一句话，执行技能。不只是 AI 语音输入法，更是我的语音助手。",
     "homepage": "https://shandianshuo.cn/",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download.shandianshuo.cn/windows/shandianshuo_0.7.5_x64-setup.exe#/dl.7z",
-            "hash": "069e1ec7a52c3e9124e613de781565fccd4c3b53c5abe207d71f7d19e516c794"
+            "url": "https://download.shandianshuo.cn/windows/shandianshuo_0.7.6_x64-setup.exe#/dl.7z",
+            "hash": "11cb2435f301d335ff56e414ee2ae71506144ad46d35d4d979b8391f0b7b811a"
         }
     },
     "shortcuts": [
