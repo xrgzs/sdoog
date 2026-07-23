@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Starfallan/PiliNara/releases/download/2.1.0.1-Himeko/PiliNara_windows_2.1.0%2B5524_x64_portable.zip",
-            "hash": "8bb80b6120f205c751496bf241e790e8c092129a16a33525c19cdac6bd7bf4a9"
+            "hash": "8bb80b6120f205c751496bf241e790e8c092129a16a33525c19cdac6bd7bf4a9",
+            "extract_dir": "PiliNara-Win"
         }
     },
     "installer": {
@@ -17,7 +18,7 @@
     },
     "shortcuts": [
         [
-            "piliplus.exe",
+            "pilinara.exe",
             "PiliNara"
         ]
     ],
@@ -34,7 +35,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Starfallan/PiliNara/releases/download/$version/PiliNara_windows_$match2%2B$match3_x64_portable.zip"
+                "url": "https://github.com/Starfallan/PiliNara/releases/download/$version/PiliNara_windows_$match2%2B$match3_x64_portable.zip",
+                "extract_dir": "PiliNara-Win"
             }
         }
     }
