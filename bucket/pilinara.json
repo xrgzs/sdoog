@@ -35,8 +35,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Starfallan/PiliNara/releases/download/$version/PiliNara_windows_$match2%2B$match3_x64_portable.zip",
-                "extract_dir": "PiliNara-Win"
+                "url": "https://github.com/Starfallan/PiliNara/releases/download/$version/PiliNara_windows_$match2%2B$match3_x64_portable.zip"
             }
         }
     }
