@@ -4,6 +4,7 @@
     "homepage": "https://github.com/builtbybel/FluentCleaner",
     "license": "MIT",
     "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.07.04/FluentCleaner-Classic-net48.zip",
+    "extract_dir": "FluentCleaner-Classic-net48",
     "hash": "736e19d7622dfe0f95b7b879be8ca54736550de3b828aafb0b27392945d94c75",
     "shortcuts": [
         [

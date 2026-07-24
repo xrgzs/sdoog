@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.07.04/FluentCleaner-win-x64.zip",
-            "hash": "566318a789e95298dae0da669c1efe7f2fe3fc20a570d4b6aa1971b2411140b3"
+            "hash": "566318a789e95298dae0da669c1efe7f2fe3fc20a570d4b6aa1971b2411140b3",
+            "extract_dir": "FluentCleaner-win-x64"
         }
     },
     "shortcuts": [
