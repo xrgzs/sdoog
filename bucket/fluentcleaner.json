@@ -1,0 +1,33 @@
+{
+    "version": "26.07.04",
+    "description": "FluentCleaner - Modern Windows system cleaning tool built with WinUI3 and Fluent Design.",
+    "homepage": "https://github.com/builtbybel/FluentCleaner",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.07.04/FluentCleaner-win-x64.zip",
+            "hash": "566318a789e95298dae0da669c1efe7f2fe3fc20a570d4b6aa1971b2411140b3"
+        }
+    },
+    "shortcuts": [
+        [
+            "FCleaner.exe",
+            "FluentCleaner"
+        ]
+    ],
+    "persist": "settings.json",
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\settings.json\") -or !(Get-Item \"$dir\\settings.json\").Length) {",
+        "    New-Item \"$dir\\settings.json\" -ItemType File -Force | Out-Null",
+        "    Set-Content -Path \"$dir\\settings.json\" -Value '{}'",
+        "}"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/builtbybel/FluentCleaner/releases/download/$version/FluentCleaner-win-x64.zip"
+            }
+        }
+    }
+}
