@@ -1,0 +1,46 @@
+{
+    "version": "1.16.2",
+    "description": "TigerVNC server (WinVNC) - VNC server for Windows remote desktop hosting",
+    "homepage": "https://tigervnc.org",
+    "license": "GPL-2.0-or-later",
+    "notes": "Install the VNC server as a service: run 'winvnc4.exe -install' from an elevated prompt.",
+    "architecture": {
+        "64bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/tigervnc64-winvnc-1.16.2.exe",
+            "hash": "sha1:d808e03b4fa721bdead906b6bb47b40574ba38ac"
+        },
+        "32bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/tigervnc-winvnc-1.16.2.exe",
+            "hash": "sha1:02a2140680ad09773f6c44aafa290d0fb33fba48"
+        }
+    },
+    "innosetup": true,
+    "bin": [
+        "winvnc4.exe",
+        "vncconfig.exe"
+    ],
+    "shortcuts": [
+        [
+            "winvnc4.exe",
+            "TigerVNC Server"
+        ],
+        [
+            "vncconfig.exe",
+            "TigerVNC Config"
+        ]
+    ],
+    "checkver": {
+        "sourceforge": "tigervnc",
+        "regex": "stable/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/tigervnc64-winvnc-$version.exe"
+            },
+            "32bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/tigervnc-winvnc-$version.exe"
+            }
+        }
+    }
+}

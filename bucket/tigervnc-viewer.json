@@ -1,0 +1,38 @@
+{
+    "version": "1.16.2",
+    "description": "TigerVNC viewer - standalone portable VNC client (single-file, no install)",
+    "homepage": "https://tigervnc.org",
+    "license": "GPL-2.0-or-later",
+    "notes": "Viewer settings are stored in the registry (HKCU\\Software\\TigerVNC).",
+    "architecture": {
+        "64bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/vncviewer64-1.16.2.exe#/vncviewer.exe",
+            "hash": "sha1:43173c3cfd18e9007cb367c7404a3d69dc70c4d9"
+        },
+        "32bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/vncviewer-1.16.2.exe#/vncviewer.exe",
+            "hash": "sha1:cc4f276628f404afc14d88770b592483cc99b5d7"
+        }
+    },
+    "bin": "vncviewer.exe",
+    "shortcuts": [
+        [
+            "vncviewer.exe",
+            "TigerVNC Viewer"
+        ]
+    ],
+    "checkver": {
+        "sourceforge": "tigervnc",
+        "regex": "stable/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/vncviewer64-$version.exe#/vncviewer.exe"
+            },
+            "32bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/vncviewer-$version.exe#/vncviewer.exe"
+            }
+        }
+    }
+}

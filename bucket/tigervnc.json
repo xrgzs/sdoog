@@ -1,0 +1,42 @@
+{
+    "version": "1.16.2",
+    "description": "TigerVNC - high-performance VNC viewer for remote desktop access",
+    "homepage": "https://tigervnc.org",
+    "license": "GPL-2.0-or-later",
+    "notes": [
+        "This is the TigerVNC viewer. The VNC server (WinVNC) is available separately as 'tigervnc-server'.",
+        "Viewer settings are stored in the registry (HKCU\\Software\\TigerVNC)."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/tigervnc64-1.16.2.exe",
+            "hash": "sha1:bb3a1d423cb36cf2aad80c0151dca78ce60454f0"
+        },
+        "32bit": {
+            "url": "https://sourceforge.net/projects/tigervnc/files/stable/1.16.2/tigervnc-1.16.2.exe",
+            "hash": "sha1:60ddc92e48b50cc6f185efbbbf8197d0a98ec6b1"
+        }
+    },
+    "innosetup": true,
+    "bin": "vncviewer.exe",
+    "shortcuts": [
+        [
+            "vncviewer.exe",
+            "TigerVNC Viewer"
+        ]
+    ],
+    "checkver": {
+        "sourceforge": "tigervnc",
+        "regex": "stable/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/tigervnc64-$version.exe"
+            },
+            "32bit": {
+                "url": "https://sourceforge.net/projects/tigervnc/files/stable/$version/tigervnc-$version.exe"
+            }
+        }
+    }
+}
