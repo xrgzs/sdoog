@@ -1,10 +1,10 @@
 {
-    "version": "1.6.70",
+    "version": "1.6.76",
     "description": "uz影视，追剧、直播、无广、投屏、免费",
     "homepage": "https://github.com/YYDS678/uzVideo",
     "license": "Freeware",
-    "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%861.6.70_win.zip",
-    "hash": "4746ace9b06a3c723580699514886d6fff5d94440baf2e15cff14b85fff3124c",
+    "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%861.6.76_Win.zip",
+    "hash": "526ca41c443390f25dc54de0925e975ec0f1d520d7da9ed0fbe69163871052d7",
     "shortcuts": [
         [
             "uz_video.exe",
@@ -27,6 +27,6 @@
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86$version_win.zip"
+        "url": "https://list.xrgzs.top/d/pxy/Software/uzVideo/uz%E5%BD%B1%E8%A7%86$version_Win.zip"
     }
 }
