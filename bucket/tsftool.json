@@ -1,10 +1,10 @@
 {
-    "version": "3.2.1.0",
+    "version": "5.30.1.3586",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "https://app.123957.com/pc-pro/windows/321/123pan_3.2.1.exe",
-    "hash": "7ae74899321d32b4c169c8e4111fa2b95d0681c0f33662089628837db38a1516",
+    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.30.1.3586-0523181240.exe",
+    "hash": "8c4a6e93e613f56917eb988c82ebfff33dd2e9cada9ba05193ad77963371a1fd",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
