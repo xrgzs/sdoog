@@ -1,5 +1,5 @@
 {
-    "version": "2.1.219",
+    "version": "2.1.220",
     "description": "An agentic coding tool built by Anthropic that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows.",
     "homepage": "https://claude.com/product/claude-code",
     "license": {
@@ -15,12 +15,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.219/claude-win32-x64.zip",
-            "hash": "42f5663d8a49512e7ddf9e25a45ff6fbe5010d5f06e7ed9f8f4f7c5698c4a8f9"
+            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.220/claude-win32-x64.zip",
+            "hash": "505d25ca77482511cce29f3daa72d99311f8264fb49d5a134caff291c835990d"
         },
         "arm64": {
-            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.219/claude-win32-arm64.zip",
-            "hash": "13478ecae6eb37b1b8d3c549664d573cc639d348b840c26a9dacb4d03e2ced6f"
+            "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.220/claude-win32-arm64.zip",
+            "hash": "f966e855580236028b01bf813029e84433ba58021635f700d0309e5f94e5ffe0"
         }
     },
     "bin": "claude.exe",
