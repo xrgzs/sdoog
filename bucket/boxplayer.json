@@ -1,0 +1,64 @@
+{
+    "version": "5.0.9",
+    "description": "BoxPlayer（小白羊网盘）是免费开源的跨平台云盘管理器与 AI 智能搜索助手。支持阿里云盘、百度网盘、115、夸克、OneDrive、Google Drive、Dropbox、PikPak 等 10+ 网盘管理，AI 智能搜索，4K HDR 视频播放，Plex/Jellyfin/Emby 客户端。",
+    "homepage": "https://xbyvideohub.com/",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/gaozhangmin/boxplayer/releases/download/v5.0.9/boxplayer-5.0.9-win-x64.exe#/dl.7z",
+            "hash": "sha512:a15020b868b234adb7230922a41e334d1bb2e1b1889ba1c80f9273476d4467dec63a72accac708c6469dd4ecf9566c83f0d247379a4e75e2f7210427045aeeb4",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
+        }
+    },
+    "bin": [
+        [
+            "clouddrive-cli",
+            "$dir\\BoxPlayer.exe",
+            "$dir\\resources\\cli\\clouddrive-cli.mjs"
+        ],
+        [
+            "clouddrive-mcp",
+            "$dir\\BoxPlayer.exe",
+            "$dir\\resources\\cli\\clouddrive-mcp.mjs"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "BoxPlayer.exe",
+            "BoxPlayer"
+        ]
+    ],
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\`$*\" -Force -Recurse",
+            "Remove-Item \"$dir\\resources\\app-update.yml\" -Force -ErrorAction SilentlyContinue",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LOCALAPPDATA\\BoxPlayer\" \"$persist_dir\\LocalAppData\" -Migrate",
+            "New-PersistDirectory \"$env:APPDATA\\BoxPlayer\" \"$persist_dir\\AppData\" -Migrate",
+            "New-PersistDirectory \"$env:USERPROFILE\\.clouddrive-cli\" \"$persist_dir\\.clouddrive-cli\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\BoxPlayer\"",
+        "Remove-Junction \"$env:LOCALAPPDATA\\BoxPlayer\"",
+        "Remove-Junction \"$env:USERPROFILE\\.clouddrive-cli\""
+    ],
+    "checkver": {
+        "github": "https://github.com/gaozhangmin/boxplayer"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/gaozhangmin/boxplayer/releases/download/v$version/boxplayer-$version-win-x64.exe#/dl.7z",
+                "hash": {
+                    "mode": "extract",
+                    "url": "$baseurl/latest.yml",
+                    "regex": "sha512:\\s+$base64"
+                }
+            }
+        }
+    }
+}
