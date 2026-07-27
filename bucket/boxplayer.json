@@ -32,6 +32,13 @@
         "script": [
             "Remove-Item \"$dir\\`$*\" -Force -Recurse",
             "Remove-Item \"$dir\\resources\\app-update.yml\" -Force -ErrorAction SilentlyContinue",
+            "# Register URL protocols: boxplayer-auth, boxplayer-onedriveoauth, xbyboxplayer-oauth",
+            "if ($global) { $regRoot = 'HKLM:' } else { $regRoot = 'HKCU:' }",
+            "@('boxplayer-auth', 'boxplayer-onedriveoauth', 'xbyboxplayer-oauth') | ForEach-Object {",
+            "    New-Item \"$regRoot\\SOFTWARE\\Classes\\$_\" -Force -ItemType String -Value \"URL:$_\" | Out-Null",
+            "    New-ItemProperty \"$regRoot\\SOFTWARE\\Classes\\$_\" -Force -PropertyType string -Name 'URL Protocol' -Value '' | Out-Null",
+            "    New-Item \"$regRoot\\SOFTWARE\\Classes\\$_\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\BoxPlayer.exe`\" `\"%1`\"\" | Out-Null",
+            "}",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
             "New-PersistDirectory \"$env:LOCALAPPDATA\\BoxPlayer\" \"$persist_dir\\LocalAppData\" -Migrate",
             "New-PersistDirectory \"$env:APPDATA\\BoxPlayer\" \"$persist_dir\\AppData\" -Migrate",
@@ -44,7 +51,12 @@
         "Stop-App",
         "Remove-Junction \"$env:APPDATA\\BoxPlayer\"",
         "Remove-Junction \"$env:LOCALAPPDATA\\BoxPlayer\"",
-        "Remove-Junction \"$env:USERPROFILE\\.clouddrive-cli\""
+        "Remove-Junction \"$env:USERPROFILE\\.clouddrive-cli\"",
+        "# Cleanup URL protocols",
+        "if ($global) { $regRoot = 'HKLM' } else { $regRoot = 'HKCU' }",
+        "@('boxplayer-auth', 'boxplayer-onedriveoauth', 'xbyboxplayer-oauth') | ForEach-Object {",
+        "    reg.exe delete \"$regRoot\\SOFTWARE\\Classes\\$_\" /f *>$null",
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/gaozhangmin/boxplayer"
