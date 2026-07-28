@@ -1,16 +1,16 @@
 {
     "description": "DrvInstall 安装设备驱动程序工具（多线程版）",
-    "version": "9.2026.7.2818",
+    "version": "9.2026.7.2918",
     "homepage": "https://bbs.wuyou.net/forum.php?mod=viewthread&tid=425316",
     "license": "Freeware",
     "architecture": {
         "32bit": {
             "url": "https://gitee.com/sgave/my-app/raw/master/86/DrvInstall_x86.exe#/DrvInstall.exe",
-            "hash": "c8957ab1ca0a322b8588c4a75c4c7d9df9a3f51d7927550ee22141e0d5d92650"
+            "hash": "eda6792f934a5dd4d54c5e1f9edc2b4688b0bacc0397a4e438daaa919a0fa6d9"
         },
         "64bit": {
             "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvInstall.exe#/DrvInstall.exe",
-            "hash": "464dbee33b24b6b7cbd288365518f13e99635a6b1fc92f5ab86a14052ceb2332"
+            "hash": "b50d640290439420d0626e401557f9273880be133c134b75fa96e8e551b1b4f3"
         }
     },
     "bin": "DrvInstall.exe",
