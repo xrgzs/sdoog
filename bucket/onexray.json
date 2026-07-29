@@ -1,12 +1,12 @@
 {
-    "version": "26.7.3",
+    "version": "26.8.1",
     "description": "Cross Platform Xray-core Client",
     "homepage": "https://github.com/OneXray/OneXray",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/OneXray/OneXray/releases/download/v26.7.3/OneXray-windows-amd64.zip",
-            "hash": "9e399bbeaea2d15cd1b680d3c52be69cb883e295b66c73196439432dc4e23bee"
+            "url": "https://github.com/OneXray/OneXray/releases/download/v26.8.1/OneXray-windows-amd64.zip",
+            "hash": "000d55bda9d670dae538ced69b1de3bcf53e1d549c74d9727c0fcda67b526c8d"
         }
     },
     "shortcuts": [
