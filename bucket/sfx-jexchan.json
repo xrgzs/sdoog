@@ -27,6 +27,13 @@
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App"
     ],
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    Remove-Item \"HKCU:\\SOFTWARE\\制作单文件\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "}"
+        ]
+    },
     "checkver": {
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
