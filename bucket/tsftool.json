@@ -1,10 +1,10 @@
 {
-    "version": "20260630",
+    "version": "5.30.1.3586",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "https://dl-t1.wmzhe.com/13/13163/PureCodec20260630.exe",
-    "hash": "1b4ab9edaad98484b309080cf634653c875fafa78faaf012228fbdfb004073e9",
+    "url": "http://a11.gdl.netease.com/MuMu-setup-V5.30.1.3586-0523181240.exe",
+    "hash": "8c4a6e93e613f56917eb988c82ebfff33dd2e9cada9ba05193ad77963371a1fd",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
