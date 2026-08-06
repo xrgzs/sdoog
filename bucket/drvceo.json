@@ -1,10 +1,10 @@
 {
     "description": "驱动总裁是由系统总裁自主开发的一款既能在桌面，又能在PE下安装硬件驱动的软件。",
-    "version": "2.20.0.8",
+    "version": "2.21.0.0",
     "homepage": "https://www.sysceo.com/software-softwarei-id-258.html",
     "license": "Freeware",
     "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=1900060398#/dl.exe",
-    "hash": "9ebba27312980466b6525e9f34b85cc3205a2de1ba4fcaed7a40a370794d268c",
+    "hash": "b6d84fd183e5e166fcf139207e0dc47592ad2bd1db71d835852fe71f07cd4cb4",
     "innosetup": true,
     "pre_install": [
         "function New-PersistFile([String] $path) {",
