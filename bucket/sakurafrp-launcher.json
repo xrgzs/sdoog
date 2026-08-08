@@ -1,10 +1,10 @@
 {
-    "version": "3.2.0.0",
+    "version": "3.2.0.1",
     "description": "SakuraFrp 启动器 Windows 用户界面",
     "homepage": "https://www.natfrp.com/",
     "license": "AGPL-3.0-or-later",
-    "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.2.0.0/SakuraLauncher.exe",
-    "hash": "md5:10b3283bd116ae9f07a671d9f3011300",
+    "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.2.0.1/SakuraLauncher.exe",
+    "hash": "md5:acc258c0eece33335eac38abe6df139f",
     "architecture": {
         "64bit": {
             "pre_install": "Get-ChildItem \"$dir\" '*,2.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
