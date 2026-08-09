@@ -1,0 +1,80 @@
+{
+    "version": "12.0.0.10531",
+    "description": "Symantec Ghost 12 最后一个支持恢复11.5映像的版本",
+    "homepage": "http://www.doshome.com/broadcom-ghost.html",
+    "license": "Proprietary",
+    "url": "https://nos.netease.com/ysf/efa10316979921ce750bd121077f429d.7z#/dl.7z",
+    "hash": "707abc6cf8a7abea63e6d0cdddc3387fa5ed9af77e11e4e73b1dcda37a70ad6b",
+    "bin": [
+        "Gdisk32.exe",
+        "Gdisk64.exe",
+        "Ghost32.exe",
+        "Ghost64.exe"
+    ],
+    "shortcuts": [
+        [
+            "GhostSrv.exe",
+            "Ghost Server 12"
+        ]
+    ],
+    "architecture": {
+        "64bit": {
+            "shortcuts": [
+                [
+                    "Ghost64.exe",
+                    "Symantec Ghost 12"
+                ],
+                [
+                    "GhostExp64.exe",
+                    "Symantec Ghost Explorer 12"
+                ]
+            ]
+        },
+        "32bit": {
+            "shortcuts": [
+                [
+                    "Ghost32.exe",
+                    "Symantec Ghost 12"
+                ],
+                [
+                    "GhostExp32.exe",
+                    "Symantec Ghost Explorer 12"
+                ]
+            ]
+        }
+    },
+    "post_install": [
+        "if ($global) {",
+        "    $registry_scope = \"HKLM\"",
+        "} else {",
+        "    $registry_scope = \"HKCU\"",
+        "}",
+        "if ([Environment]::Is64BitOperatingSystem) {",
+        "    $exp = \"$dir\\GhostExp64.exe\"",
+        "} else {",
+        "    $exp = \"$dir\\GhostExp32.exe\"",
+        "}",
+        "reg.exe add \"$registry_scope\\SOFTWARE\\Classes\\.gho\" /ve /d \"Ghost\" /f",
+        "reg.exe add \"$registry_scope\\SOFTWARE\\Classes\\Ghost\" /ve /d \"Ghost 映像文件\" /f",
+        "reg.exe add \"$registry_scope\\SOFTWARE\\Classes\\Ghost\\DefaultIcon\" /ve /d \"$exp,0\" /f",
+        "reg.exe add \"$registry_scope\\SOFTWARE\\Classes\\Ghost\\shell\\open\\command\" /ve /d \"`\"$exp`\" `\"%1`\"\" /f"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM\"",
+            "} else {",
+            "    $registry_scope = \"HKCU\"",
+            "}",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\.gho\" /f",
+            "reg.exe delete \"$registry_scope\\SOFTWARE\\Classes\\Ghost\" /f",
+            "reg.exe delete \"HKCU\\SOFTWARE\\Symantec\\Symantec Ghost\" /f",
+            "reg.exe delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.GHO\" /f"
+        ]
+    }
+}
