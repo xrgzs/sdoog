@@ -1,0 +1,37 @@
+{
+    "version": "2.1.5",
+    "description": "直播歌曲展示工具，实时检测并展示正在播放的歌曲信息，支持歌词、封面及进度条同步。",
+    "homepage": "https://github.com/Widdit/now-playing-service",
+    "license": "MIT",
+    "url": "https://github.com/Widdit/now-playing-service/releases/download/v2.1.5/NowPlaying_2.1.5-setup.exe",
+    "hash": "2b0c7eae3d30f4466ab1b725f3075f492165592dec188b2697e25d3b2881082d",
+    "innosetup": true,
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "New-PersistDirectory \"$env:LOCALAPPDATA\\com.widdit.nowplaying\" \"$persist_dir\\LocalAppData\" -Migrate"
+    ],
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\unins000.exe\" -Force -Recurse -ErrorAction Ignore | Out-Null",
+    "shortcuts": [
+        [
+            "Now Playing.exe",
+            "Now Playing"
+        ]
+    ],
+    "persist": [
+        "Plugins",
+        "Public",
+        "Settings"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LOCALAPPDATA\\com.widdit.nowplaying\""
+    ],
+    "checkver": {
+        "github": "https://github.com/Widdit/now-playing-service"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Widdit/now-playing-service/releases/download/v$version/NowPlaying_$version-setup.exe"
+    }
+}
