@@ -1,16 +1,16 @@
 {
-    "version": "3.2.0.1",
+    "version": "3.2.0.0",
     "description": "SakuraFrp 启动器 Windows 用户界面",
     "homepage": "https://www.natfrp.com/",
     "license": "AGPL-3.0-or-later",
-    "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.2.0.1/SakuraLauncher.exe",
+    "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/3.2.0.0/SakuraLauncher.exe",
     "hash": "md5:acc258c0eece33335eac38abe6df139f",
     "architecture": {
         "64bit": {
             "pre_install": "Get-ChildItem \"$dir\" '*,2.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
         },
         "32bit": {
-            "pre_install": "Get-ChildItem \"$dir\" '*,1.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',2') }"
+            "pre_install": "Get-ChildItem \"$dir\" '*,1.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',1') }"
         },
         "arm64": {
             "pre_install": "Get-ChildItem \"$dir\" '*,3.*' | ForEach-Object { Rename-Item $_.Fullname ($_.Name -Replace ',3') }"
@@ -38,7 +38,8 @@
     ],
     "checkver": {
         "url": "https://www.natfrp.com/cgi/v4/system/clients",
-        "jsonpath": "$.windows.ver"
+        "jsonpath": "$.windows.archs.default.url",
+        "regex": "launcher-windows/([\\d.]+)/SakuraLauncher.exe"
     },
     "autoupdate": {
         "url": "https://nya.globalslb.net/natfrp/client/launcher-windows/$version/SakuraLauncher.exe",
