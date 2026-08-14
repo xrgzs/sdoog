@@ -1,0 +1,149 @@
+{
+    "version": "0.20.0-rc.1",
+    "description": "简单而优雅的开源 Markdown 编辑器",
+    "homepage": "https://github.com/marktext/marktext",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/marktext/marktext/releases/download/v0.20.0-rc.1/marktext-win-x64-0.20.0-rc.1.zip",
+            "hash": "ce0ba5ae389714cf0b178e12d2f606d6a58e2fa3f5b5c8865e60cff924b28478"
+        },
+        "arm64": {
+            "url": "https://github.com/marktext/marktext/releases/download/v0.20.0-rc.1/marktext-win-arm64-0.20.0-rc.1.zip",
+            "hash": "1a007580a2678738893f61538a8ff3af201090488e4d762abac4770181126d9d"
+        }
+    },
+    "bin": "marktext.exe",
+    "shortcuts": [
+        [
+            "marktext.exe",
+            "MarkText"
+        ]
+    ],
+    "persist": "marktext-user-data",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\marktext\" \"$persist_dir\\marktext-user-data\" -Migrate",
+            "",
+            "if ($global) {",
+            "    $registry_scope = \"HKEY_LOCAL_MACHINE\"",
+            "} else {",
+            "    $registry_scope = \"HKEY_CURRENT_USER\"",
+            "}",
+            "",
+            "@\"",
+            "Windows Registry Editor Version 5.00",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.markdown]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.markdown\\OpenWithProgids]",
+            "\"Markdown\"=hex(0):",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.md]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.md\\OpenWithProgids]",
+            "\"Markdown\"=hex(0):",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdown]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdown\\OpenWithProgids]",
+            "\"Markdown\"=hex(0):",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdtext]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdtext\\OpenWithProgids]",
+            "\"Markdown\"=hex(0):",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdtxt]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdtxt\\OpenWithProgids]",
+            "\"Markdown\"=hex(0):",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mdx]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\.mmd]",
+            "@=\"MarkText.Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Markdown]",
+            "@=\"Markdown document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Markdown\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\icons\\\\md.ico\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Markdown\\shell]",
+            "@=\"open\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Markdown\\shell\\open]",
+            "@=\"Open with marktext\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\Markdown\\shell\\open\\command]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\marktext.exe \\\"%1\\\"\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\MarkText.Document]",
+            "@=\"MarkText Markdown Document\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\MarkText.Document\\DefaultIcon]",
+            "@=\"$($dir -replace '\\\\','\\\\')\\\\resources\\\\icons\\\\md.ico,0\"",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\MarkText.Document\\shell]",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\MarkText.Document\\shell\\open]",
+            "",
+            "[$registry_scope\\SOFTWARE\\Classes\\MarkText.Document\\shell\\open\\command]",
+            "@=\"\\\"$($dir -replace '\\\\','\\\\')\\\\marktext.exe\\\" \\\"%1\\\"\"",
+            "",
+            "\"@ | Set-Content -Path \"$dir\\install-marktext.reg\" -Encoding Unicode",
+            "",
+            "reg.exe import \"$dir\\install-marktext.reg\""
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\marktext\""
+    ],
+    "uninstaller": {
+        "script": [
+            "if ($global) {",
+            "    $registry_scope = \"HKLM\"",
+            "} else {",
+            "    $registry_scope = \"HKCU\"",
+            "}",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.md\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.markdown\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.mmd\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.mdown\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.mdtxt\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.mdtext\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\.mdx\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\Markdown\" /f *>$null",
+            "reg.exe delete \"$registry_scope\\Software\\Classes\\MarkText.Document\" /f *>$null"
+        ]
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/marktext/marktext/releases",
+        "jsonpath": "$[0].tag_name",
+        "regex": "v([\\w.\\-]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/marktext/marktext/releases/download/v$version/marktext-win-x64-$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/marktext/marktext/releases/download/v$version/marktext-win-arm64-$version.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS.txt"
+        }
+    }
+}
