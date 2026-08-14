@@ -1,10 +1,10 @@
 {
-    "version": "8.3.0",
+    "version": "8.4.0",
     "description": "抖音电脑版 记录美好生活",
     "homepage": "https://www.douyin.com/",
     "license": "Proprietary",
-    "url": "https://www.douyin.com/download/pc/obj/douyin-pc-web/douyin-pc-client/7044145585217083655/releases/432763571/8.3.0/win32-ia32/douyin-v8.3.0-win32-ia32-douyin.exe#/dl.7z",
-    "hash": "003788546cb3798929f9635f1c041ce1ddfaab4b538ceaf679ba8869a3da56d5",
+    "url": "https://www.douyin.com/download/pc/obj/douyin-pc-web/douyin-pc-client/7044145585217083655/releases/444881651/8.4.0/win32-ia32/douyin-v8.4.0-win32-ia32-douyin.exe#/dl.7z",
+    "hash": "02608504f00dba2996577ad880db68c9491121ed3b70403c2e216c7008a8c4dd",
     "shortcuts": [
         [
             "douyin.exe",
