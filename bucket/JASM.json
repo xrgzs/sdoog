@@ -1,14 +1,14 @@
 {
     "version": "2.22.9",
     "description": "Just Another Skin Manager",
-    "homepage": "https://github.com/Jorixon/JASM",
+    "homepage": "https://github.com/Moonholder/JASM",
     "license": {
-        "identifier": "GPL-3.0",
-        "url": "https://github.com/Jorixon/JASM/blob/main/LICENSE"
+        "identifier": "GPL-3.0-only",
+        "url": "https://github.com/Moonholder/JASM/blob/main/LICENSE"
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Jorixon/JASM/releases/download/v2.22.9/SelfContained_JASM_v2.22.9.7z",
+            "url": "https://github.com/Moonholder/JASM/releases/download/v2.22.9/SelfContained_JASM_v2.22.9.7z",
             "hash": "e7cf98dc22e5670642820848e7e038e4659e1e6bacc22dc897e4ef6480768920",
             "extract_dir": "JASM"
         }
@@ -30,12 +30,9 @@
         "Remove-Junction \"$env:LOCALAPPDATA\\JASM\""
     ],
     "checkver": {
-        "github": "https://github.com/Jorixon/JASM"
+        "github": "https://github.com/Moonholder/JASM"
     },
     "autoupdate": {
-        "url": "https://github.com/Jorixon/JASM/releases/download/v$version/SelfContained_JASM_v$version.7z",
-        "hash": {
-            "mode": "download"
-        }
+        "url": "https://github.com/Moonholder/JASM/releases/download/v$version/SelfContained_JASM_v$version.7z"
     }
 }
