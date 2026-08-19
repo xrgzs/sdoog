@@ -1,0 +1,47 @@
+{
+    "version": "3.0.0",
+    "description": "Generic Interoperability Mod Launcher (GIML) - 通用模组兼容启动器，Mod 兼容性与报错修复工具",
+    "homepage": "https://github.com/CHN-HelloWorld/GIML",
+    "license": {
+        "identifier": "GIML",
+        "url": "https://github.com/CHN-HelloWorld/GIML?tab=License-1-ov-file"
+    },
+    "notes": "Requires Windows 10/11, administrator privileges, and an NTFS volume. Supports one-click launch via 'GIML.exe --auto-launch'.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/CHN-HelloWorld/GIML/releases/download/V3.0.0/GIML.V3.0.0.zip",
+            "hash": "8cc81305d20db0dea7cf080a3e82801207c22b9621feee6320a8b939696e1aa2"
+        }
+    },
+    "extract_dir": "GIML V3.0.0",
+    "bin": "GIML.exe",
+    "shortcuts": [
+        [
+            "GIML.exe",
+            "GIML"
+        ]
+    ],
+    "persist": [
+        "config",
+        "log",
+        "loader",
+        "Updater/Cache",
+        "Resource/sponsors"
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "checkver": {
+        "github": "https://github.com/CHN-HelloWorld/GIML"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/CHN-HelloWorld/GIML/releases/download/V$version/GIML.V$version.zip"
+            }
+        },
+        "extract_dir": "GIML V$version"
+    }
+}
