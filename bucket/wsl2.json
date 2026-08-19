@@ -1,5 +1,5 @@
 {
-    "version": "2.7.11",
+    "version": "2.7.12",
     "description": "(sudo) Windows Subsystem for Linux (WSL) 2 Installer",
     "homepage": "https://docs.microsoft.com/windows/wsl",
     "license": "Proprietary",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.7.11/wsl.2.7.11.0.x64.msi#/wsl.msi_",
-            "hash": "a611ddacee689d2fb1fb5319e58af7f3998864d86cdce632eadd8e61614a0f9d"
+            "url": "https://github.com/microsoft/WSL/releases/download/2.7.12/wsl.2.7.12.0.x64.msi#/wsl.msi_",
+            "hash": "a460d4560215f2efe003c136244b78ea3415d773824d7a688ea9ded36dbe9145"
         },
         "arm64": {
-            "url": "https://github.com/microsoft/WSL/releases/download/2.7.11/wsl.2.7.11.0.arm64.msi#/wsl.msi_",
-            "hash": "e90dd92c730dcf0f3ea8786a3e1c513d9085b2df676ed698006e8079b4e8ba71"
+            "url": "https://github.com/microsoft/WSL/releases/download/2.7.12/wsl.2.7.12.0.arm64.msi#/wsl.msi_",
+            "hash": "1035d7870ed6155b56fef6966b22ece5cb8cacacbea1561140a066111b3e962d"
         }
     },
     "pre_install": [
