@@ -1,12 +1,12 @@
 {
-    "version": "2.3.24299",
+    "version": "2.3.72447",
     "description": "Trae 是国内首个 AI IDE，深度理解中文开发场景。",
     "homepage": "https://www.trae.com.cn",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.24299/win32/Trae%20CN-Setup-x64.exe",
-            "hash": "8d559bd72346ef8538699ac063a6451fec5bd92b5e8e44b4f7a0d296d1d13165",
+            "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.72447/win32/TraeCode_CN-Setup-x64.exe",
+            "hash": "1921a23fb706f323f72b092563f6ccef1436f969f7b089fae2543d9e1370bf63",
             "extract_dir": "{code_GetDestDir}"
         }
     },
@@ -25,7 +25,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/Trae%20CN-Setup-x64.exe"
+                "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/TraeCode_CN-Setup-x64.exe"
             }
         }
     }
