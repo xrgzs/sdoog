@@ -1,10 +1,10 @@
 {
-    "version": "4.2.11.0",
+    "version": "4.2.12.0",
     "homepage": "https://files.community/",
     "description": "A modern file manager that helps users organize their files and folders.",
     "license": "MIT",
-    "url": "https://cdn.files.community/files/preview/Files.Package_4.2.11.0_Test/Files.Package_4.2.11.0_x64_arm64.msixbundle#/dl.7z",
-    "hash": "e71d24dad17a138be9ac5c569285ddba09fced0814241e9c37d82f429deac052",
+    "url": "https://cdn.files.community/files/preview/Files.Package_4.2.12.0_Test/Files.Package_4.2.12.0_x64_arm64.msixbundle#/dl.7z",
+    "hash": "44bffcad727b677c65d29ff092f34168dbc2bf7d961e4c96d1de5ec9b60325cb",
     "extract_to": "Deploy",
     "architecture": {
         "64bit": {
