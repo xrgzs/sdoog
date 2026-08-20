@@ -1,0 +1,44 @@
+{
+    "version": "2.0.1",
+    "description": "DSH Desktop: a modern desktop client for the DeepSeek Harness (DSH) plugin ecosystem.",
+    "homepage": "https://dshdesktop.cn",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.1/DSH-Desktop-2.0.1-x64-Setup.exe#/dl.7z",
+            "hash": "f749367ba970b6964c766d2134084e326dd50fad71cffda27b2081fbaec39552"
+        }
+    },
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.zip\" \"$dir\"",
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\DSH Desktop\" \"$persist_dir\\AppData\" -Migrate",
+            "New-PersistDirectory \"$env:USERPROFILE\\.dsh\" \"$persist_dir\\USERPROFILE\\.dsh\" -Migrate"
+        ]
+    },
+    "shortcuts": [
+        [
+            "DSH Desktop.exe",
+            "DSH Desktop"
+        ]
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\DSH Desktop\"",
+        "Remove-Junction \"$env:USERPROFILE\\.dsh\""
+    ],
+    "checkver": {
+        "github": "https://github.com/anywhere-labs/deepseek-harness-desktop"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v$version/DSH-Desktop-$version-x64-Setup.exe#/dl.7z"
+            }
+        }
+    }
+}
