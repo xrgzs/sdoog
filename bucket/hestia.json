@@ -1,12 +1,12 @@
 {
-    "version": "1.8.1",
+    "version": "1.9.0",
     "description": "A feature-rich mod manager for organizing, discovering, installing, and updating mods for XXMI-based games and certain Unreal Engine games.",
     "homepage": "https://github.com/HenryNugraha/Hestia",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/HenryNugraha/Hestia/releases/download/1.8.1/hestia.exe",
-            "hash": "0442518a8c5ff62d97d9335cb15fda7f26a62ab578ee9c5b51afafef9b3a9302"
+            "url": "https://github.com/HenryNugraha/Hestia/releases/download/1.9.0/hestia.exe",
+            "hash": "4d8acb64943b74cc04100a410cff9a131f1d64de67367933ff833edb7bcc00ea"
         }
     },
     "pre_install": [
