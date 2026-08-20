@@ -1,0 +1,49 @@
+{
+    "version": "14.0.02",
+    "description": "Reverse proxy tool to access Steam Community in mainland China.",
+    "homepage": "https://www.dogfight360.com/blog/18682/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Steamcommunity302/steamcommunity_302_v14.0.02_AMD64.zip",
+            "hash": "d911105fbf56a6cfcf0322e3feeb97a65a005bb9bfb2021aade45e8a11f9a8e8"
+        },
+        "arm64": {
+            "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Steamcommunity302/steamcommunity_302_v14.0.02_AMD64.zip",
+            "hash": "d911105fbf56a6cfcf0322e3feeb97a65a005bb9bfb2021aade45e8a11f9a8e8"
+        }
+    },
+    "extract_dir": "Steamcommunity_302",
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\S302.ini\") -or !(Get-Item \"$dir\\S302.ini\").Length) {",
+        "    New-Item \"$dir\\S302.ini\" -ItemType File -Force -ErrorAction SilentlyContinue | Out-Null",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "Steamcommunity_302.exe",
+            "Steamcommunity 302"
+        ]
+    ],
+    "persist": "S302.ini",
+    "checkver": {
+        "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Steamcommunity302/Steamcommunity302.ver",
+        "regex": "(\\d+\\.[\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Steamcommunity302/steamcommunity_302_v14.0.02_AMD64.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            },
+            "arm64": {
+                "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/Steamcommunity302/steamcommunity_302_v14.0.02_AMD64.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}
