@@ -1,13 +1,13 @@
 {
-    "version": "16.0.2",
+    "version": "16.0.3",
     "description": "功能强大的专业文本编辑器和十六进制编辑器",
     "homepage": "https://www.sweetscape.com/010editor/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.sweetscape.com/010editor/manual/License.htm"
     },
-    "url": "https://list.xrgzs.top/d/pxy/Software/010%20Editor/010EditorWin64Portable16.0.2.zip",
-    "hash": "23804a743a92f24c74e04682b73bc588b2e6027cc13eef0a2177cefcc0fc2107",
+    "url": "https://list.xrgzs.top/d/pxy/Software/010%20Editor/010EditorWin64Portable16.0.3.7z",
+    "hash": "7533083f8efcd6a110d16df4ad3b50c2ecffdc2deacf3419d839f2a34f2bae72",
     "bin": [
         [
             "AppData\\010Editor.exe",
@@ -33,6 +33,6 @@
         "regex": "(\\d+\\.[\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://list.xrgzs.top/d/pxy/Software/010%20Editor/010EditorWin64Portable$version.zip"
+        "url": "https://list.xrgzs.top/d/pxy/Software/010%20Editor/010EditorWin64Portable$version.7z"
     }
 }
