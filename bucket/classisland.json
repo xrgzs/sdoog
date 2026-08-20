@@ -27,7 +27,7 @@
     "post_uninstall": "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\ClassIsland.lnk\" -Force -ErrorAction SilentlyContinue | Out-Null",
     "checkver": {
         "url": "https://api.github.com/repos/ClassIsland/ClassIsland/releases?per_page=1",
-        "jsonpath": "$.tag_name"
+        "jsonpath": "$[0].tag_name"
     },
     "autoupdate": {
         "architecture": {
