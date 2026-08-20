@@ -44,7 +44,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/M2Team/NanaZip/releases?per_page=1",
-        "jsonpath": "$.tag_name"
+        "jsonpath": "$[0].tag_name"
     },
     "autoupdate": {
         "url": "https://github.com/M2Team/NanaZip/releases/download/$version/NanaZipPreview_$version.msixbundle#/dl.7z"
