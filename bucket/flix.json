@@ -1,12 +1,12 @@
 {
-    "version": "1.11.0",
+    "version": "2.0.7",
     "description": "创新的文件传输工具",
     "homepage": "https://flix.center/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ip65e3ivpayh&type=down#/dl.7z",
-            "hash": "a2a33a1c50b051b3c1d391ec9bc785fd3851d07317ea11a986ca72a162961eb1"
+            "url": "https://gitcode.com/weixin_42717364/image/releases/download/0.0.1/Flix-Windows-2.0.7.113-portable.zip#/dl.zip",
+            "hash": "de5725ece72dade4bae9f07f49a29f8b7b6fa38b59d28724eccaa91e76d55f62"
         }
     },
     "extract_dir": "flix",
@@ -31,12 +31,12 @@
     ],
     "checkver": {
         "url": "https://www.puresys.net/9554.html",
-        "regex": "v([\\d.]+) 绿色版[\\s\\S]*lanzou.\\.com/(?<sharekey>\\w+)"
+        "regex": "v([\\d.]+) 绿色版[\\s\\S]*https://gitcode.com/(?<sharekey>.+\\.zip)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+                "url": "https://gitcode.com/$matchSharekey#/dl.zip"
             }
         }
     }
