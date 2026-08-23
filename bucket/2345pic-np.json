@@ -1,16 +1,16 @@
 {
-    "version": "11.4.2.10946",
+    "version": "13.4.0.12514",
     "description": "强大的图片浏览管理软件",
     "homepage": "https://www.mefcl.com/2345pic.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iq1nV2hmhopi&type=down#/installer.exe",
-            "hash": "7de31850beb33f1a893083c7304def2e8cf46a58d7bd03a1ad23086f1afaf821"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iUgc53fgdzdg&type=down#/installer.exe",
+            "hash": "c8ec7f6658c39076fe72e3f5b26cdccec33b2b15a7b1411382b8b44fa1b062ab"
         },
         "32bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ixo0W2hmhnkh&type=down#/installer.exe",
-            "hash": "3987eaa6a8a5803ec62bf6cbe75bbb69a8b7ced5fe8f7873c75b54059de0c212"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/i0m2B3fge59i&type=down#/installer.exe",
+            "hash": "dcd974c3a2a685ae68e140039a837fe7e004773ce0fd18e08766edd532b6643a"
         }
     },
     "shortcuts": [
@@ -45,11 +45,11 @@
         "script": [
             ". \"$pwd\\bin\\utils.ps1\"",
             "$l = Get-LanzouList \"https://mefcl.lanzoui.com/b00zossij\" 965w",
-            "$fa = $l | Where-Object { $_.name_all -like \"2345看图王_*_mefcl_x64_Setup.exe\" } | Select-Object -First 1",
-            "$fb = $l | Where-Object { $_.name_all -like \"2345看图王_*_mefcl_x86_Setup.exe\" } | Select-Object -First 1",
+            "$fa = $l | Where-Object { $_.name_all -like \"2345看图王_*_mefcl_x64_Setup_Full.exe\" } | Select-Object -First 1",
+            "$fb = $l | Where-Object { $_.name_all -like \"2345看图王_*_mefcl_x86_Setup_Full.exe\" } | Select-Object -First 1",
             "$fa.name_all + '=====' + $fa.id + '=====' + $fb.id"
         ],
-        "regex": "2345看图王_(.*)_mefcl_x64_Setup.exe=====(?<sharekeya>.*)=====(?<sharekeyb>.*)"
+        "regex": "2345看图王_(.*)_mefcl_x64_Setup_Full.exe=====(?<sharekeya>.*)=====(?<sharekeyb>.*)"
     },
     "autoupdate": {
         "architecture": {
