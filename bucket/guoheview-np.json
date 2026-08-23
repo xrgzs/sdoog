@@ -1,0 +1,55 @@
+{
+    "version": "3.2.7.98",
+    "description": "(sudo) 极速看图，不止于快。",
+    "homepage": "https://pic.ghxi.com",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://pic.ghxi.com/legal"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://rj.lovestu.com/api/v1/release-files/130/download#/installer.exe",
+            "hash": "md5:7c961f7247c5e60223c630ffe6eb24d2"
+        }
+    },
+    "installer": {
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\installer.exe\" -ArgumentList @('/S', \"/D=$dir\") -Quiet",
+            "Remove-Item \"$dir\\installer.exe\" -Force -ErrorAction SilentlyContinue | Out-Null"
+        ]
+    },
+    "pre_uninstall": [
+        "Invoke-ExternalCommand \"$dir\\uninstall.exe\" -ArgumentList '/S' -Quiet",
+        "Start-Sleep -Seconds 10",
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App"
+    ],
+    "shortcuts": [
+        [
+            "GuoheView.exe",
+            "果核看图"
+        ]
+    ],
+    "persist": "plugins",
+    "checkver": {
+        "script": [
+            "$response = Invoke-RestMethod -Uri 'https://rj.lovestu.com/download/gh_view'",
+            "$version = \"$($response.data.version).$($response.data.version_code)\"",
+            "$file = $response.data.files | Where-Object { $_.name -like '*安装包.exe' }",
+            "return \"$version=====$($file.md5)=====$($file.url)\""
+        ],
+        "regex": "(.*)=====(?<md5>.*)=====(?<url>.*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchUrl#/installer.exe",
+                "hash": {
+                    "url": "https://httpbin.org/get?md5=$matchMd5",
+                    "jsonpath": "$.args.md5"
+                }
+            }
+        }
+    }
+}
