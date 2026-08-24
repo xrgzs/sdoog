@@ -1,0 +1,40 @@
+{
+    "version": "2.5.9",
+    "description": "Maintained aria2 fork with extensive bug fixes and modernized architecture",
+    "homepage": "https://github.com/AnInsomniacy/aria2-next",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.5.9/aria2-next-2.5.9-windows-arm64.exe#/aria2-next.exe",
+            "hash": "3d662b497a5c1a68bd2ec69a74f995d1d9a9f02eb1d4e35a682c5c6225899c33"
+        },
+        "64bit": {
+            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.5.9/aria2-next-2.5.9-windows-x86_64.exe#/aria2-next.exe",
+            "hash": "c6a876c17d49956d7631cd0f8be184ccb183640414fbe7060a83c327ea8bbb0b"
+        }
+    },
+    "bin": "aria2-next.exe",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:USERPROFILE\\.aria2-next\" \"$persist_dir\\.aria2-next\" -Migrate"
+        ]
+    },
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:USERPROFILE\\.aria2-next\""
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v$version/aria2-next-$version-windows-arm64.exe#/aria2-next.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v$version/aria2-next-$version-windows-x86_64.exe#/aria2-next.exe"
+            }
+        }
+    }
+}
