@@ -4,7 +4,8 @@
     "homepage": "https://fluxdown.zerx.dev/",
     "license": "AGPL-3.0-only",
     "suggest": {
-        "FluxDown": "sdoog/fluxdown"
+        "FluxDown-Desktop": "sdoog/fluxdown",
+        "FluxDown-Server": "sdoog/fluxdown-server"
     },
     "architecture": {
         "64bit": {
