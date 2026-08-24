@@ -9,6 +9,12 @@
         "VC_LTL": "$dir"
     },
     "checkver": "github",
+    "installer": {
+        "script": "reg.exe add HKCU\\Code\\VC-LTL /v Root /t REG_SZ /d \"$dir\\\" /f"
+    },
+    "uninstaller": {
+        "script": "reg.exe delete HKCU\\Code\\VC-LTL /f"
+    },
     "autoupdate": {
         "url": "https://github.com/Chuyu-Team/VC-LTL5/releases/download/v$version/VC-LTL-Binary.7z"
     }
