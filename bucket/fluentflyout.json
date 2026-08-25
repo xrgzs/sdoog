@@ -1,0 +1,58 @@
+{
+    "version": "2.14.0",
+    "description": "The modern, open source Flyout app for Windows 11. Media Flyouts, Taskbar Widgets and more.",
+    "homepage": "https://fluentflyout.com/",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://files.fluentflyout.com/FluentFlyout_2.14.0_x64_Installer.zip",
+            "hash": "702dbca1ffbc484d01e5fc9a094c3821e45b9abfcca4153c5cd31b4302c238e1"
+        }
+    },
+    "extract_to": "Deploy",
+    "pre_install": [
+        "Get-ChildItem \"$dir\\Deploy\\SystemFiles\\*.msixbundle\"   | ForEach-Object { Expand-7zipArchive $_ \"$dir\\Deploy\" }",
+        "Get-ChildItem \"$dir\\Deploy\\*.msix\" | ForEach-Object { Expand-7zipArchive $_ \"$dir\" }"
+    ],
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Enable-DevelopmentMode",
+            "Remove-Item \"$dir\\AppxSignature.p7x\" -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Remove-Item \"$dir\\Deploy\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
+            "Import-AppxPSModule",
+            "Add-AppxPackage -Path \"$dir\\AppxManifest.xml\" -Register"
+        ]
+    },
+    "shortcuts": [
+        [
+            "FluentFlyout\\FluentFlyout.exe",
+            "FluentFlyout"
+        ]
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Import-AppxPSModule",
+        "if ($cmd -eq 'uninstall') {",
+        "    Get-AppxPackage -Name \"unchihugo.FluentFlyout\" | Remove-AppxPackage",
+        "} else {",
+        "    Get-AppxPackage -Name \"unchihugo.FluentFlyout\" | Remove-AppxPackage -PreserveApplicationData",
+        "}"
+    ],
+    "checkver": {
+        "script": [
+            ". \"$pwd\\bin\\utils.ps1\"",
+            "\"https://fluentflyout.com/files/latest/x64\" | Get-RedirectedUrl1st"
+        ],
+        "regex": "https://files.fluentflyout.com/FluentFlyout_([\\d.]+)_x64_Installer.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://files.fluentflyout.com/FluentFlyout_$version_x64_Installer.zip"
+            }
+        }
+    }
+}
