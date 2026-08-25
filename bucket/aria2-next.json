@@ -1,16 +1,16 @@
 {
-    "version": "2.6.0",
+    "version": "2.6.1",
     "description": "Maintained aria2 fork with extensive bug fixes and modernized architecture",
     "homepage": "https://github.com/AnInsomniacy/aria2-next",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.6.0/aria2-next-2.6.0-windows-arm64.exe#/aria2-next.exe",
-            "hash": "c6562b691961a8896b9d97b814e6ffcdd99518b926155c1d7068cf9dd7321a55"
+            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.6.1/aria2-next-2.6.1-windows-arm64.exe#/aria2-next.exe",
+            "hash": "8b592d455877cc7e18d780a896c8735fecd6b14143711171562f110df0847d4d"
         },
         "64bit": {
-            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.6.0/aria2-next-2.6.0-windows-x86_64.exe#/aria2-next.exe",
-            "hash": "b6113ea65bf0c2c34dbb8c2133e6d5a8ef33c71dc08d66f9e51aa87040af8c98"
+            "url": "https://github.com/AnInsomniacy/aria2-next/releases/download/v2.6.1/aria2-next-2.6.1-windows-x86_64.exe#/aria2-next.exe",
+            "hash": "8aa8e71b17ff0b500e3a4244d963b00eaefaeb6c73e89191792f10cf2fb9247b"
         }
     },
     "bin": "aria2-next.exe",
