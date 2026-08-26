@@ -27,7 +27,9 @@
     "shortcuts": [
         [
             "FluentFlyout\\FluentFlyout.exe",
-            "FluentFlyout"
+            "FluentFlyout",
+            "",
+            "FluentFlyout\\Resources\\FluentFlyout2.ico"
         ]
     ],
     "pre_uninstall": [
