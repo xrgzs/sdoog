@@ -1,10 +1,10 @@
 {
-    "version": "1.1.9",
+    "version": "1.1.10",
     "description": "打造更好用的douyin，支持作者级下载、播放、点赞收藏、私信、通知、mcp服务接入ai控制，内置ai可以在私信与好友ai聊天。",
     "homepage": "https://github.com/anYuJia/better-douyin",
     "license": "Better Douyin Non-Commercial License",
-    "url": "https://github.com/anYuJia/better-douyin/releases/download/v1.1.9/better-douyin-v1.1.9-windows-x64-portable.zip",
-    "hash": "de77eee64fd2a6efb93a982ba71a76ee54da08ceb961d251eff22d80a40f9c89",
+    "url": "https://github.com/anYuJia/better-douyin/releases/download/v1.1.10/better-douyin-v1.1.10-windows-x64-portable.zip",
+    "hash": "c2f6fbfb73e4c658be009c8b3568e2727f80bdf8841eed248551c3fc69af2875",
     "pre_install": "if (!(Test-Path \"$dir\\better-douyin.exe\")) { error 'Executable not found'; exit 1 }",
     "installer": {
         "script": [
