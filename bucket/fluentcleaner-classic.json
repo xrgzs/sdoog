@@ -1,11 +1,11 @@
 {
-    "version": "26.08.01",
+    "version": "26.08.03",
     "description": "FluentCleaner Classic - Lightweight Windows system cleaning tool built with .NET Framework 4.8 and WinForms.",
     "homepage": "https://github.com/builtbybel/FluentCleaner",
     "license": "MIT",
-    "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.08.01/FluentCleaner-Classic-net48.zip",
+    "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.08.03/FluentCleaner-Classic-net48.zip",
     "extract_dir": "FluentCleaner-Classic-net48",
-    "hash": "40ac44b6fd9fa9acc78c17fa4b5dddfbed3911cefc9a2140f61fa7c31811c2dc",
+    "hash": "42b2ba87792491ba07bd4ae4a70486e01a6f1effb5f23870767234062a6f78a4",
     "shortcuts": [
         [
             "FCleaner.exe",
