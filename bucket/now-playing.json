@@ -1,10 +1,10 @@
 {
-    "version": "2.1.5",
+    "version": "2.2.0",
     "description": "直播歌曲展示工具，实时检测并展示正在播放的歌曲信息，支持歌词、封面及进度条同步。",
     "homepage": "https://github.com/Widdit/now-playing-service",
     "license": "MIT",
-    "url": "https://github.com/Widdit/now-playing-service/releases/download/v2.1.5/NowPlaying_2.1.5-setup.exe",
-    "hash": "2b0c7eae3d30f4466ab1b725f3075f492165592dec188b2697e25d3b2881082d",
+    "url": "https://github.com/Widdit/now-playing-service/releases/download/v2.2.0/NowPlaying_2.2.0-setup.exe",
+    "hash": "92529ff4425f98d8e7374dd358f5acfaf01ba9cc6782b76dbc49e0f5e30a72ab",
     "innosetup": true,
     "pre_install": [
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
