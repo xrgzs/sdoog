@@ -3,15 +3,7 @@
     "description": "A GUI client for Windows, Linux and macOS, support Xray and sing-box and others",
     "homepage": "https://github.com/2dust/v2rayN",
     "license": "GPL-3.0-or-later",
-    "suggest": {
-        "Microsoft .NET 8.0 Desktop Runtime": "windowsdesktop-runtime-lts"
-    },
-    "depends": "extras/hysteria",
-    "notes": [
-        "* This is the beta and Avalonia UI version.",
-        "* Better use administrator privileges to install so that the cores could be linked by symlinks, rather than shims, providing better compatibility and performance.",
-        "* If the tray icon doesn't appear, run the v2rayN.exe from the version number path: '$original_dir\\v2rayN.exe'"
-    ],
+    "notes": "* This is the beta and Avalonia UI version.",
     "architecture": {
         "64bit": {
             "url": "https://github.com/2dust/v2rayN/releases/download/7.24.9/v2rayN-windows-64-desktop.zip",
@@ -34,12 +26,6 @@
         "guiConfigs",
         "binConfigs"
     ],
-    "installer": {
-        "script": [
-            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-            "New-AppLink -App 'hysteria' -Target \"$dir\\bin\\hysteria2\""
-        ]
-    },
     "checkver": {
         "url": "https://api.github.com/repos/2dust/v2rayN/releases?per_page=1",
         "jsonpath": "$[0].tag_name"
