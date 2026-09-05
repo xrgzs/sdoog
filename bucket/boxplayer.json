@@ -1,12 +1,12 @@
 {
-    "version": "5.0.27",
+    "version": "5.0.28",
     "description": "BoxPlayer（小白羊网盘）是免费开源的跨平台云盘管理器与 AI 智能搜索助手。支持阿里云盘、百度网盘、115、夸克、OneDrive、Google Drive、Dropbox、PikPak 等 10+ 网盘管理，AI 智能搜索，4K HDR 视频播放，Plex/Jellyfin/Emby 客户端。",
     "homepage": "https://xbyvideohub.com/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/gaozhangmin/boxplayer/releases/download/v5.0.27/boxplayer-5.0.27-win-x64.exe#/dl.7z",
-            "hash": "sha512:6bc8c4aebf4b0a4f43c34791db92f313533cbc5424d29a4b125191ce0383b3bd3a1312943f0affc736c70e1f46bbfe746d2a96cea3be4d4ab750d7fb02dcee1e",
+            "url": "https://github.com/gaozhangmin/boxplayer/releases/download/v5.0.28/boxplayer-5.0.28-win-x64.exe#/dl.7z",
+            "hash": "sha512:539f9cf9509355af0ef7af45c77f446fb8e69742eee3b027f7cebd26cdf55dce4780a1897c8d316949741866321d482329439ac676416a27f92ad962feaebff1",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         }
     },
