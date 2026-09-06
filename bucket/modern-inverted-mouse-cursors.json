@@ -1,11 +1,11 @@
 {
-    "version": "3.6.1",
+    "version": "3.6.2",
     "description": "Recreate standard inverted mouse cursors in Windows 10/11 with a more modern design",
     "homepage": "https://github.com/emvaized/modern_inverted_mouse_cursors",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/emvaized/modern_inverted_mouse_cursors/archive/refs/tags/3.6.1.zip",
-    "hash": "0640aa412db3c009e695197d5db93186efff4b4554617487470789ef699e10cd",
-    "extract_dir": "modern_inverted_mouse_cursors-3.6.1\\cursors",
+    "url": "https://github.com/emvaized/modern_inverted_mouse_cursors/archive/refs/tags/3.6.2.zip",
+    "hash": "ffef157837a22979fe5daf864208e2b55dd1159ae2a14aa77eec21d1d6795d88",
+    "extract_dir": "modern_inverted_mouse_cursors-3.6.2\\cursors",
     "pre_install": "New-Item \"HKCU:\\Control Panel\\Cursors\\Schemes\" -ErrorAction SilentlyContinue | Out-Null",
     "installer": {
         "script": [
