@@ -1,11 +1,11 @@
 {
-    "version": "1.8.0.4",
+    "version": "1.8.0.6",
     "description": "InkCanvasForClass Community Edition | 最后一次基于 InkCanvas 控件的倔强...",
     "homepage": "https://inkcanvasforclass.github.io/",
     "license": "GPL-3.0 license",
     "bin": "InkCanvasForClass.exe",
-    "url": "https://github.com/InkCanvasForClass/community/releases/download/1.8.0.4/InkCanvasForClass.CE.1.8.0.4.zip",
-    "hash": "d44e17bab83200173667965b23d59420ddbc6244dface32e4878226fa108797d",
+    "url": "https://github.com/InkCanvasForClass/community/releases/download/1.8.0.6/InkCanvasForClass.CE.1.8.0.6.zip",
+    "hash": "cfba5b60677425a4f57ce4e835a2abfa18c76cc595c89f8ad391fc0d9aa6b0fb",
     "shortcuts": [
         [
             "InkCanvasForClass.exe",
