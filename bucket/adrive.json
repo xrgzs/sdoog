@@ -1,5 +1,5 @@
 {
-    "version": "6.9.1.0",
+    "version": "6.9.3.0",
     "description": "阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界。",
     "homepage": "https://www.alipan.com/",
     "license": {
@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "http://api.xrgzs.top/sdlp/360baoku/?appid=2000003258#/dl.7z",
-            "hash": "cc40289de6c35821214c816b8a1101c3ada822f05c7da3b770ae432067eea76a"
+            "hash": "3ccbdfa920528bd0295c1197a84bcd552cc1cfe2bf2ad722ace7d5dd93bdb281"
         }
     },
     "shortcuts": [
