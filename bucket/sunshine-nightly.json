@@ -1,5 +1,5 @@
 {
-    "version": "2026.916.165635",
+    "version": "2026.917.155537",
     "description": "A Gamestream host for Moonlight",
     "homepage": "https://github.com/LizardByte/Sunshine",
     "license": "GPL-3.0-only",
@@ -9,8 +9,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/LizardByte/Sunshine/releases/download/v2026.916.165635/Sunshine-Windows-AMD64-lite.zip",
-            "hash": "c38ac1f96ce40d82fe43d07263a9d243ae32130bfc9fc6881a9db57776e491cd"
+            "url": "https://github.com/LizardByte/Sunshine/releases/download/v2026.917.155537/Sunshine-Windows-AMD64-lite.zip",
+            "hash": "202bf5d6a4e3ff288e4f8a200ece51e0aea5804d712519228d49108c051b076e"
         }
     },
     "extract_dir": "Sunshine",
