@@ -1,10 +1,10 @@
 {
-    "version": "5.2.4.11441",
+    "version": "2026.09.01.176721",
     "description": "输入法设置工具",
     "homepage": "https://www.mympc.org/default/tsftool.html",
     "license": "Freeware",
-    "url": "https://cstore-pub-cos-seewo-report-tx.seewo.com/seewo-report_uwiwlzpnhhulnhlwhynhlkjzwpphihhh?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJUXMxJRLzPaeMp20jDSTFl23pLcdPwDF%26q-sign-time%3D1789463108%3B2104823108%26q-key-time%3D1789463108%3B2104823108%26q-header-list%3Dhost%26q-url-param-list%3Dresponse-content-disposition%26q-signature%3D38a04a17cfd2379ee3ebe0960a8d3ee2ced3ed79&response-content-disposition=attachment%3Bfilename%3D%22EasiNoteSetup_5.2.4.11441_seewo.exe%22%3Bfilename%2A%3Dutf-8%27%27EasiNoteSetup_5.2.4.11441_seewo.exe",
-    "hash": "e9a94fdcf99d6c67c0f051d6fe5fbc1b388d71e7632e51ff06ffbe8259ef6e3d",
+    "url": "https://fastly.mirror.pkgbuild.com/wsl/2026.09.01.176721/archlinux-2026.09.01.176721.wsl",
+    "hash": "7b35e65ee0f0e1ea80a7048aeee96f141c8ebb97cc67699b32fdd6409e8114b9",
     "architecture": {
         "64bit": {
             "extract_dir": "Win64"
