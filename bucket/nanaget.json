@@ -1,10 +1,10 @@
 {
-    "version": "1.3.1607.0",
+    "version": "1.3.1609.0",
     "description": "NanaGet is a lightweight file transfer utility based on aria2 and XAML Islands.",
     "homepage": "https://github.com/M2Team/NanaGet",
     "license": "MIT",
-    "url": "https://github.com/M2Team/NanaGet/releases/download/1.3.1607.0/NanaGet_1.3.1607.0.msixbundle#/dl.7z",
-    "hash": "ebb285dafb9689c04585b74edec3be9e6632584db63cf87379bd2fa9ebee8df4",
+    "url": "https://github.com/M2Team/NanaGet/releases/download/1.3.1609.0/NanaGet_1.3.1609.0.msixbundle#/dl.7z",
+    "hash": "1d1fbf6a46c462d661819ec86b62c74c5378f5a074f60dedb428fb3314b11355",
     "extract_to": "Deploy",
     "architecture": {
         "64bit": {
