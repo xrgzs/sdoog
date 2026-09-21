@@ -1,9 +1,9 @@
 {
-    "version": "1.6.1617.0",
+    "version": "1.7.1633.0",
     "description": "NanaBox is a third-party lightweight XAML-based out-of-box-experience oriented Hyper-V virtualization software based on Host Compute System API, Remote Desktop ActiveX control and XAML Islands.",
     "homepage": "https://github.com/M2Team/NanaBox",
-    "url": "https://github.com/M2Team/NanaBox/releases/download/1.6.1617.0/NanaBox_1.6.1617.0_Binaries.zip",
-    "hash": "20bf83586f1f3a5708883c175e1161a50df11c9637169a022683ab1f3cecf11c",
+    "url": "https://github.com/M2Team/NanaBox/releases/download/1.7.1633.0/NanaBox_1.7.1633.0_Binaries.zip",
+    "hash": "a26ff226c0ac59da2142be8cd876bba6c56cbc63d777309ba6f564e0d6e78f56",
     "license": "MIT",
     "architecture": {
         "64bit": {
