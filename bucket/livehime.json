@@ -1,12 +1,12 @@
 {
-    "version": "8.7.0.11081",
+    "version": "8.8.0.11119",
     "description": "哔哩哔哩直播辅助工具",
     "homepage": "https://live.bilibili.com/liveHime",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://dl.hdslb.com/bili/bililive/win/Livehime-Win-beta-8.7.0.11081-x64.exe",
-            "hash": "md5:c84157a7a414496b416bdc35e43e78e0"
+            "url": "https://dl.hdslb.com/bili/bililive/win/Livehime-Win-beta-8.8.0.11119-x64.exe",
+            "hash": "md5:11784241905fe4ac4d63e115f7455daa"
         }
     },
     "innosetup": true,
