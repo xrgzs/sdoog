@@ -1,12 +1,12 @@
 {
-    "version": "5.5.6.38337834-5f969292",
+    "version": "5.6.2.39298511-37a65c0b",
     "description": "WorkBuddy Desktop - AI Agent Desktop Application",
     "homepage": "https://www.codebuddy.cn/work/",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.5.6.38337834-5f969292.exe",
-            "hash": "b1c61b8a0550012c3e9e2cce4b2d566fb5bdb3283e97146b8808c3dcb1a571f4"
+            "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.6.2.39298511-37a65c0b.exe",
+            "hash": "627e5a565436d0876740af69c2747759648662c52958d2a5df1ba330a82c3025"
         }
     },
     "extract_dir": "{code_GetDestDir}",
