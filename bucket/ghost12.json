@@ -3,7 +3,7 @@
     "description": "Symantec Ghost 12 最后一个支持恢复11.5映像的版本",
     "homepage": "http://www.doshome.com/broadcom-ghost.html",
     "license": "Proprietary",
-    "url": "https://nos.netease.com/ysf/efa10316979921ce750bd121077f429d.7z#/dl.7z",
+    "url": "https://file.icve.com.cn/file_doc/529/156/845273D1541D1350FB74938C9DB79564.7z#/dl.7z",
     "hash": "707abc6cf8a7abea63e6d0cdddc3387fa5ed9af77e11e4e73b1dcda37a70ad6b",
     "bin": [
         "Gdisk32.exe",
