@@ -1,0 +1,42 @@
+{
+    "version": "1.20.3",
+    "description": "实用的开源多功能原神工具箱 / Multifunctional Open-source Genshin Impact Toolkit",
+    "homepage": "https://snaphutaorp.org/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/download/1.20.3/Snap.Hutao.Remastered-1.20.3.0.msix",
+            "hash": "902a53f6c47098e799bda8ac73649aa33d43b3c9485014b44337bd098208d828"
+        }
+    },
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:LocalAppData\\SnapHutaoRemastered\" \"$persist_dir\\data\" -Migrate"
+        ]
+    },
+    "shortcuts": [
+        [
+            "Snap.Hutao.Remastered.exe",
+            "Snap Hutao Remastered"
+        ]
+    ],
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:LocalAppData\\SnapHutaoRemastered\""
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v?([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/download/$version/Snap.Hutao.Remastered-$version.0.msix"
+            }
+        }
+    }
+}
