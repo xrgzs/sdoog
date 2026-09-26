@@ -15,7 +15,6 @@
             "New-PersistDirectory \"$env:LocalAppData\\SnapHutaoRemastered\" \"$persist_dir\\data\" -Migrate"
         ]
     },
-    "bin": "Snap.Hutao.Remastered.exe",
     "shortcuts": [
         [
             "Snap.Hutao.Remastered.exe",
