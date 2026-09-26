@@ -27,13 +27,6 @@
         "Stop-App",
         "Remove-Junction \"$env:LocalAppData\\SnapHutaoRemastered\""
     ],
-    "uninstaller": {
-        "script": [
-            "if ($cmd -eq 'uninstall') {",
-            "    Remove-Item -Path \"$env:LocalAppData\\SnapHutaoRemastered\" -Recurse -Force -ErrorAction SilentlyContinue | Out-Null",
-            "}"
-        ]
-    },
     "checkver": {
         "url": "https://api.github.com/repos/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/latest",
         "jsonpath": "$.tag_name",
