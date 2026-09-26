@@ -1,0 +1,73 @@
+{
+    "version": "0.1.7-rc.2",
+    "description": "DeepSeek Harness desktop application with a bundled DSH runtime and external plugins.",
+    "homepage": "https://www.deepseek.com/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.deepseek.com/dsh-desk/bin/win-x64/deepseek-harness-0.1.7-rc.2-win-x64.exe#/dl.7z",
+            "hash": "0cf065dc2fc56456448620230581a9072477f0b2562bbc4e1709cdaedd3ceb86"
+        }
+    },
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+    "installer": {
+        "script": [
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\@deepseek-ai\\dsh-desktop\" \"$persist_dir\\AppData\" -Migrate",
+            "$registry_root = 'HKCU:\\SOFTWARE'",
+            "$app_id = '1bf39983-50d0-5fe0-9ef4-cece76f67c5e'",
+            "$app_key = \"$registry_root\\$app_id\"",
+            "New-Item $app_key -Force | Out-Null",
+            "New-ItemProperty -Path $app_key -Name 'InstallLocation' -Value $dir -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $app_key -Name 'KeepShortcuts' -Value 'true' -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $app_key -Name 'ShortcutName' -Value 'DeepSeek Harness' -PropertyType String -Force | Out-Null",
+            "New-Item \"$registry_root\\Classes\\dsh\" -Force -ItemType String -Value 'URL:dsh' | Out-Null",
+            "New-ItemProperty -Path \"$registry_root\\Classes\\dsh\" -Name 'URL Protocol' -Value '' -PropertyType String -Force | Out-Null",
+            "New-Item \"$registry_root\\Classes\\dsh\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\DeepSeek Harness.exe`\" `\"%1`\"\" | Out-Null",
+            "$uninstall_key = \"$registry_root\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\$app_id\"",
+            "New-Item $uninstall_key -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'Comments' -Value 'Electron desktop shell for a bundled dsh runtime and external plugins' -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'DisplayIcon' -Value \"$dir\\DeepSeek Harness.exe,0\" -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'DisplayName' -Value \"DeepSeek Harness $version\" -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'DisplayVersion' -Value $version -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'InstallLocation' -Value $dir -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'NoModify' -Value 1 -PropertyType DWord -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'NoRepair' -Value 1 -PropertyType DWord -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'UninstallString' -Value 'scoop uninstall deepseek-harness' -PropertyType String -Force | Out-Null",
+            "New-ItemProperty -Path $uninstall_key -Name 'QuietUninstallString' -Value 'scoop uninstall deepseek-harness' -PropertyType String -Force | Out-Null"
+        ]
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
+    "shortcuts": [
+        [
+            "DeepSeek Harness.exe",
+            "DeepSeek Harness"
+        ]
+    ],
+    "persist": "AppData",
+    "pre_uninstall": [
+        "$bucket = $install.bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\@deepseek-ai\\dsh-desktop\"",
+        "Remove-Item 'HKCU:\\SOFTWARE\\1bf39983-50d0-5fe0-9ef4-cece76f67c5e' -Recurse -Force -ErrorAction SilentlyContinue",
+        "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\dsh' -Recurse -Force -ErrorAction SilentlyContinue",
+        "Remove-Item 'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\1bf39983-50d0-5fe0-9ef4-cece76f67c5e' -Recurse -Force -ErrorAction SilentlyContinue"
+    ],
+    "checkver": {
+        "script": [
+            "$feed = [System.Text.Encoding]::UTF8.GetString((Invoke-WebRequest -Uri 'https://download.deepseek.com/dsh-desk/feeds/win-x64/nightly.yml' -UseBasicParsing).Content)",
+            "$version = [regex]::Match($feed, '(?m)^version:\\s*(\\S+)').Groups[1].Value",
+            "$url = [regex]::Match($feed, '(?m)^\\s+- url:\\s*>-\\s*\\r?\\n\\s*(\\S+)').Groups[1].Value",
+            "\"$version=====$url\""
+        ],
+        "regex": "(?<version>[^=]+)=====(?<url>.+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchUrl#/dl.7z"
+            }
+        }
+    }
+}
