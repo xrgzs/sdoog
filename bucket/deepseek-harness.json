@@ -1,12 +1,12 @@
 {
-    "version": "0.1.7-rc.2",
+    "version": "0.2.0-rc.1",
     "description": "DeepSeek Harness desktop application with a bundled DSH runtime and external plugins.",
     "homepage": "https://www.deepseek.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://download.deepseek.com/dsh-desk/bin/win-x64/deepseek-harness-0.1.7-rc.2-win-x64.exe#/dl.7z",
-            "hash": "0cf065dc2fc56456448620230581a9072477f0b2562bbc4e1709cdaedd3ceb86"
+            "url": "https://download.deepseek.com/dsh-desk/bin/win-x64/deepseek-harness-0.2.0-rc.1-win-x64.exe#/dl.7z",
+            "hash": "9dd8538e554d3139998a8458e21c64a6f99470915cbf6cfd22bb71f356c7f399"
         }
     },
     "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
