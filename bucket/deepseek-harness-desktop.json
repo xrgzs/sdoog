@@ -1,12 +1,12 @@
 {
-    "version": "2.0.15",
+    "version": "2.0.16",
     "description": "DSH Desktop: a modern desktop client for the DeepSeek Harness (DSH) plugin ecosystem.",
     "homepage": "https://dshdesktop.cn",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.15/DSH-Desktop-2.0.15-x64-Setup.exe#/dl.7z",
-            "hash": "712e953666fdacae01664432810d5207f0c944ce24980c4cd35688209e04916d"
+            "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.16/DSH-Desktop-2.0.16-x64-Setup.exe#/dl.7z",
+            "hash": "0d330450cbaa9e1b5ac0420e35ff4db6afd82d73f4bcc3a9c3e421ef4fe6fa2c"
         }
     },
     "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.zip\" \"$dir\"",
