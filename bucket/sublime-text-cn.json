@@ -1,5 +1,5 @@
 {
-    "version": "4-4200",
+    "version": "4-4213",
     "description": "A sophisticated text editor for code, markup and prose",
     "homepage": "https://www.423down.com/4966.html",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iAVSJ2wv57wf&type=down#/dl.7z",
-            "hash": "9a8fcc57e5b0f252ef38f57be87e1f1df240bff95cca21bd752758c572021cac"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ilJPr49g79of&type=down#/dl.7z",
+            "hash": "c12a432d3d1284cbfa4aecf5d899202520e4b64970b8209c78837bd7b67e367c"
         }
     },
     "extract_dir": "SublimeText",
