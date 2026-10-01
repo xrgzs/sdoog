@@ -1,12 +1,12 @@
 {
-    "version": "v5.5.0",
+    "version": "v5.5.2",
     "description": "Revo Uninstaller中文版是一款专业的软件卸载工具的系统清理工具，这款Revo卸载器卸载软件功能包括了：猎人模式，安装追踪程序，强制卸载扫描分析，启动项管理器，垃圾文件清理，使用痕迹清理，浏览器扩展管理等。",
     "homepage": "https://www.423down.com/8544.html",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iIR2j3qfnh8d&type=down#/dl.7z",
-            "hash": "2bf4598c0c5a3403b5c8ff31573c4ac5f3ade02af5e3b15467d8f6b63056c442"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/ip89n3z27mje&type=down#/dl.7z",
+            "hash": "7a6dd708bc64c5b465696c1a2488c5b1b6fad2d77e99afc7fce82f1b4c6393c9"
         }
     },
     "shortcuts": [
