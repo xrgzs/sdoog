@@ -23,18 +23,7 @@
             "New-ItemProperty -Path $app_key -Name 'ShortcutName' -Value 'DeepSeek Harness' -PropertyType String -Force | Out-Null",
             "New-Item \"$registry_root\\Classes\\dsh\" -Force -ItemType String -Value 'URL:dsh' | Out-Null",
             "New-ItemProperty -Path \"$registry_root\\Classes\\dsh\" -Name 'URL Protocol' -Value '' -PropertyType String -Force | Out-Null",
-            "New-Item \"$registry_root\\Classes\\dsh\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\DeepSeek Harness.exe`\" `\"%1`\"\" | Out-Null",
-            "$uninstall_key = \"$registry_root\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\$app_id\"",
-            "New-Item $uninstall_key -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'Comments' -Value 'Electron desktop shell for a bundled dsh runtime and external plugins' -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'DisplayIcon' -Value \"$dir\\DeepSeek Harness.exe,0\" -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'DisplayName' -Value \"DeepSeek Harness $version\" -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'DisplayVersion' -Value $version -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'InstallLocation' -Value $dir -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'NoModify' -Value 1 -PropertyType DWord -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'NoRepair' -Value 1 -PropertyType DWord -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'UninstallString' -Value 'scoop uninstall deepseek-harness' -PropertyType String -Force | Out-Null",
-            "New-ItemProperty -Path $uninstall_key -Name 'QuietUninstallString' -Value 'scoop uninstall deepseek-harness' -PropertyType String -Force | Out-Null"
+            "New-Item \"$registry_root\\Classes\\dsh\\shell\\open\\command\" -Force -ItemType String -Value \"`\"$dir\\DeepSeek Harness.exe`\" `\"%1`\"\" | Out-Null"
         ]
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
