@@ -1,12 +1,12 @@
 {
-    "version": "31.0.101.7088",
+    "version": "31.0.101.7092",
     "description": "Intel® Graphics Driver for 11th-14th Gen Intel® Core™ Processor Graphics.",
     "homepage": "https://www.intel.com/content/www/us/en/download/864990/intel-11th-14th-gen-processor-graphics-windows.html",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://downloadmirror.intel.com/922492/gfx_win_101.7088.exe#/dl.7z",
-            "hash": "6c2cd36a5c68cf3aa8403073e5ed4592b8ee4ba5190f5776e483d974ead5a2f8"
+            "url": "https://downloadmirror.intel.com/929468/gfx_win_101.7092.exe#/dl.7z",
+            "hash": "9643cc60a899ceadf65df2ec80c17cdb69daeb41cdb2c9ccde0d214a79f968f8"
         }
     },
     "extract_to": "installer",
