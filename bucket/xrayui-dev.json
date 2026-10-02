@@ -18,7 +18,7 @@
     },
     "shortcuts": [
         [
-            "XrayUI.exe",
+            "XrayUI-dev.exe",
             "XrayUI"
         ]
     ],
@@ -29,6 +29,7 @@
             "New-PersistDirectory \"$env:LOCALAPPDATA\\XrayUI\" \"$persist_dir\\Data\" -Migrate"
         ]
     },
+    "post_install": "Remove-Item \"$dir\\XrayUI.Updater.exe\" -ErrorAction SilentlyContinue | Out-Null",
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
