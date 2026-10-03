@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3.105",
+    "version": "3.4.6.113",
     "description": "极速看图，不止于快。",
     "homepage": "https://pic.ghxi.com",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://rj.lovestu.com/api/v1/release-files/151/download#/dl.7z",
-            "hash": "md5:2a6c9955023a6bc6649427e2e515bd69"
+            "url": "https://rj.lovestu.com/api/v1/release-files/182/download#/dl.7z",
+            "hash": "md5:869da42cfa4c22542d64b11410e5c7fa"
         }
     },
     "extract_dir": "GuoheViewPortable",
