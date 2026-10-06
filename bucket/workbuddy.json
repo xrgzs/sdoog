@@ -6,11 +6,10 @@
     "architecture": {
         "64bit": {
             "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.7.6.40409493-306add2a.exe",
-            "hash": "044b17b87a55282e79e67595485ee3046cf4b9b6a2f0429b37c55925a3d22354"
+            "hash": "044b17b87a55282e79e67595485ee3046cf4b9b6a2f0429b37c55925a3d22354",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         }
     },
-    "extract_dir": "{code_GetDestDir}",
-    "innosetup": true,
     "installer": {
         "script": [
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
@@ -19,12 +18,6 @@
         ]
     },
     "post_install": "Remove-Item \"$dir\\uninstall*\", \"$dir\\`$*\" -Force -Recurse -ErrorAction SilentlyContinue",
-    "bin": [
-        [
-            "bin/workbuddy.cmd",
-            "workbuddy"
-        ]
-    ],
     "shortcuts": [
         [
             "WorkBuddy.exe",
