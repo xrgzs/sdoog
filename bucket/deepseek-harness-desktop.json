@@ -6,10 +6,10 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/releases/download/v2.0.17/DSH-Desktop-2.0.17-x64-Setup.exe#/dl.7z",
-            "hash": "6d0b2510cf48ea046a69ce5f9a428cd8992c638e520abebce8bf6b1b4250ca0c"
+            "hash": "6d0b2510cf48ea046a69ce5f9a428cd8992c638e520abebce8bf6b1b4250ca0c",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         }
     },
-    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.zip\" \"$dir\"",
     "installer": {
         "script": [
             "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
