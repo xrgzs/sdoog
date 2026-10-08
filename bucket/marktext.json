@@ -1,16 +1,16 @@
 {
-    "version": "0.20.0",
+    "version": "0.21.0",
     "description": "简单而优雅的开源 Markdown 编辑器",
     "homepage": "https://github.com/marktext/marktext",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/marktext/marktext/releases/download/v0.20.0/marktext-win-x64-0.20.0.zip",
-            "hash": "fa6103a0076ec2c91ff519d3a19e64ae6be3a8ecb1b94c241021f38699676746"
+            "url": "https://github.com/marktext/marktext/releases/download/v0.21.0/marktext-win-x64-0.21.0.zip",
+            "hash": "5ed2bd6609cf6ad759d7c2db7b1d84eef16b3158de10104495d6431373ca800f"
         },
         "arm64": {
-            "url": "https://github.com/marktext/marktext/releases/download/v0.20.0/marktext-win-arm64-0.20.0.zip",
-            "hash": "06b8435f8b05f3ce9bb6085be70bd26698b43c04f1cfa5786277458757098a08"
+            "url": "https://github.com/marktext/marktext/releases/download/v0.21.0/marktext-win-arm64-0.21.0.zip",
+            "hash": "35f08803d5259fb1d48f0051f42a97f3f226cc6f28ecc2fb96d302e50c3969bf"
         }
     },
     "bin": "marktext.exe",
