@@ -1,18 +1,18 @@
 {
-    "version": "2.33.1",
+    "version": "2.33.2",
     "homepage": "http://www.verysync.com/",
     "description": "一款高效的数据传输工具",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "http://dl.verysync.com/releases/v2.33.1/verysync-windows-amd64-v2.33.1.zip",
-            "hash": "0f1b920aa2d2ad0e7c05e1707714b1045c6e4839c74253f9a48d4d6d5f980429",
-            "extract_dir": "verysync-windows-amd64-v2.33.1"
+            "url": "http://dl.verysync.com/releases/v2.33.2/verysync-windows-amd64-v2.33.2.zip",
+            "hash": "53d7363c1dc021dcdfaefeb27e1d7faf130a1dc83d6ebf0c04530eaa828839db",
+            "extract_dir": "verysync-windows-amd64-v2.33.2"
         },
         "32bit": {
-            "url": "http://dl.verysync.com/releases/v2.33.1/verysync-windows-386-v2.33.1.zip",
-            "hash": "561c10e63c0c3c37952528fe1601e2e1749f95eb48a79a82b91512c60a91c209",
-            "extract_dir": "verysync-windows-386-v2.33.1"
+            "url": "http://dl.verysync.com/releases/v2.33.2/verysync-windows-386-v2.33.2.zip",
+            "hash": "f612b0b86edd2498ea45983c2bb43b3c768130f6003af5fa83150abc043de2e8",
+            "extract_dir": "verysync-windows-386-v2.33.2"
         }
     },
     "bin": "verysync.exe",
