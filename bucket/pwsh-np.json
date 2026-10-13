@@ -1,20 +1,20 @@
 {
-    "version": "7.6.6",
+    "version": "7.6.7",
     "description": "PowerShell 是一种跨平台的任务自动化解决方案，由命令行 shell、脚本语言和配置管理框架组成。",
     "homepage": "https://github.com/PowerShell/PowerShell",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-x64.msi#/installer.exe",
-            "hash": "958838ff55091e1c8705d89efed0cc7e8245a3a6ef6c0ccfae20015227108ad8"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.7/PowerShell-7.6.7-win-x64.msi#/installer.exe",
+            "hash": "ec575cef9ec56fcd905de0d5eeac9cb7f81a0a65abb87bb5cd0e87fdfe2b8cc0"
         },
         "32bit": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-x86.msi#/installer.exe",
-            "hash": "34cfd071b83d5bba4f7e913d3545a35e8cce97b5e7b46a3b44d167d48c361dd6"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.7/PowerShell-7.6.7-win-x86.msi#/installer.exe",
+            "hash": "e0a5296fe368b2dc1b4fef1217979a32cfed8a26f3586fb09fcee9a72873691b"
         },
         "arm64": {
-            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-arm64.msi#/installer.exe",
-            "hash": "387d0af8e92ba97f73616c91fa8f29a284e8f82ee6c40fe12dade971bb05bac4"
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.7/PowerShell-7.6.7-win-arm64.msi#/installer.exe",
+            "hash": "ddb2f3613a0ad27817b90601a0827f7347e81dfa5bce18d4be8009b8cb0e0a31"
         }
     },
     "installer": {
