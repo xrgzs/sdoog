@@ -44,6 +44,7 @@
         "SUB_STORE_BACKEND_PORT=3000",
         "SUB_STORE_MMDB_COUNTRY_PATH=./GeoLite2-Country.mmdb",
         "SUB_STORE_MMDB_ASN_PATH=./GeoLite2-ASN.mmdb",
+        "SUB_STORE_CORS_ALLOWED_ORIGINS=http://localhost:3001,http://127.0.0.1:3001",
         "\"@ | Set-Content \"$persist_dir\\.env\" -Force",
         "}",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
