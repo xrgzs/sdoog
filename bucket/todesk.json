@@ -1,13 +1,13 @@
 {
-    "version": "5.2.1.0",
+    "version": "5.2.2.0",
     "homepage": "https://www.todesk.com/",
     "description": "ToDesk远程桌面软件-免费安全流畅的远程连接电脑手机",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.todesk.com/licence.html"
     },
-    "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_5.2.1.0.exe#/dl.7z",
-    "hash": "ceeca98f86eb8fe79f6a7622b02d41b5031496119c13385e5d9718c134118995",
+    "url": "https://list.xrgzs.top/d/pxy/Software/Tools/Backup/ToDesk/ToDesk_5.2.2.0.exe#/dl.7z",
+    "hash": "2e8573c9eb4dd0a934de8cfe6f5df9b8d007c2ef29de725d96a704d268b5b2fa",
     "shortcuts": [
         [
             "ToDesk.exe",
