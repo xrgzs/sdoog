@@ -1,6 +1,6 @@
 {
     "description": "DrvInstall 安装设备驱动程序工具（多线程版）",
-    "version": "9.2026.10.1319",
+    "version": "9.2026.10.1611",
     "homepage": "https://bbs.wuyou.net/forum.php?mod=viewthread&tid=425316",
     "license": "Freeware",
     "architecture": {
@@ -10,7 +10,7 @@
         },
         "64bit": {
             "url": "https://gitee.com/sgave/my-app/raw/master/64/DrvInstall.exe#/DrvInstall.exe",
-            "hash": "74683b173ccb61c6f69e9a0809113661dfe32ada6bb611648ea1cc4e40b70cf9"
+            "hash": "0bb1b26b9cf1f4c5dc87c11166971b6eb84c480641bd76f2a302297a56103c6b"
         }
     },
     "bin": "DrvInstall.exe",
