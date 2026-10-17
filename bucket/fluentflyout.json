@@ -1,12 +1,12 @@
 {
-    "version": "2.15.0",
+    "version": "2.16.0",
     "description": "The modern, open source Flyout app for Windows 11. Media Flyouts, Taskbar Widgets and more.",
     "homepage": "https://fluentflyout.com/",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://files.fluentflyout.com/FluentFlyout_2.15.0_x64_Installer.zip",
-            "hash": "e107cc258d8b4ab0700cc9f95f0b03dcca3298dea3c1b9b89ebbd1e2028c2154"
+            "url": "https://files.fluentflyout.com/FluentFlyout_2.16.0_x64_Installer.zip",
+            "hash": "dddad6461b483edd1b74e4c9ec7a840551f2a72e685f93985216b9a38446b8e6"
         }
     },
     "extract_to": "Deploy",
