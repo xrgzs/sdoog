@@ -1,13 +1,13 @@
 {
-    "version": "5.6.138.1009",
+    "version": "5.6.141.1016",
     "description": "游戏加加是一款帮助用户提升电脑性能、有效改善游戏体验的综合性软件，为用户提供专业的电脑硬件检测，一键查看电脑配置；实时的桌面/游戏内硬件状态显示；实用的电脑跑分硬件测试；AI智能的游戏滤镜方案；最新的云顶之弈阵容推荐等功能。",
     "homepage": "https://gamepp.com",
     "license": {
         "identifier": "Proprietary",
         "url": "https://gamepp.com/terms-of-use.html"
     },
-    "url": "https://dl-update.gamepp.com/global/update/Setup_5.6.138.1009.exe#/dl.7z",
-    "hash": "57af4729d5991239d7222ba779320abacc2475cff63c3b941def4e3c7e416f70",
+    "url": "https://dl-update.gamepp.com/global/update/Setup_5.6.141.1016.exe#/dl.7z",
+    "hash": "2b974590077ae3b01034fd2203e3c676499848b44e561358ea7efc4ec872fbf8",
     "shortcuts": [
         [
             "GamePP.exe",
