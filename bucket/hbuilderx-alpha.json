@@ -1,5 +1,5 @@
 {
-    "version": "5.32.2026101609-alpha",
+    "version": "5.33.2026102115-alpha",
     "description": "HBuilderX，简称HX，是轻如编辑器、强如IDE的合体版本",
     "homepage": "https://www.dcloud.io/hbuilderx.html",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://dcloud.io/license/hbuilder.html"
     },
     "extract_dir": "HBuilderX",
-    "url": "https://download1.dcloud.net.cn/download/HBuilderX.5.32.2026101609-alpha.zip",
-    "hash": "67918b76c25be5cc1cf642fafe7c8b241da533de1bbaf6977d965207a4a3b0f8",
+    "url": "https://download1.dcloud.net.cn/download/HBuilderX.5.33.2026102115-alpha.zip",
+    "hash": "720e6b53deaea09bba6a3d84e18e1fe78b5a8acc936af28c115622e91df41f81",
     "bin": [
         "HBuilderX.exe",
         [
