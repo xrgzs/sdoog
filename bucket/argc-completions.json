@@ -1,10 +1,10 @@
 {
-    "version": "2026.10.12.5913ba3",
+    "version": "2026.10.22.19b7038",
     "description": "{bash,zsh,fish,powershell,nushell}-completions for 1000+ commands.",
     "homepage": "https://github.com/sigoden/argc-completions",
     "license": "MIT",
-    "url": "https://github.com/sigoden/argc-completions/archive/5913ba36b8aa9af2077cbf45f0ec5f28c1d75cbd.zip",
-    "hash": "ab17140c347f8f4a3bce41ccd39d2521311b08e49e0363873e0896d89a65d373",
+    "url": "https://github.com/sigoden/argc-completions/archive/19b70387dc288f2018d80a99062a62d2e5965ab2.zip",
+    "hash": "05a03d4e2b09de5eb1de1c9191a6fca5ba41968d9e05aa8069965bbf9775978c",
     "depends": [
         "git",
         "yq"
