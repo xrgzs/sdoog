@@ -1,12 +1,12 @@
 {
-    "version": "23.1.1271.64",
+    "version": "23.1.1312.64",
     "description": "360极速浏览器X是一款基于Chromium132内核的64位双核浏览器，其主打极简无弹窗广告与内存优化，支持Win7与IE内核，兼容办公OA系统，采用智能广告拦截，有效屏蔽弹窗。",
     "homepage": "https://www.423down.com/13808.html",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iWrSO458fd1c&type=down#/dl.7z",
-            "hash": "8d5296e3b09ebf9a259ea38f6e5d8f66a3effc3f396f0f325a7584787cb03d32"
+            "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/inYj64d3cocj&type=down#/dl.7z",
+            "hash": "63fbe71460f9d051c932a2fc44abdfad4cb46024127202d4ddeab2b2ed812c90"
         }
     },
     "extract_dir": "360Chrome",
