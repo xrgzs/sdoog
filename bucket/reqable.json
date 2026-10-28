@@ -1,5 +1,5 @@
 {
-    "version": "3.3.5",
+    "version": "3.3.6",
     "description": "Reqable，新一代API开发工具，代理调试 + 请求测试一站式解决方案。Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌",
     "homepage": "https://reqable.com/",
     "license": {
@@ -9,8 +9,8 @@
     "notes": "Reqable是一款用于企业接口生产的网络基础设施工具，某些特性可以修改网络传输数据，其设计和目的均是用于接口生产过程中的开发、调试和测试，请勿用于非许可用途！更多信息，请参阅使用条款。",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/reqable/reqable-app/releases/download/3.3.5/reqable-app-windows-x86_64.zip",
-            "hash": "bbee93ab408b334bc3a89c39268d8a8ec776717afb0d645f3b27ce9c3440c1d6"
+            "url": "https://github.com/reqable/reqable-app/releases/download/3.3.6/reqable-app-windows-x86_64.zip",
+            "hash": "fc1d9023959e5206ca3fe89987babbfa295fae86f015842e1a6a7845e152ac2a"
         }
     },
     "shortcuts": [
