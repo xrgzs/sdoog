@@ -13,11 +13,7 @@
             "hash": "b56da4954b60c2b66c649e3a8b206b59d05acadd6437bb04e31ad44b4a329431"
         }
     },
-    "env_set": {
-        "WPS365_CONFIG_DIR": "$persist_dir\\config"
-    },
     "bin": "wps365-cli.exe",
-    "persist": "config",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
