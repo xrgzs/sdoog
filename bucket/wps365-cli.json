@@ -1,0 +1,32 @@
+{
+    "version": "0.3.6",
+    "description": "WPS 365 官方 CLI，面向开发者与 AI Agent，支持日历、即时通讯、通讯录、邮箱、云文档及 MCP 工具。",
+    "homepage": "https://github.com/wps365-open/cli",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wps365-open/cli/releases/download/v0.3.6/wps365-cli-x86_64-pc-windows-gnu.zip",
+            "hash": "a7837beef2a8cfc237861f553958d4f38cf61784aa675dd524b9cdbc6020e11d"
+        },
+        "arm64": {
+            "url": "https://github.com/wps365-open/cli/releases/download/v0.3.6/wps365-cli-aarch64-pc-windows-gnu.zip",
+            "hash": "b56da4954b60c2b66c649e3a8b206b59d05acadd6437bb04e31ad44b4a329431"
+        }
+    },
+    "env_set": {
+        "WPS365_CONFIG_DIR": "$persist_dir\\config"
+    },
+    "bin": "wps365-cli.exe",
+    "persist": "config",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wps365-open/cli/releases/download/v$version/wps365-cli-x86_64-pc-windows-gnu.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/wps365-open/cli/releases/download/v$version/wps365-cli-aarch64-pc-windows-gnu.zip"
+            }
+        }
+    }
+}
