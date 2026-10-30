@@ -1,12 +1,12 @@
 {
-    "version": "0.5.7",
+    "version": "0.5.8",
     "description": "崩坏：星穹铁道脚本 | Honkai: Star Rail auto bot (简体中文/繁體中文/English/Español)",
     "homepage": "https://github.com/LmeSzinc/StarRailCopilot",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/LmeSzinc/StarRailCopilot/releases/latest/download/StarRailCopilot_0.5.7_fullcn.7z",
-            "hash": "a0d52708ae59730f42eda4996cb44729948f20a20b4bd4a0036a03c9e43df003",
+            "url": "https://github.com/LmeSzinc/StarRailCopilot/releases/latest/download/StarRailCopilot_0.5.8_fullcn.7z",
+            "hash": "3d3a30b9cb234cfc4201f0e6c55b13883cb751e417f516890cced51610c93f01",
             "extract_dir": "StarRailCopilot"
         }
     },
