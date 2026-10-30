@@ -1,5 +1,5 @@
 {
-    "version": "2.29.1",
+    "version": "2.30.0",
     "description": "Just Another Skin Manager",
     "homepage": "https://github.com/Moonholder/JASM",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Moonholder/JASM/releases/download/v2.29.1/JASM_v2.29.1.7z",
-            "hash": "b208e2234acd7b5a7ceff22d7ddaba7ea65d98b09e9babf8f660eb7119afbbc3",
+            "url": "https://github.com/Moonholder/JASM/releases/download/v2.30.0/JASM_v2.30.0.7z",
+            "hash": "6f36d7af36128094c0be62447843be4da346e7920550f879eefbf7438d8167e2",
             "extract_dir": "JASM"
         }
     },
