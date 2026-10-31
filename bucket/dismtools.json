@@ -1,12 +1,12 @@
 {
-    "version": "0.8.1",
+    "version": "0.8.2",
     "description": "DISMTools | The connected place for Windows system administration",
     "homepage": "https://github.com/CodingWonders/DISMTools",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CodingWonders/DISMTools/releases/download/v0.8.1_stable/DISMTools.zip",
-            "hash": "f653685338cf223d5f7ce70d073c154672000ffd0524a26e2199cc98e5cb6115"
+            "url": "https://github.com/CodingWonders/DISMTools/releases/download/v0.8.2_stable/DISMTools.zip",
+            "hash": "a6fec8dd1b5e2fdeab87adb65b62b1a2b6c45278b6ebb16acfe4fc3b09b56375"
         }
     },
     "shortcuts": [
