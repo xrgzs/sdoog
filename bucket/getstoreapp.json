@@ -1,10 +1,10 @@
 {
-    "version": "6.25.1017.0",
+    "version": "6.26.1102.0",
     "description": "获取商店应用 | 离线下载 Microsoft Store 商店应用",
     "homepage": "https://github.com/Gaoyifei1011/GetStoreApp",
     "license": "MIT",
-    "url": "https://github.com/Gaoyifei1011/GetStoreApp/releases/download/v6.25.1017.0/GetStoreAppNonStorePackage_6.25.1017.0_x86_x64_arm64.msixbundle#/dl.7z",
-    "hash": "42dcff292c451da2eff14d51acab3d5f722358d9c6e72a45a4ead2f5ad724242",
+    "url": "https://github.com/Gaoyifei1011/GetStoreApp/releases/download/v6.26.1102.0/GetStoreAppNonStorePackage_6.26.1102.0_x86_x64_arm64.msixbundle#/dl.7z",
+    "hash": "6edf493fc459b4eb615c2294ef75ae96161494b5e0d6c5f2f3eb72dd4ab9a450",
     "extract_to": "Deploy",
     "architecture": {
         "32bit": {
