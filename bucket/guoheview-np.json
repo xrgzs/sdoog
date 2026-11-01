@@ -1,5 +1,5 @@
 {
-    "version": "3.4.12.120",
+    "version": "3.4.16.125",
     "description": "(sudo) 极速看图，不止于快。",
     "homepage": "https://pic.ghxi.com",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://rj.lovestu.com/api/v1/release-files/196/download#/installer.exe",
-            "hash": "md5:5d55eef54a8ac58e5e7d291b179f7a08"
+            "url": "https://rj.lovestu.com/api/v1/release-files/224/download#/installer.exe",
+            "hash": "md5:8fb29930097d3933f5735789a30ea811"
         }
     },
     "installer": {
