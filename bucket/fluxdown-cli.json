@@ -1,5 +1,5 @@
 {
-    "version": "0.6.5",
+    "version": "0.6.6",
     "description": "Rust 驱动的多协议下载管理器，支持 HTTP/FTP/BitTorrent 磁力链接及 HLS/DASH 流媒体，智能多线程加速与浏览器无缝集成。精美界面，极致性能，永久免费，零广告。",
     "homepage": "https://fluxdown.zerx.dev/",
     "license": "AGPL-3.0-only",
@@ -9,14 +9,14 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-CLI-0.6.5-windows-x64.zip",
-            "extract_dir": "fluxdown-cli-0.6.5-windows-x64",
-            "hash": "e2a30eab15268722dafd854e7f499d8cde30015847aa39f300bb6523e379129d"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-CLI-0.6.6-windows-x64.zip",
+            "extract_dir": "fluxdown-cli-0.6.6-windows-x64",
+            "hash": "ad8e5ceb4860056fc9d7e2d0f486c1eeca87e2a285012f5d7ca3f15a492615dc"
         },
         "arm64": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-CLI-0.6.5-windows-arm64.zip",
-            "extract_dir": "fluxdown-cli-0.6.5-windows-arm64",
-            "hash": "a5f67eb481612575d671b731f7a8019d0cd5668c50618b4329cd3cd0406a8c16"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-CLI-0.6.6-windows-arm64.zip",
+            "extract_dir": "fluxdown-cli-0.6.6-windows-arm64",
+            "hash": "a8a8a03f26e1d4a43ebb288f8108b86cc8593d59d14f0967860ce9d30f452746"
         }
     },
     "bin": "fluxdown.exe",
