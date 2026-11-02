@@ -1,28 +1,28 @@
 {
-    "version": "2.3.3",
+    "version": "2.3.4",
     "description": "开发者边车，通过本地代理的方式将https请求代理到一些国内的加速通道上",
     "homepage": "https://github.com/docmirror/dev-sidecar",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.3/DevSidecar-2.3.3-windows-x86_64.exe#/dl.7z",
-            "hash": "4d8f254c18419373abb95ff1edafa9768fc3ed8b9609fd234f0bd426abed0b38",
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.4/DevSidecar-2.3.4-windows-x86_64.exe#/dl.7z",
+            "hash": "04ccf211e52c21b3fce311d85e4e381d218f2946189b84ecc6ba908fd6266c6c",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
             ]
         },
         "32bit": {
-            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.3/DevSidecar-2.3.3-windows-ia32.exe#/dl.7z",
-            "hash": "02f08119febd4477d60d1b25f36109b5f42d300d8906c1ef3586a27afcfe6fd5",
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.4/DevSidecar-2.3.4-windows-ia32.exe#/dl.7z",
+            "hash": "bfd66d0139481b085291824e3aa7cb6e52111331542b7b72729d2959531786e5",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-ia32.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
             ]
         },
         "arm64": {
-            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.3/DevSidecar-2.3.3-windows-arm64.exe#/dl.7z",
-            "hash": "dce1d824795d880ccfe3a9e254f211a347f1dc54d83e2263dad9e3a1ae99cb46",
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v2.3.4/DevSidecar-2.3.4-windows-arm64.exe#/dl.7z",
+            "hash": "71d955a3052b12c2ae3f56ba7e1ab1561e427935dbc2ab3b74622c36b5da1c65",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
