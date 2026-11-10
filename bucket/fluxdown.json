@@ -1,5 +1,5 @@
 {
-    "version": "0.6.6",
+    "version": "0.6.7",
     "description": "Rust 驱动的多协议下载管理器，支持 HTTP/FTP/BitTorrent 磁力链接及 HLS/DASH 流媒体，智能多线程加速与浏览器无缝集成。精美界面，极致性能，永久免费，零广告。",
     "homepage": "https://fluxdown.zerx.dev/",
     "license": "AGPL-3.0-only",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.6.6-windows-x64-portable.zip",
-            "hash": "b385e83f74e21bf1198d807889a394f920d54fbf8debdf5011999daa330d16a1"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.6.7-windows-x64-portable.zip",
+            "hash": "c3233481eebe2fbe90c133f5af5dedee60854e79f810019634dde7892e0660da"
         },
         "arm64": {
-            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.6.6-windows-arm64-portable.zip",
-            "hash": "9f72d8fd73229f850674d3432e7fbaf9adc18879d0adfee4d6c2f04663825a01"
+            "url": "https://fluxdown.zerx.dev/api/download/FluxDown-0.6.7-windows-arm64-portable.zip",
+            "hash": "150ca99c18346d763db6f5fa377976cd351082abf307d0aaf2764318484e05c5"
         }
     },
     "shortcuts": [
