@@ -1,5 +1,5 @@
 {
-    "version": "12.1.0.29158",
+    "version": "12.1.0.29670",
     "description": "WPS Office 一站式办公服务平台 新升级，无广告，AI办公更高效",
     "homepage": "https://www.wps.cn/",
     "license": {
@@ -9,8 +9,8 @@
     "notes": "手动调用配置工具安装，不保证能用",
     "architecture": {
         "64bit": {
-            "url": "https://official-package.wpscdn.cn/wps/download/WPS_Setup_x64_29158.exe",
-            "hash": "1dd9f29797fa6d0a17a7f9ccc7ffef052f8a89327669570b77455a56fb9c4e3f"
+            "url": "https://official-package.wpscdn.cn/wps/download/WPS_Setup_x64_29670.exe",
+            "hash": "6ff635c043749f3bbd34cc1e034df74753b8253abe186bc13df23c8ad92df985"
         }
     },
     "shortcuts": [
