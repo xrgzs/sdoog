@@ -1,12 +1,12 @@
 {
-    "version": "1.3.1",
+    "version": "1.4.0",
     "description": "A minimalist, next-generation game launcher built with WinUI 3 and .NET 10. Features lightning-fast startup, Advanced search, advanced launch arguments, and full portable mode.",
     "license": "GPL-3.0-only",
     "homepage": "https://github.com/EricZhang233/EricGameLauncher",
     "architecture": {
         "64bit": {
-            "hash": "a27be25dd8bd28d8a5ec670631a33c56cfc4b72e1ed958200022e2840532655e",
-            "url": "https://github.com/EricZhang233/EricGameLauncher/releases/download/v1.3.1/EricGameLauncher_1.3.1.zip"
+            "hash": "e0facc2b112f567f88474ba078f5ca17482dd7bc1f1659366b3944a2b4657e8d",
+            "url": "https://github.com/EricZhang233/EricGameLauncher/releases/download/v1.4.0/EricGameLauncher_1.4.0.zip"
         }
     },
     "shortcuts": [
