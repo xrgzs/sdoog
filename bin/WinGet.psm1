@@ -117,22 +117,45 @@ function ConvertFrom-MSZIP {
 
 function Get-WinGetDatabase {
     $WorkDir = (New-Item -ItemType Directory -Path $env:TEMP -Name "WinGet_pwsh" -Force).FullName
-    # 下载WinGet源安装包
     $MsixPath = Join-Path $WorkDir "source2.msix"
-    Invoke-WebRequest "https://cdn.winget.microsoft.com/cache/source2.msix" -OutFile $MsixPath
+    try {
+        $maxAttempts = 3
+        for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+            try {
+                Invoke-WebRequest -Uri "https://cdn.winget.microsoft.com/cache/source2.msix" -OutFile $MsixPath -ErrorAction Stop
+                break
+            } catch {
+                Remove-Item -LiteralPath $MsixPath -Force -ErrorAction SilentlyContinue
+                if ($attempt -eq $maxAttempts) {
+                    throw "Failed to download the WinGet source package after $maxAttempts attempts: $($_.Exception.Message)"
+                }
+                Write-Warning "WinGet source download failed (attempt $attempt of $maxAttempts); retrying..."
+                Start-Sleep -Seconds ([math]::Pow(2, $attempt))
+            }
+        }
 
-    # 解压出WinGet数据库文件
-    Expand-Archive -Path $MsixPath -DestinationPath $WorkDir -Force
+        if (!(Test-Path -LiteralPath $MsixPath -PathType Leaf)) {
+            throw "WinGet source package was not downloaded."
+        }
 
-    # 读取数据库
-    $DBPath = Join-Path $WorkDir "Public\index.db"
-    New-SQLiteConnection -Path $DBPath
-    $results = Invoke-SQLiteQuery -Query "SELECT CAST ( rowid AS TEXT ) AS rowid, CAST ( id AS TEXT ) AS id, CAST ( name AS TEXT ) AS name, CAST ( moniker AS TEXT ) AS moniker, CAST ( latest_version AS TEXT ) AS latest_version, CAST ( hash AS BLOB ) AS hash FROM packages"
-    Close-SQLiteConnection
+        Expand-Archive -Path $MsixPath -DestinationPath $WorkDir -Force
 
-    # 删除缓存文件
-    Remove-Item -Path $WorkDir -Recurse -Force -ErrorAction SilentlyContinue
-    return $results
+        $DBPath = Join-Path $WorkDir "Public\index.db"
+        if (!(Test-Path -LiteralPath $DBPath -PathType Leaf)) {
+            throw "WinGet source package does not contain Public\index.db."
+        }
+
+        New-SQLiteConnection -Path $DBPath
+        try {
+            $results = Invoke-SQLiteQuery -Query "SELECT CAST ( rowid AS TEXT ) AS rowid, CAST ( id AS TEXT ) AS id, CAST ( name AS TEXT ) AS name, CAST ( moniker AS TEXT ) AS moniker, CAST ( latest_version AS TEXT ) AS latest_version, CAST ( hash AS BLOB ) AS hash FROM packages"
+        } finally {
+            Close-SQLiteConnection
+        }
+
+        return $results
+    } finally {
+        Remove-Item -LiteralPath $WorkDir -Recurse -Force -ErrorAction SilentlyContinue
+    }
 }
 
 function Get-WinGetInfo {
