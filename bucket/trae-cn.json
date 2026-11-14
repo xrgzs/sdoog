@@ -1,12 +1,12 @@
 {
-    "version": "2.3.69712",
+    "version": "2.3.102387",
     "description": "Trae 是国内首个 AI IDE，深度理解中文开发场景。",
     "homepage": "https://www.trae.com.cn",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.69712/win32/TraeCode_CN-Setup-x64.exe",
-            "hash": "bc4e7056dc4583f6c2121f9700b9ddd9815b14031e053333597ee1ca20e77120",
+            "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.102387/win32/TRAE_CN-Setup-x64.exe",
+            "hash": "77a9dc29195c6112a4eb2bf1290b6824ca7d537bc4bc4661051cf55966539249",
             "extract_dir": "{code_GetDestDir}"
         }
     },
@@ -19,13 +19,19 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.trae.com.cn/icube/api/v1/native/version/trae/cn/latest",
-        "jsonpath": "$.data.manifest.win32.version"
+        "script": [
+            "$manifest = Invoke-RestMethod -Uri 'https://api.trae.com.cn/icube/api/v1/native/version/trae/cn/latest'",
+            "$url = ($manifest.data.manifest.win32.download | Where-Object { $_.region -eq 'cn' } | Select-Object -First 1).x64",
+            "if (!$url) { throw 'Could not find the Trae CN x64 download URL.' }",
+            "if ($url -notmatch '/releases/stable/(?<version>[^/]+)/win32/') { throw 'Could not parse the Trae CN version from the download URL.' }",
+            "\"$($Matches.version)=====$url\""
+        ],
+        "regex": "(?<version>[^=]+)=====(?<url>.+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/$version/win32/TraeCode_CN-Setup-x64.exe"
+                "url": "$matchUrl"
             }
         }
     }
