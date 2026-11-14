@@ -1,16 +1,16 @@
 {
-    "version": "0.5.2",
+    "version": "0.5.3",
     "description": "A Flutter-based cross-platform Clash GUI client",
     "homepage": "https://github.com/pluralplay/FlClashX",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.5.2/FlClashX-windows-amd64.zip",
-            "hash": "f3da5a888db0830fec64f147847034b8ef7e05ca77b7de0f27d49be0fd0cb01a"
+            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.5.3/FlClashX-windows-amd64.zip",
+            "hash": "19d015c7bafb0c1d2cc3ba9a72e8349ba8a41563173e52aa39337f32142b98e2"
         },
         "arm64": {
-            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.5.2/FlClashX-windows-arm64.zip",
-            "hash": "55f21e1448582d709daa882137b30ea898160cd5d06e783c020b788a9466edb3"
+            "url": "https://github.com/pluralplay/FlClashX/releases/download/v0.5.3/FlClashX-windows-arm64.zip",
+            "hash": "266ffbb92d691036ff9e0fd7cd238bf2adcba5a42bf0562ecb1b3895970f2c2a"
         }
     },
     "shortcuts": [
