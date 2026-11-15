@@ -1,12 +1,12 @@
 {
-    "version": "9.0.5.261029005.202611150007",
+    "version": "9.0.5.261029005.202611270422",
     "description": "钉钉，让进步发生",
     "homepage": "https://www.dingtalk.com/",
     "license": {
         "identifier": "EULA",
         "url": "https://tms.dingtalk.com/markets/dingtalk/service-terms-zh"
     },
-    "url": "https://dtapp-cast.dingtalk.com/202611150007/642e4977253ef79508f5acec13e88506/dingtalk-desktop/win_installer/Release/DingTalk_v9.0.5.261029005.exe#/dl.7z",
+    "url": "https://dtapp-cast.dingtalk.com/202611270422/c478926ac704fea906c11021aaec3b14/dingtalk-desktop/win_installer/Release/DingTalk_v9.0.5.261029005.exe#/dl.7z",
     "hash": "md5:081d02cda31acf427bd38a6d8e08f239",
     "pre_install": [
         "ensure \"$dir\\main\\current\"",
