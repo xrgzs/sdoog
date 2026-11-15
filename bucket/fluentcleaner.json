@@ -1,12 +1,12 @@
 {
-    "version": "26.11.02",
+    "version": "26.11.10",
     "description": "FluentCleaner - Modern Windows system cleaning tool built with WinUI3 and Fluent Design.",
     "homepage": "https://github.com/builtbybel/FluentCleaner",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.11.02/FluentCleaner-win-x64.zip",
-            "hash": "392a8838c56954952894cea6394bb0e130dfbb483e418d8b68c7aff58452dad5",
+            "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.11.10/FluentCleaner-win-x64.zip",
+            "hash": "44f24407e418e62a2deeb1ee2dd83de5309bed6cccf23ad150c9f80333a09237",
             "extract_dir": "FluentCleaner-win-x64"
         }
     },
