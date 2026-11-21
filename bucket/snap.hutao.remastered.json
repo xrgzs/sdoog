@@ -1,12 +1,12 @@
 {
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "实用的开源多功能原神工具箱 / Multifunctional Open-source Genshin Impact Toolkit",
     "homepage": "https://snaphutaorp.org/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/download/2.0.1/Snap.Hutao.Remastered-2.0.1.0.msix",
-            "hash": "d27e19be49a651c6a15cae3f38f28dcdd132eee6f4c6d52285d45958f76b9b90"
+            "url": "https://github.com/SnapHutaoRemasteringProject/Snap.Hutao.Remastered/releases/download/2.0.2/Snap.Hutao.Remastered-2.0.2.0.msix",
+            "hash": "5c58ebf84d9ac81bf875d9031727d38f8dbd7baf048e94e7d36ee6f894d3af06"
         }
     },
     "installer": {
