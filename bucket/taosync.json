@@ -1,5 +1,5 @@
 {
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "TaoSync是一个适用于AList V3的自动化同步工具/sync for alist",
     "homepage": "https://github.com/dr34m-cn/taosync",
     "license": "AGPL-3.0-only",
@@ -9,8 +9,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/dr34m-cn/taosync/releases/download/v0.5.0/taoSync-v0.5.0-windows-amd64.zip",
-            "hash": "8d53de7681e60963ea48ebb7ff894f617d20cd041c8363de4299fcb3a6753d72"
+            "url": "https://github.com/dr34m-cn/taosync/releases/download/v0.5.1/taoSync-v0.5.1-windows-amd64.zip",
+            "hash": "7f15c50c5fcf8828b6ea2bdc6fbb1ac02eaa7d9f22c6bec4f425fd0efff5ad02"
         }
     },
     "bin": "taoSync.exe",
