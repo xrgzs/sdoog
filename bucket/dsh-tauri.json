@@ -1,12 +1,12 @@
 {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "DSH Pack: Tauri desktop client for DeepSeek Harness with curated plugins and a bundled runtime.",
     "homepage": "https://github.com/myYangyunfan/dsh_desktop",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/myYangyunfan/dsh_desktop/releases/download/v1.1.0/DSH-Desktop-Portable-1.1.0-win-x64.zip",
-            "hash": "e3d248824d2991490d07f2cce9929e1336e899230aa8f5abb361dcf6d1227119"
+            "url": "https://github.com/myYangyunfan/dsh_desktop/releases/download/v1.1.1/DSH-Desktop-Portable-1.1.1-win-x64.zip",
+            "hash": "83e780c614a10ced9ec7608dd36a8cc5b0e7c83ceb9321c3ee1ef919d7b85545"
         }
     },
     "extract_dir": "DSH Desktop",
