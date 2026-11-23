@@ -1,0 +1,45 @@
+{
+    "version": "1.11.8",
+    "description": "An enhanced subscription conversion backend for proxy clients",
+    "homepage": "https://github.com/Aethersailor/SubConverter-Extended",
+    "license": "GPL-3.0-only",
+    "notes": "Starts a web service at http://localhost:25500. The default configuration listens on all network interfaces; review its security settings before exposing it beyond your computer. Portable self-updates are disabled for Scoop-managed installs.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Aethersailor/SubConverter-Extended/releases/download/v1.11.8/SubConverter-Extended-v1.11.8-windows-amd64.zip",
+            "hash": "aba31f19b887bb1aca30aac184cbd76f549beee238ca30ff567a7f7d2da98d23"
+        }
+    },
+    "extract_dir": "SubConverter-Extended",
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\base\\pref.toml\")) {",
+        "    Copy-Item \"$dir\\base\\pref.example.toml\" \"$dir\\base\\pref.toml\"",
+        "}",
+        "@(",
+        "    '@echo off',",
+        "    'setlocal',",
+        "    'set \"SUBCONVERTER_SKIP_AUTO_UPDATE=1\"',",
+        "    'call \"%~dp0start.bat\" %*',",
+        "    'exit /b %ERRORLEVEL%'",
+        ") | Set-Content -Path \"$dir\\subconverter-extended.bat\" -Encoding ascii"
+    ],
+    "bin": "subconverter-extended.bat",
+    "shortcuts": [
+        [
+            "subconverter-extended.bat",
+            "SubConverter-Extended"
+        ]
+    ],
+    "persist": [
+        "base\\pref.toml",
+        "stats"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Aethersailor/SubConverter-Extended/releases/download/v$version/SubConverter-Extended-v$version-windows-amd64.zip"
+            }
+        }
+    }
+}
