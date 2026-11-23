@@ -1,18 +1,19 @@
 {
-    "version": "1.1.1",
-    "description": "DSH Pack: Tauri desktop client for DeepSeek Harness with curated plugins and a bundled runtime.",
-    "homepage": "https://github.com/myYangyunfan/dsh_desktop",
+    "version": "0.33.0",
+    "description": "Tauri desktop client for DeepSeek Harness with runtime and plugin management.",
+    "homepage": "https://github.com/dsh-tauri/deepseek-harness-desktop",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/myYangyunfan/dsh_desktop/releases/download/v1.1.1/DSH-Desktop-Portable-1.1.1-win-x64.zip",
-            "hash": "83e780c614a10ced9ec7608dd36a8cc5b0e7c83ceb9321c3ee1ef919d7b85545"
+            "url": "https://github.com/dsh-tauri/deepseek-harness-desktop/releases/download/v0.33.0/Deepseek.Harness.Desktop_Bundle_0.33.0.exe#/dl.7z",
+            "hash": "e7705d28ee8e18f81117526b2d3bd4d9032b6931c210a0c8a3e1e1d9b80957ca"
         }
     },
-    "extract_dir": "DSH Desktop",
     "installer": {
         "script": [
+            "Remove-Item \"$dir\\uninstall.exe\", \"$dir\\`$*\" -Force -Recurse -ErrorAction SilentlyContinue | Out-Null",
             ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "New-PersistDirectory \"$env:APPDATA\\dsh-tauri\" \"$persist_dir\\AppData\" -Migrate",
             "$dsh_path = Join-Path $env:USERPROFILE '.dsh'",
             "$persist_dsh = Join-Path $persist_dir 'USERPROFILE\\.dsh'",
             "$legacy_dsh = Join-Path (Split-Path $persist_dir -Parent) 'deepseek-harness-desktop\\USERPROFILE\\.dsh'",
@@ -32,24 +33,29 @@
     },
     "shortcuts": [
         [
-            "DSH Desktop.exe",
-            "DSH Desktop"
+            "deepseek-harness-desktop.exe",
+            "DSH Tauri"
         ]
     ],
-    "persist": "data",
+    "persist": [
+        "AppData",
+        "USERPROFILE\\.dsh",
+        "data"
+    ],
     "pre_uninstall": [
         "$bucket = $install.bucket",
         ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
         "Stop-App",
+        "Remove-Junction \"$env:APPDATA\\dsh-tauri\"",
         "Remove-Junction \"$env:USERPROFILE\\.dsh\""
     ],
     "checkver": {
-        "github": "https://github.com/myYangyunfan/dsh_desktop"
+        "github": "https://github.com/dsh-tauri/deepseek-harness-desktop"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/myYangyunfan/dsh_desktop/releases/download/v$version/DSH-Desktop-Portable-$version-win-x64.zip"
+                "url": "https://github.com/dsh-tauri/deepseek-harness-desktop/releases/download/v$version/Deepseek.Harness.Desktop_Bundle_$version.exe#/dl.7z"
             }
         }
     }
