@@ -1,12 +1,12 @@
 {
-    "version": "0.33.0",
+    "version": "0.34.0",
     "description": "Tauri desktop client for DeepSeek Harness with runtime and plugin management.",
     "homepage": "https://github.com/dsh-tauri/deepseek-harness-desktop",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/dsh-tauri/deepseek-harness-desktop/releases/download/v0.33.0/Deepseek.Harness.Desktop_Bundle_0.33.0.exe#/dl.7z",
-            "hash": "e7705d28ee8e18f81117526b2d3bd4d9032b6931c210a0c8a3e1e1d9b80957ca"
+            "url": "https://github.com/dsh-tauri/deepseek-harness-desktop/releases/download/v0.34.0/Deepseek.Harness.Desktop_Bundle_0.34.0.exe#/dl.7z",
+            "hash": "178f69eb9ae8ef4dec3bfca00a485accb75c4145c6fe7e9a324ca4432397056e"
         }
     },
     "installer": {
