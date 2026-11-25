@@ -1,11 +1,11 @@
 {
-    "version": "2026.11.25.7134323",
+    "version": "2026.11.25.e84e29d",
     "homepage": "https://github.com/gaboolic/rime-frost",
     "description": "白霜词库：蒹葭苍苍，白露为霜。基于雾凇拼音重制的，更纯净、词频准确、智能的词库。使用745396750字的高质量语料，进行分词，重新统计字频、词频，归一化。白霜词库是目前rime方案下最好的词库，在不使用智能模型的情况下可以超越使用智能模型的词库方案。",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/gaboolic/rime-frost/archive/7134323ff1b3f969cee327fdf65e222a5bda72b5.zip",
-    "hash": "c51be3519d472200a313ed7df9b6cec29ae2cc93c337f87b15f4898a3513df56",
-    "extract_dir": "rime-frost-7134323ff1b3f969cee327fdf65e222a5bda72b5",
+    "url": "https://github.com/gaboolic/rime-frost/archive/e84e29d69d750f00ff5fe637e15171ea059570f5.zip",
+    "hash": "55c493d447ef6018fcb9c266f5dfe7f6794bf7c0024c3fb0415dd48700aa2c27",
+    "extract_dir": "rime-frost-e84e29d69d750f00ff5fe637e15171ea059570f5",
     "depends": "weasel",
     "extract_to": "rime-frost",
     "post_install": [
