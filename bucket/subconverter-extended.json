@@ -1,13 +1,13 @@
 {
-    "version": "1.11.8",
+    "version": "1.11.9",
     "description": "An enhanced subscription conversion backend for proxy clients",
     "homepage": "https://github.com/Aethersailor/SubConverter-Extended",
     "license": "GPL-3.0-only",
     "notes": "Starts a web service at http://localhost:25500. The default configuration listens on all network interfaces; review its security settings before exposing it beyond your computer. The portable updater is removed for Scoop-managed installs.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Aethersailor/SubConverter-Extended/releases/download/v1.11.8/SubConverter-Extended-v1.11.8-windows-amd64.zip",
-            "hash": "aba31f19b887bb1aca30aac184cbd76f549beee238ca30ff567a7f7d2da98d23"
+            "url": "https://github.com/Aethersailor/SubConverter-Extended/releases/download/v1.11.9/SubConverter-Extended-v1.11.9-windows-amd64.zip",
+            "hash": "135a2b119f932ba690dfcc50eca766b0b9c2d729c163f0ebabccb0f830e2b403"
         }
     },
     "extract_dir": "SubConverter-Extended",
